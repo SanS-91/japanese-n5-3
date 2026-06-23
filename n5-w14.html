@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☁️ Tuần 13: Động Từ Thể Masu | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --sky:#7EC8E3;--sky-dark:#4FA8C7;--sky-light:#D4ECFA;
+            --cloud:#B8D8F0;--cloud-dark:#8BC0E8;--cloud-light:#E0F0FF;
+            --sun:#FFE066;--sun-dark:#E8C860;--sun-light:#FFF0B8;
+            --mint:#A8E6CF;--mint-dark:#5FD4A8;--mint-light:#D4F5E9;
+            --lavender:#C9B1FF;--lavender-dark:#8A6FD4;--lavender-light:#E8DFFF;
+            --coral:#FFB8A8;--coral-dark:#FF9EAA;--coral-light:#FFE0D4;
+            --text-dark:#2C4A5C;--text-medium:#4A6B7C;--text-light:#7A9BA8;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(126,200,227,.5)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(184,216,240,.5)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(255,224,102,.4)0%,transparent 45%),radial-gradient(circle at 80% 90%,rgba(168,230,207,.4)0%,transparent 40%),linear-gradient(135deg,#F0F8FF 0%,#E8F4F8 50%,#FFFBF0 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh}
+        .bg-circle{position:fixed;border-radius:50%;opacity:.35;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
+        .bg-circle:nth-child(1){width:350px;height:350px;background:var(--sky);top:8%;left:5%}
+        .bg-circle:nth-child(2){width:280px;height:280px;background:var(--cloud);top:55%;right:8%;animation-delay:8s}
+        .bg-circle:nth-child(3){width:220px;height:220px;background:var(--sun);top:30%;left:60%;animation-delay:4s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.05)}}
+        .cloud-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .cloud{position:absolute;font-size:24px;animation:drift linear infinite;opacity:.4}
+        @keyframes drift{0%{transform:translateX(-10vw)}100%{transform:translateX(110vw)}}
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:2px solid rgba(126,200,227,.3);display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(79,168,199,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--sky-dark),var(--cloud-dark),var(--sun-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:1.5px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--sky-light);color:var(--sky-dark);border-color:var(--sky)}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--sky-dark);text-decoration:none;font-weight:700}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .week-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(79,168,199,.12);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative;z-index:2}
+        .week-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--cloud),var(--sun));opacity:.85;border-radius:22px 22px 0 0}
+        .week-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-dark);padding:10px 16px;border-radius:16px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        .week-nav-link:hover{background:var(--sky-light);transform:translateY(-2px)}
+        .week-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(79,168,199,.2)}
+        .week-nav-prev .week-nav-icon{background:linear-gradient(135deg,var(--coral-light),var(--coral))}
+        .week-nav-next .week-nav-icon{background:linear-gradient(135deg,var(--mint-light),var(--mint))}
+        .week-nav-info{flex:1;min-width:0}
+        .week-nav-label{font-size:.75em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .week-nav-title{font-size:.95em;color:var(--text-dark);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .week-nav-arrow{font-size:1.5em;color:var(--sky-dark);flex-shrink:0;font-weight:900}
+        .week-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
+        .week-nav-current{font-size:1.1em;font-weight:900;color:var(--sky-dark)}
+        .week-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(212,236,250,.8)30%,rgba(224,240,255,.7)60%,rgba(255,240,184,.7)100%);border-radius:32px;padding:55px 40px;margin-bottom:40px;border:2px solid rgba(255,255,255,.95);box-shadow:0 10px 40px rgba(79,168,199,.18);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.6)0%,transparent 60%);animation:rotate 30s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:1s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:.5s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:.9;transform:scale(1.1)}}
+        .hero-badge{background:linear-gradient(135deg,var(--sky),var(--cloud),var(--sun));background-size:200% auto;color:white;padding:12px 26px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(79,168,199,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--sky-dark),var(--cloud-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--sky-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:780px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:30px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(79,168,199,.18);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s}
+        .stat-item:hover{transform:translateY(-3px)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--sky-dark),var(--cloud-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        .mascot-container{text-align:center;margin:25px 0;position:relative;z-index:2}
+        .mascot-svg{max-width:180px;height:auto;filter:drop-shadow(0 8px 20px rgba(79,168,199,.3));animation:floatMascot 4s ease-in-out infinite}
+        @keyframes floatMascot{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:2}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--sky),var(--sky-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(79,168,199,.4)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(79,168,199,.5);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text-dark);border:2px solid var(--sky);backdrop-filter:blur(10px)}
+        .btn-secondary:hover{background:var(--sky-light);transform:translateY(-3px)}
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(79,168,199,.12);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--sky),var(--cloud),var(--sun));opacity:.85}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--sky-dark),var(--cloud-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:30px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        .days-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin:30px 0;position:relative;z-index:2}
+        .day-tab{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 12px;text-align:center;box-shadow:0 4px 20px rgba(79,168,199,.12);transition:.35s;cursor:pointer;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .day-tab::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--cloud));opacity:.85}
+        .day-tab:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(79,168,199,.2)}
+        .day-tab:hover::before{height:7px;opacity:1}
+        .day-tab.active{background:linear-gradient(135deg,rgba(212,236,250,.98),rgba(224,240,255,.95));border-color:var(--sky)}
+        .day-tab.active::before{opacity:1;height:7px}
+        .day-num{font-size:1.8em;font-weight:900;color:var(--sky-dark);display:block;margin-bottom:5px;position:relative;z-index:2}
+        .day-title{font-size:.82em;font-weight:800;color:var(--text-dark);margin-bottom:5px;line-height:1.3;position:relative;z-index:2}
+        .day-time{font-size:.75em;color:var(--text-medium);font-weight:600;position:relative;z-index:2}
+        .day-content{display:none;animation:fadeIn .5s}
+        .day-content.active{display:block}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        .day-header{background:linear-gradient(135deg,var(--sky),var(--cloud));color:white;padding:30px;border-radius:20px;margin-bottom:25px;box-shadow:0 8px 25px rgba(79,168,199,.35)}
+        .day-header h2{font-size:1.8em;margin-bottom:10px;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.15)}
+        .day-header p{font-size:1em;opacity:.98;margin-bottom:15px}
+        .day-goals{list-style:none;background:rgba(255,255,255,.25);padding:15px;border-radius:12px}
+        .day-goals li{padding:8px 0;display:flex;align-items:center;gap:10px;font-size:.95em;font-weight:600;color:white}
+        .vocab-section{background:linear-gradient(135deg,rgba(212,236,250,.9),rgba(224,240,255,.85));border:2px solid rgba(255,255,255,.95)}
+        .vocab-list{display:grid;gap:15px;margin-top:25px}
+        .vocab-item{background:rgba(255,255,255,.98);padding:20px;border-radius:20px;display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:center;transition:.35s;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(79,168,199,.12);position:relative;overflow:hidden}
+        .vocab-item::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--cloud));opacity:.85}
+        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(79,168,199,.2)}
+        .vocab-item:hover::before{height:7px;opacity:1}
+        .vocab-illustration-lg{width:100px;height:100px;background:linear-gradient(135deg,var(--sky-light),var(--cloud-light));border-radius:20px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(79,168,199,.15);position:relative;z-index:2}
+        .vocab-jp-lg{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--text-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
+        .vocab-romaji-lg{font-size:1em;color:var(--sky-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
+        .vocab-meaning-lg{font-size:.98em;color:var(--text-dark);margin-bottom:8px;font-weight:700;position:relative;z-index:2}
+        .vocab-example{background:rgba(255,255,255,.8);padding:10px 12px;border-radius:10px;font-size:.88em;color:var(--text-dark);border-left:4px solid var(--sky);line-height:1.5;position:relative;z-index:2}
+        .vocab-example strong{color:var(--sky-dark);font-weight:800}
+        .audio-btn{background:linear-gradient(135deg,var(--sky),var(--sky-dark));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(79,168,199,.35)}
+        .audio-btn:hover{transform:scale(1.05);background-position:right center}
+        .audio-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
+        .grammar-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);border-left:7px solid var(--sky);box-shadow:0 4px 20px rgba(79,168,199,.12);position:relative;overflow:hidden}
+        .grammar-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--cloud));opacity:.85}
+        .grammar-title{font-size:1.3em;font-weight:900;color:var(--text-dark);margin-bottom:15px;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .grammar-structure{background:linear-gradient(135deg,var(--sky-light),var(--cloud-light));padding:15px;border-radius:15px;font-family:'M PLUS Rounded 1c';font-size:1.4em;text-align:center;color:var(--text-dark);font-weight:800;margin:15px 0;border:2px solid var(--sky);position:relative;z-index:2}
+        .grammar-desc{font-size:.95em;color:var(--text-dark);line-height:1.7;margin-bottom:15px;position:relative;z-index:2}
+        .grammar-examples{display:grid;gap:12px;position:relative;z-index:2}
+        .grammar-example{background:rgba(255,255,255,.85);padding:12px;border-radius:12px;border-left:4px solid var(--sky);border:2px solid rgba(255,255,255,.95)}
+        .grammar-example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
+        .grammar-example-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
+        .grammar-note{background:var(--sun-light);padding:12px;border-radius:10px;margin-top:10px;font-size:.88em;color:var(--text-dark);border-left:4px solid var(--sun);font-weight:600;position:relative;z-index:2}
+        .grammar-warning{background:var(--coral-light);padding:12px;border-radius:10px;margin-top:10px;font-size:.88em;color:var(--text-dark);border-left:4px solid var(--coral);font-weight:600;position:relative;z-index:2}
+        .tip-box{background:linear-gradient(135deg,rgba(212,236,250,.9),rgba(255,240,184,.85));border:2px solid rgba(255,255,255,.95);border-radius:22px;padding:22px;margin:18px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--sky),var(--sun));opacity:.9}
+        .tip-box h4{color:var(--sky-dark);margin-bottom:10px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .tip-box p{color:var(--text-dark);font-size:.95em;line-height:1.7;font-weight:600;position:relative;z-index:2}
+        .dialogue-section{background:linear-gradient(135deg,rgba(212,236,250,.9),rgba(224,240,255,.85));border:2px solid rgba(255,255,255,.95)}
+        .dialogue-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(79,168,199,.12)}
+        .dialogue-controls{display:flex;gap:10px;margin-bottom:18px;padding:12px;background:var(--sky-light);border-radius:12px;align-items:center;flex-wrap:wrap}
+        .dialogue-btn{background:linear-gradient(135deg,var(--sky),var(--cloud));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(79,168,199,.35);display:flex;align-items:center;gap:8px}
+        .dialogue-btn:hover{transform:scale(1.05);background-position:right center}
+        .dialogue-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
+        .speaker{display:flex;margin-bottom:15px;align-items:flex-start;gap:12px;flex-wrap:wrap}
+        .speaker-avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--cloud));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1em;flex-shrink:0;box-shadow:0 4px 12px rgba(79,168,199,.35)}
+        .speaker-content{flex:1;background:var(--sky-light);padding:12px;border-radius:15px;min-width:200px;border:2px solid rgba(255,255,255,.95)}
+        .speaker-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
+        .speaker-vn{color:var(--text-medium);font-size:.9em;margin-bottom:8px;font-weight:600}
+        .structure-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+        .structure-tag{background:rgba(255,255,255,.95);padding:3px 10px;border-radius:12px;font-size:.72em;font-weight:700;border:1.5px solid}
+        .tag-new{color:var(--sky-dark);border-color:var(--sky);background:rgba(212,236,250,.95)}
+        .tag-prev{color:var(--cloud-dark);border-color:var(--cloud);background:rgba(224,240,255,.95)}
+        .exercise-section{background:linear-gradient(135deg,rgba(224,240,255,.9),rgba(212,236,250,.85));border:2px solid rgba(255,255,255,.95)}
+        .exercise-card{background:rgba(255,255,255,.98);border-radius:20px;padding:22px;margin:15px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(79,168,199,.12)}
+        .exercise-q{font-size:1.1em;font-weight:900;color:var(--text-dark);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--sky),var(--cloud));color:white;width:30px;height:30px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 3px 10px rgba(79,168,199,.35)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--sky-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1em;font-weight:800;color:var(--text-dark);text-align:center;border:2px solid transparent}
+        .exercise-opt:hover{background:var(--sky);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--mint);color:white;border-color:var(--mint-dark)}
+        .exercise-opt.wrong{background:#ff5252;color:white;border-color:#e83e3e}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--mint-light);color:var(--mint-dark);border:2px solid var(--mint)}
+        .feedback.wrong{background:var(--coral-light);color:var(--coral-dark);border:2px solid var(--coral)}
+        .flashcard-section{background:linear-gradient(135deg,rgba(212,236,250,.9),rgba(255,240,184,.85));border:2px solid rgba(255,255,255,.95)}
+        .flashcard-container{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
+        .flashcard{perspective:1000px;height:190px;cursor:pointer}
+        .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+        .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px;box-shadow:0 4px 20px rgba(79,168,199,.12);border:2px solid rgba(255,255,255,.95)}
+        .flashcard-front{background:rgba(255,255,255,.98);border-color:var(--sky)}
+        .flashcard-back{background:linear-gradient(135deg,var(--sun-light),var(--sky-light));border-color:var(--sun);transform:rotateY(180deg)}
+        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2.2em;font-weight:800;color:var(--text-dark)}
+        .flashcard-hint{font-size:.8em;color:var(--text-light);margin-top:8px;font-weight:700}
+        .flashcard-romaji{font-size:1.1em;font-weight:900;color:var(--sky-dark);margin-top:5px}
+        .flashcard-meaning{font-size:.85em;color:var(--text-dark);margin-top:5px;font-weight:700;text-align:center}
+        .progress-section{background:linear-gradient(135deg,rgba(212,236,250,.9),rgba(224,240,255,.85),rgba(255,240,184,.85));border:2px solid rgba(255,255,255,.95);padding:35px;border-radius:25px;margin:30px 0;text-align:center;box-shadow:0 4px 20px rgba(79,168,199,.12)}
+        .progress-bar{width:100%;height:18px;background:rgba(255,255,255,.95);border-radius:12px;overflow:hidden;margin:18px 0;border:2px solid var(--sky)}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--sky),var(--cloud),var(--sun));width:0%;transition:1s;border-radius:10px}
+        .nav-buttons{display:flex;justify-content:space-between;gap:15px;margin-top:25px;flex-wrap:wrap}
+        .group-title{font-size:1.25em;font-weight:900;color:var(--text-dark);margin:20px 0 12px;display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:3px dashed var(--sky);position:relative;z-index:2}
+        .footer{background:linear-gradient(135deg,var(--sky),var(--cloud),var(--sun));background-size:200% auto;color:white;padding:40px;text-align:center;margin-top:40px;border-radius:28px 28px 0 0;animation:shimmer 8s linear infinite}
+        .footer h3{font-size:1.5em;margin-bottom:10px;font-weight:900}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600}
+        @media(max-width:900px){.days-nav{grid-template-columns:repeat(4,1fr)}.flashcard-container{grid-template-columns:repeat(2,1fr)}.vocab-item{grid-template-columns:80px 1fr}.vocab-illustration-lg{width:80px;height:80px}.week-nav{flex-direction:column}.week-nav-link{max-width:100%}}
+        @media(max-width:600px){.days-nav{grid-template-columns:repeat(2,1fr)}.flashcard-container{grid-template-columns:1fr}.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.4em}.card{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}.vocab-illustration-lg{margin:0 auto}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div><div class="bg-circle"></div><div class="bg-circle"></div>
+    <div class="cloud-container" id="cloudContainer"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">☁️</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <span>Tuần 13</span></div>
+
+    <!-- WEEK NAVIGATION -->
+    <div class="week-nav">
+        <a href="n5-w12.html" class="week-nav-link week-nav-prev">
+            <div class="week-nav-icon">🌸</div>
+            <div class="week-nav-info">
+                <div class="week-nav-label">← Tuần trước</div>
+                <div class="week-nav-title">Tuần 12: Tính từ な</div>
+            </div>
+            <div class="week-nav-arrow">‹</div>
+        </a>
+        <div class="week-nav-center">
+            <div class="week-nav-current">Tuần 13</div>
+            <div class="week-nav-current-label">Hiện tại</div>
+        </div>
+        <a href="n5-w14.html" class="week-nav-link week-nav-next">
+            <div class="week-nav-arrow">›</div>
+            <div class="week-nav-info">
+                <div class="week-nav-label">Tuần sau →</div>
+                <div class="week-nav-title">Tuần 14: Trợ từ は, が, を</div>
+            </div>
+            <div class="week-nav-icon">🌿</div>
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">☁️</div>
+            <div class="sparkle-deco">💫</div>
+            <div class="sparkle-deco">🌸</div>
+            <span class="hero-badge">☁️ Tuần 13 • Động Từ Thể Masu • ますけい</div>
+            <h1>Chia động từ tiếng Nhật<br>với thể Masu!</h1>
+            <div class="hero-jp">どうしの ますけい を ならおう</div>
+            <p class="hero-desc">7 ngày × 30 phút = Thành thạo chia động từ thể Masu 🎯<br>Học 3 nhóm động từ + 4 dạng chia + 20+ động từ thông dụng</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Động từ</span></div>
+                <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Nhóm động từ</span></div>
+                <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Dạng chia</span></div>
+                <div class="stat-item"><span class="stat-number">30'</span><span class="stat-label">Mỗi ngày</span></div>
+            </div>
+            <div class="mascot-container">
+                <svg class="mascot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs><radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#7EC8E3;stop-opacity:.7"/><stop offset="100%" style="stop-color:#B8D8F0;stop-opacity:.4"/></radialGradient></defs>
+                    <circle cx="100" cy="100" r="85" fill="url(#mBg)"/>
+                    <circle cx="100" cy="100" r="68" fill="#D4ECFA"/>
+                    <circle cx="100" cy="100" r="68" fill="none" stroke="#7EC8E3" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
+                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#4FA8C7" stroke-width="2.5" fill="none"/>
+                    <circle cx="85" cy="95" r="5" fill="#2C4A5C"/><circle cx="115" cy="95" r="5" fill="#2C4A5C"/>
+                    <circle cx="86" cy="93" r="1.5" fill="white"/><circle cx="116" cy="93" r="1.5" fill="white"/>
+                    <path d="M 92 108 Q 100 118 108 108" stroke="#2C4A5C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#D4ECFA" opacity=".9"/>
+                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#D4ECFA" opacity=".9"/>
+                    <path d="M 65 55 L 55 45 M 135 55 L 145 45" stroke="#4FA8C7" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Mây -->
+                    <ellipse cx="50" cy="160" rx="20" ry="8" fill="white" opacity=".8"/>
+                    <ellipse cx="150" cy="155" rx="18" ry="7" fill="white" opacity=".8"/>
+                </svg>
+            </div>
+            <div class="hero-btns">
+                <a href="#days-nav" class="btn btn-primary" onclick="showDay(1);return false;"><span>🚀</span> Bắt đầu Ngày 1</a>
+                <a href="#days-nav" class="btn btn-secondary"><span>📚</span> Xem 7 ngày</a>
+            </div>
+        </div>
+
+        <!-- 7 DAYS NAV -->
+        <div class="card" id="days-nav">
+            <h2 class="section-title"><span>📅</span> 7 Ngày Học Chi Tiết <span>☁️</span></h2>
+            <p class="section-subtitle">Click vào từng ngày để xem nội dung chi tiết</p>
+            <div class="days-nav">
+                <div class="day-tab active" onclick="showDay(1)"><span class="day-num">1</span><span class="day-title">Động từ nhóm 1</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(2)"><span class="day-num">2</span><span class="day-title">Động từ nhóm 2</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(3)"><span class="day-num">3</span><span class="day-title">Nhóm 3 & Phân biệt</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(4)"><span class="day-num">4</span><span class="day-title">Từ vựng mở rộng</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(5)"><span class="day-num">5</span><span class="day-title">Ngữ pháp Masu</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(6)"><span class="day-num">6</span><span class="day-title">Hội thoại</span><span class="day-time">30'</span></div>
+                <div class="day-tab" onclick="showDay(7)"><span class="day-num">7</span><span class="day-title">Quiz tổng hợp</span><span class="day-time">30'</span></div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 1: ĐỘNG TỪ NHÓM 1 ===== -->
+        <div class="day-content active" id="day1-content">
+            <div class="day-header">
+                <h2>📝 Ngày 1: Động Từ Nhóm 1 (五段動詞)</h2>
+                <p>⏱️ 30 phút | 🎯 Học cách chia động từ nhóm 1 sang thể Masu</p>
+                <ul class="day-goals">
+                    <li>✅ Nhận biết động từ nhóm 1 (động từ 5 đoạn)</li>
+                    <li>✅ Quy tắc chia: đổi う → い + ます</li>
+                    <li>✅ Học 5 động từ nhóm 1 thông dụng</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="tip-box">
+                    <h4>☁️ Động từ nhóm 1 là gì?</h4>
+                    <p>Động từ nhóm 1 (五段動詞 - Godan doushi) là động từ có từ điển kết thúc bằng các âm <strong>う, く, ぐ, す, つ, ぬ, ぶ, む, る</strong>. Đây là nhóm động từ phổ biến nhất trong tiếng Nhật. Khi chia sang thể Masu, ta đổi âm cuối sang hàng い rồi thêm ます.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="grammar-box">
+                    <div class="grammar-title">📐 Quy tắc chia thể Masu - Nhóm 1</div>
+                    <div class="grammar-structure">Động từ từ điển → đổi う → い + ます</div>
+                    <div class="grammar-desc">Ví dụ: かく (kaku) → かきます (kakimasu)<br>か <strong>く</strong> → か <strong>き</strong> + ます</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">かく → かきます (viết)</div>
+                            <div class="grammar-example-vn">く → き + ます</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">よむ → よみます (đọc)</div>
+                            <div class="grammar-example-vn">む → み + ます</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">はなす → はなします (nói)</div>
+                            <div class="grammar-example-vn">す → し + ます</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card vocab-section">
+                <h3 class="section-title"><span>☁️</span> 5 Động Từ Nhóm 1 Đầu Tiên</h3>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="25" y="20" width="50" height="60" rx="3" fill="#7EC8E3"/>
+                                <line x1="35" y1="35" x2="65" y2="35" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="45" x2="65" y2="45" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="55" x2="65" y2="55" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="65" x2="55" y2="65" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">かきます</div>
+                            <div class="vocab-romaji-lg">kakimasu</div>
+                            <div class="vocab-meaning-lg">✍️ Viết</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> かく (kaku) → <strong>かきます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('かきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="20" y="25" width="60" height="50" rx="5" fill="#B8D8F0"/>
+                                <line x1="30" y1="40" x2="70" y2="40" stroke="white" stroke-width="2"/>
+                                <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="2"/>
+                                <line x1="30" y1="60" x2="60" y2="60" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">よみます</div>
+                            <div class="vocab-romaji-lg">yomimasu</div>
+                            <div class="vocab-meaning-lg">📖 Đọc</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> よむ (yomu) → <strong>よみます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('よみます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#7EC8E3"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#7EC8E3"/>
+                                <circle cx="42" cy="38" r="3" fill="white"/>
+                                <circle cx="58" cy="38" r="3" fill="white"/>
+                                <path d="M 44 48 Q 50 52 56 48" stroke="white" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">はなします</div>
+                            <div class="vocab-romaji-lg">hanashimasu</div>
+                            <div class="vocab-meaning-lg">🗣️ Nói chuyện</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> はなす (hanasu) → <strong>はなします</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('はなします')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 30 70 L 50 30 L 70 70" stroke="#7EC8E3" stroke-width="5" fill="none" stroke-linecap="round"/>
+                                <circle cx="50" cy="30" r="5" fill="#4FA8C7"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">いきます</div>
+                            <div class="vocab-romaji-lg">ikimasu</div>
+                            <div class="vocab-meaning-lg">🚶 Đi</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> いく (iku) → <strong>いきます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('いきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="30" fill="#B8D8F0"/>
+                                <path d="M 35 50 Q 50 35 65 50" stroke="white" stroke-width="3" fill="none"/>
+                                <path d="M 35 55 Q 50 70 65 55" stroke="white" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">かいます</div>
+                            <div class="vocab-romaji-lg">kaimasu</div>
+                            <div class="vocab-meaning-lg">🛒 Mua</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> かう (kau) → <strong>かいます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('かいます')">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 1</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> かく chia thể Masu là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1')">かきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d1q1')">かきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1')">かくます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1')">かいます</div>
+                    </div>
+                    <div class="feedback" id="d1q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> よみます nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2')">Viết</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d1q2')">Đọc</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2')">Nói</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2')">Đi</div>
+                    </div>
+                    <div class="feedback" id="d1q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> いく → ?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3')">いくます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d1q3')">いきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3')">いきいます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3')">いくます</div>
+                    </div>
+                    <div class="feedback" id="d1q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 2: ĐỘNG TỪ NHÓM 2 ===== -->
+        <div class="day-content" id="day2-content">
+            <div class="day-header">
+                <h2>📝 Ngày 2: Động Từ Nhóm 2 (一段動詞)</h2>
+                <p>⏱️ 30 phút | 🎯 Học cách chia động từ nhóm 2 sang thể Masu</p>
+                <ul class="day-goals">
+                    <li>✅ Nhận biết động từ nhóm 2 (động từ 1 đoạn)</li>
+                    <li>✅ Quy tắc chia: bỏ る + ます</li>
+                    <li>✅ Học 5 động từ nhóm 2 thông dụng</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="tip-box">
+                    <h4>☁️ Động từ nhóm 2 là gì?</h4>
+                    <p>Động từ nhóm 2 (一段動詞 - Ichidan doushi) là động từ có từ điển kết thúc bằng <strong>る</strong>, và âm trước る thuộc hàng <strong>い</strong> hoặc <strong>え</strong>. Khi chia sang thể Masu, ta chỉ cần <strong>bỏ る và thêm ます</strong>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="grammar-box">
+                    <div class="grammar-title">📐 Quy tắc chia thể Masu - Nhóm 2</div>
+                    <div class="grammar-structure">Động từ từ điển → bỏ る + ます</div>
+                    <div class="grammar-desc">Ví dụ: たべる (taberu) → たべます (tabemasu)<br>たべ<strong>る</strong> → たべ + ます</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">たべる → たべます (ăn)</div>
+                            <div class="grammar-example-vn">bỏ る + ます</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">みる → みます (nhìn, xem)</div>
+                            <div class="grammar-example-vn">bỏ る + ます</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">おきる → おきます (thức dậy)</div>
+                            <div class="grammar-example-vn">bỏ る + ます</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card vocab-section">
+                <h3 class="section-title"><span>☁️</span> 5 Động Từ Nhóm 2</h3>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#7EC8E3"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#7EC8E3"/>
+                                <path d="M 40 45 Q 50 50 60 45" stroke="white" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">たべます</div>
+                            <div class="vocab-romaji-lg">tabemasu</div>
+                            <div class="vocab-meaning-lg">🍽️ Ăn</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> たべる → <strong>たべます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('たべます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#B8D8F0"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#B8D8F0"/>
+                                <circle cx="42" cy="38" r="3" fill="white"/>
+                                <circle cx="58" cy="38" r="3" fill="white"/>
+                                <path d="M 44 48 L 56 48" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">みます</div>
+                            <div class="vocab-romaji-lg">mimasu</div>
+                            <div class="vocab-meaning-lg">👀 Nhìn, xem</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> みる → <strong>みます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('みます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="25" fill="#FFD93D"/>
+                                <path d="M 50 25 L 50 15 M 50 75 L 50 85 M 25 50 L 15 50 M 75 50 L 85 50" stroke="#E8C860" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">おきます</div>
+                            <div class="vocab-romaji-lg">okimasu</div>
+                            <div class="vocab-meaning-lg">⏰ Thức dậy</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> おきる → <strong>おきます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('おきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 30 50 L 50 30 L 70 50 L 70 75 L 30 75 Z" fill="#7EC8E3"/>
+                                <rect x="42" y="55" width="16" height="20" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">ねます</div>
+                            <div class="vocab-romaji-lg">nemasu</div>
+                            <div class="vocab-meaning-lg">😴 Ngủ</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> ねる → <strong>ねます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('ねます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="30" y="25" width="40" height="50" rx="5" fill="#B8D8F0"/>
+                                <rect x="35" y="30" width="30" height="35" fill="#D4ECFA"/>
+                                <circle cx="50" cy="68" r="3" fill="#4FA8C7"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">みます</div>
+                            <div class="vocab-romaji-lg">mimasu</div>
+                            <div class="vocab-meaning-lg">👀 Xem (TV, phim)</div>
+                            <div class="vocab-example"><strong>Từ điển:</strong> みる → <strong>みます</strong></div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('テレビをみます')">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 2</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> たべる chia thể Masu là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1')">たべるます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d2q1')">たべます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1')">たべります</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1')">たぶます</div>
+                    </div>
+                    <div class="feedback" id="d2q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> ねます nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2')">Thức dậy</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d2q2')">Ngủ</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2')">Ăn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2')">Xem</div>
+                    </div>
+                    <div class="feedback" id="d2q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> おきる → ?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3')">おきるます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3')">おきります</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d2q3')">おきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3')">おきいます</div>
+                    </div>
+                    <div class="feedback" id="d2q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 3: NHÓM 3 & PHÂN BIỆT ===== -->
+        <div class="day-content" id="day3-content">
+            <div class="day-header">
+                <h2>⚖️ Ngày 3: Động Từ Nhóm 3 & Phân Biệt</h2>
+                <p>⏱️ 30 phút | 🎯 Học động từ bất quy tắc và phân biệt 3 nhóm</p>
+                <ul class="day-goals">
+                    <li>✅ Động từ nhóm 3: する và くる</li>
+                    <li>✅ Phân biệt 3 nhóm động từ</li>
+                    <li>✅ Luyện tập chia động từ</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="grammar-box">
+                    <div class="grammar-title">📐 Động từ nhóm 3 (Bất quy tắc)</div>
+                    <div class="grammar-structure">する → します | くる → きます</div>
+                    <div class="grammar-desc">Chỉ có 2 động từ bất quy tắc trong tiếng Nhật:</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">する (suru) → します (shimasu) - Làm</div>
+                            <div class="grammar-example-vn">Bất quy tắc, phải học thuộc</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">くる (kuru) → きます (kimasu) - Đến</div>
+                            <div class="grammar-example-vn">Bất quy tắc, phải học thuộc</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="tip-box">
+                    <h4>☁️ Cách phân biệt 3 nhóm động từ</h4>
+                    <p><strong>Nhóm 1:</strong> Kết thúc bằng う, く, ぐ, す, つ, ぬ, ぶ, む, る (với âm trước る là あ, う, お)<br>
+                    <strong>Nhóm 2:</strong> Kết thúc bằng る (với âm trước る là い, え)<br>
+                    <strong>Nhóm 3:</strong> する và くる (bất quy tắc)</p>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 3</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> する chia thể Masu là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1')">するます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d3q1')">します</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1')">すります</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1')">すます</div>
+                    </div>
+                    <div class="feedback" id="d3q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> くる thuộc nhóm nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2')">Nhóm 1</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2')">Nhóm 2</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d3q2')">Nhóm 3</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2')">Không thuộc nhóm nào</div>
+                    </div>
+                    <div class="feedback" id="d3q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> きます nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3')">Đi</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d3q3')">Đến</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3')">Làm</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3')">Xem</div>
+                    </div>
+                    <div class="feedback" id="d3q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 4: TỪ VỰNG MỞ RỘNG ===== -->
+        <div class="day-content" id="day4-content">
+            <div class="day-header">
+                <h2>📚 Ngày 4: Từ Vựng Động Từ Mở Rộng</h2>
+                <p>⏱️ 30 phút | 🎯 Học thêm 15 động từ thông dụng</p>
+                <ul class="day-goals">
+                    <li>✅ 5 động từ sinh hoạt hàng ngày</li>
+                    <li>✅ 5 động từ học tập & công việc</li>
+                    <li>✅ 5 động từ di chuyển</li>
+                </ul>
+            </div>
+
+            <div class="card vocab-section">
+                <div class="group-title">🌅 Nhóm 1: Sinh Hoạt Hàng Ngày</div>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="25" fill="#FFD93D"/>
+                                <path d="M 50 25 L 50 15 M 50 75 L 50 85 M 25 50 L 15 50 M 75 50 L 85 50" stroke="#E8C860" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">おきます</div>
+                            <div class="vocab-romaji-lg">okimasu</div>
+                            <div class="vocab-meaning-lg">⏰ Thức dậy</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('おきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#7EC8E3"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#7EC8E3"/>
+                                <path d="M 40 45 Q 50 50 60 45" stroke="white" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">たべます</div>
+                            <div class="vocab-romaji-lg">tabemasu</div>
+                            <div class="vocab-meaning-lg">🍽️ Ăn</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('たべます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="25" fill="#B8D8F0"/>
+                                <path d="M 40 45 Q 50 50 60 45" stroke="white" stroke-width="3" fill="none"/>
+                                <path d="M 40 55 Q 50 60 60 55" stroke="white" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">のみます</div>
+                            <div class="vocab-romaji-lg">nomimasu</div>
+                            <div class="vocab-meaning-lg">🥤 Uống</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('のみます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 30 50 L 50 30 L 70 50 L 70 75 L 30 75 Z" fill="#7EC8E3"/>
+                                <rect x="42" y="55" width="16" height="20" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">ねます</div>
+                            <div class="vocab-romaji-lg">nemasu</div>
+                            <div class="vocab-meaning-lg">😴 Ngủ</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('ねます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="30" y="30" width="40" height="40" rx="5" fill="#B8D8F0"/>
+                                <circle cx="50" cy="50" r="15" fill="#D4ECFA"/>
+                                <path d="M 50 40 L 50 50 L 58 55" stroke="#4FA8C7" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">します</div>
+                            <div class="vocab-romaji-lg">shimasu</div>
+                            <div class="vocab-meaning-lg">🎯 Làm</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('します')">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card vocab-section">
+                <div class="group-title">📚 Nhóm 2: Học Tập & Công Việc</div>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="25" y="20" width="50" height="60" rx="3" fill="#7EC8E3"/>
+                                <line x1="35" y1="35" x2="65" y2="35" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="45" x2="65" y2="45" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="55" x2="65" y2="55" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">べんきょうします</div>
+                            <div class="vocab-romaji-lg">benkyoushimasu</div>
+                            <div class="vocab-meaning-lg">📖 Học</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('べんきょうします')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="20" y="25" width="60" height="50" rx="5" fill="#B8D8F0"/>
+                                <line x1="30" y1="40" x2="70" y2="40" stroke="white" stroke-width="2"/>
+                                <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="2"/>
+                                <line x1="30" y1="60" x2="60" y2="60" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">よみます</div>
+                            <div class="vocab-romaji-lg">yomimasu</div>
+                            <div class="vocab-meaning-lg">📖 Đọc</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('よみます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="25" y="20" width="50" height="60" rx="3" fill="#7EC8E3"/>
+                                <line x1="35" y1="35" x2="65" y2="35" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="45" x2="65" y2="45" stroke="white" stroke-width="2"/>
+                                <line x1="35" y1="55" x2="55" y2="55" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">かきます</div>
+                            <div class="vocab-romaji-lg">kakimasu</div>
+                            <div class="vocab-meaning-lg">✍️ Viết</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('かきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#7EC8E3"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#7EC8E3"/>
+                                <circle cx="42" cy="38" r="3" fill="white"/>
+                                <circle cx="58" cy="38" r="3" fill="white"/>
+                                <path d="M 44 48 Q 50 52 56 48" stroke="white" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">はなします</div>
+                            <div class="vocab-romaji-lg">hanashimasu</div>
+                            <div class="vocab-meaning-lg">🗣️ Nói chuyện</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('はなします')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="20" fill="#B8D8F0"/>
+                                <rect x="35" y="60" width="30" height="25" fill="#B8D8F0"/>
+                                <circle cx="42" cy="38" r="3" fill="white"/>
+                                <circle cx="58" cy="38" r="3" fill="white"/>
+                                <path d="M 44 48 L 56 48" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">ききます</div>
+                            <div class="vocab-romaji-lg">kikimasu</div>
+                            <div class="vocab-meaning-lg">👂 Nghe</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('ききます')">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card vocab-section">
+                <div class="group-title">🚶 Nhóm 3: Di Chuyển</div>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 30 70 L 50 30 L 70 70" stroke="#7EC8E3" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">いきます</div>
+                            <div class="vocab-romaji-lg">ikimasu</div>
+                            <div class="vocab-meaning-lg">🚶 Đi</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('いきます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 70 70 L 50 30 L 30 70" stroke="#B8D8F0" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">きます</div>
+                            <div class="vocab-romaji-lg">kimasu</div>
+                            <div class="vocab-meaning-lg">🚶 Đến</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('きます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <path d="M 30 50 L 70 50" stroke="#7EC8E3" stroke-width="5" stroke-linecap="round"/>
+                                <path d="M 60 40 L 70 50 L 60 60" stroke="#7EC8E3" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">かえります</div>
+                            <div class="vocab-romaji-lg">kaerimasu</div>
+                            <div class="vocab-meaning-lg">🏠 Về</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('かえります')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="25" fill="#B8D8F0"/>
+                                <path d="M 40 45 Q 50 50 60 45" stroke="white" stroke-width="3" fill="none"/>
+                                <path d="M 40 55 Q 50 60 60 55" stroke="white" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">のみます</div>
+                            <div class="vocab-romaji-lg">nomimasu</div>
+                            <div class="vocab-meaning-lg">🥤 Uống</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('のみます')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-illustration-lg">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <rect x="30" y="25" width="40" height="50" rx="5" fill="#7EC8E3"/>
+                                <rect x="35" y="30" width="30" height="35" fill="#D4ECFA"/>
+                                <circle cx="50" cy="68" r="3" fill="#4FA8C7"/>
+                            </svg>
+                        </div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp-lg">みます</div>
+                            <div class="vocab-romaji-lg">mimasu</div>
+                            <div class="vocab-meaning-lg">👀 Xem</div>
+                        </div>
+                        <button class="audio-btn" onclick="playAudio('みます')">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 4</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> べんきょうします nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1')">Đọc</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d4q1')">Học</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1')">Viết</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1')">Nói</div>
+                    </div>
+                    <div class="feedback" id="d4q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> かえります nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2')">Đi</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2')">Đến</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d4q2')">Về</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2')">Mua</div>
+                    </div>
+                    <div class="feedback" id="d4q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> きます (đến) thuộc nhóm nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3')">Nhóm 1</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3')">Nhóm 2</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d4q3')">Nhóm 3</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3')">Không thuộc nhóm nào</div>
+                    </div>
+                    <div class="feedback" id="d4q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 5: NGỮ PHÁP MASU ===== -->
+        <div class="day-content" id="day5-content">
+            <div class="day-header">
+                <h2>📐 Ngày 5: Ngữ Pháp Thể Masu</h2>
+                <p>⏱️ 30 phút | 🎯 4 dạng chia: ます/ません/ました/ませんでした</p>
+                <ul class="day-goals">
+                    <li>✅ Khẳng định hiện tại: ます</li>
+                    <li>✅ Phủ định hiện tại: ません</li>
+                    <li>✅ Khẳng định quá khứ: ました</li>
+                    <li>✅ Phủ định quá khứ: ませんでした</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="grammar-box">
+                    <div class="grammar-title">✅ Dạng 1: Khẳng định hiện tại</div>
+                    <div class="grammar-structure">Động từ thể Masu + です (hoặc không cần です)</div>
+                    <div class="grammar-desc">Dùng để diễn tả hành động ở hiện tại/tương lai.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしは まいあさ コーヒーを のみます。</div>
+                            <div class="grammar-example-vn">Tôi uống cà phê mỗi sáng.</div>
+                            <button class="audio-btn" onclick="playAudio('わたしはまいあさコーヒーをのみます')">🔊</button>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">まいにち にほんごを べんきょうします。</div>
+                            <div class="grammar-example-vn">Mỗi ngày tôi học tiếng Nhật.</div>
+                            <button class="audio-btn" onclick="playAudio('まいにちにほんごをべんきょうします')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <div class="grammar-title">❌ Dạng 2: Phủ định hiện tại</div>
+                    <div class="grammar-structure">Động từ thể Masu (bỏ ます) + ません</div>
+                    <div class="grammar-desc">Dùng để phủ định hành động ở hiện tại/tương lai.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしは さけを のみません。</div>
+                            <div class="grammar-example-vn">Tôi không uống rượu.</div>
+                            <button class="audio-btn" onclick="playAudio('わたしはさけをのみません')">🔊</button>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">あした 学校へ 行きません。</div>
+                            <div class="grammar-example-vn">Ngày mai tôi không đi học.</div>
+                            <button class="audio-btn" onclick="playAudio('あしたがっこうへいきません')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <div class="grammar-title">⏰ Dạng 3: Khẳng định quá khứ</div>
+                    <div class="grammar-structure">Động từ thể Masu (bỏ ます) + ました</div>
+                    <div class="grammar-desc">Dùng để diễn tả hành động đã xảy ra trong quá khứ.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">きのう えいがを みました。</div>
+                            <div class="grammar-example-vn">Hôm qua tôi đã xem phim.</div>
+                            <button class="audio-btn" onclick="playAudio('きのうえいがをみました')">🔊</button>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">あさごはんを たべました。</div>
+                            <div class="grammar-example-vn">Tôi đã ăn sáng.</div>
+                            <button class="audio-btn" onclick="playAudio('あさごはんをたべました')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <div class="grammar-title">❌ Dạng 4: Phủ định quá khứ</div>
+                    <div class="grammar-structure">Động từ thể Masu (bỏ ます) + ませんでした</div>
+                    <div class="grammar-desc">Dùng để phủ định hành động trong quá khứ.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">きのう べんきょうしませんでした。</div>
+                            <div class="grammar-example-vn">Hôm qua tôi đã không học.</div>
+                            <button class="audio-btn" onclick="playAudio('きのうべんきょうしませんでした')">🔊</button>
+                        </div>
+                    </div>
+                    <div class="grammar-note">
+                        <strong>💡 Tóm tắt 4 dạng:</strong><br>
+                        • ます (khẳng định hiện tại)<br>
+                        • ません (phủ định hiện tại)<br>
+                        • ました (khẳng định quá khứ)<br>
+                        • ませんでした (phủ định quá khứ)
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 5</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> Dạng quá khứ của たべます?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1')">たべません</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q1')">たべました</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1')">たべます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1')">たべませんでした</div>
+                    </div>
+                    <div class="feedback" id="d5q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> "Tôi không đi" nói thế nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2')">いきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q2')">いきません</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2')">いきました</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2')">いきませんでした</div>
+                    </div>
+                    <div class="feedback" id="d5q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> みました nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3')">Xem (hiện tại)</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3')">Không xem</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q3')">Đã xem</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3')">Sẽ xem</div>
+                    </div>
+                    <div class="feedback" id="d5q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 6: HỘI THOẠI ===== -->
+        <div class="day-content" id="day6-content">
+            <div class="day-header">
+                <h2>💬 Ngày 6: Hội Thoại Thực Tế</h2>
+                <p>⏱️ 30 phút | 🎯 3 tình huống sử dụng thể Masu</p>
+                <ul class="day-goals">
+                    <li>✅ Hội thoại 1: Hỏi nghề nghiệp</li>
+                    <li>✅ Hội thoại 2: Thói quen hàng ngày</li>
+                    <li>✅ Hội thoại 3: Kế hoạch cuối tuần</li>
+                </ul>
+            </div>
+
+            <div class="card dialogue-section">
+                <h3 class="section-title"><span>💬</span> Hội Thoại 1: Hỏi Nghề Nghiệp</h3>
+                <div class="dialogue-box">
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue('d1')">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">しごとを していますか。</div>
+                            <div class="speaker-vn">Bạn có đang làm việc không?</div>
+                            <button class="audio-btn" onclick="playAudio('しごとをしていますか')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-new">〜ています (đang)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">はい、かいしゃで はたらいています。</div>
+                            <div class="speaker-vn">Vâng, tôi đang làm việc ở công ty.</div>
+                            <button class="audio-btn" onclick="playAudio('はい、かいしゃではたらいています')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-new">はたらきます (làm việc)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">そうですか。たいへんですね。</div>
+                            <div class="speaker-vn">Vậy à. Vất vả nhỉ.</div>
+                            <button class="audio-btn" onclick="playAudio('そうですか。たいへんですね')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card dialogue-section">
+                <h3 class="section-title"><span>💬</span> Hội Thoại 2: Thói Quen Hàng Ngày</h3>
+                <div class="dialogue-box">
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue('d2')">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">まいあさ なんじに おきますか。</div>
+                            <div class="speaker-vn">Mỗi sáng bạn thức dậy lúc mấy giờ?</div>
+                            <button class="audio-btn" onclick="playAudio('まいあさなんじにおきますか')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-prev">おきます (T13)</span>
+                                <span class="structure-tag tag-prev">なんじ (T9)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">ろくじに おきます。そして、あさごはんを たべます。</div>
+                            <div class="speaker-vn">Tôi thức dậy lúc 6 giờ. Và ăn sáng.</div>
+                            <button class="audio-btn" onclick="playAudio('ろくじにおきます。そして、あさごはんをたべます')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-new">そして (và)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">ばんごはんは なにを たべますか。</div>
+                            <div class="speaker-vn">Bữa tối bạn ăn gì?</div>
+                            <button class="audio-btn" onclick="playAudio('ばんごはんはなにをたべますか')">🔊</button>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">ごはん と さかなを たべます。</div>
+                            <div class="speaker-vn">Tôi ăn cơm và cá.</div>
+                            <button class="audio-btn" onclick="playAudio('ごはんとさかなをたべます')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card dialogue-section">
+                <h3 class="section-title"><span>💬</span> Hội Thoại 3: Kế Hoạch Cuối Tuần</h3>
+                <div class="dialogue-box">
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue('d3')">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">しゅうまつ なにを しますか。</div>
+                            <div class="speaker-vn">Cuối tuần bạn làm gì?</div>
+                            <button class="audio-btn" onclick="playAudio('しゅうまつなにをしますか')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-new">しゅうまつ (cuối tuần)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">ともだちと えいがを みます。</div>
+                            <div class="speaker-vn">Tôi xem phim với bạn.</div>
+                            <button class="audio-btn" onclick="playAudio('ともだちとえいがをみます')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-prev">みます (T13)</span>
+                                <span class="structure-tag tag-prev">ともだち (bạn)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">いいですね。わたしも いっしょに いきます。</div>
+                            <div class="speaker-vn">Hay nhỉ. Tôi cũng đi cùng.</div>
+                            <button class="audio-btn" onclick="playAudio('いいですね。わたしもいっしょにいきます')">🔊</button>
+                            <div class="structure-tags">
+                                <span class="structure-tag tag-new">いっしょに (cùng nhau)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 6</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> "はたらきます" nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1')">Học</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d6q1')">Làm việc</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1')">Ăn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1')">Ngủ</div>
+                    </div>
+                    <div class="feedback" id="d6q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> "しゅうまつ" nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2')">Ngày thường</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d6q2')">Cuối tuần</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2')">Sáng nay</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2')">Tối nay</div>
+                    </div>
+                    <div class="feedback" id="d6q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> Nghe: <button class="audio-btn" onclick="playAudio('ともだちとえいがをみます')">🔊</button></div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3')">Ăn cơm với bạn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d6q3')">Xem phim với bạn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3')">Đi học với bạn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3')">Nói chuyện với bạn</div>
+                    </div>
+                    <div class="feedback" id="d6q3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAY 7: QUIZ ===== -->
+        <div class="day-content" id="day7-content">
+            <div class="day-header">
+                <h2>🎯 Ngày 7: Ôn Tập & Quiz Tổng Hợp</h2>
+                <p>⏱️ 30 phút | 🎯 Kiểm tra toàn bộ kiến thức tuần 13</p>
+                <ul class="day-goals">
+                    <li>✅ Ôn tập 20+ động từ qua Flashcard</li>
+                    <li>✅ Ôn tập 4 dạng chia thể Masu</li>
+                    <li>✅ Quiz 10 câu tổng hợp</li>
+                </ul>
+            </div>
+
+            <div class="card flashcard-section">
+                <h3 class="section-title"><span>🎴</span> Phần 1: Flashcard Động Từ</h3>
+                <p class="section-subtitle">Click vào thẻ để lật và xem nghĩa</p>
+                <div class="flashcard-container">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">かきます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">kakimasu</div><div class="flashcard-meaning">✍️ Viết</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">よみます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">yomimasu</div><div class="flashcard-meaning">📖 Đọc</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">たべます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">tabemasu</div><div class="flashcard-meaning">🍽️ Ăn</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">のみます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">nomimasu</div><div class="flashcard-meaning">🥤 Uống</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">いきます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">ikimasu</div><div class="flashcard-meaning">🚶 Đi</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">きます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">kimasu</div><div class="flashcard-meaning">🚶 Đến</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">ねます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">nemasu</div><div class="flashcard-meaning">😴 Ngủ</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">みます</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">mimasu</div><div class="flashcard-meaning">👀 Xem</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">します</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">shimasu</div><div class="flashcard-meaning">🎯 Làm</div></div>
+                        </div>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><span class="flashcard-jp">べんきょうします</span><div class="flashcard-hint">☁️ Lật</div></div>
+                            <div class="flashcard-back"><div class="flashcard-romaji">benkyoushimasu</div><div class="flashcard-meaning">📖 Học</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card exercise-section">
+                <h3 class="section-title"><span>📝</span> Phần 2: Quiz Tổng Hợp (10 Câu)</h3>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">1</span> よむ chia thể Masu là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1')">よむます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q1')">よみます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1')">よります</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1')">よいます</div>
+                    </div>
+                    <div class="feedback" id="d7q1"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">2</span> たべます nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2')">Uống</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q2')">Ăn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2')">Ngủ</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2')">Xem</div>
+                    </div>
+                    <div class="feedback" id="d7q2"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">3</span> Dạng phủ định của いきます?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3')">いきます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q3')">いきません</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3')">いきました</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3')">いきませんでした</div>
+                    </div>
+                    <div class="feedback" id="d7q3"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">4</span> する thuộc nhóm nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4')">Nhóm 1</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4')">Nhóm 2</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q4')">Nhóm 3</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4')">Không thuộc nhóm nào</div>
+                    </div>
+                    <div class="feedback" id="d7q4"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">5</span> ねます nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5')">Thức dậy</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q5')">Ngủ</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5')">Ăn</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5')">Uống</div>
+                    </div>
+                    <div class="feedback" id="d7q5"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">6</span> Dạng quá khứ của みます?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6')">みます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6')">みません</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q6')">みました</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6')">みませんでした</div>
+                    </div>
+                    <div class="feedback" id="d7q6"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">7</span> べんきょうします nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7')">Làm việc</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q7')">Học</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7')">Đọc</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7')">Viết</div>
+                    </div>
+                    <div class="feedback" id="d7q7"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">8</span> かえります nghĩa là gì?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8')">Đi</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8')">Đến</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q8')">Về</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8')">Mua</div>
+                    </div>
+                    <div class="feedback" id="d7q8"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">9</span> "Tôi đã ăn" nói thế nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9')">たべます</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9')">たべません</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q9')">たべました</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9')">たべませんでした</div>
+                    </div>
+                    <div class="feedback" id="d7q9"></div>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-q"><span class="q-num">10</span> きます (đến) thuộc nhóm nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10')">Nhóm 1</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10')">Nhóm 2</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,true,'d7q10')">Nhóm 3</div>
+                        <div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10')">Không thuộc nhóm nào</div>
+                    </div>
+                    <div class="feedback" id="d7q10"></div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h3 style="font-size:1.8em;margin-bottom:15px;color:var(--text-dark)">🎉 Chúc Mừng! Bạn Hoàn Thành Tuần 13!</h3>
+                <div class="progress-bar"><div class="progress-fill" id="weekProgress"></div></div>
+                <p style="font-size:1.1em;color:var(--text-dark);margin:20px 0;font-weight:700">Bạn đã học: <strong>20+ động từ</strong> + <strong>3 nhóm động từ</strong> + <strong>4 dạng chia Masu</strong> + <strong>3 hội thoại</strong></p>
+                <p style="font-size:1em;color:var(--text-medium);margin-bottom:20px">☁️ Tiếp tục với Tuần 14: Trợ từ は, が, を!</p>
+                <div style="margin-top:20px">
+                    <a href="n5-w14.html" class="btn btn-primary" style="font-size:1.05em;padding:14px 30px"><span>🚀</span> Tuần 14: Trợ từ は, が, を</a>
+                    <a href="n5.html" class="btn btn-secondary"><span>🏠</span> Về Hub N5</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+            <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>☁️ Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ ☁️ 🌸</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 80 tuần</p>
+    </footer>
+
+    <script>
+        function createClouds(){const c=document.getElementById('cloudContainer'),p=['☁️','☁️','⛅','☁️'];for(let i=0;i<8;i++){const s=document.createElement('div');s.className='cloud';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.top=(Math.random()*80+10)+'%';s.style.animationDuration=(Math.random()*30+40)+'s';s.style.animationDelay=Math.random()*20+'s';s.style.fontSize=(Math.random()*20+20)+'px';c.appendChild(s)}}
+        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.8;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
+        function playDialogue(id){const d={'d1':['しごとをしていますか。','はい、かいしゃではたらいています。','そうですか。たいへんですね。'],'d2':['まいあさなんじにおきますか。','ろくじにおきます。そして、あさごはんをたべます。','ばんごはんはなにをたべますか。','ごはんとさかなをたべます。'],'d3':['しゅうまつなにをしますか。','ともだちとえいがをみます。','いいですね。わたしもいっしょにいきます。']};const l=d[id];let i=0;function n(){if(i<l.length){const u=new SpeechSynthesisUtterance(l[i]);u.lang='ja-JP';u.rate=.8;u.pitch=1.1;u.onend=()=>{i++;n()};window.speechSynthesis.speak(u)}}n()}
+        function stopAudio(){window.speechSynthesis.cancel()}
+        let currentDay=1;
+        function showDay(d){document.querySelectorAll('.day-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.day-tab').forEach(c=>c.classList.remove('active'));document.getElementById('day'+d+'-content').classList.add('active');document.querySelectorAll('.day-tab')[d-1].classList.add('active');currentDay=d;document.getElementById('days-nav').scrollIntoView({behavior:'smooth',block:'start'})}
+        function nextDay(){if(currentDay<7)showDay(currentDay+1)}
+        function prevDay(){if(currentDay>1)showDay(currentDay-1)}
+        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct'}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong'}updateProgress()}
+        let progress=0;
+        function updateProgress(){progress=Math.min(100,progress+10);const b=document.getElementById('weekProgress');if(b)b.style.width=progress+'%'}
+        window.addEventListener('load',()=>{createClouds();window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
