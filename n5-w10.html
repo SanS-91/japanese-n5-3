@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 JLPT N5 - Hành Trình Nhập Môn | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --sakura:#FFB7C5;--sakura-dark:#E87A95;--sakura-light:#FDE4E9;
+            --gold:#F4C47A;--gold-dark:#D4A040;--gold-light:#FFF0B8;
+            --lavender:#C9B1FF;--lavender-dark:#8A6FD4;--lavender-light:#E8DFFF;
+            --mint:#A8E6CF;--mint-dark:#5FD4A8;--mint-light:#D4F5E9;
+            --sky:#B8D8F0;--sky-dark:#4A90D4;--sky-light:#D6ECFF;
+            --peach:#FFCBA4;--peach-dark:#E89688;--peach-light:#FFE5CC;
+            --coral:#FFB8A8;--coral-dark:#FF9EAA;--coral-light:#FFE0D4;
+            --text-dark:#3D2E3D;--text-medium:#6B5A6B;--text-light:#9A8A9A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(255,183,197,.5)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(201,177,255,.5)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(168,230,207,.4)0%,transparent 45%),radial-gradient(circle at 80% 90%,rgba(244,196,122,.4)0%,transparent 40%),linear-gradient(135deg,#FFF8F9 0%,#F8F4FF 50%,#F5FCF8 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh}
+        .bg-circle{position:fixed;border-radius:50%;opacity:.35;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
+        .bg-circle:nth-child(1){width:350px;height:350px;background:var(--sakura);top:8%;left:5%}
+        .bg-circle:nth-child(2){width:280px;height:280px;background:var(--lavender);top:55%;right:8%;animation-delay:8s}
+        .bg-circle:nth-child(3){width:220px;height:220px;background:var(--mint);top:30%;left:60%;animation-delay:4s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.05)}}
+        .sakura-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sakura{position:absolute;top:-10%;font-size:18px;animation:fall linear infinite;opacity:.5}
+        @keyframes fall{0%{transform:translateY(-10vh) rotate(0);opacity:0}10%{opacity:.6}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:2px solid rgba(255,183,197,.3);display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(232,122,149,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--sakura-dark),var(--lavender-dark),var(--peach-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:1.5px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--sakura-light);color:var(--sakura-dark);border-color:var(--sakura)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(253,228,233,.8)30%,rgba(232,223,255,.7)60%,rgba(255,240,184,.7)100%);border-radius:32px;padding:55px 40px;margin-bottom:40px;border:2px solid rgba(255,255,255,.95);box-shadow:0 10px 40px rgba(232,122,149,.18);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.6)0%,transparent 60%);animation:rotate 30s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:1s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:.5s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:.9;transform:scale(1.1)}}
+        .hero-badge{background:linear-gradient(135deg,var(--sakura),var(--lavender),var(--gold));background-size:200% auto;color:white;padding:12px 26px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(232,122,149,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--sakura-dark),var(--lavender-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--sakura-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:780px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:30px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(232,122,149,.18);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s}
+        .stat-item:hover{transform:translateY(-3px)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--sakura-dark),var(--lavender-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        .mascot-container{text-align:center;margin:25px 0;position:relative;z-index:2}
+        .mascot-svg{max-width:180px;height:auto;filter:drop-shadow(0 8px 20px rgba(232,122,149,.3));animation:floatMascot 4s ease-in-out infinite}
+        @keyframes floatMascot{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:2}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--sakura),var(--sakura-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(232,122,149,.4)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(232,122,149,.5);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text-dark);border:2px solid var(--sakura);backdrop-filter:blur(10px)}
+        .btn-secondary:hover{background:var(--sakura-light);transform:translateY(-3px)}
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(232,122,149,.12);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--sakura),var(--lavender),var(--gold));opacity:.85}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--sakura-dark),var(--lavender-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:30px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        .phase-title{font-size:1.35em;font-weight:900;color:var(--text-dark);margin:30px 0 15px;padding-bottom:10px;border-bottom:3px dashed var(--sakura);display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .phase-icon{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.5em;box-shadow:0 4px 15px rgba(232,122,149,.15);flex-shrink:0}
+        .phase-icon.p1{background:linear-gradient(135deg,var(--sakura-light),var(--peach-light))}
+        .phase-icon.p2{background:linear-gradient(135deg,var(--lavender-light),var(--sky-light))}
+        .phase-icon.p3{background:linear-gradient(135deg,var(--mint-light),var(--gold-light))}
+        .phase-icon.p4{background:linear-gradient(135deg,var(--coral-light),var(--lavender-light))}
+        .phase-text{flex:1}
+        .phase-text h3{font-size:1.1em;margin-bottom:3px}
+        .phase-text p{font-size:.88em;color:var(--text-medium);font-weight:600}
+        .phase-range{padding:6px 16px;border-radius:20px;font-size:.85em;font-weight:800;color:white}
+        .phase-range.p1{background:linear-gradient(135deg,var(--sakura),var(--peach))}
+        .phase-range.p2{background:linear-gradient(135deg,var(--lavender),var(--sky))}
+        .phase-range.p3{background:linear-gradient(135deg,var(--mint),var(--gold))}
+        .phase-range.p4{background:linear-gradient(135deg,var(--coral),var(--lavender))}
+        .weeks-container{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 30px;position:relative;z-index:2}
+        .week-card{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 15px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(232,122,149,.1);transition:.35s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative;overflow:hidden}
+        .week-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sakura),var(--lavender));opacity:.85}
+        .week-card:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(232,122,149,.2);border-color:var(--sakura)}
+        .week-card:hover::before{height:7px;opacity:1}
+        .week-card.completed::before{background:linear-gradient(90deg,var(--mint),var(--mint-dark))}
+        .week-card.current::before{background:linear-gradient(90deg,var(--gold),var(--gold-dark))}
+        .week-card.completed{border-color:var(--mint)}
+        .week-card.current{border-color:var(--gold)}
+        .week-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;position:relative;z-index:2}
+        .week-num{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9em;flex-shrink:0;color:white;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+        .week-card.completed .week-num{background:linear-gradient(135deg,var(--mint),var(--mint-dark))}
+        .week-card.current .week-num{background:linear-gradient(135deg,var(--gold),var(--gold-dark))}
+        .week-card:not(.completed):not(.current) .week-num{background:linear-gradient(135deg,var(--sakura),var(--sakura-dark))}
+        .week-title{font-weight:800;color:var(--text-dark);font-size:.9em;line-height:1.3;flex:1}
+        .week-desc{font-size:.78em;color:var(--text-medium);line-height:1.4;margin-top:6px;font-weight:600;position:relative;z-index:2}
+        .week-jp{font-family:'M PLUS Rounded 1c';font-size:.82em;color:var(--sakura-dark);margin-top:8px;font-weight:700;background:rgba(253,228,233,.5);padding:4px 8px;border-radius:8px;text-align:center;border:1px dashed var(--sakura);position:relative;z-index:2}
+        .week-badge{position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:10px;font-size:.7em;font-weight:800;z-index:3;backdrop-filter:blur(10px)}
+        .badge-done{background:rgba(212,245,233,.95);color:var(--mint-dark)}
+        .badge-now{background:rgba(255,240,184,.95);color:var(--gold-dark)}
+        .badge-next{background:rgba(253,228,233,.95);color:var(--sakura-dark)}
+        .goal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0;position:relative;z-index:2}
+        .goal-card{background:rgba(255,255,255,.95);border-radius:22px;padding:25px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(232,122,149,.1);transition:.35s;position:relative;overflow:hidden}
+        .goal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;opacity:.85}
+        .goal-card:nth-child(1)::before{background:linear-gradient(90deg,var(--sakura),var(--peach))}
+        .goal-card:nth-child(2)::before{background:linear-gradient(90deg,var(--lavender),var(--sky))}
+        .goal-card:nth-child(3)::before{background:linear-gradient(90deg,var(--mint),var(--gold))}
+        .goal-card:nth-child(4)::before{background:linear-gradient(90deg,var(--peach),var(--coral))}
+        .goal-card:nth-child(5)::before{background:linear-gradient(90deg,var(--sky),var(--mint))}
+        .goal-card:nth-child(6)::before{background:linear-gradient(90deg,var(--gold),var(--lavender))}
+        .goal-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(232,122,149,.2)}
+        .goal-icon{width:65px;height:65px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2em;margin:0 auto 15px;background:rgba(255,255,255,.8);box-shadow:0 4px 15px rgba(232,122,149,.15);position:relative;z-index:2}
+        .goal-title{font-size:1.1em;font-weight:900;color:var(--text-dark);margin-bottom:12px;text-align:center;position:relative;z-index:2}
+        .goal-list{list-style:none;position:relative;z-index:2}
+        .goal-list li{padding:5px 0;font-size:.88em;color:var(--text-dark);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+        .goal-list li::before{content:'✦';color:var(--sakura-dark);font-weight:900;flex-shrink:0;margin-top:2px}
+        .milestone-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:30px 0;position:relative;z-index:2}
+        .milestone-card{border-radius:22px;padding:22px 18px;text-align:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(232,122,149,.1);transition:.35s;position:relative;overflow:hidden}
+        .milestone-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;opacity:.85}
+        .milestone-card:nth-child(1)::before{background:linear-gradient(90deg,var(--sakura),var(--peach))}
+        .milestone-card:nth-child(2)::before{background:linear-gradient(90deg,var(--lavender),var(--sky))}
+        .milestone-card:nth-child(3)::before{background:linear-gradient(90deg,var(--mint),var(--gold))}
+        .milestone-card:nth-child(4)::before{background:linear-gradient(90deg,var(--peach),var(--coral))}
+        .milestone-card:nth-child(5)::before{background:linear-gradient(90deg,var(--gold),var(--lavender))}
+        .milestone-card:nth-child(1){background:linear-gradient(135deg,rgba(253,228,233,.9),rgba(255,229,204,.8))}
+        .milestone-card:nth-child(2){background:linear-gradient(135deg,rgba(232,223,255,.9),rgba(214,236,255,.8))}
+        .milestone-card:nth-child(3){background:linear-gradient(135deg,rgba(212,245,233,.9),rgba(255,240,184,.8))}
+        .milestone-card:nth-child(4){background:linear-gradient(135deg,rgba(255,229,204,.9),rgba(255,224,212,.8))}
+        .milestone-card:nth-child(5){background:linear-gradient(135deg,rgba(255,240,184,.9),rgba(232,223,255,.8))}
+        .milestone-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(232,122,149,.2)}
+        .milestone-num{font-size:2.3em;font-weight:900;background:linear-gradient(135deg,var(--sakura-dark),var(--lavender-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:8px;line-height:1;position:relative;z-index:2}
+        .milestone-week{background:rgba(255,255,255,.9);padding:5px 12px;border-radius:15px;font-size:.82em;font-weight:800;color:var(--sakura-dark);display:inline-block;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.05);position:relative;z-index:2}
+        .milestone-title{font-size:1em;font-weight:900;color:var(--text-dark);margin-bottom:8px;position:relative;z-index:2}
+        .milestone-desc{font-size:.82em;color:var(--text-medium);line-height:1.5;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        .milestone-list{list-style:none;text-align:left;font-size:.75em;color:var(--text-medium);position:relative;z-index:2}
+        .milestone-list li{padding:3px 0;display:flex;gap:6px;line-height:1.4}
+        .milestone-list li::before{content:'✦';color:var(--sakura-dark);font-weight:900;flex-shrink:0}
+        .resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:30px 0;position:relative;z-index:2}
+        .resource-card{background:rgba(255,255,255,.95);border-radius:22px;padding:25px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(232,122,149,.1);transition:.35s;position:relative;overflow:hidden}
+        .resource-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;opacity:.85}
+        .resource-card:nth-child(1)::before{background:linear-gradient(90deg,var(--sakura),var(--peach))}
+        .resource-card:nth-child(2)::before{background:linear-gradient(90deg,var(--lavender),var(--sky))}
+        .resource-card:nth-child(3)::before{background:linear-gradient(90deg,var(--mint),var(--gold))}
+        .resource-card:nth-child(4)::before{background:linear-gradient(90deg,var(--sky),var(--mint))}
+        .resource-card:nth-child(5)::before{background:linear-gradient(90deg,var(--peach),var(--coral))}
+        .resource-card:nth-child(6)::before{background:linear-gradient(90deg,var(--gold),var(--lavender))}
+        .resource-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(232,122,149,.2)}
+        .resource-icon{width:65px;height:65px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2em;margin:0 auto 15px;box-shadow:0 4px 15px rgba(232,122,149,.15);position:relative;z-index:2}
+        .resource-card:nth-child(1) .resource-icon{background:linear-gradient(135deg,var(--sakura-light),var(--peach-light))}
+        .resource-card:nth-child(2) .resource-icon{background:linear-gradient(135deg,var(--lavender-light),var(--sky-light))}
+        .resource-card:nth-child(3) .resource-icon{background:linear-gradient(135deg,var(--mint-light),var(--gold-light))}
+        .resource-card:nth-child(4) .resource-icon{background:linear-gradient(135deg,var(--sky-light),var(--mint-light))}
+        .resource-card:nth-child(5) .resource-icon{background:linear-gradient(135deg,var(--peach-light),var(--coral-light))}
+        .resource-card:nth-child(6) .resource-icon{background:linear-gradient(135deg,var(--gold-light),var(--lavender-light))}
+        .resource-title{font-size:1.1em;font-weight:900;color:var(--text-dark);text-align:center;margin-bottom:8px;position:relative;z-index:2}
+        .resource-desc{font-size:.88em;color:var(--text-medium);text-align:center;margin-bottom:15px;line-height:1.5;font-weight:600;position:relative;z-index:2}
+        .resource-list{list-style:none;margin-bottom:15px;position:relative;z-index:2}
+        .resource-list li{padding:6px 0;font-size:.85em;color:var(--text-dark);display:flex;align-items:flex-start;gap:8px;line-height:1.5;border-bottom:1px dashed rgba(255,183,197,.3)}
+        .resource-list li:last-child{border-bottom:none}
+        .resource-list li::before{content:'✦';color:var(--sakura-dark);font-weight:900;flex-shrink:0;margin-top:2px}
+        .resource-link{display:block;text-align:center;background:linear-gradient(135deg,var(--sakura-light),var(--lavender-light));color:var(--sakura-dark);padding:10px;border-radius:14px;font-weight:800;text-decoration:none;transition:.3s;font-size:.88em;border:1.5px solid transparent;position:relative;z-index:2}
+        .resource-link:hover{background:linear-gradient(135deg,var(--sakura),var(--lavender));color:white;transform:translateY(-2px);box-shadow:0 6px 15px rgba(232,122,149,.3)}
+        .footer{background:linear-gradient(135deg,var(--sakura),var(--lavender),var(--gold));background-size:200% auto;color:white;padding:40px;text-align:center;margin-top:40px;border-radius:28px 28px 0 0;animation:shimmer 8s linear infinite}
+        .footer h3{font-size:1.5em;margin-bottom:10px;font-weight:900}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600}
+        @media(max-width:900px){.goal-grid{grid-template-columns:repeat(2,1fr)}.milestone-grid{grid-template-columns:repeat(3,1fr)}.weeks-container{grid-template-columns:repeat(3,1fr)}.resource-grid{grid-template-columns:1fr}}
+        @media(max-width:600px){.goal-grid{grid-template-columns:1fr}.milestone-grid{grid-template-columns:repeat(2,1fr)}.weeks-container{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.4em}.card{padding:22px}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div><div class="bg-circle"></div><div class="bg-circle"></div>
+    <div class="sakura-container" id="sakuraContainer"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🌸</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+    </header>
+
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">🌸</div>
+            <div class="sparkle-deco">💫</div>
+            <div class="sparkle-deco">🌺</div>
+            <span class="hero-badge">🌸 Cấp độ Nhập môn • Sơ cấp 1 • JLPT N5</span>
+            <h1>Bắt đầu hành trình<br>Nhật ngữ của bạn</h1>
+            <div class="hero-jp">日本語を始めよう！</div>
+            <p class="hero-desc">24 tuần học tập với 30 phút mỗi ngày ⏰<br>Từ zero đến giao tiếp cơ bản với người Nhật 💬<br>Nắm vững Hiragana, Katakana và 100 Kanji đầu tiên 🔤</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">24</span><span class="stat-label">Tuần học</span></div>
+                <div class="stat-item"><span class="stat-number">800</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">100</span><span class="stat-label">Kanji</span></div>
+                <div class="stat-item"><span class="stat-number">30'</span><span class="stat-label">Mỗi ngày</span></div>
+            </div>
+            <div class="mascot-container">
+                <svg class="mascot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs><radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#FFB7C5;stop-opacity:.7"/><stop offset="100%" style="stop-color:#C9B1FF;stop-opacity:.4"/></radialGradient></defs>
+                    <circle cx="100" cy="100" r="85" fill="url(#mBg)"/>
+                    <circle cx="100" cy="100" r="68" fill="#FDE4E9"/>
+                    <circle cx="100" cy="100" r="68" fill="none" stroke="#FFB7C5" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
+                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#E87A95" stroke-width="2.5" fill="none"/>
+                    <circle cx="85" cy="95" r="5" fill="#3D2E3D"/><circle cx="115" cy="95" r="5" fill="#3D2E3D"/>
+                    <circle cx="86" cy="93" r="1.5" fill="white"/><circle cx="116" cy="93" r="1.5" fill="white"/>
+                    <path d="M 92 108 Q 100 118 108 108" stroke="#3D2E3D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#FDE4E9" opacity=".9"/>
+                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#FDE4E9" opacity=".9"/>
+                    <path d="M 65 55 L 55 45 M 135 55 L 145 45" stroke="#E87A95" stroke-width="2.5" stroke-linecap="round"/>
+                    <text x="100" y="170" text-anchor="middle" font-size="22" font-weight="bold" fill="#E87A95" font-family="'M PLUS Rounded 1c',sans-serif">あ</text>
+                </svg>
+            </div>
+            <div class="hero-btns">
+                <a href="n5-w01.html" class="btn btn-primary"><span>🚀</span> Bắt đầu học ngay</a>
+                <a href="#roadmap" class="btn btn-secondary"><span>📚</span> Xem lộ trình</a>
+            </div>
+        </div>
+
+        <!-- MỤC TIÊU -->
+        <div class="card">
+            <h2 class="section-title"><span>🎯</span> Mục tiêu toàn diện JLPT N5 <span>✨</span></h2>
+            <p class="section-subtitle">Tổng quan đầy đủ những gì bạn sẽ chinh phục trong 24 tuần</p>
+            <div class="goal-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">🔤</div>
+                    <h3 class="goal-title">Bảng chữ cái & Kanji</h3>
+                    <ul class="goal-list">
+                        <li>46 Hiragana + dakuten (゛), handakuten (゜), combos (きゃ, しゅ...)</li>
+                        <li>46 Katakana + âm ghép dùng cho từ mượn nước ngoài</li>
+                        <li>100 Kanji cơ bản: số, ngày, người, lớn nhỏ, ăn uống, đi lại</li>
+                        <li>Thứ tự nét viết đúng chuẩn (stroke order)</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">📝</div>
+                    <h3 class="goal-title">~800 Từ vựng</h3>
+                    <ul class="goal-list">
+                        <li>Gia đình: 父, 母, 兄弟, 家族</li>
+                        <li>Đồ vật: 本, 時計, 傘, 車, 電話</li>
+                        <li>Thức ăn: 肉, 魚, 野菜, 果物, 飲み物</li>
+                        <li>Địa điểm: 学校, 病院, 駅, 店, 公園</li>
+                        <li>Thời gian: 朝, 昼, 夜, 月曜日, 一月</li>
+                        <li>Màu sắc, cơ thể, quần áo, thời tiết, động vật</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">📐</div>
+                    <h3 class="goal-title">Ngữ pháp nền tảng</h3>
+                    <ul class="goal-list">
+                        <li>Câu danh từ: AはBです, AはBですか</li>
+                        <li>Tính từ い/な: 大きい, きれい + です/でした</li>
+                        <li>Động từ thể Masu: 食べます, 行きません, 見ました</li>
+                        <li>Trợ từ: は, が, を, に, で, へ, と, も, から, まで, の</li>
+                        <li>Thể て: てください, てもいい, ている</li>
+                        <li>Tồn tại: あります (vật), います (người/động vật)</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🔢</div>
+                    <h3 class="goal-title">Số đếm & Thời gian</h3>
+                    <ul class="goal-list">
+                        <li>Số 0-10000: いち, じゅう, ひゃく, せん, まん</li>
+                        <li>Counter đặc thù: 人 (người), 本 (cây), 枚 (tấm), 匹 (con nhỏ)</li>
+                        <li>Thời gian: 時, 分, 秒, 曜日, 日, 月, 年</li>
+                        <li>Tần suất: いつも, よく, ときどき, あまり, ぜんぜん</li>
+                        <li>Giá tiền: いくら, ~円, 高い, 安い, おつり</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">💬</div>
+                    <h3 class="goal-title">Kỹ năng giao tiếp</h3>
+                    <ul class="goal-list">
+                        <li>Chào hỏi: おはよう, こんにちは, こんばんは, さようなら</li>
+                        <li>Tự giới thiệu: わたしは[tên]です, [国]人です</li>
+                        <li>Cảm ơn/xin lỗi: ありがとう, すみません, ごめんなさい</li>
+                        <li>Hỏi đường: ～はどこですか, ～へ怎么走りますか</li>
+                        <li>Mua sắm & Gọi món: ください, お願いします</li>
+                        <li>Hỏi thời gian, lịch trình, sở thích</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🎧</div>
+                    <h3 class="goal-title">Nghe & Đọc hiểu</h3>
+                    <ul class="goal-list">
+                        <li>Nghe hiểu hội thoại chậm, rõ ràng 30-60 giây</li>
+                        <li>Nắm bắt thông tin chính: ai, ở đâu, khi nào, giá bao nhiêu</li>
+                        <li>Đọc hiểu đoạn văn ngắn 50-100 từ có furigana</li>
+                        <li>Đọc thông báo, menu, biển hiệu đơn giản</li>
+                        <li>Phân biệt âm thanh tiếng Nhật: し/ち, つ/す, ひ/び/ぴ</li>
+                        <li>Hiểu văn cảnh giao tiếp cơ bản trong đời sống</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 CỘT MỐC -->
+        <div class="card">
+            <h2 class="section-title"><span>🏆</span> 5 Cột mốc quan trọng <span>🎉</span></h2>
+            <p class="section-subtitle">Những thành tựu cụ thể bạn sẽ đạt được trên hành trình N5</p>
+            <div class="milestone-grid">
+                <div class="milestone-card">
+                    <span class="milestone-num">1</span>
+                    <div class="milestone-week">Tuần 4 🌸</div>
+                    <h3 class="milestone-title">Thành thạo Hiragana</h3>
+                    <p class="milestone-desc">Đọc viết toàn bộ 46 chữ cái nền tảng + biến âm</p>
+                    <ul class="milestone-list">
+                        <li>46 Hiragana + dakuten (が, ざ, だ, ば)</li>
+                        <li>Handakuten (ぱ, ぴ, ぷ, ぺ, ぽ)</li>
+                        <li>Đọc được: さくら, ありがとう, おはよう</li>
+                        <li>Viết đúng stroke order tất cả chữ</li>
+                    </ul>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-num">2</span>
+                    <div class="milestone-week">Tuần 7 💜</div>
+                    <h3 class="milestone-title">Hoàn thành Katakana</h3>
+                    <p class="milestone-desc">Đọc được từ mượn và tên nước ngoài</p>
+                    <ul class="milestone-list">
+                        <li>46 Katakana + âm ghép (キャ, シュ, チョ...)</li>
+                        <li>Từ mượn: コーヒー, テレビ, コンピューター</li>
+                        <li>Tên nước: アメリカ, ベトナム, 日本</li>
+                        <li>Đọc menu, nhãn sản phẩm có Katakana</li>
+                    </ul>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-num">3</span>
+                    <div class="milestone-week">Tuần 8-12 👋</div>
+                    <h3 class="milestone-title">Giao tiếp cơ bản</h3>
+                    <p class="milestone-desc">Tự tin trong các tình huống hàng ngày</p>
+                    <ul class="milestone-list">
+                        <li>Tự giới thiệu: わたしは[tên]です</li>
+                        <li>Hỏi đáp: お名前, 年齢, 職業, 趣味</li>
+                        <li>Mô tả: 大きい/小さい, 高い/安い</li>
+                        <li>Đếm số, nói giờ, ngày tháng năm</li>
+                    </ul>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-num">4</span>
+                    <div class="milestone-week">Tuần 13-20 🏃</div>
+                    <h3 class="milestone-title">Ngữ pháp vững vàng</h3>
+                    <p class="milestone-desc">Chia động từ, dùng trợ từ thành thạo</p>
+                    <ul class="milestone-list">
+                        <li>Động từ Masu: 食べます, 行きます</li>
+                        <li>Trợ từ: は, が, を, に, で, へ, から, まで</li>
+                        <li>Thể て: てください, てもいい, ている</li>
+                        <li>Tồn tại: あります (vật), います (người)</li>
+                    </ul>
+                </div>
+                <div class="milestone-card">
+                    <span class="milestone-num">5</span>
+                    <div class="milestone-week">Tuần 24 🎓</div>
+                    <h3 class="milestone-title">Sẵn sàng thi N5</h3>
+                    <p class="milestone-desc">Đủ kiến thức thi JLPT N5 chính thức</p>
+                    <ul class="milestone-list">
+                        <li>800 từ vựng + 100 Kanji theo chuẩn JLPT</li>
+                        <li>Ngữ pháp: ~25 cấu trúc nền tảng</li>
+                        <li>Nghe hiểu hội thoại chậm 30-60 giây</li>
+                        <li>Đọc hiểu đoạn văn ngắn + thông báo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- LỘ TRÌNH 24 TUẦN -->
+        <div class="card" id="roadmap">
+            <h2 class="section-title"><span>📚</span> Lộ trình 24 tuần N5 <span>🗺️</span></h2>
+            <p class="section-subtitle">Click vào từng tuần để bắt đầu bài học chi tiết</p>
+
+            <!-- Giai đoạn 1 -->
+            <div class="phase-title">
+                <div class="phase-icon p1">🔤</div>
+                <div class="phase-text"><h3>Giai đoạn 1: Bảng chữ cái</h3><p>Nền tảng vững chắc với Hiragana + Katakana + Âm ghép</p></div>
+                <span class="phase-range p1">Tuần 1-7</span>
+            </div>
+            <div class="weeks-container">
+                <a href="n5-w01.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">1</div><div class="week-title">Hiragana あ～こ</div></div><div class="week-desc">Nguyên âm + hàng Ka</div><div class="week-jp">あいうえお + かきくけこ</div></a>
+                <a href="n5-w02.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">2</div><div class="week-title">Hiragana さ～と</div></div><div class="week-desc">Hàng Sa + Ta</div><div class="week-jp">さしすせそ + たちつてと</div></a>
+                <a href="n5-w03.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">3</div><div class="week-title">Hiragana な～ほ</div></div><div class="week-desc">Hàng Na + Ha</div><div class="week-jp">なにぬねの + はひふへほ</div></a>
+                <a href="n5-w04.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">4</div><div class="week-title">Hiragana ま～ん</div></div><div class="week-desc">Hoàn thành Hiragana + Dakuten</div><div class="week-jp">ま～ん + がぎぐげご</div></a>
+                <a href="n5-w05.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">5</div><div class="week-title">Katakana ア～コ</div></div><div class="week-desc">Nguyên âm + hàng Ka</div><div class="week-jp">アイウエオ + カキクケコ</div></a>
+                <a href="n5-w06.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">6</div><div class="week-title">Katakana サ～ト</div></div><div class="week-desc">Hàng Sa + Ta + Số đếm lớn</div><div class="week-jp">サシスセソ + タチツテト</div></a>
+                <a href="n5-w07.html" class="week-card completed"><div class="week-badge badge-done">✅</div><div class="week-header"><div class="week-num">7</div><div class="week-title">Katakana ナ～ン</div></div><div class="week-desc">Hoàn thành Katakana + Âm ghép</div><div class="week-jp">ナ～ン + キャ/シャ/チャ</div></a>
+            </div>
+
+            <!-- Giai đoạn 2 -->
+            <div class="phase-title">
+                <div class="phase-icon p2">💬</div>
+                <div class="phase-text"><h3>Giai đoạn 2: Ngữ pháp cơ bản</h3><p>Giao tiếp hàng ngày với các cấu trúc câu đơn giản</p></div>
+                <span class="phase-range p2">Tuần 8-12</span>
+            </div>
+            <div class="weeks-container">
+                <a href="n5-w08.html" class="week-card current"><div class="week-badge badge-now">🔥 Đang học</div><div class="week-header"><div class="week-num">8</div><div class="week-title">Chào hỏi & Giới thiệu</div></div><div class="week-desc">Tự giới thiệu bản thân</div><div class="week-jp">はじめまして / これは〜です</div></a>
+                <a href="n5-w09.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">9</div><div class="week-title">Số đếm & Thời gian</div></div><div class="week-desc">Số 1-100, giờ, ngày tháng</div><div class="week-jp">いち〜ひゃく / 時・分・曜日</div></a>
+                <a href="n5-w10.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">10</div><div class="week-title">Gia đình & Đồ vật</div></div><div class="week-desc">〜の, これ/それ/あれ</div><div class="week-jp">家族 / これは誰のですか</div></a>
+                <a href="n5-w11.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">11</div><div class="week-title">Tính từ い</div></div><div class="week-desc">Tính từ đuôi い</div><div class="week-jp">大きい/小さい + です/くない</div></a>
+                <a href="n5-w12.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">12</div><div class="week-title">Tính từ な</div></div><div class="week-desc">Tính từ đuôi な</div><div class="week-jp">きれい/しずか + です/じゃない</div></a>
+            </div>
+
+            <!-- Giai đoạn 3 -->
+            <div class="phase-title">
+                <div class="phase-icon p3">🏃</div>
+                <div class="phase-text"><h3>Giai đoạn 3: Ngữ pháp trung cấp</h3><p>Động từ, trợ từ và các cấu trúc phức tạp hơn</p></div>
+                <span class="phase-range p3">Tuần 13-18</span>
+            </div>
+            <div class="weeks-container">
+                <a href="n5-w13.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">13</div><div class="week-title">Động từ thể Masu</div></div><div class="week-desc">Chia động từ cơ bản</div><div class="week-jp">食べます/行きません/見ました</div></a>
+                <a href="n5-w14.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">14</div><div class="week-title">Trợ từ は, が, を</div></div><div class="week-desc">Chủ đề, chủ ngữ, tân ngữ</div><div class="week-jp">は/が/を + danh từ</div></a>
+                <a href="n5-w15.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">15</div><div class="week-title">Trợ từ に, で, へ</div></div><div class="week-desc">Thời gian, phương tiện, hướng</div><div class="week-jp">に/で/へ + danh từ</div></a>
+                <a href="n5-w16.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">16</div><div class="week-title">Vị trí & ある/いる</div></div><div class="week-desc">Tồn tại của vật và người</div><div class="week-jp">にあります/います</div></a>
+                <a href="n5-w17.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">17</div><div class="week-title">Sinh hoạt hàng ngày</div></div><div class="week-desc">Hoạt động thường ngày</div><div class="week-jp">Vて + います (đang làm)</div></a>
+                <a href="n5-w18.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">18</div><div class="week-title">Mua sắm & Tiền bạc</div></div><div class="week-desc">Hỏi giá, mua sắm</div><div class="week-jp">いくらですか/ください</div></a>
+            </div>
+
+            <!-- Giai đoạn 4 -->
+            <div class="phase-title">
+                <div class="phase-icon p4">🎓</div>
+                <div class="phase-text"><h3>Giai đoạn 4: Nâng cao & Tổng ôn</h3><p>Thể て, quá khứ và chuẩn bị thi JLPT N5</p></div>
+                <span class="phase-range p4">Tuần 19-24</span>
+            </div>
+            <div class="weeks-container">
+                <a href="n5-w19.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">19</div><div class="week-title">Thời tiết & Mùa</div></div><div class="week-desc">4 mùa và thời tiết</div><div class="week-jp">天気/季節/はる・なつ・あき・ふゆ</div></a>
+                <a href="n5-w20.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">20</div><div class="week-title">Quá khứ (た form)</div></div><div class="week-desc">Động từ quá khứ</div><div class="week-jp">Vた/Vなかった</div></a>
+                <a href="n5-w21.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">21</div><div class="week-title">Tính từ quá khứ</div></div><div class="week-desc">Tính từ ở thì quá khứ</div><div class="week-jp">いadjかった/なadjだった</div></a>
+                <a href="n5-w22.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">22</div><div class="week-title">Từ để hỏi</div></div><div class="week-desc">Các từ để hỏi cơ bản</div><div class="week-jp">なに/どこ/だれ/いつ/なぜ</div></a>
+                <a href="n5-w23.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">23</div><div class="week-title">Thể て & yêu cầu</div></div><div class="week-desc">Yêu cầu, xin phép</div><div class="week-jp">てください/てもいい</div></a>
+                <a href="n5-w24.html" class="week-card"><div class="week-badge badge-next">🔜</div><div class="week-header"><div class="week-num">24</div><div class="week-title">Ôn tập & Thi thử</div></div><div class="week-desc">Tổng ôn toàn bộ N5</div><div class="week-jp">Đề thi thử JLPT N5</div></a>
+            </div>
+        </div>
+
+        <!-- NGUỒN THAM KHẢO -->
+        <div class="card">
+            <h2 class="section-title"><span>🌐</span> Nguồn tham khảo & Luyện tập <span>📚</span></h2>
+            <p class="section-subtitle">Các nền tảng uy tín hỗ trợ luyện tập từng kỹ năng</p>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📖</div>
+                    <h3 class="resource-title">Từ vựng & Kanji</h3>
+                    <p class="resource-desc">Học từ vựng và Kanji với flashcard thông minh, từ điển tra cứu nhanh</p>
+                    <ul class="resource-list">
+                        <li><strong>Jisho.org</strong> - Từ điển Nhật-Anh online, tra kanji, ví dụ câu</li>
+                        <li><strong>Anki (AnkiWeb)</strong> - Flashcard SRS miễn phí, có bộ N5 800 từ</li>
+                        <li><strong>WaniKani</strong> - Học Kanji gamification (trả phí)</li>
+                        <li><strong>Kanji Study (Android)</strong> - App luyện viết Kanji miễn phí</li>
+                    </ul>
+                    <a href="https://jisho.org" target="_blank" class="resource-link">🔍 Khám phá Jisho.org →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📝</div>
+                    <h3 class="resource-title">Ngữ pháp & Cấu trúc</h3>
+                    <p class="resource-desc">Hướng dẫn ngữ pháp chi tiết, bài tập luyện tập và giải thích dễ hiểu</p>
+                    <ul class="resource-list">
+                        <li><strong>Tae Kim's Guide</strong> - Ngữ pháp miễn phí, giải thích bằng tiếng Anh</li>
+                        <li><strong>Bunpro</strong> - Luyện ngữ pháp SRS theo cấp độ JLPT</li>
+                        <li><strong>JGram.org</strong> - Database ngữ pháp tiếng Nhật miễn phí</li>
+                        <li><strong>Imabi.net</strong> - Ngữ pháp chi tiết từ N5 đến N1</li>
+                    </ul>
+                    <a href="https://guidetojapanese.org/learn/" target="_blank" class="resource-link">📖 Đọc Tae Kim's Guide →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🎧</div>
+                    <h3 class="resource-title">Luyện Nghe</h3>
+                    <p class="resource-desc">Nghe hội thoại thực tế, tin tức đơn giản và podcast dành cho người học</p>
+                    <ul class="resource-list">
+                        <li><strong>NHK Web Easy</strong> - Tin tức đơn giản có furigana + audio</li>
+                        <li><strong>Japanese Pod 101</strong> - Podcast bài học theo cấp độ</li>
+                        <li><strong>Comprehensible Japanese</strong> - Video dễ hiểu cho người mới</li>
+                        <li><strong>Nihongo Con Teppei</strong> - Podcast tiếng Nhật chậm, rõ</li>
+                    </ul>
+                    <a href="https://www3.nhk.or.jp/news/easy/" target="_blank" class="resource-link">📰 Đọc NHK Web Easy →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3 class="resource-title">Luyện Đọc & Thi thử</h3>
+                    <p class="resource-desc">Đọc truyện, báo chí đơn giản và luyện đề thi JLPT N5 với đáp án chi tiết</p>
+                    <ul class="resource-list">
+                        <li><strong>JLPT Sensei</strong> - Đề mẫu N5 miễn phí + giải thích ngữ pháp</li>
+                        <li><strong>Todai Easy Japanese</strong> - App đọc báo có furigana + audio</li>
+                        <li><strong>ReadLang</strong> - Đọc song ngữ Nhật-Việt, click để tra từ</li>
+                        <li><strong>Satori Reader</strong> - Truyện ngắn có giải thích ngữ pháp</li>
+                    </ul>
+                    <a href="https://jlptsensei.com" target="_blank" class="resource-link">🎯 Luyện thi JLPT Sensei →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🎮</div>
+                    <h3 class="resource-title">App & Game học tập</h3>
+                    <p class="resource-desc">Học tiếng Nhật qua app và game thú vị, phù hợp luyện tập hàng ngày</p>
+                    <ul class="resource-list">
+                        <li><strong>Duolingo</strong> - App miễn phí, gamification, phù hợp người mới</li>
+                        <li><strong>LingoDeer</strong> - App chuyên cho tiếng Nhật, giải thích ngữ pháp rõ</li>
+                        <li><strong>Obenkyo (Android)</strong> - App luyện Hiragana/Katakana/Kanji</li>
+                        <li><strong>Kana Drill</strong> - Game luyện bảng chữ cái nhanh</li>
+                    </ul>
+                    <a href="https://www.duolingo.com" target="_blank" class="resource-link">🎮 Thử Duolingo →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📺</div>
+                    <h3 class="resource-title">YouTube Channels</h3>
+                    <p class="resource-desc">Kênh YouTube dạy tiếng Nhật miễn phí, chất lượng cao</p>
+                    <ul class="resource-list">
+                        <li><strong>Japanese Ammo with Misa</strong> - Ngữ pháp N5-N3 giải thích rõ ràng</li>
+                        <li><strong>Nihongo no Mori</strong> - Bài giảng JLPT N5 miễn phí</li>
+                        <li><strong>JapanesePod101</strong> - Bài học ngắn, thực tế</li>
+                        <li><strong>That Japanese Man Yuta</strong> - Văn hóa và tiếng Nhật thực tế</li>
+                    </ul>
+                    <a href="https://www.youtube.com/@JapaneseAmmowithMisa" target="_blank" class="resource-link">📺 Xem Japanese Ammo →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align:center">
+            <h2 class="section-title"><span>👇</span> Sẵn sàng bắt đầu? <span>🚀</span></h2>
+            <p class="section-subtitle">Hành trình 24 tuần đang chờ bạn!</p>
+            <div style="margin-top:30px">
+                <a href="n5-w01.html" class="btn btn-primary" style="font-size:1.05em;padding:16px 36px"><span>🚀</span> Bắt đầu từ Tuần 1</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🌸 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🗾 🌸</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 80 tuần</p>
+    </footer>
+
+    <script>
+        function createSakura(){const c=document.getElementById('sakuraContainer'),p=['🌸','💮','✿','❀','🌺'];for(let i=0;i<20;i++){const s=document.createElement('div');s.className='sakura';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.left=Math.random()*100+'%';s.style.animationDuration=(Math.random()*12+15)+'s';s.style.animationDelay=Math.random()*10+'s';s.style.fontSize=(Math.random()*10+14)+'px';c.appendChild(s)}}
+        window.addEventListener('load',createSakura);
+    </script>
+</body>
+</html>
