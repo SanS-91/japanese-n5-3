@@ -3,717 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚓ Tuần 24: Tổng ôn N5 | Nihongo Journey</title>
+    <title>🏆 Tuần 24: Tổng ôn N5 | Nihongo Journey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;--navy-deep:#1E3A5F;
-            --sky:#6B8FC5;--sky-dark:#4A70A0;--sky-light:#D6E4F5;
-            --silver:#C5D0DC;--silver-dark:#9BA8B8;--silver-light:#E4EAF0;
-            --gold:#D4A017;--gold-light:#FFF0B8;
-            --text-dark:#1E2A3A;--text-medium:#3A4A5C;--text-light:#6B7A8C;
+            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FDE68A;--gold-deep:#B45309;
+            --purple:#8B5CF6;--purple-dark:#6D28D9;--purple-light:#C4B5FD;
+            --rose:#EC4899;--rose-dark:#BE185D;--rose-light:#FBCFE8;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#A5F3FC;
+            --success:#10B981;--success-dark:#059669;--success-light:#A7F3D0;
+            --text-dark:#1C1917;--text-medium:#44403C;--text-light:#78716C;
         }
-        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(74,111,165,.15)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(107,143,197,.15)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(44,74,117,.12)0%,transparent 40%),linear-gradient(135deg,#F0F4FA 0%,#E4ECF5 50%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh}
-        .bg-circle{position:fixed;border-radius:50%;opacity:.25;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
-        .bg-circle:nth-child(1){width:350px;height:350px;background:var(--navy);top:8%;left:5%}
-        .bg-circle:nth-child(2){width:280px;height:280px;background:var(--sky);top:55%;right:8%;animation-delay:8s}
-        .bg-circle:nth-child(3){width:220px;height:220px;background:var(--silver);top:30%;left:60%;animation-delay:4s}
-        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.05)}}
-        .wave-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
-        .wave{position:absolute;font-size:18px;animation:drift 25s linear infinite;opacity:.4}
-        @keyframes drift{0%{transform:translateX(-100px)}100%{transform:translateX(calc(100vw + 100px))}}
-        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:2px solid rgba(74,111,165,.2);display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(44,74,117,.08)}
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#FFFBEB 0%,#FDF4FF 25%,#ECFEFF 50%,#FFF7ED 75%,#FFFBEB 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh;overflow-x:hidden}
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.12;animation:floatShape 20s infinite ease-in-out;border-radius:50%}
+        .bg-shape:nth-child(1){top:5%;left:8%;width:320px;height:320px;background:radial-gradient(circle,var(--gold),transparent);animation-delay:0s}
+        .bg-shape:nth-child(2){top:55%;right:5%;width:280px;height:280px;background:radial-gradient(circle,var(--purple),transparent);animation-delay:6s}
+        .bg-shape:nth-child(3){bottom:5%;left:25%;width:220px;height:220px;background:radial-gradient(circle,var(--rose),transparent);animation-delay:12s}
+        .bg-shape:nth-child(4){top:25%;right:25%;width:180px;height:180px;background:radial-gradient(circle,var(--cyan),transparent);animation-delay:18s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-25px) scale(1.08)}}
+        .confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .confetti{position:absolute;font-size:16px;animation:fall 8s linear infinite;opacity:.6}
+        @keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,251,235,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan)) 1;box-shadow:0 4px 20px rgba(217,119,6,.1)}
         .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
-        .logo-main{background:linear-gradient(135deg,var(--navy-dark),var(--sky-dark),var(--gold));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        .logo-main{background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark),var(--rose-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
         @keyframes shimmer{to{background-position:200% center}}
         .nav-links{display:flex;gap:8px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:1.5px solid transparent}
-        .nav-links a:hover,.nav-links a.active{background:var(--navy-light);color:var(--navy-dark);border-color:var(--navy)}
-        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
-        .breadcrumb a{color:var(--navy-dark);text-decoration:none;font-weight:700}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));color:var(--gold-deep);border-color:var(--gold);box-shadow:0 4px 12px rgba(245,158,11,.2)}
         .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
-        .week-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
-        .week-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky),var(--gold));opacity:.9;border-radius:22px 22px 0 0}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--gold-dark);text-decoration:none;font-weight:700}
+
+        /* Week Nav */
+        .week-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(217,119,6,.08);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .week-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));opacity:.9;border-radius:22px 22px 0 0}
         .week-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-dark);padding:10px 16px;border-radius:16px;transition:.3s;flex:1;min-width:200px;max-width:45%}
-        .week-nav-link:hover{background:var(--navy-light);transform:translateY(-2px)}
-        .week-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(44,74,117,.12)}
+        .week-nav-link:hover{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));transform:translateY(-2px)}
+        .week-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(217,119,6,.12)}
         .week-nav-prev .week-nav-icon{background:linear-gradient(135deg,#F0D4C4,#CC7755)}
-        .week-nav-next .week-nav-icon{background:linear-gradient(135deg,#D4F5E9,#5FD4A8)}
+        .week-nav-next .week-nav-icon{background:linear-gradient(135deg,var(--success-light),var(--success))}
         .week-nav-info{flex:1;min-width:0}
         .week-nav-label{font-size:.75em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
         .week-nav-title{font-size:.95em;color:var(--text-dark);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .week-nav-arrow{font-size:1.5em;color:var(--navy);flex-shrink:0;font-weight:900}
+        .week-nav-arrow{font-size:1.5em;color:var(--gold);flex-shrink:0;font-weight:900}
         .week-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
-        .week-nav-current{font-size:1.1em;font-weight:900;color:var(--navy-dark)}
+        .week-nav-current{font-size:1.1em;font-weight:900;color:var(--gold-dark)}
         .week-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
-        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(184,205,232,.4)30%,rgba(214,228,245,.3)60%,rgba(255,240,184,.3)100%);border-radius:32px;padding:55px 40px;margin-bottom:40px;border:2px solid rgba(255,255,255,.95);box-shadow:0 10px 40px rgba(44,74,117,.12);text-align:center;position:relative}
-        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.6)0%,transparent 60%);animation:rotate 30s linear infinite;pointer-events:none}
+
+        /* Hero */
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(253,230,138,.5)20%,rgba(196,181,253,.4)45%,rgba(251,207,232,.4)70%,rgba(165,243,252,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(217,119,6,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(245,158,11,.08),transparent,rgba(139,92,246,.08),transparent,rgba(236,72,153,.08),transparent);animation:rotate 25s linear infinite;pointer-events:none}
         @keyframes rotate{to{transform:rotate(360deg)}}
         .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
-        .sparkle-deco:nth-child(1){top:15%;left:8%}
-        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:1s}
-        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:.5s}
-        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
-        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:.9;transform:scale(1.1)}}
-        .hero-badge{background:linear-gradient(135deg,var(--navy),var(--sky),var(--gold));background-size:200% auto;color:white;padding:12px 26px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(44,74,117,.3);animation:shimmer 5s linear infinite;position:relative;z-index:2}
-        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--navy-dark),var(--sky-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
-        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--navy-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
-        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:780px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
-        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:30px;position:relative;z-index:2}
-        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(44,74,117,.1);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s}
-        .stat-item:hover{transform:translateY(-3px)}
-        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--navy-dark),var(--sky-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
-        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
-        .mascot-container{text-align:center;margin:25px 0;position:relative;z-index:2}
-        .mascot-svg{max-width:180px;height:auto;filter:drop-shadow(0 8px 20px rgba(44,74,117,.2));animation:floatMascot 4s ease-in-out infinite}
-        @keyframes floatMascot{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .sparkle-deco:nth-child(1){top:12%;left:6%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:18%;right:8%;animation-delay:.7s}
+        .sparkle-deco:nth-child(3){bottom:22%;left:10%;animation-delay:1.2s}
+        .sparkle-deco:nth-child(4){bottom:12%;right:6%;animation-delay:1.8s}
+        .sparkle-deco:nth-child(5){top:45%;left:3%;animation-delay:2.2s}
+        .sparkle-deco:nth-child(6){top:40%;right:4%;animation-delay:2.8s}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(217,119,6,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.5em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--gold-deep),var(--purple-dark),var(--rose-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--gold-deep);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.2em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(253,230,138,.3));backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 8px 25px rgba(217,119,6,.15);min-width:140px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(217,119,6,.25)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.9em;color:var(--text-medium);font-weight:700}
+
+        /* Trophy SVG */
+        .trophy-container{text-align:center;margin:25px 0;position:relative;z-index:2}
+        .trophy-svg{max-width:200px;height:auto;filter:drop-shadow(0 10px 25px rgba(217,119,6,.3));animation:floatTrophy 4s ease-in-out infinite}
+        @keyframes floatTrophy{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+
+        /* Buttons */
         .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:2}
-        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s}
-        .btn-primary{background:linear-gradient(135deg,var(--navy),var(--navy-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(44,74,117,.3)}
-        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(44,74,117,.4);background-position:right center}
-        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text-dark);border:2px solid var(--navy);backdrop-filter:blur(10px)}
-        .btn-secondary:hover{background:var(--navy-light);transform:translateY(-3px)}
-        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(44,74,117,.08);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative}
-        .card-header-bar{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky),var(--gold));opacity:.9;border-radius:28px 28px 0 0}
-        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--navy-dark),var(--sky-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
-        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:30px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
-        .days-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin:30px 0;position:relative;z-index:2}
-        .day-tab{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 12px;text-align:center;box-shadow:0 4px 20px rgba(44,74,117,.08);transition:.35s;cursor:pointer;border:2px solid rgba(255,255,255,.95);position:relative}
-        .day-tab::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.85;border-radius:18px 18px 0 0}
-        .day-tab:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(44,74,117,.15)}
-        .day-tab:hover::before{height:7px;opacity:1}
-        .day-tab.active{background:linear-gradient(135deg,rgba(184,205,232,.3),rgba(214,228,245,.3));border-color:var(--navy)}
-        .day-tab.active::before{opacity:1;height:7px}
-        .day-num{font-size:1.8em;font-weight:900;color:var(--navy-dark);display:block;margin-bottom:5px;position:relative;z-index:2}
-        .day-title{font-size:.82em;font-weight:800;color:var(--text-dark);margin-bottom:5px;line-height:1.3;position:relative;z-index:2}
-        .day-time{font-size:.75em;color:var(--text-medium);font-weight:600;position:relative;z-index:2}
-        .day-content{display:none;animation:fadeIn .5s}
-        .day-content.active{display:block}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-        .day-header{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:white;padding:30px;border-radius:20px;margin-bottom:25px;box-shadow:0 8px 25px rgba(44,74,117,.25)}
-        .day-header h2{font-size:1.8em;margin-bottom:10px;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.15)}
-        .day-header p{font-size:1em;opacity:.98;margin-bottom:15px}
-        .day-goals{list-style:none;background:rgba(255,255,255,.2);padding:15px;border-radius:12px}
-        .day-goals li{padding:8px 0;display:flex;align-items:center;gap:10px;font-size:.95em;font-weight:600;color:white}
-        .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:20px 0}
-        .review-card{background:rgba(255,255,255,.98);border-radius:18px;padding:20px;text-align:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(44,74,117,.08);transition:.3s;position:relative}
-        .review-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.85;border-radius:18px 18px 0 0}
-        .review-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(44,74,117,.15)}
-        .review-icon{font-size:2.5em;margin-bottom:10px}
-        .review-title{font-size:1.1em;font-weight:900;color:var(--navy-dark);margin-bottom:5px}
-        .review-desc{font-size:.85em;color:var(--text-medium);font-weight:600}
-        .vocab-section{background:linear-gradient(135deg,rgba(184,205,232,.2),rgba(214,228,245,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .vocab-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.9;border-radius:28px 28px 0 0}
-        .vocab-list{display:grid;gap:15px;margin-top:25px}
-        .vocab-item{background:rgba(255,255,255,.98);padding:20px;border-radius:20px;display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:center;transition:.35s;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08);position:relative}
-        .vocab-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.85;border-radius:20px 20px 0 0}
-        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(44,74,117,.15)}
-        .vocab-illustration-lg{width:100px;height:100px;background:linear-gradient(135deg,var(--navy-light),var(--sky-light));border-radius:20px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(44,74,117,.1);position:relative;z-index:2}
-        .vocab-jp-lg{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--text-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
-        .vocab-romaji-lg{font-size:.95em;color:var(--navy-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
-        .vocab-meaning-lg{font-size:.95em;color:var(--text-dark);margin-bottom:8px;font-weight:700;position:relative;z-index:2}
-        .vocab-example{background:rgba(255,255,255,.8);padding:10px 12px;border-radius:10px;font-size:.85em;color:var(--text-dark);border-left:4px solid var(--navy);line-height:1.5;position:relative;z-index:2}
-        .vocab-example strong{color:var(--navy-dark);font-weight:800}
-        .audio-btn{background:linear-gradient(135deg,var(--navy),var(--navy-dark));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(44,74,117,.25)}
-        .audio-btn:hover{transform:scale(1.05);background-position:right center}
-        .grammar-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);border-left:7px solid var(--navy);box-shadow:0 4px 20px rgba(44,74,117,.08);position:relative}
-        .grammar-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.85;border-radius:20px 20px 0 0}
-        .grammar-title{font-size:1.3em;font-weight:900;color:var(--text-dark);margin-bottom:15px;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
-        .grammar-structure{background:linear-gradient(135deg,var(--navy-light),var(--sky-light));padding:15px;border-radius:15px;font-family:'M PLUS Rounded 1c';font-size:1.4em;text-align:center;color:var(--text-dark);font-weight:800;margin:15px 0;border:2px solid var(--navy);position:relative;z-index:2}
-        .grammar-desc{font-size:.95em;color:var(--text-dark);line-height:1.7;margin-bottom:15px;position:relative;z-index:2}
-        .grammar-examples{display:grid;gap:12px;position:relative;z-index:2}
-        .grammar-example{background:rgba(255,255,255,.85);padding:12px;border-radius:12px;border-left:4px solid var(--navy);border:2px solid rgba(255,255,255,.95)}
-        .grammar-example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
-        .grammar-example-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
-        .grammar-note{background:var(--gold-light);padding:12px;border-radius:10px;margin-top:10px;font-size:.88em;color:var(--text-dark);border-left:4px solid var(--gold);font-weight:600;position:relative;z-index:2}
-        .tip-box{background:linear-gradient(135deg,rgba(184,205,232,.25),rgba(255,240,184,.25));border:2px solid rgba(255,255,255,.95);border-radius:22px;padding:22px;margin:18px 0;position:relative}
-        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--gold));opacity:.9;border-radius:22px 22px 0 0}
-        .tip-box h4{color:var(--navy-dark);margin-bottom:10px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
-        .tip-box p,.tip-box ul{color:var(--text-dark);font-size:.95em;line-height:1.7;font-weight:600;position:relative;z-index:2}
-        .tip-box ul{padding-left:20px}
-        .tip-box li{margin-bottom:5px}
-        .dialogue-section{background:linear-gradient(135deg,rgba(184,205,232,.2),rgba(214,228,245,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .dialogue-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.9;border-radius:28px 28px 0 0}
-        .dialogue-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08)}
-        .dialogue-controls{display:flex;gap:10px;margin-bottom:18px;padding:12px;background:var(--navy-light);border-radius:12px;align-items:center;flex-wrap:wrap}
-        .dialogue-btn{background:linear-gradient(135deg,var(--navy),var(--sky));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(44,74,117,.25);display:flex;align-items:center;gap:8px}
-        .dialogue-btn:hover{transform:scale(1.05);background-position:right center}
-        .dialogue-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
-        .speaker{display:flex;margin-bottom:15px;align-items:flex-start;gap:12px;flex-wrap:wrap}
-        .speaker-avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--sky));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1em;flex-shrink:0;box-shadow:0 4px 12px rgba(44,74,117,.25)}
-        .speaker-content{flex:1;background:var(--navy-light);padding:12px;border-radius:15px;min-width:200px;border:2px solid rgba(255,255,255,.95)}
-        .speaker-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
-        .speaker-vn{color:var(--text-medium);font-size:.9em;margin-bottom:8px;font-weight:600}
-        .structure-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-        .structure-tag{background:rgba(255,255,255,.95);padding:3px 10px;border-radius:12px;font-size:.72em;font-weight:700;border:1.5px solid}
-        .tag-new{color:var(--navy);border-color:var(--navy);background:rgba(184,205,232,.95)}
-        .tag-prev{color:var(--sky-dark);border-color:var(--sky);background:rgba(214,228,245,.95)}
-        .exercise-section{background:linear-gradient(135deg,rgba(214,228,245,.25),rgba(184,205,232,.25));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky),var(--gold));opacity:.9;border-radius:28px 28px 0 0}
-        .exercise-card{background:rgba(255,255,255,.98);border-radius:20px;padding:22px;margin:15px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08)}
-        .exercise-q{font-size:1.1em;font-weight:900;color:var(--text-dark);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-        .q-num{background:linear-gradient(135deg,var(--navy),var(--sky));color:white;width:30px;height:30px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 3px 10px rgba(44,74,117,.25)}
-        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
-        .exercise-opt{background:var(--navy-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1em;font-weight:800;color:var(--text-dark);text-align:center;border:2px solid transparent;word-break:break-word}
-        .exercise-opt:hover{background:var(--navy);color:white;transform:translateY(-2px)}
-        .exercise-opt.correct{background:#A8E6CF;color:white;border-color:#5FD4A8}
-        .exercise-opt.wrong{background:#ff5252;color:white;border-color:#e83e3e}
-        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.95em}
-        .feedback.show{display:block}
-        .feedback.correct{background:#D4F5E9;color:#5FD4A8;border:2px solid #A8E6CF}
-        .feedback.wrong{background:var(--navy-light);color:var(--navy-dark);border:2px solid var(--navy)}
-        .listening-section{background:linear-gradient(135deg,rgba(184,205,232,.25),rgba(214,228,245,.25));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .listening-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.9;border-radius:28px 28px 0 0}
-        .listening-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08)}
-        .listening-controls{display:flex;gap:10px;margin-bottom:18px;padding:12px;background:var(--navy-light);border-radius:12px;align-items:center;flex-wrap:wrap;justify-content:center}
-        .listening-btn{background:linear-gradient(135deg,var(--navy),var(--sky));background-size:200% auto;color:white;border:none;padding:10px 22px;border-radius:25px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.9em;box-shadow:0 4px 12px rgba(44,74,117,.25);display:flex;align-items:center;gap:8px}
-        .listening-btn:hover{transform:scale(1.05);background-position:right center}
-        .listening-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
-        .listening-btn.shadow{background:linear-gradient(135deg,var(--gold-light),var(--gold));background-size:200% auto}
-        .listening-transcript{background:rgba(255,255,255,.8);padding:18px;border-radius:12px;border-left:4px solid var(--navy);margin-top:15px;line-height:1.8;font-size:1.05em}
-        .listening-transcript p{margin-bottom:10px}
-        .listening-transcript .jp{font-family:'M PLUS Rounded 1c';font-weight:700;font-size:1.1em}
-        .listening-transcript .vn{color:var(--text-medium);font-size:.95em}
-        .speaking-section{background:linear-gradient(135deg,rgba(184,205,232,.2),rgba(214,228,245,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .speaking-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.9;border-radius:28px 28px 0 0}
-        .speaking-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(44,74,117,.08)}
-        .speaking-question{background:linear-gradient(135deg,var(--navy-light),var(--sky-light));padding:18px;border-radius:15px;margin-bottom:15px;border-left:5px solid var(--navy)}
-        .speaking-question .jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text-dark);margin-bottom:8px}
-        .speaking-question .vn{color:var(--text-medium);font-size:.95em;margin-bottom:10px}
-        .speaking-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-        .speaking-btn{background:linear-gradient(135deg,var(--navy),var(--navy-dark));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(44,74,117,.25)}
-        .speaking-btn:hover{transform:scale(1.05);background-position:right center}
-        .flashcard-section{background:linear-gradient(135deg,rgba(184,205,232,.2),rgba(214,228,245,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:.9;border-radius:28px 28px 0 0}
-        .flashcard-container{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
-        .flashcard{perspective:1000px;height:190px;cursor:pointer}
-        .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
-        .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
-        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px;box-shadow:0 4px 20px rgba(44,74,117,.08);border:2px solid rgba(255,255,255,.95)}
-        .flashcard-front{background:rgba(255,255,255,.98);border-color:var(--navy)}
-        .flashcard-back{background:linear-gradient(135deg,var(--gold-light),var(--navy-light));border-color:var(--gold);transform:rotateY(180deg)}
-        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2.2em;font-weight:800;color:var(--text-dark)}
-        .flashcard-hint{font-size:.8em;color:var(--text-light);margin-top:8px;font-weight:700}
-        .flashcard-romaji{font-size:1.1em;font-weight:900;color:var(--navy-dark);margin-top:5px}
-        .flashcard-meaning{font-size:.85em;color:var(--text-dark);margin-top:5px;font-weight:700;text-align:center}
-        .progress-section{background:linear-gradient(135deg,rgba(184,205,232,.25),rgba(214,228,245,.25),rgba(255,240,184,.25));border:2px solid rgba(255,255,255,.95);padding:35px;border-radius:25px;margin:30px 0;text-align:center;box-shadow:0 4px 20px rgba(44,74,117,.08)}
-        .progress-bar{width:100%;height:18px;background:rgba(255,255,255,.95);border-radius:12px;overflow:hidden;margin:18px 0;border:2px solid var(--navy)}
-        .progress-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--sky),var(--gold));width:0%;transition:1s;border-radius:10px}
-        .nav-buttons{display:flex;justify-content:space-between;gap:15px;margin-top:25px;flex-wrap:wrap}
-        .group-title{font-size:1.25em;font-weight:900;color:var(--text-dark);margin:20px 0 12px;display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:3px dashed var(--navy);position:relative;z-index:2}
-        .footer{background:linear-gradient(135deg,var(--navy),var(--navy-dark),var(--sky-dark));background-size:200% auto;color:white;padding:40px;text-align:center;margin-top:40px;border-radius:28px 28px 0 0;animation:shimmer 8s linear infinite}
-        .footer h3{font-size:1.5em;margin-bottom:10px;font-weight:900}
-        .footer p{opacity:.95;margin-bottom:8px;font-weight:600}
-        .self-intro{background:linear-gradient(135deg,var(--navy-light),var(--sky-light));padding:25px;border-radius:20px;margin:20px 0;border-left:5px solid var(--navy)}
-        .self-intro .line{padding:10px 0;font-size:1.1em;border-bottom:1px dashed var(--sky)}
-        .self-intro .line:last-child{border-bottom:none}
-        .self-intro .jp{font-family:'M PLUS Rounded 1c';font-weight:800;color:var(--navy-dark);font-size:1.2em}
-        .self-intro .vn{color:var(--text-medium);font-size:.95em;margin-top:5px}
-        @media(max-width:900px){.days-nav{grid-template-columns:repeat(4,1fr)}.flashcard-container{grid-template-columns:repeat(2,1fr)}.vocab-item{grid-template-columns:80px 1fr}.vocab-illustration-lg{width:80px;height:80px}.week-nav{flex-direction:column}.week-nav-link{max-width:100%}.review-grid{grid-template-columns:repeat(2,1fr)}}
-        @media(max-width:600px){.days-nav{grid-template-columns:repeat(2,1fr)}.flashcard-container{grid-template-columns:1fr}.exercise-options{grid-template-columns:1fr}.review-grid{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.4em}.card,.vocab-section,.dialogue-section,.exercise-section,.listening-section,.speaking-section,.flashcard-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}.vocab-illustration-lg{margin:0 auto}}
+        .btn{padding:16px 36px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1.05em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(217,119,6,.35)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(217,119,6,.45);background-position:right center}
+        .btn-secondary{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(253,230,138,.3));color:var(--text-dark);border:2px solid var(--gold);backdrop-filter:blur(10px)}
+        .btn-secondary:hover{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));transform:translateY(-3px)}
+        .btn-purple{background:linear-gradient(135deg,var(--purple),var(--purple-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(109,40,217,.35)}
+        .btn-purple:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(109,40,217,.45);background-position:right center}
+
+        /* Section Titles */
+        .section-title{font-size:2.2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:30px;font-size:1.1em;font-weight:600}
+
+        /* Day Cards Grid */
+        .days-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin:30px 0}
+        .day-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(253,230,138,.15));border-radius:24px;padding:28px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 25px rgba(217,119,6,.1);transition:.4s;position:relative;text-decoration:none;color:inherit;display:block;overflow:hidden}
+        .day-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--day-color,var(--gold)),var(--day-color-dark,var(--gold-dark)));opacity:.9}
+        .day-card::after{content:'';position:absolute;bottom:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--day-color,var(--gold)),transparent);opacity:.08;border-radius:50%;transition:.4s}
+        .day-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(217,119,6,.2)}
+        .day-card:hover::after{width:180px;height:180px;opacity:.15}
+        .day-card-num{font-size:2.8em;font-weight:900;color:var(--day-color,var(--gold-dark));line-height:1;margin-bottom:8px}
+        .day-card-emoji{font-size:2.2em;margin-bottom:10px;display:block}
+        .day-card-title{font-size:1.2em;font-weight:900;color:var(--text-dark);margin-bottom:8px;line-height:1.3}
+        .day-card-desc{font-size:.9em;color:var(--text-medium);font-weight:600;line-height:1.6;margin-bottom:15px}
+        .day-card-tags{display:flex;gap:8px;flex-wrap:wrap}
+        .day-card-tag{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(139,92,246,.15));color:var(--gold-deep);padding:4px 12px;border-radius:12px;font-size:.75em;font-weight:700;border:1px solid rgba(245,158,11,.3)}
+        .day-card-arrow{position:absolute;bottom:20px;right:20px;font-size:1.5em;color:var(--day-color,var(--gold));opacity:.5;transition:.3s}
+        .day-card:hover .day-card-arrow{opacity:1;transform:translateX(5px)}
+
+        /* Overview Card */
+        .card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,251,235,.5));backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 6px 25px rgba(217,119,6,.1);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan));opacity:.9}
+
+        /* Journey Map */
+        .journey-map{display:flex;align-items:center;justify-content:space-between;margin:30px 0;position:relative;padding:20px 0}
+        .journey-map::before{content:'';position:absolute;top:50%;left:5%;right:5%;height:4px;background:linear-gradient(90deg,var(--success),var(--gold),var(--purple),var(--rose));border-radius:2px;transform:translateY(-50%)}
+        .journey-node{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2}
+        .journey-dot{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3em;font-weight:900;color:white;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.3s}
+        .journey-dot:hover{transform:scale(1.15)}
+        .journey-dot.completed{background:linear-gradient(135deg,var(--success),var(--success-dark))}
+        .journey-dot.current{background:linear-gradient(135deg,var(--gold),var(--gold-dark));animation:pulse 2s infinite}
+        .journey-dot.upcoming{background:linear-gradient(135deg,var(--purple-light),var(--purple));opacity:.6}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.4)}50%{box-shadow:0 0 0 12px rgba(245,158,11,0)}}
+        .journey-label{font-size:.75em;font-weight:800;color:var(--text-medium);text-align:center;max-width:80px}
+
+        /* Tip Box */
+        .tip-box{background:linear-gradient(135deg,rgba(253,230,138,.3),rgba(196,181,253,.3),rgba(251,207,232,.3));border:2px solid rgba(255,255,255,.95);border-radius:25px;padding:30px;margin:30px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan));opacity:.9}
+        .tip-box h4{color:var(--gold-deep);margin-bottom:15px;font-size:1.25em;font-weight:900;display:flex;align-items:center;gap:12px;position:relative;z-index:2}
+        .tip-box p,.tip-box ul{color:var(--text-dark);font-size:1em;line-height:1.9;font-weight:600;position:relative;z-index:2}
+        .tip-box ul{padding-left:25px}
+        .tip-box li{margin-bottom:8px}
+
+        /* Footer */
+        .footer{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose),var(--cyan));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+
+        @media(max-width:900px){.days-grid{grid-template-columns:repeat(2,1fr)}.journey-map{flex-wrap:wrap;gap:15px;justify-content:center}.journey-map::before{display:none}}
+        @media(max-width:600px){.days-grid{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2.2em}.hero-jp{font-size:1.4em}.card{padding:22px}.week-nav{flex-direction:column}.week-nav-link{max-width:100%}}
     </style>
 </head>
 <body>
-    <div class="bg-circle"></div><div class="bg-circle"></div><div class="bg-circle"></div>
-    <div class="wave-container" id="waveContainer"></div>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="confetti-container" id="confettiContainer"></div>
 
     <header class="header">
-        <a href="index.html" class="logo"><span style="font-size:1.4em">⚓</span><span class="logo-main">Nihongo Journey</span></a>
-        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🏆</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
     </header>
+
     <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <span>Tuần 24</span></div>
 
-    <div class="week-nav">
-        <a href="n5-w23.html" class="week-nav-link week-nav-prev">
-            <div class="week-nav-icon">🏺</div>
-            <div class="week-nav-info"><div class="week-nav-label">← Tuần trước</div><div class="week-nav-title">Tuần 23: Xin phép & Quy tắc</div></div>
-            <div class="week-nav-arrow">‹</div>
-        </a>
-        <div class="week-nav-center"><div class="week-nav-current">Tuần 24</div><div class="week-nav-current-label">Hiện tại</div></div>
-        <a href="n4.html" class="week-nav-link week-nav-next">
-            <div class="week-nav-arrow">›</div>
-            <div class="week-nav-info"><div class="week-nav-label">Hành trình tiếp theo →</div><div class="week-nav-title">Bắt đầu N4!</div></div>
-            <div class="week-nav-icon">🌿</div>
-        </a>
-    </div>
-
     <div class="container">
+        <!-- WEEK NAV -->
+        <div class="week-nav">
+            <a href="n5-w23.html" class="week-nav-link week-nav-prev">
+                <div class="week-nav-icon">🏺</div>
+                <div class="week-nav-info"><div class="week-nav-label">← Tuần trước</div><div class="week-nav-title">Tuần 23: Xin phép & Quy tắc</div></div>
+                <div class="week-nav-arrow">‹</div>
+            </a>
+            <div class="week-nav-center"><div class="week-nav-current">🏆 Tuần 24</div><div class="week-nav-current-label">Tuần cuối N5!</div></div>
+            <a href="n4.html" class="week-nav-link week-nav-next">
+                <div class="week-nav-arrow">›</div>
+                <div class="week-nav-info"><div class="week-nav-label">Hành trình tiếp theo →</div><div class="week-nav-title">Bắt đầu N4!</div></div>
+                <div class="week-nav-icon">🌿</div>
+            </a>
+        </div>
+
+        <!-- HERO -->
         <div class="hero">
-            <div class="sparkle-deco">⚓</div><div class="sparkle-deco">🏆</div><div class="sparkle-deco">🎓</div><div class="sparkle-deco">✨</div>
-            <span class="hero-badge">⚓ Tuần 24 • Tổng ôn N5 • そうおん</span>
+            <div class="sparkle-deco">🏆</div><div class="sparkle-deco">🎓</div><div class="sparkle-deco">✨</div><div class="sparkle-deco">🌟</div><div class="sparkle-deco">🎯</div><div class="sparkle-deco">💎</div>
+            <span class="hero-badge">🏆 Tuần 24 • Tổng ôn N5 • そうおんしゅう • Tuần cuối cùng!</span>
             <h1>Tổng kết hành trình N5<br>& Sẵn sàng chinh phục!</h1>
             <div class="hero-jp">にほんご N5 マスター！おめでとう！</div>
-            <p class="hero-desc">Chúc mừng bạn đã hoàn thành 24 tuần học N5! 🎉<br>Tuần này chúng ta sẽ tổng ôn toàn bộ kiến thức và chuẩn bị cho kỳ thi JLPT N5</p>
+            <p class="hero-desc">Chúc mừng bạn đã hoàn thành 24 tuần học N5! 🎉<br>Tuần này chúng ta sẽ tổng ôn toàn bộ kiến thức, làm Mock Test và nhận chứng nhận hoàn thành!</p>
             <div class="hero-stats">
-                <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Kanji</span></div>
+                <div class="stat-item"><span class="stat-number">100</span><span class="stat-label">Kanji</span></div>
                 <div class="stat-item"><span class="stat-number">800+</span><span class="stat-label">Từ vựng</span></div>
                 <div class="stat-item"><span class="stat-number">25+</span><span class="stat-label">Ngữ pháp</span></div>
                 <div class="stat-item"><span class="stat-number">24</span><span class="stat-label">Tuần học</span></div>
             </div>
-            <div class="mascot-container">
-                <svg class="mascot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs><radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#4A6FA5;stop-opacity:.3"/><stop offset="100%" style="stop-color:#6B8FC5;stop-opacity:.2"/></radialGradient></defs>
-                    <circle cx="100" cy="100" r="85" fill="url(#mBg)"/>
-                    <circle cx="100" cy="100" r="68" fill="#F0F4FA"/>
-                    <circle cx="100" cy="100" r="68" fill="none" stroke="#4A6FA5" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
-                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#2C4A75" stroke-width="2.5" fill="none"/>
-                    <circle cx="85" cy="95" r="5" fill="#1E2A3A"/><circle cx="115" cy="95" r="5" fill="#1E2A3A"/>
-                    <circle cx="86" cy="93" r="1.5" fill="white"/><circle cx="116" cy="93" r="1.5" fill="white"/>
-                    <path d="M 92 108 Q 100 118 108 108" stroke="#1E2A3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#B8CDE8" opacity=".9"/>
-                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#B8CDE8" opacity=".9"/>
-                    <path d="M 65 55 L 55 45 M 135 55 L 145 45" stroke="#2C4A75" stroke-width="2.5" stroke-linecap="round"/>
-                    <rect x="75" y="135" width="50" height="35" rx="3" fill="#D4A017"/>
-                    <rect x="80" y="140" width="40" height="25" fill="#FFF0B8"/>
-                    <text x="100" y="158" text-anchor="middle" font-size="14" fill="#D4A017" font-weight="bold">N5</text>
-                    <path d="M 100 135 L 100 125" stroke="#D4A017" stroke-width="2"/>
+            <div class="trophy-container">
+                <svg class="trophy-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="trophyGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#F59E0B"/><stop offset="50%" style="stop-color:#FDE68A"/><stop offset="100%" style="stop-color:#D97706"/></linearGradient>
+                        <linearGradient id="trophyPurple" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8B5CF6"/><stop offset="100%" style="stop-color:#6D28D9"/></linearGradient>
+                    </defs>
+                    <!-- Cup body -->
+                    <path d="M 60 40 L 140 40 L 130 100 Q 100 120 70 100 Z" fill="url(#trophyGold)"/>
+                    <!-- Handles -->
+                    <path d="M 60 50 Q 35 50 35 70 Q 35 90 60 85" stroke="#D97706" stroke-width="4" fill="none"/>
+                    <path d="M 140 50 Q 165 50 165 70 Q 165 90 140 85" stroke="#D97706" stroke-width="4" fill="none"/>
+                    <!-- Stem -->
+                    <rect x="92" y="100" width="16" height="30" fill="url(#trophyGold)"/>
+                    <!-- Base -->
+                    <rect x="70" y="130" width="60" height="12" rx="4" fill="url(#trophyGold)"/>
+                    <rect x="60" y="142" width="80" height="10" rx="4" fill="#D97706"/>
+                    <!-- N5 text -->
+                    <text x="100" y="80" text-anchor="middle" font-size="28" fill="white" font-weight="900" font-family="'M PLUS Rounded 1c'">N5</text>
+                    <!-- Stars -->
+                    <text x="100" y="175" text-anchor="middle" font-size="20" fill="#F59E0B">⭐⭐⭐</text>
+                    <!-- Sparkles around trophy -->
+                    <text x="45" y="35" font-size="14" fill="#F59E0B" opacity=".8">✨</text>
+                    <text x="150" y="30" font-size="12" fill="#8B5CF6" opacity=".8">✨</text>
+                    <text x="30" y="75" font-size="10" fill="#EC4899" opacity=".7">★</text>
+                    <text x="168" y="80" font-size="10" fill="#EC4899" opacity=".7">★</text>
+                    <!-- Certificate ribbon -->
+                    <text x="100" y="200" text-anchor="middle" font-size="11" fill="#6D28D9" font-weight="800" font-family="'M PLUS Rounded 1c'">CERTIFIED</text>
                 </svg>
             </div>
             <div class="hero-btns">
-                <a href="#days-nav" class="btn btn-primary" onclick="showDay(1);return false;"><span>🚀</span> Bắt đầu Ngày 1</a>
-                <a href="#days-nav" class="btn btn-secondary"><span>📚</span> Xem 7 ngày</a>
+                <a href="n5-w24-1.html" class="btn btn-primary"><span>🚀</span> Bắt đầu Ngày 1</a>
+                <a href="#days-grid" class="btn btn-secondary"><span>📅</span> Xem 7 ngày</a>
+                <a href="n5-reference.html" class="btn btn-purple"><span>📚</span> Tab Tham Khảo</a>
             </div>
         </div>
 
-        <div class="card" id="days-nav">
-            <div class="card-header-bar"></div>
+        <!-- JOURNEY MAP -->
+        <div class="card">
+            <h2 class="section-title"><span>🗺️</span> Hành Trình 24 Tuần <span>🌱</span></h2>
+            <p class="section-subtitle">Bạn đã đi hết chặng đường N5!</p>
+            <div class="journey-map">
+                <div class="journey-node">
+                    <div class="journey-dot completed">1-7</div>
+                    <div class="journey-label">Hiragana & Katakana</div>
+                </div>
+                <div class="journey-node">
+                    <div class="journey-dot completed">8-10</div>
+                    <div class="journey-label">Cơ bản & Trợ từ</div>
+                </div>
+                <div class="journey-node">
+                    <div class="journey-dot completed">11-18</div>
+                    <div class="journey-label">Ngữ pháp cốt lõi</div>
+                </div>
+                <div class="journey-node">
+                    <div class="journey-dot completed">19-23</div>
+                    <div class="journey-label">Hoàn thiện N5</div>
+                </div>
+                <div class="journey-node">
+                    <div class="journey-dot current">24</div>
+                    <div class="journey-label">🏆 Tổng ôn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 DAY CARDS -->
+        <div id="days-grid">
             <h2 class="section-title"><span>📅</span> 7 Ngày Tổng Ôn <span>⚓</span></h2>
-            <p class="section-subtitle">Click vào từng ngày để xem nội dung chi tiết</p>
-            <div class="days-nav">
-                <div class="day-tab active" onclick="showDay(1)"><span class="day-num">1</span><span class="day-title">Tổng ôn Kanji</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(2)"><span class="day-num">2</span><span class="day-title">Tổng ôn Từ vựng</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(3)"><span class="day-num">3</span><span class="day-title">Tổng ôn Ngữ pháp</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(4)"><span class="day-num">4</span><span class="day-title">📖 Luyện Đọc</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(5)"><span class="day-num">5</span><span class="day-title">🎧 Luyện Nghe</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(6)"><span class="day-num">6</span><span class="day-title">🎤 Tự giới thiệu</span><span class="day-time">30'</span></div>
-                <div class="day-tab" onclick="showDay(7)"><span class="day-num">7</span><span class="day-title">🏆 Tổng kết</span><span class="day-time">30'</span></div>
-            </div>
-        </div>
+            <p class="section-subtitle">Mỗi ngày 1 chủ đề - 30 phút - Bấm vào để bắt đầu!</p>
 
-        <!-- DAY 1 -->
-        <div class="day-content active" id="day1-content">
-            <div class="day-header">
-                <h2>📚 Ngày 1: Tổng ôn Kanji (100 chữ)</h2>
-                <p>⏱️ 30 phút | 🎯 Ôn tập toàn bộ Kanji đã học trong 24 tuần</p>
-                <ul class="day-goals">
-                    <li>✅ Ôn lại 100 Kanji N5 theo chủ đề</li>
-                    <li>✅ Luyện đọc và viết Kanji</li>
-                    <li>✅ Flashcard ôn tập</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>⚓ Tổng quan 100 Kanji N5</h4>
-                    <p>Bạn đã học 100 Kanji trong 24 tuần qua! Hôm nay chúng ta sẽ ôn lại theo các nhóm chủ đề:</p>
-                    <ul>
-                        <li>🔢 Số đếm: 一、二、三、四、五、六、七、八、九、十、百、千、万</li>
-                        <li>📅 Ngày tháng: 日、月、火、水、木、金、土、年、週</li>
-                        <li>👨‍👩‍👧 Gia đình: 父、母、兄、姉、弟、妹、人、男、女、子</li>
-                        <li>🌤️ Thời tiết: 天、気、雨、雪、春、夏、秋、冬</li>
-                        <li>🏫 Trường học: 学、校、室、図、書、館、所、場</li>
-                        <li>🏃 Động từ: 行、来、帰、見、食、飲、買、読、聞、遊</li>
-                        <li>📏 Tính từ: 大、小、高、安、多、少、新、古、長、短</li>
-                        <li>🏺 Nơi chốn: 入、出、休、禁、駅、店</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📚</span> Flashcard Kanji Tổng Hợp</h3>
-                <p class="section-subtitle">Click vào thẻ để lật và ôn tập</p>
-                <div class="flashcard-container">
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">学</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">がく・まなぶ</div><div class="flashcard-meaning">Học</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">校</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こう</div><div class="flashcard-meaning">Trường</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">読</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">どく・よむ</div><div class="flashcard-meaning">Đọc</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">書</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょ・かく</div><div class="flashcard-meaning">Viết</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">食</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょく・たべる</div><div class="flashcard-meaning">Ăn</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">飲</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">いん・のむ</div><div class="flashcard-meaning">Uống</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">見</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">けん・みる</div><div class="flashcard-meaning">Xem</div></div></div></div>
-                    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">聞</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">ぶん・きく</div><div class="flashcard-meaning">Nghe</div></div></div></div>
-                </div>
-            </div>
-
-            <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Quiz Kanji</h3>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Kanji 学 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1a')">Trường</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q1b')">Học</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1c')">Đọc</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1d')">Viết</div></div><div class="feedback" id="d1q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Kanji nào có nghĩa là "Ăn"?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2a')">飲</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q2b')">食</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2c')">見</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2d')">聞</div></div><div class="feedback" id="d1q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "ちいさい" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3a')">Lớn</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q3b')">Nhỏ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3c')">Cao</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3d')">Thấp</div></div><div class="feedback" id="d1q3b"></div></div>
-            </div>
-        </div>
-
-        <!-- DAY 2 -->
-        <div class="day-content" id="day2-content">
-            <div class="day-header">
-                <h2>📖 Ngày 2: Tổng ôn Từ vựng</h2>
-                <p>⏱️ 30 phút | 🎯 Ôn tập 800+ từ vựng theo chủ đề</p>
-                <ul class="day-goals">
-                    <li>✅ Ôn từ vựng theo 8 chủ đề chính</li>
-                    <li>✅ Luyện nghe và phát âm</li>
-                    <li>✅ Flashcard từ vựng</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>⚓ 8 Chủ đề từ vựng N5</h4>
-                    <ul>
-                        <li>👋 Chào hỏi & Giới thiệu bản thân</li>
-                        <li>👨‍👩‍ Gia đình & Người thân</li>
-                        <li>🍜 Ẩm thực & Mua sắm</li>
-                        <li>🏫 Trường học & Công việc</li>
-                        <li>🌤️ Thời tiết & Mùa</li>
-                        <li>🎨 Sở thích & Giải trí</li>
-                        <li>🏺 Nơi chốn & Giao thông</li>
-                        <li>📏 Tính từ & Mô tả</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="vocab-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📖</span> Từ Vựng Theo Chủ Đề</h3>
-                <div class="vocab-list">
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#4A6FA5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">👋</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">おはよう / こんにちは</div><div class="vocab-romaji-lg">ohayou / konnichiwa</div><div class="vocab-meaning-lg">Chào buổi sáng / Chào buổi trưa</div></div><button class="audio-btn" onclick="playAudio('おはようございます、こんにちは')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#4A6FA5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🍜</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">すし / らーめん</div><div class="vocab-romaji-lg">sushi / raamen</div><div class="vocab-meaning-lg">Sushi / Mì ramen</div></div><button class="audio-btn" onclick="playAudio('すし、らーめん')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#4A6FA5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🏫</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">がっこう / びょういん</div><div class="vocab-romaji-lg">gakkou / byouin</div><div class="vocab-meaning-lg">Trường học / Bệnh viện</div></div><button class="audio-btn" onclick="playAudio('がっこう、びょういん')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#4A6FA5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🌤️</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">はれ / あめ / ゆき</div><div class="vocab-romaji-lg">hare / ame / yuki</div><div class="vocab-meaning-lg">Nắng / Mưa / Tuyết</div></div><button class="audio-btn" onclick="playAudio('はれ、あめ、ゆき')">🔊</button></div>
-                </div>
-            </div>
-
-            <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Quiz Từ Vựng</h3>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "びょういん" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1a')">Trường học</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q1b')">Bệnh viện</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1c')">Nhà ga</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1d')">Cửa hàng</div></div><div class="feedback" id="d2q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "あめ" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2a')">Nắng</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q2b')">Mưa</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2c')">Tuyết</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2d')">Mây</div></div><div class="feedback" id="d2q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Nghe: <button class="audio-btn" onclick="playAudio('おおきい')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q3a')">To lớn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3b')">Nhỏ bé</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3c')">Cao</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3d')">Thấp</div></div><div class="feedback" id="d2q3a"></div></div>
-            </div>
-        </div>
-
-        <!-- DAY 3 -->
-        <div class="day-content" id="day3-content">
-            <div class="day-header">
-                <h2>📐 Ngày 3: Tổng ôn Ngữ pháp</h2>
-                <p>⏱️ 30 phút | 🎯 Ôn tập 25+ mẫu ngữ pháp N5</p>
-                <ul class="day-goals">
-                    <li>✅ Ôn lại các mẫu ngữ pháp chính</li>
-                    <li>✅ So sánh các cấu trúc tương tự</li>
-                    <li>✅ Luyện tập tổng hợp</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>⚓ 25+ Mẫu ngữ pháp N5 quan trọng</h4>
-                    <ul>
-                        <li>✅ <strong>AはBです</strong> - A là B</li>
-                        <li>✅ <strong>これ/それ/あれ</strong> - Đây/Đó/Kia</li>
-                        <li>✅ <strong>Trợ từ:</strong> は、が、を、に、で、へ、の、と、も</li>
-                        <li>✅ <strong>Thể ます:</strong> ます/ません/ました/ませんでした</li>
-                        <li>✅ <strong>Thể て:</strong> Vてください/Vています/Vてもいいです</li>
-                        <li>✅ <strong>Thể た:</strong> Vたことがあります</li>
-                        <li>✅ <strong>Tính từ:</strong> い/な + quá khứ</li>
-                        <li>✅ <strong>So sánh:</strong> より、ほど、どちら、一番</li>
-                        <li>✅ <strong>Mức độ:</strong> とても、あまり、ぜんぜん</li>
-                        <li>✅ <strong>Mong muốn:</strong> たいです、ましょう、ませんか</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="group-title">📐 Các Cấu Trúc Quan Trọng</div>
-                <div class="grammar-box"><div class="grammar-title">📌 Giới thiệu bản thân</div><div class="grammar-structure">わたしは [tên] です。[quốc tịch] じん です。</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">わたしは リン です。ベトナムじん です。</div><div class="grammar-example-vn">Tôi là Linh. Tôi là người Việt Nam.</div></div></div></div>
-                <div class="grammar-box"><div class="grammar-title">📌 Hỏi và trả lời</div><div class="grammar-structure">[Câu hỏi] か。→ はい/いいえ、[trả lời]。</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">がくせい ですか。→ はい、がくせい です。</div><div class="grammar-example-vn">Bạn là học sinh à? → Vâng, tôi là học sinh.</div></div></div></div>
-                <div class="grammar-box"><div class="grammar-title">📌 Thể て - Yêu cầu & Cho phép</div><div class="grammar-structure">Vてください / Vてもいいです / Vてはいけません</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">ちょっと まって ください。</div><div class="grammar-example-vn">Xin hãy đợi một chút.</div></div><div class="grammar-example"><div class="grammar-example-jp">ここで しゃしんを とっても いいですか。</div><div class="grammar-example-vn">Tôi có thể chụp ảnh ở đây không?</div></div><div class="grammar-example"><div class="grammar-example-jp">ここで たばこを すってはいけません。</div><div class="grammar-example-vn">Không được hút thuốc ở đây.</div></div></div></div>
-            </div>
-
-            <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Quiz Ngữ pháp</h3>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "Tôi là học sinh" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1a')">わたしは がくせい します</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q1b')">わたしは がくせい です</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1c')">わたしは がくせい ます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1d')">わたしは がくせい たいです</div></div><div class="feedback" id="d3q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Xin hãy đợi" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2a')">ちょっと まちます</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q2b')">ちょっと まって ください</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2c')">ちょっと まって もいいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2d')">ちょっと まって はいけません</div></div><div class="feedback" id="d3q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "Tôi đã từng ăn sushi" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3a')">すしを たべます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3b')">すしを たべたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q3c')">すしを たべたことが あります</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3d')">すしを たべて います</div></div><div class="feedback" id="d3q3c"></div></div>
-            </div>
-        </div>
-
-        <!-- DAY 4 -->
-        <div class="day-content" id="day4-content">
-            <div class="day-header">
-                <h2>📖 Ngày 4: Luyện Đọc Hiểu</h2>
-                <p>⏱️ 30 phút | 🎯 Luyện đọc đoạn văn ngắn theo format JLPT</p>
-                <ul class="day-goals">
-                    <li>✅ Đọc hiểu đoạn văn 50-100 chữ</li>
-                    <li>✅ Trả lời câu hỏi đọc hiểu</li>
-                    <li>✅ Luyện kỹ năng đọc nhanh</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>📖 Mẹo đọc hiểu JLPT N5</h4>
-                    <ul>
-                        <li>1️⃣ Đọc câu hỏi trước để biết cần tìm gì</li>
-                        <li>2️⃣ Đọc lướt đoạn văn, tìm từ khóa</li>
-                        <li>3️⃣ Chú ý các từ: しかし (nhưng)、だから (vì vậy)、でも (tuy nhiên)</li>
-                        <li>4️⃣ Đọc kỹ câu cuối cùng - thường chứa đáp án</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📖</span> Đoạn Văn 1: Giới thiệu bản thân</h3>
-                <div class="grammar-box">
-                    <div class="grammar-title">📄 Đoạn văn</div>
-                    <div class="grammar-desc" style="font-size:1.1em;line-height:2">
-                        はじめまして。わたしは リン です。ベトナムから きました。いま とうきょうに すんでいます。だいがくで にほんごを べんきょうして います。しゅみは おんがくを きくこと と えいがを みる ことです。まいしゅう ともだちと えいがを みに いきます。にほんの えいがが だいすき です。
+            <div class="days-grid">
+                <!-- Day 1 -->
+                <a href="n5-w24-1.html" class="day-card" style="--day-color:#F59E0B;--day-color-dark:#D97706">
+                    <div class="day-card-num">01</div>
+                    <span class="day-card-emoji">📚</span>
+                    <div class="day-card-title">Tổng ôn Kanji</div>
+                    <div class="day-card-desc">100 Kanji chia theo 8 nhóm chủ đề + 20 Flashcard tương tác + 5 câu Quiz</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">100 Kanji</span>
+                        <span class="day-card-tag">8 nhóm</span>
+                        <span class="day-card-tag">Flashcard</span>
                     </div>
-                </div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Linh đến từ đâu?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1a')">にほん</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q1b')">ベトナム</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1c')">ちゅうごく</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1d')">かんこく</div></div><div class="feedback" id="d4q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Linh đang làm gì ở Tokyo?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2a')">はたらいて います</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q2b')">にほんごを べんきょうして います</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2c')">りょこうして います</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2d')">やすんで います</div></div><div class="feedback" id="d4q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Sở thích của Linh là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3a')">りょうり</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q3b')">おんがく と えいが</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3c')">スポーツ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3d')">どくしょ</div></div><div class="feedback" id="d4q3b"></div></div>
-            </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
 
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📖</span> Đoạn Văn 2: Một ngày của tôi</h3>
-                <div class="grammar-box">
-                    <div class="grammar-title">📄 Đoạn văn</div>
-                    <div class="grammar-desc" style="font-size:1.1em;line-height:2">
-                        わたしの まいにちの せいかつ です。まいあさ 6じに おきます。あさごはんを たべて、8じに いえを でます。でんしゃで がっこうへ いきます。がっこうで にほんごを べんきょうします。ひるごはんは がっこうの しょくどうで たべます。ごご 5じに いえへ かえります。ばんごはんを たべて、テレビを みます。11じに ねます。
+                <!-- Day 2 -->
+                <a href="n5-w24-2.html" class="day-card" style="--day-color:#EC4899;--day-color-dark:#BE185D">
+                    <div class="day-card-num">02</div>
+                    <span class="day-card-emoji">📖</span>
+                    <div class="day-card-title">Tổng ôn Từ vựng</div>
+                    <div class="day-card-desc">800+ từ vựng chia theo 8 chủ đề chính + Audio phát âm + 5 câu Quiz</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">800+ từ</span>
+                        <span class="day-card-tag">8 chủ đề</span>
+                        <span class="day-card-tag">Audio</span>
                     </div>
-                </div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Mấy giờ tác giả thức dậy?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q4a')">5じ</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q4b')">6じ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q4c')">7じ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q4d')">8じ</div></div><div class="feedback" id="d4q4b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Tác giả đi học bằng gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q5a')">バス</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q5b')">でんしゃ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q5c')">くるま</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q5d')">じてんしゃ</div></div><div class="feedback" id="d4q5b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Tác giả ngủ lúc mấy giờ?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q6a')">9じ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q6b')">10じ</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q6c')">11じ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q6d')">12じ</div></div><div class="feedback" id="d4q6c"></div></div>
+                    <div class="day-card-arrow">→</div>
+                </a>
+
+                <!-- Day 3 -->
+                <a href="n5-w24-3.html" class="day-card" style="--day-color:#8B5CF6;--day-color-dark:#6D28D9">
+                    <div class="day-card-num">03</div>
+                    <span class="day-card-emoji">📐</span>
+                    <div class="day-card-title">Tổng ôn Ngữ pháp</div>
+                    <div class="day-card-desc">25+ mẫu ngữ pháp trong 12 nhóm + So sánh cấu trúc + 5 câu Quiz</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">25+ mẫu</span>
+                        <span class="day-card-tag">12 nhóm</span>
+                        <span class="day-card-tag">Quiz</span>
+                    </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
+
+                <!-- Day 4 -->
+                <a href="n5-w24-4.html" class="day-card" style="--day-color:#06B6D4;--day-color-dark:#0891B2">
+                    <div class="day-card-num">04</div>
+                    <span class="day-card-emoji">📖</span>
+                    <div class="day-card-title">Luyện Đọc Hiểu</div>
+                    <div class="day-card-desc">3 đoạn văn đọc hiểu theo format JLPT N5 + Mẹo đọc nhanh + 15 câu hỏi</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">3 đoạn văn</span>
+                        <span class="day-card-tag">15 câu hỏi</span>
+                        <span class="day-card-tag">JLPT</span>
+                    </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
+
+                <!-- Day 5 -->
+                <a href="n5-w24-5.html" class="day-card" style="--day-color:#10B981;--day-color-dark:#059669">
+                    <div class="day-card-num">05</div>
+                    <span class="day-card-emoji">🎧</span>
+                    <div class="day-card-title">Luyện Nghe Hiểu</div>
+                    <div class="day-card-desc">3 bài nghe hội thoại theo format JLPT N5 + Transcript + 9 câu hỏi</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">3 bài nghe</span>
+                        <span class="day-card-tag">9 câu hỏi</span>
+                        <span class="day-card-tag">Audio</span>
+                    </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
+
+                <!-- Day 6 -->
+                <a href="n5-w24-6.html" class="day-card" style="--day-color:#F59E0B;--day-color-dark:#D97706">
+                    <div class="day-card-num">06</div>
+                    <span class="day-card-emoji">🎤</span>
+                    <div class="day-card-title">Luyện Nói: Tự Giới Thiệu</div>
+                    <div class="day-card-desc">Template 7 câu tự giới thiệu bản thân 45-60 giây + Audio mẫu để nhại lại</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">7 câu mẫu</span>
+                        <span class="day-card-tag">Audio</span>
+                        <span class="day-card-tag">Shadowing</span>
+                    </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
+
+                <!-- Day 7 -->
+                <a href="n5-w24-7.html" class="day-card" style="--day-color:#8B5CF6;--day-color-dark:#6D28D9">
+                    <div class="day-card-num">07</div>
+                    <span class="day-card-emoji">🏆</span>
+                    <div class="day-card-title">Mock Test N5</div>
+                    <div class="day-card-desc">Đề thi thử 50 câu chuẩn JLPT N5: Từ vựng + Kanji + Ngữ pháp + Đọc + Nghe</div>
+                    <div class="day-card-tags">
+                        <span class="day-card-tag">50 câu</span>
+                        <span class="day-card-tag">5 phần</span>
+                        <span class="day-card-tag">Chứng nhận</span>
+                    </div>
+                    <div class="day-card-arrow">→</div>
+                </a>
             </div>
         </div>
 
-        <!-- DAY 5 -->
-        <div class="day-content" id="day5-content">
-            <div class="day-header">
-                <h2>🎧 Ngày 5: Luyện Nghe Hiểu</h2>
-                <p>⏱️ 30 phút | 🎯 Luyện nghe theo format JLPT N5</p>
-                <ul class="day-goals">
-                    <li>✅ Nghe hội thoại ngắn</li>
-                    <li>✅ Nghe câu hỏi và trả lời</li>
-                    <li>✅ Luyện kỹ năng nghe nhanh</li>
+        <!-- TIPS -->
+        <div class="card">
+            <div class="tip-box">
+                <h4>💡 Mẹo ôn thi JLPT N5 hiệu quả</h4>
+                <ul>
+                    <li>📅 <strong>Làm 1 ngày/chủ đề</strong> - Đừng cố làm hết trong 1 ngày, hãy chia nhỏ</li>
+                    <li>📚 <strong>Bắt đầu từ Kanji → Từ vựng → Ngữ pháp</strong> - Theo đúng thứ tự Ngày 1 → 2 → 3</li>
+                    <li>📖 <strong>Luyện Đọc & Nghe sau</strong> - Ngày 4 & 5 giúp bạn làm quen format đề thi thật</li>
+                    <li>🎤 <strong>Luyện nói trước gương</strong> - Ngày 6 giúp bạn tự tin giới thiệu bản thân</li>
+                    <li>🏆 <strong>Làm Mock Test cuối cùng</strong> - Ngày 7 là đề thi thử, làm nghiêm túc như thi thật</li>
+                    <li>🔄 <strong>Nếu sai nhiều → Quay lại ôn ngày tương ứng</strong> - Đừng lo, ôn lại là bình thường!</li>
+                    <li>📚 <strong>Dùng Tab Tham Khảo</strong> khi quên kiến thức bất kỳ lúc nào</li>
                 </ul>
             </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>🎧 Mẹo nghe hiểu JLPT N5</h4>
-                    <ul>
-                        <li>1️⃣ Nghe từ khóa: だれ (ai)、なに (gì)、どこ (đâu)、いつ (khi nào)</li>
-                        <li>2️⃣ Chú ý phủ định: ません、ないです</li>
-                        <li>3️⃣ Nghe số liệu: số đếm, thời gian, giá tiền</li>
-                        <li>4️⃣ Nghe lại 2-3 lần nếu cần</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="listening-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎧</span> Bài Nghe 1: Hội thoại mua sắm</h3>
-                <div class="listening-box">
-                    <div class="listening-controls">
-                        <button class="listening-btn" onclick="playListening1()">▶️ Nghe bài 1</button>
-                        <button class="listening-btn" onclick="playListening1Slow()">🐢 Nghe chậm</button>
-                        <button class="listening-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
-                    </div>
-                    <div class="listening-transcript">
-                        <p><strong>店員:</strong> <span class="jp">いらっしゃいませ。なにを おさがしですか。</span><br><span class="vn">Xin chào. Bạn đang tìm gì ạ?</span></p>
-                        <p><strong>客:</strong> <span class="jp">かばんを みたいです。</span><br><span class="vn">Tôi muốn xem túi xách.</span></p>
-                        <p><strong>店員:</strong> <span class="jp">これと これと、どちらが いいですか。</span><br><span class="vn">Cái này và cái này, cái nào tốt hơn?</span></p>
-                        <p><strong>客:</strong> <span class="jp">あおい かばんが いいです。いくらですか。</span><br><span class="vn">Tôi thích túi màu xanh. Bao nhiêu tiền ạ?</span></p>
-                        <p><strong>店員:</strong> <span class="jp">さんぜん えん です。</span><br><span class="vn">3000 yên ạ.</span></p>
-                    </div>
-                </div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Khách muốn mua gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1a')">くつ</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q1b')">かばん</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1c')">ふく</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1d')">ほん</div></div><div class="feedback" id="d5q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Khách thích túi màu gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2a')">あかい</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q2b')">あおい</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2c')">しろい</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2d')">くろい</div></div><div class="feedback" id="d5q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Giá tiền là bao nhiêu?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3a')">1000えん</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3b')">2000えん</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q3c')">3000えん</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3d')">5000えん</div></div><div class="feedback" id="d5q3c"></div></div>
-            </div>
-
-            <div class="listening-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎧</span> Bài Nghe 2: Hỏi đường</h3>
-                <div class="listening-box">
-                    <div class="listening-controls">
-                        <button class="listening-btn" onclick="playListening2()">▶️ Nghe bài 2</button>
-                        <button class="listening-btn" onclick="playListening2Slow()">🐢 Nghe chậm</button>
-                        <button class="listening-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
-                    </div>
-                    <div class="listening-transcript">
-                        <p><strong>A:</strong> <span class="jp">すみません、えきへ どうやって いきますか。</span><br><span class="vn">Xin lỗi, làm sao để đi đến nhà ga?</span></p>
-                        <p><strong>B:</strong> <span class="jp">まっすぐ いって、みぎへ まがって ください。</span><br><span class="vn">Đi thẳng, rồi rẽ phải.</span></p>
-                        <p><strong>A:</strong> <span class="jp">どのくらい かかりますか。</span><br><span class="vn">Mất bao lâu ạ?</span></p>
-                        <p><strong>B:</strong> <span class="jp">10ぷん くらいです。</span><br><span class="vn">Khoảng 10 phút.</span></p>
-                    </div>
-                </div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> A muốn đi đâu?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q4a')">びょういん</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q4b')">えき</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q4c')">がっこう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q4d')">こうえん</div></div><div class="feedback" id="d5q4b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Phải rẽ hướng nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q5a')">ひだり</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q5b')">みぎ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q5c')">まっすぐ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q5d')">うしろ</div></div><div class="feedback" id="d5q5b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Mất bao lâu?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q6a')">5ぷん</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q6b')">10ぷん</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q6c')">15ぷん</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q6d')">20ぷん</div></div><div class="feedback" id="d5q6b"></div></div>
-            </div>
         </div>
 
-        <!-- DAY 6 -->
-        <div class="day-content" id="day6-content">
-            <div class="day-header">
-                <h2>🎤 Ngày 6: Tự Giới Thiệu Bản Thân</h2>
-                <p>⏱️ 30 phút | 🎯 Luyện nói tự giới thiệu 45-60 giây</p>
-                <ul class="day-goals">
-                    <li>✅ Học template tự giới thiệu</li>
-                    <li>✅ Luyện phát âm và ngữ điệu</li>
-                    <li>✅ Tự tin giới thiệu bản thân</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>🎤 Template Tự Giới Thiệu (45-60 giây)</h4>
-                    <p>Sử dụng template này để giới thiệu bản thân một cách tự tin:</p>
+        <!-- GOAL SUMMARY -->
+        <div class="card">
+            <h2 class="section-title"><span>🎯</span> Bạn Đã Đạt Được Gì? <span>🏅</span></h2>
+            <p class="section-subtitle">Tổng kết thành quả sau 24 tuần học tập</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px">
+                <div style="background:linear-gradient(135deg,rgba(253,230,138,.3),rgba(255,255,255,.9));padding:25px;border-radius:20px;text-align:center;border:2px solid rgba(245,158,11,.2)">
+                    <div style="font-size:2.5em;margin-bottom:10px">📚</div>
+                    <div style="font-size:1.8em;font-weight:900;color:var(--gold-dark)">100 Kanji</div>
+                    <div style="color:var(--text-medium);font-weight:600;margin-top:5px">Đọc và viết được 100+ chữ Kanji</div>
                 </div>
-                <div class="self-intro">
-                    <div class="line"><div class="jp">はじめまして。</div><div class="vn">Rất vui được gặp bạn.</div></div>
-                    <div class="line"><div class="jp">わたしは [tên] です。</div><div class="vn">Tôi là [tên].</div></div>
-                    <div class="line"><div class="jp">[quốc tịch] じん です。</div><div class="vn">Tôi là người [quốc tịch].</div></div>
-                    <div class="line"><div class="jp">[thành phố] に すんでいます。</div><div class="vn">Tôi sống ở [thành phố].</div></div>
-                    <div class="line"><div class="jp">しゅみは [sở thích] です。</div><div class="vn">Sở thích của tôi là [sở thích].</div></div>
-                    <div class="line"><div class="jp">しゅうまつに [hoạt động] を したいです。</div><div class="vn">Cuối tuần tôi muốn [hoạt động].</div></div>
-                    <div class="line"><div class="jp">どうぞ よろしく おねがいします。</div><div class="vn">Rất mong được giúp đỡ.</div></div>
+                <div style="background:linear-gradient(135deg,rgba(196,181,253,.3),rgba(255,255,255,.9));padding:25px;border-radius:20px;text-align:center;border:2px solid rgba(139,92,246,.2)">
+                    <div style="font-size:2.5em;margin-bottom:10px">📖</div>
+                    <div style="font-size:1.8em;font-weight:900;color:var(--purple-dark)">800+ Từ vựng</div>
+                    <div style="color:var(--text-medium);font-weight:600;margin-top:5px">8 chủ đề từ vựng N5</div>
                 </div>
-            </div>
-
-            <div class="speaking-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎤</span> Luyện Tập Tự Giới Thiệu</h3>
-                <p class="section-subtitle">Nhấn 🔊 để nghe từng câu và nhại lại</p>
-                <div class="speaking-box">
-                    <div class="speaking-question"><div class="jp">はじめまして。</div><div class="vn">Rất vui được gặp bạn.</div><button class="speaking-btn" onclick="playAudio('はじめまして。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">わたしは リン です。</div><div class="vn">Tôi là Linh.</div><button class="speaking-btn" onclick="playAudio('わたしはリンです。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">ベトナムじん です。</div><div class="vn">Tôi là người Việt Nam.</div><button class="speaking-btn" onclick="playAudio('ベトナムじんです。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">ハノイに すんでいます。</div><div class="vn">Tôi sống ở Hà Nội.</div><button class="speaking-btn" onclick="playAudio('ハノイにすんでいます。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">しゅみは おんがくを きくことです。</div><div class="vn">Sở thích của tôi là nghe nhạc.</div><button class="speaking-btn" onclick="playAudio('しゅみはおんがくをきくことです。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">しゅうまつに ともだちと えいがを みたいです。</div><div class="vn">Cuối tuần tôi muốn xem phim với bạn.</div><button class="speaking-btn" onclick="playAudio('しゅうまつにともだちとえいがをみたいです。')">🔊 Nghe & Nhại lại</button></div>
-                    <div class="speaking-question"><div class="jp">どうぞ よろしく おねがいします。</div><div class="vn">Rất mong được giúp đỡ.</div><button class="speaking-btn" onclick="playAudio('どうぞよろしくおねがいします。')">🔊 Nghe & Nhại lại</button></div>
+                <div style="background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(255,255,255,.9));padding:25px;border-radius:20px;text-align:center;border:2px solid rgba(236,72,153,.2)">
+                    <div style="font-size:2.5em;margin-bottom:10px">📐</div>
+                    <div style="font-size:1.8em;font-weight:900;color:var(--rose-dark)">25+ Ngữ pháp</div>
+                    <div style="color:var(--text-medium);font-weight:600;margin-top:5px">Tất cả ngữ pháp N5</div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>🏆 Thử thách cuối cùng!</h4>
-                    <p>Hãy tự ghi âm bản thân giới thiệu đầy đủ trong 45-60 giây và nghe lại. So sánh với audio mẫu để cải thiện phát âm!</p>
+                <div style="background:linear-gradient(135deg,rgba(165,243,252,.3),rgba(255,255,255,.9));padding:25px;border-radius:20px;text-align:center;border:2px solid rgba(6,182,212,.2)">
+                    <div style="font-size:2.5em;margin-bottom:10px">💬</div>
+                    <div style="font-size:1.8em;font-weight:900;color:var(--cyan-dark)">Giao tiếp</div>
+                    <div style="color:var(--text-medium);font-weight:600;margin-top:5px">Tự giới thiệu bản thân</div>
                 </div>
             </div>
         </div>
 
-        <!-- DAY 7 -->
-        <div class="day-content" id="day7-content">
-            <div class="day-header">
-                <h2>🏆 Ngày 7: Tổng Kết & Chúc Mừng!</h2>
-                <p>⏱️ 30 phút | 🎯 Tổng kết hành trình 24 tuần</p>
-                <ul class="day-goals">
-                    <li>✅ Nhìn lại những gì đã học</li>
-                    <li>✅ Lên kế hoạch cho N4</li>
-                    <li>✅ Nhận chứng nhận hoàn thành N5</li>
-                </ul>
+        <!-- NEXT STEP -->
+        <div class="card" style="text-align:center">
+            <h2 class="section-title"><span>🚀</span> Bước Tiếp Theo <span>🌿</span></h2>
+            <p style="font-size:1.15em;color:var(--text-medium);margin-bottom:25px;font-weight:600">Sau khi hoàn thành Tuần 24, bạn đã sẵn sàng cho hành trình tiếp theo!</p>
+            <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+                <a href="n4.html" class="btn btn-primary" style="font-size:1.1em;padding:16px 36px"><span>🌿</span> Bắt đầu N4!</a>
+                <a href="n5.html" class="btn btn-secondary"><span>🔄</span> Ôn lại N5</a>
+                <a href="n5-reference.html" class="btn btn-purple"><span>📚</span> Tab Tham Khảo</a>
             </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="review-grid">
-                    <div class="review-card"><div class="review-icon">📚</div><div class="review-title">100+ Kanji</div><div class="review-desc">Đọc và viết được 100+ chữ Kanji</div></div>
-                    <div class="review-card"><div class="review-icon">📖</div><div class="review-title">800+ Từ vựng</div><div class="review-desc">8 chủ đề từ vựng N5</div></div>
-                    <div class="review-card"><div class="review-icon">📐</div><div class="review-title">25+ Ngữ pháp</div><div class="review-desc">Tất cả ngữ pháp N5</div></div>
-                    <div class="review-card"><div class="review-icon">🎧</div><div class="review-title">Nghe hiểu</div><div class="review-desc">Hiểu hội thoại cơ bản</div></div>
-                    <div class="review-card"><div class="review-icon">📖</div><div class="review-title">Đọc hiểu</div><div class="review-desc">Đọc đoạn văn 100 chữ</div></div>
-                    <div class="review-card"><div class="review-icon">🎤</div><div class="review-title">Giao tiếp</div><div class="review-desc">Tự giới thiệu bản thân</div></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4> Bạn đã sẵn sàng cho JLPT N5!</h4>
-                    <p>Với kiến thức đã học trong 24 tuần, bạn hoàn toàn có thể:</p>
-                    <ul>
-                        <li>✅ Thi đỗ JLPT N5 với điểm cao</li>
-                        <li>✅ Giao tiếp cơ bản trong cuộc sống hàng ngày</li>
-                        <li>✅ Đọc hiểu văn bản đơn giản</li>
-                        <li>✅ Viết nhật ký ngắn bằng tiếng Nhật</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="tip-box">
-                    <h4>🚀 Bước tiếp theo: N4!</h4>
-                    <p>Hành trình của bạn chưa kết thúc! Hãy tiếp tục với N4 để:</p>
-                    <ul>
-                        <li>📚 Học thêm 300 Kanji mới</li>
-                        <li>📖 Mở rộng 1500+ từ vựng</li>
-                        <li>📐 Học ngữ pháp N4 phức tạp hơn</li>
-                        <li>🎯 Tự tin giao tiếp trong nhiều tình huống</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="progress-section">
-                <h3 style="font-size:2em;margin-bottom:15px;color:var(--text-dark)">🎉 Chúc Mừng! Bạn Đã Hoàn Thành N5!</h3>
-                <div class="progress-bar"><div class="progress-fill" id="weekProgress" style="width:100%"></div></div>
-                <p style="font-size:1.2em;color:var(--text-dark);margin:20px 0;font-weight:700">🏆 <strong>24 tuần</strong> • <strong>100+ Kanji</strong> • <strong>800+ từ vựng</strong> • <strong>25+ ngữ pháp</strong></p>
-                <p style="font-size:1.1em;color:var(--text-medium);margin-bottom:20px">Bạn đã sẵn sàng chinh phục N4! 🚀</p>
-                <div style="margin-top:20px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap">
-                    <a href="n4.html" class="btn btn-primary" style="font-size:1.05em;padding:14px 30px"><span>🚀</span> Bắt đầu N4!</a>
-                    <a href="n5.html" class="btn btn-secondary"><span>🔄</span> Ôn lại N5</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-buttons">
-            <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
-            <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
         </div>
     </div>
 
     <footer class="footer">
-        <h3>⚓ Nihongo Journey</h3>
+        <h3>🏆 Nihongo Journey</h3>
         <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
-        <p style="margin-top:15px;font-size:1.5em">💖 ✨ ⚓ 🎓</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🏆 🎓</p>
         <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
         <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
         <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần</p>
     </footer>
 
     <script>
-        function createWaves(){const c=document.getElementById('waveContainer'),p=['⚓','','⛵','',''];for(let i=0;i<10;i++){const s=document.createElement('div');s.className='wave';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.top=(Math.random()*80+10)+'%';s.style.animationDuration=(Math.random()*20+25)+'s';s.style.animationDelay=Math.random()*10+'s';s.style.fontSize=(Math.random()*10+14)+'px';c.appendChild(s)}}
-        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
-        function playListening1(){const lines=['いらっしゃいませ。なにをおさがしですか。','かばんをみたいです。','これとこれと、どちらがいいですか。','あおい かばんがいいです。いくらですか。','さんぜんえんです。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,500)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playListening1Slow(){const lines=['いらっしゃいませ。','なにをおさがしですか。','かばんをみたいです。','これとこれと、','どちらがいいですか。','あおい かばんがいいです。','いくらですか。','さんぜんえんです。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.6;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,1000)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playListening2(){const lines=['すみません、えきへどうやっていきますか。','まっすぐいって、みぎへまがってください。','どのくらいかかりますか。','10ぷんくらいです。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,500)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playListening2Slow(){const lines=['すみません、','えきへどうやっていきますか。','まっすぐいって、','みぎへまがってください。','どのくらいかかりますか。','10ぷんくらいです。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.6;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,1000)};window.speechSynthesis.speak(u);}}speakNext();}
-        function stopAudio(){window.speechSynthesis.cancel()}
-        let currentDay=1;
-        function showDay(d){document.querySelectorAll('.day-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.day-tab').forEach(c=>c.classList.remove('active'));document.getElementById('day'+d+'-content').classList.add('active');document.querySelectorAll('.day-tab')[d-1].classList.add('active');currentDay=d;document.getElementById('days-nav').scrollIntoView({behavior:'smooth',block:'start'});}
-        function nextDay(){if(currentDay<7)showDay(currentDay+1)}
-        function prevDay(){if(currentDay>1)showDay(currentDay-1)}
-        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}updateProgress();}
-        let progress=0;function updateProgress(){progress=Math.min(100,progress+10);const b=document.getElementById('weekProgress');if(b)b.style.width=progress+'%'}
-        window.addEventListener('load',()=>{createWaves();window.speechSynthesis.getVoices()});
+        function createConfetti(){const c=document.getElementById('confettiContainer'),p=['🎉','🏆','⭐','✨','🌟','💎','🎓','🥇'];for(let i=0;i<15;i++){const s=document.createElement('div');s.className='confetti';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.left=Math.random()*100+'%';s.style.animationDuration=(Math.random()*6+6)+'s';s.style.animationDelay=Math.random()*8+'s';s.style.fontSize=(Math.random()*10+12)+'px';c.appendChild(s)}}
+        window.addEventListener('load',createConfetti);
     </script>
 </body>
 </html>

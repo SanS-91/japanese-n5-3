@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Ngày 1: Tổng ôn 100 Kanji | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FEF3C7;--gold-deep:#B45309;
+            --purple:#8B5CF6;--purple-dark:#6D28D9;--purple-light:#EDE9FE;
+            --rose:#EC4899;--rose-dark:#BE185D;--rose-light:#FCE7F3;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#CFFAFE;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --bg:#F9FAFB;
+            --text:#000000;
+            --text-soft:#1F2937;
+            --text-muted:#4B5563;
+            --text-light:#6B7280;
+            --card:#FFFFFF;
+            --border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+        
+        .header{position:sticky;top:0;z-index:100;background:var(--card);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan)) 1;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+        .logo-main{background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark),var(--rose-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--gold-light);color:var(--gold-deep);border-color:var(--gold)}
+        
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--gold-dark);text-decoration:none;font-weight:700}
+        
+        /* Day Nav */
+        .day-nav{background:var(--card);border-radius:18px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .day-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:18px 18px 0 0}
+        .day-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:14px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        .day-nav-link:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .day-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+        .day-nav-prev .day-nav-icon{background:var(--gold-light)}
+        .day-nav-next .day-nav-icon{background:var(--purple-light)}
+        .day-nav-info{flex:1;min-width:0}
+        .day-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .day-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .day-nav-arrow{font-size:1.5em;color:var(--gold);flex-shrink:0;font-weight:900}
+        .day-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
+        .day-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
+        .day-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        
+        /* Hero */
+        .hero{background:linear-gradient(135deg,#FEF3C7 0%,#EDE9FE 50%,#FCE7F3 100%);border-radius:28px;padding:50px 40px;margin-bottom:30px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05);text-align:center;position:relative;overflow:hidden}
+        .hero-badge{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;padding:12px 28px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:20px;box-shadow:0 4px 15px rgba(217,119,6,.3);position:relative;z-index:2}
+        .hero h1{font-size:2.8em;font-weight:900;margin-bottom:15px;color:var(--text);line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.6em;color:var(--gold-deep);font-weight:700;margin-bottom:15px;position:relative;z-index:2}
+        .hero-desc{font-size:1.05em;color:var(--text-soft);margin-bottom:20px;line-height:1.7;max-width:750px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:var(--card);padding:18px 28px;border-radius:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:120px;border:1px solid var(--border);transition:.3s}
+        .stat-item:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        /* Progress Bar */
+        .progress-bar-container{background:var(--card);border-radius:16px;padding:16px 22px;margin:20px auto;max-width:800px;box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border)}
+        .progress-label{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:800;color:var(--text);font-size:.9em}
+        .progress-track{width:100%;height:10px;background:var(--border);border-radius:8px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:8px;transition:width 1s ease}
+        
+        /* Cards */
+        .card{background:var(--card);border-radius:24px;padding:32px;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:25px;border:1px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
+        .section-title{font-size:1.8em;font-weight:900;text-align:center;margin-bottom:15px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:22px;font-size:1em;font-weight:600}
+        
+        /* Kanji Category */
+        .kanji-category{background:var(--card);border-radius:18px;padding:20px;margin:18px 0;border-left:5px solid var(--category-color,var(--gold));box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border);border-left-width:5px;transition:.3s}
+        .kanji-category:hover{transform:translateX(3px);box-shadow:0 4px 15px rgba(0,0,0,.08)}
+        .kanji-category h4{color:var(--text);margin-bottom:12px;font-size:1.05em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .kanji-list{display:flex;flex-wrap:wrap;gap:8px}
+        .kanji-chip{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));padding:7px 12px;border-radius:12px;font-family:'M PLUS Rounded 1c';font-weight:800;color:var(--text);font-size:.9em;cursor:pointer;transition:.3s;border:1px solid var(--border);display:flex;align-items:center;gap:6px}
+        .kanji-chip:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.1);background:linear-gradient(135deg,var(--gold),var(--purple));color:white}
+        .kanji-chip .jp{font-size:1.2em}
+        .kanji-chip .romaji{font-size:.78em;opacity:.9}
+        
+        /* Flashcard */
+        .flashcard-section{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
+        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
+        .flashcard-container{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+        .flashcard{perspective:1000px;height:170px;cursor:pointer}
+        .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+        .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid var(--border)}
+        .flashcard-front{background:var(--card);border-color:var(--gold)}
+        .flashcard-back{background:linear-gradient(135deg,var(--purple-light),var(--rose-light));border-color:var(--purple);transform:rotateY(180deg)}
+        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2.3em;font-weight:800;color:var(--text)}
+        .flashcard-hint{font-size:.72em;color:var(--text-light);margin-top:4px;font-weight:700}
+        .flashcard-romaji{font-size:.95em;font-weight:900;color:var(--purple-dark);margin-top:3px}
+        .flashcard-meaning{font-size:.85em;color:var(--text);margin-top:3px;font-weight:700;text-align:center}
+        
+        /* Exercise */
+        .exercise-section{background:linear-gradient(135deg,#FCE7F3,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
+        .exercise-card{background:var(--card);border-radius:18px;padding:20px;margin:12px 0;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+        .exercise-q{font-size:1em;font-weight:900;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.82em;flex-shrink:0;font-weight:900}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+        .exercise-opt{background:var(--gold-light);padding:11px;border-radius:10px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--gold);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:10px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        
+        /* Tip Box */
+        .tip-box{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:20px;padding:22px;margin:20px 0;position:relative}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
+        .tip-box h4{color:var(--gold-deep);margin-bottom:10px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:5px}
+        
+        /* Buttons */
+        .btn{padding:13px 28px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white;box-shadow:0 4px 12px rgba(217,119,6,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,.4)}
+        .btn-secondary{background:var(--card);color:var(--text);border:2px solid var(--gold)}
+        .btn-secondary:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .btn-purple{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:white;box-shadow:0 4px 12px rgba(109,40,217,.3)}
+        .btn-purple:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(109,40,217,.4)}
+        
+        .nav-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+        
+        /* Footer */
+        .footer{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose),var(--cyan));background-size:300% auto;color:white;padding:35px;text-align:center;margin-top:40px;border-radius:24px 24px 0 0;animation:shimmer 8s linear infinite}
+        .footer h3{font-size:1.5em;margin-bottom:8px;font-weight:900}
+        .footer p{opacity:.95;margin-bottom:6px;font-weight:600}
+        
+        @media(max-width:900px){.flashcard-container{grid-template-columns:repeat(3,1fr)}.exercise-options{grid-template-columns:1fr}}
+        @media(max-width:600px){.flashcard-container{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:30px 20px}.hero h1{font-size:1.8em}.hero-jp{font-size:1.2em}.card,.exercise-section,.flashcard-section{padding:20px}.day-nav{flex-direction:column}.day-nav-link{max-width:100%}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📚</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">Tuần 24</a> › <span>Ngày 1: Tổng ôn Kanji</span></div>
+
+    <div class="container">
+        <!-- DAY NAV -->
+        <div class="day-nav">
+            <a href="n5-w24.html" class="day-nav-link day-nav-prev">
+                <div class="day-nav-icon">🏆</div>
+                <div class="day-nav-info"><div class="day-nav-label">← HUB Tuần 24</div><div class="day-nav-title">Tổng quan 7 ngày</div></div>
+                <div class="day-nav-arrow">‹</div>
+            </a>
+            <div class="day-nav-center"><div class="day-nav-current">📚 Ngày 1/7</div><div class="day-nav-current-label">Tổng ôn Kanji</div></div>
+            <a href="n5-w24-2.html" class="day-nav-link day-nav-next">
+                <div class="day-nav-arrow">›</div>
+                <div class="day-nav-info"><div class="day-nav-label">Ngày tiếp →</div><div class="day-nav-title">Ngày 2: Tổng ôn Từ vựng</div></div>
+                <div class="day-nav-icon">📖</div>
+            </a>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <span class="hero-badge">📚 Ngày 1 • Tổng ôn 100 Kanji • かんじ そうおん</span>
+            <h1>Tổng ôn 100 Kanji N5<br>Theo 8 Nhóm Chủ Đề</h1>
+            <div class="hero-jp">１００の漢字を復習しよう！</div>
+            <p class="hero-desc">Ôn lại toàn bộ 100 Kanji đã học trong 24 tuần qua, được chia thành 8 nhóm chủ đề để dễ nhớ. Click vào từng chữ để nghe phát âm!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">100</span><span class="stat-label">Kanji</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Nhóm chủ đề</span></div>
+                <div class="stat-item"><span class="stat-number">20</span><span class="stat-label">Flashcard</span></div>
+                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Câu Quiz</span></div>
+            </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-bar-container">
+            <div class="progress-label">
+                <span>📊 Tiến độ Tuần 24</span>
+                <span>Ngày 1/7 • 14%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" style="width:14%"></div>
+            </div>
+        </div>
+
+        <!-- INTRO TIP -->
+        <div class="card">
+            <div class="tip-box">
+                <h4>💡 Cách học Kanji hiệu quả</h4>
+                <ul>
+                    <li>🎯 <strong>Học theo nhóm chủ đề</strong> - Giúp não bộ liên kết các chữ có liên quan</li>
+                    <li>🔊 <strong>Click vào từng chữ</strong> để nghe phát âm chuẩn</li>
+                    <li>✍️ <strong>Viết ra giấy</strong> mỗi chữ 3-5 lần để nhớ nét</li>
+                    <li>🔄 <strong>Lật Flashcard</strong> ở phần dưới để tự kiểm tra</li>
+                    <li>📝 <strong>Làm Quiz</strong> cuối trang để đánh giá mức độ nhớ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 8 KANJI GROUPS -->
+        <div class="card">
+            <h2 class="section-title"><span>📚</span> 100 Kanji Theo 8 Nhóm Chủ Đề <span>🎯</span></h2>
+            <p class="section-subtitle">Click vào từng chữ để nghe phát âm</p>
+
+            <!-- Group 1: Numbers -->
+            <div class="kanji-category" style="--category-color:#F59E0B">
+                <h4>🔢 Nhóm 1: Số đếm (13 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('いち')"><span class="jp">一</span><span class="romaji">いち (1)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('に')"><span class="jp">二</span><span class="romaji">に (2)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('さん')"><span class="jp">三</span><span class="romaji">さん (3)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('し、よん')"><span class="jp">四</span><span class="romaji">し/よん (4)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ご')"><span class="jp">五</span><span class="romaji">ご (5)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ろく')"><span class="jp">六</span><span class="romaji">ろく (6)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しち、なな')"><span class="jp">七</span><span class="romaji">しち/なな (7)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('はち')"><span class="jp">八</span><span class="romaji">はち (8)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('きゅう、く')"><span class="jp">九</span><span class="romaji">きゅう/く (9)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('じゅう')"><span class="jp">十</span><span class="romaji">じゅう (10)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ひゃく')"><span class="jp">百</span><span class="romaji">ひゃく (100)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('せん')"><span class="jp">千</span><span class="romaji">せん (1000)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('まん')"><span class="jp">万</span><span class="romaji">まん (10000)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 2: Days -->
+            <div class="kanji-category" style="--category-color:#EC4899">
+                <h4>📅 Nhóm 2: Ngày tháng (9 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('にち、ひ')"><span class="jp">日</span><span class="romaji">にち/ひ (ngày)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('げつ、つき')"><span class="jp">月</span><span class="romaji">げつ/つき (tháng)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('か')"><span class="jp">火</span><span class="romaji">か (lửa/thứ 3)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('すい')"><span class="jp">水</span><span class="romaji">すい (nước/thứ 4)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('もく')"><span class="jp">木</span><span class="romaji">もく (cây/thứ 5)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('きん')"><span class="jp">金</span><span class="romaji">きん (vàng/thứ 6)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ど、つち')"><span class="jp">土</span><span class="romaji">ど/つち (đất/thứ 7)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ねん、とし')"><span class="jp">年</span><span class="romaji">ねん/とし (năm)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しゅう')"><span class="jp">週</span><span class="romaji">しゅう (tuần)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 3: Family -->
+            <div class="kanji-category" style="--category-color:#8B5CF6">
+                <h4>👨‍👩‍ Nhóm 3: Gia đình (11 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('ふ、ちち')"><span class="jp">父</span><span class="romaji">ふ/ちち (bố)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ぼ、はは')"><span class="jp">母</span><span class="romaji">ぼ/はは (mẹ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('けい、あに')"><span class="jp">兄</span><span class="romaji">けい/あに (anh)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('し、あね')"><span class="jp">姉</span><span class="romaji">し/あね (chị)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('てい、おとうと')"><span class="jp">弟</span><span class="romaji">てい/おとうと (em trai)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('まい、いもうと')"><span class="jp">妹</span><span class="romaji">まい/いもうと (em gái)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('じん、ひと')"><span class="jp">人</span><span class="romaji">じん/ひと (người)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('だん、おとこ')"><span class="jp">男</span><span class="romaji">だん/おとこ (nam)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('じょ、おんな')"><span class="jp">女</span><span class="romaji">じょ/おんな (nữ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('し、こ')"><span class="jp">子</span><span class="romaji">し/こ (con)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('か、いえ')"><span class="jp">家</span><span class="romaji">か/いえ (nhà)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 4: Weather -->
+            <div class="kanji-category" style="--category-color:#06B6D4">
+                <h4>🌤️ Nhóm 4: Thời tiết (8 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('てん')"><span class="jp">天</span><span class="romaji">てん (trời)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('き')"><span class="jp">気</span><span class="romaji">き (khí)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('う、あめ')"><span class="jp">雨</span><span class="romaji">う/あめ (mưa)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('せつ、ゆき')"><span class="jp">雪</span><span class="romaji">せつ/ゆき (tuyết)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しゅん、はる')"><span class="jp">春</span><span class="romaji">しゅん/はる (xuân)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('か、なつ')"><span class="jp">夏</span><span class="romaji">か/なつ (hạ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しゅう、あき')"><span class="jp">秋</span><span class="romaji">しゅう/あき (thu)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('とう、ふゆ')"><span class="jp">冬</span><span class="romaji">とう/ふゆ (đông)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 5: School -->
+            <div class="kanji-category" style="--category-color:#10B981">
+                <h4>🏫 Nhóm 5: Trường học (8 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('がく、まなぶ')"><span class="jp">学</span><span class="romaji">がく/まなぶ (học)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('こう')"><span class="jp">校</span><span class="romaji">こう (trường)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しつ')"><span class="jp">室</span><span class="romaji">しつ (phòng)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ず')"><span class="jp">図</span><span class="romaji">ず (hình)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しょ、かく')"><span class="jp">書</span><span class="romaji">しょ/かく (viết)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('かん')"><span class="jp">館</span><span class="romaji">かん (quán)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しょ、ところ')"><span class="jp">所</span><span class="romaji">しょ/ところ (nơi)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ば')"><span class="jp">場</span><span class="romaji">ば (chỗ)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 6: Verbs -->
+            <div class="kanji-category" style="--category-color:#F59E0B">
+                <h4>🏃 Nhóm 6: Động từ (10 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('こう、いく')"><span class="jp">行</span><span class="romaji">こう/いく (đi)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('らい、くる')"><span class="jp">来</span><span class="romaji">らい/くる (đến)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('き、かえる')"><span class="jp">帰</span><span class="romaji">き/かえる (về)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('けん、みる')"><span class="jp">見</span><span class="romaji">けん/みる (xem)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しょく、たべる')"><span class="jp">食</span><span class="romaji">しょく/たべる (ăn)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('いん、のむ')"><span class="jp">飲</span><span class="romaji">いん/のむ (uống)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ばい、かう')"><span class="jp">買</span><span class="romaji">ばい/かう (mua)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('どく、よむ')"><span class="jp">読</span><span class="romaji">どく/よむ (đọc)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ぶん、きく')"><span class="jp">聞</span><span class="romaji">ぶん/きく (nghe)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ゆう、あそぶ')"><span class="jp">遊</span><span class="romaji">ゆう/あそぶ (chơi)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 7: Adjectives -->
+            <div class="kanji-category" style="--category-color:#EC4899">
+                <h4>📏 Nhóm 7: Tính từ (10 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('だい、おおきい')"><span class="jp">大</span><span class="romaji">だい/おおきい (lớn)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しょう、ちいさい')"><span class="jp">小</span><span class="romaji">しょう/ちいさい (nhỏ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('こう、たかい')"><span class="jp">高</span><span class="romaji">こう/たかい (cao/đắt)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('あん、やすい')"><span class="jp">安</span><span class="romaji">あん/やすい (rẻ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('た、おおい')"><span class="jp">多</span><span class="romaji">た/おおい (nhiều)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しょう、すくない')"><span class="jp">少</span><span class="romaji">しょう/すくない (ít)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しん、あたらしい')"><span class="jp">新</span><span class="romaji">しん/あたらしい (mới)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('こ、ふるい')"><span class="jp">古</span><span class="romaji">こ/ふるい (cũ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('ちょう、ながい')"><span class="jp">長</span><span class="romaji">ちょう/ながい (dài)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('たん、みじかい')"><span class="jp">短</span><span class="romaji">たん/みじかい (ngắn)</span></div>
+                </div>
+            </div>
+
+            <!-- Group 8: Places -->
+            <div class="kanji-category" style="--category-color:#8B5CF6">
+                <h4>🏺 Nhóm 8: Nơi chốn (6 chữ)</h4>
+                <div class="kanji-list">
+                    <div class="kanji-chip" onclick="playAudio('にゅう、はいる')"><span class="jp">入</span><span class="romaji">にゅう/はいる (vào)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('しゅつ、でる')"><span class="jp">出</span><span class="romaji">しゅつ/でる (ra)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('きゅう、やすむ')"><span class="jp">休</span><span class="romaji">きゅう/やすむ (nghỉ)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('きん')"><span class="jp">禁</span><span class="romaji">きん (cấm)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('えき')"><span class="jp">駅</span><span class="romaji">えき (ga)</span></div>
+                    <div class="kanji-chip" onclick="playAudio('てん、みせ')"><span class="jp">店</span><span class="romaji">てん/みせ (cửa hàng)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLASHCARD SECTION -->
+        <div class="flashcard-section">
+            <h2 class="section-title"><span>🎴</span> Flashcard Kanji (20 thẻ) <span>🎯</span></h2>
+            <p class="section-subtitle">Click vào thẻ để lật và ôn tập</p>
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">学</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">がく・まなぶ</div><div class="flashcard-meaning">Học</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">校</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こう</div><div class="flashcard-meaning">Trường</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">読</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">どく・よむ</div><div class="flashcard-meaning">Đọc</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">書</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょ・かく</div><div class="flashcard-meaning">Viết</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">食</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょく・たべる</div><div class="flashcard-meaning">Ăn</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">飲</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">いん・のむ</div><div class="flashcard-meaning">Uống</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">見</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">けん・みる</div><div class="flashcard-meaning">Xem</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">聞</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">ぶん・きく</div><div class="flashcard-meaning">Nghe</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">大</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">だい・おおきい</div><div class="flashcard-meaning">Lớn</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">小</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょう・ちいさい</div><div class="flashcard-meaning">Nhỏ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">高</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こう・たかい</div><div class="flashcard-meaning">Cao/Đắt</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">安</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">あん・やすい</div><div class="flashcard-meaning">Rẻ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">新</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しん・あたらしい</div><div class="flashcard-meaning">Mới</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">古</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こ・ふるい</div><div class="flashcard-meaning">Cũ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">長</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">ちょう・ながい</div><div class="flashcard-meaning">Dài</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">短</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">たん・みじかい</div><div class="flashcard-meaning">Ngắn</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">入</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">にゅう・はいる</div><div class="flashcard-meaning">Vào</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">出</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しゅつ・でる</div><div class="flashcard-meaning">Ra</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">休</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">きゅう・やすむ</div><div class="flashcard-meaning">Nghỉ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">駅</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">えき</div><div class="flashcard-meaning">Nhà ga</div></div></div></div>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="exercise-section">
+            <h2 class="section-title"><span>🎮</span> Quiz Kanji (5 câu) <span>🏆</span></h2>
+            <p class="section-subtitle">Kiểm tra mức độ nhớ Kanji của bạn</p>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> Kanji 学 có nghĩa là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1a')">Trường</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q1b')">Học</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1c')">Đọc</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1d')">Viết</div>
+                </div>
+                <div class="feedback" id="q1b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> Kanji nào có nghĩa là "Ăn"?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2a')">飲</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q2b')">食</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2c')">見</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2d')">聞</div>
+                </div>
+                <div class="feedback" id="q2b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> "ちいさい" nghĩa là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3a')">Lớn</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q3b')">Nhỏ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3c')">Cao</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3d')">Thấp</div>
+                </div>
+                <div class="feedback" id="q3b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">4</span> Kanji 駅 đọc là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4a')">てん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q4b')">えき</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4c')">みせ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4d')">がっこう</div>
+                </div>
+                <div class="feedback" id="q4b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">5</span> Kanji nào có nghĩa là "Mới"?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5a')">古</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q5b')">新</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5c')">長</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5d')">短</div>
+                </div>
+                <div class="feedback" id="q5b"></div>
+            </div>
+        </div>
+
+        <!-- NAV BUTTONS -->
+        <div class="nav-buttons">
+            <a href="n5-w24.html" class="btn btn-secondary"><span>🏆</span> Về HUB Tuần 24</a>
+            <a href="n5-w24-2.html" class="btn btn-primary"><span>📖</span> Ngày 2: Từ vựng →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📚 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 📚 🏆</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần</p>
+    </footer>
+
+    <script>
+        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
+        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}}
+        window.addEventListener('load',()=>{window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
