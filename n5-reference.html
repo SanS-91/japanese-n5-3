@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Tham Khảo N5 | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#5FD4A8;--primary-dark:#2FA878;--primary-light:#C8F5E0;
+            --secondary:#7EC8E3;--secondary-dark:#4FA8C7;--secondary-light:#D4ECFA;
+            --accent:#FFD93D;--accent-dark:#E8B820;--accent-light:#FFF5CC;
+            --rose:#FF9EAA;--rose-dark:#E87890;--rose-light:#FFE0E6;
+            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;
+            --terra:#CC7755;--terra-dark:#A85A3A;--terra-light:#F0D4C4;
+            --purple:#9B7FD4;--purple-dark:#6B4FA8;--purple-light:#E0D4F5;
+            --text-dark:#1F3D2F;--text-medium:#3A5C4A;--text-light:#6B8A7A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#F0FAF5 0%,#F0F8FF 25%,#FFFDF0 50%,#FFE8EC 75%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh;overflow-x:hidden}
+        
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);border-radius:50%;animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);border-radius:50%;animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);border-radius:50%;animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--rose),transparent);border-radius:50%;animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose)) 1;box-shadow:0 4px 20px rgba(47,168,120,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(95,212,168,.2)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(200,245,224,.6)25%,rgba(212,236,250,.6)50%,rgba(255,245,204,.6)75%,rgba(255,224,230,.6)100%);border-radius:32px;padding:50px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(47,168,120,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(95,212,168,.1),transparent,rgba(126,200,227,.1),transparent,rgba(255,217,61,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(95,212,168,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(47,168,120,.15);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(47,168,120,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        /* Tab Navigation */
+        .tab-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px;position:relative;z-index:2}
+        .tab-btn{background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.5));border:2px solid rgba(255,255,255,.95);border-radius:20px;padding:20px 15px;cursor:pointer;transition:.3s;font-family:inherit;text-align:center;box-shadow:0 6px 20px rgba(47,168,120,.1);position:relative;overflow:hidden}
+        .tab-btn::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--tab-color,var(--primary));opacity:.9}
+        .tab-btn:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(47,168,120,.2)}
+        .tab-btn.active{background:linear-gradient(135deg,var(--tab-color-light,rgba(95,212,168,.2)),rgba(255,255,255,.95));border-color:var(--tab-color,var(--primary));box-shadow:0 0 0 3px rgba(95,212,168,.2),0 10px 25px rgba(47,168,120,.15)}
+        .tab-btn.active::before{height:6px;opacity:1}
+        .tab-icon{font-size:2.5em;margin-bottom:8px;display:block}
+        .tab-title{font-size:1em;font-weight:900;color:var(--text-dark);margin-bottom:4px}
+        .tab-subtitle{font-size:.75em;color:var(--text-medium);font-weight:600}
+        
+        /* Tab Content */
+        .tab-content{display:none;animation:fadeIn .5s}
+        .tab-content.active{display:block}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        
+        .card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(240,250,245,.5));backdrop-filter:blur(15px);border-radius:28px;padding:35px;box-shadow:0 6px 25px rgba(47,168,120,.1);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--card-color,var(--primary)),var(--secondary),var(--accent));opacity:.9}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:25px;font-size:1.05em;font-weight:600}
+        
+        /* Pronunciation Cards */
+        .pron-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:25px}
+        .pron-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(240,250,245,.5));border-radius:20px;padding:25px;border-left:5px solid var(--pron-color,var(--primary));box-shadow:0 4px 15px rgba(47,168,120,.1);transition:.3s}
+        .pron-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(47,168,120,.2)}
+        .pron-header{display:flex;align-items:center;gap:15px;margin-bottom:15px}
+        .pron-char{font-family:'M PLUS Rounded 1c';font-size:3em;font-weight:900;color:var(--pron-color,var(--primary-dark));line-height:1}
+        .pron-info{flex:1}
+        .pron-romaji{font-size:1.2em;font-weight:900;color:var(--text-dark)}
+        .pron-ipa{font-size:.9em;color:var(--text-medium);font-weight:600;font-style:italic}
+        .pron-section{margin-bottom:12px}
+        .pron-label{font-size:.8em;font-weight:800;color:var(--pron-color,var(--primary-dark));margin-bottom:5px;text-transform:uppercase;letter-spacing:1px}
+        .pron-desc{font-size:.92em;color:var(--text-dark);font-weight:600;line-height:1.6}
+        .pron-tip{background:linear-gradient(135deg,rgba(255,245,204,.5),rgba(255,224,230,.5));padding:12px;border-radius:12px;margin-top:10px;font-size:.88em;color:var(--text-dark);font-weight:600;border-left:3px solid var(--accent)}
+        .pron-audio-btn{background:linear-gradient(135deg,var(--pron-color,var(--primary)),var(--pron-color-dark,var(--primary-dark)));background-size:200% auto;color:white;border:none;padding:8px 16px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;margin-top:10px}
+        .pron-audio-btn:hover{background-position:right center;transform:scale(1.05)}
+        
+        /* Alphabet Tables */
+        .alpha-table{width:100%;border-collapse:separate;border-spacing:0;margin:20px 0;background:rgba(255,255,255,.95);border-radius:15px;overflow:hidden;box-shadow:0 4px 15px rgba(47,168,120,.1)}
+        .alpha-table th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:15px;font-weight:900;font-size:.95em;text-align:center}
+        .alpha-table td{padding:12px;text-align:center;border-bottom:1px solid rgba(95,212,168,.15);font-weight:600}
+        .alpha-table tr:hover td{background:rgba(200,245,224,.3)}
+        .alpha-table .kana{font-family:'M PLUS Rounded 1c';font-size:1.8em;font-weight:900;color:var(--text-dark)}
+        .alpha-table .romaji{color:var(--text-medium);font-size:.9em}
+        
+        .compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:25px}
+        .compare-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(240,250,245,.5));border-radius:20px;padding:25px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(47,168,120,.1)}
+        .compare-title{font-size:1.1em;font-weight:900;color:var(--text-dark);margin-bottom:15px;text-align:center}
+        .compare-pair{display:flex;justify-content:space-around;align-items:center;margin-bottom:15px}
+        .compare-item{text-align:center}
+        .compare-kana{font-family:'M PLUS Rounded 1c';font-size:3em;font-weight:900;color:var(--text-dark);line-height:1}
+        .compare-romaji{font-size:.9em;color:var(--text-medium);font-weight:700;margin-top:5px}
+        .compare-vs{font-size:1.5em;font-weight:900;color:var(--rose);padding:0 15px}
+        .compare-tip{background:rgba(255,224,230,.5);padding:12px;border-radius:12px;font-size:.88em;color:var(--text-dark);font-weight:600;line-height:1.6;border-left:3px solid var(--rose)}
+        
+        /* Grammar Quick Ref */
+        .grammar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:25px}
+        .grammar-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(240,250,245,.5));border-radius:20px;padding:25px;border-top:5px solid var(--gram-color,var(--primary));box-shadow:0 4px 15px rgba(47,168,120,.1);transition:.3s}
+        .grammar-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(47,168,120,.2)}
+        .grammar-title{font-size:1.15em;font-weight:900;color:var(--text-dark);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+        .grammar-structure{background:linear-gradient(135deg,rgba(200,245,224,.4),rgba(212,236,250,.4));padding:12px;border-radius:12px;font-family:'M PLUS Rounded 1c';font-size:1.1em;text-align:center;color:var(--text-dark);font-weight:800;margin-bottom:12px;border:2px solid rgba(95,212,168,.3)}
+        .grammar-meaning{font-size:.9em;color:var(--text-medium);font-weight:700;margin-bottom:10px;font-style:italic}
+        .grammar-example{background:rgba(255,255,255,.8);padding:10px 12px;border-radius:10px;margin-bottom:8px;border-left:3px solid var(--gram-color,var(--primary))}
+        .grammar-example-jp{font-family:'M PLUS Rounded 1c';font-size:1.05em;color:var(--text-dark);font-weight:800;margin-bottom:3px}
+        .grammar-example-vn{font-size:.85em;color:var(--text-medium);font-weight:600}
+        .grammar-note{background:rgba(255,245,204,.5);padding:10px;border-radius:10px;margin-top:10px;font-size:.85em;color:var(--text-dark);font-weight:600;border-left:3px solid var(--accent)}
+        
+        /* Survival Kit */
+        .survival-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;margin-top:25px}
+        .survival-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(240,250,245,.5));border-radius:20px;padding:25px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(47,168,120,.1);transition:.3s}
+        .survival-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(47,168,120,.2)}
+        .survival-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px dashed rgba(95,212,168,.3)}
+        .survival-icon{font-size:2.5em}
+        .survival-title{font-size:1.2em;font-weight:900;color:var(--text-dark)}
+        .survival-subtitle{font-size:.85em;color:var(--text-medium);font-weight:600}
+        .phrase-list{list-style:none}
+        .phrase-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid rgba(95,212,168,.15);align-items:center}
+        .phrase-item:last-child{border-bottom:none}
+        .phrase-jp{font-family:'M PLUS Rounded 1c';font-size:1.15em;font-weight:800;color:var(--text-dark)}
+        .phrase-romaji{font-size:.85em;color:var(--text-medium);font-weight:600;font-style:italic}
+        .phrase-vn{font-size:.9em;color:var(--text-dark);font-weight:700;margin-top:3px}
+        .phrase-audio{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1.2em}
+        .phrase-audio:hover{background-position:right center;transform:scale(1.1)}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(200,245,224,.3),rgba(212,236,250,.3),rgba(255,245,204,.3));border:2px solid rgba(255,255,255,.95);border-radius:25px;padding:25px;margin:25px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose));opacity:.9}
+        .tip-box h4{color:var(--primary-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text-dark);font-size:.95em;line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:40px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.6em;margin-bottom:10px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.tab-nav{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:2.5em}}
+        @media(max-width:600px){.tab-nav{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:30px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.4em}.card{padding:22px}.survival-grid,.grammar-grid,.compare-grid,.pron-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📚</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <span>Tham Khảo</span></div>
+
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="sparkle-deco">📚</div><div class="sparkle-deco">🔊</div><div class="sparkle-deco">✍️</div><div class="sparkle-deco">💬</div>
+            <span class="hero-badge">📚 Tab Tham Khảo • Tra cứu nhanh • Bổ trợ 24 tuần</span>
+            <h1>Tra Cứu Nhanh N5<br>& Mẹo Học Thông Minh</h1>
+            <div class="hero-jp">リファレンス • ひょう • ちゅうい</div>
+            <p class="hero-desc">Tổng hợp mẹo phát âm, bảng tra cứu chữ cái, ngữ pháp nhanh và hội thoại sinh tồn.<br>Dựa trên nội dung thực tế của 5 tuần đầu tiên (Tuần 1-5)!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Mục tra cứu</span></div>
+                <div class="stat-item"><span class="stat-number">46</span><span class="stat-label">Hiragana</span></div>
+                <div class="stat-item"><span class="stat-number">46</span><span class="stat-label">Katakana</span></div>
+                <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Mẫu ngữ pháp</span></div>
+            </div>
+        </div>
+
+        <!-- TAB NAVIGATION -->
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="showTab('pronunciation')" style="--tab-color:#FF9EAA;--tab-color-light:rgba(255,158,170,.2)">
+                <span class="tab-icon">🔊</span>
+                <div class="tab-title">Góc Phát Âm</div>
+                <div class="tab-subtitle">Mẹo cho người Việt</div>
+            </button>
+            <button class="tab-btn" onclick="showTab('alphabet')" style="--tab-color:#7EC8E3;--tab-color-light:rgba(126,200,227,.2)">
+                <span class="tab-icon">✍️</span>
+                <div class="tab-title">Bảng Chữ Cái</div>
+                <div class="tab-subtitle">Hiragana vs Katakana</div>
+            </button>
+            <button class="tab-btn" onclick="showTab('grammar')" style="--tab-color:#FFD93D;--tab-color-light:rgba(255,217,61,.2)">
+                <span class="tab-icon">📖</span>
+                <div class="tab-title">Ngữ Pháp Nhanh</div>
+                <div class="tab-subtitle">Tra cứu mẫu câu</div>
+            </button>
+            <button class="tab-btn" onclick="showTab('survival')" style="--tab-color:#5FD4A8;--tab-color-light:rgba(95,212,168,.2)">
+                <span class="tab-icon">🗣️</span>
+                <div class="tab-title">Survival Kit</div>
+                <div class="tab-subtitle">Hội thoại sinh tồn</div>
+            </button>
+        </div>
+
+        <!-- TAB 1: PRONUNCIATION -->
+        <div class="tab-content active" id="pronunciation">
+            <div class="card" style="--card-color:#FF9EAA">
+                <h2 class="section-title"><span>🔊</span> Góc Phát Âm Cho Người Việt <span>🎯</span></h2>
+                <p class="section-subtitle">Những âm tiếng Nhật người Việt hay phát âm sai - Dựa trên Tuần 1-5</p>
+                
+                <div class="tip-box">
+                    <h4>💡 Tại sao người Việt hay phát âm sai tiếng Nhật?</h4>
+                    <ul>
+                        <li>🇻🇳 Tiếng Việt có <strong>6 thanh điệu</strong>, tiếng Nhật <strong>không có thanh điệu</strong> mà có <strong>trọng âm</strong></li>
+                        <li>️ Một số âm trong tiếng Nhật <strong>không tồn tại</strong> trong tiếng Việt (ふ, つ, し)</li>
+                        <li>🗣️ Người Việt có xu hướng <strong>thêm phụ âm cuối</strong> (ví dụ: "desu" → "des-tờ")</li>
+                    </ul>
+                </div>
+
+                <div class="pron-grid">
+                    <div class="pron-card" style="--pron-color:#FF9EAA;--pron-color-dark:#E87890">
+                        <div class="pron-header">
+                            <div class="pron-char">う</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">u /ɯ/</div>
+                                <div class="pron-ipa">IPA: /ɯ/ (không tròn môi)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Chu môi như "u" trong tiếng Việt (u, u, u)</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 1)</div>
+                            <div class="pron-desc">Môi chỉ hơi tròn nhẹ, <strong>không chu ra</strong>. Lưỡi ở giữa miệng, không rút vào. Nghe giống <strong>"ư"</strong> hơn "u".</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 1:</strong> うみ (umi) đọc gần như "ư-mi", không phải "u-mi".
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('う、うみ')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#7EC8E3;--pron-color-dark:#4FA8C7">
+                        <div class="pron-header">
+                            <div class="pron-char">え</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">e /e/</div>
+                                <div class="pron-ipa">IPA: /e/ (như "ê" mở rộng)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc như "e" trong tiếng Việt (hẹp) hoặc cười quá rộng</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 1)</div>
+                            <div class="pron-desc">Phát âm như <strong>"ê"</strong> trong tiếng Việt nhưng <strong>miệng mở rộng hơn</strong>. Lưỡi ở giữa, không chạm răng.</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ:</strong> え (e) - bức tranh, えき (eki) - nhà ga
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('え、えき')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#FFD93D;--pron-color-dark:#E8B820">
+                        <div class="pron-header">
+                            <div class="pron-char">し</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">shi /ɕi/</div>
+                                <div class="pron-ipa">IPA: /ɕi/ (xì nhẹ)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc là "si" (như tiếng Việt) - SAI!</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 2)</div>
+                            <div class="pron-desc">Đọc là <strong>"shi"</strong> chứ không phải "si". Lưỡi chạm nhẹ răng trên, hơi xì ra. Giống "shi" trong tiếng Việt nhưng <strong>nhẹ hơn</strong>.</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 2:</strong> さかな (sakana) = cá, し (shi) ≠ し (si)
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('し、さかな')">🔊 Nghe so sánh</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#5FD4A8;--pron-color-dark:#2FA878">
+                        <div class="pron-header">
+                            <div class="pron-char">す</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">su /sɯ/</div>
+                                <div class="pron-ipa">IPA: /sɯ/ (s + ư)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc là "su" với âm "u" tròn môi</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 2)</div>
+                            <div class="pron-desc">Đọc gần như <strong>"sư"</strong> trong tiếng Việt. Môi hơi tròn nhẹ, không chu ra. Lưỡi ở giữa miệng, hơi xì nhẹ.</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 2:</strong> すし (sushi) đọc như "sư-si", すし (sushi) = sushi
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('す、すし')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#CC7755;--pron-color-dark:#A85A3A">
+                        <div class="pron-header">
+                            <div class="pron-char">つ</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">tsu /tsɯ/</div>
+                                <div class="pron-ipa">IPA: /tsɯ/ (ts + ư)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc là "tu" hoặc "tsu" với âm "u" tròn môi</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng</div>
+                            <div class="pron-desc">Đọc như <strong>"ts" + "ư"</strong> (không tròn môi). Giống âm "ts" trong "cats" (tiếng Anh) cộng với "ư".</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 2:</strong> つくえ (tsukue) = cái bàn, つ (tsu) ≠ く (ku)
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('つ、つくえ')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#9B7FD4;--pron-color-dark:#6B4FA8">
+                        <div class="pron-header">
+                            <div class="pron-char">ふ</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">fu /ɸɯ/</div>
+                                <div class="pron-ipa">IPA: /ɸɯ/ (xì hơi)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc là "phu" (ph + u) hoặc "hu" - đều sai!</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 3)</div>
+                            <div class="pron-desc">Môi hơi tròn, <strong>thổi nhẹ ra</strong> (giống thổi bụi). Lưỡi không chạm răng, chỉ thổi hơi. Nghe giống <strong>"phư"</strong> nhẹ nhàng.</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 3:</strong> ふゆ (fuyu) = mùa đông, ふ (fu) ≠ ふ (phu)
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('ふ、ふゆ')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#FF9EAA;--pron-color-dark:#E87890">
+                        <div class="pron-header">
+                            <div class="pron-char">ん</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">n /n/</div>
+                                <div class="pron-ipa">IPA: biến đổi theo ngữ cảnh</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">⚠️ Âm biến hình</div>
+                            <div class="pron-desc">ん không chỉ là "n" - nó thay đổi tùy theo chữ đứng sau!</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ 4 cách đọc</div>
+                            <div class="pron-desc">
+                                • Trước B, P, M → đọc <strong>M</strong> (さんぽ → sam-po)<br>
+                                • Trước K, G → đọc <strong>NG</strong> (でんき → den-ngi)<br>
+                                • Trước N, T, D → đọc <strong>N</strong> (ほん → hon)<br>
+                                • Cuối câu → đọc <strong>N</strong> nhẹ
+                            </div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Mẹo:</strong> Đừng bao giờ đọc ん là "nư" hay "nờ" ở cuối câu - chỉ cần khép nhẹ cuống họng!
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('さんぽ、でんき、ほん')">🔊 Nghe biến âm</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#7EC8E3;--pron-color-dark:#4FA8C7">
+                        <div class="pron-header">
+                            <div class="pron-char">を</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">wo → o</div>
+                                <div class="pron-ipa">IPA: /o/ (đọc giống お)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc là "wo" (wờ-o) - sai hoàn toàn!</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng</div>
+                            <div class="pron-desc">を luôn đọc là <strong>"o"</strong> (giống お). Đây là quy tắc cố định - を chỉ dùng làm trợ từ tân ngữ.</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 3:</strong> ほんをよみます (đọc sách) - を đọc là "o"
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('を、ほんをよみます')">🔊 Nghe mẫu</button>
+                    </div>
+
+                    <div class="pron-card" style="--pron-color:#FFD93D;--pron-color-dark:#E8B820">
+                        <div class="pron-header">
+                            <div class="pron-char">ら行</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">ra, ri, ru, re, ro</div>
+                                <div class="pron-ipa">IPA: /ɾ/ (giữa R và L)</div>
+                            </div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">❌ Sai thường gặp</div>
+                            <div class="pron-desc">Đọc như "r" cuộn lưỡi hoặc "l" trong tiếng Việt</div>
+                        </div>
+                        <div class="pron-section">
+                            <div class="pron-label">✅ Cách đọc đúng (Tuần 4)</div>
+                            <div class="pron-desc">Âm <strong>/ɾ/</strong> - đầu lưỡi chạm nhẹ vào chân răng trên rồi bật ra. Giống âm "r" trong "butter" (tiếng Anh Mỹ).</div>
+                        </div>
+                        <div class="pron-tip">
+                            💡 <strong>Ví dụ từ Tuần 4:</strong> りんご (ringo) = táo, らいねん (rainen) = năm sau
+                        </div>
+                        <button class="pron-audio-btn" onclick="playAudio('ら、り、る、れ、ろ')">🔊 Nghe mẫu</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--card-color:#FF9EAA">
+                <h2 class="section-title"><span>🎵</span> Trọng Âm (Pitch Accent) Cơ Bản <span>🎶</span></h2>
+                <p class="section-subtitle">Tiếng Nhật không có thanh điệu như tiếng Việt, nhưng có trọng âm cao-thấp</p>
+                
+                <div class="tip-box">
+                    <h4>🎵 Trọng âm là gì?</h4>
+                    <p>Trong tiếng Nhật, mỗi từ có một "giai điệu" riêng - âm tiết nào đọc CAO, âm tiết nào đọc THẤP. Sai trọng âm có thể làm thay đổi nghĩa!</p>
+                    <ul>
+                        <li><strong>Hashi 🥢</strong> (cầu): HA-shi (cao-thấp)</li>
+                        <li><strong>Hashi 🍴</strong> (đũa): ha-SHI (thấp-cao)</li>
+                    </ul>
+                </div>
+
+                <div class="pron-grid">
+                    <div class="pron-card" style="--pron-color:#FF9EAA">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">📈</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Loại 1: Cao đều</div>
+                                <div class="pron-ipa">Tất cả âm tiết đều CAO</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">Ví dụ: <strong>おとこ</strong> (otoko - đàn ông)<br>📈 O-to-KO (cao-cao-cao)</div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#7EC8E3">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">📉</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Loại 2: Thấp đầu</div>
+                                <div class="pron-ipa">Âm đầu THẤP, sau đó CAO</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">Ví dụ: <strong>おんな</strong> (onna - phụ nữ)<br>📉 O-nna (thấp-cao)</div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#FFD93D">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">📊</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Loại 3: Cao giữa</div>
+                                <div class="pron-ipa">Cao ở giữa, thấp ở cuối</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">Ví dụ: <strong>さくら</strong> (sakura - hoa anh đào)<br>📊 sa-KU-ra (thấp-cao-thấp)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: ALPHABET -->
+        <div class="tab-content" id="alphabet">
+            <div class="card" style="--card-color:#7EC8E3">
+                <h2 class="section-title"><span>✍️</span> Bảng Hiragana Đầy Đủ (46 chữ) <span>🌸</span></h2>
+                <p class="section-subtitle">Bảng chữ cái mềm mại dùng cho từ thuần Nhật - Học trong Tuần 1-4</p>
+                
+                <table class="alpha-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>a</th>
+                            <th>i</th>
+                            <th>u</th>
+                            <th>e</th>
+                            <th>o</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>∅</strong></td><td><span class="kana">あ</span><br><span class="romaji">a</span></td><td><span class="kana">い</span><br><span class="romaji">i</span></td><td><span class="kana">う</span><br><span class="romaji">u</span></td><td><span class="kana">え</span><br><span class="romaji">e</span></td><td><span class="kana">お</span><br><span class="romaji">o</span></td></tr>
+                        <tr><td><strong>K</strong></td><td><span class="kana">か</span><br><span class="romaji">ka</span></td><td><span class="kana">き</span><br><span class="romaji">ki</span></td><td><span class="kana">く</span><br><span class="romaji">ku</span></td><td><span class="kana">け</span><br><span class="romaji">ke</span></td><td><span class="kana">こ</span><br><span class="romaji">ko</span></td></tr>
+                        <tr><td><strong>S</strong></td><td><span class="kana">さ</span><br><span class="romaji">sa</span></td><td><span class="kana">し</span><br><span class="romaji">shi</span></td><td><span class="kana">す</span><br><span class="romaji">su</span></td><td><span class="kana">せ</span><br><span class="romaji">se</span></td><td><span class="kana">そ</span><br><span class="romaji">so</span></td></tr>
+                        <tr><td><strong>T</strong></td><td><span class="kana">た</span><br><span class="romaji">ta</span></td><td><span class="kana">ち</span><br><span class="romaji">chi</span></td><td><span class="kana">つ</span><br><span class="romaji">tsu</span></td><td><span class="kana">て</span><br><span class="romaji">te</span></td><td><span class="kana">と</span><br><span class="romaji">to</span></td></tr>
+                        <tr><td><strong>N</strong></td><td><span class="kana">な</span><br><span class="romaji">na</span></td><td><span class="kana">に</span><br><span class="romaji">ni</span></td><td><span class="kana">ぬ</span><br><span class="romaji">nu</span></td><td><span class="kana">ね</span><br><span class="romaji">ne</span></td><td><span class="kana">の</span><br><span class="romaji">no</span></td></tr>
+                        <tr><td><strong>H</strong></td><td><span class="kana">は</span><br><span class="romaji">ha</span></td><td><span class="kana">ひ</span><br><span class="romaji">hi</span></td><td><span class="kana">ふ</span><br><span class="romaji">fu</span></td><td><span class="kana">へ</span><br><span class="romaji">he</span></td><td><span class="kana">ほ</span><br><span class="romaji">ho</span></td></tr>
+                        <tr><td><strong>M</strong></td><td><span class="kana">ま</span><br><span class="romaji">ma</span></td><td><span class="kana">み</span><br><span class="romaji">mi</span></td><td><span class="kana">む</span><br><span class="romaji">mu</span></td><td><span class="kana">め</span><br><span class="romaji">me</span></td><td><span class="kana">も</span><br><span class="romaji">mo</span></td></tr>
+                        <tr><td><strong>Y</strong></td><td><span class="kana">や</span><br><span class="romaji">ya</span></td><td></td><td><span class="kana">ゆ</span><br><span class="romaji">yu</span></td><td></td><td><span class="kana">よ</span><br><span class="romaji">yo</span></td></tr>
+                        <tr><td><strong>R</strong></td><td><span class="kana">ら</span><br><span class="romaji">ra</span></td><td><span class="kana">り</span><br><span class="romaji">ri</span></td><td><span class="kana">る</span><br><span class="romaji">ru</span></td><td><span class="kana">れ</span><br><span class="romaji">re</span></td><td><span class="kana">ろ</span><br><span class="romaji">ro</span></td></tr>
+                        <tr><td><strong>W</strong></td><td><span class="kana">わ</span><br><span class="romaji">wa</span></td><td></td><td></td><td></td><td><span class="kana">を</span><br><span class="romaji">wo</span></td></tr>
+                        <tr><td><strong>N</strong></td><td colspan="5" style="text-align:center"><span class="kana">ん</span><br><span class="romaji">n</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="--card-color:#7EC8E3">
+                <h2 class="section-title"><span>✍️</span> Bảng Katakana Đầy Đủ (46 chữ) <span>💜</span></h2>
+                <p class="section-subtitle">Bảng chữ cái góc cạnh dùng cho từ mượn nước ngoài - Học từ Tuần 5</p>
+                
+                <table class="alpha-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>a</th>
+                            <th>i</th>
+                            <th>u</th>
+                            <th>e</th>
+                            <th>o</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>∅</strong></td><td><span class="kana">ア</span><br><span class="romaji">a</span></td><td><span class="kana">イ</span><br><span class="romaji">i</span></td><td><span class="kana">ウ</span><br><span class="romaji">u</span></td><td><span class="kana">エ</span><br><span class="romaji">e</span></td><td><span class="kana">オ</span><br><span class="romaji">o</span></td></tr>
+                        <tr><td><strong>K</strong></td><td><span class="kana">カ</span><br><span class="romaji">ka</span></td><td><span class="kana">キ</span><br><span class="romaji">ki</span></td><td><span class="kana">ク</span><br><span class="romaji">ku</span></td><td><span class="kana">ケ</span><br><span class="romaji">ke</span></td><td><span class="kana">コ</span><br><span class="romaji">ko</span></td></tr>
+                        <tr><td><strong>S</strong></td><td><span class="kana">サ</span><br><span class="romaji">sa</span></td><td><span class="kana">シ</span><br><span class="romaji">shi</span></td><td><span class="kana">ス</span><br><span class="romaji">su</span></td><td><span class="kana">セ</span><br><span class="romaji">se</span></td><td><span class="kana">ソ</span><br><span class="romaji">so</span></td></tr>
+                        <tr><td><strong>T</strong></td><td><span class="kana">タ</span><br><span class="romaji">ta</span></td><td><span class="kana">チ</span><br><span class="romaji">chi</span></td><td><span class="kana">ツ</span><br><span class="romaji">tsu</span></td><td><span class="kana">テ</span><br><span class="romaji">te</span></td><td><span class="kana">ト</span><br><span class="romaji">to</span></td></tr>
+                        <tr><td><strong>N</strong></td><td><span class="kana">ナ</span><br><span class="romaji">na</span></td><td><span class="kana">ニ</span><br><span class="romaji">ni</span></td><td><span class="kana">ヌ</span><br><span class="romaji">nu</span></td><td><span class="kana">ネ</span><br><span class="romaji">ne</span></td><td><span class="kana">ノ</span><br><span class="romaji">no</span></td></tr>
+                        <tr><td><strong>H</strong></td><td><span class="kana">ハ</span><br><span class="romaji">ha</span></td><td><span class="kana">ヒ</span><br><span class="romaji">hi</span></td><td><span class="kana">フ</span><br><span class="romaji">fu</span></td><td><span class="kana">ヘ</span><br><span class="romaji">he</span></td><td><span class="kana">ホ</span><br><span class="romaji">ho</span></td></tr>
+                        <tr><td><strong>M</strong></td><td><span class="kana">マ</span><br><span class="romaji">ma</span></td><td><span class="kana">ミ</span><br><span class="romaji">mi</span></td><td><span class="kana">ム</span><br><span class="romaji">mu</span></td><td><span class="kana">メ</span><br><span class="romaji">me</span></td><td><span class="kana">モ</span><br><span class="romaji">mo</span></td></tr>
+                        <tr><td><strong>Y</strong></td><td><span class="kana">ヤ</span><br><span class="romaji">ya</span></td><td></td><td><span class="kana">ユ</span><br><span class="romaji">yu</span></td><td></td><td><span class="kana">ヨ</span><br><span class="romaji">yo</span></td></tr>
+                        <tr><td><strong>R</strong></td><td><span class="kana">ラ</span><br><span class="romaji">ra</span></td><td><span class="kana">リ</span><br><span class="romaji">ri</span></td><td><span class="kana">ル</span><br><span class="romaji">ru</span></td><td><span class="kana">レ</span><br><span class="romaji">re</span></td><td><span class="kana">ロ</span><br><span class="romaji">ro</span></td></tr>
+                        <tr><td><strong>W</strong></td><td><span class="kana">ワ</span><br><span class="romaji">wa</span></td><td></td><td></td><td></td><td><span class="kana">ヲ</span><br><span class="romaji">wo</span></td></tr>
+                        <tr><td><strong>N</strong></td><td colspan="5" style="text-align:center"><span class="kana">ン</span><br><span class="romaji">n</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="--card-color:#7EC8E3">
+                <h2 class="section-title"><span>⚠️</span> Các Cặp Chữ Dễ Nhầm <span>🔍</span></h2>
+                <p class="section-subtitle">Những cặp chữ học viên hay nhầm lẫn nhất - Tổng hợp từ Tuần 1-5</p>
+                
+                <div class="compare-grid">
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: あ vs お (Tuần 1)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">あ</div>
+                                <div class="compare-romaji">a</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">お</div>
+                                <div class="compare-romaji">o</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>あ (a):</strong> Nét ngang ở GIỮA, nét cong tròn bên dưới<br>
+                            <strong>お (o):</strong> Nét ngang ở TRÊN, có nét sổ xuống bên phải
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: う vs く (Tuần 1)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">う</div>
+                                <div class="compare-romaji">u</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">く</div>
+                                <div class="compare-romaji">ku</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>う (u):</strong> Nét trên dài hơn, cong hơn, có 2 nét<br>
+                            <strong>く (ku):</strong> Chỉ 1 nét, góc cạnh, giống chữ "&lt;"
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: い vs き (Tuần 1)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">い</div>
+                                <div class="compare-romaji">i</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">き</div>
+                                <div class="compare-romaji">ki</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>い (i):</strong> 2 nét cong đơn giản, song song<br>
+                            <strong>き (ki):</strong> Có thêm nét ngang ở giữa và nét sổ
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: さ vs そ (Tuần 2)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">さ</div>
+                                <div class="compare-romaji">sa</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">そ</div>
+                                <div class="compare-romaji">so</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>さ (sa):</strong> Nét trên cong, nét dưới cong ngược, có chấm nhỏ<br>
+                            <strong>そ (so):</strong> Giống thung lũng, có nét sổ ở giữa
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: し vs つ (Tuần 2)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">し</div>
+                                <div class="compare-romaji">shi</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">つ</div>
+                                <div class="compare-romaji">tsu</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>し (shi):</strong> Thẳng đứng với móc nhỏ ở dưới<br>
+                            <strong>つ (tsu):</strong> Cong ngang như sóng, có đuôi móc
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: た vs ち (Tuần 2)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">た</div>
+                                <div class="compare-romaji">ta</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">ち</div>
+                                <div class="compare-romaji">chi</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>た (ta):</strong> Giống dấu cộng +, nét sổ thẳng<br>
+                            <strong>ち (chi):</strong> Cong với nét ngang bên phải
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: な vs に (Tuần 3)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">な</div>
+                                <div class="compare-romaji">na</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">に</div>
+                                <div class="compare-romaji">ni</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>な (na):</strong> Nét ngang với cột dọc, có móc nhỏ<br>
+                            <strong>に (ni):</strong> Hai cột song song, không có móc
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: ぬ vs ね (Tuần 3)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">ぬ</div>
+                                <div class="compare-romaji">nu</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">ね</div>
+                                <div class="compare-romaji">ne</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>ぬ (nu):</strong> Nét cong cuộn, không có cột dọc<br>
+                            <strong>ね (ne):</strong> Nét ngang với cột dọc và nhánh nhỏ
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Hiragana: の vs ほ (Tuần 3)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">の</div>
+                                <div class="compare-romaji">no</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">ほ</div>
+                                <div class="compare-romaji">ho</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>の (no):</strong> Vòng tròn với cột dọc đơn giản<br>
+                            <strong>ほ (ho):</strong> Vòng tròn với cột dọc và chấm giữa
+                        </div>
+                    </div>
+
+                    <div class="compare-card">
+                        <div class="compare-title">Katakana: ク vs ヒ (Tuần 5)</div>
+                        <div class="compare-pair">
+                            <div class="compare-item">
+                                <div class="compare-kana">ク</div>
+                                <div class="compare-romaji">ku</div>
+                            </div>
+                            <div class="compare-vs">VS</div>
+                            <div class="compare-item">
+                                <div class="compare-kana">ヒ</div>
+                                <div class="compare-romaji">hi</div>
+                            </div>
+                        </div>
+                        <div class="compare-tip">
+                            <strong>ク (ku):</strong> Nét móc xuống DƯỚI<br>
+                            <strong>ヒ (hi):</strong> Nét móc lên TRÊN<br>
+                            💡 Đây là cặp dễ nhầm nhất trong Katakana!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--card-color:#7EC8E3">
+                <h2 class="section-title"><span>✨</span> Dakuten & Handakuten Đầy Đủ <span>🔴</span></h2>
+                <p class="section-subtitle">Biến âm làm thay đổi cách đọc của chữ cái - Học trong Tuần 4</p>
+                
+                <div class="tip-box">
+                    <h4>🔴 Dakuten (゛) - Biến âm đục</h4>
+                    <p>Thêm dấu ゛ vào góc trên bên phải để biến âm thanh trong thành âm đục:</p>
+                    <ul>
+                        <li>か → が (ka → ga), さ → ざ (sa → za)</li>
+                        <li>た → だ (ta → da), は → ば (ha → ba)</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <h4>🔵 Handakuten (゜) - Biến âm bán đục</h4>
+                    <p>Chỉ áp dụng cho hàng は, thêm dấu ゜ để biến thành âm "p":</p>
+                    <ul>
+                        <li>は → ぱ (ha → pa), ひ → ぴ (hi → pi)</li>
+                        <li>ふ → ぷ (fu → pu), へ → ぺ (he → pe), ほ → ぽ (ho → po)</li>
+                    </ul>
+                </div>
+
+                <h3 style="font-size:1.3em;margin:25px 0 15px;color:var(--text-dark);text-align:center">📊 Bảng Dakuten Đầy Đủ</h3>
+                
+                <table class="alpha-table">
+                    <thead>
+                        <tr>
+                            <th>Gốc</th>
+                            <th>+ ゛ (Dakuten)</th>
+                            <th>Gốc</th>
+                            <th>+ ゛ (Dakuten)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="kana">か</span> ka</td><td><span class="kana">が</span> ga</td><td><span class="kana">き</span> ki</td><td><span class="kana">ぎ</span> gi</td></tr>
+                        <tr><td><span class="kana">く</span> ku</td><td><span class="kana">ぐ</span> gu</td><td><span class="kana">け</span> ke</td><td><span class="kana">げ</span> ge</td></tr>
+                        <tr><td><span class="kana">こ</span> ko</td><td><span class="kana">ご</span> go</td><td><span class="kana">さ</span> sa</td><td><span class="kana">ざ</span> za</td></tr>
+                        <tr><td><span class="kana">し</span> shi</td><td><span class="kana">じ</span> ji</td><td><span class="kana">す</span> su</td><td><span class="kana">ず</span> zu</td></tr>
+                        <tr><td><span class="kana">せ</span> se</td><td><span class="kana">ぜ</span> ze</td><td><span class="kana">そ</span> so</td><td><span class="kana">ぞ</span> zo</td></tr>
+                        <tr><td><span class="kana">た</span> ta</td><td><span class="kana">だ</span> da</td><td><span class="kana">ち</span> chi</td><td><span class="kana">ぢ</span> ji</td></tr>
+                        <tr><td><span class="kana">つ</span> tsu</td><td><span class="kana">づ</span> zu</td><td><span class="kana">て</span> te</td><td><span class="kana">で</span> de</td></tr>
+                        <tr><td><span class="kana">と</span> to</td><td><span class="kana">ど</span> do</td><td><span class="kana">は</span> ha</td><td><span class="kana">ば</span> ba</td></tr>
+                        <tr><td><span class="kana">ひ</span> hi</td><td><span class="kana">び</span> bi</td><td><span class="kana">ふ</span> fu</td><td><span class="kana">ぶ</span> bu</td></tr>
+                        <tr><td><span class="kana">へ</span> he</td><td><span class="kana">べ</span> be</td><td><span class="kana">ほ</span> ho</td><td><span class="kana">ぼ</span> bo</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-size:1.3em;margin:25px 0 15px;color:var(--text-dark);text-align:center">🔵 Bảng Handakuten (Chỉ cho hàng Ha)</h3>
+                
+                <table class="alpha-table" style="max-width:600px;margin:0 auto">
+                    <thead>
+                        <tr>
+                            <th>Gốc</th>
+                            <th>+ ゜ (Handakuten)</th>
+                            <th>Âm đọc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="kana">は</span> ha</td><td><span class="kana">ぱ</span> pa</td><td>pa</td></tr>
+                        <tr><td><span class="kana">ひ</span> hi</td><td><span class="kana">ぴ</span> pi</td><td>pi</td></tr>
+                        <tr><td><span class="kana">ふ</span> fu</td><td><span class="kana">ぷ</span> pu</td><td>pu</td></tr>
+                        <tr><td><span class="kana">へ</span> he</td><td><span class="kana">ぺ</span> pe</td><td>pe</td></tr>
+                        <tr><td><span class="kana">ほ</span> ho</td><td><span class="kana">ぽ</span> po</td><td>po</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box" style="margin-top:25px;background:linear-gradient(135deg,rgba(255,217,61,.2),rgba(255,158,170,.2))">
+                    <h4>💡 Mẹo nhớ quan trọng</h4>
+                    <ul>
+                        <li><strong>Dakuten (゛):</strong> Giống 2 dấu phẩy nhỏ - làm âm đục hơn (k → g, s → z, t → d, h → b)</li>
+                        <li><strong>Handakuten (゜):</strong> Giống vòng tròn nhỏ - CHỈ dùng cho hàng は (h → p)</li>
+                        <li><strong>じ vs ぢ:</strong> Cả hai đều đọc là "ji", nhưng じ phổ biến hơn</li>
+                        <li><strong>ず vs づ:</strong> Cả hai đều đọc là "zu", nhưng ず phổ biến hơn</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box" style="margin-top:15px;background:linear-gradient(135deg,rgba(95,212,168,.2),rgba(126,200,227,.2))">
+                    <h4>🎯 Ví dụ thực tế từ Tuần 4</h4>
+                    <ul>
+                        <li><strong>かさ</strong> (kasa) → <strong>がさ</strong> (gasa): tiếng sột soạt</li>
+                        <li><strong>さかな</strong> (sakana) → <strong>ざかな</strong> (zakana): cá (cách đọc cổ)</li>
+                        <li><strong>たな</strong> (tana) → <strong>だな</strong> (dana): cái kệ</li>
+                        <li><strong>はな</strong> (hana) → <strong>ばな</strong> (bana): hoa (phương ngữ) → <strong>ぱな</strong> (pana): chảo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="--card-color:#7EC8E3">
+                <h2 class="section-title"><span>🎯</span> Khi Nào Dùng Katakana? <span>💜</span></h2>
+                <p class="section-subtitle">5 trường hợp bắt buộc dùng Katakana - Học trong Tuần 5</p>
+                
+                <div class="pron-grid">
+                    <div class="pron-card" style="--pron-color:#9B7FD4">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">1️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Từ mượn nước ngoài</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            coffee → コーヒー<br>
+                            tea → ティー<br>
+                            computer → コンピューター
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#9B7FD4">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">2️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Tên riêng nước ngoài</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            Sarah → サラ<br>
+                            John → ジョン<br>
+                            America → アメリカ
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#9B7FD4">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">3️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Tên khoa học</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            Động thực vật trong sách giáo khoa thường viết bằng Katakana
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#9B7FD4">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">4️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Nhấn mạnh (như IN HOA)</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            Giống việc viết IN HOA trong tiếng Việt để nhấn mạnh từ quan trọng
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#9B7FD4">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">5️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Âm thanh trong truyện tranh</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            ドンドン (thình thình)<br>
+                            バン (đùng)<br>
+                            ワンワン (gâu gâu)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: GRAMMAR -->
+        <div class="tab-content" id="grammar">
+            <div class="card" style="--card-color:#FFD93D">
+                <h2 class="section-title"><span>📖</span> Trợ Từ Cơ Bản <span>🔤</span></h2>
+                <p class="section-subtitle">Những trợ từ quan trọng nhất trong N5 - Học trong Tuần 1-3</p>
+                
+                <div class="grammar-grid">
+                    <div class="grammar-card" style="--gram-color:#FF9EAA">
+                        <div class="grammar-title"> は (wa) - Trợ từ chủ đề</div>
+                        <div class="grammar-structure">A は B です</div>
+                        <div class="grammar-meaning">Đánh dấu chủ đề của câu, đọc là "wa" không phải "ha"</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしは マイン です。</div>
+                            <div class="grammar-example-vn">Tôi là Minh. (Tuần 1)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ここは がっこうです。</div>
+                            <div class="grammar-example-vn">Đây là trường học. (Tuần 1)</div>
+                        </div>
+                        <div class="grammar-note">
+                            💡 <strong>Lưu ý:</strong> は đọc là "wa" khi làm trợ từ, nhưng vẫn đọc là "ha" trong từ như はな (hana - hoa).
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#7EC8E3">
+                        <div class="grammar-title">🎯 が (ga) - Trợ từ chủ ngữ</div>
+                        <div class="grammar-structure">A が あります/います</div>
+                        <div class="grammar-meaning">Đánh dấu chủ ngữ, nhấn mạnh "AI/CÁI GÌ" thực hiện hành động</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ねこが います。</div>
+                            <div class="grammar-example-vn">Có con mèo. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">さくらが きれいです。</div>
+                            <div class="grammar-example-vn">Hoa anh đào đẹp. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-note">
+                            💡 <strong>Phân biệt:</strong> は = chủ đề (đã biết), が = chủ ngữ mới (chưa biết).
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#FFD93D">
+                        <div class="grammar-title">🎯 を (o) - Trợ từ tân ngữ</div>
+                        <div class="grammar-structure">A を ます</div>
+                        <div class="grammar-meaning">Đánh dấu tân ngữ - đối tượng bị tác động. Luôn đọc là "o"</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ほんを よみます。</div>
+                            <div class="grammar-example-vn">Đọc sách. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">みずを のみます。</div>
+                            <div class="grammar-example-vn">Uống nước. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-note">
+                            ⚠️ <strong>Quan trọng:</strong> を luôn đọc là "o" (giống お), KHÔNG đọc là "wo".
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#5FD4A8">
+                        <div class="grammar-title">🎯 に (ni) - Địa điểm/Thời gian</div>
+                        <div class="grammar-structure">A に いきます</div>
+                        <div class="grammar-meaning">Đánh dấu địa điểm hoặc thời gian xảy ra hành động</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">がっこうに いきます。</div>
+                            <div class="grammar-example-vn">Đi đến trường. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">くじに おきます。</div>
+                            <div class="grammar-example-vn">Dậy lúc 9 giờ. (Tuần 3)</div>
+                        </div>
+                        <div class="grammar-note">
+                            💡 <strong>Mẹo:</strong> に = "tại/ở/vào" trong tiếng Việt. Dùng khi muốn nói "Ở đâu?" hoặc "Khi nào?".
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#CC7755">
+                        <div class="grammar-title">🎯 の (no) - Sở hữu</div>
+                        <div class="grammar-structure">A の B</div>
+                        <div class="grammar-meaning">Chỉ sự sở hữu, giống "của" trong tiếng Việt</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしの ほん</div>
+                            <div class="grammar-example-vn">Sách của tôi. (Tuần 2)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">たなかさんの くるま</div>
+                            <div class="grammar-example-vn">Xe của anh Tanaka. (Tuần 2)</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#9B7FD4">
+                        <div class="grammar-title">🎯 と (to) - Và / Với</div>
+                        <div class="grammar-structure">A と B</div>
+                        <div class="grammar-meaning">Kết nối danh từ (và) hoặc chỉ người cùng làm (với)</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">りんごと みかん</div>
+                            <div class="grammar-example-vn">Táo và cam. (Tuần 4)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ともだちと いきます。</div>
+                            <div class="grammar-example-vn">Đi với bạn. (Tuần 4)</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#FF9EAA">
+                        <div class="grammar-title">🎯 から (kara) - Từ / Vì</div>
+                        <div class="grammar-structure">A から きました</div>
+                        <div class="grammar-meaning">Chỉ nguồn gốc (đến từ) hoặc lý do (vì)</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ベトナムから きました。</div>
+                            <div class="grammar-example-vn">Đến từ Việt Nam. (Tuần 5)</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">あめですから、うちに います。</div>
+                            <div class="grammar-example-vn">Vì trời mưa nên ở nhà. (Tuần 19)</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#7EC8E3">
+                        <div class="grammar-title">🎯 へ (e) - Hướng đi</div>
+                        <div class="grammar-structure">A へ いきます</div>
+                        <div class="grammar-meaning">Chỉ hướng đi, đọc là "e" không phải "he"</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">にほんへ いきます。</div>
+                            <div class="grammar-example-vn">Đi đến Nhật.</div>
+                        </div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">うちへ かえります。</div>
+                            <div class="grammar-example-vn">Về nhà.</div>
+                        </div>
+                        <div class="grammar-note">
+                            💡 <strong>So sánh:</strong> に và へ có thể thay thế nhau trong nhiều trường hợp chỉ hướng đi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--card-color:#FFD93D">
+                <h2 class="section-title"><span>📐</span> Cấu Trúc Câu Cơ Bản <span>🏗️</span></h2>
+                <p class="section-subtitle">Các mẫu câu quan trọng nhất trong N5 - Tổng hợp từ Tuần 1-5</p>
+                
+                <div class="grammar-grid">
+                    <div class="grammar-card" style="--gram-color:#FF9EAA">
+                        <div class="grammar-title">✅ Khẳng định (Tuần 1)</div>
+                        <div class="grammar-structure">A は B です</div>
+                        <div class="grammar-meaning">A là B</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしは マインです。</div>
+                            <div class="grammar-example-vn">Tôi là Minh.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#7EC8E3">
+                        <div class="grammar-title">❓ Nghi vấn (Tuần 1)</div>
+                        <div class="grammar-structure">A は B ですか</div>
+                        <div class="grammar-meaning">A có phải là B không?</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">がくせい ですか。</div>
+                            <div class="grammar-example-vn">Bạn là học sinh à?</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#FFD93D">
+                        <div class="grammar-title">❌ Phủ định (Tuần 1)</div>
+                        <div class="grammar-structure">A は B ではありません</div>
+                        <div class="grammar-meaning">A không phải là B</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">がくせい ではありません。</div>
+                            <div class="grammar-example-vn">Không phải học sinh.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#5FD4A8">
+                        <div class="grammar-title">🎯 Hỏi đồ vật (Tuần 2)</div>
+                        <div class="grammar-structure">これ/それ/あれ は なんですか</div>
+                        <div class="grammar-meaning">Cái này/đó/kia là gì?</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">これは なんですか。</div>
+                            <div class="grammar-example-vn">Đây là cái gì?</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#CC7755">
+                        <div class="grammar-title"> Hỏi sở hữu (Tuần 2)</div>
+                        <div class="grammar-structure">A は だれ の B ですか</div>
+                        <div class="grammar-meaning">A là B của ai?</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">これは だれ の ほん ですか。</div>
+                            <div class="grammar-example-vn">Đây là sách của ai?</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#9B7FD4">
+                        <div class="grammar-title">🙏 Câu hỏi với ます (Tuần 4)</div>
+                        <div class="grammar-structure">Vますか</div>
+                        <div class="grammar-meaning">Bạn có làm... không?</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">りんごを たべますか。</div>
+                            <div class="grammar-example-vn">Bạn có ăn táo không?</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#FF9EAA">
+                        <div class="grammar-title">👤 Giới thiệu tên (Tuần 5)</div>
+                        <div class="grammar-structure">わたしのなまえは～です</div>
+                        <div class="grammar-meaning">Tên tôi là...</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしのなまえは ミン です。</div>
+                            <div class="grammar-example-vn">Tên tôi là Minh.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#7EC8E3">
+                        <div class="grammar-title">🌍 Quốc tịch (Tuần 5)</div>
+                        <div class="grammar-structure">～じんです</div>
+                        <div class="grammar-meaning">Là người nước...</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">わたしは ベトナムじん です。</div>
+                            <div class="grammar-example-vn">Tôi là người Việt Nam.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#FFD93D">
+                        <div class="grammar-title"> Đến từ đâu (Tuần 5)</div>
+                        <div class="grammar-structure">～から きました</div>
+                        <div class="grammar-meaning">Đến từ...</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ベトナムから きました。</div>
+                            <div class="grammar-example-vn">Tôi đến từ Việt Nam.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#5FD4A8">
+                        <div class="grammar-title">💭 Mong muốn (Tuần 21)</div>
+                        <div class="grammar-structure">Vたいです</div>
+                        <div class="grammar-meaning">Muốn làm...</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">にほんへ いきたいです。</div>
+                            <div class="grammar-example-vn">Muốn đi Nhật.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#CC7755">
+                        <div class="grammar-title">🏆 Nhất (Tuần 22)</div>
+                        <div class="grammar-structure">A が 一番 [adj] です</div>
+                        <div class="grammar-meaning">A là nhất</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">さくらが 一番 すきです。</div>
+                            <div class="grammar-example-vn">Thích hoa anh đào nhất.</div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card" style="--gram-color:#9B7FD4">
+                        <div class="grammar-title">🎯 So sánh hơn (Tuần 22)</div>
+                        <div class="grammar-structure">A は B より [adj] です</div>
+                        <div class="grammar-meaning">A hơn B</div>
+                        <div class="grammar-example">
+                            <div class="grammar-example-jp">ふゆは なつより さむいです。</div>
+                            <div class="grammar-example-vn">Mùa đông lạnh hơn mùa hè.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: SURVIVAL KIT -->
+        <div class="tab-content" id="survival">
+            <div class="card" style="--card-color:#5FD4A8">
+                <h2 class="section-title"><span>🗣️</span> Survival Kit - Hội Thoại Sinh Tồn <span>🆘</span></h2>
+                <p class="section-subtitle">Những câu cần biết ngay khi đến Nhật - Tổng hợp từ các hội thoại Tuần 1-5</p>
+                
+                <div class="survival-grid">
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">👋</div>
+                            <div>
+                                <div class="survival-title">Chào Hỏi Cơ Bản</div>
+                                <div class="survival-subtitle">Từ Tuần 1</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">こんにちは</div>
+                                    <div class="phrase-romaji">konnichiwa</div>
+                                    <div class="phrase-vn">Xin chào (ban ngày)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('こんにちは')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">はじめまして</div>
+                                    <div class="phrase-romaji">hajimemashite</div>
+                                    <div class="phrase-vn">Rất vui được gặp bạn (lần đầu)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('はじめまして')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">さようなら</div>
+                                    <div class="phrase-romaji">sayounara</div>
+                                    <div class="phrase-vn">Tạm biệt</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('さようなら')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">おやすみなさい</div>
+                                    <div class="phrase-romaji">oyasuminasai</div>
+                                    <div class="phrase-vn">Chúc ngủ ngon</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('おやすみなさい')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">おはようございます</div>
+                                    <div class="phrase-romaji">ohayou gozaimasu</div>
+                                    <div class="phrase-vn">Chào buổi sáng (lịch sự)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('おはようございます')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">🙏</div>
+                            <div>
+                                <div class="survival-title">Lịch Sự & Cảm Ơn</div>
+                                <div class="survival-subtitle">Từ Tuần 1-2</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">すみません</div>
+                                    <div class="phrase-romaji">sumimasen</div>
+                                    <div class="phrase-vn">Xin lỗi / Excuse me</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('すみません')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ごめんなさい</div>
+                                    <div class="phrase-romaji">gomen nasai</div>
+                                    <div class="phrase-vn">Xin lỗi (khi làm sai)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ごめんなさい')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ありがとうございます</div>
+                                    <div class="phrase-romaji">arigatou gozaimasu</div>
+                                    <div class="phrase-vn">Cảm ơn (lịch sự)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ありがとうございます')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">どういたしまして</div>
+                                    <div class="phrase-romaji">dou itashimashite</div>
+                                    <div class="phrase-vn">Không có chi</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('どういたしまして')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">お願いします</div>
+                                    <div class="phrase-romaji">onegai shimasu</div>
+                                    <div class="phrase-vn">Làm ơn / Xin nhờ</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('お願いします')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">どうぞ よろしく</div>
+                                    <div class="phrase-romaji">douzo yoroshiku</div>
+                                    <div class="phrase-vn">Xin nhờ bạn giúp đỡ</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('どうぞよろしく')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">👤</div>
+                            <div>
+                                <div class="survival-title">Giới Thiệu Bản Thân</div>
+                                <div class="survival-subtitle">Từ Tuần 1 & 5</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">はじめまして。わたしは ミン です。</div>
+                                    <div class="phrase-romaji">hajimemashite. watashi wa Min desu.</div>
+                                    <div class="phrase-vn">Rất vui được gặp bạn. Tôi là Minh.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('はじめまして。わたしはミンです。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">おなまえは なんですか。</div>
+                                    <div class="phrase-romaji">onamae wa nan desu ka.</div>
+                                    <div class="phrase-vn">Tên bạn là gì?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('おなまえはなんですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">わたしは ベトナムじん です。</div>
+                                    <div class="phrase-romaji">watashi wa betonamu-jin desu.</div>
+                                    <div class="phrase-vn">Tôi là người Việt Nam.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('わたしはベトナムじんです。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ベトナムから きました。</div>
+                                    <div class="phrase-romaji">betonamu kara kimashita.</div>
+                                    <div class="phrase-vn">Tôi đến từ Việt Nam.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ベトナムからきました。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">そうですか。</div>
+                                    <div class="phrase-romaji">sou desu ka.</div>
+                                    <div class="phrase-vn">Vậy à.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('そうですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">こちらこそ よろしく おねがいします。</div>
+                                    <div class="phrase-romaji">kochirakoso yoroshiku onegaishimasu.</div>
+                                    <div class="phrase-vn">Tôi cũng vậy, xin nhờ bạn.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('こちらこそよろしくお願いします。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">🍜</div>
+                            <div>
+                                <div class="survival-title">Nhà Hàng & Ăn Uống</div>
+                                <div class="survival-subtitle">Từ Tuần 2 & 4</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">いらっしゃいませ</div>
+                                    <div class="phrase-romaji">irasshaimase</div>
+                                    <div class="phrase-vn">Xin chào mừng (nhân viên nói)</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('いらっしゃいませ')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">なにを かいますか。</div>
+                                    <div class="phrase-romaji">nani o kaimasu ka.</div>
+                                    <div class="phrase-vn">Bạn mua gì?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('なにをかいますか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">りんごを かいます。</div>
+                                    <div class="phrase-romaji">ringo o kaimasu.</div>
+                                    <div class="phrase-vn">Tôi mua táo.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('りんごをかいます。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">いくらですか。</div>
+                                    <div class="phrase-romaji">ikura desu ka.</div>
+                                    <div class="phrase-vn">Bao nhiêu tiền?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('いくらですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">～を ください。</div>
+                                    <div class="phrase-romaji">~ o kudasai.</div>
+                                    <div class="phrase-vn">Cho tôi ~</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('をください。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">はい、どうぞ。</div>
+                                    <div class="phrase-romaji">hai, douzo.</div>
+                                    <div class="phrase-vn">Vâng, xin mời.</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('はい、どうぞ。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">🚉</div>
+                            <div>
+                                <div class="survival-title">Hỏi Đường & Di Chuyển</div>
+                                <div class="survival-subtitle">Từ Tuần 3</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">すみません、～はどこですか。</div>
+                                    <div class="phrase-romaji">sumimasen, ~ wa doko desu ka.</div>
+                                    <div class="phrase-vn">Xin lỗi, ~ ở đâu?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('すみません、えきはどこですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">～へ いきますか。</div>
+                                    <div class="phrase-romaji">~ e ikimasu ka.</div>
+                                    <div class="phrase-vn">Đi đến ~ à?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('いきますか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">みぎ / ひだり</div>
+                                    <div class="phrase-romaji">migi / hidari</div>
+                                    <div class="phrase-vn">Phải / Trái</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('みぎ、ひだり')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">まっすぐ</div>
+                                    <div class="phrase-romaji">massugu</div>
+                                    <div class="phrase-vn">Đi thẳng</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('まっすぐ')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ちかくですか。</div>
+                                    <div class="phrase-romaji">chikaku desu ka.</div>
+                                    <div class="phrase-vn">Có gần không?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ちかくですか。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">🛍️</div>
+                            <div>
+                                <div class="survival-title">Mua Sắm</div>
+                                <div class="survival-subtitle">Từ Tuần 2 & 4</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">これを みせて ください。</div>
+                                    <div class="phrase-romaji">kore o misete kudasai.</div>
+                                    <div class="phrase-vn">Cho tôi xem cái này</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('これを見せてください。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">いくらですか。</div>
+                                    <div class="phrase-romaji">ikura desu ka.</div>
+                                    <div class="phrase-vn">Bao nhiêu tiền?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('いくらですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">たかすぎます。</div>
+                                    <div class="phrase-romaji">takasugimasu.</div>
+                                    <div class="phrase-vn">Đắt quá</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('たかすぎます。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">やすくなりますか。</div>
+                                    <div class="phrase-romaji">yasuku narimasu ka.</div>
+                                    <div class="phrase-vn">Có giảm giá không?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('やすくなりますか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">これを ください。</div>
+                                    <div class="phrase-romaji">kore o kudasai.</div>
+                                    <div class="phrase-vn">Tôi lấy cái này</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('これをください。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">🆘</div>
+                            <div>
+                                <div class="survival-title">Khẩn Cấp & Giúp Đỡ</div>
+                                <div class="survival-subtitle">Essential</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">たすけて ください。</div>
+                                    <div class="phrase-romaji">tasukete kudasai.</div>
+                                    <div class="phrase-vn">Giúp tôi với!</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('たすけてください。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">びょういんは どこですか。</div>
+                                    <div class="phrase-romaji">byouin wa doko desu ka.</div>
+                                    <div class="phrase-vn">Bệnh viện ở đâu?</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('びょういんはどこですか。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">けいさつを よんで ください。</div>
+                                    <div class="phrase-romaji">keisatsu o yonde kudasai.</div>
+                                    <div class="phrase-vn">Gọi cảnh sát giúp</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('けいさつをよんでください。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ぐあいが わるいです。</div>
+                                    <div class="phrase-romaji">guai ga warui desu.</div>
+                                    <div class="phrase-vn">Tôi thấy không khỏe</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ぐあいがわるいです。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">にほんごが わかりません。</div>
+                                    <div class="phrase-romaji">nihongo ga wakarimasen.</div>
+                                    <div class="phrase-vn">Tôi không hiểu tiếng Nhật</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('にほんごがわかりません。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="survival-card">
+                        <div class="survival-header">
+                            <div class="survival-icon">💬</div>
+                            <div>
+                                <div class="survival-title">Giao Tiếp Cơ Bản</div>
+                                <div class="survival-subtitle">Từ Tuần 1-4</div>
+                            </div>
+                        </div>
+                        <ul class="phrase-list">
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">はい / いいえ</div>
+                                    <div class="phrase-romaji">hai / iie</div>
+                                    <div class="phrase-vn">Vâng / Không</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('はい、いいえ')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">わかりました。</div>
+                                    <div class="phrase-romaji">wakarimashita.</div>
+                                    <div class="phrase-vn">Tôi hiểu rồi</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('わかりました。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">わかりません。</div>
+                                    <div class="phrase-romaji">wakarimasen.</div>
+                                    <div class="phrase-vn">Tôi không hiểu</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('わかりません。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">もういちど おねがいします。</div>
+                                    <div class="phrase-romaji">mou ichido onegaishimasu.</div>
+                                    <div class="phrase-vn">Làm ơn nhắc lại</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('もういちどお願いします。')">🔊</button>
+                            </li>
+                            <li class="phrase-item">
+                                <div>
+                                    <div class="phrase-jp">ゆっくり おねがいします。</div>
+                                    <div class="phrase-romaji">yukkuri onegaishimasu.</div>
+                                    <div class="phrase-vn">Nói chậm lại giúp tôi</div>
+                                </div>
+                                <button class="phrase-audio" onclick="playAudio('ゆっくりお願いします。')">🔊</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--card-color:#5FD4A8">
+                <h2 class="section-title"><span>💡</span> Mẹo Giao Tiếp Khi Không Biết Từ <span>🆘</span></h2>
+                <p class="section-subtitle">Cách xử lý khi bạn không biết cách nói điều gì đó</p>
+                
+                <div class="pron-grid">
+                    <div class="pron-card" style="--pron-color:#5FD4A8">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">1️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Hỏi bằng tiếng Anh</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            <strong>えいごで なんですか。</strong><br>
+                            (eigo de nan desu ka)<br>
+                            "Nói bằng tiếng Anh là gì?"
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#5FD4A8">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">2️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Miêu tả bằng hành động</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            Dùng cử chỉ + từ đơn giản đã biết. Người Nhật rất kiên nhẫn và sẽ cố gắng hiểu bạn!
+                        </div>
+                    </div>
+                    <div class="pron-card" style="--pron-color:#5FD4A8">
+                        <div class="pron-header">
+                            <div class="pron-char" style="font-size:2em">3️⃣</div>
+                            <div class="pron-info">
+                                <div class="pron-romaji">Dùng app dịch</div>
+                            </div>
+                        </div>
+                        <div class="pron-desc">
+                            Google Translate hoặc Yandex Translate hoạt động khá tốt với tiếng Nhật.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box" style="margin-top:25px">
+                    <h4>🌟 Lời khuyên cuối cùng</h4>
+                    <ul>
+                        <li>😊 <strong>Đừng sợ sai:</strong> Người Nhật rất trân trọng nỗ lực học tiếng của bạn</li>
+                        <li>🗣️ <strong>Nói chậm và rõ:</strong> Tốt hơn là nói nhanh nhưng không ai hiểu</li>
+                        <li>🙏 <strong>Luôn bắt đầu bằng すみません:</strong> Khi cần giúp đỡ hoặc làm phiền ai</li>
+                        <li>📝 <strong>Mang theo sổ tay:</strong> Ghi lại từ mới học được mỗi ngày</li>
+                        <li>🎯 <strong>Thực hành mỗi ngày:</strong> Dù chỉ 5 phút cũng tốt hơn không gì cả!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📚 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨  🎌</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần</p>
+    </footer>
+
+    <script>
+        function createSparkles(){const c=document.getElementById('sparkleContainer'),p=['✨','✨','✨','✨','✨'];for(let i=0;i<20;i++){const s=document.createElement('div');s.className='sparkle';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDuration=(Math.random()*3+2)+'s';s.style.animationDelay=Math.random()*3+'s';s.style.fontSize=(Math.random()*10+12)+'px';c.appendChild(s)}}
+        function showTab(tabId){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(tabId).classList.add('active');event.currentTarget.classList.add('active')}
+        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
+        window.addEventListener('load',()=>{createSparkles();window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
