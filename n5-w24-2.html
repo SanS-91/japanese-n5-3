@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 Ngày 2: Tổng ôn 800+ Từ vựng | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FEF3C7;--gold-deep:#B45309;
+            --purple:#8B5CF6;--purple-dark:#6D28D9;--purple-light:#EDE9FE;
+            --rose:#EC4899;--rose-dark:#BE185D;--rose-light:#FCE7F3;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#CFFAFE;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --bg:#F9FAFB;--text:#000000;--text-soft:#1F2937;--text-muted:#4B5563;--text-light:#6B7280;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+        .header{position:sticky;top:0;z-index:100;background:var(--card);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan)) 1;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+        .logo-main{background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark),var(--rose-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--gold-light);color:var(--gold-deep);border-color:var(--gold)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--gold-dark);text-decoration:none;font-weight:700}
+        .day-nav{background:var(--card);border-radius:18px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .day-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:18px 18px 0 0}
+        .day-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:14px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        .day-nav-link:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .day-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+        .day-nav-prev .day-nav-icon{background:var(--gold-light)}
+        .day-nav-next .day-nav-icon{background:var(--purple-light)}
+        .day-nav-info{flex:1;min-width:0}
+        .day-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .day-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .day-nav-arrow{font-size:1.5em;color:var(--gold);flex-shrink:0;font-weight:900}
+        .day-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
+        .day-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
+        .day-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        .hero{background:linear-gradient(135deg,#FEF3C7 0%,#EDE9FE 50%,#FCE7F3 100%);border-radius:28px;padding:50px 40px;margin-bottom:30px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05);text-align:center}
+        .hero-badge{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;padding:12px 28px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:20px;box-shadow:0 4px 15px rgba(217,119,6,.3)}
+        .hero h1{font-size:2.8em;font-weight:900;margin-bottom:15px;color:var(--text);line-height:1.2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.6em;color:var(--gold-deep);font-weight:700;margin-bottom:15px}
+        .hero-desc{font-size:1.05em;color:var(--text-soft);margin-bottom:20px;line-height:1.7;max-width:750px;margin-left:auto;margin-right:auto;font-weight:600}
+        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+        .stat-item{background:var(--card);padding:18px 28px;border-radius:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:120px;border:1px solid var(--border);transition:.3s}
+        .stat-item:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        .progress-bar-container{background:var(--card);border-radius:16px;padding:16px 22px;margin:20px auto;max-width:800px;box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border)}
+        .progress-label{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:800;color:var(--text);font-size:.9em}
+        .progress-track{width:100%;height:10px;background:var(--border);border-radius:8px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:8px;transition:width 1s ease}
+        .card{background:var(--card);border-radius:24px;padding:32px;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:25px;border:1px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
+        .section-title{font-size:1.8em;font-weight:900;text-align:center;margin-bottom:15px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:22px;font-size:1em;font-weight:600}
+        .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:25px}
+        .topic-card{background:var(--card);border-radius:20px;padding:25px;border:2px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.04);transition:.3s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
+        .topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--topic-color,var(--gold))}
+        .topic-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1);border-color:var(--topic-color,var(--gold))}
+        .topic-num{display:inline-block;background:var(--topic-color,var(--gold));color:white;padding:4px 12px;border-radius:12px;font-size:.75em;font-weight:900;margin-bottom:12px}
+        .topic-emoji{font-size:3em;margin-bottom:10px;display:block}
+        .topic-title{font-size:1.15em;font-weight:900;color:var(--text);margin-bottom:8px}
+        .topic-count{font-size:.85em;color:var(--text-muted);font-weight:700;margin-bottom:10px}
+        .topic-desc{font-size:.88em;color:var(--text-soft);font-weight:600;line-height:1.6;margin-bottom:15px}
+        .topic-arrow{position:absolute;bottom:20px;right:20px;font-size:1.5em;color:var(--topic-color,var(--gold));opacity:.5;transition:.3s}
+        .topic-card:hover .topic-arrow{opacity:1;transform:translateX(5px)}
+        .tip-box{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:20px;padding:22px;margin:20px 0;position:relative}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
+        .tip-box h4{color:var(--gold-deep);margin-bottom:10px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:5px}
+        .btn{padding:13px 28px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white;box-shadow:0 4px 12px rgba(217,119,6,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,.4)}
+        .btn-secondary{background:var(--card);color:var(--text);border:2px solid var(--gold)}
+        .btn-secondary:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .nav-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+        .footer{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose),var(--cyan));background-size:300% auto;color:white;padding:35px;text-align:center;margin-top:40px;border-radius:24px 24px 0 0;animation:shimmer 8s linear infinite}
+        .footer h3{font-size:1.5em;margin-bottom:8px;font-weight:900}
+        .footer p{opacity:.95;margin-bottom:6px;font-weight:600}
+        @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.topic-grid{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:30px 20px}.hero h1{font-size:1.8em}.hero-jp{font-size:1.2em}.card{padding:20px}.day-nav{flex-direction:column}.day-nav-link{max-width:100%}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📖</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">Tuần 24</a> › <span>Ngày 2: Tổng ôn Từ vựng</span></div>
+
+    <div class="container">
+        <div class="day-nav">
+            <a href="n5-w24-1.html" class="day-nav-link day-nav-prev">
+                <div class="day-nav-icon">📚</div>
+                <div class="day-nav-info"><div class="day-nav-label">← Ngày trước</div><div class="day-nav-title">Ngày 1: Tổng ôn Kanji</div></div>
+                <div class="day-nav-arrow">‹</div>
+            </a>
+            <div class="day-nav-center"><div class="day-nav-current">📖 Ngày 2/7</div><div class="day-nav-current-label">Tổng ôn Từ vựng</div></div>
+            <a href="n5-w24-3.html" class="day-nav-link day-nav-next">
+                <div class="day-nav-arrow">›</div>
+                <div class="day-nav-info"><div class="day-nav-label">Ngày tiếp →</div><div class="day-nav-title">Ngày 3: Tổng ôn Ngữ pháp</div></div>
+                <div class="day-nav-icon">📐</div>
+            </a>
+        </div>
+
+        <div class="hero">
+            <span class="hero-badge">📖 Ngày 2 • Tổng ôn 800+ Từ vựng • 8 chủ đề</span>
+            <h1>Tổng ôn 800+ Từ Vựng N5<br>Chọn 1 trong 8 Chủ Đề</h1>
+            <div class="hero-jp">８つのテーマから単語を復習しよう！</div>
+            <p class="hero-desc">Mỗi chủ đề có ~100 từ vựng với audio, flashcard và quiz. Chọn 1 chủ đề để bắt đầu ôn tập chi tiết!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">800+</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Chủ đề</span></div>
+                <div class="stat-item"><span class="stat-number">~100</span><span class="stat-label">Từ/chủ đề</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">File chi tiết</span></div>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-label">
+                <span>📊 Tiến độ Tuần 24</span>
+                <span>Ngày 2/7 • 28%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" style="width:28%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="tip-box">
+                <h4>💡 Hướng dẫn ôn tập từ vựng</h4>
+                <ul>
+                    <li>🎯 <strong>Chọn 1 chủ đề</strong> bên dưới để bắt đầu ôn tập chi tiết</li>
+                    <li>🔊 <strong>Nghe audio</strong> từng từ để nhớ phát âm chuẩn</li>
+                    <li>🎴 <strong>Lật Flashcard</strong> để tự kiểm tra trí nhớ</li>
+                    <li>📝 <strong>Làm Quiz</strong> 10 câu cuối mỗi chủ đề</li>
+                    <li>🔄 <strong>Ôn nhiều chủ đề</strong> trong nhiều ngày để nhớ lâu</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><span>📚</span> 8 Chủ Đề Từ Vựng N5 <span>🎯</span></h2>
+            <p class="section-subtitle">Click vào chủ đề để bắt đầu ôn tập chi tiết</p>
+
+            <div class="topic-grid">
+                <a href="n5-w24-2a.html" class="topic-card" style="--topic-color:#F59E0B">
+                    <span class="topic-num">CHỦ ĐỀ 1</span>
+                    <span class="topic-emoji">👋</span>
+                    <div class="topic-title">Chào hỏi & Giới thiệu</div>
+                    <div class="topic-count">~100 từ vựng</div>
+                    <div class="topic-desc">Từ chào hỏi cơ bản, giới thiệu bản thân, tên riêng, quốc tịch, nghề nghiệp</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2b.html" class="topic-card" style="--topic-color:#EC4899">
+                    <span class="topic-num">CHỦ ĐỀ 2</span>
+                    <span class="topic-emoji">👨‍👩‍👧</span>
+                    <div class="topic-title">Gia đình & Người thân</div>
+                    <div class="topic-count">~80 từ vựng</div>
+                    <div class="topic-desc">Gia đình mình, gia đình người khác, quan hệ họ hàng, tính từ mô tả</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2c.html" class="topic-card" style="--topic-color:#10B981">
+                    <span class="topic-num">CHỦ ĐỀ 3</span>
+                    <span class="topic-emoji">🍜</span>
+                    <div class="topic-title">Ẩm thực & Mua sắm</div>
+                    <div class="topic-count">~100 từ vựng</div>
+                    <div class="topic-desc">Đồ ăn, thức uống, nhà hàng, mua sắm, giá cả, tiền tệ</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2d.html" class="topic-card" style="--topic-color:#8B5CF6">
+                    <span class="topic-num">CHỦ ĐỀ 4</span>
+                    <span class="topic-emoji">🏫</span>
+                    <div class="topic-title">Trường học & Công việc</div>
+                    <div class="topic-count">~100 từ vựng</div>
+                    <div class="topic-desc">Đồ dùng học tập, môn học, nghề nghiệp, văn phòng, công ty</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2e.html" class="topic-card" style="--topic-color:#06B6D4">
+                    <span class="topic-num">CHỦ ĐỀ 5</span>
+                    <span class="topic-emoji">🌤️</span>
+                    <div class="topic-title">Thời tiết & Mùa</div>
+                    <div class="topic-count">~60 từ vựng</div>
+                    <div class="topic-desc">Thời tiết, 4 mùa, tháng, ngày trong tuần, thời gian</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2f.html" class="topic-card" style="--topic-color:#EC4899">
+                    <span class="topic-num">CHỦ ĐỀ 6</span>
+                    <span class="topic-emoji">🎨</span>
+                    <div class="topic-title">Sở thích & Giải trí</div>
+                    <div class="topic-count">~80 từ vựng</div>
+                    <div class="topic-desc">Sở thích, thể thao, âm nhạc, phim ảnh, du lịch, giải trí</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2g.html" class="topic-card" style="--topic-color:#F59E0B">
+                    <span class="topic-num">CHỦ ĐỀ 7</span>
+                    <span class="topic-emoji">🏺</span>
+                    <div class="topic-title">Nơi chốn & Giao thông</div>
+                    <div class="topic-count">~100 từ vựng</div>
+                    <div class="topic-desc">Địa điểm, phương tiện, chỉ đường, vị trí, tòa nhà</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+
+                <a href="n5-w24-2h.html" class="topic-card" style="--topic-color:#8B5CF6">
+                    <span class="topic-num">CHỦ ĐỀ 8</span>
+                    <span class="topic-emoji">📏</span>
+                    <div class="topic-title">Tính từ & Mô tả</div>
+                    <div class="topic-count">~100 từ vựng</div>
+                    <div class="topic-desc">Tính từ い, tính từ な, màu sắc, kích thước, cảm xúc, tính cách</div>
+                    <div class="topic-arrow">→</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-1.html" class="btn btn-secondary"><span>📚</span> ← Ngày 1: Kanji</a>
+            <a href="n5-w24.html" class="btn btn-secondary"><span>🏆</span> Về HUB Tuần 24</a>
+            <a href="n5-w24-3.html" class="btn btn-primary"><span>📐</span> Ngày 3: Ngữ pháp →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📖 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 📖 🏆</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+    </footer>
+</body>
+</html>

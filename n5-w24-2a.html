@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👋 Chủ đề 1: Chào hỏi & Giới thiệu | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FEF3C7;--gold-deep:#B45309;
+            --purple:#8B5CF6;--purple-dark:#6D28D9;--purple-light:#EDE9FE;
+            --rose:#EC4899;--rose-dark:#BE185D;--rose-light:#FCE7F3;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#CFFAFE;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --bg:#F9FAFB;--text:#000000;--text-soft:#1F2937;--text-muted:#4B5563;--text-light:#6B7280;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+        .header{position:sticky;top:0;z-index:100;background:var(--card);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan)) 1;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+        .logo-main{background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark),var(--rose-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--gold-light);color:var(--gold-deep);border-color:var(--gold)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--gold-dark);text-decoration:none;font-weight:700}
+        .day-nav{background:var(--card);border-radius:18px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .day-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:18px 18px 0 0}
+        .day-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:14px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        .day-nav-link:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .day-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+        .day-nav-prev .day-nav-icon{background:var(--gold-light)}
+        .day-nav-next .day-nav-icon{background:var(--purple-light)}
+        .day-nav-info{flex:1;min-width:0}
+        .day-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .day-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .day-nav-arrow{font-size:1.5em;color:var(--gold);flex-shrink:0;font-weight:900}
+        .day-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
+        .day-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
+        .day-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        .hero{background:linear-gradient(135deg,#FEF3C7 0%,#EDE9FE 50%,#FCE7F3 100%);border-radius:28px;padding:50px 40px;margin-bottom:30px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05);text-align:center}
+        .hero-badge{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;padding:12px 28px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:20px;box-shadow:0 4px 15px rgba(217,119,6,.3)}
+        .hero h1{font-size:2.8em;font-weight:900;margin-bottom:15px;color:var(--text);line-height:1.2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.6em;color:var(--gold-deep);font-weight:700;margin-bottom:15px}
+        .hero-desc{font-size:1.05em;color:var(--text-soft);margin-bottom:20px;line-height:1.7;max-width:750px;margin-left:auto;margin-right:auto;font-weight:600}
+        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+        .stat-item{background:var(--card);padding:18px 28px;border-radius:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:120px;border:1px solid var(--border)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        .card{background:var(--card);border-radius:24px;padding:32px;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:25px;border:1px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
+        .section-title{font-size:1.8em;font-weight:900;text-align:center;margin-bottom:15px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:22px;font-size:1em;font-weight:600}
+        .vocab-group{background:var(--card);border-radius:18px;padding:22px;margin:20px 0;border-left:5px solid var(--group-color,var(--gold));box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border);border-left-width:5px}
+        .vocab-group h4{color:var(--text);margin-bottom:15px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .vocab-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+        .vocab-item{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));padding:15px;border-radius:14px;display:flex;align-items:center;gap:12px;transition:.3s;border:1px solid var(--border);cursor:pointer}
+        .vocab-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);background:linear-gradient(135deg,var(--gold),var(--purple));color:white}
+        .vocab-item:hover .vocab-jp,.vocab-item:hover .vocab-romaji,.vocab-item:hover .vocab-meaning{color:white}
+        .vocab-emoji{font-size:2em;flex-shrink:0}
+        .vocab-info{flex:1;min-width:0}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--text);margin-bottom:2px}
+        .vocab-romaji{font-size:.8em;color:var(--text-muted);font-weight:700;margin-bottom:2px}
+        .vocab-meaning{font-size:.88em;color:var(--text);font-weight:600}
+        .vocab-audio{background:var(--card);color:var(--gold-deep);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1em;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+        .vocab-audio:hover{transform:scale(1.1);background:var(--gold);color:white}
+        .flashcard-section{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
+        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
+        .flashcard-container{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+        .flashcard{perspective:1000px;height:170px;cursor:pointer}
+        .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+        .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid var(--border)}
+        .flashcard-front{background:var(--card);border-color:var(--gold)}
+        .flashcard-back{background:linear-gradient(135deg,var(--purple-light),var(--rose-light));border-color:var(--purple);transform:rotateY(180deg)}
+        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text);text-align:center}
+        .flashcard-hint{font-size:.72em;color:var(--text-light);margin-top:4px;font-weight:700}
+        .flashcard-romaji{font-size:.95em;font-weight:900;color:var(--purple-dark);margin-top:3px}
+        .flashcard-meaning{font-size:.85em;color:var(--text);margin-top:3px;font-weight:700;text-align:center}
+        .exercise-section{background:linear-gradient(135deg,#FCE7F3,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
+        .exercise-card{background:var(--card);border-radius:18px;padding:20px;margin:12px 0;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+        .exercise-q{font-size:1em;font-weight:900;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.82em;flex-shrink:0;font-weight:900}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+        .exercise-opt{background:var(--gold-light);padding:11px;border-radius:10px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--gold);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:10px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        .btn{padding:13px 28px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white;box-shadow:0 4px 12px rgba(217,119,6,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,.4)}
+        .btn-secondary{background:var(--card);color:var(--text);border:2px solid var(--gold)}
+        .btn-secondary:hover{background:var(--gold-light);transform:translateY(-2px)}
+        .nav-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+        .footer{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose),var(--cyan));background-size:300% auto;color:white;padding:35px;text-align:center;margin-top:40px;border-radius:24px 24px 0 0;animation:shimmer 8s linear infinite}
+        .footer h3{font-size:1.5em;margin-bottom:8px;font-weight:900}
+        .footer p{opacity:.95;margin-bottom:6px;font-weight:600}
+        @media(max-width:900px){.flashcard-container{grid-template-columns:repeat(3,1fr)}.exercise-options{grid-template-columns:1fr}.vocab-list{grid-template-columns:1fr}}
+        @media(max-width:600px){.flashcard-container{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:30px 20px}.hero h1{font-size:1.8em}.card,.exercise-section,.flashcard-section{padding:20px}.day-nav{flex-direction:column}.day-nav-link{max-width:100%}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">👋</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">Tuần 24</a> › <a href="n5-w24-2.html">Ngày 2</a> › <span>Chủ đề 1: Chào hỏi</span></div>
+
+    <div class="container">
+        <div class="day-nav">
+            <a href="n5-w24-2.html" class="day-nav-link day-nav-prev">
+                <div class="day-nav-icon">📖</div>
+                <div class="day-nav-info"><div class="day-nav-label">← Về HUB Ngày 2</div><div class="day-nav-title">8 chủ đề từ vựng</div></div>
+                <div class="day-nav-arrow">‹</div>
+            </a>
+            <div class="day-nav-center"><div class="day-nav-current">👋 Chủ đề 1/8</div><div class="day-nav-current-label">Chào hỏi & Giới thiệu</div></div>
+            <a href="n5-w24-2b.html" class="day-nav-link day-nav-next">
+                <div class="day-nav-arrow">›</div>
+                <div class="day-nav-info"><div class="day-nav-label">Chủ đề tiếp →</div><div class="day-nav-title">Chủ đề 2: Gia đình</div></div>
+                <div class="day-nav-icon">👨‍👩‍👧</div>
+            </a>
+        </div>
+
+        <div class="hero">
+            <span class="hero-badge">👋 Chủ đề 1 • Chào hỏi & Giới thiệu • あいさつ</span>
+            <h1>100 Từ Vựng Chào Hỏi<br>& Giới Thiệu Bản Thân</h1>
+            <div class="hero-jp">あいさつ と じこしょうかい</div>
+            <p class="hero-desc">Ôn tập toàn bộ từ vựng về chào hỏi, giới thiệu bản thân, tên riêng, quốc tịch, nghề nghiệp - nền tảng giao tiếp tiếng Nhật!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">100</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Nhóm nhỏ</span></div>
+                <div class="stat-item"><span class="stat-number">20</span><span class="stat-label">Flashcard</span></div>
+                <div class="stat-item"><span class="stat-number">10</span><span class="stat-label">Quiz</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><span>📚</span> 100 Từ Vựng Theo 5 Nhóm <span>🎯</span></h2>
+            <p class="section-subtitle">Click vào từng từ để nghe phát âm</p>
+
+            <!-- Group 1: Chào hỏi cơ bản -->
+            <div class="vocab-group" style="--group-color:#F59E0B">
+                <h4>👋 Nhóm 1: Chào hỏi cơ bản (20 từ)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item" onclick="playAudio('こんにちは')"><div class="vocab-emoji">☀️</div><div class="vocab-info"><div class="vocab-jp">こんにちは</div><div class="vocab-romaji">konnichiwa</div><div class="vocab-meaning">Xin chào (ban ngày)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('こんにちは')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おはようございます')"><div class="vocab-emoji">🌅</div><div class="vocab-info"><div class="vocab-jp">おはようございます</div><div class="vocab-romaji">ohayou gozaimasu</div><div class="vocab-meaning">Chào buổi sáng</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おはようございます')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('こんばんは')"><div class="vocab-emoji">🌙</div><div class="vocab-info"><div class="vocab-jp">こんばんは</div><div class="vocab-romaji">konbanwa</div><div class="vocab-meaning">Chào buổi tối</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('こんばんは')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('さようなら')"><div class="vocab-emoji">👋</div><div class="vocab-info"><div class="vocab-jp">さようなら</div><div class="vocab-romaji">sayounara</div><div class="vocab-meaning">Tạm biệt</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('さようなら')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('じゃあね')"><div class="vocab-emoji">👋</div><div class="vocab-info"><div class="vocab-jp">じゃあね</div><div class="vocab-romaji">jaa ne</div><div class="vocab-meaning">Tạm biệt (thân mật)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('じゃあね')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('はじめまして')"><div class="vocab-emoji">🤝</div><div class="vocab-info"><div class="vocab-jp">はじめまして</div><div class="vocab-romaji">hajimemashite</div><div class="vocab-meaning">Rất vui được gặp</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('はじめまして')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ありがとうございます')"><div class="vocab-emoji">🙏</div><div class="vocab-info"><div class="vocab-jp">ありがとうございます</div><div class="vocab-romaji">arigatou gozaimasu</div><div class="vocab-meaning">Cảm ơn (lịch sự)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ありがとうございます')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ありがとう')"><div class="vocab-emoji">🙏</div><div class="vocab-info"><div class="vocab-jp">ありがとう</div><div class="vocab-romaji">arigatou</div><div class="vocab-meaning">Cảm ơn (thân mật)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ありがとう')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('すみません')"><div class="vocab-emoji">🙇</div><div class="vocab-info"><div class="vocab-jp">すみません</div><div class="vocab-romaji">sumimasen</div><div class="vocab-meaning">Xin lỗi / Excuse me</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('すみません')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ごめんなさい')"><div class="vocab-emoji">🙇</div><div class="vocab-info"><div class="vocab-jp">ごめんなさい</div><div class="vocab-romaji">gomen nasai</div><div class="vocab-meaning">Xin lỗi (khi làm sai)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ごめんなさい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('どうぞよろしく')"><div class="vocab-emoji">🤝</div><div class="vocab-info"><div class="vocab-jp">どうぞよろしく</div><div class="vocab-romaji">douzo yoroshiku</div><div class="vocab-meaning">Xin nhờ giúp đỡ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('どうぞよろしく')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('こちらこそ')"><div class="vocab-emoji">🤝</div><div class="vocab-info"><div class="vocab-jp">こちらこそ</div><div class="vocab-romaji">kochirakoso</div><div class="vocab-meaning">Tôi cũng vậy</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('こちらこそ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おねがいします')"><div class="vocab-emoji">🙏</div><div class="vocab-info"><div class="vocab-jp">おねがいします</div><div class="vocab-romaji">onegaishimasu</div><div class="vocab-meaning">Làm ơn</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おねがいします')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('はい')"><div class="vocab-emoji">✅</div><div class="vocab-info"><div class="vocab-jp">はい</div><div class="vocab-romaji">hai</div><div class="vocab-meaning">Vâng / Có</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('はい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('いいえ')"><div class="vocab-emoji">❌</div><div class="vocab-info"><div class="vocab-jp">いいえ</div><div class="vocab-romaji">iie</div><div class="vocab-meaning">Không</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('いいえ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('どうも')"><div class="vocab-emoji">🙏</div><div class="vocab-info"><div class="vocab-jp">どうも</div><div class="vocab-romaji">doumo</div><div class="vocab-meaning">Cảm ơn (ngắn)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('どうも')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おやすみなさい')"><div class="vocab-emoji">🌙</div><div class="vocab-info"><div class="vocab-jp">おやすみなさい</div><div class="vocab-romaji">oyasuminasai</div><div class="vocab-meaning">Chúc ngủ ngon</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おやすみなさい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('いただきます')"><div class="vocab-emoji">🍽️</div><div class="vocab-info"><div class="vocab-jp">いただきます</div><div class="vocab-romaji">itadakimasu</div><div class="vocab-meaning">Mời ăn (trước bữa ăn)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('いただきます')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ごちそうさまでした')"><div class="vocab-emoji">🍽️</div><div class="vocab-info"><div class="vocab-jp">ごちそうさまでした</div><div class="vocab-romaji">gochisousama deshita</div><div class="vocab-meaning">Cảm ơn (sau bữa ăn)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ごちそうさまでした')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ただいま')"><div class="vocab-emoji">🏠</div><div class="vocab-info"><div class="vocab-jp">ただいま</div><div class="vocab-romaji">tadaima</div><div class="vocab-meaning">Tôi đã về</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ただいま')">🔊</button></div>
+                </div>
+            </div>
+
+            <!-- Group 2: Giới thiệu bản thân -->
+            <div class="vocab-group" style="--group-color:#EC4899">
+                <h4>👤 Nhóm 2: Giới thiệu bản thân (20 từ)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item" onclick="playAudio('わたし')"><div class="vocab-emoji">🙋</div><div class="vocab-info"><div class="vocab-jp">わたし</div><div class="vocab-romaji">watashi</div><div class="vocab-meaning">Tôi</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('わたし')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おなまえ')"><div class="vocab-emoji">📛</div><div class="vocab-info"><div class="vocab-jp">おなまえ</div><div class="vocab-romaji">onamae</div><div class="vocab-meaning">Tên (lịch sự)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おなまえ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('なまえ')"><div class="vocab-emoji">📛</div><div class="vocab-info"><div class="vocab-jp">なまえ</div><div class="vocab-romaji">namae</div><div class="vocab-meaning">Tên</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('なまえ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('とし')"><div class="vocab-emoji">🎂</div><div class="vocab-info"><div class="vocab-jp">とし</div><div class="vocab-romaji">toshi</div><div class="vocab-meaning">Tuổi</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('とし')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('なんさい')"><div class="vocab-emoji">🎂</div><div class="vocab-info"><div class="vocab-jp">なんさい</div><div class="vocab-romaji">nansai</div><div class="vocab-meaning">Mấy tuổi</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('なんさい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('がくせい')"><div class="vocab-emoji">👨‍🎓</div><div class="vocab-info"><div class="vocab-jp">がくせい</div><div class="vocab-romaji">gakusei</div><div class="vocab-meaning">Học sinh</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('がくせい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('せんせい')"><div class="vocab-emoji">👨‍🏫</div><div class="vocab-info"><div class="vocab-jp">せんせい</div><div class="vocab-romaji">sensei</div><div class="vocab-meaning">Giáo viên</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('せんせい')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('いしゃ')"><div class="vocab-emoji">👨‍⚕️</div><div class="vocab-info"><div class="vocab-jp">いしゃ</div><div class="vocab-romaji">isha</div><div class="vocab-meaning">Bác sĩ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('いしゃ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('かいしゃいん')"><div class="vocab-emoji">👔</div><div class="vocab-info"><div class="vocab-jp">かいしゃいん</div><div class="vocab-romaji">kaishain</div><div class="vocab-meaning">Nhân viên công ty</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('かいしゃいん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('エンジニア')"><div class="vocab-emoji">💻</div><div class="vocab-info"><div class="vocab-jp">エンジニア</div><div class="vocab-romaji">enjinia</div><div class="vocab-meaning">Kỹ sư</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('エンジニア')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('しごと')"><div class="vocab-emoji">💼</div><div class="vocab-info"><div class="vocab-jp">しごと</div><div class="vocab-romaji">shigoto</div><div class="vocab-meaning">Công việc</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('しごと')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('しゅみ')"><div class="vocab-emoji">🎨</div><div class="vocab-info"><div class="vocab-jp">しゅみ</div><div class="vocab-romaji">shumi</div><div class="vocab-meaning">Sở thích</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('しゅみ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('とくぎ')"><div class="vocab-emoji">⭐</div><div class="vocab-info"><div class="vocab-jp">とくぎ</div><div class="vocab-romaji">tokugi</div><div class="vocab-meaning">Kỹ năng đặc biệt</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('とくぎ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('すんでいます')"><div class="vocab-emoji">🏠</div><div class="vocab-info"><div class="vocab-jp">すんでいます</div><div class="vocab-romaji">sunde imasu</div><div class="vocab-meaning">Đang sống ở</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('すんでいます')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('うまれました')"><div class="vocab-emoji">👶</div><div class="vocab-info"><div class="vocab-jp">うまれました</div><div class="vocab-romaji">umaremashita</div><div class="vocab-meaning">Được sinh ra</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('うまれました')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('こきます')"><div class="vocab-emoji">🌍</div><div class="vocab-info"><div class="vocab-jp">こきます</div><div class="vocab-romaji">kokikimasu</div><div class="vocab-meaning">Đến từ (nước)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('こきます')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('にほんご')"><div class="vocab-emoji">🇯🇵</div><div class="vocab-info"><div class="vocab-jp">にほんご</div><div class="vocab-romaji">nihongo</div><div class="vocab-meaning">Tiếng Nhật</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('にほんご')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('べんきょう')"><div class="vocab-emoji">📚</div><div class="vocab-info"><div class="vocab-jp">べんきょう</div><div class="vocab-romaji">benkyou</div><div class="vocab-meaning">Học tập</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('べんきょう')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('だいがく')"><div class="vocab-emoji">🎓</div><div class="vocab-info"><div class="vocab-jp">だいがく</div><div class="vocab-romaji">daigaku</div><div class="vocab-meaning">Đại học</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('だいがく')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('だいがくせい')"><div class="vocab-emoji">🎓</div><div class="vocab-info"><div class="vocab-jp">だいがくせい</div><div class="vocab-romaji">daigakusei</div><div class="vocab-meaning">Sinh viên</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('だいがくせい')">🔊</button></div>
+                </div>
+            </div>
+
+            <!-- Group 3: Quốc tịch & Nước -->
+            <div class="vocab-group" style="--group-color:#10B981">
+                <h4>🌍 Nhóm 3: Quốc tịch & Nước (20 từ)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item" onclick="playAudio('にほん')"><div class="vocab-emoji">🇯🇵</div><div class="vocab-info"><div class="vocab-jp">にほん</div><div class="vocab-romaji">nihon</div><div class="vocab-meaning">Nhật Bản</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('にほん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('にほんじん')"><div class="vocab-emoji">🇯🇵</div><div class="vocab-info"><div class="vocab-jp">にほんじん</div><div class="vocab-romaji">nihonjin</div><div class="vocab-meaning">Người Nhật</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('にほんじん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ベトナム')"><div class="vocab-emoji">🇻🇳</div><div class="vocab-info"><div class="vocab-jp">ベトナム</div><div class="vocab-romaji">betonamu</div><div class="vocab-meaning">Việt Nam</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ベトナム')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ベトナムじん')"><div class="vocab-emoji">🇻🇳</div><div class="vocab-info"><div class="vocab-jp">ベトナムじん</div><div class="vocab-romaji">betonamujin</div><div class="vocab-meaning">Người Việt</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ベトナムじん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('アメリカ')"><div class="vocab-emoji">🇺🇸</div><div class="vocab-info"><div class="vocab-jp">アメリカ</div><div class="vocab-romaji">amerika</div><div class="vocab-meaning">Mỹ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('アメリカ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('アメリカじん')"><div class="vocab-emoji">🇺🇸</div><div class="vocab-info"><div class="vocab-jp">アメリカじん</div><div class="vocab-romaji">amerikajin</div><div class="vocab-meaning">Người Mỹ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('アメリカじん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ちゅうごく')"><div class="vocab-emoji">🇨🇳</div><div class="vocab-info"><div class="vocab-jp">ちゅうごく</div><div class="vocab-romaji">chuugoku</div><div class="vocab-meaning">Trung Quốc</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ちゅうごく')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('かんこく')"><div class="vocab-emoji">🇰🇷</div><div class="vocab-info"><div class="vocab-jp">かんこく</div><div class="vocab-romaji">kankoku</div><div class="vocab-meaning">Hàn Quốc</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('かんこく')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('イギリス')"><div class="vocab-emoji">🇬🇧</div><div class="vocab-info"><div class="vocab-jp">イギリス</div><div class="vocab-romaji">igirisu</div><div class="vocab-meaning">Anh</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('イギリス')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('フランス')"><div class="vocab-emoji">🇫🇷</div><div class="vocab-info"><div class="vocab-jp">フランス</div><div class="vocab-romaji">furansu</div><div class="vocab-meaning">Pháp</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('フランス')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ドイツ')"><div class="vocab-emoji">🇩🇪</div><div class="vocab-info"><div class="vocab-jp">ドイツ</div><div class="vocab-romaji">doitsu</div><div class="vocab-meaning">Đức</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ドイツ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('オーストラリア')"><div class="vocab-emoji">🇦🇺</div><div class="vocab-info"><div class="vocab-jp">オーストラリア</div><div class="vocab-romaji">oosutoraria</div><div class="vocab-meaning">Úc</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('オーストラリア')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('インド')"><div class="vocab-emoji">🇮🇳</div><div class="vocab-info"><div class="vocab-jp">インド</div><div class="vocab-romaji">indo</div><div class="vocab-meaning">Ấn Độ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('インド')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('タイ')"><div class="vocab-emoji">🇹🇭</div><div class="vocab-info"><div class="vocab-jp">タイ</div><div class="vocab-romaji">tai</div><div class="vocab-meaning">Thái Lan</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('タイ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('マレーシア')"><div class="vocab-emoji">🇲🇾</div><div class="vocab-info"><div class="vocab-jp">マレーシア</div><div class="vocab-romaji">mareeshia</div><div class="vocab-meaning">Malaysia</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('マレーシア')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('シンガポール')"><div class="vocab-emoji">🇸🇬</div><div class="vocab-info"><div class="vocab-jp">シンガポール</div><div class="vocab-romaji">shingapooru</div><div class="vocab-meaning">Singapore</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('シンガポール')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('インドネシア')"><div class="vocab-emoji">🇮🇩</div><div class="vocab-info"><div class="vocab-jp">インドネシア</div><div class="vocab-romaji">indoneshia</div><div class="vocab-meaning">Indonesia</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('インドネシア')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('フィリピン')"><div class="vocab-emoji">🇵🇭</div><div class="vocab-info"><div class="vocab-jp">フィリピン</div><div class="vocab-romaji">firipin</div><div class="vocab-meaning">Philippines</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('フィリピン')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ロシア')"><div class="vocab-emoji">🇷🇺</div><div class="vocab-info"><div class="vocab-jp">ロシア</div><div class="vocab-romaji">roshia</div><div class="vocab-meaning">Nga</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ロシア')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('イタリア')"><div class="vocab-emoji">🇮🇹</div><div class="vocab-info"><div class="vocab-jp">イタリア</div><div class="vocab-romaji">itaria</div><div class="vocab-meaning">Ý</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('イタリア')">🔊</button></div>
+                </div>
+            </div>
+
+            <!-- Group 4: Tên riêng phổ biến -->
+            <div class="vocab-group" style="--group-color:#8B5CF6">
+                <h4>📛 Nhóm 4: Tên riêng phổ biến (20 từ)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item" onclick="playAudio('タナカ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">タナカ</div><div class="vocab-romaji">tanaka</div><div class="vocab-meaning">Tanaka (họ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('タナカ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ヤマダ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">ヤマダ</div><div class="vocab-romaji">yamada</div><div class="vocab-meaning">Yamada (họ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ヤマダ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('スズキ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">スズキ</div><div class="vocab-romaji">suzuki</div><div class="vocab-meaning">Suzuki (họ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('スズキ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('サトウ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">サトウ</div><div class="vocab-romaji">satou</div><div class="vocab-meaning">Satou (họ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('サトウ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ワタナベ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">ワタナベ</div><div class="vocab-romaji">watanabe</div><div class="vocab-meaning">Watanabe (họ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ワタナベ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('サクラ')"><div class="vocab-emoji">🌸</div><div class="vocab-info"><div class="vocab-jp">サクラ</div><div class="vocab-romaji">sakura</div><div class="vocab-meaning">Sakura (tên nữ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('サクラ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ハナコ')"><div class="vocab-emoji">🌺</div><div class="vocab-info"><div class="vocab-jp">ハナコ</div><div class="vocab-romaji">hanako</div><div class="vocab-meaning">Hanako (tên nữ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ハナコ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('タロウ')"><div class="vocab-emoji">👦</div><div class="vocab-info"><div class="vocab-jp">タロウ</div><div class="vocab-romaji">tarou</div><div class="vocab-meaning">Tarou (tên nam)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('タロウ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ジロウ')"><div class="vocab-emoji">👦</div><div class="vocab-info"><div class="vocab-jp">ジロウ</div><div class="vocab-romaji">jirou</div><div class="vocab-meaning">Jirou (tên nam)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ジロウ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ケン')"><div class="vocab-emoji">👦</div><div class="vocab-info"><div class="vocab-jp">ケン</div><div class="vocab-romaji">ken</div><div class="vocab-meaning">Ken (tên nam)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ケン')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ユミ')"><div class="vocab-emoji">👧</div><div class="vocab-info"><div class="vocab-jp">ユミ</div><div class="vocab-romaji">yumi</div><div class="vocab-meaning">Yumi (tên nữ)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ユミ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('メアリー')"><div class="vocab-emoji">👩</div><div class="vocab-info"><div class="vocab-jp">メアリー</div><div class="vocab-romaji">mearii</div><div class="vocab-meaning">Mary</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('メアリー')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ジョン')"><div class="vocab-emoji">👨</div><div class="vocab-info"><div class="vocab-jp">ジョン</div><div class="vocab-romaji">jon</div><div class="vocab-meaning">John</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ジョン')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('サラ')"><div class="vocab-emoji">👩</div><div class="vocab-info"><div class="vocab-jp">サラ</div><div class="vocab-romaji">sara</div><div class="vocab-meaning">Sarah</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('サラ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('マイケル')"><div class="vocab-emoji">👨</div><div class="vocab-info"><div class="vocab-jp">マイケル</div><div class="vocab-romaji">maikeru</div><div class="vocab-meaning">Michael</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('マイケル')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ミン')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">ミン</div><div class="vocab-romaji">min</div><div class="vocab-meaning">Minh (Min)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ミン')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ハ')"><div class="vocab-emoji">👤</div><div class="vocab-info"><div class="vocab-jp">ハ</div><div class="vocab-romaji">ha</div><div class="vocab-meaning">Hà (Ha)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ハ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('さん')"><div class="vocab-emoji">🎩</div><div class="vocab-info"><div class="vocab-jp">さん</div><div class="vocab-romaji">san</div><div class="vocab-meaning">Anh/Chị (lịch sự)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('さん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('くん')"><div class="vocab-emoji">🎓</div><div class="vocab-info"><div class="vocab-jp">くん</div><div class="vocab-romaji">kun</div><div class="vocab-meaning">-kun (nam, thân mật)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('くん')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ちゃん')"><div class="vocab-emoji">🎀</div><div class="vocab-info"><div class="vocab-jp">ちゃん</div><div class="vocab-romaji">chan</div><div class="vocab-meaning">-chan (thân mật, dễ thương)</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ちゃん')">🔊</button></div>
+                </div>
+            </div>
+
+            <!-- Group 5: Câu chào hỏi thông dụng -->
+            <div class="vocab-group" style="--group-color:#06B6D4">
+                <h4>💬 Nhóm 5: Câu chào hỏi thông dụng (20 câu)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item" onclick="playAudio('おげんきですか')"><div class="vocab-emoji">😊</div><div class="vocab-info"><div class="vocab-jp">おげんきですか</div><div class="vocab-romaji">ogenki desu ka</div><div class="vocab-meaning">Bạn khỏe không?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おげんきですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('げんきです')"><div class="vocab-emoji">😊</div><div class="vocab-info"><div class="vocab-jp">げんきです</div><div class="vocab-romaji">genki desu</div><div class="vocab-meaning">Tôi khỏe</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('げんきです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おひさしぶりです')"><div class="vocab-emoji">👋</div><div class="vocab-info"><div class="vocab-jp">おひさしぶりです</div><div class="vocab-romaji">ohisashiburi desu</div><div class="vocab-meaning">Lâu rồi không gặp</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おひさしぶりです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('わたしはげんきです')"><div class="vocab-emoji">😊</div><div class="vocab-info"><div class="vocab-jp">わたしはげんきです</div><div class="vocab-romaji">watashi wa genki desu</div><div class="vocab-meaning">Tôi khỏe</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('わたしはげんきです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おなまえはなんですか')"><div class="vocab-emoji">📛</div><div class="vocab-info"><div class="vocab-jp">おなまえはなんですか</div><div class="vocab-romaji">onamae wa nan desu ka</div><div class="vocab-meaning">Tên bạn là gì?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('おなまえはなんですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('わたしはマインです')"><div class="vocab-emoji">🙋</div><div class="vocab-info"><div class="vocab-jp">わたしはマインです</div><div class="vocab-romaji">watashi wa Main desu</div><div class="vocab-meaning">Tôi là Minh</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('わたしはマインです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('なんじんですか')"><div class="vocab-emoji">🌍</div><div class="vocab-info"><div class="vocab-jp">なんじんですか</div><div class="vocab-romaji">nanjin desu ka</div><div class="vocab-meaning">Bạn là người nước nào?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('なんじんですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ベトナムじんです')"><div class="vocab-emoji">🇻🇳</div><div class="vocab-info"><div class="vocab-jp">ベトナムじんです</div><div class="vocab-romaji">betonamujin desu</div><div class="vocab-meaning">Tôi là người Việt</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ベトナムじんです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('どこからきましたか')"><div class="vocab-emoji">🌍</div><div class="vocab-info"><div class="vocab-jp">どこからきましたか</div><div class="vocab-romaji">doko kara kimashita ka</div><div class="vocab-meaning">Bạn đến từ đâu?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('どこからきましたか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ベトナムからきました')"><div class="vocab-emoji">🇻🇳</div><div class="vocab-info"><div class="vocab-jp">ベトナムからきました</div><div class="vocab-romaji">betonamu kara kimashita</div><div class="vocab-meaning">Tôi đến từ Việt Nam</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('ベトナムからきました')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('しゅみはなんですか')"><div class="vocab-emoji">🎨</div><div class="vocab-info"><div class="vocab-jp">しゅみはなんですか</div><div class="vocab-romaji">shumi wa nan desu ka</div><div class="vocab-meaning">Sở thích là gì?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('しゅみはなんですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('しゅみはおんがくです')"><div class="vocab-emoji">🎵</div><div class="vocab-info"><div class="vocab-jp">しゅみはおんがくです</div><div class="vocab-romaji">shumi wa ongaku desu</div><div class="vocab-meaning">Sở thích là âm nhạc</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('しゅみはおんがくです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('しごとはなんですか')"><div class="vocab-emoji">💼</div><div class="vocab-info"><div class="vocab-jp">しごとはなんですか</div><div class="vocab-romaji">shigoto wa nan desu ka</div><div class="vocab-meaning">Công việc là gì?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('しごとはなんですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('がくせいです')"><div class="vocab-emoji">👨‍🎓</div><div class="vocab-info"><div class="vocab-jp">がくせいです</div><div class="vocab-romaji">gakusei desu</div><div class="vocab-meaning">Tôi là học sinh</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('がくせいです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('なんさいですか')"><div class="vocab-emoji">🎂</div><div class="vocab-info"><div class="vocab-jp">なんさいですか</div><div class="vocab-romaji">nansai desu ka</div><div class="vocab-meaning">Bạn bao nhiêu tuổi?</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('なんさいですか')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('にじゅうろっさいです')"><div class="vocab-emoji">🎂</div><div class="vocab-info"><div class="vocab-jp">にじゅうろっさいです</div><div class="vocab-romaji">nijuurokusai desu</div><div class="vocab-meaning">Tôi 26 tuổi</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('にじゅうろっさいです')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('どうぞよろしくおねがいします')"><div class="vocab-emoji">🤝</div><div class="vocab-info"><div class="vocab-jp">どうぞよろしくおねがいします</div><div class="vocab-romaji">douzo yoroshiku onegaishimasu</div><div class="vocab-meaning">Rất mong được giúp đỡ</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('どうぞよろしくおねがいします')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('またあとで')"><div class="vocab-emoji">👋</div><div class="vocab-info"><div class="vocab-jp">またあとで</div><div class="vocab-romaji">mata atode</div><div class="vocab-meaning">Gặp lại sau nhé</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('またあとで')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('またあした')"><div class="vocab-emoji">👋</div><div class="vocab-info"><div class="vocab-jp">またあした</div><div class="vocab-romaji">mata ashita</div><div class="vocab-meaning">Hẹn gặp mai</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('またあした')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('きをつけて')"><div class="vocab-emoji">🙏</div><div class="vocab-info"><div class="vocab-jp">きをつけて</div><div class="vocab-romaji">ki o tsukete</div><div class="vocab-meaning">Bảo trọng nhé</div></div><button class="vocab-audio" onclick="event.stopPropagation();playAudio('きをつけて')">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLASHCARD -->
+        <div class="flashcard-section">
+            <h2 class="section-title"><span>🎴</span> Flashcard (20 thẻ) <span>🎯</span></h2>
+            <p class="section-subtitle">Click vào thẻ để lật và ôn tập</p>
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">こんにちは</span><div class="flashcard-hint">👋 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">konnichiwa</div><div class="flashcard-meaning">Xin chào</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">さようなら</span><div class="flashcard-hint">👋 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">sayounara</div><div class="flashcard-meaning">Tạm biệt</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">ありがとう</span><div class="flashcard-hint">🙏 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">arigatou</div><div class="flashcard-meaning">Cảm ơn</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">すみません</span><div class="flashcard-hint">🙇 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">sumimasen</div><div class="flashcard-meaning">Xin lỗi</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">わたし</span><div class="flashcard-hint">🙋 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">watashi</div><div class="flashcard-meaning">Tôi</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">なまえ</span><div class="flashcard-hint">📛 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">namae</div><div class="flashcard-meaning">Tên</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">がくせい</span><div class="flashcard-hint">👨‍🎓 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">gakusei</div><div class="flashcard-meaning">Học sinh</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">せんせい</span><div class="flashcard-hint">👨‍🏫 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">sensei</div><div class="flashcard-meaning">Giáo viên</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">にほんじん</span><div class="flashcard-hint">🇯🇵 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">nihonjin</div><div class="flashcard-meaning">Người Nhật</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">ベトナム</span><div class="flashcard-hint">🇻🇳 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">betonamu</div><div class="flashcard-meaning">Việt Nam</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">アメリカ</span><div class="flashcard-hint">🇺🇸 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">amerika</div><div class="flashcard-meaning">Mỹ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">しゅみ</span><div class="flashcard-hint">🎨 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">shumi</div><div class="flashcard-meaning">Sở thích</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">しごと</span><div class="flashcard-hint">💼 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">shigoto</div><div class="flashcard-meaning">Công việc</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">とし</span><div class="flashcard-hint">🎂 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">toshi</div><div class="flashcard-meaning">Tuổi</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">さん</span><div class="flashcard-hint">🎩 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">san</div><div class="flashcard-meaning">Anh/Chị</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">はじめまして</span><div class="flashcard-hint">🤝 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">hajimemashite</div><div class="flashcard-meaning">Rất vui được gặp</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">げんき</span><div class="flashcard-hint">😊 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">genki</div><div class="flashcard-meaning">Khỏe</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">だいがく</span><div class="flashcard-hint">🎓 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">daigaku</div><div class="flashcard-meaning">Đại học</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">いしゃ</span><div class="flashcard-hint">👨‍⚕️ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">isha</div><div class="flashcard-meaning">Bác sĩ</div></div></div></div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">タナカ</span><div class="flashcard-hint">👤 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">tanaka</div><div class="flashcard-meaning">Tanaka</div></div></div></div>
+            </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="exercise-section">
+            <h2 class="section-title"><span>🎮</span> Quiz (10 câu) <span>🏆</span></h2>
+            <p class="section-subtitle">Kiểm tra mức độ nhớ từ vựng</p>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "こんにちは" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'q1a')">Xin chào</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q1b')">Tạm biệt</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q1c')">Cảm ơn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q1d')">Xin lỗi</div></div><div class="feedback" id="q1a"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "がくせい" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q2a')">Giáo viên</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q2b')">Học sinh</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q2c')">Bác sĩ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q2d')">Kỹ sư</div></div><div class="feedback" id="q2b"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "Việt Nam" trong tiếng Nhật là?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q3a')">アメリカ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q3b')">にほん</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q3c')">ベトナム</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q3d')">かんこく</div></div><div class="feedback" id="q3c"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">4</span> Nghe: <button class="audio-btn" onclick="playAudio('すみません')" style="background:linear-gradient(135deg,var(--gold),var(--purple));color:white;border:none;padding:8px 16px;border-radius:20px;cursor:pointer">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'q4a')">Xin lỗi</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q4b')">Cảm ơn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q4c')">Tạm biệt</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q4d')">Xin chào</div></div><div class="feedback" id="q4a"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">5</span> "しゅみ" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q5a')">Công việc</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q5b')">Sở thích</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q5c')">Tên</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q5d')">Tuổi</div></div><div class="feedback" id="q5b"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">6</span> "Bạn là người nước nào?" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q6a')">おなまえはなんですか</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q6b')">なんじんですか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q6c')">どこからきましたか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q6d')">なんさいですか</div></div><div class="feedback" id="q6b"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">7</span> "さん" dùng để làm gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7a')">Hỏi tên</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7b')">Gọi lịch sự (anh/chị)</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7c')">Cảm ơn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7d')">Tạm biệt</div></div><div class="feedback" id="q7b"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">8</span> Nghe: <button class="audio-btn" onclick="playAudio('はじめまして')" style="background:linear-gradient(135deg,var(--gold),var(--purple));color:white;border:none;padding:8px 16px;border-radius:20px;cursor:pointer">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'q8a')">Rất vui được gặp</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q8b')">Tạm biệt</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q8c')">Cảm ơn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q8d')">Xin lỗi</div></div><div class="feedback" id="q8a"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">9</span> "ベトナムじん" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q9a')">Nước Việt Nam</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q9b')">Người Việt Nam</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q9c')">Tiếng Việt</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q9d')">Đồ ăn Việt</div></div><div class="feedback" id="q9b"></div></div>
+            <div class="exercise-card"><div class="exercise-q"><span class="q-num">10</span> "Tôi là học sinh" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q10a')">わたしはせんせいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q10b')">わたしはがくせいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q10c')">わたしはいしゃです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q10d')">わたしはかいしゃいんです</div></div><div class="feedback" id="q10b"></div></div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-2.html" class="btn btn-secondary"><span>📖</span> Về HUB Ngày 2</a>
+            <a href="n5-w24-2b.html" class="btn btn-primary"><span>👨‍👩‍👧</span> Chủ đề 2: Gia đình →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>👋 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 👋 🏆</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+    </footer>
+
+    <script>
+        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
+        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}}
+        window.addEventListener('load',()=>{window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
