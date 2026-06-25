@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎧 Ngày 5: Luyện Nghe Hiểu | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --ocean:#0284C7;--ocean-dark:#0369A1;--ocean-light:#7DD3FC;--ocean-deep:#075985;
+            --sky:#0EA5E9;--sky-dark:#0284C7;--sky-light:#BAE6FD;
+            --aqua:#38BDF8;--aqua-dark:#0EA5E9;--aqua-light:#E0F2FE;
+            --teal:#14B8A6;--teal-dark:#0D9488;--teal-light:#99F6E4;
+            --text-dark:#0C4A6E;--text-medium:#0369A1;--text-light:#0EA5E9;
+            --card:#FFFFFF;--border:#E0F2FE;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(2,132,199,.12)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(14,165,233,.12)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(56,189,248,.1)0%,transparent 40%),linear-gradient(135deg,#F0F9FF 0%,#E0F2FE 50%,#F0F9FF 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.15;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--ocean);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--sky);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--aqua);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .wave-container{position:fixed;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;overflow:hidden}
+        .wave{position:absolute;bottom:0;left:0;width:200%;height:100%;background:linear-gradient(180deg,transparent 0%,rgba(2,132,199,.05) 50%,rgba(2,132,199,.1) 100%);animation:wave 20s linear infinite}
+        .wave:nth-child(2){animation-delay:-10s;opacity:.5}
+        @keyframes wave{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:16px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua),var(--teal)) 1;box-shadow:0 2px 20px rgba(2,132,199,.08)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--ocean-dark),var(--sky-dark),var(--aqua-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--ocean-light);color:var(--ocean-dark);border-color:var(--ocean)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--ocean-dark);text-decoration:none;font-weight:700}
+        
+        .day-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(2,132,199,.08);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .day-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua));border-radius:22px 22px 0 0}
+        .day-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:16px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        .day-nav-link:hover{background:var(--ocean-light);transform:translateY(-2px)}
+        .day-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(2,132,199,.12)}
+        .day-nav-prev .day-nav-icon{background:var(--ocean-light)}
+        .day-nav-next .day-nav-icon{background:linear-gradient(135deg,var(--sky-light),var(--sky))}
+        .day-nav-info{flex:1;min-width:0}
+        .day-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .day-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .day-nav-arrow{font-size:1.5em;color:var(--ocean);flex-shrink:0;font-weight:900}
+        .day-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
+        .day-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
+        .day-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(125,211,252,.3)25%,rgba(186,230,253,.3)50%,rgba(224,242,254,.3)100%);border-radius:32px;padding:55px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(2,132,199,.12);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(2,132,199,.08),transparent,rgba(14,165,233,.08),transparent,rgba(56,189,248,.08),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:12%;left:6%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:18%;right:8%;animation-delay:.7s}
+        .sparkle-deco:nth-child(3){bottom:22%;left:12%;animation-delay:1.2s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:6%;animation-delay:1.8s}
+        .hero-badge{background:linear-gradient(135deg,var(--ocean),var(--sky),var(--aqua));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(2,132,199,.3);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--ocean-dark),var(--sky-dark),var(--aqua-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--ocean-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:780px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(2,132,199,.1);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(2,132,199,.2)}
+        .stat-number{font-size:2.3em;font-weight:900;background:linear-gradient(135deg,var(--ocean-dark),var(--sky-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        .mascot-container{text-align:center;margin:25px 0;position:relative;z-index:2}
+        .mascot-svg{max-width:200px;height:auto;filter:drop-shadow(0 10px 25px rgba(2,132,199,.25));animation:floatMascot 4s ease-in-out infinite}
+        @keyframes floatMascot{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 6px 25px rgba(2,132,199,.08);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua),var(--teal));opacity:.9}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--ocean-dark),var(--sky-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:25px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(125,211,252,.2),rgba(186,230,253,.2),rgba(224,242,254,.2));border:2px solid rgba(255,255,255,.95);border-radius:25px;padding:25px;margin:20px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua),var(--teal));opacity:.9}
+        .tip-box h4{color:var(--ocean-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.8;font-weight:600;position:relative;z-index:2}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .listening-passage{background:linear-gradient(135deg,rgba(125,211,252,.15),rgba(186,230,253,.15));border:2px solid rgba(255,255,255,.95);border-radius:22px;padding:30px;margin:25px 0;position:relative;overflow:hidden}
+        .listening-passage::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua));opacity:.9}
+        .passage-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+        .passage-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--ocean),var(--sky));border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:2em;box-shadow:0 4px 12px rgba(2,132,199,.2)}
+        .passage-title{font-size:1.3em;font-weight:900;color:var(--text)}
+        .passage-subtitle{font-size:.9em;color:var(--text-medium);font-weight:600}
+        .passage-controls{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+        .passage-btn{background:linear-gradient(135deg,var(--ocean),var(--sky));background-size:200% auto;color:white;border:none;padding:8px 16px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(2,132,199,.25);display:flex;align-items:center;gap:8px}
+        .passage-btn:hover{transform:scale(1.05);background-position:right center}
+        .passage-transcript{background:rgba(255,255,255,.7);padding:20px;border-radius:15px;font-family:'M PLUS Rounded 1c';font-size:1em;line-height:2;color:var(--text);border-left:4px solid var(--ocean);margin-bottom:20px}
+        .transcript-line{margin-bottom:12px;padding:8px;border-radius:8px;transition:.3s}
+        .transcript-line:hover{background:rgba(125,211,252,.1)}
+        .transcript-speaker{font-weight:900;color:var(--ocean-dark);margin-right:8px}
+        .transcript-jp{font-weight:700;margin-bottom:4px}
+        .transcript-vn{color:var(--text-medium);font-size:.9em;font-style:italic}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(186,230,253,.2),rgba(224,242,254,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean),var(--sky),var(--aqua));opacity:.9}
+        .exercise-card{background:rgba(255,255,255,.98);border-radius:20px;padding:22px;margin:15px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(2,132,199,.08)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--ocean),var(--sky));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 3px 10px rgba(2,132,199,.2)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--ocean-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--ocean);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--teal);color:white;border-color:var(--teal-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--teal-light);color:var(--teal-dark);border:2px solid var(--teal)}
+        .feedback.wrong{background:var(--sky-light);color:var(--sky-dark);border:2px solid var(--sky)}
+        
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--ocean),var(--ocean-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(2,132,199,.3)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(2,132,199,.4);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--ocean)}
+        .btn-secondary:hover{background:var(--ocean-light);transform:translateY(-3px)}
+        .nav-buttons{display:flex;justify-content:space-between;gap:15px;margin-top:25px;flex-wrap:wrap}
+        
+        .footer{background:linear-gradient(135deg,var(--ocean),var(--sky),var(--aqua),var(--teal));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:28px 28px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.exercise-options{grid-template-columns:1fr}.day-nav{flex-direction:column}.day-nav-link{max-width:100%}}
+        @media(max-width:600px){.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section{padding:22px}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🎧</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">Tuần 24</a> › <span>Ngày 5: Luyện Nghe</span></div>
+
+    <div class="container">
+        <div class="day-nav">
+            <a href="n5-w24-4.html" class="day-nav-link day-nav-prev">
+                <div class="day-nav-icon">📖</div>
+                <div class="day-nav-info"><div class="day-nav-label">← Ngày trước</div><div class="day-nav-title">Ngày 4: Luyện Đọc</div></div>
+                <div class="day-nav-arrow">‹</div>
+            </a>
+            <div class="day-nav-center"><div class="day-nav-current">🎧 Ngày 5/7</div><div class="day-nav-current-label">Luyện Nghe Hiểu</div></div>
+            <a href="n5-w24-6.html" class="day-nav-link day-nav-next">
+                <div class="day-nav-arrow">›</div>
+                <div class="day-nav-info"><div class="day-nav-label">Ngày tiếp →</div><div class="day-nav-title">Ngày 6: Tự giới thiệu</div></div>
+                <div class="day-nav-icon">🎤</div>
+            </a>
+        </div>
+
+        <div class="hero">
+            <div class="sparkle-deco">🎧</div><div class="sparkle-deco">🎵</div><div class="sparkle-deco">🌊</div><div class="sparkle-deco">🎯</div>
+            <span class="hero-badge">🎧 Ngày 5 • Luyện Nghe Hiểu • ちょうかい れんしゅう</span>
+            <h1>Luyện Nghe Hiểu<br>3 Hội Thoại Thực Tế</h1>
+            <div class="hero-jp">3つのかいわを ききましょう</div>
+            <p class="hero-desc">Luyện nghe hiểu 3 đoạn hội thoại theo format JLPT N5 - Từ mua sắm, hỏi đường đến giới thiệu bản thân!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Hội thoại</span></div>
+                <div class="stat-item"><span class="stat-number">9</span><span class="stat-label">Câu hỏi</span></div>
+                <div class="stat-item"><span class="stat-number">🎧</span><span class="stat-label">Audio TTS</span></div>
+                <div class="stat-item"><span class="stat-number">30'</span><span class="stat-label">Thời gian</span></div>
+            </div>
+            <div class="mascot-container">
+                <svg class="mascot-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#0284C7;stop-opacity:.3"/><stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:.2"/></radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="85" fill="url(#mBg)"/>
+                    <circle cx="100" cy="100" r="68" fill="#F0F9FF"/>
+                    <circle cx="100" cy="100" r="68" fill="none" stroke="#0284C7" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
+                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#0369A1" stroke-width="2.5" fill="none"/>
+                    <circle cx="85" cy="95" r="5" fill="#0C4A6E"/><circle cx="115" cy="95" r="5" fill="#0C4A6E"/>
+                    <circle cx="86" cy="93" r="1.5" fill="white"/><circle cx="116" cy="93" r="1.5" fill="white"/>
+                    <path d="M 92 108 Q 100 118 108 108" stroke="#0C4A6E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#7DD3FC" opacity=".9"/>
+                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#7DD3FC" opacity=".9"/>
+                    <!-- Tai nghe -->
+                    <path d="M 60 80 Q 60 60 80 60 L 80 90" stroke="#0284C7" stroke-width="4" fill="none"/>
+                    <path d="M 140 80 Q 140 60 120 60 L 120 90" stroke="#0284C7" stroke-width="4" fill="none"/>
+                    <circle cx="80" cy="90" r="10" fill="#0284C7"/>
+                    <circle cx="120" cy="90" r="10" fill="#0284C7"/>
+                    <!-- Sóng âm thanh -->
+                    <path d="M 50 150 Q 55 145 60 150" stroke="#0EA5E9" stroke-width="2" fill="none" opacity=".6"/>
+                    <path d="M 45 155 Q 52 148 60 155" stroke="#0EA5E9" stroke-width="2" fill="none" opacity=".4"/>
+                    <path d="M 140 150 Q 145 145 150 150" stroke="#0EA5E9" stroke-width="2" fill="none" opacity=".6"/>
+                    <path d="M 140 155 Q 148 148 155 155" stroke="#0EA5E9" stroke-width="2" fill="none" opacity=".4"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><span>💡</span> Mẹo Nghe Hiểu JLPT N5 <span>🎯</span></h2>
+            <div class="tip-box">
+                <h4>🎧 4 Bước Nghe Hiểu Hiệu Quả</h4>
+                <ul>
+                    <li>1️⃣ <strong>Nghe từ khóa:</strong> だれ (ai)、なに (gì)、どこ (đâu)、いつ (khi nào)</li>
+                    <li>2️⃣ <strong>Chú ý phủ định:</strong> ません、ないです - thường là đáp án</li>
+                    <li>3️⃣ <strong>Nghe số liệu:</strong> số đếm, thời gian, giá tiền - viết ngay khi nghe</li>
+                    <li>4️⃣ <strong>Nghe lại 2-3 lần:</strong> Lần 1 nắm ý, lần 2 chi tiết, lần 3 kiểm tra</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bài Nghe 1: Hội thoại mua sắm -->
+        <div class="listening-passage">
+            <div class="passage-header">
+                <div class="passage-icon">🛍️</div>
+                <div>
+                    <div class="passage-title">Bài Nghe 1: Hội Thoại Mua Sắm</div>
+                    <div class="passage-subtitle">~60 giây • Cấp độ N5</div>
+                </div>
+            </div>
+            <div class="passage-controls">
+                <button class="passage-btn" onclick="playAudio1()">🔊 Nghe bình thường</button>
+                <button class="passage-btn" onclick="playAudio1Slow()">🐢 Nghe chậm</button>
+                <button class="passage-btn" onclick="stopAudio()">⏹️ Dừng</button>
+            </div>
+            <div class="passage-transcript">
+                <div class="transcript-line">
+                    <span class="transcript-speaker">店員:</span>
+                    <div class="transcript-jp">いらっしゃいませ。なにを おさがしですか。</div>
+                    <div class="transcript-vn">Xin chào. Bạn đang tìm gì ạ?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">客:</span>
+                    <div class="transcript-jp">かばんを みたいです。</div>
+                    <div class="transcript-vn">Tôi muốn xem túi xách.</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">店員:</span>
+                    <div class="transcript-jp">これと これと、どちらが いいですか。</div>
+                    <div class="transcript-vn">Cái này và cái này, cái nào tốt hơn?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">客:</span>
+                    <div class="transcript-jp">あおい かばんが いいです。いくらですか。</div>
+                    <div class="transcript-vn">Tôi thích túi màu xanh. Bao nhiêu tiền ạ?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">店員:</span>
+                    <div class="transcript-jp">さんぜん えん です。</div>
+                    <div class="transcript-vn">3000 yên ạ.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-section">
+            <h3 class="section-title"><span>🎮</span> Câu Hỏi Bài 1 <span>🎯</span></h3>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> Khách muốn mua gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q1a')">くつ (giày)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p1q1b')">かばん (túi xách)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q1c')">ふく (quần áo)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q1d')">ほん (sách)</div>
+                </div>
+                <div class="feedback" id="p1q1b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> Khách thích túi màu gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q2a')">あかい (đỏ)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p1q2b')">あおい (xanh dương)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q2c')">しろい (trắng)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q2d')">くろい (đen)</div>
+                </div>
+                <div class="feedback" id="p1q2b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> Giá tiền là bao nhiêu?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q3a')">1000えん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q3b')">2000えん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p1q3c')">3000えん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p1q3d')">5000えん</div>
+                </div>
+                <div class="feedback" id="p1q3c"></div>
+            </div>
+        </div>
+
+        <!-- Bài Nghe 2: Hỏi đường -->
+        <div class="listening-passage">
+            <div class="passage-header">
+                <div class="passage-icon">🗺️</div>
+                <div>
+                    <div class="passage-title">Bài Nghe 2: Hỏi Đường</div>
+                    <div class="passage-subtitle">~50 giây • Cấp độ N5</div>
+                </div>
+            </div>
+            <div class="passage-controls">
+                <button class="passage-btn" onclick="playAudio2()">🔊 Nghe bình thường</button>
+                <button class="passage-btn" onclick="playAudio2Slow()">🐢 Nghe chậm</button>
+                <button class="passage-btn" onclick="stopAudio()">⏹️ Dừng</button>
+            </div>
+            <div class="passage-transcript">
+                <div class="transcript-line">
+                    <span class="transcript-speaker">A:</span>
+                    <div class="transcript-jp">すみません、えきへ どうやって いきますか。</div>
+                    <div class="transcript-vn">Xin lỗi, làm sao để đi đến nhà ga?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">B:</span>
+                    <div class="transcript-jp">まっすぐ いって、みぎへ まがって ください。</div>
+                    <div class="transcript-vn">Đi thẳng, rồi rẽ phải.</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">A:</span>
+                    <div class="transcript-jp">どのくらい かかりますか。</div>
+                    <div class="transcript-vn">Mất bao lâu ạ?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">B:</span>
+                    <div class="transcript-jp">10ぷん くらいです。</div>
+                    <div class="transcript-vn">Khoảng 10 phút.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-section">
+            <h3 class="section-title"><span>🎮</span> Câu Hỏi Bài 2 <span>🎯</span></h3>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> A muốn đi đâu?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q1a')">びょういん (bệnh viện)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p2q1b')">えき (nhà ga)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q1c')">がっこう (trường học)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q1d')">こうえん (công viên)</div>
+                </div>
+                <div class="feedback" id="p2q1b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> Phải rẽ hướng nào?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q2a')">ひだり (trái)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p2q2b')">みぎ (phải)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q2c')">まっすぐ (thẳng)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q2d')">うしろ (sau)</div>
+                </div>
+                <div class="feedback" id="p2q2b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> Mất bao lâu?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q3a')">5ぷん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p2q3b')">10ぷん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q3c')">15ぷん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p2q3d')">20ぷん</div>
+                </div>
+                <div class="feedback" id="p2q3b"></div>
+            </div>
+        </div>
+
+        <!-- Bài Nghe 3: Giới thiệu bản thân -->
+        <div class="listening-passage">
+            <div class="passage-header">
+                <div class="passage-icon">👤</div>
+                <div>
+                    <div class="passage-title">Bài Nghe 3: Giới Thiệu Bản Thân</div>
+                    <div class="passage-subtitle">~70 giây • Cấp độ N5</div>
+                </div>
+            </div>
+            <div class="passage-controls">
+                <button class="passage-btn" onclick="playAudio3()">🔊 Nghe bình thường</button>
+                <button class="passage-btn" onclick="playAudio3Slow()">🐢 Nghe chậm</button>
+                <button class="passage-btn" onclick="stopAudio()">⏹️ Dừng</button>
+            </div>
+            <div class="passage-transcript">
+                <div class="transcript-line">
+                    <span class="transcript-speaker">A:</span>
+                    <div class="transcript-jp">はじめまして。おなまえは なんですか。</div>
+                    <div class="transcript-vn">Rất vui được gặp bạn. Tên bạn là gì?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">B:</span>
+                    <div class="transcript-jp">わたしは タナカ です。にほんじんです。</div>
+                    <div class="transcript-vn">Tôi là Tanaka. Tôi là người Nhật.</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">A:</span>
+                    <div class="transcript-jp">しゅみは なんですか。</div>
+                    <div class="transcript-vn">Sở thích là gì?</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">B:</span>
+                    <div class="transcript-jp">しゅみは おんがくを きくことです。まいしゅう どようびに ともだちと コンサートに いきます。</div>
+                    <div class="transcript-vn">Sở thích là nghe nhạc. Mỗi tuần thứ Bảy tôi đi concert với bạn.</div>
+                </div>
+                <div class="transcript-line">
+                    <span class="transcript-speaker">A:</span>
+                    <div class="transcript-jp">いいですね。わたしも おんがくが すきです。</div>
+                    <div class="transcript-vn">Hay nhỉ. Tôi cũng thích nhạc.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-section">
+            <h3 class="section-title"><span>🎮</span> Câu Hỏi Bài 3 <span>🎯</span></h3>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> Tanaka là người nước nào?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q1a')">ベトナム (Việt Nam)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p3q1b')">にほん (Nhật)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q1c')">アメリカ (Mỹ)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q1d')">ちゅうごく (Trung Quốc)</div>
+                </div>
+                <div class="feedback" id="p3q1b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> Sở thích của Tanaka là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q2a')">えいがを みる こと (xem phim)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p3q2b')">おんがくを きく こと (nghe nhạc)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q2c')">りょうり (nấu ăn)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q2d')">どくしょ (đọc sách)</div>
+                </div>
+                <div class="feedback" id="p3q2b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> Tanaka đi concert vào ngày nào?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q3a')">にちようび (Chủ nhật)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'p3q3b')">どようび (Thứ Bảy)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q3c')">かようび (Thứ Ba)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'p3q3d')">きんようび (Thứ Sáu)</div>
+                </div>
+                <div class="feedback" id="p3q3b"></div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-4.html" class="btn btn-secondary"><span>📖</span> ← Ngày 4: Luyện Đọc</a>
+            <a href="n5-w24.html" class="btn btn-secondary"><span>🏆</span> Về HUB Tuần 24</a>
+            <a href="n5-w24-6.html" class="btn btn-primary"><span>🎤</span> Ngày 6: Tự giới thiệu →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🎧 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🎧 🌊</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+    </footer>
+
+    <script>
+        function createSparkles(){const c=document.getElementById('sparkleContainer'),p=['🎧','🎵','🌊','✨','🎯'];for(let i=0;i<15;i++){const s=document.createElement('div');s.className='sparkle';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDuration=(Math.random()*3+2)+'s';s.style.animationDelay=Math.random()*3+'s';s.style.fontSize=(Math.random()*10+12)+'px';c.appendChild(s)}}
+        
+        function playAudio1(){
+            const lines=['いらっしゃいませ。なにをおさがしですか。','かばんをみたいです。','これとこれと、どちらがいいですか。','あおい かばんがいいです。いくらですか。','さんぜんえんです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playAudio1Slow(){
+            const lines=['いらっしゃいませ。','なにをおさがしですか。','かばんをみたいです。','これとこれと、','どちらがいいですか。','あおい かばんがいいです。','いくらですか。','さんぜんえんです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.6;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,800)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playAudio2(){
+            const lines=['すみません、えきへどうやっていきますか。','まっすぐいって、みぎへまがってください。','どのくらいかかりますか。','10ぷんくらいです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playAudio2Slow(){
+            const lines=['すみません、','えきへどうやっていきますか。','まっすぐいって、','みぎへまがってください。','どのくらいかかりますか。','10ぷんくらいです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.6;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,800)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playAudio3(){
+            const lines=['はじめまして。おなまえはなんですか。','わたしはタナカです。にほんじんです。','しゅみはなんですか。','しゅみはおんがくをきくことです。まいしゅうどようびにともだちとコンサートにいきます。','いいですね。わたしもおんがくがすきです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playAudio3Slow(){
+            const lines=['はじめまして。','おなまえはなんですか。','わたしはタナカです。','にほんじんです。','しゅみはなんですか。','しゅみはおんがくをきくことです。','まいしゅうどようびに','ともだちとコンサートにいきます。','いいですね。','わたしもおんがくがすきです。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.6;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,800)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function stopAudio(){window.speechSynthesis.cancel()}
+        
+        function checkAnswer(el,ok,id){
+            const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);
+            opts.forEach(o=>o.style.pointerEvents='none');
+            if(ok){
+                el.classList.add('correct');
+                fb.textContent='✅ Chính xác! Giỏi quá!';
+                fb.className='feedback show correct';
+            }else{
+                el.classList.add('wrong');
+                opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});
+                fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                fb.className='feedback show wrong';
+            }
+        }
+        
+        window.addEventListener('load',()=>{createSparkles();window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
