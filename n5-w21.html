@@ -9,217 +9,229 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --rose:#D4A5A5;--rose-dark:#B88888;--rose-light:#F0D4D4;--rose-deep:#A07070;
-            --blush:#E5B5B5;--blush-dark:#C49090;--blush-light:#F5E0E0;
-            --cream:#FFF0E6;--cream-dark:#E8C8B0;--cream-light:#FFF8F0;
-            --gold:#D4A017;--gold-dark:#B8860B;--gold-light:#FFF0B8;
-            --text-dark:#5A3A3A;--text-medium:#7A5A5A;--text-light:#9A7A7A;
+            --rose:#F472B6;--rose-dark:#DB2777;--rose-light:#FBCFE8;--rose-deep:#BE185D;
+            --pink:#EC4899;--pink-dark:#BE185D;--pink-light:#FCE7F3;
+            --peach:#FDA4AF;--peach-dark:#F43F5E;--peach-light:#FFE4E6;
+            --lavender:#C4B5FD;--lavender-dark:#8B5CF6;--lavender-light:#EDE9FE;
+            --coral:#FB7185;--coral-dark:#E11D48;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --error:#EF4444;--error-dark:#DC2626;
+            --text-dark:#1F2937;--text-medium:#4B5563;--text-light:#6B7280;
+            --card:#FFFFFF;--border:#FCE7F3;
         }
-        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(212,165,165,.15)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(229,181,181,.15)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(212,160,23,.12)0%,transparent 40%),linear-gradient(135deg,#FAF0F0 0%,#F5E8E8 50%,#FAF0F0 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh}
-        .bg-circle{position:fixed;border-radius:50%;opacity:.25;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
-        .bg-circle:nth-child(1){width:350px;height:350px;background:var(--rose);top:8%;left:5%}
-        .bg-circle:nth-child(2){width:280px;height:280px;background:var(--blush);top:55%;right:8%;animation-delay:8s}
-        .bg-circle:nth-child(3){width:220px;height:220px;background:var(--gold-light);top:30%;left:60%;animation-delay:4s}
-        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.05)}}
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(244,114,182,.12)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(236,72,153,.12)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(253,164,175,.1)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#FCE7F3 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.15;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(3px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--rose);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--pink);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--peach);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
         .petal-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
-        .petal{position:absolute;font-size:18px;animation:fall 20s linear infinite;opacity:.5}
-        @keyframes fall{0%{transform:translateY(-10vh) rotate(0);opacity:0}10%{opacity:.6}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:2px solid rgba(212,165,165,.2);display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(184,136,136,.08)}
+        .petal{position:absolute;font-size:24px;animation:petalFall 15s linear infinite;opacity:.6}
+        @keyframes petalFall{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--rose),var(--pink),var(--peach),var(--lavender)) 1;box-shadow:0 2px 20px rgba(244,114,182,.08)}
         .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
-        .logo-main{background:linear-gradient(135deg,var(--rose-dark),var(--blush-dark),var(--gold-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        .logo-main{background:linear-gradient(135deg,var(--rose-dark),var(--pink-dark),var(--peach-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
         @keyframes shimmer{to{background-position:200% center}}
         .nav-links{display:flex;gap:8px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:1.5px solid transparent}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
         .nav-links a:hover,.nav-links a.active{background:var(--rose-light);color:var(--rose-dark);border-color:var(--rose)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
         .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
         .breadcrumb a{color:var(--rose-dark);text-decoration:none;font-weight:700}
-        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
-        .week-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
-        .week-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush),var(--gold-light));opacity:.9;border-radius:22px 22px 0 0}
-        .week-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-dark);padding:10px 16px;border-radius:16px;transition:.3s;flex:1;min-width:200px;max-width:45%}
+        
+        .week-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:22px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(244,114,182,.08);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
+        .week-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9;border-radius:22px 22px 0 0}
+        .week-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:16px;transition:.3s;flex:1;min-width:200px;max-width:45%}
         .week-nav-link:hover{background:var(--rose-light);transform:translateY(-2px)}
-        .week-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(184,136,136,.12)}
-        .week-nav-prev .week-nav-icon{background:linear-gradient(135deg,#E8F4FF,#B8D8F0)}
-        .week-nav-next .week-nav-icon{background:linear-gradient(135deg,var(--gold-light),var(--gold))}
+        .week-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 3px 10px rgba(244,114,182,.12)}
+        .week-nav-prev .week-nav-icon{background:var(--rose-light)}
+        .week-nav-next .week-nav-icon{background:var(--lavender-light)}
         .week-nav-info{flex:1;min-width:0}
-        .week-nav-label{font-size:.75em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-        .week-nav-title{font-size:.95em;color:var(--text-dark);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .week-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .week-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
         .week-nav-arrow{font-size:1.5em;color:var(--rose);flex-shrink:0;font-weight:900}
         .week-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
-        .week-nav-current{font-size:1.1em;font-weight:900;color:var(--rose-dark)}
+        .week-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
         .week-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
-        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(240,212,212,.4)30%,rgba(245,224,224,.3)60%,rgba(255,240,230,.3)100%);border-radius:32px;padding:55px 40px;margin-bottom:40px;border:2px solid rgba(255,255,255,.95);box-shadow:0 10px 40px rgba(184,136,136,.12);text-align:center;position:relative}
-        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.6)0%,transparent 60%);animation:rotate 30s linear infinite;pointer-events:none}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(251,207,232,.4)25%,rgba(252,231,243,.4)50%,rgba(255,228,230,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(244,114,182,.12);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(244,114,182,.08),transparent,rgba(236,72,153,.08),transparent,rgba(253,164,175,.08),transparent);animation:rotate 25s linear infinite;pointer-events:none}
         @keyframes rotate{to{transform:rotate(360deg)}}
         .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
-        .sparkle-deco:nth-child(1){top:15%;left:8%}
-        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:1s}
-        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:.5s}
-        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
-        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:.9;transform:scale(1.1)}}
-        .hero-badge{background:linear-gradient(135deg,var(--rose),var(--blush),var(--gold-light));background-size:200% auto;color:white;padding:12px 26px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(184,136,136,.3);animation:shimmer 5s linear infinite;position:relative;z-index:2}
-        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--rose-dark),var(--blush-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
-        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--rose-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
-        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:780px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
-        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:30px;position:relative;z-index:2}
-        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(184,136,136,.1);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s}
-        .stat-item:hover{transform:translateY(-3px)}
-        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--rose-dark),var(--blush-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .sparkle-deco:nth-child(1){top:12%;left:6%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:18%;right:8%;animation-delay:.7s}
+        .sparkle-deco:nth-child(3){bottom:22%;left:12%;animation-delay:1.2s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:6%;animation-delay:1.8s}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--rose),var(--pink),var(--peach));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(244,114,182,.3);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.5em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--rose-dark),var(--pink-dark),var(--peach-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--rose-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.2em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 6px 20px rgba(244,114,182,.12);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(244,114,182,.2)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--rose-dark),var(--pink-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
         .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
         .mascot-container{text-align:center;margin:25px 0;position:relative;z-index:2}
-        .mascot-svg{max-width:180px;height:auto;filter:drop-shadow(0 8px 20px rgba(184,136,136,.2));animation:floatMascot 4s ease-in-out infinite}
-        @keyframes floatMascot{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .mascot-svg{max-width:220px;height:auto;filter:drop-shadow(0 10px 25px rgba(244,114,182,.25));animation:floatMascot 4s ease-in-out infinite}
+        @keyframes floatMascot{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+        
         .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:2}
-        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s}
-        .btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(184,136,136,.3)}
-        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(184,136,136,.4);background-position:right center}
-        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text-dark);border:2px solid var(--rose);backdrop-filter:blur(10px)}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(244,114,182,.3)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(244,114,182,.4);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--rose)}
         .btn-secondary:hover{background:var(--rose-light);transform:translateY(-3px)}
-        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(184,136,136,.08);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative}
-        .card-header-bar{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush),var(--gold-light));opacity:.9;border-radius:28px 28px 0 0}
-        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--rose-dark),var(--blush-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
-        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:30px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 6px 25px rgba(244,114,182,.08);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--rose-dark),var(--pink-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:25px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
         .days-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin:30px 0;position:relative;z-index:2}
-        .day-tab{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 12px;text-align:center;box-shadow:0 4px 20px rgba(184,136,136,.08);transition:.35s;cursor:pointer;border:2px solid rgba(255,255,255,.95);position:relative}
-        .day-tab::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.85;border-radius:18px 18px 0 0}
-        .day-tab:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(184,136,136,.15)}
+        .day-tab{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 12px;text-align:center;box-shadow:0 4px 20px rgba(244,114,182,.08);transition:.35s;cursor:pointer;border:2px solid rgba(255,255,255,.95);position:relative}
+        .day-tab::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink));opacity:.85;border-radius:18px 18px 0 0}
+        .day-tab:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(244,114,182,.15)}
         .day-tab:hover::before{height:7px;opacity:1}
-        .day-tab.active{background:linear-gradient(135deg,rgba(240,212,212,.3),rgba(245,224,224,.3));border-color:var(--rose)}
+        .day-tab.active{background:linear-gradient(135deg,rgba(251,207,232,.4),rgba(252,231,243,.4));border-color:var(--rose)}
         .day-tab.active::before{opacity:1;height:7px}
         .day-num{font-size:1.8em;font-weight:900;color:var(--rose-dark);display:block;margin-bottom:5px;position:relative;z-index:2}
-        .day-title{font-size:.82em;font-weight:800;color:var(--text-dark);margin-bottom:5px;line-height:1.3;position:relative;z-index:2}
+        .day-title{font-size:.82em;font-weight:800;color:var(--text);margin-bottom:5px;line-height:1.3;position:relative;z-index:2}
         .day-time{font-size:.75em;color:var(--text-medium);font-weight:600;position:relative;z-index:2}
         .day-content{display:none;animation:fadeIn .5s}
         .day-content.active{display:block}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-        .day-header{background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:white;padding:30px;border-radius:20px;margin-bottom:25px;box-shadow:0 8px 25px rgba(184,136,136,.25)}
+        
+        .day-header{background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:white;padding:30px;border-radius:20px;margin-bottom:25px;box-shadow:0 8px 25px rgba(244,114,182,.25)}
         .day-header h2{font-size:1.8em;margin-bottom:10px;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.15)}
         .day-header p{font-size:1em;opacity:.98;margin-bottom:15px}
         .day-goals{list-style:none;background:rgba(255,255,255,.2);padding:15px;border-radius:12px}
         .day-goals li{padding:8px 0;display:flex;align-items:center;gap:10px;font-size:.95em;font-weight:600;color:white}
-        .kanji-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0}
-        .kanji-card{background:rgba(255,255,255,.98);border-radius:18px;padding:18px 10px;text-align:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(184,136,136,.08);transition:.3s;position:relative}
-        .kanji-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.85;border-radius:18px 18px 0 0}
-        .kanji-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(184,136,136,.15)}
-        .kanji-char{font-family:'M PLUS Rounded 1c',serif;font-size:3em;font-weight:800;color:var(--rose-dark);margin-bottom:8px;line-height:1}
-        .kanji-onyomi{font-size:.78em;color:var(--blush-dark);font-weight:700;margin-bottom:3px}
-        .kanji-kunyomi{font-size:.78em;color:var(--rose-dark);font-weight:700;margin-bottom:3px}
-        .kanji-meaning{font-size:.82em;color:var(--text-medium);font-weight:700;margin-bottom:3px}
-        .kanji-strokes{font-size:.72em;color:var(--text-light);font-weight:600}
-        .vocab-section{background:linear-gradient(135deg,rgba(240,212,212,.2),rgba(245,224,224,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .vocab-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.9;border-radius:28px 28px 0 0}
-        .vocab-list{display:grid;gap:15px;margin-top:25px}
-        .vocab-item{background:rgba(255,255,255,.98);padding:20px;border-radius:20px;display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:center;transition:.35s;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08);position:relative}
-        .vocab-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.85;border-radius:20px 20px 0 0}
-        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(184,136,136,.15)}
-        .vocab-illustration-lg{width:100px;height:100px;background:linear-gradient(135deg,var(--rose-light),var(--blush-light));border-radius:20px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(184,136,136,.1);position:relative;z-index:2}
-        .vocab-jp-lg{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--text-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
-        .vocab-romaji-lg{font-size:.95em;color:var(--rose-dark);font-weight:800;margin-bottom:5px;position:relative;z-index:2}
-        .vocab-meaning-lg{font-size:.95em;color:var(--text-dark);margin-bottom:8px;font-weight:700;position:relative;z-index:2}
-        .vocab-example{background:rgba(255,255,255,.8);padding:10px 12px;border-radius:10px;font-size:.85em;color:var(--text-dark);border-left:4px solid var(--rose);line-height:1.5;position:relative;z-index:2}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(252,231,243,.3),rgba(255,228,230,.3));border:2px solid rgba(255,255,255,.95);border-radius:25px;padding:25px;margin:20px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
+        .tip-box h4{color:var(--rose-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.8;font-weight:600;position:relative;z-index:2}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        /* Kanji grid - chữ màu đậm gần đen, nét mảnh */
+        .kanji-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:25px 0}
+        .kanji-card{background:rgba(255,255,255,.98);border-radius:20px;padding:20px 15px;text-align:center;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(244,114,182,.1);transition:.3s;position:relative;overflow:hidden}
+        .kanji-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--pink));opacity:.85;border-radius:20px 20px 0 0}
+        .kanji-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(244,114,182,.2)}
+        .kanji-illustration{width:100%;height:90px;background:linear-gradient(135deg,#FDF2F8,#FCE7F3);border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:1px solid rgba(244,114,182,.15)}
+        .kanji-illustration svg{width:70px;height:70px}
+        .kanji-char{font-family:'M PLUS Rounded 1c',serif;font-size:3em;font-weight:700;color:#1F2937;margin-bottom:8px;line-height:1;letter-spacing:.05em}
+        .kanji-onyomi{font-size:.78em;color:var(--rose-dark);font-weight:600;margin-bottom:3px}
+        .kanji-kunyomi{font-size:.78em;color:var(--rose-dark);font-weight:600;margin-bottom:3px}
+        .kanji-meaning{font-size:.85em;color:var(--text);font-weight:600;margin-bottom:3px}
+        .kanji-strokes{font-size:.72em;color:var(--text-light);font-weight:600;margin-bottom:8px}
+        .kanji-hint{font-size:.75em;color:var(--rose-dark);font-weight:700;background:rgba(251,207,232,.4);padding:6px 10px;border-radius:10px;line-height:1.4;margin-top:8px}
+        .audio-btn{background:rgba(255,255,255,.95);color:var(--rose-dark);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1em;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(244,114,182,.15);margin-top:10px}
+        .audio-btn:hover{transform:scale(1.1);background:var(--rose);color:white}
+        
+        .vocab-section{background:linear-gradient(135deg,rgba(251,207,232,.2),rgba(252,231,243,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin:30px 0;position:relative;overflow:hidden}
+        .vocab-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
+        .vocab-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:25px}
+        .vocab-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(252,231,243,.4));padding:18px;border-radius:16px;display:grid;grid-template-columns:70px 1fr auto;gap:15px;align-items:center;transition:.3s;border:2px solid rgba(255,255,255,.95);cursor:pointer}
+        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(244,114,182,.15);background:linear-gradient(135deg,var(--rose),var(--pink))}
+        .vocab-item:hover .vocab-jp,.vocab-item:hover .vocab-romaji,.vocab-item:hover .vocab-meaning{color:white}
+        .vocab-emoji{font-size:2em;flex-shrink:0;text-align:center}
+        .vocab-info{min-width:0}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text);margin-bottom:3px}
+        .vocab-romaji{font-size:.85em;color:var(--rose-dark);font-weight:700;margin-bottom:3px}
+        .vocab-meaning{font-size:.88em;color:var(--text);font-weight:600}
+        .vocab-example{background:rgba(255,255,255,.8);padding:8px 12px;border-radius:10px;font-size:.82em;color:var(--text);margin-top:6px;border-left:3px solid var(--rose)}
         .vocab-example strong{color:var(--rose-dark);font-weight:800}
-        .audio-btn{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(184,136,136,.25)}
-        .audio-btn:hover{transform:scale(1.05);background-position:right center}
-        .grammar-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);border-left:7px solid var(--rose);box-shadow:0 4px 20px rgba(184,136,136,.08);position:relative}
-        .grammar-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.85;border-radius:20px 20px 0 0}
-        .grammar-title{font-size:1.3em;font-weight:900;color:var(--text-dark);margin-bottom:15px;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
-        .grammar-structure{background:linear-gradient(135deg,var(--rose-light),var(--blush-light));padding:15px;border-radius:15px;font-family:'M PLUS Rounded 1c';font-size:1.4em;text-align:center;color:var(--text-dark);font-weight:800;margin:15px 0;border:2px solid var(--rose);position:relative;z-index:2}
-        .grammar-desc{font-size:.95em;color:var(--text-dark);line-height:1.7;margin-bottom:15px;position:relative;z-index:2}
+        
+        .grammar-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);border-left:7px solid var(--rose);box-shadow:0 4px 20px rgba(244,114,182,.08);position:relative}
+        .grammar-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink));opacity:.85;border-radius:20px 20px 0 0}
+        .grammar-title{font-size:1.3em;font-weight:900;color:var(--text);margin-bottom:15px;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .grammar-structure{background:linear-gradient(135deg,var(--rose-light),var(--pink-light));padding:15px;border-radius:15px;font-family:'M PLUS Rounded 1c';font-size:1.3em;text-align:center;color:var(--text);font-weight:800;margin:15px 0;border:2px solid var(--rose);position:relative;z-index:2}
+        .grammar-desc{font-size:.95em;color:var(--text);line-height:1.7;margin-bottom:15px;position:relative;z-index:2}
         .grammar-examples{display:grid;gap:12px;position:relative;z-index:2}
         .grammar-example{background:rgba(255,255,255,.85);padding:12px;border-radius:12px;border-left:4px solid var(--rose);border:2px solid rgba(255,255,255,.95)}
-        .grammar-example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
+        .grammar-example-jp{font-family:'M PLUS Rounded 1c';font-size:1.15em;color:var(--text);font-weight:800;margin-bottom:5px}
         .grammar-example-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
-        .grammar-note{background:var(--gold-light);padding:12px;border-radius:10px;margin-top:10px;font-size:.88em;color:var(--text-dark);border-left:4px solid var(--gold);font-weight:600;position:relative;z-index:2}
-        .tip-box{background:linear-gradient(135deg,rgba(240,212,212,.25),rgba(255,240,230,.25));border:2px solid rgba(255,255,255,.95);border-radius:22px;padding:22px;margin:18px 0;position:relative}
-        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--gold-dark));opacity:.9;border-radius:22px 22px 0 0}
-        .tip-box h4{color:var(--rose-dark);margin-bottom:10px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
-        .tip-box p,.tip-box ul{color:var(--text-dark);font-size:.95em;line-height:1.7;font-weight:600;position:relative;z-index:2}
-        .tip-box ul{padding-left:20px}
-        .tip-box li{margin-bottom:5px}
-        .dialogue-section{background:linear-gradient(135deg,rgba(240,212,212,.2),rgba(245,224,224,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .dialogue-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.9;border-radius:28px 28px 0 0}
-        .dialogue-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08)}
-        .dialogue-controls{display:flex;gap:10px;margin-bottom:18px;padding:12px;background:var(--rose-light);border-radius:12px;align-items:center;flex-wrap:wrap}
-        .dialogue-btn{background:linear-gradient(135deg,var(--rose),var(--blush));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(184,136,136,.25);display:flex;align-items:center;gap:8px}
-        .dialogue-btn:hover{transform:scale(1.05);background-position:right center}
-        .dialogue-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
-        .speaker{display:flex;margin-bottom:15px;align-items:flex-start;gap:12px;flex-wrap:wrap}
-        .speaker-avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--blush));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1em;flex-shrink:0;box-shadow:0 4px 12px rgba(184,136,136,.25)}
-        .speaker-content{flex:1;background:var(--rose-light);padding:12px;border-radius:15px;min-width:200px;border:2px solid rgba(255,255,255,.95)}
-        .speaker-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text-dark);font-weight:800;margin-bottom:5px}
-        .speaker-vn{color:var(--text-medium);font-size:.9em;margin-bottom:8px;font-weight:600}
-        .structure-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-        .structure-tag{background:rgba(255,255,255,.95);padding:3px 10px;border-radius:12px;font-size:.72em;font-weight:700;border:1.5px solid}
-        .tag-new{color:var(--rose);border-color:var(--rose);background:rgba(240,212,212,.95)}
-        .tag-prev{color:var(--blush-dark);border-color:var(--blush);background:rgba(245,224,224,.95)}
-        .exercise-section{background:linear-gradient(135deg,rgba(245,224,224,.25),rgba(240,212,212,.25));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush),var(--gold-light));opacity:.9;border-radius:28px 28px 0 0}
-        .exercise-card{background:rgba(255,255,255,.98);border-radius:20px;padding:22px;margin:15px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08)}
-        .exercise-q{font-size:1.1em;font-weight:900;color:var(--text-dark);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-        .q-num{background:linear-gradient(135deg,var(--rose),var(--blush));color:white;width:30px;height:30px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 3px 10px rgba(184,136,136,.25)}
+        .grammar-note{background:rgba(251,207,232,.4);padding:10px;border-radius:10px;margin-top:10px;font-size:.85em;color:var(--text);border-left:3px solid var(--peach);font-weight:600;position:relative;z-index:2}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(252,231,243,.3),rgba(255,228,230,.3));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
+        .exercise-card{background:rgba(255,255,255,.98);border-radius:20px;padding:22px;margin:15px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(244,114,182,.08)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--rose),var(--pink));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 3px 10px rgba(244,114,182,.2)}
         .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
-        .exercise-opt{background:var(--rose-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1em;font-weight:800;color:var(--text-dark);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt{background:var(--rose-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
         .exercise-opt:hover{background:var(--rose);color:white;transform:translateY(-2px)}
-        .exercise-opt.correct{background:#A8E6CF;color:white;border-color:#5FD4A8}
-        .exercise-opt.wrong{background:#ff5252;color:white;border-color:#e83e3e}
-        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:var(--error);color:white;border-color:var(--error-dark)}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
         .feedback.show{display:block}
-        .feedback.correct{background:#D4F5E9;color:#5FD4A8;border:2px solid #A8E6CF}
-        .feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
-        .listening-section{background:linear-gradient(135deg,rgba(240,212,212,.25),rgba(245,224,224,.25));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .listening-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.9;border-radius:28px 28px 0 0}
-        .listening-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08)}
-        .listening-controls{display:flex;gap:10px;margin-bottom:18px;padding:12px;background:var(--rose-light);border-radius:12px;align-items:center;flex-wrap:wrap;justify-content:center}
-        .listening-btn{background:linear-gradient(135deg,var(--rose),var(--blush));background-size:200% auto;color:white;border:none;padding:10px 22px;border-radius:25px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.9em;box-shadow:0 4px 12px rgba(184,136,136,.25);display:flex;align-items:center;gap:8px}
-        .listening-btn:hover{transform:scale(1.05);background-position:right center}
-        .listening-btn.stop{background:linear-gradient(135deg,#ff5252,#e83e3e);background-size:100% 100%}
-        .listening-btn.shadow{background:linear-gradient(135deg,var(--gold-light),var(--gold));background-size:200% auto}
-        .listening-transcript{background:rgba(255,255,255,.8);padding:18px;border-radius:12px;border-left:4px solid var(--rose);margin-top:15px;line-height:1.8;font-size:1.05em}
-        .listening-transcript p{margin-bottom:10px}
-        .listening-transcript .jp{font-family:'M PLUS Rounded 1c';font-weight:700;font-size:1.1em}
-        .listening-transcript .vn{color:var(--text-medium);font-size:.95em}
-        .speaking-section{background:linear-gradient(135deg,rgba(240,212,212,.2),rgba(245,224,224,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .speaking-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.9;border-radius:28px 28px 0 0}
-        .speaking-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(184,136,136,.08)}
-        .speaking-question{background:linear-gradient(135deg,var(--rose-light),var(--blush-light));padding:18px;border-radius:15px;margin-bottom:15px;border-left:5px solid var(--rose)}
-        .speaking-question .jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text-dark);margin-bottom:8px}
-        .speaking-question .vn{color:var(--text-medium);font-size:.95em;margin-bottom:10px}
-        .speaking-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-        .speaking-btn{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.85em;box-shadow:0 4px 12px rgba(184,136,136,.25)}
-        .speaking-btn:hover{transform:scale(1.05);background-position:right center}
-        .flashcard-section{background:linear-gradient(135deg,rgba(240,212,212,.2),rgba(245,224,224,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:38px;margin-bottom:30px;position:relative}
-        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--blush));opacity:.9;border-radius:28px 28px 0 0}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:#FEE2E2;color:var(--error-dark);border:2px solid var(--error)}
+        
+        .dialogue-section{background:linear-gradient(135deg,rgba(251,207,232,.2),rgba(252,231,243,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .dialogue-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
+        .dialogue-box{background:rgba(255,255,255,.98);border-radius:20px;padding:25px;margin:18px 0;border:2px solid rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(244,114,182,.08)}
+        .dialogue-controls{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+        .dialogue-btn{background:linear-gradient(135deg,var(--rose),var(--pink));background-size:200% auto;color:white;border:none;padding:10px 20px;border-radius:25px;font-weight:800;cursor:pointer;transition:.3s;font-family:inherit;font-size:.9em;box-shadow:0 4px 12px rgba(244,114,182,.25);display:flex;align-items:center;gap:8px}
+        .dialogue-btn:hover{transform:scale(1.05);background-position:right center}
+        .dialogue-btn.stop{background:linear-gradient(135deg,var(--error),var(--error-dark))}
+        
+        .speaker{display:flex;margin-bottom:15px;align-items:flex-start;gap:12px;flex-wrap:wrap}
+        .speaker-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--pink));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.2em;flex-shrink:0;box-shadow:0 4px 12px rgba(244,114,182,.25)}
+        .speaker-content{flex:1;background:rgba(252,231,243,.4);padding:15px;border-radius:15px;min-width:200px;border:2px solid rgba(255,255,255,.95)}
+        .speaker-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;color:var(--text);font-weight:800;margin-bottom:5px}
+        .speaker-vn{color:var(--text-medium);font-size:.9em;margin-bottom:8px;font-weight:600}
+        
+        .flashcard-section{background:linear-gradient(135deg,rgba(251,207,232,.2),rgba(252,231,243,.2));border:2px solid rgba(255,255,255,.95);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));opacity:.9}
         .flashcard-container{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
-        .flashcard{perspective:1000px;height:190px;cursor:pointer}
+        .flashcard{perspective:1000px;height:180px;cursor:pointer}
         .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
         .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
-        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px;box-shadow:0 4px 20px rgba(184,136,136,.08);border:2px solid rgba(255,255,255,.95)}
+        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;box-shadow:0 4px 20px rgba(244,114,182,.08);border:2px solid rgba(255,255,255,.95)}
         .flashcard-front{background:rgba(255,255,255,.98);border-color:var(--rose)}
-        .flashcard-back{background:linear-gradient(135deg,var(--gold-light),var(--rose-light));border-color:var(--gold);transform:rotateY(180deg)}
-        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2.5em;font-weight:800;color:var(--text-dark)}
-        .flashcard-hint{font-size:.8em;color:var(--text-light);margin-top:8px;font-weight:700}
-        .flashcard-romaji{font-size:1.3em;font-weight:900;color:var(--rose-dark);margin-top:5px}
-        .flashcard-meaning{font-size:.9em;color:var(--text-dark);margin-top:5px;font-weight:700;text-align:center}
-        .progress-section{background:linear-gradient(135deg,rgba(240,212,212,.25),rgba(245,224,224,.25),rgba(255,240,230,.25));border:2px solid rgba(255,255,255,.95);padding:35px;border-radius:25px;margin:30px 0;text-align:center;box-shadow:0 4px 20px rgba(184,136,136,.08)}
+        .flashcard-back{background:linear-gradient(135deg,var(--pink-light),var(--rose-light));border-color:var(--pink);transform:rotateY(180deg)}
+        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2em;font-weight:700;color:#1F2937;text-align:center;letter-spacing:.05em}
+        .flashcard-hint{font-size:.72em;color:var(--text-light);margin-top:5px;font-weight:700}
+        .flashcard-romaji{font-size:.95em;font-weight:900;color:var(--rose-dark);margin-top:3px}
+        .flashcard-meaning{font-size:.85em;color:var(--text);margin-top:3px;font-weight:700;text-align:center}
+        
+        .progress-section{background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(252,231,243,.3),rgba(255,228,230,.3));border:2px solid rgba(255,255,255,.95);padding:35px;border-radius:25px;margin:30px 0;text-align:center;box-shadow:0 4px 20px rgba(244,114,182,.08)}
         .progress-bar{width:100%;height:18px;background:rgba(255,255,255,.95);border-radius:12px;overflow:hidden;margin:18px 0;border:2px solid var(--rose)}
-        .progress-fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--blush),var(--gold-light));width:0%;transition:1s;border-radius:10px}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--pink),var(--peach));width:0%;transition:1s;border-radius:10px}
+        
         .nav-buttons{display:flex;justify-content:space-between;gap:15px;margin-top:25px;flex-wrap:wrap}
-        .group-title{font-size:1.25em;font-weight:900;color:var(--text-dark);margin:20px 0 12px;display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:3px dashed var(--rose);position:relative;z-index:2}
-        .footer{background:linear-gradient(135deg,var(--rose),var(--rose-dark),var(--blush-dark));background-size:200% auto;color:white;padding:40px;text-align:center;margin-top:40px;border-radius:28px 28px 0 0;animation:shimmer 8s linear infinite}
-        .footer h3{font-size:1.5em;margin-bottom:10px;font-weight:900}
-        .footer p{opacity:.95;margin-bottom:8px;font-weight:600}
-        @media(max-width:900px){.days-nav{grid-template-columns:repeat(4,1fr)}.flashcard-container{grid-template-columns:repeat(2,1fr)}.vocab-item{grid-template-columns:80px 1fr}.vocab-illustration-lg{width:80px;height:80px}.week-nav{flex-direction:column}.week-nav-link{max-width:100%}.kanji-grid{grid-template-columns:repeat(2,1fr)}}
-        @media(max-width:600px){.days-nav{grid-template-columns:repeat(2,1fr)}.flashcard-container{grid-template-columns:1fr}.exercise-options{grid-template-columns:1fr}.kanji-grid{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.4em}.card,.vocab-section,.dialogue-section,.exercise-section,.listening-section,.speaking-section,.flashcard-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}.vocab-illustration-lg{margin:0 auto}}
+        
+        .footer{background:linear-gradient(135deg,var(--rose),var(--pink),var(--peach),var(--lavender));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.days-nav{grid-template-columns:repeat(4,1fr)}.flashcard-container{grid-template-columns:repeat(2,1fr)}.vocab-list{grid-template-columns:1fr}.week-nav{flex-direction:column}.week-nav-link{max-width:100%}.kanji-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.days-nav{grid-template-columns:repeat(2,1fr)}.flashcard-container{grid-template-columns:1fr}.exercise-options{grid-template-columns:1fr}.kanji-grid{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section,.flashcard-section,.dialogue-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}}
     </style>
 </head>
 <body>
-    <div class="bg-circle"></div><div class="bg-circle"></div><div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
     <div class="petal-container" id="petalContainer"></div>
 
     <header class="header">
         <a href="index.html" class="logo"><span style="font-size:1.4em">🌹</span><span class="logo-main">Nihongo Journey</span></a>
-        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
     </header>
+
     <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <span>Tuần 21</span></div>
 
     <div class="week-nav">
@@ -228,7 +240,7 @@
             <div class="week-nav-info"><div class="week-nav-label">← Tuần trước</div><div class="week-nav-title">Tuần 20: Quá khứ & Trải nghiệm</div></div>
             <div class="week-nav-arrow">‹</div>
         </a>
-        <div class="week-nav-center"><div class="week-nav-current">Tuần 21</div><div class="week-nav-current-label">Hiện tại</div></div>
+        <div class="week-nav-center"><div class="week-nav-current">🌹 Tuần 21</div><div class="week-nav-current-label">Hiện tại</div></div>
         <a href="n5-w22.html" class="week-nav-link week-nav-next">
             <div class="week-nav-arrow">›</div>
             <div class="week-nav-info"><div class="week-nav-label">Tuần sau →</div><div class="week-nav-title">Tuần 22: So sánh & Lựa chọn</div></div>
@@ -250,25 +262,27 @@
                 <div class="stat-item"><span class="stat-number">30'</span><span class="stat-label">Mỗi ngày</span></div>
             </div>
             <div class="mascot-container">
-                <svg class="mascot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs><radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#D4A5A5;stop-opacity:.3"/><stop offset="100%" style="stop-color:#E5B5B5;stop-opacity:.2"/></radialGradient></defs>
+                <svg class="mascot-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="mBg" cx="50%" cy="40%"><stop offset="0%" style="stop-color:#F472B6;stop-opacity:.3"/><stop offset="100%" style="stop-color:#EC4899;stop-opacity:.2"/></radialGradient>
+                        <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#F472B6"/><stop offset="100%" style="stop-color:#DB2777"/></linearGradient>
+                    </defs>
                     <circle cx="100" cy="100" r="85" fill="url(#mBg)"/>
-                    <circle cx="100" cy="100" r="68" fill="#FAF0F0"/>
-                    <circle cx="100" cy="100" r="68" fill="none" stroke="#D4A5A5" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
-                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#B88888" stroke-width="2.5" fill="none"/>
-                    <circle cx="85" cy="95" r="5" fill="#5A3A3A"/><circle cx="115" cy="95" r="5" fill="#5A3A3A"/>
+                    <circle cx="100" cy="100" r="68" fill="#FDF2F8"/>
+                    <circle cx="100" cy="100" r="68" fill="none" stroke="#F472B6" stroke-width="2" stroke-dasharray="3,4" opacity=".7"/>
+                    <path d="M 70 85 Q 70 75 100 75 Q 130 75 130 85" stroke="#DB2777" stroke-width="2.5" fill="none"/>
+                    <circle cx="85" cy="95" r="5" fill="#1F2937"/><circle cx="115" cy="95" r="5" fill="#1F2937"/>
                     <circle cx="86" cy="93" r="1.5" fill="white"/><circle cx="116" cy="93" r="1.5" fill="white"/>
-                    <path d="M 92 108 Q 100 118 108 108" stroke="#5A3A3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#F0D4D4" opacity=".9"/>
-                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#F0D4D4" opacity=".9"/>
-                    <path d="M 65 55 L 55 45 M 135 55 L 145 45" stroke="#B88888" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M 92 108 Q 100 118 108 108" stroke="#1F2937" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="104" rx="5" ry="3" fill="#FBCFE8" opacity=".9"/>
+                    <ellipse cx="124" cy="104" rx="5" ry="3" fill="#FBCFE8" opacity=".9"/>
                     <!-- Hoa hồng -->
-                    <circle cx="100" cy="145" r="12" fill="#D4A5A5"/>
-                    <circle cx="92" cy="140" r="8" fill="#E5B5B5"/>
-                    <circle cx="108" cy="140" r="8" fill="#E5B5B5"/>
-                    <circle cx="100" cy="135" r="6" fill="#F0D4D4"/>
-                    <path d="M 100 157 L 100 175" stroke="#9CAF88" stroke-width="2"/>
-                    <path d="M 100 165 Q 90 160 85 165" stroke="#9CAF88" stroke-width="2" fill="none"/>
+                    <circle cx="100" cy="155" r="15" fill="url(#roseGrad)"/>
+                    <path d="M 100 145 Q 95 150 100 155 Q 105 150 100 145" fill="#DB2777"/>
+                    <path d="M 90 150 Q 100 145 110 150 Q 100 155 90 150" fill="#F472B6" opacity=".7"/>
+                    <path d="M 100 170 L 100 185" stroke="#22C55E" stroke-width="2"/>
+                    <path d="M 100 175 Q 95 172 92 175" stroke="#22C55E" stroke-width="1.5" fill="#22C55E"/>
+                    <path d="M 100 180 Q 105 177 108 180" stroke="#22C55E" stroke-width="1.5" fill="#22C55E"/>
                 </svg>
             </div>
             <div class="hero-btns">
@@ -278,7 +292,6 @@
         </div>
 
         <div class="card" id="days-nav">
-            <div class="card-header-bar"></div>
             <h2 class="section-title"><span>📅</span> 7 Ngày Học Chi Tiết <span>🌹</span></h2>
             <p class="section-subtitle">Click vào từng ngày để xem nội dung chi tiết</p>
             <div class="days-nav">
@@ -292,7 +305,7 @@
             </div>
         </div>
 
-        <!-- DAY 1 -->
+        <!-- NGÀY 1 -->
         <div class="day-content active" id="day1-content">
             <div class="day-header">
                 <h2>📚 Ngày 1: 8 Kanji Sở thích & Giải trí</h2>
@@ -305,7 +318,6 @@
             </div>
 
             <div class="card">
-                <div class="card-header-bar"></div>
                 <div class="tip-box">
                     <h4>🌹 Tại sao học Kanji sở thích?</h4>
                     <p>8 Kanji này giúp bạn nói về sở thích, giải trí và rủ rê bạn bè. Đây là những từ rất hữu ích trong giao tiếp hàng ngày!</p>
@@ -313,186 +325,500 @@
             </div>
 
             <div class="card">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📚</span> 8 Kanji Sở thích & Giải trí</h3>
-                <p class="section-subtitle">Click 🔊 để nghe phát âm, cố gắng nhớ âm On và nghĩa</p>
+                <h3 class="section-title"><span>📚</span> 8 Kanji Sở thích & Giải trí <span>🌹</span></h3>
+                <p class="section-subtitle">Click 🔊 để nghe phát âm, cố gắng nhớ âm On và nghĩa qua hình minh họa</p>
                 <div class="kanji-grid">
-                    <div class="kanji-card"><div class="kanji-char">好</div><div class="kanji-onyomi">Âm On: コウ</div><div class="kanji-kunyomi">Âm Kun: す・く</div><div class="kanji-meaning">Thích</div><div class="kanji-strokes">6 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('すき')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">楽</div><div class="kanji-onyomi">Âm On: ラク</div><div class="kanji-kunyomi">Âm Kun: たの・しい</div><div class="kanji-meaning">Vui</div><div class="kanji-strokes">13 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('たのしい')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">音</div><div class="kanji-onyomi">Âm On: オン</div><div class="kanji-kunyomi">Âm Kun: おと</div><div class="kanji-meaning">Âm thanh</div><div class="kanji-strokes">9 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('おんがく')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">映</div><div class="kanji-onyomi">Âm On: エイ</div><div class="kanji-kunyomi">Âm Kun: うつ・る</div><div class="kanji-meaning">Chiếu</div><div class="kanji-strokes">9 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('えいが')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">画</div><div class="kanji-onyomi">Âm On: ガ</div><div class="kanji-kunyomi">Âm Kun: -</div><div class="kanji-meaning">Bức tranh</div><div class="kanji-strokes">8 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('えいが')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">読</div><div class="kanji-onyomi">Âm On: ドク</div><div class="kanji-kunyomi">Âm Kun: よ・む</div><div class="kanji-meaning">Đọc</div><div class="kanji-strokes">14 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('よむ')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">聞</div><div class="kanji-onyomi">Âm On: ブン</div><div class="kanji-kunyomi">Âm Kun: き・く</div><div class="kanji-meaning">Nghe</div><div class="kanji-strokes">14 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('きく')">🔊</button></div>
-                    <div class="kanji-card"><div class="kanji-char">遊</div><div class="kanji-onyomi">Âm On: ユウ</div><div class="kanji-kunyomi">Âm Kun: あそ・ぶ</div><div class="kanji-meaning">Chơi</div><div class="kanji-strokes">12 nét</div><button class="audio-btn" style="margin-top:8px" onclick="playAudio('あそぶ')">🔊</button></div>
+                    <!-- 好 - Thích -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="25" fill="#FBCFE8"/><path d="M 30 40 Q 40 25 50 40 Q 40 55 30 40" fill="#F472B6"/><path d="M 40 35 L 40 45 M 35 40 L 45 40" stroke="white" stroke-width="2"/></svg>
+                        </div>
+                        <div class="kanji-char">好</div>
+                        <div class="kanji-onyomi">Âm On: コウ</div>
+                        <div class="kanji-kunyomi">Âm Kun: す・く</div>
+                        <div class="kanji-meaning">Thích</div>
+                        <div class="kanji-strokes">6 nét</div>
+                        <div class="kanji-hint">💡 Hình trái tim thể hiện sự yêu thích</div>
+                        <button class="audio-btn" onclick="playAudio('すき')">🔊</button>
+                    </div>
+                    <!-- 楽 - Vui -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="25" fill="#FBCFE8"/><circle cx="35" cy="35" r="3" fill="#1F2937"/><circle cx="45" cy="35" r="3" fill="#1F2937"/><path d="M 32 45 Q 40 52 48 45" stroke="#F472B6" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="kanji-char">楽</div>
+                        <div class="kanji-onyomi">Âm On: ラク</div>
+                        <div class="kanji-kunyomi">Âm Kun: たの・しい</div>
+                        <div class="kanji-meaning">Vui</div>
+                        <div class="kanji-strokes">13 nét</div>
+                        <div class="kanji-hint">💡 Khuôn mặt cười vui vẻ</div>
+                        <button class="audio-btn" onclick="playAudio('たのしい')">🔊</button>
+                    </div>
+                    <!-- 音 - Âm thanh -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="25" fill="#FBCFE8"/><path d="M 30 35 L 30 50 M 30 35 Q 45 30 45 40 Q 45 50 30 50" fill="#F472B6"/><path d="M 50 30 Q 55 25 60 30" stroke="#F472B6" stroke-width="2" fill="none"/><path d="M 52 40 Q 57 35 62 40" stroke="#F472B6" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <div class="kanji-char">音</div>
+                        <div class="kanji-onyomi">Âm On: オン</div>
+                        <div class="kanji-kunyomi">Âm Kun: おと</div>
+                        <div class="kanji-meaning">Âm thanh</div>
+                        <div class="kanji-strokes">9 nét</div>
+                        <div class="kanji-hint">💡 Nốt nhạc với sóng âm</div>
+                        <button class="audio-btn" onclick="playAudio('おと')">🔊</button>
+                    </div>
+                    <!-- 映 - Chiếu -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><rect x="25" y="30" width="50" height="40" rx="3" fill="#FBCFE8"/><rect x="30" y="35" width="40" height="30" fill="#F472B6"/><circle cx="50" cy="50" r="8" fill="white" opacity=".5"/><circle cx="50" cy="50" r="4" fill="#F472B6"/></svg>
+                        </div>
+                        <div class="kanji-char">映</div>
+                        <div class="kanji-onyomi">Âm On: エイ</div>
+                        <div class="kanji-kunyomi">Âm Kun: うつ・る</div>
+                        <div class="kanji-meaning">Chiếu (phim)</div>
+                        <div class="kanji-strokes">9 nét</div>
+                        <div class="kanji-hint">💡 Màn hình chiếu phim</div>
+                        <button class="audio-btn" onclick="playAudio('えい')">🔊</button>
+                    </div>
+                    <!-- 画 - Bức tranh -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><rect x="25" y="25" width="50" height="50" fill="#FBCFE8" stroke="#F472B6" stroke-width="2"/><circle cx="40" cy="45" r="5" fill="#F472B6"/><path d="M 25 65 L 40 50 L 55 60 L 75 65" stroke="#F472B6" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <div class="kanji-char">画</div>
+                        <div class="kanji-onyomi">Âm On: ガ</div>
+                        <div class="kanji-kunyomi">Âm Kun: -</div>
+                        <div class="kanji-meaning">Bức tranh</div>
+                        <div class="kanji-strokes">8 nét</div>
+                        <div class="kanji-hint">💡 Khung tranh với cảnh núi</div>
+                        <button class="audio-btn" onclick="playAudio('が')">🔊</button>
+                    </div>
+                    <!-- 読 - Đọc -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><path d="M 25 30 L 40 25 L 55 30 L 55 70 L 25 70 Z" fill="#FBCFE8"/><path d="M 40 25 L 40 70" stroke="#F472B6" stroke-width="1.5"/><line x1="30" y1="40" x2="38" y2="40" stroke="#F472B6" stroke-width="1.5"/><line x1="30" y1="50" x2="38" y2="50" stroke="#F472B6" stroke-width="1.5"/><line x1="30" y1="60" x2="38" y2="60" stroke="#F472B6" stroke-width="1.5"/><line x1="42" y1="40" x2="50" y2="40" stroke="#F472B6" stroke-width="1.5"/><line x1="42" y1="50" x2="50" y2="50" stroke="#F472B6" stroke-width="1.5"/></svg>
+                        </div>
+                        <div class="kanji-char">読</div>
+                        <div class="kanji-onyomi">Âm On: ドク</div>
+                        <div class="kanji-kunyomi">Âm Kun: よ・む</div>
+                        <div class="kanji-meaning">Đọc</div>
+                        <div class="kanji-strokes">14 nét</div>
+                        <div class="kanji-hint">💡 Quyển sách đang mở</div>
+                        <button class="audio-btn" onclick="playAudio('よむ')">🔊</button>
+                    </div>
+                    <!-- 聞 - Nghe -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><path d="M 35 30 Q 30 40 35 55 Q 40 60 45 55 Q 50 40 45 30 Q 40 25 35 30" fill="#FBCFE8"/><path d="M 35 40 Q 40 45 45 40" stroke="#F472B6" stroke-width="2" fill="none"/><path d="M 55 35 Q 60 30 65 35" stroke="#F472B6" stroke-width="2" fill="none"/><path d="M 58 45 Q 63 40 68 45" stroke="#F472B6" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <div class="kanji-char">聞</div>
+                        <div class="kanji-onyomi">Âm On: ブン</div>
+                        <div class="kanji-kunyomi">Âm Kun: き・く</div>
+                        <div class="kanji-meaning">Nghe</div>
+                        <div class="kanji-strokes">14 nét</div>
+                        <div class="kanji-hint">💡 Tai với sóng âm thanh</div>
+                        <button class="audio-btn" onclick="playAudio('きく')">🔊</button>
+                    </div>
+                    <!-- 遊 - Chơi -->
+                    <div class="kanji-card">
+                        <div class="kanji-illustration">
+                            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="20" fill="#FBCFE8"/><circle cx="35" cy="38" r="2" fill="#1F2937"/><circle cx="45" cy="38" r="2" fill="#1F2937"/><path d="M 35 45 Q 40 50 45 45" stroke="#F472B6" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="30" cy="60" r="4" fill="#F472B6"/><circle cx="50" cy="62" r="4" fill="#F472B6"/></svg>
+                        </div>
+                        <div class="kanji-char">遊</div>
+                        <div class="kanji-onyomi">Âm On: ユウ</div>
+                        <div class="kanji-kunyomi">Âm Kun: あそ・ぶ</div>
+                        <div class="kanji-meaning">Chơi</div>
+                        <div class="kanji-strokes">12 nét</div>
+                        <div class="kanji-hint">💡 Khuôn mặt vui với bóng</div>
+                        <button class="audio-btn" onclick="playAudio('あそぶ')">🔊</button>
+                    </div>
                 </div>
             </div>
 
             <div class="vocab-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🌹</span> Từ Vựng Sở thích</h3>
+                <h3 class="section-title"><span>🌹</span> Từ Vựng Sở thích <span>🎬</span></h3>
                 <p class="section-subtitle">Những từ vựng cần thiết để nói về sở thích</p>
                 <div class="vocab-list">
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🎬</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">えいが</div><div class="vocab-romaji-lg">eiga</div><div class="vocab-meaning-lg">🎬 Phim</div><div class="vocab-example"><strong>Ví dụ:</strong> えいがを みます (Xem phim)</div></div><button class="audio-btn" onclick="playAudio('えいが')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🎵</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">おんがく</div><div class="vocab-romaji-lg">ongaku</div><div class="vocab-meaning-lg">🎵 Âm nhạc</div><div class="vocab-example"><strong>Ví dụ:</strong> おんがくを ききます (Nghe nhạc)</div></div><button class="audio-btn" onclick="playAudio('おんがく')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">📚</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">どくしょ</div><div class="vocab-romaji-lg">dokusho</div><div class="vocab-meaning-lg">📚 Đọc sách</div><div class="vocab-example"><strong>Ví dụ:</strong> どくしょが すきです (Thích đọc sách)</div></div><button class="audio-btn" onclick="playAudio('どくしょ')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🎮</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">ゲーム</div><div class="vocab-romaji-lg">geemu</div><div class="vocab-meaning-lg">🎮 Game</div><div class="vocab-example"><strong>Ví dụ:</strong> ゲームを します (Chơi game)</div></div><button class="audio-btn" onclick="playAudio('ゲーム')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">⚽</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">スポーツ</div><div class="vocab-romaji-lg">supootsu</div><div class="vocab-meaning-lg">⚽ Thể thao</div><div class="vocab-example"><strong>Ví dụ:</strong> スポーツが すきです (Thích thể thao)</div></div><button class="audio-btn" onclick="playAudio('スポーツ')">🔊</button></div>
-                    <div class="vocab-item"><div class="vocab-illustration-lg"><svg width="80" height="80" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#D4A5A5"/><text x="50" y="58" text-anchor="middle" font-size="20" fill="white" font-weight="bold">🍜</text></svg></div><div class="vocab-info"><div class="vocab-jp-lg">りょうり</div><div class="vocab-romaji-lg">ryouri</div><div class="vocab-meaning-lg">🍜 Nấu ăn</div><div class="vocab-example"><strong>Ví dụ:</strong> りょうりが すきです (Thích nấu ăn)</div></div><button class="audio-btn" onclick="playAudio('りょうり')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('えいが')"><div class="vocab-emoji">🎬</div><div class="vocab-info"><div class="vocab-jp">えいが</div><div class="vocab-romaji">eiga</div><div class="vocab-meaning">Phim</div><div class="vocab-example"><strong>VD:</strong> えいがを みます (Xem phim)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('えいが')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('おんがく')"><div class="vocab-emoji">🎵</div><div class="vocab-info"><div class="vocab-jp">おんがく</div><div class="vocab-romaji">ongaku</div><div class="vocab-meaning">Âm nhạc</div><div class="vocab-example"><strong>VD:</strong> おんがくを ききます (Nghe nhạc)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('おんがく')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('どくしょ')"><div class="vocab-emoji">📚</div><div class="vocab-info"><div class="vocab-jp">どくしょ</div><div class="vocab-romaji">dokusho</div><div class="vocab-meaning">Đọc sách</div><div class="vocab-example"><strong>VD:</strong> どくしょが すきです (Thích đọc sách)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('どくしょ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('ゲーム')"><div class="vocab-emoji">🎮</div><div class="vocab-info"><div class="vocab-jp">ゲーム</div><div class="vocab-romaji">geemu</div><div class="vocab-meaning">Game</div><div class="vocab-example"><strong>VD:</strong> ゲームを します (Chơi game)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('ゲーム')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('スポーツ')"><div class="vocab-emoji">⚽</div><div class="vocab-info"><div class="vocab-jp">スポーツ</div><div class="vocab-romaji">supootsu</div><div class="vocab-meaning">Thể thao</div><div class="vocab-example"><strong>VD:</strong> スポーツが すきです (Thích thể thao)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('スポーツ')">🔊</button></div>
+                    <div class="vocab-item" onclick="playAudio('りょうり')"><div class="vocab-emoji">🍜</div><div class="vocab-info"><div class="vocab-jp">りょうり</div><div class="vocab-romaji">ryouri</div><div class="vocab-meaning">Nấu ăn</div><div class="vocab-example"><strong>VD:</strong> りょうりが すきです (Thích nấu ăn)</div></div><button class="audio-btn" onclick="event.stopPropagation();playAudio('りょうり')">🔊</button></div>
                 </div>
             </div>
 
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 1</h3>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Kanji 好 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1a')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q1b')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q1d')">Chơi</div></div><div class="feedback" id="d1q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "おんがく" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2a')">Phim</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q2b')">Âm nhạc</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2c')">Game</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q2d')">Thể thao</div></div><div class="feedback" id="d1q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Kanji nào có nghĩa là "Chơi"?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3a')">読</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3b')">聞</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d1q3c')">楽</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d1q3d')">遊</div></div><div class="feedback" id="d1q3d"></div></div>
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 1 <span>🌹</span></h3>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Kanji 好 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q1a')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q1b')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q1c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q1d')">Chơi</div></div><div class="feedback" id="q1b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "おんがく" nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q2a')">Phim</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q2b')">Âm nhạc</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q2c')">Game</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q2d')">Thể thao</div></div><div class="feedback" id="q2b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Kanji nào có nghĩa là "Chơi"?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q3a')">読</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q3b')">聞</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q3c')">楽</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q3d')">遊</div></div><div class="feedback" id="q3d"></div></div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
             </div>
         </div>
 
-        <!-- DAY 2 -->
+        <!-- NGÀY 2 -->
         <div class="day-content" id="day2-content">
-            <div class="day-header"><h2>💭 Ngày 2: Vたいです (Muốn làm...)</h2><p>⏱️ 30 phút | 🎯 Học cách nói về mong muốn</p><ul class="day-goals"><li>✅ Cấu trúc Vたいです</li><li>✅ Phủ định: Vたくないです</li><li>✅ Áp dụng vào câu</li></ul></div>
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="grammar-box"><div class="grammar-title">💭 Cấu trúc Vたいです</div><div class="grammar-structure">[Động từ thể ます bỏ ます] + たいです</div><div class="grammar-desc"><strong>Ý nghĩa:</strong> Muốn làm gì<br>Dùng để nói về mong muốn của bản thân.</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">えいがを みたいです。</div><div class="grammar-example-vn">Tôi muốn xem phim.</div><button class="audio-btn" onclick="playAudio('えいがをみたいです')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">にほんへ いきたいです。</div><div class="grammar-example-vn">Tôi muốn đi Nhật.</div><button class="audio-btn" onclick="playAudio('にほんへいきたいです')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">すしが たべたいです。</div><div class="grammar-example-vn">Tôi muốn ăn sushi.</div><button class="audio-btn" onclick="playAudio('すしがたべたいです')">🔊</button></div></div></div>
-                <div class="grammar-box"><div class="grammar-title">❌ Phủ định: Vたくないです</div><div class="grammar-structure">[Động từ thể ます bỏ ます] + たくないです</div><div class="grammar-desc"><strong>Ý nghĩa:</strong> Không muốn làm gì</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">えいがを みたくないです。</div><div class="grammar-example-vn">Tôi không muốn xem phim.</div><button class="audio-btn" onclick="playAudio('えいがをみたくないです')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">にほんへ いきたくないです。</div><div class="grammar-example-vn">Tôi không muốn đi Nhật.</div><button class="audio-btn" onclick="playAudio('にほんへいきたくないです')">🔊</button></div></div></div>
+            <div class="day-header">
+                <h2>💭 Ngày 2: Vたいです (Muốn làm...)</h2>
+                <p>⏱️ 30 phút | 🎯 Học cách nói về mong muốn</p>
+                <ul class="day-goals">
+                    <li>✅ Cấu trúc Vたいです</li>
+                    <li>✅ Phủ định: Vたくないです</li>
+                    <li>✅ Áp dụng vào câu</li>
+                </ul>
             </div>
+
+            <div class="card">
+                <h3 class="section-title"><span>💭</span> Cấu trúc Vたいです <span>🌹</span></h3>
+                <div class="grammar-box">
+                    <div class="grammar-title">[Động từ thể ます bỏ ます] + たいです</div>
+                    <div class="grammar-desc"><strong>Ý nghĩa:</strong> Muốn làm gì<br>Dùng để nói về mong muốn của bản thân.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example"><div class="grammar-example-jp">えいがを みたいです。</div><div class="grammar-example-vn">Tôi muốn xem phim.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">にほんへ いきたいです。</div><div class="grammar-example-vn">Tôi muốn đi Nhật.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">すしが たべたいです。</div><div class="grammar-example-vn">Tôi muốn ăn sushi.</div></div>
+                    </div>
+                </div>
+                <div class="grammar-box">
+                    <div class="grammar-title">❌ Phủ định: Vたくないです</div>
+                    <div class="grammar-structure">[Động từ thể ます bỏ ます] + たくないです</div>
+                    <div class="grammar-desc"><strong>Ý nghĩa:</strong> Không muốn làm gì</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example"><div class="grammar-example-jp">えいがを みたくないです。</div><div class="grammar-example-vn">Tôi không muốn xem phim.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">にほんへ いきたくないです。</div><div class="grammar-example-vn">Tôi không muốn đi Nhật.</div></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 2</h3>
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 2 <span>🌹</span></h3>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "Tôi muốn xem phim" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1a')">えいがを みます</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q1b')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1c')">えいがを みたくないです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q1d')">えいがを みましょう</div></div><div class="feedback" id="d2q1b"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Tôi không muốn đi Nhật" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2a')">にほんへ いきます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2b')">にほんへ いきたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q2c')">にほんへ いきたくないです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q2d')">にほんへ いきましょう</div></div><div class="feedback" id="d2q2c"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Nghe: <button class="audio-btn" onclick="playAudio('すしがたべたいです')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3a')">Tôi ăn sushi</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d2q3b')">Tôi muốn ăn sushi</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3c')">Tôi không muốn ăn sushi</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d2q3d')">Cùng ăn sushi</div></div><div class="feedback" id="d2q3b"></div></div>
             </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+            </div>
         </div>
 
-        <!-- DAY 3 -->
+        <!-- NGÀY 3 -->
         <div class="day-content" id="day3-content">
-            <div class="day-header"><h2>🤝 Ngày 3: Vましょう (Cùng làm...)</h2><p>⏱️ 30 phút | 🎯 Học cách rủ rê bạn bè</p><ul class="day-goals"><li>✅ Cấu trúc Vましょう</li><li>✅ Cách dùng trong rủ rê</li><li>✅ Áp dụng vào câu</li></ul></div>
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="grammar-box"><div class="grammar-title">🤝 Cấu trúc Vましょう</div><div class="grammar-structure">[Động từ thể ます bỏ ます] + ましょう</div><div class="grammar-desc"><strong>Ý nghĩa:</strong> Cùng làm... nhé!<br>Dùng để rủ rê, đề nghị cùng làm gì đó.</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">いっしょに えいがを みましょう。</div><div class="grammar-example-vn">Cùng xem phim nhé.</div><button class="audio-btn" onclick="playAudio('いっしょにえいがをみましょう')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">にほんへ いきましょう。</div><div class="grammar-example-vn">Cùng đi Nhật nhé.</div><button class="audio-btn" onclick="playAudio('にほんへいきましょう')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">いっしょに たべましょう。</div><div class="grammar-example-vn">Cùng ăn nhé.</div><button class="audio-btn" onclick="playAudio('いっしょにたべましょう')">🔊</button></div></div></div>
+            <div class="day-header">
+                <h2>🤝 Ngày 3: Vましょう (Cùng làm...)</h2>
+                <p>⏱️ 30 phút | 🎯 Học cách rủ rê bạn bè</p>
+                <ul class="day-goals">
+                    <li>✅ Cấu trúc Vましょう</li>
+                    <li>✅ Cách dùng trong rủ rê</li>
+                    <li>✅ Áp dụng vào câu</li>
+                </ul>
             </div>
+
+            <div class="card">
+                <h3 class="section-title"><span>🤝</span> Cấu trúc Vましょう <span>🌹</span></h3>
+                <div class="grammar-box">
+                    <div class="grammar-title">[Động từ thể ます bỏ ます] + ましょう</div>
+                    <div class="grammar-desc"><strong>Ý nghĩa:</strong> Cùng làm... nhé!<br>Dùng để rủ rê, đề nghị cùng làm gì đó.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example"><div class="grammar-example-jp">いっしょに えいがを みましょう。</div><div class="grammar-example-vn">Cùng xem phim nhé.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">にほんへ いきましょう。</div><div class="grammar-example-vn">Cùng đi Nhật nhé.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">いっしょに たべましょう。</div><div class="grammar-example-vn">Cùng ăn nhé.</div></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 3</h3>
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 3 <span>🌹</span></h3>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "Cùng xem phim nhé" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1a')">えいがを みます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1b')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q1c')">えいがを みましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q1d')">えいがを みませんか</div></div><div class="feedback" id="d3q1c"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Cùng đi Nhật nhé" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2a')">にほんへ いきます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2b')">にほんへ いきたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q2c')">にほんへ いきましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q2d')">にほんへ いきませんか</div></div><div class="feedback" id="d3q2c"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Nghe: <button class="audio-btn" onclick="playAudio('いっしょにたべましょう')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3a')">Tôi muốn ăn</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3b')">Bạn muốn ăn không?</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d3q3c')">Cùng ăn nhé</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d3q3d')">Tôi đang ăn</div></div><div class="feedback" id="d3q3c"></div></div>
             </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+            </div>
         </div>
 
-        <!-- DAY 4 -->
+        <!-- NGÀY 4 -->
         <div class="day-content" id="day4-content">
-            <div class="day-header"><h2>💬 Ngày 4: Vませんか (Bạn có muốn... không?)</h2><p>⏱️ 30 phút | 🎯 Học cách mời lịch sự</p><ul class="day-goals"><li>✅ Cấu trúc Vませんか</li><li>✅ So sánh với Vましょう</li><li>✅ Cách trả lời</li></ul></div>
-            <div class="card">
-                <div class="card-header-bar"></div>
-                <div class="grammar-box"><div class="grammar-title">💬 Cấu trúc Vませんか</div><div class="grammar-structure">[Động từ thể ます bỏ ます] + ませんか</div><div class="grammar-desc"><strong>Ý nghĩa:</strong> Bạn có muốn... không?<br>Lịch sự hơn Vましょう, dùng để mời mọc.</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">いっしょに えいがを みませんか。</div><div class="grammar-example-vn">Bạn có muốn cùng xem phim không?</div><button class="audio-btn" onclick="playAudio('いっしょにえいがをみませんか')">🔊</button></div><div class="grammar-example"><div class="grammar-example-jp">にほんへ いきませんか。</div><div class="grammar-example-vn">Bạn có muốn đi Nhật không?</div><button class="audio-btn" onclick="playAudio('にほんへいきませんか')">🔊</button></div></div></div>
-                <div class="grammar-box"><div class="grammar-title">💡 Cách trả lời</div><div class="grammar-examples"><div class="grammar-example"><div class="grammar-example-jp">はい、いいですね。</div><div class="grammar-example-vn">Vâng, hay đấy.</div></div><div class="grammar-example"><div class="grammar-example-jp">すみません、ちょっと...</div><div class="grammar-example-vn">Xin lỗi, tôi hơi...</div></div></div><div class="grammar-note"><strong>💡 So sánh:</strong><br>• Vましょう = Cùng làm nhé! (thân mật)<br>• Vませんか = Bạn có muốn... không? (lịch sự)</div></div>
+            <div class="day-header">
+                <h2>💬 Ngày 4: Vませんか (Bạn có muốn... không?)</h2>
+                <p>⏱️ 30 phút | 🎯 Học cách mời lịch sự</p>
+                <ul class="day-goals">
+                    <li>✅ Cấu trúc Vませんか</li>
+                    <li>✅ So sánh với Vましょう</li>
+                    <li>✅ Cách trả lời</li>
+                </ul>
             </div>
+
+            <div class="card">
+                <h3 class="section-title"><span>💬</span> Cấu trúc Vませんか <span>🌹</span></h3>
+                <div class="grammar-box">
+                    <div class="grammar-title">[Động từ thể ます bỏ ます] + ませんか</div>
+                    <div class="grammar-desc"><strong>Ý nghĩa:</strong> Bạn có muốn... không?<br>Lịch sự hơn Vましょう, dùng để mời mọc.</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example"><div class="grammar-example-jp">いっしょに えいがを みませんか。</div><div class="grammar-example-vn">Bạn có muốn cùng xem phim không?</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">にほんへ いきませんか。</div><div class="grammar-example-vn">Bạn có muốn đi Nhật không?</div></div>
+                    </div>
+                </div>
+                <div class="grammar-box">
+                    <div class="grammar-title">💡 Cách trả lời</div>
+                    <div class="grammar-examples">
+                        <div class="grammar-example"><div class="grammar-example-jp">はい、いいですね。</div><div class="grammar-example-vn">Vâng, hay đấy.</div></div>
+                        <div class="grammar-example"><div class="grammar-example-jp">すみません、ちょっと...</div><div class="grammar-example-vn">Xin lỗi, tôi hơi...</div></div>
+                    </div>
+                    <div class="grammar-note">💡 <strong>So sánh:</strong><br>• Vましょう = Cùng làm nhé! (thân mật)<br>• Vませんか = Bạn có muốn... không? (lịch sự)</div>
+                </div>
+            </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 4</h3>
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 4 <span>🌹</span></h3>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "Bạn có muốn cùng xem phim không?" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1a')">えいがを みましょう</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q1b')">えいがを みませんか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1c')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q1d')">えいがを みます</div></div><div class="feedback" id="d4q1b"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Vâng, hay đấy" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2a')">すみません</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q2b')">はい、いいですね</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2c')">いいえ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q2d')">そうです</div></div><div class="feedback" id="d4q2b"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> Nghe: <button class="audio-btn" onclick="playAudio('にほんへいきませんか')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3a')">Cùng đi Nhật</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d4q3b')">Bạn có muốn đi Nhật không?</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3c')">Tôi muốn đi Nhật</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d4q3d')">Tôi đi Nhật</div></div><div class="feedback" id="d4q3b"></div></div>
             </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+            </div>
         </div>
 
-        <!-- DAY 5 -->
+        <!-- NGÀY 5 -->
         <div class="day-content" id="day5-content">
-            <div class="day-header"><h2>🎧 Ngày 5: Listening + Shadowing</h2><p>⏱️ 30 phút | 🎯 Luyện nghe hội thoại rủ rê</p><ul class="day-goals"><li>✅ Nghe hiểu đoạn hội thoại</li><li>✅ Shadowing (nhại lại) theo audio</li><li>✅ Trả lời câu hỏi sau khi nghe</li></ul></div>
-            <div class="card"><div class="card-header-bar"></div><div class="tip-box"><h4>🎧 Shadowing là gì?</h4><p><strong>Shadowing</strong> là kỹ thuật nghe và nhại lại ngay lập tức theo audio, giống như cái bóng theo sát người nói. Kỹ thuật này giúp cải thiện phát âm, ngữ điệu và tốc độ nói.</p><p><strong>Cách luyện:</strong></p><ul><li>Bước 1: Nghe lần 1 để nắm ý chính</li><li>Bước 2: Nghe lần 2 và nhại lại theo từng câu</li><li>Bước 3: Nghe lần 3 và nhại lại theo toàn bộ đoạn</li></ul></div></div>
-            <div class="listening-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎧</span> Đoạn Hội Thoại: Rủ rê cuối tuần</h3>
-                <div class="listening-box">
-                    <div class="listening-controls">
-                        <button class="listening-btn" onclick="playListeningFull()">▶️ Nghe toàn bộ</button>
-                        <button class="listening-btn" onclick="playListeningSlow()">🐢 Nghe chậm</button>
-                        <button class="listening-btn shadow" onclick="playListeningShadow()">🎤 Shadowing</button>
-                        <button class="listening-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+            <div class="day-header">
+                <h2>🎧 Ngày 5: Listening + Shadowing</h2>
+                <p>⏱️ 30 phút | 🎯 Luyện nghe hội thoại rủ rê</p>
+                <ul class="day-goals">
+                    <li>✅ Nghe hiểu đoạn hội thoại</li>
+                    <li>✅ Shadowing (nhại lại) theo audio</li>
+                    <li>✅ Trả lời câu hỏi sau khi nghe</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="tip-box">
+                    <h4>🎧 Shadowing là gì?</h4>
+                    <p>Shadowing là kỹ thuật nghe và nhại lại ngay lập tức theo audio, giống như cái bóng theo sát người nói. Kỹ thuật này giúp cải thiện phát âm, ngữ điệu và tốc độ nói.</p>
+                    <ul>
+                        <li>Bước 1: Nghe lần 1 để nắm ý chính</li>
+                        <li>Bước 2: Nghe lần 2 và nhại lại theo từng câu</li>
+                        <li>Bước 3: Nghe lần 3 và nhại lại theo toàn bộ đoạn</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dialogue-section">
+                <h3 class="section-title"><span>🎧</span> Đoạn Hội Thoại: Rủ rê cuối tuần <span>🌹</span></h3>
+                <div class="dialogue-box">
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue()">▶️ Nghe toàn bộ</button>
+                        <button class="dialogue-btn" onclick="playDialogueSlow()">🐢 Nghe chậm</button>
+                        <button class="dialogue-btn" onclick="playShadowing()">🎤 Shadowing</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
                     </div>
-                    <div class="listening-transcript">
-                        <p><strong>A:</strong> <span class="jp">こんしゅうの しゅうまつ、いっしょに えいがを みませんか。</span><br><span class="vn">Cuối tuần này, bạn có muốn cùng xem phim không?</span></p>
-                        <p><strong>B:</strong> <span class="jp">はい、いいですね。どんな えいがが いいですか。</span><br><span class="vn">Vâng, hay đấy. Phim nào hay?</span></p>
-                        <p><strong>A:</strong> <span class="jp">アクション えいがが いいです。</span><br><span class="vn">Phim hành động hay.</span></p>
-                        <p><strong>B:</strong> <span class="jp">わかりました。なんじに あいましょうか。</span><br><span class="vn">OK. Mấy giờ gặp nhau?</span></p>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">こんしゅうの しゅうまつ、いっしょに えいがを みませんか。</div>
+                            <div class="speaker-vn">Cuối tuần này, bạn có muốn cùng xem phim không?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">はい、いいですね。どんな えいがが いいですか。</div>
+                            <div class="speaker-vn">Vâng, hay đấy. Phim nào hay?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">アクション えいがが いいです。</div>
+                            <div class="speaker-vn">Phim hành động hay.</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">わかりました。なんじに あいましょうか。</div>
+                            <div class="speaker-vn">OK. Mấy giờ gặp nhau?</div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Câu Hỏi Sau Khi Nghe</h3>
+                <h3 class="section-title"><span>🎮</span> Câu Hỏi Sau Khi Nghe <span>🌹</span></h3>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> A rủ B làm gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1a')">Đi ăn</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q1b')">Xem phim</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1c')">Đi mua sắm</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1d')">Đi chơi</div></div><div class="feedback" id="d5q1b"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> B đồng ý không?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q2a')">Có</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2b')">Không</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2c')">Không biết</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2d')">Bận</div></div><div class="feedback" id="d5q2a"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> A thích phim gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3a')">Phim hài</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d5q3b')">Phim hành động</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3c')">Phim tình cảm</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3d')">Phim kinh dị</div></div><div class="feedback" id="d5q3b"></div></div>
             </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+            </div>
         </div>
 
-        <!-- DAY 6 -->
+        <!-- NGÀY 6 -->
         <div class="day-content" id="day6-content">
-            <div class="day-header"><h2>💬 Ngày 6: Hội Thoại + Speaking Challenge</h2><p>⏱️ 30 phút | 🎯 Hội thoại thực tế + Tự trả lời câu hỏi</p><ul class="day-goals"><li>✅ 3 hội thoại thực tế</li><li>✅ 🎤 Speaking Challenge: Tự trả lời 5 câu hỏi</li><li>✅ Áp dụng Kanji và ngữ pháp đã học</li></ul></div>
+            <div class="day-header">
+                <h2>💬 Ngày 6: Hội Thoại + Speaking Challenge</h2>
+                <p>⏱️ 30 phút | 🎯 Hội thoại thực tế + Tự trả lời câu hỏi</p>
+                <ul class="day-goals">
+                    <li>✅ 3 hội thoại thực tế</li>
+                    <li>✅ 🎤 Speaking Challenge: Tự trả lời 5 câu hỏi</li>
+                    <li>✅ Áp dụng Kanji và ngữ pháp đã học</li>
+                </ul>
+            </div>
+
             <div class="dialogue-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>💬</span> Hội Thoại 1: Rủ đi xem phim</h3>
+                <h3 class="section-title"><span>💬</span> Hội Thoại 1: Rủ đi xem phim <span>🌹</span></h3>
                 <div class="dialogue-box">
-                    <div class="dialogue-controls"><button class="dialogue-btn" onclick="playDialogue('d1')">▶️ Nghe cả đoạn</button><button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">こんしゅうの しゅうまつ、いっしょに えいがを みませんか。</div><div class="speaker-vn">Cuối tuần này, bạn có muốn cùng xem phim không?</div><button class="audio-btn" onclick="playAudio('こんしゅうのしゅうまつ、いっしょにえいがをみませんか。')">🔊</button><div class="structure-tags"><span class="structure-tag tag-new">〜ませんか</span></div></div></div>
-                    <div class="speaker"><div class="speaker-avatar">B</div><div class="speaker-content"><div class="speaker-jp">はい、いいですね。なんじに あいましょうか。</div><div class="speaker-vn">Vâng, hay đấy. Mấy giờ gặp nhau?</div><button class="audio-btn" onclick="playAudio('はい、いいですね。なんじにあいましょうか。')">🔊</button></div></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">ごご 2じに どうですか。</div><div class="speaker-vn">2 giờ chiều được không?</div><button class="audio-btn" onclick="playAudio('ごご2じにどうですか。')">🔊</button></div></div>
-                    <div class="speaker"><div class="speaker-avatar">B</div><div class="speaker-content"><div class="speaker-jp">いいですね。じゃあ、ごご 2じに あいましょう。</div><div class="speaker-vn">Hay đấy. Vậy gặp nhau lúc 2 giờ chiều nhé.</div><button class="audio-btn" onclick="playAudio('いいですね。じゃあ、ごご2じにあいましょう。')">🔊</button></div></div>
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue1()">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">こんしゅうの しゅうまつ、いっしょに えいがを みませんか。</div>
+                            <div class="speaker-vn">Cuối tuần này, bạn có muốn cùng xem phim không?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">はい、いいですね。なんじに あいましょうか。</div>
+                            <div class="speaker-vn">Vâng, hay đấy. Mấy giờ gặp nhau?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">ごご 2じに どうですか。</div>
+                            <div class="speaker-vn">2 giờ chiều được không?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">いいですね。じゃあ、ごご 2じに あいましょう。</div>
+                            <div class="speaker-vn">Hay đấy. Vậy gặp nhau lúc 2 giờ chiều nhé.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="dialogue-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>💬</span> Hội Thoại 2: Rủ đi ăn</h3>
+                <h3 class="section-title"><span>💬</span> Hội Thoại 2: Rủ đi ăn <span>🌹</span></h3>
                 <div class="dialogue-box">
-                    <div class="dialogue-controls"><button class="dialogue-btn" onclick="playDialogue('d2')">▶️ Nghe cả đoạn</button><button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">いっしょに りょうりを たべませんか。</div><div class="speaker-vn">Bạn có muốn cùng ăn không?</div><button class="audio-btn" onclick="playAudio('いっしょにりょうりをたべませんか。')">🔊</button><div class="structure-tags"><span class="structure-tag tag-new">〜ませんか</span></div></div></div>
-                    <div class="speaker"><div class="speaker-avatar">B</div><div class="speaker-content"><div class="speaker-jp">すみません、きょうは いそがしいです。</div><div class="speaker-vn">Xin lỗi, hôm nay tôi bận.</div><button class="audio-btn" onclick="playAudio('すみません、きょうはいそがしいです。')">🔊</button></div></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">そうですか。また こんど いっしょに たべましょう。</div><div class="speaker-vn">Vậy à. Lần khác cùng ăn nhé.</div><button class="audio-btn" onclick="playAudio('そうですか。またこんどいっしょにたべましょう。')">🔊</button></div></div>
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue2()">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">いっしょに りょうりを たべませんか。</div>
+                            <div class="speaker-vn">Bạn có muốn cùng ăn không?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">すみません、きょうは いそがしいです。</div>
+                            <div class="speaker-vn">Xin lỗi, hôm nay tôi bận.</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">そうですか。また こんど いっしょに たべましょう。</div>
+                            <div class="speaker-vn">Vậy à. Lần khác cùng ăn nhé.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="dialogue-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>💬</span> Hội Thoại 3: Nói về sở thích</h3>
+                <h3 class="section-title"><span>💬</span> Hội Thoại 3: Nói về sở thích <span>🌹</span></h3>
                 <div class="dialogue-box">
-                    <div class="dialogue-controls"><button class="dialogue-btn" onclick="playDialogue('d3')">▶️ Nghe cả đoạn</button><button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">しゅみは なんですか。</div><div class="speaker-vn">Sở thích của bạn là gì?</div><button class="audio-btn" onclick="playAudio('しゅみはなんですか。')">🔊</button></div></div>
-                    <div class="speaker"><div class="speaker-avatar">B</div><div class="speaker-content"><div class="speaker-jp">おんがくを きくことが すきです。</div><div class="speaker-vn">Tôi thích nghe nhạc.</div><button class="audio-btn" onclick="playAudio('おんがくをきくことがすきです。')">🔊</button></div></div>
-                    <div class="speaker"><div class="speaker-avatar">A</div><div class="speaker-content"><div class="speaker-jp">わたしも おんがくが すきです。いっしょに ききましょう。</div><div class="speaker-vn">Tôi cũng thích nhạc. Cùng nghe nhé.</div><button class="audio-btn" onclick="playAudio('わたしもおんがくがすきです。いっしょにききましょう。')">🔊</button></div></div>
+                    <div class="dialogue-controls">
+                        <button class="dialogue-btn" onclick="playDialogue3()">▶️ Nghe cả đoạn</button>
+                        <button class="dialogue-btn stop" onclick="stopAudio()">⏹️ Dừng</button>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">しゅみは なんですか。</div>
+                            <div class="speaker-vn">Sở thích của bạn là gì?</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">B</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">おんがくを きくことが すきです。</div>
+                            <div class="speaker-vn">Tôi thích nghe nhạc.</div>
+                        </div>
+                    </div>
+                    <div class="speaker">
+                        <div class="speaker-avatar">A</div>
+                        <div class="speaker-content">
+                            <div class="speaker-jp">わたしも おんがくが すきです。いっしょに ききましょう。</div>
+                            <div class="speaker-vn">Tôi cũng thích nhạc. Cùng nghe nhé.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="speaking-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎤</span> Speaking Challenge</h3>
+
+            <div class="card">
+                <h3 class="section-title"><span>🎤</span> Speaking Challenge <span>🌹</span></h3>
                 <p class="section-subtitle">Tự trả lời 5 câu hỏi sau bằng tiếng Nhật. Nhấn 🔊 để nghe câu hỏi mẫu.</p>
-                <div class="speaking-box">
-                    <div class="speaking-question"><div class="jp">しゅみは なんですか。</div><div class="vn">Sở thích của bạn là gì?</div><button class="speaking-btn" onclick="playAudio('しゅみはなんですか。')">🔊 Nghe câu hỏi</button></div>
-                    <div class="speaking-question"><div class="jp">こんしゅうの しゅうまつ、なにを したいですか。</div><div class="vn">Cuối tuần này bạn muốn làm gì?</div><button class="speaking-btn" onclick="playAudio('こんしゅうのしゅうまつ、なにをしたいですか。')">🔊 Nghe câu hỏi</button></div>
-                    <div class="speaking-question"><div class="jp">いっしょに えいがを みませんか。</div><div class="vn">Bạn có muốn cùng xem phim không?</div><button class="speaking-btn" onclick="playAudio('いっしょにえいがをみませんか。')">🔊 Nghe câu hỏi</button></div>
-                    <div class="speaking-question"><div class="jp">にほんりょうりが すきですか。</div><div class="vn">Bạn có thích món Nhật không?</div><button class="speaking-btn" onclick="playAudio('にほんりょうりがすきですか。')">🔊 Nghe câu hỏi</button></div>
-                    <div class="speaking-question"><div class="jp">なにを たべたいですか。</div><div class="vn">Bạn muốn ăn gì?</div><button class="speaking-btn" onclick="playAudio('なにをたべたいですか。')">🔊 Nghe câu hỏi</button></div>
+                <div class="grammar-box">
+                    <div class="grammar-example"><div class="grammar-example-jp">しゅみは なんですか。</div><div class="grammar-example-vn">Sở thích của bạn là gì?</div><button class="audio-btn" onclick="playAudio('しゅみはなんですか')">🔊 Nghe câu hỏi</button></div>
+                    <div class="grammar-example"><div class="grammar-example-jp">こんしゅうの しゅうまつ、なにを したいですか。</div><div class="grammar-example-vn">Cuối tuần này bạn muốn làm gì?</div><button class="audio-btn" onclick="playAudio('こんしゅうのしゅうまつ、なにをしたいですか')">🔊 Nghe câu hỏi</button></div>
+                    <div class="grammar-example"><div class="grammar-example-jp">いっしょに えいがを みませんか。</div><div class="grammar-example-vn">Bạn có muốn cùng xem phim không?</div><button class="audio-btn" onclick="playAudio('いっしょにえいがをみませんか')">🔊 Nghe câu hỏi</button></div>
+                    <div class="grammar-example"><div class="grammar-example-jp">にほんりょうりが すきですか。</div><div class="grammar-example-vn">Bạn có thích món Nhật không?</div><button class="audio-btn" onclick="playAudio('にほんりょうりがすきですか')">🔊 Nghe câu hỏi</button></div>
+                    <div class="grammar-example"><div class="grammar-example-jp">なにを たべたいですか。</div><div class="grammar-example-vn">Bạn muốn ăn gì?</div><button class="audio-btn" onclick="playAudio('なにをたべたいですか')">🔊 Nghe câu hỏi</button></div>
                 </div>
             </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 6</h3>
+                <h3 class="section-title"><span>🎮</span> Bài Tập Ngày 6 <span>🌹</span></h3>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> "Bạn có muốn cùng xem phim không?" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1a')">えいがを みましょう</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d6q1b')">えいがを みませんか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1c')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q1d')">えいがを みます</div></div><div class="feedback" id="d6q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Nghe: <button class="audio-btn" onclick="playAudio('すみません、きょうはいそがしいです')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2a')">Vâng, hay đấy</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d6q2b')">Xin lỗi, hôm nay tôi bận</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2c')">Hôm nay rảnh</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2d')">Hôm nay vui</div></div><div class="feedback" id="d6q2b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> Nghe: <button class="audio-btn" onclick="playAudio('はい、いいですね')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'d6q2a')">Vâng, hay đấy</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2b')">Xin lỗi, hôm nay tôi bận</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2c')">Hôm nay rảnh</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q2d')">Hôm nay vui</div></div><div class="feedback" id="d6q2a"></div></div>
                 <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "Tôi muốn ăn sushi" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3a')">すしを たべます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3b')">すしを たべましょう</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d6q3c')">すしが たべたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d6q3d')">すしを たべませんか</div></div><div class="feedback" id="d6q3c"></div></div>
             </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
+            </div>
         </div>
 
-        <!-- DAY 7 -->
+        <!-- NGÀY 7 -->
         <div class="day-content" id="day7-content">
-            <div class="day-header"><h2>📝 Ngày 7: Quiz Tổng Hợp Tuần 21</h2><p>⏱️ 30 phút | 🎯 Kiểm tra toàn bộ kiến thức tuần 21</p><ul class="day-goals"><li>✅ Kiểm tra 8 Kanji</li><li>✅ Kiểm tra Vたいです</li><li>✅ Kiểm tra Vましょう / Vませんか</li></ul></div>
+            <div class="day-header">
+                <h2>📝 Ngày 7: Quiz Tổng Hợp Tuần 21</h2>
+                <p>⏱️ 30 phút | 🎯 Kiểm tra toàn bộ kiến thức tuần 21</p>
+                <ul class="day-goals">
+                    <li>✅ Kiểm tra 8 Kanji</li>
+                    <li>✅ Kiểm tra Vたいです</li>
+                    <li>✅ Kiểm tra Vましょう / Vませんか</li>
+                </ul>
+            </div>
+
             <div class="flashcard-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>🎴</span> Flashcard Ôn Tập</h3>
+                <h3 class="section-title"><span>🎴</span> Flashcard Ôn Tập <span>🌹</span></h3>
                 <p class="section-subtitle">Click vào thẻ để lật</p>
                 <div class="flashcard-container">
                     <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">好</span><div class="flashcard-hint">🌹 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">すき</div><div class="flashcard-meaning">Thích</div></div></div></div>
@@ -505,29 +831,35 @@
                     <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">遊</span><div class="flashcard-hint">🌹 Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">あそぶ</div><div class="flashcard-meaning">Chơi</div></div></div></div>
                 </div>
             </div>
+
             <div class="exercise-section">
-                <div class="card-header-bar"></div>
-                <h3 class="section-title"><span>📝</span> Quiz Tổng Hợp (10 Câu)</h3>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Kanji 好 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1a')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q1b')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q1d')">Chơi</div></div><div class="feedback" id="d7q1b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Tôi muốn xem phim" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2a')">えいがを みます</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q2b')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2c')">えいがを みましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q2d')">えいがを みませんか</div></div><div class="feedback" id="d7q2b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "Cùng đi Nhật nhé" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3a')">にほんへ いきます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3b')">にほんへ いきたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q3c')">にほんへ いきましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q3d')">にほんへ いきませんか</div></div><div class="feedback" id="d7q3c"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">4</span> Kanji nào có nghĩa là "Chơi"?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4a')">読</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4b')">聞</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q4c')">楽</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q4d')">遊</div></div><div class="feedback" id="d7q4d"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">5</span> Nghe: <button class="audio-btn" onclick="playAudio('えいがをみませんか')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5a')">Cùng xem phim</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q5b')">Bạn có muốn xem phim không?</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5c')">Tôi muốn xem phim</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q5d')">Tôi xem phim</div></div><div class="feedback" id="d7q5b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">6</span> "Vâng, hay đấy" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6a')">すみません</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q6b')">はい、いいですね</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6c')">いいえ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q6d')">そうです</div></div><div class="feedback" id="d7q6b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">7</span> Kanji 聞 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7a')">Đọc</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q7b')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7c')">Chơi</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q7d')">Thích</div></div><div class="feedback" id="d7q7b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">8</span> "Bạn có muốn cùng ăn không?" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8a')">いっしょに たべましょう</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q8b')">いっしょに たべませんか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8c')">いっしょに たべたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q8d')">いっしょに たべます</div></div><div class="feedback" id="d7q8b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">9</span> Nghe: <button class="audio-btn" onclick="playAudio('すみません、きょうはいそがしいです')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9a')">Vâng, hay đấy</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q9b')">Xin lỗi, hôm nay tôi bận</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9c')">Hôm nay rảnh</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q9d')">Hôm nay vui</div></div><div class="feedback" id="d7q9b"></div></div>
-                <div class="exercise-card"><div class="exercise-q"><span class="q-num">10</span> Kanji 楽 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10a')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,true,'d7q10b')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'d7q10d')">Chơi</div></div><div class="feedback" id="d7q10b"></div></div>
+                <h3 class="section-title"><span>📝</span> Quiz Tổng Hợp (10 Câu) <span>🌹</span></h3>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">1</span> Kanji 好 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q1a')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q1b')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q1c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q1d')">Chơi</div></div><div class="feedback" id="q7q1b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">2</span> "Tôi muốn xem phim" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q2a')">えいがを みます</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q2b')">えいがを みたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q2c')">えいがを みましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q2d')">えいがを みませんか</div></div><div class="feedback" id="q7q2b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">3</span> "Cùng đi Nhật nhé" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q3a')">にほんへ いきます</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q3b')">にほんへ いきたいです</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q3c')">にほんへ いきましょう</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q3d')">にほんへ いきませんか</div></div><div class="feedback" id="q7q3c"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">4</span> Kanji nào có nghĩa là "Chơi"?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q4a')">読</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q4b')">聞</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q4c')">楽</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q4d')">遊</div></div><div class="feedback" id="q7q4d"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">5</span> Nghe: <button class="audio-btn" onclick="playAudio('いっしょにえいがをみませんか')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q5a')">Cùng xem phim</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q5b')">Bạn có muốn xem phim không?</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q5c')">Tôi muốn xem phim</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q5d')">Tôi xem phim</div></div><div class="feedback" id="q7q5b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">6</span> "Vâng, hay đấy" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q6a')">すみません</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q6b')">はい、いいですね</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q6c')">いいえ</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q6d')">そうです</div></div><div class="feedback" id="q7q6b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">7</span> Kanji 聞 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q7a')">Đọc</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q7b')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q7c')">Chơi</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q7d')">Thích</div></div><div class="feedback" id="q7q7b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">8</span> "Bạn có muốn cùng ăn không?" nói thế nào?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q8a')">いっしょに たべましょう</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q8b')">いっしょに たべませんか</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q8c')">いっしょに たべたいです</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q8d')">いっしょに たべます</div></div><div class="feedback" id="q7q8b"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">9</span> Nghe: <button class="audio-btn" onclick="playAudio('はい、いいですね')">🔊</button></div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q9a')">Vâng, hay đấy</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q9b')">Xin lỗi, hôm nay tôi bận</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q9c')">Hôm nay rảnh</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q9d')">Hôm nay vui</div></div><div class="feedback" id="q7q9a"></div></div>
+                <div class="exercise-card"><div class="exercise-q"><span class="q-num">10</span> Kanji 楽 có nghĩa là gì?</div><div class="exercise-options"><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q10a')">Thích</div><div class="exercise-opt" onclick="checkAnswer(this,true,'q7q10b')">Vui</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q10c')">Nghe</div><div class="exercise-opt" onclick="checkAnswer(this,false,'q7q10d')">Chơi</div></div><div class="feedback" id="q7q10b"></div></div>
             </div>
+
             <div class="progress-section">
-                <h3 style="font-size:1.8em;margin-bottom:15px;color:var(--text-dark)">🎉 Chúc Mừng! Bạn Hoàn Thành Tuần 21!</h3>
+                <h3 style="font-size:2em;margin-bottom:15px;color:var(--text)">🎉 Chúc Mừng! Bạn Hoàn Thành Tuần 21!</h3>
                 <div class="progress-bar"><div class="progress-fill" id="weekProgress"></div></div>
-                <p style="font-size:1.1em;color:var(--text-dark);margin:20px 0;font-weight:700">Bạn đã học: <strong>8 Kanji</strong> + <strong>Vたいです</strong> + <strong>Vましょう</strong> + <strong>Vませんか</strong></p>
-                <p style="font-size:1em;color:var(--text-medium);margin-bottom:20px">🌹 Tiếp tục với Tuần 22: So sánh & Lựa chọn!</p>
+                <p style="font-size:1.1em;color:var(--text);margin:20px 0;font-weight:700">🌹 Bạn đã học: <strong>8 Kanji</strong> + <strong>Vたいです</strong> + <strong>Vましょう</strong> + <strong>Vませんか</strong></p>
+                <p style="font-size:1em;color:var(--text-medium);margin-bottom:20px">⚖️ Tiếp tục với Tuần 22: So sánh & Lựa chọn!</p>
                 <div style="margin-top:20px">
-                    <a href="n5-w22.html" class="btn btn-primary" style="font-size:1.05em;padding:14px 30px"><span>🚀</span> Tuần 22: So sánh & Lựa chọn</a>
+                    <a href="n5-w22.html" class="btn btn-primary" style="font-size:1.05em;padding:14px 30px"><span>⚖️</span> Tuần 22: So sánh & Lựa chọn</a>
                     <a href="n5.html" class="btn btn-secondary"><span>🏠</span> Về Hub N5</a>
                 </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="prevDay()"><span>◀</span> Ngày trước</button>
+                <button class="btn btn-primary" onclick="nextDay()">Ngày tiếp <span>▶</span></button>
             </div>
         </div>
 
@@ -540,27 +872,184 @@
     <footer class="footer">
         <h3>🌹 Nihongo Journey</h3>
         <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
-        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🌹 </p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🌹 💫</p>
         <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
         <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
         <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần</p>
     </footer>
 
     <script>
-        function createPetals(){const c=document.getElementById('petalContainer'),p=['🌸','🌺','🌹','💮','️'];for(let i=0;i<15;i++){const s=document.createElement('div');s.className='petal';s.textContent=p[Math.floor(Math.random()*p.length)];s.style.left=Math.random()*100+'%';s.style.animationDuration=(Math.random()*15+15)+'s';s.style.animationDelay=Math.random()*10+'s';s.style.fontSize=(Math.random()*10+14)+'px';c.appendChild(s)}}
-        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
-        function playListeningFull(){const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。どんなえいががいいですか。','アクションえいががいいです。','わかりました。なんじにあいましょうか。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,500)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playListeningSlow(){const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。','どんなえいががいいですか。','アクションえいががいいです。','わかりました。','なんじにあいましょうか。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.6;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,1000)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playListeningShadow(){const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。','どんなえいががいいですか。','アクションえいががいいです。','わかりました。','なんじにあいましょうか。'];let i=0;function speakNext(){if(i<lines.length){const u=new SpeechSynthesisUtterance(lines[i]);u.lang='ja-JP';u.rate=.9;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,1500)};window.speechSynthesis.speak(u);}}speakNext();}
-        function playDialogue(id){const d={'d1':['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。なんじにあいましょうか。','ごご2じにどうですか。','いいですね。じゃあ、ごご2じにあいましょう。'],'d2':['いっしょにりょうりをたべませんか。','すみません、きょうはいそがしいです。','そうですか。またこんどいっしょにたべましょう。'],'d3':['しゅみはなんですか。','おんがくをきくことがすきです。','わたしもおんがくがすきです。いっしょにききましょう。']};const l=d[id];let i=0;function speakNext(){if(i<l.length){const u=new SpeechSynthesisUtterance(l[i]);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;u.onend=()=>{i++;setTimeout(speakNext,500)};window.speechSynthesis.speak(u);}}speakNext();}
+        function createPetals(){
+            const c=document.getElementById('petalContainer');
+            const petals=['🌹','🌸','🌹','💮','🌺'];
+            for(let i=0;i<12;i++){
+                const s=document.createElement('div');
+                s.className='petal';
+                s.textContent=petals[Math.floor(Math.random()*petals.length)];
+                s.style.left=Math.random()*100+'%';
+                s.style.animationDuration=(Math.random()*10+15)+'s';
+                s.style.animationDelay=Math.random()*15+'s';
+                s.style.fontSize=(Math.random()*15+20)+'px';
+                c.appendChild(s);
+            }
+        }
+        
+        function playAudio(t){
+            window.speechSynthesis.cancel();
+            const u=new SpeechSynthesisUtterance(t);
+            u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+            const v=window.speechSynthesis.getVoices();
+            const j=v.find(v=>v.lang.includes('ja'));
+            if(j)u.voice=j;
+            window.speechSynthesis.speak(u);
+        }
+        
+        function playDialogue(){
+            const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。どんなえいががいいですか。','アクションえいががいいです。','わかりました。なんじにあいましょうか。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playDialogueSlow(){
+            const lines=['こんしゅうのしゅうまつ、','いっしょにえいがをみませんか。','はい、いいですね。','どんなえいががいいですか。','アクションえいがが','いいです。','わかりました。','なんじに','あいましょうか。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.6;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,800)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playShadowing(){
+            const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。','どんなえいががいいですか。','アクションえいががいいです。','わかりました。','なんじにあいましょうか。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.9;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,1500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playDialogue1(){
+            const lines=['こんしゅうのしゅうまつ、いっしょにえいがをみませんか。','はい、いいですね。なんじにあいましょうか。','ごご2じにどうですか。','いいですね。じゃあ、ごご2じにあいましょう。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playDialogue2(){
+            const lines=['いっしょにりょうりをたべませんか。','すみません、きょうはいそがしいです。','そうですか。またこんどいっしょにたべましょう。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
+        function playDialogue3(){
+            const lines=['しゅみはなんですか。','おんがくをきくことがすきです。','わたしもおんがくがすきです。いっしょにききましょう。'];
+            let i=0;
+            function speakNext(){
+                if(i<lines.length){
+                    const u=new SpeechSynthesisUtterance(lines[i]);
+                    u.lang='ja-JP';u.rate=.85;u.pitch=1.1;
+                    const v=window.speechSynthesis.getVoices();
+                    const j=v.find(v=>v.lang.includes('ja'));
+                    if(j)u.voice=j;
+                    u.onend=()=>{i++;setTimeout(speakNext,500)};
+                    window.speechSynthesis.speak(u);
+                }
+            }
+            speakNext();
+        }
+        
         function stopAudio(){window.speechSynthesis.cancel()}
+        
         let currentDay=1;
-        function showDay(d){document.querySelectorAll('.day-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.day-tab').forEach(c=>c.classList.remove('active'));document.getElementById('day'+d+'-content').classList.add('active');document.querySelectorAll('.day-tab')[d-1].classList.add('active');currentDay=d;document.getElementById('days-nav').scrollIntoView({behavior:'smooth',block:'start'});}
+        function showDay(d){
+            document.querySelectorAll('.day-content').forEach(c=>c.classList.remove('active'));
+            document.querySelectorAll('.day-tab').forEach(c=>c.classList.remove('active'));
+            document.getElementById('day'+d+'-content').classList.add('active');
+            document.querySelectorAll('.day-tab')[d-1].classList.add('active');
+            currentDay=d;
+            document.getElementById('days-nav').scrollIntoView({behavior:'smooth',block:'start'});
+        }
+        
         function nextDay(){if(currentDay<7)showDay(currentDay+1)}
         function prevDay(){if(currentDay>1)showDay(currentDay-1)}
-        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}updateProgress();}
-        let progress=0;function updateProgress(){progress=Math.min(100,progress+10);const b=document.getElementById('weekProgress');if(b)b.style.width=progress+'%'}
-        window.addEventListener('load',()=>{createPetals();window.speechSynthesis.getVoices()});
+        
+        function checkAnswer(el,ok,id){
+            const p=el.parentElement;
+            const opts=p.querySelectorAll('.exercise-opt');
+            const fb=document.getElementById(id);
+            opts.forEach(o=>o.style.pointerEvents='none');
+            if(ok){
+                el.classList.add('correct');
+                fb.textContent='✅ Chính xác! Giỏi quá!';
+                fb.className='feedback show correct';
+            }else{
+                el.classList.add('wrong');
+                opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});
+                fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                fb.className='feedback show wrong';
+            }
+            updateProgress();
+        }
+        
+        let progress=0;
+        function updateProgress(){
+            progress=Math.min(100,progress+10);
+            const b=document.getElementById('weekProgress');
+            if(b)b.style.width=progress+'%';
+        }
+        
+        window.addEventListener('load',()=>{
+            createPetals();
+            window.speechSynthesis.getVoices();
+        });
     </script>
 </body>
 </html>
