@@ -3,6 +3,8 @@
 
 ## 🚀 Hướng Dẫn Sử Dụng
 
+LINK WEB: https://sans-91.github.io/japanese-n5-3/
+
 ### Cách bắt đầu
 
 1. **Mở file `index.html`** trong trình duyệt web
