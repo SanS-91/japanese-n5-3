@@ -58,7 +58,6 @@
         .section-title{font-size:2.2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
         .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.1em;font-weight:600;position:relative;z-index:2}
         
-        /* ===== TOPIC CARDS - THIẾT KẾ MỚI ===== */
         .topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:25px;margin-top:30px}
         
         .topic-card{
@@ -155,10 +154,9 @@
         .category-conversation{background:linear-gradient(135deg,#10B981,#06B6D4)}
         .category-advanced{background:linear-gradient(135deg,#8B5CF6,#EC4899)}
         
-        .topic-status{display:inline-block;padding:5px 12px;border-radius:15px;font-size:.72em;font-weight:800;white-space:nowrap}
-        .status-completed{background:linear-gradient(135deg,#10B981,#059669);color:white;animation:glow 2s infinite}
+        .topic-status{display:inline-block;padding:5px 12px;border-radius:15px;font-size:.72em;font-weight:800;white-space:nowrap;background:linear-gradient(135deg,#10B981,#059669);color:white;animation:glow 2s infinite}
+        
         @keyframes glow{0%,100%{box-shadow:0 2px 8px rgba(16,185,129,.3)}50%{box-shadow:0 4px 15px rgba(16,185,129,.5)}}
-        .status-coming{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
         
         .topic-title{font-size:1.3em;font-weight:900;color:var(--text);margin-bottom:12px;line-height:1.3;position:relative;z-index:2}
         .topic-desc{font-size:.92em;color:var(--text-muted);font-weight:600;line-height:1.6;position:relative;z-index:2}
@@ -214,8 +212,8 @@
             <p class="hero-desc">Khám phá 30 chủ đề chuyên sâu bổ sung cho chương trình N5 chính. Học sâu hơn, chi tiết hơn về từng khía cạnh của tiếng Nhật!</p>
             <div class="hero-stats">
                 <div class="stat-item"><span class="stat-number">30</span><span class="stat-label">Chủ đề</span></div>
-                <div class="stat-item"><span class="stat-number">1</span><span class="stat-label">Đã hoàn thành</span></div>
-                <div class="stat-item"><span class="stat-number">29</span><span class="stat-label">Sắp ra mắt</span></div>
+                <div class="stat-item"><span class="stat-number">30</span><span class="stat-label">Đã hoàn thành</span></div>
+                <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Danh mục</span></div>
             </div>
         </div>
 
@@ -231,335 +229,335 @@
         <p class="section-subtitle">Chọn chủ đề bạn muốn học sâu hơn</p>
 
         <div class="topics-grid" id="topicsGrid">
-            <!-- 01 - Grammar - Đã hoàn thành -->
+            <!-- 01 - Grammar -->
             <a href="n5-ref2-01.html" class="topic-card grammar">
                 <div class="topic-number">01</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-completed">✅ Hoàn thành</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Âm Ghép & Âm Ngắt</div>
                 <div class="topic-desc">Học chi tiết về Yōon (ャュョ) và Sokuon (ッ) - 2 loại âm đặc biệt trong tiếng Nhật</div>
             </a>
 
             <!-- 02 - Vocab -->
-            <div class="topic-card vocab">
+            <a href="n5-ref2-02.html" class="topic-card vocab">
                 <div class="topic-number">02</div>
                 <div class="topic-header">
                     <span class="topic-category category-vocab">Từ vựng</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Số Đếm Nâng Cao</div>
                 <div class="topic-desc">Số đếm từ 100 đến 9999, số lớn, số đặc biệt và cách đọc khó</div>
-            </div>
+            </a>
 
             <!-- 03 - Vocab -->
-            <div class="topic-card vocab">
+            <a href="n5-ref2-03.html" class="topic-card vocab">
                 <div class="topic-number">03</div>
                 <div class="topic-header">
                     <span class="topic-category category-vocab">Từ vựng</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Ngày Tháng Đặc Biệt</div>
                 <div class="topic-desc">Các ngày đặc biệt trong tháng, cách đọc ngày khó nhớ</div>
-            </div>
+            </a>
 
             <!-- 04 - Vocab -->
-            <div class="topic-card vocab">
+            <a href="n5-ref2-04.html" class="topic-card vocab">
                 <div class="topic-number">04</div>
                 <div class="topic-header">
                     <span class="topic-category category-vocab">Từ vựng</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Từ Mượn Katakana</div>
                 <div class="topic-desc">100+ từ mượn Katakana phổ biến nhất trong giao tiếp hàng ngày</div>
-            </div>
+            </a>
 
             <!-- 05 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-05.html" class="topic-card grammar">
                 <div class="topic-number">05</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Trợ Từ Nâng Cao</div>
                 <div class="topic-desc">Cách dùng chi tiết các trợ từ は、が、を、に、で、へ trong câu</div>
-            </div>
+            </a>
 
             <!-- 06 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-06.html" class="topic-card grammar">
                 <div class="topic-number">06</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Câu Điều Kiện ～たら</div>
                 <div class="topic-desc">Cách chia và sử dụng thể điều kiện ～たら trong các tình huống</div>
-            </div>
+            </a>
 
             <!-- 07 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-07.html" class="topic-card grammar">
                 <div class="topic-number">07</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Lý Do ～ので</div>
                 <div class="topic-desc">So sánh ～から và ～ので, cách dùng trong văn cảnh khác nhau</div>
-            </div>
+            </a>
 
             <!-- 08 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-08.html" class="topic-card grammar">
                 <div class="topic-number">08</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">So Sánh Nâng Cao</div>
                 <div class="topic-desc">So sánh hơn, kém, nhất - chi tiết và bài tập thực hành</div>
-            </div>
+            </a>
 
             <!-- 09 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-09.html" class="topic-card grammar">
                 <div class="topic-number">09</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Mong Muốn ～たい</div>
                 <div class="topic-desc">Cách chia thể ～たい và các biến thể trong giao tiếp</div>
-            </div>
+            </a>
 
             <!-- 10 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-10.html" class="topic-card grammar">
                 <div class="topic-number">10</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Đề Nghị ～ましょう</div>
                 <div class="topic-desc">So sánh ～ましょう và ～ませんか trong rủ rê</div>
-            </div>
+            </a>
 
             <!-- 11 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-11.html" class="topic-card grammar">
                 <div class="topic-number">11</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Cho Phép & Cấm Đoán</div>
                 <div class="topic-desc">～てもいい và ～てはいけない - chi tiết và ví dụ</div>
-            </div>
+            </a>
 
             <!-- 12 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-12.html" class="topic-card grammar">
                 <div class="topic-number">12</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Yêu Cầu ～てください</div>
                 <div class="topic-desc">Cách dùng ～てください trong các tình huống khác nhau</div>
-            </div>
+            </a>
 
             <!-- 13 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-13.html" class="topic-card grammar">
                 <div class="topic-number">13</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Trạng Thái ～ている</div>
                 <div class="topic-desc">Thể tiếp diễn ～ている và cách dùng trong câu</div>
-            </div>
+            </a>
 
             <!-- 14 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-14.html" class="topic-card grammar">
                 <div class="topic-number">14</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Quá Khứ ～た</div>
                 <div class="topic-desc">Thể quá khứ ～た và các trường hợp đặc biệt</div>
-            </div>
+            </a>
 
             <!-- 15 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-15.html" class="topic-card grammar">
                 <div class="topic-number">15</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Kinh Nghiệm ～たことがある</div>
                 <div class="topic-desc">Cách nói về trải nghiệm đã qua trong đời</div>
-            </div>
+            </a>
 
             <!-- 16 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-16.html" class="topic-card grammar">
                 <div class="topic-number">16</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Sở Hữu ～がある ～がいる</div>
                 <div class="topic-desc">Phân biệt cách dùng ～がある và ～がいる</div>
-            </div>
+            </a>
 
             <!-- 17 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-17.html" class="topic-card grammar">
                 <div class="topic-number">17</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Tồn Tại ～がある ～にいる</div>
                 <div class="topic-desc">Cách nói về sự tồn tại của đồ vật và người</div>
-            </div>
+            </a>
 
             <!-- 18 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-18.html" class="topic-card grammar">
                 <div class="topic-number">18</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Thời Gian ～とき ～まえ ～あと</div>
                 <div class="topic-desc">Cách nói về thời gian: khi, trước, sau</div>
-            </div>
+            </a>
 
             <!-- 19 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-19.html" class="topic-card grammar">
                 <div class="topic-number">19</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Địa Điểm ～で ～に ～へ</div>
                 <div class="topic-desc">Phân biệt cách dùng trợ từ chỉ địa điểm</div>
-            </div>
+            </a>
 
             <!-- 20 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-20.html" class="topic-card grammar">
                 <div class="topic-number">20</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Phương Tiện ～で</div>
                 <div class="topic-desc">Cách nói về phương tiện di chuyển</div>
-            </div>
+            </a>
 
             <!-- 21 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-21.html" class="topic-card grammar">
                 <div class="topic-number">21</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Đối Tượng ～を ～が</div>
                 <div class="topic-desc">Phân biệt ～を và ～が trong câu</div>
-            </div>
+            </a>
 
             <!-- 22 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-22.html" class="topic-card grammar">
                 <div class="topic-number">22</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Chủ Đề ～は</div>
                 <div class="topic-desc">Cách dùng trợ từ は nâng cao</div>
-            </div>
+            </a>
 
             <!-- 23 - Grammar -->
-            <div class="topic-card grammar">
+            <a href="n5-ref2-23.html" class="topic-card grammar">
                 <div class="topic-number">23</div>
                 <div class="topic-header">
                     <span class="topic-category category-grammar">Ngữ pháp</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Sở Hữu ～の</div>
                 <div class="topic-desc">Cách dùng の để chỉ sở hữu và mối quan hệ</div>
-            </div>
+            </a>
 
             <!-- 24 - Vocab -->
-            <div class="topic-card vocab">
+            <a href="n5-ref2-24.html" class="topic-card vocab">
                 <div class="topic-number">24</div>
                 <div class="topic-header">
                     <span class="topic-category category-vocab">Từ vựng</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Và ～と ～や</div>
                 <div class="topic-desc">Phân biệt ～と (liệt kê đầy đủ) và ～や (liệt kê một phần)</div>
-            </div>
+            </a>
 
             <!-- 25 - Vocab -->
-            <div class="topic-card vocab">
+            <a href="n5-ref2-25.html" class="topic-card vocab">
                 <div class="topic-number">25</div>
                 <div class="topic-header">
                     <span class="topic-category category-vocab">Từ vựng</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Hoặc ～か</div>
                 <div class="topic-desc">Cách dùng か để hỏi và lựa chọn</div>
-            </div>
+            </a>
 
             <!-- 26 - Conversation -->
-            <div class="topic-card conversation">
+            <a href="n5-ref2-26.html" class="topic-card conversation">
                 <div class="topic-number">26</div>
                 <div class="topic-header">
                     <span class="topic-category category-conversation">Hội thoại</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Nhưng ～が ～けど</div>
                 <div class="topic-desc">Cách nói "nhưng" trong tiếng Nhật</div>
-            </div>
+            </a>
 
             <!-- 27 - Conversation -->
-            <div class="topic-card conversation">
+            <a href="n5-ref2-27.html" class="topic-card conversation">
                 <div class="topic-number">27</div>
                 <div class="topic-header">
                     <span class="topic-category category-conversation">Hội thoại</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Vì ～から ～ので</div>
                 <div class="topic-desc">So sánh chi tiết 2 cách nói "vì"</div>
-            </div>
+            </a>
 
             <!-- 28 - Conversation -->
-            <div class="topic-card conversation">
+            <a href="n5-ref2-28.html" class="topic-card conversation">
                 <div class="topic-number">28</div>
                 <div class="topic-header">
                     <span class="topic-category category-conversation">Hội thoại</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Nếu ～たら ～ば</div>
                 <div class="topic-desc">Các cách nói "nếu" trong tiếng Nhật</div>
-            </div>
+            </a>
 
             <!-- 29 - Conversation -->
-            <div class="topic-card conversation">
+            <a href="n5-ref2-29.html" class="topic-card conversation">
                 <div class="topic-number">29</div>
                 <div class="topic-header">
                     <span class="topic-category category-conversation">Hội thoại</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Khi ～とき</div>
                 <div class="topic-desc">Cách nói về thời điểm xảy ra sự việc</div>
-            </div>
+            </a>
 
             <!-- 30 - Advanced -->
-            <div class="topic-card advanced">
+            <a href="n5-ref2-30.html" class="topic-card advanced">
                 <div class="topic-number">30</div>
                 <div class="topic-header">
                     <span class="topic-category category-advanced">Nâng cao</span>
-                    <span class="topic-status status-coming">🔜 Sắp ra mắt</span>
+                    <span class="topic-status">✅ Hoàn thành</span>
                 </div>
                 <div class="topic-title">Cách Nói Lịch Sự</div>
                 <div class="topic-desc">Các mẫu câu lịch sự trong giao tiếp hàng ngày</div>
-            </div>
+            </a>
         </div>
 
         <div class="nav-buttons">
