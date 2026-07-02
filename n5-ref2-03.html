@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 Chủ Đề 03: Ngày Tháng Đặc Biệt | Nihongo Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --warning:#F59E0B;--warning-dark:#D97706;--warning-light:#FDE68A;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.5em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.2em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 4px 15px rgba(0,0,0,.08);min-width:130px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .section-title{font-size:2.2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.1em;font-weight:600;position:relative;z-index:2}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:20px;padding:25px;margin:20px 0;position:relative}
+        .tip-box h4{color:var(--primary-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.8;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .vocab-item{background:rgba(255,255,255,.95);padding:18px;border-radius:16px;display:grid;grid-template-columns:70px 1fr auto;gap:15px;align-items:center;transition:.3s;border:2px solid var(--border);cursor:pointer;margin-bottom:12px}
+        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.15);background:linear-gradient(135deg,var(--primary-light),var(--secondary-light))}
+        .vocab-emoji{font-size:2.5em;flex-shrink:0;text-align:center}
+        .vocab-info{min-width:0}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text);margin-bottom:3px}
+        .vocab-romaji{font-size:.85em;color:var(--text-muted);font-weight:700;margin-bottom:3px}
+        .vocab-meaning{font-size:.92em;color:var(--text-soft);font-weight:600}
+        .vocab-audio{background:var(--primary-light);color:var(--primary-dark);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1.2em;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+        .vocab-audio:hover{background:var(--primary);color:white;transform:scale(1.1)}
+        
+        .yoon-table{width:100%;border-collapse:collapse;margin:15px 0;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+        .yoon-table th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:12px;font-weight:800;text-align:center;border:2px solid var(--primary-light)}
+        .yoon-table td{padding:10px;text-align:center;border:2px solid var(--border);font-family:'M PLUS Rounded 1c';font-size:1.1em;font-weight:700}
+        .yoon-table tr:nth-child(even){background:rgba(251,207,232,.1)}
+        .yoon-table tr:hover{background:rgba(251,207,232,.2)}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(251,207,232,.25),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));opacity:.7}
+        .exercise-card{background:rgba(255,255,255,.95);border-radius:20px;padding:22px;margin:15px 0;border:2px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--primary-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--primary);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:#FEE2E2;color:#DC2626;border:2px solid #EF4444}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        .explanation-box{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(236,72,153,.1));border:2px solid var(--accent);border-radius:20px;padding:25px;margin:20px 0;position:relative}
+        .explanation-box h4{color:var(--accent-dark);margin-bottom:15px;font-size:1.2em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .explanation-box p{color:var(--text);font-size:1em;line-height:1.9;font-weight:600;margin-bottom:10px}
+        .explanation-box .step{background:white;padding:15px;border-radius:12px;margin:10px 0;border-left:4px solid var(--accent)}
+        .explanation-box .step-title{font-weight:900;color:var(--primary-dark);margin-bottom:5px}
+        
+        .memory-trick{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(236,72,153,.1));border:2px dashed var(--secondary);border-radius:20px;padding:20px;margin:15px 0}
+        .memory-trick h4{color:var(--secondary-dark);font-size:1.1em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .memory-trick p{color:var(--text);font-weight:600;line-height:1.8}
+        
+        @media(max-width:900px){.exercise-options{grid-template-columns:1fr}}
+        @media(max-width:600px){.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    
+    <header class="header">
+        <nav style="display:flex;justify-content:space-between;align-items:center;max-width:1240px;margin:0 auto">
+            <a href="index.html" class="logo">
+                <span class="logo-main">📅 Nihongo Journey</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Trang chủ</a></li>
+                <li><a href="n5.html">🌱 N5</a></li>
+                <li><a href="n5-ref2.html" class="active">📚 Bổ Sung</a></li>
+                <li><a href="n4.html">🌿 N4</a></li>
+                <li><a href="n3.html">🌳 N3</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="breadcrumb">
+        <a href="index.html">🏠</a> › 
+        <a href="n5.html">🌱 N5</a> › 
+        <a href="n5-ref2.html">📚 Bổ Sung</a> › 
+        📅 Chủ Đề 03: Ngày Tháng Đặc Biệt
+    </div>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-badge">📅 Chủ Đề Bổ Sung 03 • Ngày Tháng Đặc Biệt</div>
+            <h1>ひ  と  つ き び</h1>
+            <div class="hero-jp">日 と 月日</div>
+            <p class="hero-desc">Học chi tiết về cách đọc ngày trong tháng, các ngày đặc biệt và cách nói ngày tháng trong tiếng Nhật - Những ngày có cách đọc "KHÔNG THEO QUY TẮC" mà bạn PHẢI NHỚ!</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">31</span>
+                    <span class="stat-label">Ngày trong tháng</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Ngày đặc biệt</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Tháng trong năm</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30'</span>
+                    <span class="stat-label">Thời gian học</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Giới thiệu -->
+        <div class="card">
+            <div class="tip-box" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(236,72,153,.15))">
+                <h4>🎯 Tại sao cần học ngày tháng đặc biệt?</h4>
+                <ul>
+                    <li>✅ Khi đặt lịch hẹn: 明日 (あした), 来週 (らいしゅう)...</li>
+                    <li>✅ Khi nói về sinh nhật: 1月15日 (いちがつじゅうごにち)</li>
+                    <li>✅ Khi điền form: 生年月日 (せいねんがっぴ)</li>
+                    <li>✅ Khi đọc lịch: 1日 (ついたち), 20日 (はつか)...</li>
+                    <li>⚠️ <strong>90% người học NHẦM</strong> các ngày 1-10, 14, 20, 24</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Cách đọc ngày -->
+        <div class="card">
+            <h2 class="section-title">✨ Cách Đọc Ngày Trong Tháng 🌸</h2>
+            <p class="section-subtitle">なんにち - Ngày mấy?</p>
+            
+            <div class="explanation-box">
+                <h4>📚 QUY TẮC CHUNG - NHƯNG CÓ NGOẠI LỆ!</h4>
+                <div class="step">
+                    <div class="step-title">Bước 1: Quy tắc cơ bản</div>
+                    <p><strong>Số đếm + にち (nichi)</strong></p>
+                    <p>Ví dụ: 5日 = ごにち, 10日 = じゅうにち</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 2: NHƯNG... Có 14 ngày ĐẶC BIỆT!</div>
+                    <p style="background:var(--warning-light);padding:10px;border-radius:8px;font-weight:900">⚠️ Các ngày 1-10, 14, 20, 24 KHÔNG theo quy tắc!</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 3: Học thuộc các ngày đặc biệt</div>
+                    <p>Các ngày còn lại (11-13, 15-19, 21-31) theo quy tắc thông thường</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>🎯 MO NHỚ CÁC NGÀY ĐẶC BIỆT</h4>
+                <div class="memory-trick">
+                    <h4>🎵 Mẹo 1: Nhóm 1-4 (Cực kỳ quan trọng!)</h4>
+                    <ul>
+                        <li><strong>1日</strong>: ついたち (tsuitachi) ← "Đầu tháng"</li>
+                        <li><strong>2日</strong>: ふつか (futsuka) ← "Hai ngày"</li>
+                        <li><strong>3日</strong>: みっか (mikka) ← "Ba ngày" (có âm ngắt)</li>
+                        <li><strong>4日</strong>: よっか (yokka) ← "Bốn ngày" (có âm ngắt)</li>
+                    </ul>
+                    <p style="background:var(--primary-light);padding:10px;border-radius:8px;margin-top:10px">
+                        <strong>Nhớ câu:</strong> "1-Tsui, 2-Fu, 3-Mi, 4-Yo" ← Giống số đếm nhưng khác âm!
+                    </p>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎨 Mẹo 2: Nhóm 5-10 (Dễ nhớ hơn)</h4>
+                    <ul>
+                        <li><strong>5日</strong>: いつか (itsuka) ← "Năm ngày" (giống いつ - khi nào)</li>
+                        <li><strong>6日</strong>: むいか (muika) ← "Sáu ngày"</li>
+                        <li><strong>7日</strong>: なのか (nanoka) ← "Bảy ngày"</li>
+                        <li><strong>8日</strong>: ようか (youka) ← "Tám ngày" (giống 8 - や)</li>
+                        <li><strong>9日</strong>: ここのか (kokonoka) ← "Chín ngày" (dài nhất!)</li>
+                        <li><strong>10日</strong>: とおか (tooka) ← "Mười ngày"</li>
+                    </ul>
+                    <p style="background:var(--secondary-light);padding:10px;border-radius:8px;margin-top:10px">
+                        <strong>Nhớ vần:</strong> "Itsuka, Muika, Nanoka, Youka, Kokonoka, Tooka" ← Tất cả đều kết thúc bằng "ka"!
+                    </p>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎮 Mẹo 3: Các ngày đặc biệt khác</h4>
+                    <ul>
+                        <li><strong>14日</strong>: じゅうよっか (juuyokka) ← 10 + 4 (giống よっか)</li>
+                        <li><strong>20日</strong>: はつか (hatsuka) ← "Hai mươi" (ĐẶC BIỆT!)</li>
+                        <li><strong>24日</strong>: にじゅうよっか (nijuuyokka) ← 20 + 4</li>
+                    </ul>
+                    <p style="background:var(--accent-light);padding:10px;border-radius:8px;margin-top:10px">
+                        <strong>Lưu ý:</strong> 20日 = はつか (giống 2日 = ふつか) → Dễ nhầm!
+                    </p>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 Bảng đầy đủ 31 ngày - PHẢI THUỘC!</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Cách đọc</th>
+                        <th>Romaji</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">1日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">ついたち</td>
+                        <td>tsuitachi</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">2日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">ふつか</td>
+                        <td>futsuka</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">3日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">みっか</td>
+                        <td>mikka</td>
+                        <td>⚠️ Âm ngắt</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">4日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">よっか</td>
+                        <td>yokka</td>
+                        <td>⚠️ Âm ngắt</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">5日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">いつか</td>
+                        <td>itsuka</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">6日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">むいか</td>
+                        <td>muika</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">7日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">なのか</td>
+                        <td>nanoka</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">8日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">ようか</td>
+                        <td>youka</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">9日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">ここのか</td>
+                        <td>kokonoka</td>
+                        <td>⚠️ Dài nhất!</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">10日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">とおか</td>
+                        <td>tooka</td>
+                        <td>⚠️ ĐẶC BIỆT</td>
+                    </tr>
+                    <tr>
+                        <td>11日</td>
+                        <td>じゅういちにち</td>
+                        <td>juuichi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>12日</td>
+                        <td>じゅうににち</td>
+                        <td>juuni nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>13日</td>
+                        <td>じゅうさんにち</td>
+                        <td>juusan nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">14日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">じゅうよっか</td>
+                        <td>juuyokka</td>
+                        <td>⚠️ Giống 4日</td>
+                    </tr>
+                    <tr>
+                        <td>15日</td>
+                        <td>じゅうごにち</td>
+                        <td>juugo nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>16日</td>
+                        <td>じゅうろくにち</td>
+                        <td>juuroku nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>17日</td>
+                        <td>じゅうしちにち</td>
+                        <td>juushichi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>18日</td>
+                        <td>じゅうはちにち</td>
+                        <td>juuhachi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>19日</td>
+                        <td>じゅうきゅうにち</td>
+                        <td>juukyuu nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">20日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">はつか</td>
+                        <td>hatsuka</td>
+                        <td>⚠️ ĐẶC BIỆT!</td>
+                    </tr>
+                    <tr>
+                        <td>21日</td>
+                        <td>にじゅういちにち</td>
+                        <td>nijuuichi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>22日</td>
+                        <td>にじゅうににち</td>
+                        <td>nijuuni nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>23日</td>
+                        <td>にじゅうさんにち</td>
+                        <td>nijuusan nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td style="font-weight:900">24日</td>
+                        <td style="font-weight:900;color:var(--primary-dark)">にじゅうよっか</td>
+                        <td>nijuuyokka</td>
+                        <td>⚠️ Giống 4日</td>
+                    </tr>
+                    <tr>
+                        <td>25日</td>
+                        <td>にじゅうごにち</td>
+                        <td>nijuugo nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>26日</td>
+                        <td>にじゅうろくにち</td>
+                        <td>nijuurouku nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>27日</td>
+                        <td>にじゅうしちにち</td>
+                        <td>nijuushichi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>28日</td>
+                        <td>にじゅうはちにち</td>
+                        <td>nijuuhachi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>29日</td>
+                        <td>にじゅうきゅうにち</td>
+                        <td>nijuukyu nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>30日</td>
+                        <td>さんじゅうにち</td>
+                        <td>sanjuu nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                    <tr>
+                        <td>31日</td>
+                        <td>さんじゅういちにち</td>
+                        <td>sanjuuichi nichi</td>
+                        <td>Bình thường</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Tháng -->
+        <div class="card">
+            <h2 class="section-title">📆 Cách Đọc Tháng 🌸</h2>
+            <p class="section-subtitle">なんがつ - Tháng mấy?</p>
+            
+            <div class="tip-box">
+                <h4>🎯 QUY TẮC ĐỌC THÁNG - DỄ ẸC!</h4>
+                <p><strong>Số đếm + がつ (gatsu)</strong></p>
+                <p>Ví dụ: 1月 = いちがつ, 5月 = ごがつ</p>
+                <div style="background:var(--success-light);padding:15px;border-radius:10px;margin-top:10px">
+                    <p style="font-weight:900;color:var(--success-dark)">✅ Tin vui: Tháng ĐỌC THEO QUY TẮC!</p>
+                    <p>Không có tháng nào đặc biệt như ngày!</p>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 Bảng 12 tháng - DỄ NHỚ!</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Tháng</th>
+                        <th>Kanji</th>
+                        <th>Cách đọc</th>
+                        <th>Romaji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tháng 1</td>
+                        <td style="font-weight:900">1月</td>
+                        <td>いちがつ</td>
+                        <td>ichi gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 2</td>
+                        <td style="font-weight:900">2月</td>
+                        <td>にがつ</td>
+                        <td>ni gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 3</td>
+                        <td style="font-weight:900">3月</td>
+                        <td>さんがつ</td>
+                        <td>san gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 4</td>
+                        <td style="font-weight:900">4月</td>
+                        <td>しがつ</td>
+                        <td>shi gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 5</td>
+                        <td style="font-weight:900">5月</td>
+                        <td>ごがつ</td>
+                        <td>go gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 6</td>
+                        <td style="font-weight:900">6月</td>
+                        <td>ろくがつ</td>
+                        <td>roku gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 7</td>
+                        <td style="font-weight:900">7月</td>
+                        <td>しちがつ</td>
+                        <td>shichi gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 8</td>
+                        <td style="font-weight:900">8月</td>
+                        <td>はちがつ</td>
+                        <td>hachi gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 9</td>
+                        <td style="font-weight:900">9月</td>
+                        <td>くがつ</td>
+                        <td>ku gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 10</td>
+                        <td style="font-weight:900">10月</td>
+                        <td>じゅうがつ</td>
+                        <td>juu gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 11</td>
+                        <td style="font-weight:900">11月</td>
+                        <td>じゅういちがつ</td>
+                        <td>juuichi gatsu</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 12</td>
+                        <td style="font-weight:900">12月</td>
+                        <td>じゅうにがつ</td>
+                        <td>juuni gatsu</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="memory-trick">
+                <h4>💡 Mẹo nhớ tháng 4, 7, 9</h4>
+                <ul>
+                    <li><strong>4月</strong>: しがつ (shi gatsu) - Dùng "shi" thay vì "yon"</li>
+                    <li><strong>7月</strong>: しちがつ (shichi gatsu) - Dùng "shichi" thay vì "nana"</li>
+                    <li><strong>9月</strong>: くがつ (ku gatsu) - Dùng "ku" thay vì "kyuu"</li>
+                </ul>
+                <p style="background:var(--primary-light);padding:10px;border-radius:8px;margin-top:10px">
+                    <strong>Nhớ:</strong> 4-7-9 dùng âm ngắn (shi, shichi, ku) thay vì âm dài!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Cách nói ngày tháng -->
+        <div class="card">
+            <h2 class="section-title">📝 Cách Nói Ngày Tháng 🌸</h2>
+            <p class="section-subtitle">ねん げつ にち - Năm Tháng Ngày</p>
+            
+            <div class="explanation-box">
+                <h4>📚 CÔNG THỨC - ĐƠN GIẢN!</h4>
+                <div class="step">
+                    <div class="step-title">Công thức chuẩn</div>
+                    <p style="background:var(--primary-light);padding:15px;border-radius:10px;font-weight:900;text-align:center;font-size:1.1em">
+                        NĂM + 年 (ねん) + THÁNG + 月 (がつ) + NGÀY + 日 (にち/đặc biệt)
+                    </p>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">🎮 Ví dụ thực tế</h3>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🎂</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">1月15日</div>
+                    <div class="vocab-romaji">いちがつ じゅうごにち</div>
+                    <div class="vocab-meaning">Ngày 15 tháng 1 (sinh nhật) 🎉</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">📅</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">2026年7月2日</div>
+                    <div class="vocab-romaji">にせん にじゅうろくねん しちがつ ふつか</div>
+                    <div class="vocab-meaning">Ngày 2 tháng 7 năm 2026 (hôm nay!) 📆</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🎌</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">12月25日</div>
+                    <div class="vocab-romaji">じゅうにがつ にじゅうごにち</div>
+                    <div class="vocab-meaning">Ngày 25 tháng 12 (Giáng sinh) 🎄</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🎏</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">5月5日</div>
+                    <div class="vocab-romaji">ごがつ いつか</div>
+                    <div class="vocab-meaning">Ngày 5 tháng 5 (Tết Thiếu Nhi) 🎪</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>🎯 Các từ chỉ thời gian quan trọng</h4>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px">
+                    <div class="vocab-item" style="margin:0">
+                        <div class="vocab-emoji">📆</div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp">今日</div>
+                            <div class="vocab-romaji">きょう (kyou)</div>
+                            <div class="vocab-meaning">Hôm nay</div>
+                        </div>
+                    </div>
+                    <div class="vocab-item" style="margin:0">
+                        <div class="vocab-emoji">📆</div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp">明日</div>
+                            <div class="vocab-romaji">あした (ashita)</div>
+                            <div class="vocab-meaning">Ngày mai</div>
+                        </div>
+                    </div>
+                    <div class="vocab-item" style="margin:0">
+                        <div class="vocab-emoji">📆</div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp">昨日</div>
+                            <div class="vocab-romaji">きのう (kinou)</div>
+                            <div class="vocab-meaning">Hôm qua</div>
+                        </div>
+                    </div>
+                    <div class="vocab-item" style="margin:0">
+                        <div class="vocab-emoji">📆</div>
+                        <div class="vocab-info">
+                            <div class="vocab-jp">明後日</div>
+                            <div class="vocab-romaji">あさって (asatte)</div>
+                            <div class="vocab-meaning">Ngày mốt</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bài tập -->
+        <div class="exercise-section">
+            <h2 class="section-title">🎮 Bài Tập Thực Hành 🌸</h2>
+            <p class="section-subtitle">れんしゅう もんだい - Luyện tập để nhớ lâu!</p>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">1</span>
+                    <span>"1日" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">いちにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">ついたち ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">いちにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ふつか</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">2</span>
+                    <span>"3日" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">みっか ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんか</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">よっか</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">3</span>
+                    <span>"20日" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">にじゅうにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">はつか ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ふつか</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">にじゅうにち</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">4</span>
+                    <span>"4月" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">しがつ ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">よんがつ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">しがつ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">よがつ</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">5</span>
+                    <span>"5月5日" đọc là?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ごがつ ごにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">ごがつ いつか ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ごがつ ごか</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">いつか ごがつ</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">6</span>
+                    <span>"14日" đọc là?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">じゅうよんにち</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">じゅうよっか ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">じゅうしか</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">じゅうよっか</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </div>
+        
+        <!-- Tổng kết -->
+        <div class="card">
+            <h2 class="section-title">📝 TỔNG KẾT - NHỚ NHANH! 🌸</h2>
+            <p class="section-subtitle">まとめ</p>
+            
+            <div class="tip-box" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(236,72,153,.1));border-color:var(--success)">
+                <h4>✅ 5 ĐIỀU CẦN NHỚ</h4>
+                <ol style="padding-left:20px;font-size:1.05em;font-weight:700;line-height:2">
+                    <li><strong>1-10 ngày</strong> → ĐỌC ĐẶC BIỆT (trừ 11-13)</li>
+                    <li><strong>14, 20, 24</strong> → ĐẶC BIỆT (じゅうよっか, はつか, にじゅうよっか)</li>
+                    <li><strong>Các ngày còn lại</strong> → Số + にち</li>
+                    <li><strong>Tháng</strong> → Số + がつ (đều theo quy tắc!)</li>
+                    <li><strong>Công thức</strong> → Năm + 年 + Tháng + 月 + Ngày + 日</li>
+                </ol>
+            </div>
+            
+            <div class="memory-trick" style="margin-top:20px">
+                <h4>🎵 Câu thần chú nhớ ngày 1-10</h4>
+                <p style="background:var(--primary-light);padding:15px;border-radius:10px;font-weight:800;text-align:center;line-height:2">
+                    "1-Tsui, 2-Fu, 3-Mi, 4-Yo<br>
+                    5-Itsu, 6-Mui, 7-Nano, 8-You<br>
+                    9-Kokono, 10-Too<br>
+                    Nhớ kỹ kẻo sai!"
+                </p>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="n5-ref2.html" class="btn btn-secondary">
+                📚 Về Trang Chủ Bổ Sung
+            </a>
+            <a href="n5-ref2-02.html" class="btn btn-secondary">
+                🔢 Chủ Đề 02: Số Đếm Nâng Cao
+            </a>
+            <a href="n5.html" class="btn btn-primary">
+                🌱 Về Hub N5
+            </a>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <h3>📅 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="font-size:1.5em;margin:15px 0">💖  📅 </p>
+        <p>日本語を一緒に学びましょう！</p>
+        <p style="margin-top:20px;font-size:.9em;opacity:.9">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="font-size:.85em;opacity:.85">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+    
+    <script>
+        function checkAnswer(element, isCorrect) {
+            const card = element.closest('.exercise-card');
+            const options = card.querySelectorAll('.exercise-opt');
+            const feedback = card.querySelector('.feedback');
+            
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt.textContent.includes('✓')) {
+                    opt.classList.add('correct');
+                }
+            });
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'feedback show correct';
+            } else {
+                element.classList.add('wrong');
+                feedback.textContent = '❌ Sai rồi! Hãy thử lại nhé!';
+                feedback.className = 'feedback show wrong';
+            }
+        }
+    </script>
+</body>
+</html>
