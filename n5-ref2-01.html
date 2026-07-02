@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔤 Chủ Đề 01: Âm Ghép & Âm Ngắt | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --warning:#F59E0B;--warning-dark:#D97706;--warning-light:#FDE68A;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.5em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.2em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 4px 15px rgba(0,0,0,.08);min-width:130px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .section-title{font-size:2.2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.1em;font-weight:600;position:relative;z-index:2}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:20px;padding:25px;margin:20px 0;position:relative}
+        .tip-box h4{color:var(--primary-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.8;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .vocab-item{background:rgba(255,255,255,.95);padding:18px;border-radius:16px;display:grid;grid-template-columns:70px 1fr auto;gap:15px;align-items:center;transition:.3s;border:2px solid var(--border);cursor:pointer;margin-bottom:12px}
+        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.15);background:linear-gradient(135deg,var(--primary-light),var(--secondary-light))}
+        .vocab-emoji{font-size:2.5em;flex-shrink:0;text-align:center}
+        .vocab-info{min-width:0}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text);margin-bottom:3px}
+        .vocab-romaji{font-size:.85em;color:var(--text-muted);font-weight:700;margin-bottom:3px}
+        .vocab-meaning{font-size:.92em;color:var(--text-soft);font-weight:600}
+        .vocab-audio{background:var(--primary-light);color:var(--primary-dark);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1.2em;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+        .vocab-audio:hover{background:var(--primary);color:white;transform:scale(1.1)}
+        
+        .yoon-table{width:100%;border-collapse:collapse;margin:15px 0;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+        .yoon-table th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:12px;font-weight:800;text-align:center;border:2px solid var(--primary-light)}
+        .yoon-table td{padding:10px;text-align:center;border:2px solid var(--border);font-family:'M PLUS Rounded 1c';font-size:1.1em;font-weight:700}
+        .yoon-table tr:nth-child(even){background:rgba(251,207,232,.1)}
+        .yoon-table tr:hover{background:rgba(251,207,232,.2)}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(251,207,232,.25),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));opacity:.7}
+        .exercise-card{background:rgba(255,255,255,.95);border-radius:20px;padding:22px;margin:15px 0;border:2px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--primary-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--primary);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:#FEE2E2;color:#DC2626;border:2px solid #EF4444}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.exercise-options{grid-template-columns:1fr}}
+        @media(max-width:600px){.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🔤</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html">🌱 N5</a></li><li><a href="n5-ref2.html">📚 Bổ Sung</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-ref2.html">📚 Bổ Sung</a> › <span>🔤 Chủ Đề 01: Âm Ghép & Âm Ngắt</span></div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="hero-badge">🔤 Chủ Đề Bổ Sung 01 • Âm Ghép & Âm Ngắt</span>
+            <h1>Âm Ghép (Yōon)<br>& Âm Ngắt (Sokuon)</h1>
+            <div class="hero-jp">ようおん と そくおん</div>
+            <p class="hero-desc">Học chi tiết về 2 loại âm đặc biệt trong tiếng Nhật: Âm ghép (ャュョ) và Âm ngắt (ッ) - Những âm quan trọng giúp bạn phát âm chuẩn và tự nhiên hơn!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">33</span><span class="stat-label">Âm ghép</span></div>
+                <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Âm ngắt</span></div>
+                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Loại âm đặc biệt</span></div>
+                <div class="stat-item"><span class="stat-number">30'</span><span class="stat-label">Thời gian học</span></div>
+            </div>
+        </div>
+
+        <!-- PHẦN 1: ÂM GHÉP -->
+        <div class="card">
+            <h3 class="section-title"><span>✨</span> Âm Ghép (Yōon - ようおん) <span>🌸</span></h3>
+            
+            <div class="tip-box">
+                <h4>✨ Âm ghép là gì?</h4>
+                <p>Âm ghép là sự kết hợp giữa một chữ cái thuộc <strong>hàng I (い段)</strong> với một trong ba chữ nhỏ <strong>ゃ (ya), ゅ (yu), よ (yo)</strong> để tạo thành một âm tiết mới.</p>
+                <p><strong>Công thức:</strong> Chữ hàng I + ゃ/ゅ/ょ (nhỏ) = Âm ghép</p>
+                <p><strong>Ví dụ:</strong> き + ゃ = <strong>きゃ</strong> (kya)</p>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">📋 Bảng đầy đủ các âm ghép (Click 🔊 để nghe)</h4>
+            <div style="overflow-x: auto;">
+                <table class="yoon-table">
+                    <thead>
+                        <tr>
+                            <th>Hàng</th>
+                            <th>+ ゃ (ya)</th>
+                            <th>+ ゅ (yu)</th>
+                            <th>+ よ (yo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 800;">K</td>
+                            <td>きゃ (kya) <button class="vocab-audio" onclick="playAudio('きゃ')">🔊</button></td>
+                            <td>きゅ (kyu) <button class="vocab-audio" onclick="playAudio('きゅ')">🔊</button></td>
+                            <td>きょ (kyo) <button class="vocab-audio" onclick="playAudio('きょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">S</td>
+                            <td>しゃ (sha) <button class="vocab-audio" onclick="playAudio('しゃ')">🔊</button></td>
+                            <td>しゅ (shu) <button class="vocab-audio" onclick="playAudio('しゅ')">🔊</button></td>
+                            <td>しょ (sho) <button class="vocab-audio" onclick="playAudio('しょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">T</td>
+                            <td>ちゃ (cha) <button class="vocab-audio" onclick="playAudio('ちゃ')">🔊</button></td>
+                            <td>ちゅ (chu) <button class="vocab-audio" onclick="playAudio('ちゅ')">🔊</button></td>
+                            <td>ちょ (cho) <button class="vocab-audio" onclick="playAudio('ちょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">N</td>
+                            <td>にゃ (nya) <button class="vocab-audio" onclick="playAudio('にゃ')">🔊</button></td>
+                            <td>にゅ (nyu) <button class="vocab-audio" onclick="playAudio('にゅ')">🔊</button></td>
+                            <td>にょ (nyo) <button class="vocab-audio" onclick="playAudio('にょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">H</td>
+                            <td>ひゃ (hya) <button class="vocab-audio" onclick="playAudio('ひゃ')">🔊</button></td>
+                            <td>ひゅ (hyu) <button class="vocab-audio" onclick="playAudio('ひゅ')">🔊</button></td>
+                            <td>ひょ (hyo) <button class="vocab-audio" onclick="playAudio('ひょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">M</td>
+                            <td>みゃ (mya) <button class="vocab-audio" onclick="playAudio('みゃ')">🔊</button></td>
+                            <td>みゅ (myu) <button class="vocab-audio" onclick="playAudio('みゅ')">🔊</button></td>
+                            <td>みょ (myo) <button class="vocab-audio" onclick="playAudio('みょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">R</td>
+                            <td>りゃ (rya) <button class="vocab-audio" onclick="playAudio('りゃ')">🔊</button></td>
+                            <td>りゅ (ryu) <button class="vocab-audio" onclick="playAudio('りゅ')">🔊</button></td>
+                            <td>りょ (ryo) <button class="vocab-audio" onclick="playAudio('りょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">G</td>
+                            <td>ぎゃ (gya) <button class="vocab-audio" onclick="playAudio('ぎゃ')">🔊</button></td>
+                            <td>ぎゅ (gyu) <button class="vocab-audio" onclick="playAudio('ぎゅ')">🔊</button></td>
+                            <td>ぎょ (gyo) <button class="vocab-audio" onclick="playAudio('ぎょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">Z/J</td>
+                            <td>じゃ (ja) <button class="vocab-audio" onclick="playAudio('じゃ')">🔊</button></td>
+                            <td>じゅ (ju) <button class="vocab-audio" onclick="playAudio('じゅ')">🔊</button></td>
+                            <td>じょ (jo) <button class="vocab-audio" onclick="playAudio('じょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">B</td>
+                            <td>びゃ (bya) <button class="vocab-audio" onclick="playAudio('びゃ')">🔊</button></td>
+                            <td>びゅ (byu) <button class="vocab-audio" onclick="playAudio('びゅ')">🔊</button></td>
+                            <td>びょ (byo) <button class="vocab-audio" onclick="playAudio('びょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">P</td>
+                            <td>ぴゃ (pya) <button class="vocab-audio" onclick="playAudio('ぴゃ')">🔊</button></td>
+                            <td>ぴゅ (pyu) <button class="vocab-audio" onclick="playAudio('ぴゅ')">🔊</button></td>
+                            <td>ぴょ (pyo) <button class="vocab-audio" onclick="playAudio('ぴょ')">🔊</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Mẹo nhớ Âm Ghép</h4>
+                <ul>
+                    <li><strong>✅ Quy tắc vàng 1:</strong> Chữ ゃ/ゅ/ょ phải viết <strong>NHỎ</strong> (ゃゅょ)</li>
+                    <li><strong>✅ Quy tắc vàng 2:</strong> Âm ghép = <strong>1 phách</strong> (đọc nhanh, liền nhau)</li>
+                    <li><strong>✅ Quy tắc vàng 3:</strong> Chỉ chữ hàng I mới tạo được âm ghép</li>
+                </ul>
+                
+                <h4 style="margin-top: 15px;">🎯 Mẹo nhớ theo nhóm:</h4>
+                <ul>
+                    <li><strong>Nhóm "sh" (しゃしゅしょ):</strong> Đọc như "sa/su/so" nhưng có thêm "h"</li>
+                    <li><strong>Nhóm "ch" (ちゃちゅちょ):</strong> Đọc như "ta/tsu/to" nhưng có thêm "h"</li>
+                    <li><strong>Nhóm "ky" (きゃきゅきょ):</strong> Đọc "ki" + "ya/yu/yo" thật nhanh</li>
+                </ul>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">🎮 Từ vựng với âm ghép</h4>
+            <div class="vocab-item" onclick="playAudio('きゃく')">
+                <div class="vocab-emoji">きゃ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">きゃく (kyaku)</div>
+                    <div class="vocab-meaning">Khách 👤</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('きゃく')">🔊</button>
+            </div>
+            <div class="vocab-item" onclick="playAudio('きゅう')">
+                <div class="vocab-emoji">きゅ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">きゅう (kyuu)</div>
+                    <div class="vocab-meaning">Cứu giúp, thứ 9 🆘</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('きゅう')">🔊</button>
+            </div>
+            <div class="vocab-item" onclick="playAudio('きょう')">
+                <div class="vocab-emoji">きょ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">きょう (kyou)</div>
+                    <div class="vocab-meaning">Hôm nay 📅</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('きょう')">🔊</button>
+            </div>
+            <div class="vocab-item" onclick="playAudio('しゃしん')">
+                <div class="vocab-emoji">しゃ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">しゃしん (shashin)</div>
+                    <div class="vocab-meaning">Bức ảnh 📷</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('しゃしん')">🔊</button>
+            </div>
+            <div class="vocab-item" onclick="playAudio('びょういん')">
+                <div class="vocab-emoji">びょ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">びょういん (byouin)</div>
+                    <div class="vocab-meaning">Bệnh viện 🏥</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('びょういん')">🔊</button>
+            </div>
+            <div class="vocab-item" onclick="playAudio('りょうり')">
+                <div class="vocab-emoji">りょ</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">りょうり (ryouri)</div>
+                    <div class="vocab-meaning">Nấu ăn, món ăn 🍱</div>
+                </div>
+                <button class="vocab-audio" onclick="event.stopPropagation();playAudio('りょうり')">🔊</button>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: ÂM NGẮT -->
+        <div class="card">
+            <h3 class="section-title"><span>🔥</span> Âm Ngắt (Sokuon - そくおん) <span>🌸</span></h3>
+            
+            <div class="tip-box">
+                <h4>🔥 Âm ngắt là gì?</h4>
+                <p>Âm ngắt là chữ <strong>ッ</strong> (katakana) hoặc <strong>っ</strong> (hiragana) viết <strong>NHỎ</strong>, không phát âm thành âm riêng mà tạo ra <strong>khoảng ngưng ngắn</strong> trước phụ âm tiếp theo.</p>
+                <p><strong>Công thức:</strong> Phụ âm + ッ (nhỏ) + Phụ âm = Đọc gấp đôi phụ âm</p>
+                <p><strong>Ví dụ:</strong> が + ッ + こう = <strong>がっこう</strong> (gakkou) - đọc "gak-kou"</p>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">📋 Cách phát âm âm ngắt</h4>
+            <div class="tip-box">
+                <h4>🎵 3 bước phát âm:</h4>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Bước 1:</strong> Đọc phụ âm đầu tiên</li>
+                    <li><strong>Bước 2:</strong> <strong>NGƯNG</strong> khoảng 0.5 giây (giữ hơi)</li>
+                    <li><strong>Bước 3:</strong> Đọc phụ âm tiếp theo <strong>gấp đôi</strong></li>
+                </ol>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">📝 Ví dụ âm ngắt (Click 🔊 để nghe)</h4>
+            <div style="overflow-x: auto;">
+                <table class="yoon-table">
+                    <thead>
+                        <tr>
+                            <th>Từ</th>
+                            <th>Cách đọc</th>
+                            <th>Nghĩa</th>
+                            <th>Phát âm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 800;">がっこう</td>
+                            <td>gak-kou</td>
+                            <td>Trường học 🏫</td>
+                            <td><button class="vocab-audio" onclick="playAudio('がっこう')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">きっぷ</td>
+                            <td>kip-pu</td>
+                            <td>Vé 🎫</td>
+                            <td><button class="vocab-audio" onclick="playAudio('きっぷ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">マッチ</td>
+                            <td>mac-chi</td>
+                            <td>Diêm 🔥</td>
+                            <td><button class="vocab-audio" onclick="playAudio('マッチ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">ベッド</td>
+                            <td>bed-do</td>
+                            <td>Giường 🛏️</td>
+                            <td><button class="vocab-audio" onclick="playAudio('ベッド')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">コップ</td>
+                            <td>kop-pu</td>
+                            <td>Cốc 🥤</td>
+                            <td><button class="vocab-audio" onclick="playAudio('コップ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">にっぽん</td>
+                            <td>nip-pon</td>
+                            <td>Nhật Bản 🇯🇵</td>
+                            <td><button class="vocab-audio" onclick="playAudio('にっぽん')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">いっしょ</td>
+                            <td>is-sho</td>
+                            <td>Cùng nhau 👥</td>
+                            <td><button class="vocab-audio" onclick="playAudio('いっしょ')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">ずっと</td>
+                            <td>zut-to</td>
+                            <td>Suốt, mãi mãi ⏰</td>
+                            <td><button class="vocab-audio" onclick="playAudio('ずっと')">🔊</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Mẹo nhớ Âm Ngắt</h4>
+                <ul>
+                    <li><strong>✅ Quy tắc 1:</strong> ッ phải viết <strong>NHỎ</strong> (giống ゃ/ゅ/ょ)</li>
+                    <li><strong>✅ Quy tắc 2:</strong> Đọc như bị <strong>"khựng" lại</strong> rồi tiếp tục</li>
+                    <li><strong>✅ Quy tắc 3:</strong> Phụ âm sau ッ được đọc <strong>GẤP ĐÔI</strong></li>
+                </ul>
+                
+                <h4 style="margin-top: 15px;">🎯 Mẹo hình tượng:</h4>
+                <ul>
+                    <li><strong>🚦 Đèn giao thông:</strong> Chữ ッ = Đèn VÀNG (chuẩn bị dừng) → Phụ âm sau = Đèn ĐỎ (dừng hẳn)</li>
+                    <li><strong>🎵 Nhịp điệu âm nhạc:</strong> がっこう = "gak" (nốt nhạc) → <strong>nghỉ</strong> → "kou" (nốt nhạc)</li>
+                    <li><strong>🥊 Boxing:</strong> Đọc "gak" → <strong>đấm</strong> (ngưng) → "kou" - Giống cú đấm 1-2</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PHẦN 3: SO SÁNH -->
+        <div class="card">
+            <h3 class="section-title"><span>⚖️</span> So Sánh Âm Ghép vs Âm Ngắt <span>🌸</span></h3>
+            <div style="overflow-x: auto;">
+                <table class="yoon-table">
+                    <thead>
+                        <tr>
+                            <th>Đặc điểm</th>
+                            <th>Âm Ghép (ャュョ)</th>
+                            <th>Âm Ngắt (ッ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 800;">Chữ cái</td>
+                            <td>ゃ, ゅ, ょ (nhỏ)</td>
+                            <td>ッ (nhỏ)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">Vị trí</td>
+                            <td>Sau chữ hàng I</td>
+                            <td>Giữa 2 phụ âm</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">Phát âm</td>
+                            <td>1 phách, đọc nhanh</td>
+                            <td>Ngưng 0.5s, gấp đôi phụ âm</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">Ví dụ</td>
+                            <td>きゃ (kya) <button class="vocab-audio" onclick="playAudio('きゃ')">🔊</button></td>
+                            <td>がっこう (gak-kou) <button class="vocab-audio" onclick="playAudio('がっこう')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 800;">Mẹo nhớ</td>
+                            <td>Đọc liền, nhanh</td>
+                            <td>Đọc như bị "khựng"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PHẦN 4: BÀI TẬP -->
+        <div class="exercise-section">
+            <h3 class="section-title"><span>🎮</span> Bài Tập Thực Hành <span>🌸</span></h3>
+            
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">Bài 1: Phân biệt âm ghép và âm ngắt</h4>
+            <p style="margin-bottom: 15px;">Đọc các từ sau và xác định đâu là âm ghép, đâu là âm ngắt:</p>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> きょう (kyou) - Âm gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q1a')">Âm ghép ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q1b')">Âm ngắt</div>
+                </div>
+                <div class="feedback" id="d5q1a"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> がっこう (gakkou) - Âm gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q2a')">Âm ghép</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q2b')">Âm ngắt ✓</div>
+                </div>
+                <div class="feedback" id="d5q2b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> しゃしん (shashin) - Âm gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q3a')">Âm ghép ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q3b')">Âm ngắt</div>
+                </div>
+                <div class="feedback" id="d5q3a"></div>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">Bài 2: Điền vào chỗ trống</h4>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">4</span> が + __ + こう = がっこう (trường học)</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q4a')">ッ (âm ngắt) ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q4b')">ゃ (âm ghép)</div>
+                </div>
+                <div class="feedback" id="d5q4a"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">5</span> き + __ = きゃ (kya)</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q5a')">ッ (âm ngắt)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q5b')">ゃ (âm ghép) ✓</div>
+                </div>
+                <div class="feedback" id="d5q5b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">6</span> マ + __ + チ = マッチ (diêm)</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q6a')">ッ (âm ngắt) ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q6b')">ゅ (âm ghép)</div>
+                </div>
+                <div class="feedback" id="d5q6a"></div>
+            </div>
+
+            <h4 style="margin: 20px 0 15px; color: var(--text); font-weight: 900;">Bài 3: Nghe và chọn</h4>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">7</span> Nghe: <button class="vocab-audio" onclick="playAudio('がっこう')">🔊</button></div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q7a')">gakkou (đúng - có âm ngắt) ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q7b')">gatsukou (sai)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q7c')">gakou (sai - thiếu âm ngắt)</div>
+                </div>
+                <div class="feedback" id="d5q7a"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">8</span> Nghe: <button class="vocab-audio" onclick="playAudio('きゃく')">🔊</button></div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'d5q8a')">kyaku (đúng - âm ghép) ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q8b')">kiyaku (sai - 2 âm riêng)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'d5q8c')">kaku (sai)</div>
+                </div>
+                <div class="feedback" id="d5q8a"></div>
+            </div>
+        </div>
+
+        <!-- PHẦN 5: QUIZ TỔNG HỢP -->
+        <div class="exercise-section">
+            <h3 class="section-title"><span>📝</span> Quiz Tổng Hợp <span>🌸</span></h3>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> "シャ" đọc là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz1a')">kya</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'quiz1b')">sha ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz1c')">cha</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz1d')">nya</div>
+                </div>
+                <div class="feedback" id="quiz1b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> "がっこう" có âm gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz2a')">Âm ghép</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'quiz2b')">Âm ngắt ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz2c')">Không có âm đặc biệt</div>
+                </div>
+                <div class="feedback" id="quiz2b"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> Chữ ッ có tác dụng gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'quiz3a')">Tạo khoảng ngưng, gấp đôi phụ âm ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz3b')">Đọc như "tsu"</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz3c')">Không phát âm</div>
+                </div>
+                <div class="feedback" id="quiz3a"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">4</span> Âm ghép được tạo từ chữ hàng nào?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'quiz4a')">Hàng I (い段) ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz4b')">Hàng A (あ段)</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz4c')">Hàng U (う段)</div>
+                </div>
+                <div class="feedback" id="quiz4a"></div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">5</span> "きょう" đọc là gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'quiz5a')">kyou ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz5b')">kiyou</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'quiz5c')">kyo</div>
+                </div>
+                <div class="feedback" id="quiz5a"></div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-ref2.html" class="btn btn-secondary"><span>📚</span> Về Trang Chủ Bổ Sung</a>
+            <a href="n5.html" class="btn btn-primary"><span>🌱</span> Về Hub N5</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🔤 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🔤 🌸</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+
+    <script>
+        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
+        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}}
+        window.addEventListener('load',()=>{window.speechSynthesis.getVoices()});
+    </script>
+</body>
+</html>
