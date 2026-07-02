@@ -161,7 +161,14 @@
 
     <header class="header">
         <a href="index.html" class="logo"><span style="font-size:1.4em">🌱</span><span class="logo-main">Nihongo Journey</span></a>
-        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li><li><a href="n3.html">🌳 N3</a></li></ul></nav>
+        <nav><ul class="nav-links">
+    <li><a href="index.html">🏠 Trang chủ</a></li>
+    <li><a href="n5.html" class="active">🌱 N5</a></li>
+    <li><a href="n5-reference.html">📚 Tham Khảo</a></li>
+    <li><a href="n5-ref2.html">📚 Bổ Sung</a></li>  <!-- THÊM DÒNG NÀY -->
+    <li><a href="n4.html">🌿 N4</a></li>
+    <li><a href="n3.html">🌳 N3</a></li>
+</ul></nav>
     </header>
 
     <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <span>JLPT N5</span></div>
@@ -203,10 +210,10 @@
                 </svg>
             </div>
             <div class="hero-btns">
-                <a href="#phase1" class="btn btn-primary"><span>🚀</span> Bắt đầu học</a>
-                <a href="n5-reference.html" class="btn btn-ref"><span>📚</span> Tra cứu nhanh</a>
-                <a href="#overview" class="btn btn-secondary"><span>📊</span> Tổng quan</a>
-            </div>
+    <a href="#phase1" class="btn btn-primary" onclick="showPhase(1);return false;"><span>🚀</span> Bắt đầu học</a>
+    <a href="n5-reference.html" class="btn btn-secondary"><span>📚</span> Tra cứu nhanh</a>
+    <a href="n5-ref2.html" class="btn btn-secondary"><span>📚</span> Chủ đề Bổ Sung</a>  <!-- THÊM DÒNG NÀY -->
+</div>
         </div>
 
         <!-- REFERENCE BANNER -->
@@ -476,6 +483,20 @@
         </section>
 
         <!-- TIPS -->
+        <div class="tips-grid">
+    <!-- ... các tip hiện có ... -->
+    <div class="tip-item">
+        <span class="tip-icon">📚</span>
+        <div class="tip-title">Dùng Tab Tham Khảo</div>
+        <div class="tip-desc">Khi quên kiến thức cũ, tra cứu nhanh tại đây!</div>
+    </div>
+    <!-- THÊM TIP MỚI NÀY -->
+    <div class="tip-item">
+        <span class="tip-icon">📚</span>
+        <div class="tip-title">Chủ đề Bổ Sung</div>
+        <div class="tip-desc">Khám phá 30 chủ đề chuyên sâu để học sâu hơn!</div>
+    </div>
+</div>
         <div class="card">
             <div class="tip-box">
                 <h4>💡 Lời khuyên để học hiệu quả</h4>
