@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Chủ Đề 02: Số Đếm Nâng Cao | Nihongo Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --warning:#F59E0B;--warning-dark:#D97706;--warning-light:#FDE68A;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.5em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:2em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.2em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 4px 15px rgba(0,0,0,.08);min-width:130px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .section-title{font-size:2.2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.1em;font-weight:600;position:relative;z-index:2}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(251,207,232,.3),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:20px;padding:25px;margin:20px 0;position:relative}
+        .tip-box h4{color:var(--primary-dark);margin-bottom:12px;font-size:1.15em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.8;font-weight:600}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .vocab-item{background:rgba(255,255,255,.95);padding:18px;border-radius:16px;display:grid;grid-template-columns:70px 1fr auto;gap:15px;align-items:center;transition:.3s;border:2px solid var(--border);cursor:pointer;margin-bottom:12px}
+        .vocab-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.15);background:linear-gradient(135deg,var(--primary-light),var(--secondary-light))}
+        .vocab-emoji{font-size:2.5em;flex-shrink:0;text-align:center}
+        .vocab-info{min-width:0}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:800;color:var(--text);margin-bottom:3px}
+        .vocab-romaji{font-size:.85em;color:var(--text-muted);font-weight:700;margin-bottom:3px}
+        .vocab-meaning{font-size:.92em;color:var(--text-soft);font-weight:600}
+        .vocab-audio{background:var(--primary-light);color:var(--primary-dark);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1.2em;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+        .vocab-audio:hover{background:var(--primary);color:white;transform:scale(1.1)}
+        
+        .yoon-table{width:100%;border-collapse:collapse;margin:15px 0;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+        .yoon-table th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:12px;font-weight:800;text-align:center;border:2px solid var(--primary-light)}
+        .yoon-table td{padding:10px;text-align:center;border:2px solid var(--border);font-family:'M PLUS Rounded 1c';font-size:1.1em;font-weight:700}
+        .yoon-table tr:nth-child(even){background:rgba(251,207,232,.1)}
+        .yoon-table tr:hover{background:rgba(251,207,232,.2)}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(251,207,232,.25),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));opacity:.7}
+        .exercise-card{background:rgba(255,255,255,.95);border-radius:20px;padding:22px;margin:15px 0;border:2px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--primary-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--primary);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:#FEE2E2;color:#DC2626;border:2px solid #EF4444}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        .explanation-box{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(236,72,153,.1));border:2px solid var(--accent);border-radius:20px;padding:25px;margin:20px 0;position:relative}
+        .explanation-box h4{color:var(--accent-dark);margin-bottom:15px;font-size:1.2em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .explanation-box p{color:var(--text);font-size:1em;line-height:1.9;font-weight:600;margin-bottom:10px}
+        .explanation-box .step{background:white;padding:15px;border-radius:12px;margin:10px 0;border-left:4px solid var(--accent)}
+        .explanation-box .step-title{font-weight:900;color:var(--primary-dark);margin-bottom:5px}
+        
+        .memory-trick{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(236,72,153,.1));border:2px dashed var(--secondary);border-radius:20px;padding:20px;margin:15px 0}
+        .memory-trick h4{color:var(--secondary-dark);font-size:1.1em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .memory-trick p{color:var(--text);font-weight:600;line-height:1.8}
+        
+        @media(max-width:900px){.exercise-options{grid-template-columns:1fr}}
+        @media(max-width:600px){.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section{padding:22px}.vocab-item{grid-template-columns:1fr;text-align:center}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    
+    <header class="header">
+        <nav style="display:flex;justify-content:space-between;align-items:center;max-width:1240px;margin:0 auto">
+            <a href="index.html" class="logo">
+                <span class="logo-main">🔢 Nihongo Journey</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Trang chủ</a></li>
+                <li><a href="n5.html">🌱 N5</a></li>
+                <li><a href="n5-ref2.html" class="active">📚 Bổ Sung</a></li>
+                <li><a href="n4.html">🌿 N4</a></li>
+                <li><a href="n3.html">🌳 N3</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="breadcrumb">
+        <a href="index.html">🏠</a> › 
+        <a href="n5.html">🌱 N5</a> › 
+        <a href="n5-ref2.html">📚 Bổ Sung</a> › 
+        🔢 Chủ Đề 02: Số Đếm Nâng Cao
+    </div>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-badge">🔢 Chủ Đề Bổ Sung 02 • Số Đếm Nâng Cao</div>
+            <h1>すうじ の かぞえかた</h1>
+            <div class="hero-jp">数字の数え方</div>
+            <p class="hero-desc">Học chi tiết về số đếm từ 100 đến hàng triệu - Giải thích CỰC KỲ CHI TIẾT với nhiều mẹo nhớ dễ hiểu! Nắm vững các trường hợp đặc biệt mà 90% người học hay nhầm lẫn.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100-999</span>
+                    <span class="stat-label">Số trăm</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Số nghìn</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">万・億</span>
+                    <span class="stat-label">Số lớn</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30'</span>
+                    <span class="stat-label">Thời gian học</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Giới thiệu -->
+        <div class="card">
+            <div class="tip-box" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(236,72,153,.15))">
+                <h4>🎯 Tại sao cần học số đếm nâng cao?</h4>
+                <ul>
+                    <li>✅ Khi mua hàng: 350円, 800円, 2000円...</li>
+                    <li>✅ Khi nói về năm: 2026年 (にせんにじゅうろくねん)</li>
+                    <li>✅ Khi đếm người: 300人, 600人...</li>
+                    <li>✅ Khi nói về lương: 30万円 (30 man en = 300,000 yên)</li>
+                    <li>⚠️ <strong>90% người học NHẦM</strong> các số 300, 600, 800, 3000, 8000</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Số trăm -->
+        <div class="card">
+            <h2 class="section-title">✨ Số Trăm (100-999) 🌸</h2>
+            <p class="section-subtitle">ひゃくたん の すうじ - Giải thích SIÊU CHI TIẾT</p>
+            
+            <div class="explanation-box">
+                <h4>📚 Quy tắc cơ bản - HIỂU NGAY!</h4>
+                <div class="step">
+                    <div class="step-title">Bước 1: Học số 100</div>
+                    <p><strong>100 = ひゃく (hyaku)</strong> ← Đây là từ gốc!</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 2: Công thức đơn giản</div>
+                    <p><strong>Số đếm + ひゃく</strong></p>
+                    <p>Ví dụ: 2 + ひゃく = にひゃく (200)</p>
+                    <p>Ví dụ: 4 + ひゃく = よんひゃく (400)</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 3: BUT... Có 3 số ĐẶC BIỆT!</div>
+                    <p style="background:var(--warning-light);padding:10px;border-radius:8px;font-weight:900">⚠️ 300, 600, 800 KHÔNG theo quy tắc!</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>🎯 MẸO NHỚ "3-6-8" - NHỚ MÃI KHÔNG QUÊN!</h4>
+                <div class="memory-trick">
+                    <h4>🎵 Mẹo 1: Câu thần chú "San-Rop-Hap"</h4>
+                    <p><strong>"3-6-8 là ba anh em BIẾN ÂM"</strong></p>
+                    <ul>
+                        <li>300: <strong>san</strong> + <strong>byaku</strong> (h → b)</li>
+                        <li>600: <strong>rop</strong> + <strong>pyaku</strong> (h → p + âm ngắt)</li>
+                        <li>800: <strong>hap</strong> + <strong>pyaku</strong> (h → p + âm ngắt)</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎨 Mẹo 2: Hình tượng hóa</h4>
+                    <ul>
+                        <li><strong>300 (さんびゃく)</strong>: "San" giống "3" → "byaku" nghe như "bia" → <em>"3 chai bia"</em> 🍺</li>
+                        <li><strong>600 (ろっぴゃく)</strong>: "Rop" nghe như "rớt" → "pyaku" nghe như "pia" → <em>"6 cái bánh rớt xuống"</em> 🍰</li>
+                        <li><strong>800 (はっぴゃく)</strong>: "Hap" nghe như "hấp" → <em>"8 cái bánh hấp"</em> 🥟</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎮 Mẹo 3: Trò chơi nhớ</h4>
+                    <p><strong>Nhớ theo vần:</strong></p>
+                    <p style="background:var(--primary-light);padding:15px;border-radius:10px;font-weight:800;text-align:center">
+                        "Ba trăm đọc <strong>san-byaku</strong><br>
+                        Sáu trăm đọc <strong>rop-pyaku</strong><br>
+                        Tám trăm đọc <strong>hap-pyaku</strong><br>
+                        Nhớ kỹ kẻo sai!"
+                    </p>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 Bảng đầy đủ - SO SÁNH ĐỂ NHỚ</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Số</th>
+                        <th>Cách đọc</th>
+                        <th>Giải thích</th>
+                        <th>Mẹo nhớ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td style="font-weight:900">ひゃく</td>
+                        <td>Từ gốc</td>
+                        <td>💯</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>にひゃく</td>
+                        <td>Bình thường</td>
+                        <td>2 + hyaku</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td><strong>300 ⚠️</strong></td>
+                        <td style="font-weight:900;color:var(--primary-dark)">さんびゃく</td>
+                        <td><strong>ĐẶC BIỆT!</strong><br>h → b</td>
+                        <td>🍺 3 chai bia</td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td>よんひゃく</td>
+                        <td>Bình thường</td>
+                        <td>4 + hyaku</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>ごひゃく</td>
+                        <td>Bình thường</td>
+                        <td>5 + hyaku</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td><strong>600 ⚠️</strong></td>
+                        <td style="font-weight:900;color:var(--primary-dark)">ろっぴゃく</td>
+                        <td><strong>ĐẶC BIỆT!</strong><br>Có âm ngắt + p</td>
+                        <td>🍰 Rớt bánh</td>
+                    </tr>
+                    <tr>
+                        <td>700</td>
+                        <td>ななひゃく</td>
+                        <td>Bình thường</td>
+                        <td>7 + hyaku</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td><strong>800 ⚠️</strong></td>
+                        <td style="font-weight:900;color:var(--primary-dark)">はっぴゃく</td>
+                        <td><strong>ĐẶC BIỆT!</strong><br>Có âm ngắt + p</td>
+                        <td>🥟 Bánh hấp</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td>きゅうひゃく</td>
+                        <td>Bình thường</td>
+                        <td>9 + hyaku</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">🎮 Ví dụ thực tế - ỨNG DỤNG NGAY!</h3>
+            <div class="vocab-item">
+                <div class="vocab-emoji">💴</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">350円 = さんびゃくごじゅうえん</div>
+                    <div class="vocab-romaji">san-byaku go-juu en</div>
+                    <div class="vocab-meaning">350 yên (giá 1 lon nước) 🥤</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">👥</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">680人 = ろっぴゃくはちじゅうにん</div>
+                    <div class="vocab-romaji">rop-pyaku hachi-juu nin</div>
+                    <div class="vocab-meaning">680 người (số khách tham quan) 🎪</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">📖</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">825ページ = はっぴゃくにごじゅうごページ</div>
+                    <div class="vocab-romaji">hap-pyaku ni-juu go peeji</div>
+                    <div class="vocab-meaning">trang 825 (sách dày!) 📚</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Số nghìn -->
+        <div class="card">
+            <h2 class="section-title">🔥 Số Nghìn (1000-9999) 🌸</h2>
+            <p class="section-subtitle">せんたん の すうじ - CHI TIẾT TỪNG BƯỚC</p>
+            
+            <div class="explanation-box">
+                <h4>📚 Quy tắc - DỄ ẸC!</h4>
+                <div class="step">
+                    <div class="step-title">Bước 1: Học số 1000</div>
+                    <p><strong>1000 = せん (sen)</strong> ← Từ gốc!</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 2: Công thức</div>
+                    <p><strong>Số đếm + せん</strong></p>
+                    <p>Ví dụ: 2 + せん = にせん (2000)</p>
+                    <p>Ví dụ: 5 + せん = ごせん (5000)</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">Bước 3: 2 số ĐẶC BIỆT</div>
+                    <p style="background:var(--warning-light);padding:10px;border-radius:8px;font-weight:900">⚠️ 3000 và 8000 thay đổi!</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>🎯 MO NHỚ "3-8" - ĐƠN GIẢN!</h4>
+                <div class="memory-trick">
+                    <h4>🎵 Mẹo 1: Câu thần chú "San-Zen, Has-Sen"</h4>
+                    <ul>
+                        <li><strong>3000</strong>: <strong>san</strong> + <strong>zen</strong> (s → z) ← "3 nghìn ZEN"</li>
+                        <li><strong>8000</strong>: <strong>has</strong> + <strong>sen</strong> (có âm ngắt) ← "8 nghìn HAS"</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎨 Mẹo 2: So sánh với số trăm</h4>
+                    <p><strong>Nhớ liên tưởng:</strong></p>
+                    <ul>
+                        <li>300 = <strong>san-byaku</strong> → 3000 = <strong>san-zen</strong> (cùng "san")</li>
+                        <li>800 = <strong>hap-pyaku</strong> → 8000 = <strong>has-sen</strong> (cùng âm ngắt)</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎮 Mẹo 3: Nhớ theo cặp</h4>
+                    <p style="background:var(--secondary-light);padding:15px;border-radius:10px;font-weight:800">
+                        <strong>3 trăm</strong> → <strong>3 nghìn</strong><br>
+                        さんびゃく → さんぜん<br><br>
+                        <strong>8 trăm</strong> → <strong>8 nghìn</strong><br>
+                        はっぴゃく → はっせん
+                    </p>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 Bảng số nghìn - SO SÁNH</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Số</th>
+                        <th>Cách đọc</th>
+                        <th>Giải thích</th>
+                        <th>Mẹo nhớ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1000</td>
+                        <td style="font-weight:900">せん</td>
+                        <td>Từ gốc</td>
+                        <td>🎯</td>
+                    </tr>
+                    <tr>
+                        <td>2000</td>
+                        <td>にせん</td>
+                        <td>Bình thường</td>
+                        <td>2 + sen</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td><strong>3000 ⚠️</strong></td>
+                        <td style="font-weight:900;color:var(--primary-dark)">さんぜん</td>
+                        <td><strong>ĐẶC BIỆT!</strong><br>s → z</td>
+                        <td>3 nghìn ZEN</td>
+                    </tr>
+                    <tr>
+                        <td>4000</td>
+                        <td>よんせん</td>
+                        <td>Bình thường</td>
+                        <td>4 + sen</td>
+                    </tr>
+                    <tr>
+                        <td>5000</td>
+                        <td>ごせん</td>
+                        <td>Bình thường</td>
+                        <td>5 + sen</td>
+                    </tr>
+                    <tr>
+                        <td>6000</td>
+                        <td>ろくせん</td>
+                        <td>Bình thường</td>
+                        <td>6 + sen</td>
+                    </tr>
+                    <tr>
+                        <td>7000</td>
+                        <td>ななせん</td>
+                        <td>Bình thường</td>
+                        <td>7 + sen</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td><strong>8000 ⚠️</strong></td>
+                        <td style="font-weight:900;color:var(--primary-dark)">はっせん</td>
+                        <td><strong>ĐẶC BIỆT!</strong><br>Có âm ngắt</td>
+                        <td>8 nghìn HAS</td>
+                    </tr>
+                    <tr>
+                        <td>9000</td>
+                        <td>きゅうせん</td>
+                        <td>Bình thường</td>
+                        <td>9 + sen</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">🎮 Ví dụ phức tạp - KẾT HỢP TRĂM + NGHÌN</h3>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🔢</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">3,680 = さんぜんろっぴゃくはちじゅう</div>
+                    <div class="vocab-romaji">san-zen rop-pyaku hachi-juu</div>
+                    <div class="vocab-meaning">3 nghìn + 6 trăm + 80 = 3680</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">💰</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">8,350円 = はっせんさんびゃくごじゅうえん</div>
+                    <div class="vocab-romaji">has-sen san-byaku go-juu en</div>
+                    <div class="vocab-meaning">8 nghìn + 3 trăm + 50 yên = 8350 yên</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">📅</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">2,026年 = にせんにじゅうろくねん</div>
+                    <div class="vocab-romaji">ni-sen ni-juu roku nen</div>
+                    <div class="vocab-meaning">năm 2026 (2 nghìn + 20 + 6)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Số lớn -->
+        <div class="card">
+            <h2 class="section-title">💎 Số Lớn (万・億・兆) 🌸</h2>
+            <p class="section-subtitle">おおきな すうじ - HỆ THỐNG ĐẾM NHẬT BẢN</p>
+            
+            <div class="explanation-box">
+                <h4>📚 ĐI KHÁC BIỆT QUAN TRỌNG!</h4>
+                <div class="step">
+                    <div class="step-title">🇻🇳 Tiếng Việt đếm theo nhóm 3 số 0:</div>
+                    <p>1,000 (nghìn) → 1,000,000 (triệu) → 1,000,000,000 (tỷ)</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">🇯🇵 Tiếng Nhật đếm theo nhóm 4 số 0:</div>
+                    <p>1,0000 (万 man) → 1,0000,0000 (億 oku) → 1,0000,0000,0000 (兆 chou)</p>
+                </div>
+                <div class="step">
+                    <div class="step-title">⚠️ Đây là điểm KHÓ NHẤT!</div>
+                    <p style="background:var(--warning-light);padding:15px;border-radius:8px;font-weight:900">
+                        10,000 ≠ "10 nghìn" mà = <strong>1万 (いちまん)</strong><br>
+                        100,000,000 ≠ "100 triệu" mà = <strong>1億 (いちおく)</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>🎯 MẸO NHỚ HỆ THỐNG 万 (MAN)</h4>
+                <div class="memory-trick">
+                    <h4>🎵 Mẹo 1: Nhớ 3 cấp độ</h4>
+                    <p style="background:var(--primary-light);padding:15px;border-radius:10px">
+                        <strong>Cấp 1:</strong> 万 (まん) = 10,000 (10 nghìn)<br>
+                        <strong>Cấp 2:</strong> 億 (おく) = 100,000,000 (100 triệu)<br>
+                        <strong>Cấp 3:</strong> 兆 (ちょう) = 1,000,000,000,000 (1 nghìn tỷ)
+                    </p>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎨 Mẹo 2: Hình tượng hóa</h4>
+                    <ul>
+                        <li><strong>万 (man)</strong>: Nghe như "man" trong "man mác" → 10,000 yên (khoảng 2,000,000 VNĐ) 💴</li>
+                        <li><strong>億 (oku)</strong>: Nghe như "ốc" → Con ốc sên bò chậm nhưng giàu (100 triệu!) 🐌</li>
+                        <li><strong>兆 (chou)</strong>: Nghe như "chào" → Chào tỷ phú! (1 nghìn tỷ) 👋💎</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-trick">
+                    <h4>🎮 Mẹo 3: Quy tắc tính nhanh</h4>
+                    <p><strong>Cách đếm:</strong></p>
+                    <ul>
+                        <li>1万 = いちまん (1 × 10,000)</li>
+                        <li>10万 = じゅうまん (10 × 10,000 = 100,000)</li>
+                        <li>100万 = ひゃくまん (100 × 10,000 = 1,000,000 ← 1 triệu!)</li>
+                        <li>1000万 = せんまん (1000 × 10,000 = 10,000,000)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 Bảng số lớn - CHI TIẾT</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Số</th>
+                        <th>Kanji</th>
+                        <th>Cách đọc</th>
+                        <th>Giá trị</th>
+                        <th>Mẹo nhớ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:var(--primary-light)">
+                        <td>10,000</td>
+                        <td style="font-size:1.5em;font-weight:900;color:var(--primary-dark)">万</td>
+                        <td style="font-weight:900">まん (man)</td>
+                        <td>10 nghìn</td>
+                        <td>💴 Lương cơ bản</td>
+                    </tr>
+                    <tr>
+                        <td>100,000,000</td>
+                        <td style="font-size:1.5em;font-weight:900;color:var(--primary-dark)">億</td>
+                        <td style="font-weight:900">おく (oku)</td>
+                        <td>100 triệu</td>
+                        <td>🏦 Tiền gửi ngân hàng</td>
+                    </tr>
+                    <tr>
+                        <td>1,000,000,000,000</td>
+                        <td style="font-size:1.5em;font-weight:900;color:var(--primary-dark)">兆</td>
+                        <td style="font-weight:900">ちょう (chou)</td>
+                        <td>1 nghìn tỷ</td>
+                        <td>💎 Siêu giàu!</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">📋 So sánh hệ thống đếm - HIỂU RÕ!</h3>
+            <table class="yoon-table">
+                <thead>
+                    <tr>
+                        <th>Số</th>
+                        <th>Tiếng Việt</th>
+                        <th>Tiếng Nhật</th>
+                        <th>Cách nhớ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10,000</td>
+                        <td>10 nghìn</td>
+                        <td style="font-weight:900">1万 (いちまん)</td>
+                        <td>1 × man</td>
+                    </tr>
+                    <tr>
+                        <td>100,000</td>
+                        <td>100 nghìn</td>
+                        <td style="font-weight:900">10万 (じゅうまん)</td>
+                        <td>10 × man</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td>1,000,000</td>
+                        <td>1 triệu</td>
+                        <td style="font-weight:900">100万 (ひゃくまん)</td>
+                        <td>⚠️ 100 × man</td>
+                    </tr>
+                    <tr>
+                        <td>10,000,000</td>
+                        <td>10 triệu</td>
+                        <td style="font-weight:900">1000万 (せんまん)</td>
+                        <td>1000 × man</td>
+                    </tr>
+                    <tr style="background:var(--warning-light)">
+                        <td>100,000,000</td>
+                        <td>100 triệu</td>
+                        <td style="font-weight:900">1億 (いちおく)</td>
+                        <td>⚠️ 1 × oku</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="font-size:1.5em;font-weight:900;color:var(--primary-dark);margin:25px 0 15px 0">🎮 Ví dụ thực tế - ỨNG DỤNG</h3>
+            <div class="vocab-item">
+                <div class="vocab-emoji">💵</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">50,000 = ごまん</div>
+                    <div class="vocab-romaji">go-man</div>
+                    <div class="vocab-meaning">50 nghìn (lương part-time 1 tháng) 💼</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🔢</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">123,456 = じゅうにまんさんぜんよんひゃくごじゅうろく</div>
+                    <div class="vocab-romaji">juu-ni-man san-zen yon-hyaku go-juu-roku</div>
+                    <div class="vocab-meaning">12万 + 3,000 + 400 + 56</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">💎</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">1,000,000 = ひゃくまん</div>
+                    <div class="vocab-romaji">hyaku-man</div>
+                    <div class="vocab-meaning">1 triệu (100 × 10,000) 💰</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🏦</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">5,000,000円 = ごひゃくまんえん</div>
+                    <div class="vocab-romaji">go-hyaku-man en</div>
+                    <div class="vocab-meaning">5 triệu yên (khoảng 1 tỷ VNĐ) 🏠</div>
+                </div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-emoji">🌟</div>
+                <div class="vocab-info">
+                    <div class="vocab-jp">1億 = いちおく</div>
+                    <div class="vocab-romaji">ichi-oku</div>
+                    <div class="vocab-meaning">100 triệu (siêu tiền!) 💎</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tổng kết -->
+        <div class="card">
+            <h2 class="section-title">📝 TỔNG KẾT - NHỚ NHANH! 🌸</h2>
+            <p class="section-subtitle">まとめ</p>
+            
+            <div class="tip-box" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(236,72,153,.1));border-color:var(--success)">
+                <h4>✅ 5 ĐIỀU CẦN NHỚ</h4>
+                <ol style="padding-left:20px;font-size:1.05em;font-weight:700;line-height:2">
+                    <li><strong>300, 600, 800</strong> → Biến âm (さんびゃく, ろっぴゃく, はっぴゃく)</li>
+                    <li><strong>3000, 8000</strong> → Đặc biệt (さんぜん, はっせん)</li>
+                    <li><strong>10,000</strong> = 1万 (いちまん) - KHÔNG phải じゅうまん!</li>
+                    <li><strong>Nhật đếm theo 4 số 0</strong> - Khác Việt Nam!</li>
+                    <li><strong>Luyện tập mỗi ngày</strong> - Đọc số khi thấy giá tiền!</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Bài tập -->
+        <div class="exercise-section">
+            <h2 class="section-title"> Bài Tập Thực Hành </h2>
+            <p class="section-subtitle">れんしゅう もんだい - Luyện tập để nhớ lâu!</p>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">1</span>
+                    <span>"300" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんひゃく</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">さんびゃく ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんぴゃく</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんせん</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">2</span>
+                    <span>"600" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ろくひゃく</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">ろっぴゃく ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ろくせん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんはっぴゃく</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">3</span>
+                    <span>"3000" đọc là gì?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんせん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">さんぜん ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">はっせん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">さんびゃく</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">4</span>
+                    <span>"10,000" trong tiếng Nhật là?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">じゅうまん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">いちまん ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ひゃくまん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">せんまん</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">5</span>
+                    <span>"800円" đọc là?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">はちひゃくえん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">はっぴゃくえん ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">はちせんえん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">はっせんえん</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-q">
+                    <span class="q-num">6</span>
+                    <span>"1 triệu" trong tiếng Nhật là?</span>
+                </div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">いちまん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">ひゃくおく</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, true)">ひゃくまん ✓</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this, false)">せんまん</div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="n5-ref2.html" class="btn btn-secondary">
+                📚 Về Trang Chủ Bổ Sung
+            </a>
+            <a href="n5-ref2-01.html" class="btn btn-secondary">
+                🔤 Chủ Đề 01: Âm Ghép & Âm Ngắt
+            </a>
+            <a href="n5.html" class="btn btn-primary">
+                🌱 Về Hub N5
+            </a>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <h3>🔢 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="font-size:1.5em;margin:15px 0">💖 ✨  🌸</p>
+        <p>日本語を一緒に学びましょう！</p>
+        <p style="margin-top:20px;font-size:.9em;opacity:.9">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="font-size:.85em;opacity:.85">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+    
+    <script>
+        function checkAnswer(element, isCorrect) {
+            const card = element.closest('.exercise-card');
+            const options = card.querySelectorAll('.exercise-opt');
+            const feedback = card.querySelector('.feedback');
+            
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt.textContent.includes('✓')) {
+                    opt.classList.add('correct');
+                }
+            });
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'feedback show correct';
+            } else {
+                element.classList.add('wrong');
+                feedback.textContent = '❌ Sai rồi! Hãy thử lại nhé!';
+                feedback.className = 'feedback show wrong';
+            }
+        }
+    </script>
+</body>
+</html>
