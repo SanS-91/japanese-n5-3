@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Chủ Đề 04: 250 Từ Mượn Katakana | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.1em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 4px 15px rgba(0,0,0,.08);min-width:130px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
+        .intro-box{background:linear-gradient(135deg,rgba(251,207,232,.2),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:20px;padding:25px;margin-bottom:30px}
+        .intro-box h3{color:var(--primary-dark);margin-bottom:12px;font-size:1.3em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .intro-box p{color:var(--text-soft);line-height:1.7;margin-bottom:10px}
+        .intro-box ul{padding-left:20px;color:var(--text-soft);line-height:1.7}
+        .intro-box li{margin-bottom:8px}
+        
+        .files-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:20px}
+        .file-card{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(251,207,232,.15)100%);border-radius:20px;padding:25px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block}
+        .file-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(236,72,153,.2);border-color:var(--primary)}
+        .file-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .file-header{display:flex;align-items:center;gap:15px;margin-bottom:15px}
+        .file-number{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;display:flex;align-items:center;justify-content:center;font-size:1.5em;font-weight:900;box-shadow:0 4px 12px rgba(236,72,153,.3);flex-shrink:0}
+        .file-title{font-size:1.2em;font-weight:900;color:var(--text);margin-bottom:5px}
+        .file-level{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .file-info{margin-bottom:15px}
+        .file-desc{font-size:.95em;color:var(--text-soft);line-height:1.6;margin-bottom:12px}
+        .file-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+        .file-tag{background:rgba(236,72,153,.1);color:var(--primary-dark);padding:4px 12px;border-radius:12px;font-size:.8em;font-weight:700}
+        .file-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+        .topic-tag{background:rgba(139,92,246,.1);color:var(--secondary-dark);padding:3px 10px;border-radius:10px;font-size:.75em;font-weight:700}
+        
+        .badge-core{background:linear-gradient(135deg,#10B981,#059669);color:white;font-size:.7em;padding:3px 10px;border-radius:12px;font-weight:800}
+        .badge-extended{background:linear-gradient(135deg,#8B5CF6,#EC4899);color:white;font-size:.7em;padding:3px 10px;border-radius:12px;font-weight:800}
+        .badge-bonus{background:linear-gradient(135deg,#F59E0B,#D97706);color:white;font-size:.7em;padding:3px 10px;border-radius:12px;font-weight:800}
+        
+        .file-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:10px 20px;border-radius:25px;font-weight:800;font-size:.9em;box-shadow:0 4px 12px rgba(236,72,153,.3);transition:.3s}
+        .file-card:hover .file-cta{transform:translateX(5px);box-shadow:0 6px 16px rgba(236,72,153,.4)}
+        
+        .bonus-section{background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(251,191,36,.1));border:2px solid var(--accent);border-radius:20px;padding:30px;margin:30px 0}
+        .bonus-section h3{color:var(--accent-dark);margin-bottom:20px;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:12px}
+        .bonus-item{background:rgba(255,255,255,.9);padding:20px;border-radius:15px;margin-bottom:15px;border-left:4px solid var(--accent)}
+        .bonus-item h4{color:var(--accent-dark);margin-bottom:10px;font-size:1.1em}
+        .bonus-item p{color:var(--text-soft);font-size:.95em;line-height:1.7}
+        .bonus-item ul{padding-left:20px;color:var(--text-soft);margin-top:10px}
+        .bonus-item li{margin-bottom:6px}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.files-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.files-grid{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card{padding:22px}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📝</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-ref2.html" class="active">📚 Bổ Sung</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+            <li><a href="n3.html">🌳 N3</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-ref2.html">📚 Bổ Sung</a> › <span>📝 Chủ Đề 04: 250 Từ Mượn Katakana</span></div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="hero-badge">📝 Chủ Đề Bổ Sung 04 • 250 Từ Mượn Katakana</span>
+            <h1>Lộ Trình Katakana N5<br>12 Level Chi Tiết</h1>
+            <div class="hero-jp">カタカナ 250 ご</div>
+            <p class="hero-desc">Bộ 250 từ mượn Katakana được sắp xếp từ dễ đến khó, theo 12 chủ đề. Bao gồm ~180 từ cốt lõi N5 và ~70 từ mở rộng giao tiếp hiện đại cực kỳ hữu ích!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">250</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">12</span><span class="stat-label">Level</span></div>
+                <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">File bài học</span></div>
+                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Bài tổng hợp</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="intro-box">
+                <h3>🎯 Cấu trúc bộ tài liệu</h3>
+                <p>Bộ từ vựng này được thiết kế để tối ưu hóa việc ghi nhớ, tránh gây quá tải cho người học mới:</p>
+                <ul>
+                    <li>📊 <strong>12 Level:</strong> Mỗi level khoảng 20-22 từ, tổng cộng ~250 từ.</li>
+                    <li>📈 <strong>Tiến trình:</strong> Sắp xếp từ những từ gặp ngay ngày đầu (K1) đến các từ chuyên ngành/giao tiếp hiện đại (K12).</li>
+                    <li>🏷️ <strong>Phân loại rõ ràng:</strong> Các từ ở Level 10-12 và các từ Wasei-eigo (和製英語) được gắn nhãn <span class="badge-extended">Mở rộng</span>. Đây là những từ không phải trọng tâm đề thi JLPT N5, nhưng người Nhật dùng hằng ngày và rất cần thiết khi lên N4 hoặc giao tiếp thực tế.</li>
+                    <li> <strong>5 Bài tổng hợp cuối khóa:</strong> Quy tắc trường âm, âm ngắt, âm ghép, từ viết tắt và Wasei-eigo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><span>📚</span> 6 File Bài Học <span>📝</span></h2>
+            <p class="section-subtitle">Chọn file để bắt đầu học - Mỗi file chứa 2 Level (~40-45 từ)</p>
+            
+            <div class="files-grid">
+                <!-- File 1 -->
+                <a href="n5-ref2-04-1.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">01</div>
+                        <div>
+                            <div class="file-title">K1 + K2</div>
+                            <div class="file-level">41 từ • N5 cốt lõi</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Học những từ ai cũng gặp ngay ngày đầu học tiếng Nhật và các từ vựng trường học cơ bản.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag">🌟 Từ đầu tiên</span>
+                            <span class="topic-tag"> Trường học</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag"> 41 từ</span>
+                            <span class="badge-core">N5 cốt lõi</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+
+                <!-- File 2 -->
+                <a href="n5-ref2-04-2.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">02</div>
+                        <div>
+                            <div class="file-title">K3 + K4</div>
+                            <div class="file-level">42 từ • N5 cốt lõi</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Từ vựng về nhà cửa, đồ dùng gia đình và các từ liên quan đến mua sắm, cửa hàng.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag"> Nhà cửa</span>
+                            <span class="topic-tag">🛍️ Mua sắm</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag">📊 42 từ</span>
+                            <span class="badge-core">N5 cốt lõi</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+
+                <!-- File 3 -->
+                <a href="n5-ref2-04-3.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">03</div>
+                        <div>
+                            <div class="file-title">K5 + K6</div>
+                            <div class="file-level">42 từ • N5 cốt lõi</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Đồ ăn, thức uống phổ biến và các từ vựng về quần áo, phụ kiện thời trang.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag"> Đồ ăn</span>
+                            <span class="topic-tag">👗 Quần áo</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag">📊 42 từ</span>
+                            <span class="badge-core">N5 cốt lõi</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+
+                <!-- File 4 -->
+                <a href="n5-ref2-04-4.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">04</div>
+                        <div>
+                            <div class="file-title">K7 + K8</div>
+                            <div class="file-level">41 từ • N5 cốt lõi</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Phương tiện di chuyển, du lịch và từ vựng về công việc, văn phòng.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag"> Phương tiện</span>
+                            <span class="topic-tag">💼 Công việc</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag">📊 41 từ</span>
+                            <span class="badge-core">N5 cốt lõi</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+
+                <!-- File 5 -->
+                <a href="n5-ref2-04-5.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">05</div>
+                        <div>
+                            <div class="file-title">K9 + K10</div>
+                            <div class="file-level">42 từ • N5 + Mở rộng</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Thể thao, giải trí và tên các quốc gia. Level K10 là từ mở rộng giao tiếp.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag"> Thể thao</span>
+                            <span class="topic-tag">🌍 Quốc gia</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag">📊 42 từ</span>
+                            <span class="badge-core">N5</span>
+                            <span class="badge-extended">Mở rộng</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+
+                <!-- File 6 -->
+                <a href="n5-ref2-04-6.html" class="file-card">
+                    <div class="file-header">
+                        <div class="file-number">06</div>
+                        <div>
+                            <div class="file-title">K11 + K12 + Bonus</div>
+                            <div class="file-level">43 từ + 5 bài • Mở rộng</div>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="file-desc">Từ giao tiếp hiện đại, công nghệ và 5 bài tổng hợp cuối khóa về quy tắc Katakana.</div>
+                        <div class="file-topics">
+                            <span class="topic-tag">💬 Giao tiếp</span>
+                            <span class="topic-tag">💻 Công nghệ</span>
+                            <span class="topic-tag">🎁 5 Bài bonus</span>
+                        </div>
+                        <div class="file-meta">
+                            <span class="file-tag">📊 43 từ</span>
+                            <span class="badge-extended">Mở rộng</span>
+                            <span class="badge-bonus">Bonus</span>
+                        </div>
+                    </div>
+                    <div class="file-cta">Bắt đầu học →</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="bonus-section">
+            <h3>🎁 5 Bài Tổng Hợp Cuối Khóa</h3>
+            <p style="color:var(--text-soft);margin-bottom:15px">Nằm trong file 06 - Tổng hợp các quy tắc quan trọng nhất của Katakana:</p>
+            
+            <div class="bonus-item">
+                <h4>1️ Quy tắc Trường âm (ー)</h4>
+                <p>Kéo dài nguyên âm đứng trước nó thêm 1 nhịp. Rất quan trọng vì đọc sai có thể thay đổi nghĩa.</p>
+                <ul>
+                    <li><strong>おばさん</strong> (obasan - cô/dì) vs <strong>おばあさん</strong> (obāsan - bà)</li>
+                    <li><strong>ビル</strong> (biru - tòa nhà) vs <strong>ビール</strong> (bīru - bia)</li>
+                </ul>
+            </div>
+
+            <div class="bonus-item">
+                <h4>2️⃣ Âm ngắt nhỏ (ッ)</h4>
+                <p>Tạo ra một khoảng dừng ngắn (1 nhịp) trước phụ âm đứng sau nó. Giúp phân biệt ý nghĩa.</p>
+                <ul>
+                    <li><strong>きて</strong> (kite - hãy đến) vs <strong>きって</strong> (kitte - tem thư)</li>
+                    <li><strong>さか</strong> (saka - dốc) vs <strong>さっか</strong> (sakka - nhà văn)</li>
+                </ul>
+            </div>
+
+            <div class="bonus-item">
+                <h4>3️⃣ Âm ghép (ャュョ)</h4>
+                <p>Kết hợp chữ hàng <strong>い</strong> (き, し, ち, に, ひ, み, り) + /ゅ/ょ nhỏ. Đọc gộp thành 1 âm tiết duy nhất.</p>
+                <ul>
+                    <li>き + ょ = <strong>きょ</strong> (kyo) trong <strong>きょう</strong> (kyou - hôm nay)</li>
+                    <li>し + ゅ = <strong>しゅ</strong> (shu) trong <strong>しゅみ</strong> (shumi - sở thích)</li>
+                </ul>
+            </div>
+
+            <div class="bonus-item">
+                <h4>4️⃣ Từ viết tắt phổ biến</h4>
+                <p>Người Nhật rất thích rút gọn các từ Katakana dài để nói nhanh hơn.</p>
+                <ul>
+                    <li><strong>パソコン</strong> (pasokon) ← パーソナルコンピューター (Máy tính cá nhân)</li>
+                    <li><strong>スマホ</strong> (sumaho) ← スマートフォン (Smartphone)</li>
+                    <li><strong>コンビニ</strong> (konbini) ← コンビニエンスストア (Cửa hàng tiện lợi)</li>
+                    <li><strong>リモコン</strong> (rimokon) ← リモートコントロール (Điều khiển từ xa)</li>
+                </ul>
+            </div>
+
+            <div class="bonus-item">
+                <h4>5️⃣ Wasei-eigo (和製英語 - Tiếng Anh kiểu Nhật)</h4>
+                <p>Những từ trông giống tiếng Anh nhưng ý nghĩa trong tiếng Nhật lại khác hoặc hẹp hơn.</p>
+                <ul>
+                    <li><strong>マンション</strong> (manshon): Không phải "mansion" (biệt thự), mà là <em>chung cư cao cấp</em>.</li>
+                    <li><strong>サラリーマン</strong> (sararīman): Không phải "salary man" chung chung, mà chỉ <em>nhân viên văn phòng làm công ăn lương</em>.</li>
+                    <li><strong>ナイター</strong> (naitā): Trận đấu thể thao tổ chức <em>ban đêm</em> (night game).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-ref2.html" class="btn btn-secondary"><span>📚</span> Về Trang Chủ Bổ Sung</a>
+            <a href="n5-ref2-04-1.html" class="btn btn-primary"><span>🚀</span> Bắt Đầu Từ File 01</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📝 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 📝 📚</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+</body>
+</html>

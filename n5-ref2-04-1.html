@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 File 01: K1 + K2 - 41 Từ Mượn Katakana | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.1em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:25px;position:relative;z-index:2}
+        .stat-item{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 30px;border-radius:22px;box-shadow:0 4px 15px rgba(0,0,0,.08);min-width:130px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .stat-number{font-size:2.5em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
+        .level-header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-radius:20px;padding:25px;margin-bottom:25px;position:relative;overflow:hidden}
+        .level-header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,.2),transparent 70%);pointer-events:none}
+        .level-header h3{font-size:1.8em;font-weight:900;margin-bottom:10px;position:relative;z-index:2}
+        .level-header p{font-size:1.05em;opacity:.95;position:relative;z-index:2}
+        
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:20px}
+        .vocab-card{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(251,207,232,.15)100%);border-radius:16px;padding:22px;border:2px solid var(--border);transition:.3s;position:relative;overflow:hidden}
+        .vocab-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(236,72,153,.15);border-color:var(--primary)}
+        .vocab-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .vocab-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .vocab-icon{font-size:2.2em;flex-shrink:0}
+        .vocab-katakana{font-family:'M PLUS Rounded 1c';font-size:1.6em;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .vocab-reading{font-size:.9em;color:var(--text-muted);font-weight:700}
+        .vocab-meaning{font-size:1.1em;color:var(--text);font-weight:800;margin-bottom:10px}
+        
+        .vocab-example{background:rgba(251,207,232,.3);padding:12px 15px;border-radius:12px;font-size:.92em;color:var(--text-soft);border-left:4px solid var(--primary);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+        .vocab-example-text{flex:1}
+        .vocab-origin{font-size:.75em;color:var(--text-light);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+        
+        .audio-btn{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;transition:.3s;font-size:1em;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(236,72,153,.3)}
+        .audio-btn:hover{transform:scale(1.1);box-shadow:0 4px 12px rgba(236,72,153,.4)}
+        .audio-btn-small{width:30px;height:30px;font-size:.9em}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.vocab-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.vocab-grid{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card{padding:22px}.vocab-example{flex-direction:column;align-items:flex-start}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📝</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html"> Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-ref2.html">📚 Bổ Sung</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+            <li><a href="n3.html">🌳 N3</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-ref2.html">📚 Bổ Sung</a> › <a href="n5-ref2-04.html">📝 Chủ Đề 04</a> › <span>File 01: K1 + K2</span></div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="hero-badge">📝 File 01 • K1 + K2 • 41 Từ</span>
+            <h1>Từ Katakana Đầu Tiên<br>& Trường Học</h1>
+            <div class="hero-jp">はじめての カタカナ ・ がっこう</div>
+            <p class="hero-desc">Bắt đầu hành trình với những từ Katakana phổ biến nhất mà ai cũng gặp ngay ngày đầu học tiếng Nhật, cùng với từ vựng trường học cơ bản!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">41</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Level</span></div>
+                <div class="stat-item"><span class="stat-number">82</span><span class="stat-label">Audio</span></div>
+                <div class="stat-item"><span class="stat-number">41</span><span class="stat-label">Ví dụ</span></div>
+            </div>
+        </div>
+
+        <!-- LEVEL K1 -->
+        <div class="card">
+            <div class="level-header">
+                <h3>🌟 LEVEL K1 – Từ Katakana đầu tiên (20 từ)</h3>
+                <p>Học những từ ai cũng gặp ngay ngày đầu học tiếng Nhật. Đây là những từ mượn phổ biến nhất trong giao tiếp hàng ngày.</p>
+            </div>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🍞</span>
+                        <div>
+                            <div class="vocab-katakana">パン</div>
+                            <div class="vocab-reading">pan</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bánh mì</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">パンを たべます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('パンをたべます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇹 Từ tiếng Bồ Đào Nha "pão"</div>
+                    <button class="audio-btn" onclick="playAudio('パン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">☕</span>
+                        <div>
+                            <div class="vocab-katakana">コーヒー</div>
+                            <div class="vocab-reading">kōhī</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Cà phê</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">コーヒーを のみます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('コーヒーをのみます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇳🇱 Từ tiếng Hà Lan "koffie"</div>
+                    <button class="audio-btn" onclick="playAudio('コーヒー')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🍰</span>
+                        <div>
+                            <div class="vocab-katakana">ケーキ</div>
+                            <div class="vocab-reading">kēki</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bánh ngọt</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ケーキを たべます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ケーキをたべます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "cake"</div>
+                    <button class="audio-btn" onclick="playAudio('ケーキ')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📺</span>
+                        <div>
+                            <div class="vocab-katakana">テレビ</div>
+                            <div class="vocab-reading">terebi</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Tivi</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">テレビを みます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('テレビをみます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "television"</div>
+                    <button class="audio-btn" onclick="playAudio('テレビ')" style="position:absolute;top:22px;right:22px"></button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📻</span>
+                        <div>
+                            <div class="vocab-katakana">ラジオ</div>
+                            <div class="vocab-reading">rajio</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Radio</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ラジオを ききます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ラジオをききます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "radio"</div>
+                    <button class="audio-btn" onclick="playAudio('ラジオ')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon"></span>
+                        <div>
+                            <div class="vocab-katakana">カメラ</div>
+                            <div class="vocab-reading">kamera</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Máy ảnh</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">カメラで しゃしんを とります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('カメラでしゃしんをとります')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇱 Từ tiếng Hà Lan "camera"</div>
+                    <button class="audio-btn" onclick="playAudio('カメラ')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon"></span>
+                        <div>
+                            <div class="vocab-katakana">バス</div>
+                            <div class="vocab-reading">basu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Xe buýt</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">バスに のります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('バスにのります')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬 Từ tiếng Anh "bus"</div>
+                    <button class="audio-btn" onclick="playAudio('バス')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🚕</span>
+                        <div>
+                            <div class="vocab-katakana">タクシー</div>
+                            <div class="vocab-reading">takushī</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Taxi</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">タクシーに のります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('タクシーにのります')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "taxi"</div>
+                    <button class="audio-btn" onclick="playAudio('タクシー')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🏨</span>
+                        <div>
+                            <div class="vocab-katakana">ホテル</div>
+                            <div class="vocab-reading">hoteru</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Khách sạn</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ホテルに とまります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ホテルにとまります')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "hotel"</div>
+                    <button class="audio-btn" onclick="playAudio('ホテル')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">️</span>
+                        <div>
+                            <div class="vocab-katakana">レストラン</div>
+                            <div class="vocab-reading">resutoran</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Nhà hàng</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">レストランで たべます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('レストランでたべます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇫🇷 Từ tiếng Pháp "restaurant"</div>
+                    <button class="audio-btn" onclick="playAudio('レストラン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon"></span>
+                        <div>
+                            <div class="vocab-katakana">メニュー</div>
+                            <div class="vocab-reading">menyū</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Thực đơn</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">メニューを みせて ください。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('メニューをみせてください')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇫🇷 Từ tiếng Pháp "menu"</div>
+                    <button class="audio-btn" onclick="playAudio('メニュー')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">👜</span>
+                        <div>
+                            <div class="vocab-katakana">バッグ</div>
+                            <div class="vocab-reading">baggu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Túi xách</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">バッグを もちます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('バッグをもちます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "bag"</div>
+                    <button class="audio-btn" onclick="playAudio('バッグ')" style="position:absolute;top:22px;right:22px"></button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📓</span>
+                        <div>
+                            <div class="vocab-katakana">ノート</div>
+                            <div class="vocab-reading">nōto</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Vở</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ノートに かきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ノートにかきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "note"</div>
+                    <button class="audio-btn" onclick="playAudio('ノート')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">️</span>
+                        <div>
+                            <div class="vocab-katakana">ペン</div>
+                            <div class="vocab-reading">pen</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bút</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ペンで かきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ペンでかきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "pen"</div>
+                    <button class="audio-btn" onclick="playAudio('ペン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">💳</span>
+                        <div>
+                            <div class="vocab-katakana">カード</div>
+                            <div class="vocab-reading">kādo</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Thẻ</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">カードで はらいます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('カードではらいます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "card"</div>
+                    <button class="audio-btn" onclick="playAudio('カード')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon"></span>
+                        <div>
+                            <div class="vocab-katakana">ゲーム</div>
+                            <div class="vocab-reading">gēmu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Trò chơi</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ゲームを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ゲームをします')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "game"</div>
+                    <button class="audio-btn" onclick="playAudio('ゲーム')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🎾</span>
+                        <div>
+                            <div class="vocab-katakana">テニス</div>
+                            <div class="vocab-reading">tenisu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Tennis</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">テニスを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('テニスをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "tennis"</div>
+                    <button class="audio-btn" onclick="playAudio('テニス')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">⚽</span>
+                        <div>
+                            <div class="vocab-katakana">サッカー</div>
+                            <div class="vocab-reading">sakkā</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bóng đá</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">サッカーを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('サッカーをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "soccer"</div>
+                    <button class="audio-btn" onclick="playAudio('サッカー')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🎸</span>
+                        <div>
+                            <div class="vocab-katakana">ギター</div>
+                            <div class="vocab-reading">gitā</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Đàn guitar</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ギターを ひきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ギターをひきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "guitar"</div>
+                    <button class="audio-btn" onclick="playAudio('ギター')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🎹</span>
+                        <div>
+                            <div class="vocab-katakana">ピアノ</div>
+                            <div class="vocab-reading">piano</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Đàn piano</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ピアノを ひきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ピアノをひきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇮🇹 Từ tiếng Ý "piano"</div>
+                    <button class="audio-btn" onclick="playAudio('ピアノ')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL K2 -->
+        <div class="card">
+            <div class="level-header">
+                <h3>🏫 LEVEL K2 – Trường học (21 từ)</h3>
+                <p>Các từ vựng Katakana liên quan đến trường học, văn phòng và công nghệ cơ bản. Những từ này bạn sẽ gặp khi học tập và làm việc.</p>
+            </div>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🖊️</span>
+                        <div>
+                            <div class="vocab-katakana">ボールペン</div>
+                            <div class="vocab-reading">bōrupen</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bút bi</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ボールペンで かきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ボールペンでかきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬 Từ tiếng Anh "ballpoint pen"</div>
+                    <button class="audio-btn" onclick="playAudio('ボールペン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">️</span>
+                        <div>
+                            <div class="vocab-katakana">シャープペンシル</div>
+                            <div class="vocab-reading">shāpupenshiru</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bút chì kim</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">シャープペンシルを つかいます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('シャープペンシルをつかいます')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "sharp pencil"</div>
+                    <button class="audio-btn" onclick="playAudio('シャープペンシル')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon"></span>
+                        <div>
+                            <div class="vocab-katakana">ファイル</div>
+                            <div class="vocab-reading">fairu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Tệp hồ sơ</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">ファイルを とじます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('ファイルをとじます')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "file"</div>
+                    <button class="audio-btn" onclick="playAudio('ファイル')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📄</span>
+                        <div>
+                            <div class="vocab-katakana">コピー</div>
+                            <div class="vocab-reading">kopī</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bản sao / Photo</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">コピーを とります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('コピーをとります')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "copy"</div>
+                    <button class="audio-btn" onclick="playAudio('コピー')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📝</span>
+                        <div>
+                            <div class="vocab-katakana">テスト</div>
+                            <div class="vocab-reading">tesuto</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bài kiểm tra</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">テストを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('テストをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "test"</div>
+                    <button class="audio-btn" onclick="playAudio('テスト')" style="position:absolute;top:22px;right:22px"></button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">👥</span>
+                        <div>
+                            <div class="vocab-katakana">クラス</div>
+                            <div class="vocab-reading">kurasu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Lớp học</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">クラスが はじまります。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('クラスがはじまります')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "class"</div>
+                    <button class="audio-btn" onclick="playAudio('クラス')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">💻</span>
+                        <div>
+                            <div class="vocab-katakana">コンピューター</div>
+                            <div class="vocab-reading">konpyūtā</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Máy tính</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">コンピューターを つかいます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('コンピューターをつかいます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "computer"</div>
+                    <button class="audio-btn" onclick="playAudio('コンピューター')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🖥️</span>
+                        <div>
+                            <div class="vocab-katakana">パソコン</div>
+                            <div class="vocab-reading">pasokon</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Máy tính cá nhân</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">パソコンで しごとを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('パソコンでしごとをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ viết tắt "personal computer"</div>
+                    <button class="audio-btn" onclick="playAudio('パソコン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">️</span>
+                        <div>
+                            <div class="vocab-katakana">マウス</div>
+                            <div class="vocab-reading">mausu</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Chuột máy tính</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">マウスを うごかします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('マウスをうごかします')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "mouse"</div>
+                    <button class="audio-btn" onclick="playAudio('マウス')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">⌨️</span>
+                        <div>
+                            <div class="vocab-katakana">キーボード</div>
+                            <div class="vocab-reading">kībōdo</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Bàn phím</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">キーボードで にゅうりょくします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('キーボードでにゅうりょくします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "keyboard"</div>
+                    <button class="audio-btn" onclick="playAudio('キーボード')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🖨️</span>
+                        <div>
+                            <div class="vocab-katakana">プリンター</div>
+                            <div class="vocab-reading">purintā</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Máy in</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">プリンターで いんさつします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('プリンターでいんさつします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "printer"</div>
+                    <button class="audio-btn" onclick="playAudio('プリンター')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🌐</span>
+                        <div>
+                            <div class="vocab-katakana">インターネット</div>
+                            <div class="vocab-reading">intānetto</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Internet</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">インターネットを つかいます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('インターネットをつかいます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "internet"</div>
+                    <button class="audio-btn" onclick="playAudio('インターネット')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📧</span>
+                        <div>
+                            <div class="vocab-katakana">メール</div>
+                            <div class="vocab-reading">mēru</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Email</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">メールを かきます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('メールをかきます')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "mail"</div>
+                    <button class="audio-btn" onclick="playAudio('メール')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">💾</span>
+                        <div>
+                            <div class="vocab-katakana">データ</div>
+                            <div class="vocab-reading">dēta</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Dữ liệu</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">データを ほぞんします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('データをほぞんします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "data"</div>
+                    <button class="audio-btn" onclick="playAudio('データ')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">✅</span>
+                        <div>
+                            <div class="vocab-katakana">チェック</div>
+                            <div class="vocab-reading">chekku</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Kiểm tra</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">チェックを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('チェックをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ tiếng Anh "check"</div>
+                    <button class="audio-btn" onclick="playAudio('チェック')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">️</span>
+                        <div>
+                            <div class="vocab-katakana">コピー機</div>
+                            <div class="vocab-reading">kopīki</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Máy photo</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">コピー機を つかいます。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('コピー機をつかいます')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ "copy" + 機 (máy)</div>
+                    <button class="audio-btn" onclick="playAudio('コピーき')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📅</span>
+                        <div>
+                            <div class="vocab-katakana">スケジュール</div>
+                            <div class="vocab-reading">sukejūru</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Lịch trình</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">スケジュールを かくにんします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('スケジュールをかくにんします')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬 Từ tiếng Anh "schedule"</div>
+                    <button class="audio-btn" onclick="playAudio('スケジュール')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🎯</span>
+                        <div>
+                            <div class="vocab-katakana">プロジェクト</div>
+                            <div class="vocab-reading">purojekuto</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Dự án</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">プロジェクトを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('プロジェクトをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "project"</div>
+                    <button class="audio-btn" onclick="playAudio('プロジェクト')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📊</span>
+                        <div>
+                            <div class="vocab-katakana">プレゼン</div>
+                            <div class="vocab-reading">purezen</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Thuyết trình</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">プレゼンを します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('プレゼンをします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇧 Từ viết tắt "presentation"</div>
+                    <button class="audio-btn" onclick="playAudio('プレゼン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">🌐</span>
+                        <div>
+                            <div class="vocab-katakana">オンライン</div>
+                            <div class="vocab-reading">onrain</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Trực tuyến</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">オンラインで べんきょうします。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('オンラインでべんきょうします')"></button>
+                    </div>
+                    <div class="vocab-origin">🇬 Từ tiếng Anh "online"</div>
+                    <button class="audio-btn" onclick="playAudio('オンライン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📴</span>
+                        <div>
+                            <div class="vocab-katakana">オフライン</div>
+                            <div class="vocab-reading">ofurain</div>
+                        </div>
+                    </div>
+                    <div class="vocab-meaning">Ngoại tuyến</div>
+                    <div class="vocab-example">
+                        <span class="vocab-example-text">オフラインで します。</span>
+                        <button class="audio-btn audio-btn-small" onclick="playAudio('オフラインでします')">🔊</button>
+                    </div>
+                    <div class="vocab-origin">🇬🇧 Từ tiếng Anh "offline"</div>
+                    <button class="audio-btn" onclick="playAudio('オフライン')" style="position:absolute;top:22px;right:22px">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-ref2-04.html" class="btn btn-secondary"><span>📚</span> Về Trang Chủ Bổ Sung</a>
+            <a href="n5-ref2-04-2.html" class="btn btn-primary"><span>➡️</span> File 02: K3 + K4</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📝 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em"> ✨ 📝 📚</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+
+    <script>
+        function playAudio(text){
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        window.addEventListener('load', () => {
+            window.speechSynthesis.getVoices();
+        });
+    </script>
+</body>
+</html>
