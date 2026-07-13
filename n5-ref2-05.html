@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔗 Chủ Đề 05: Trợ Từ Nâng Cao | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#EC4899;--primary-dark:#DB2777;--primary-light:#FBCFE8;
+            --secondary:#8B5CF6;--secondary-dark:#7C3AED;--secondary-light:#C4B5FD;
+            --accent:#F59E0B;--accent-dark:#D97706;--accent-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
+            --warning:#F59E0B;--warning-dark:#D97706;--warning-light:#FDE68A;
+            --info:#3B82F6;--info-dark:#2563EB;--info-light:#DBEAFE;
+            --danger:#EF4444;--danger-dark:#DC2626;--danger-light:#FEE2E2;
+            --text:#1F2937;--text-soft:#374151;--text-muted:#6B7280;--text-light:#9CA3AF;
+            --card:#FFFFFF;--border:#E5E7EB;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:radial-gradient(circle at 15% 20%,rgba(236,72,153,.08)0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(139,92,246,.08)0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(245,158,11,.06)0%,transparent 40%),linear-gradient(135deg,#FDF2F8 0%,#EDE9FE 50%,#FDF2F8 100%);background-attachment:fixed;color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-circle{position:fixed;border-radius:50%;opacity:.1;z-index:0;animation:floatBg 25s infinite ease-in-out;filter:blur(4px)}
+        .bg-circle:nth-child(1){width:320px;height:320px;background:var(--primary);top:8%;left:5%;animation-delay:0s}
+        .bg-circle:nth-child(2){width:260px;height:260px;background:var(--secondary);top:55%;right:8%;animation-delay:7s}
+        .bg-circle:nth-child(3){width:200px;height:200px;background:var(--accent);top:30%;left:60%;animation-delay:14s}
+        @keyframes floatBg{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent)) 1;box-shadow:0 2px 15px rgba(0,0,0,.05)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(251,207,232,.3)50%,rgba(196,181,253,.3)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:2px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(236,72,153,.06),transparent,rgba(139,92,246,.06),transparent);animation:rotate 25s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.15);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.1em;color:var(--text-soft);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        
+        .card{background:rgba(255,255,255,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-radius:28px;padding:38px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:30px;border:2px solid var(--border);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.7}
+        
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:35px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
+        
+        .intro-box{background:linear-gradient(135deg,rgba(251,207,232,.2),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:20px;padding:25px;margin-bottom:30px}
+        .intro-box h3{color:var(--primary-dark);margin-bottom:12px;font-size:1.3em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .intro-box p{color:var(--text-soft);line-height:1.7;margin-bottom:10px}
+        .intro-box ul{padding-left:20px;color:var(--text-soft);line-height:1.7}
+        .intro-box li{margin-bottom:8px}
+        
+        .particle-group{background:rgba(255,255,255,.95);border-radius:20px;padding:30px;margin-bottom:25px;border:2px solid var(--border);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .particle-group h3{color:var(--primary-dark);margin-bottom:15px;font-size:1.4em;font-weight:900;display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:2px solid var(--primary-light)}
+        
+        .compare-box{background:linear-gradient(135deg,rgba(251,207,232,.15),rgba(196,181,253,.15));border-radius:15px;padding:20px;margin:15px 0;border-left:4px solid var(--primary)}
+        .compare-box h4{color:var(--primary-dark);margin-bottom:10px;font-size:1.1em;font-weight:900}
+        .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+        .compare-item{background:rgba(255,255,255,.9);padding:15px;border-radius:12px;border:2px solid var(--border)}
+        .compare-item h5{color:var(--primary-dark);margin-bottom:8px;font-size:1em;font-weight:900;display:flex;align-items:center;gap:8px}
+        .compare-item p{color:var(--text-soft);font-size:.9em;line-height:1.6}
+        .compare-item .example{background:rgba(251,207,232,.3);padding:8px 12px;border-radius:8px;margin-top:8px;font-family:'M PLUS Rounded 1c';font-size:.95em;color:var(--text)}
+        
+        .particle-card{background:rgba(255,255,255,.95);border-radius:15px;padding:20px;margin:15px 0;border:2px solid var(--border);transition:.3s}
+        .particle-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1);border-color:var(--primary)}
+        .particle-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px dashed var(--primary-light)}
+        .particle-name{font-family:'M PLUS Rounded 1c';font-size:2em;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .particle-reading{font-size:.95em;color:var(--text-muted);font-weight:700}
+        .particle-meaning{font-size:1.05em;color:var(--text);font-weight:700;margin-bottom:10px}
+        .particle-desc{color:var(--text-soft);font-size:.92em;line-height:1.7;margin-bottom:12px}
+        .example-list{display:grid;gap:10px}
+        .example-item{background:rgba(251,207,232,.2);padding:12px 15px;border-radius:10px;border-left:3px solid var(--primary)}
+        .example-jp{font-family:'M PLUS Rounded 1c';font-size:1.05em;color:var(--text);font-weight:800;margin-bottom:5px}
+        .example-vn{color:var(--text-soft);font-size:.9em}
+        
+        .tip-box{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(251,191,36,.15));border:2px solid var(--accent);border-radius:15px;padding:20px;margin:20px 0}
+        .tip-box h4{color:var(--accent-dark);margin-bottom:10px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .tip-box p,.tip-box ul{color:var(--text-soft);font-size:.95em;line-height:1.7}
+        .tip-box ul{padding-left:20px}
+        .tip-box li{margin-bottom:6px}
+        
+        .warning-box{background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(220,38,38,.1));border:2px solid var(--danger);border-radius:15px;padding:20px;margin:20px 0}
+        .warning-box h4{color:var(--danger-dark);margin-bottom:10px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
+        .warning-box p,.warning-box ul{color:var(--text-soft);font-size:.95em;line-height:1.7}
+        .warning-box ul{padding-left:20px}
+        
+        .summary-table{width:100%;border-collapse:collapse;margin:20px 0;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        .summary-table th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:12px;font-weight:800;text-align:center;border:2px solid var(--primary-light)}
+        .summary-table td{padding:10px;text-align:center;border:2px solid var(--border);font-family:'M PLUS Rounded 1c';font-size:.95em}
+        .summary-table tr:nth-child(even){background:rgba(251,207,232,.1)}
+        .summary-table tr:hover{background:rgba(251,207,232,.2)}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(251,207,232,.25),rgba(196,181,253,.2));border:2px solid var(--border);border-radius:28px;padding:35px;margin:30px 0;position:relative;overflow:hidden}
+        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));opacity:.7}
+        .exercise-card{background:rgba(255,255,255,.95);border-radius:20px;padding:22px;margin:15px 0;border:2px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+        .exercise-q{font-size:1.05em;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .q-num{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85em;flex-shrink:0;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+        .exercise-opt{background:var(--primary-light);padding:12px;border-radius:12px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
+        .exercise-opt:hover{background:var(--primary);color:white;transform:translateY(-2px)}
+        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
+        .exercise-opt.wrong{background:var(--danger);color:white;border-color:var(--danger-dark)}
+        .feedback{margin-top:12px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
+        .feedback.show{display:block}
+        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
+        .feedback.wrong{background:var(--danger-light);color:var(--danger-dark);border:2px solid var(--danger)}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:40px;flex-wrap:wrap}
+        .btn{padding:14px 32px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2);background-position:right center}
+        .btn-secondary{background:rgba(255,255,255,.95);color:var(--text);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:8px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){.exercise-options{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
+        @media(max-width:600px){.exercise-options{grid-template-columns:1fr}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:2em}.hero-jp{font-size:1.3em}.card,.exercise-section{padding:22px}.compare-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🔗</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-ref2.html">📚 Bổ Sung</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+            <li><a href="n3.html">🌳 N3</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-ref2.html">📚 Bổ Sung</a> › <span>🔗 Chủ Đề 05: Trợ Từ Nâng Cao</span></div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="hero-badge">🔗 Chủ Đề Bổ Sung 05 • Trợ Từ Nâng Cao</span>
+            <h1>Trợ Từ Nâng Cao<br>Trong Tiếng Nhật</h1>
+            <div class="hero-jp">じょしの こうきゅう</div>
+            <p class="hero-desc">Phân biệt chi tiết các trợ từ dễ nhầm: は vs が, を vs が, に vs で vs へ, と vs や, から vs ので... Giúp bạn nói tiếng Nhật tự nhiên và chính xác hơn!</p>
+        </div>
+
+        <!-- GIỚI THIỆU -->
+        <div class="card">
+            <h3 class="section-title"><span>📚</span> Giới Thiệu <span>🔗</span></h3>
+            
+            <div class="intro-box">
+                <h3>🎯 Tại sao cần học trợ từ nâng cao?</h3>
+                <p>Trợ từ (joshi) là "linh hồn" của câu tiếng Nhật. Sai trợ từ = sai nghĩa. Người Việt thường gặp khó khăn vì:</p>
+                <ul>
+                    <li>🇻🇳 Tiếng Việt không có trợ từ tương đương</li>
+                    <li>🔄 Nhiều trợ từ có nghĩa gần giống nhau (に vs で, は vs が)</li>
+                    <li>📚 Sách giáo khoa thường chỉ dạy cơ bản, thiếu chi tiết</li>
+                    <li>💬 Khi giao tiếp thực tế, sai trợ từ khiến câu nghe "cứng"</li>
+                </ul>
+                <p><strong>Chủ đề này sẽ giúp bạn:</strong> Phân biệt rõ ràng 10+ cặp trợ từ dễ nhầm, với ví dụ thực tế và mẹo nhớ!</p>
+            </div>
+        </div>
+
+        <!-- 1. は vs が -->
+        <div class="particle-group">
+            <h3>1️⃣ は (wa) vs が (ga) - Phân biệt chi tiết</h3>
+            
+            <div class="compare-box">
+                <h4>💡 Quy tắc vàng</h4>
+                <p><strong>は (wa)</strong> = Chủ đề đã biết (topic) - "Còn về..."<br>
+                <strong>が (ga)</strong> = Chủ ngữ mới (subject) - "Cái gì/Ai..."</p>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-item">
+                    <h5>🔵 は (wa) - Chủ đề</h5>
+                    <p>Dùng khi nói về điều <strong>đã biết</strong>, giới thiệu chủ đề câu chuyện</p>
+                    <div class="example">
+                        <strong>ぞうは はなが ながいです。</strong><br>
+                        (Còn về con voi, cái mũi thì dài)
+                    </div>
+                </div>
+                <div class="compare-item">
+                    <h5>🔴 が (ga) - Chủ ngữ mới</h5>
+                    <p>Dùng khi giới thiệu điều <strong>mới</strong>, nhấn mạnh "AI/CÁI GÌ"</p>
+                    <div class="example">
+                        <strong>はなが ながい ぞうが います。</strong><br>
+                        (Có con voi mà mũi dài)
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Mẹo nhớ cho người Việt</h4>
+                <ul>
+                    <li><strong>は</strong> = "Còn về..." (giống "thì" trong "Con voi <em>thì</em> mũi dài")</li>
+                    <li><strong>が</strong> = "Cái mà..." (giống "mà" trong "Con voi <em>mà</em> mũi dài")</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 3 trường hợp BẮT BUỘC dùng が</h4>
+                <ul>
+                    <li><strong>1. Với あります/います:</strong> ねこ<strong>が</strong> います (Có con mèo)</li>
+                    <li><strong>2. Với động từ tiềm năng:</strong> 日本語<strong>が</strong> わかります (Hiểu tiếng Nhật)</li>
+                    <li><strong>3. Với すき/きらい/へた/じょうず:</strong> すし<strong>が</strong> すきです (Thích sushi)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. を vs が -->
+        <div class="particle-group">
+            <h3>2️⃣ を (o) vs が (ga) - Với động từ đặc biệt</h3>
+            
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">を</span>
+                    <span class="particle-reading">/o/ - Tân ngữ</span>
+                </div>
+                <div class="particle-meaning">Đánh dấu tân ngữ - đối tượng bị tác động</div>
+                <div class="particle-desc">Dùng với hầu hết động từ chỉ hành động: 食べます, 飲みます, 見ます...</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">りんご<strong>を</strong> たべます。</div>
+                        <div class="example-vn">Ăn táo.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">ほん<strong>を</strong> よみます。</div>
+                        <div class="example-vn">Đọc sách.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">が</span>
+                    <span class="particle-reading">/ga/ - Với từ chỉ cảm xúc/khả năng</span>
+                </div>
+                <div class="particle-meaning">Dùng với すき, きらい, わかる, できる, ほしい...</div>
+                <div class="particle-desc">Những từ này không phải "hành động" mà là "trạng thái/cảm xúc" → dùng が</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">すし<strong>が</strong> すきです。</div>
+                        <div class="example-vn">Thích sushi. (KHÔNG: すしをすきです ❌)</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">にほんご<strong>が</strong> わかります。</div>
+                        <div class="example-vn">Hiểu tiếng Nhật.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">みず<strong>が</strong> ほしいです。</div>
+                        <div class="example-vn">Muốn nước.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Từ</th>
+                            <th>Loại</th>
+                            <th>Trợ từ</th>
+                            <th>Ví dụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>たべます</td><td>Động từ hành động</td><td><strong>を</strong></td><td>りんご<strong>を</strong>たべます</td></tr>
+                        <tr><td>すきです</td><td>Tính từ cảm xúc</td><td><strong>が</strong></td><td>すし<strong>が</strong>すきです</td></tr>
+                        <tr><td>わかります</td><td>Động từ khả năng</td><td><strong>が</strong></td><td>にほんご<strong>が</strong>わかります</td></tr>
+                        <tr><td>できます</td><td>Động từ khả năng</td><td><strong>が</strong></td><td>にほんご<strong>が</strong>できます</td></tr>
+                        <tr><td>ほしいです</td><td>Tính từ mong muốn</td><td><strong>が</strong></td><td>くるま<strong>が</strong>ほしいです</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. に vs で vs へ -->
+        <div class="particle-group">
+            <h3>3️⃣ に (ni) vs で (de) vs へ (e) - Địa điểm & Phương tiện</h3>
+            
+            <div class="compare-grid">
+                <div class="compare-item">
+                    <h5>📍 に (ni) - Điểm đến/Thời gian</h5>
+                    <p>Chỉ <strong>đích đến</strong> hoặc <strong>thời điểm</strong></p>
+                    <div class="example">
+                        <strong>がっこう<strong>に</strong> いきます。</strong><br>
+                        (Đi đến trường - trường là đích)
+                    </div>
+                    <div class="example">
+                        <strong>くじ<strong>に</strong> おきます。</strong><br>
+                        (Dậy lúc 9 giờ - 9 giờ là thời điểm)
+                    </div>
+                </div>
+                <div class="compare-item">
+                    <h5>🏢 で (de) - Nơi xảy ra hành động</h5>
+                    <p>Chỉ <strong>nơi xảy ra hành động</strong> hoặc <strong>phương tiện</strong></p>
+                    <div class="example">
+                        <strong>としょかん<strong>で</strong> べんきょうします。</strong><br>
+                        (Học ở thư viện - thư viện là nơi học)
+                    </div>
+                    <div class="example">
+                        <strong>でんしゃ<strong>で</strong> いきます。</strong><br>
+                        (Đi bằng tàu điện - tàu là phương tiện)
+                    </div>
+                </div>
+            </div>
+
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">へ</span>
+                    <span class="particle-reading">/e/ - Hướng đi</span>
+                </div>
+                <div class="particle-meaning">Chỉ <strong>hướng đi</strong>, không nhấn mạnh đích đến</div>
+                <div class="particle-desc">Đọc là "e" KHÔNG phải "he". Có thể thay thế bằng に trong nhiều trường hợp.</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">にほん<strong>へ</strong> いきます。</div>
+                        <div class="example-vn">Đi về hướng Nhật Bản.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">うち<strong>へ</strong> かえります。</div>
+                        <div class="example-vn">Về nhà.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Mẹo nhớ nhanh</h4>
+                <ul>
+                    <li><strong>に</strong> = "ĐẾN đâu" / "LÚC nào" (đích đến, thời điểm)</li>
+                    <li><strong>で</strong> = "Ở đâu" / "BẰNG gì" (nơi hành động, phương tiện)</li>
+                    <li><strong>へ</strong> = "VỀ hướng nào" (hướng đi)</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ So sánh dễ nhầm</h4>
+                <ul>
+                    <li>がっこう<strong>に</strong> いきます → Đi <em>đến</em> trường (trường là đích)</li>
+                    <li>がっこう<strong>で</strong> べんきょうします → Học <em>ở</em> trường (trường là nơi học)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. と vs や -->
+        <div class="particle-group">
+            <h3>4️⃣ と (to) vs や (ya) - Liệt kê</h3>
+            
+            <div class="compare-grid">
+                <div class="compare-item">
+                    <h5>🔵 と (to) - Liệt kê ĐẦY ĐỦ</h5>
+                    <p>Liệt kê <strong>tất cả</strong>, không còn gì khác</p>
+                    <div class="example">
+                        <strong>りんご<strong>と</strong>みかん<strong>と</strong>バナナを かいます。</strong><br>
+                        (Mua táo, cam, chuối - chỉ 3 thứ này)
+                    </div>
+                </div>
+                <div class="compare-item">
+                    <h5>🟠 や (ya) - Liệt kê MỘT PHẦN</h5>
+                    <p>Liệt kê <strong>vài ví dụ</strong>, còn nhiều thứ khác</p>
+                    <div class="example">
+                        <strong>りんご<strong>や</strong>みかん<strong>や</strong>バナナを かいます。</strong><br>
+                        (Mua táo, cam, chuối... và nhiều thứ khác)
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Mẹo nhớ</h4>
+                <ul>
+                    <li><strong>と</strong> = "VÀ" (liệt kê hết, giống tiếng Việt)</li>
+                    <li><strong>や</strong> = "NHƯ LÀ..., V.V..." (liệt kê vài ví dụ)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. から vs ので -->
+        <div class="particle-group">
+            <h3>5️⃣ から (kara) vs ので (node) - Lý do</h3>
+            
+            <div class="compare-grid">
+                <div class="compare-item">
+                    <h5>🔵 から (kara) - Chủ quan</h5>
+                    <p>Lý do <strong>chủ quan</strong>, mang tính cá nhân, mạnh mẽ</p>
+                    <div class="example">
+                        <strong>あめだ<strong>から</strong>、いきません。</strong><br>
+                        (Vì trời mưa nên tôi không đi - quyết định cá nhân)
+                    </div>
+                </div>
+                <div class="compare-item">
+                    <h5>🟢 ので (node) - Khách quan</h5>
+                    <p>Lý do <strong>khách quan</strong>, tự nhiên, lịch sự hơn</p>
+                    <div class="example">
+                        <strong>あめな<strong>ので</strong>、いきません。</strong><br>
+                        (Vì trời mưa nên tôi không đi - lý do tự nhiên)
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Lưu ý ngữ pháp</h4>
+                <ul>
+                    <li><strong>から</strong> + thể thông thường: あめだ<strong>から</strong></li>
+                    <li><strong>ので</strong> + thể な: あめな<strong>ので</strong> (thêm な sau danh từ/tính từ な)</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Khi nào dùng gì?</h4>
+                <ul>
+                    <li>Dùng <strong>から</strong>: Khi nói với bạn bè, gia đình, thể hiện ý kiến cá nhân</li>
+                    <li>Dùng <strong>ので</strong>: Khi nói với người lạ, cấp trên, trong tình huống lịch sự</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6. も, まで, だけ -->
+        <div class="particle-group">
+            <h3>6️⃣ も (mo) vs まで (made) vs だけ (dake) - Mức độ & Giới hạn</h3>
+            
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">も</span>
+                    <span class="particle-reading">/mo/ - Cũng, thậm chí</span>
+                </div>
+                <div class="particle-meaning">Thay thế は/が を khi muốn nói "cũng"</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">わたし<strong>も</strong> いきます。</div>
+                        <div class="example-vn">Tôi <strong>cũng</strong> đi.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">にほんご<strong>も</strong> わかります。</div>
+                        <div class="example-vn">Tôi <strong>cũng</strong> hiểu tiếng Nhật.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">まで</span>
+                    <span class="particle-reading">/made/ - Đến, cho đến</span>
+                </div>
+                <div class="particle-meaning">Chỉ điểm kết thúc (thời gian, không gian)</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">ごじ<strong>まで</strong> はたらきます。</div>
+                        <div class="example-vn">Làm việc <strong>đến</strong> 5 giờ.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">とうきょう<strong>まで</strong> いきます。</div>
+                        <div class="example-vn">Đi <strong>đến</strong> Tokyo.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particle-card">
+                <div class="particle-header">
+                    <span class="particle-name">だけ</span>
+                    <span class="particle-reading">/dake/ - Chỉ, duy nhất</span>
+                </div>
+                <div class="particle-meaning">Giới hạn, "chỉ có", "duy nhất"</div>
+                <div class="example-list">
+                    <div class="example-item">
+                        <div class="example-jp">これ<strong>だけ</strong> あります。</div>
+                        <div class="example-vn">Chỉ có <strong>thôi</strong>.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-jp">にほんじん<strong>だけ</strong> です。</div>
+                        <div class="example-vn">Chỉ là người Nhật <strong>thôi</strong>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TỔNG KẾT -->
+        <div class="card">
+            <h3 class="section-title"><span>📊</span> Bảng Tổng Kết <span>🔗</span></h3>
+            
+            <div class="summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trợ từ</th>
+                            <th>Chức năng</th>
+                            <th>Ví dụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>は</strong></td><td>Chủ đề (đã biết)</td><td>ぞう<strong>は</strong>はながながい</td></tr>
+                        <tr><td><strong>が</strong></td><td>Chủ ngữ mới</td><td>はながながい<strong>が</strong>ぞう</td></tr>
+                        <tr><td><strong>を</strong></td><td>Tân ngữ</td><td>りんご<strong>を</strong>たべる</td></tr>
+                        <tr><td><strong>に</strong></td><td>Điểm đến/Thời gian</td><td>がっこう<strong>に</strong>いく</td></tr>
+                        <tr><td><strong>で</strong></td><td>Nơi hành động/Phương tiện</td><td>としょかん<strong>で</strong>べんきょう</td></tr>
+                        <tr><td><strong>へ</strong></td><td>Hướng đi</td><td>にほん<strong>へ</strong>いく</td></tr>
+                        <tr><td><strong>と</strong></td><td>Liệt kê đầy đủ</td><td>りんご<strong>と</strong>みかん</td></tr>
+                        <tr><td><strong>や</strong></td><td>Liệt kê một phần</td><td>りんご<strong>や</strong>みかん</td></tr>
+                        <tr><td><strong>から</strong></td><td>Lý do chủ quan</td><td>あめだ<strong>から</strong></td></tr>
+                        <tr><td><strong>ので</strong></td><td>Lý do khách quan</td><td>あめな<strong>ので</strong></td></tr>
+                        <tr><td><strong>も</strong></td><td>Cũng, thậm chí</td><td>わたし<strong>も</strong></td></tr>
+                        <tr><td><strong>まで</strong></td><td>Đến, cho đến</td><td>ごじ<strong>まで</strong></td></tr>
+                        <tr><td><strong>だけ</strong></td><td>Chỉ, duy nhất</td><td>これ<strong>だけ</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- BÀI TẬP -->
+        <div class="exercise-section">
+            <h3 class="section-title"><span>🎮</span> Bài Tập Thực Hành <span>🔗</span></h3>
+            
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> Chọn trợ từ đúng: "Tôi thích sushi"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex1a')">すし<strong>を</strong> すきです</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex1b')">すし<strong>が</strong> すきです</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex1c')">すし<strong>は</strong> すきです</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex1d')">すし<strong>に</strong> すきです</div>
+                </div>
+                <div class="feedback" id="ex1b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> Chọn trợ từ đúng: "Học ở thư viện"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex2a')">としょかん<strong>に</strong> べんきょうします</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex2b')">としょかん<strong>で</strong> べんきょうします</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex2c')">としょかん<strong>へ</strong> べんきょうします</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex2d')">としょかん<strong>を</strong> べんきょうします</div>
+                </div>
+                <div class="feedback" id="ex2b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> Chọn trợ từ đúng: "Mua táo, cam, chuối (và nhiều thứ khác)"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex3a')">りんご<strong>と</strong>みかん<strong>と</strong>バナナ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex3b')">りんご<strong>や</strong>みかん<strong>や</strong>バナナ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex3c')">りんご<strong>に</strong>みかん<strong>に</strong>バナナ</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex3d')">りんご<strong>も</strong>みかん<strong>も</strong>バナナ</div>
+                </div>
+                <div class="feedback" id="ex3b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">4</span> Chọn trợ từ đúng: "Vì trời mưa (lịch sự)"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex4a')">あめだ<strong>から</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex4b')">あめな<strong>ので</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex4c')">あめだ<strong>ので</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex4d')">あめな<strong>から</strong></div>
+                </div>
+                <div class="feedback" id="ex4b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">5</span> Chọn trợ từ đúng: "Làm việc đến 5 giờ"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex5a')">ごじ<strong>だけ</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex5b')">ごじ<strong>まで</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex5c')">ごじ<strong>も</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex5d')">ごじ<strong>に</strong></div>
+                </div>
+                <div class="feedback" id="ex5b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">6</span> Chọn trợ từ đúng: "Tôi cũng đi"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex6a')">わたし<strong>は</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex6b')">わたし<strong>が</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex6c')">わたし<strong>も</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex6d')">わたし<strong>に</strong> いきます</div>
+                </div>
+                <div class="feedback" id="ex6c"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">7</span> Chọn trợ từ đúng: "Đi bằng tàu điện"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex7a')">でんしゃ<strong>に</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex7b')">でんしゃ<strong>で</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex7c')">でんしゃ<strong>へ</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex7d')">でんしゃ<strong>を</strong> いきます</div>
+                </div>
+                <div class="feedback" id="ex7b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">8</span> Chọn trợ từ đúng: "Chỉ có cái này thôi"</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex8a')">これ<strong>まで</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex8b')">これ<strong>も</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'ex8c')">これ<strong>だけ</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'ex8d')">これ<strong>に</strong></div>
+                </div>
+                <div class="feedback" id="ex8c"></div>
+            </div>
+        </div>
+
+        <!-- QUIZ TỔNG HỢP -->
+        <div class="exercise-section">
+            <h3 class="section-title"><span>📝</span> Quiz Tổng Hợp <span>🔗</span></h3>
+            
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">1</span> "Có con mèo" - trợ từ gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1a')">ねこ<strong>は</strong> います</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q1b')">ねこ<strong>が</strong> います</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1c')">ねこ<strong>を</strong> います</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1d')">ねこ<strong>に</strong> います</div>
+                </div>
+                <div class="feedback" id="q1b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">2</span> "Tôi hiểu tiếng Nhật" - trợ từ gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2a')">にほんご<strong>を</strong> わかります</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q2b')">にほんご<strong>が</strong> わかります</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2c')">にほんご<strong>は</strong> わかります</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2d')">にほんご<strong>に</strong> わかります</div>
+                </div>
+                <div class="feedback" id="q2b"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">3</span> "Đi về hướng Nhật" - trợ từ gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3a')">にほん<strong>に</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3b')">にほん<strong>で</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q3c')">にほん<strong>へ</strong> いきます</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3d')">にほん<strong>を</strong> いきます</div>
+                </div>
+                <div class="feedback" id="q3c"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">4</span> "Vì trời mưa (quyết định cá nhân)" - trợ từ gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q4a')">あめだ<strong>から</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4b')">あめな<strong>ので</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4c')">あめだ<strong>ので</strong></div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4d')">あめな<strong>から</strong></div>
+                </div>
+                <div class="feedback" id="q4a"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-q"><span class="q-num">5</span> "Mua táo VÀ cam (chỉ 2 thứ)" - trợ từ gì?</div>
+                <div class="exercise-options">
+                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q5a')">りんご<strong>と</strong>みかん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5b')">りんご<strong>や</strong>みかん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5c')">りんご<strong>も</strong>みかん</div>
+                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5d')">りんご<strong>に</strong>みかん</div>
+                </div>
+                <div class="feedback" id="q5a"></div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-ref2.html" class="btn btn-secondary"><span>📚</span> Về Trang Chủ Bổ Sung</a>
+            <a href="n5-ref2-04.html" class="btn btn-secondary"><span>⬅️</span> Chủ Đề 04</a>
+            <a href="n5-ref2-06.html" class="btn btn-primary"><span>➡️</span> Chủ Đề 06</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🔗 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:15px;font-size:1.5em">💖 ✨ 🔗 📚</p>
+        <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần + 30 chủ đề bổ sung</p>
+    </footer>
+
+    <script>
+        function checkAnswer(el,ok,id){
+            const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);
+            opts.forEach(o=>o.style.pointerEvents='none');
+            if(ok){
+                el.classList.add('correct');
+                fb.textContent='✅ Chính xác! Giỏi quá!';
+                fb.className='feedback show correct';
+            }else{
+                el.classList.add('wrong');
+                opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});
+                fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                fb.className='feedback show wrong';
+            }
+        }
+    </script>
+</body>
+</html>
