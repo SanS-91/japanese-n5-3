@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 Ngữ Pháp N5 - Level 4: Động Từ Cơ Bản | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#5FD4A8;--primary-dark:#2FA878;--primary-light:#C8F5E0;
+            --secondary:#7EC8E3;--secondary-dark:#4FA8C7;--secondary-light:#D4ECFA;
+            --accent:#FFD93D;--accent-dark:#E8B820;--accent-light:#FFF5CC;
+            --rose:#FF9EAA;--rose-dark:#E87890;--rose-light:#FFE0E6;
+            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;
+            --terra:#CC7755;--terra-dark:#A85A3A;--terra-light:#F0D4C4;
+            --purple:#9B7FD4;--purple-dark:#6B4FA8;--purple-light:#E0D4F5;
+            --text-dark:#1F3D2F;--text-medium:#3A5C4A;--text-light:#6B8A7A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#F0FAF5 0%,#F0F8FF 25%,#FFFDF0 50%,#FFE8EC 75%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);border-radius:50%;animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);border-radius:50%;animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);border-radius:50%;animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--rose),transparent);border-radius:50%;animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose)) 1;box-shadow:0 4px 20px rgba(47,168,120,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(95,212,168,.2)}
+        .container{max-width:1400px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1400px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(200,245,224,.6)25%,rgba(212,236,250,.6)50%,rgba(255,245,204,.6)75%,rgba(255,224,230,.6)100%);border-radius:32px;padding:50px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(47,168,120,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(95,212,168,.1),transparent,rgba(126,200,227,.1),transparent,rgba(255,217,61,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(95,212,168,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(47,168,120,.15);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(47,168,120,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        .section{margin-bottom:45px}
+        .section-header{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.4));border-radius:24px;padding:22px 28px;margin-bottom:25px;display:flex;align-items:center;gap:18px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(47,168,120,.1)}
+        .section-icon{font-size:2.5em}
+        .section-title{flex:1}
+        .section-title h2{font-size:1.5em;font-weight:900;color:var(--text-dark);line-height:1.2}
+        .section-title p{font-size:.95em;color:var(--text-medium);font-weight:600;margin-top:5px}
+        
+        /* GRAMMAR CARDS GRID - 2 CỘT */
+        .grammar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:20px}
+        .grammar-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);position:relative;overflow:hidden;transition:.3s}
+        .grammar-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(95,212,168,.25)}
+        .grammar-number{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .grammar-header{display:flex;align-items:center;gap:15px;margin-bottom:25px;padding-bottom:20px;border-bottom:3px dashed var(--primary-light)}
+        .grammar-icon{font-size:3em}
+        .grammar-title{flex:1}
+        .grammar-name{font-family:'M PLUS Rounded 1c';font-size:2.5em;font-weight:900;color:var(--primary-dark);line-height:1}
+        .grammar-reading{font-size:1.1em;color:var(--text-medium);font-weight:700;margin-top:5px}
+        .grammar-meaning{font-size:1.15em;color:var(--text-dark);font-weight:800;margin-top:10px}
+        
+        .grammar-section{margin-bottom:22px}
+        .grammar-label{font-weight:900;color:var(--primary-dark);font-size:1.05em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .grammar-content{font-size:1em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        
+        .structure-box{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:18px 25px;border-radius:18px;text-align:center;font-family:'M PLUS Rounded 1c';font-size:1.5em;font-weight:900;color:var(--text-dark);margin:15px 0;box-shadow:0 4px 15px rgba(255,217,61,.3)}
+        
+        .example-list{list-style:none;padding:0}
+        .example-item{background:rgba(255,255,255,.8);padding:15px 18px;border-radius:15px;margin-bottom:12px;border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        .example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--text-dark);margin-bottom:5px;display:flex;align-items:center;gap:10px}
+        .example-hiragana{font-size:.95em;color:var(--text-medium);font-weight:600;margin-bottom:5px}
+        .example-romaji{font-size:.9em;color:var(--text-light);font-style:italic;margin-bottom:5px}
+        .example-vn{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .example-audio{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.9em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+        .example-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .tip-box{background:linear-gradient(135deg,var(--accent-light),rgba(255,217,61,.2));padding:18px;border-radius:15px;border-left:4px solid var(--accent-dark);margin-top:15px}
+        .tip-box h5{color:var(--accent-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .tip-box p,.tip-box ul{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px;margin-top:8px}
+        .tip-box li{margin-bottom:5px}
+        
+        .mistake-box{background:linear-gradient(135deg,var(--rose-light),rgba(255,158,170,.2));padding:18px;border-radius:15px;border-left:4px solid var(--rose-dark);margin-top:15px}
+        .mistake-box h5{color:var(--rose-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .mistake-box p{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        
+        .verb-table{width:100%;border-collapse:separate;border-spacing:0;background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.05);margin:20px 0}
+        .verb-table th{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;padding:15px;font-weight:900;text-align:center;font-size:.95em}
+        .verb-table td{padding:12px 15px;border-bottom:1px solid rgba(95,212,168,.2);text-align:center;font-size:.95em;font-weight:600}
+        .verb-table tr:hover td{background:rgba(200,245,224,.3)}
+        .verb-table .verb-cell{font-family:'M PLUS Rounded 1c';font-weight:900;color:var(--primary-dark);font-size:1.1em}
+        
+        .pronunciation-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(212,236,250,.3));border-radius:24px;padding:35px;border:3px solid var(--secondary-light);box-shadow:0 6px 20px rgba(126,200,227,.15);margin-top:30px}
+        .pronunciation-section h3{color:var(--secondary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .pronunciation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+        .pronunciation-item{background:white;padding:22px;border-radius:18px;border-left:4px solid var(--secondary);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .pronunciation-item .jp{font-family:'M PLUS Rounded 1c';font-size:1.5em;font-weight:900;color:var(--secondary-dark);margin-bottom:8px}
+        .pronunciation-item .reading{font-size:1em;color:var(--text-medium);font-weight:700;margin-bottom:8px}
+        .pronunciation-item .note{font-size:.92em;color:var(--text-light);font-weight:600;line-height:1.6}
+        .pronunciation-audio{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));background-size:200% auto;color:white;border:none;width:35px;height:35px;border-radius:50%;cursor:pointer;font-size:.95em;display:inline-flex;align-items:center;justify-content:center;margin-top:10px;transition:.3s}
+        .pronunciation-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .dialogue-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,224,230,.3));border-radius:24px;padding:35px;border:3px solid var(--rose-light);box-shadow:0 6px 20px rgba(255,158,170,.15);margin-top:30px}
+        .dialogue-section h3{color:var(--rose-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .dialogue-box{background:white;padding:25px;border-radius:18px;margin-bottom:20px;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .dialogue-line{display:flex;gap:15px;margin-bottom:15px;align-items:flex-start}
+        .dialogue-speaker{font-weight:900;color:var(--primary-dark);min-width:40px;font-size:1.2em}
+        .dialogue-text{flex:1}
+        .dialogue-jp{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1.1em;color:var(--text-dark);margin-bottom:5px}
+        .dialogue-vn{font-size:.95em;color:var(--text-medium);font-weight:600;margin-bottom:8px}
+        .dialogue-audio{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+        .dialogue-audio:hover{background-position:right center;transform:scale(1.1)}
+        .dialogue-play-all{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;padding:12px 25px;border-radius:28px;font-weight:800;cursor:pointer;margin-top:15px;display:inline-flex;align-items:center;gap:10px;font-size:1em;transition:.3s}
+        .dialogue-play-all:hover{background-position:right center;transform:translateY(-2px)}
+        
+        .vocab-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,245,204,.3));border-radius:24px;padding:35px;border:3px solid var(--accent-light);box-shadow:0 6px 20px rgba(255,217,61,.15);margin-top:30px}
+        .vocab-section h3{color:var(--accent-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+        .vocab-item{background:white;padding:18px;border-radius:18px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05);transition:.3s}
+        .vocab-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+        .vocab-icon{font-size:2.5em;margin-bottom:10px}
+        .vocab-jp{font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:900;color:var(--accent-dark);margin-bottom:5px}
+        .vocab-reading{font-size:.9em;color:var(--text-medium);font-weight:700;margin-bottom:5px}
+        .vocab-meaning{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .vocab-audio{background:linear-gradient(135deg,var(--accent),var(--accent-dark));background-size:200% auto;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;margin-top:10px;transition:.3s}
+        .vocab-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);margin-top:30px}
+        .exercise-section h3{color:var(--primary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .exercise-item{background:white;padding:22px;border-radius:18px;margin-bottom:18px;border-left:4px solid var(--primary);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .exercise-question{font-size:1.1em;color:var(--text-dark);font-weight:700;margin-bottom:15px}
+        .exercise-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .exercise-option{background:var(--primary-light);padding:15px;border-radius:15px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1.05em;font-weight:700;color:var(--text-dark);text-align:center;border:2px solid transparent}
+        .exercise-option:hover{background:var(--primary);color:white;transform:translateY(-3px)}
+        .exercise-option.correct{background:var(--primary);color:white;border-color:var(--primary-dark)}
+        .exercise-option.wrong{background:var(--rose);color:white;border-color:var(--rose-dark)}
+        .exercise-feedback{margin-top:12px;padding:12px;border-radius:12px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .exercise-feedback.show{display:block}
+        .exercise-feedback.correct{background:var(--primary-light);color:var(--primary-dark);border:2px solid var(--primary)}
+        .exercise-feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:18px;margin-top:50px;flex-wrap:wrap}
+        .btn{padding:16px 35px;border-radius:50px;border:none;font-family:inherit;font-weight:900;font-size:1.05em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:12px;transition:.3s;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white}
+        .btn-primary:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 30px rgba(95,212,168,.3)}
+        .btn-secondary{background:white;color:var(--text-dark);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:60px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        
+        /* RESPONSIVE - Mobile 1 cột */
+        @media(max-width:900px){
+            .grammar-grid{grid-template-columns:1fr}
+            .pronunciation-grid,.vocab-grid,.exercise-options{grid-template-columns:1fr}
+            .hero h1{font-size:2.5em}
+        }
+        @media(max-width:600px){
+            .container{padding:15px}
+            .header{padding:12px 15px}
+            .nav-links{display:none}
+            .hero{padding:35px 20px}
+            .hero h1{font-size:2em}
+            .hero-jp{font-size:1.4em}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container">
+        <div class="sparkle" style="top:15%;left:10%">✨</div>
+        <div class="sparkle" style="top:30%;right:15%;animation-delay:.5s">⭐</div>
+        <div class="sparkle" style="bottom:20%;left:20%;animation-delay:1s">✨</div>
+        <div class="sparkle" style="bottom:30%;right:25%;animation-delay:1.5s">⭐</div>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">📐</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html"> Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-w24.html"> Tuần 24</a></li>
+            <li><a href="n5-w24-3.html" class="active">📐 Ngữ pháp</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">🏠</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">🏆 Tuần 24</a> › <a href="n5-w24-3.html">📐 Ngữ pháp</a> › <span>Level 4: Động Từ Cơ Bản</span></div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <span class="hero-badge">📐 Ngữ Pháp N5 - Level 4 • Động Từ Cơ Bản - Thể Lịch Sự & Quá Khứ/Phủ Định</span>
+            <h1>ます・ません・ました</h1>
+            <div class="hero-jp">masu / masen / mashita</div>
+            <p class="hero-desc">Học 4 thể cơ bản của động từ tiếng Nhật: Hiện tại lịch sự, Phủ định, Quá khứ, và Quá khứ phủ định - Nền tảng QUAN TRỌNG NHẤT!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Thể động từ</span></div>
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Ví dụ</span></div>
+                <div class="stat-item"><span class="stat-number">40+</span><span class="stat-label">Audio</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Bài tập</span></div>
+            </div>
+        </div>
+
+        <!-- 4 GRAMMAR CARDS - GRID 2 CỘT -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <div class="section-title">
+                    <h2>4 Thể Động Từ Cơ Bản</h2>
+                    <p>Click 🔊 để nghe phát âm chuẩn tiếng Nhật</p>
+                </div>
+            </div>
+
+            <div class="grammar-grid">
+                <!-- 1. ます -->
+                <div class="grammar-card">
+                    <div class="grammar-number">1</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">✅</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">ます</div>
+                            <div class="grammar-reading">/masu/ - Thể lịch sự (hiện tại)</div>
+                            <div class="grammar-meaning">Hành động hiện tại / thói quen, lịch sự</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📖 Giới thiệu:</div>
+                        <p style="font-size:1em;color:var(--text-medium);line-height:1.7;font-weight:600">
+                            <strong>ます</strong> là thể lịch sự của động từ, dùng trong giao tiếp hàng ngày với người lạ, cấp trên, hoặc trong tình huống trang trọng. Đây là thể ĐỘNG TỪ CƠ BẢN NHẤT mà bạn phải học đầu tiên.
+                        </p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🗣️ Phát âm:</div>
+                        <div class="pronunciation-item" style="margin-top:10px">
+                            <div class="jp">ます</div>
+                            <div class="reading">ます (masu) = "masu"</div>
+                            <div class="note">
+                                <strong>Phát âm đúng:</strong> "masu" (như "ma-xu" trong tiếng Việt)<br>
+                                <strong>Chi tiết:</strong> ま đọc như "ma", す đọc như "xu" (nhẹ, không chu môi)
+                            </div>
+                            <button class="pronunciation-audio" onclick="playAudio('ます')">🔊</button>
+                        </div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">Động từ từ điển + ます</div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🎯 Cách dùng:</div>
+                        <ul style="font-size:.95em;color:var(--text-medium);font-weight:600;line-height:1.7;padding-left:20px;margin-bottom:15px">
+                            <li><strong>1. Hành động hiện tại:</strong><br>
+                            たべます。(Tôi ăn)</li>
+                            <li><strong>2. Thói quen:</strong><br>
+                            まいあさ 6じに おきます。(Mỗi sáng dậy lúc 6 giờ)</li>
+                            <li><strong>3. Lịch sự, trang trọng:</strong><br>
+                            Dùng với người lạ, cấp trên, trong công việc</li>
+                        </ul>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たべます')">🔊</button>
+                                    たべます。
+                                </div>
+                                <div class="example-hiragana">Tabemasu.</div>
+                                <div class="example-vn">Tôi ăn.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いきます')">🔊</button>
+                                    いきます。
+                                </div>
+                                <div class="example-hiragana">Ikimasu.</div>
+                                <div class="example-vn">Tôi đi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうします')">🔊</button>
+                                    べんきょう します。
+                                </div>
+                                <div class="example-hiragana">Benkyou shimasu.</div>
+                                <div class="example-vn">Tôi học.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 Mẹo ghi nhớ:</h5>
+                        <p>
+                            <strong>🎯 Mẹo "MASU":</strong><br>
+                            • ます = "masu" → nghĩ đến "masu - polite" (lịch sự)<br>
+                            • Động từ nhóm 1, 2, 3 đều thêm ます ở cuối<br><br>
+                            
+                            <strong>🎨 Mẹo hình tượng:</strong><br>
+                            • ます 🎩 = Đội mũ (lịch sự, trang trọng)<br>
+                            • ます 🤝 = Bắt tay (giao tiếp lịch sự)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. ません -->
+                <div class="grammar-card">
+                    <div class="grammar-number">2</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">❌</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">ません</div>
+                            <div class="grammar-reading">/masen/ - Thể phủ định (hiện tại)</div>
+                            <div class="grammar-meaning">Không làm gì (hiện tại)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📖 Giới thiệu:</div>
+                        <p style="font-size:1em;color:var(--text-medium);line-height:1.7;font-weight:600">
+                            <strong>ません</strong> là thể phủ định của ます, dùng để nói "không làm gì" trong hiện tại hoặc tương lai.
+                        </p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🗣️ Phát âm:</div>
+                        <div class="pronunciation-item" style="margin-top:10px">
+                            <div class="jp">ません</div>
+                            <div class="reading">ません (masen) = "masen"</div>
+                            <div class="note">
+                                <strong>Phát âm đúng:</strong> "masen" (như "ma-xen" trong tiếng Việt)<br>
+                                <strong>Chi tiết:</strong> ま "ma" + せ "se" + ん "n"
+                            </div>
+                            <button class="pronunciation-audio" onclick="playAudio('ません')">🔊</button>
+                        </div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">Động từ từ điển + ません</div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label"> Cách dùng:</div>
+                        <ul style="font-size:.95em;color:var(--text-medium);font-weight:600;line-height:1.7;padding-left:20px;margin-bottom:15px">
+                            <li><strong>1. Phủ định hiện tại:</strong><br>
+                            たべません。(Tôi không ăn)</li>
+                            <li><strong>2. Từ chối lịch sự:</strong><br>
+                            いきません。(Tôi không đi)</li>
+                            <li><strong>3. Thói quen phủ định:</strong><br>
+                            たばこを すいません。(Không hút thuốc)</li>
+                        </ul>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たべません')">🔊</button>
+                                    たべません。
+                                </div>
+                                <div class="example-hiragana">Tabemasen.</div>
+                                <div class="example-vn">Tôi không ăn.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いきません')">🔊</button>
+                                    いきません。
+                                </div>
+                                <div class="example-hiragana">Ikimasen.</div>
+                                <div class="example-vn">Tôi không đi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうしません')">🔊</button>
+                                    べんきょう しません。
+                                </div>
+                                <div class="example-hiragana">Benkyou shimasen.</div>
+                                <div class="example-vn">Tôi không học.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mistake-box">
+                        <h5>⚠️ Lỗi sai THƯỜNG GẶP:</h5>
+                        <p>
+                            <strong>Lỗi 1: Nhầm ません với ました</strong><br>
+                            ❌ たべました。(Tôi đã ăn - quá khứ)<br>
+                            ✅ たべません。(Tôi không ăn - phủ định)<br>
+                            <strong>Quy tắc:</strong> ません = phủ định, ました = quá khứ<br><br>
+                            
+                            <strong>Lỗi 2: Quên ません sau động từ</strong><br>
+                            ❌ たべ。(Không hoàn chỉnh)<br>
+                            ✅ たべません。(Phủ định đầy đủ)
+                        </p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 Mẹo ghi nhớ:</h5>
+                        <p>
+                            <strong>🎯 Mẹo "MASEN":</strong><br>
+                            • ません = "masen" → nghĩ đến "masen - NO" (không)<br>
+                            • Ở thể phủ định lịch sự: ます → ません<br><br>
+                            
+                            <strong>🎨 Mẹo hình tượng:</strong><br>
+                            • ません ❌ = Dấu X (không làm)<br>
+                            • ません 🙅 = Gạt tay (từ chối)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. ました -->
+                <div class="grammar-card">
+                    <div class="grammar-number">3</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">⏰</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">ました</div>
+                            <div class="grammar-reading">/mashita/ - Thể quá khứ (lịch sự)</div>
+                            <div class="grammar-meaning">Đã làm gì (trong quá khứ)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📖 Giới thiệu:</div>
+                        <p style="font-size:1em;color:var(--text-medium);line-height:1.7;font-weight:600">
+                            <strong>ました</strong> là thể quá khứ của ます, dùng để nói về hành động đã xảy ra trong quá khứ.
+                        </p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🗣️ Phát âm:</div>
+                        <div class="pronunciation-item" style="margin-top:10px">
+                            <div class="jp">ました</div>
+                            <div class="reading">ました (mashita) = "mashita"</div>
+                            <div class="note">
+                                <strong>Phát âm đúng:</strong> "mashita" (như "ma-shi-ta")<br>
+                                <strong>Chi tiết:</strong> ま "ma" + し "shi" + た "ta"
+                            </div>
+                            <button class="pronunciation-audio" onclick="playAudio('ました')">🔊</button>
+                        </div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">Động từ từ điển + ました</div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🎯 Cách dùng:</div>
+                        <ul style="font-size:.95em;color:var(--text-medium);font-weight:600;line-height:1.7;padding-left:20px;margin-bottom:15px">
+                            <li><strong>1. Hành động đã xảy ra:</strong><br>
+                            たべました。(Tôi đã ăn)</li>
+                            <li><strong>2. Kể chuyện, báo cáo:</strong><br>
+                            きのう ともだちと えいがを みました。(Hôm qua đã xem phim với bạn)</li>
+                            <li><strong>3. Trải nghiệm:</strong><br>
+                            にほんへ いました。(Đã đi Nhật)</li>
+                        </ul>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たべました')">🔊</button>
+                                    たべました。
+                                </div>
+                                <div class="example-hiragana">Tabemashita.</div>
+                                <div class="example-vn">Tôi đã ăn.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いきました')">🔊</button>
+                                    いきました。
+                                </div>
+                                <div class="example-hiragana">Ikimashita.</div>
+                                <div class="example-vn">Tôi đã đi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうしました')">🔊</button>
+                                    べんきょう しました。
+                                </div>
+                                <div class="example-hiragana">Benkyou shimashita.</div>
+                                <div class="example-vn">Tôi đã học.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mistake-box">
+                        <h5>⚠️ Lỗi sai THƯỜNG GẶP:</h5>
+                        <p>
+                            <strong>Lỗi 1: Nhầm ました với ます</strong><br>
+                            ❌ たべます。(Hiện tại - Tôi ăn)<br>
+                            ✅ たべました。(Quá khứ - Tôi đã ăn)<br>
+                            <strong>Quy tắc:</strong> ます = hiện tại, ました = quá khứ<br><br>
+                            
+                            <strong>Lỗi 2: Dùng ました khi chưa xảy ra</strong><br>
+                            ❌ あした たべました。(Ngày mai đã ăn - vô lý)<br>
+                            ✅ あした たべます。(Ngày mai sẽ ăn)
+                        </p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 Mẹo ghi nhớ:</h5>
+                        <p>
+                            <strong>🎯 Mẹo "MASHITA":</strong><br>
+                            • ました = "mashita" → nghĩ đến "mashita - PAST" (quá khứ)<br>
+                            • Thể quá khứ của ます là: ます → ました<br><br>
+                            
+                            <strong>🎨 Mẹo hình tượng:</strong><br>
+                            • ました ⏰ = Đồng hồ (thời gian đã qua)<br>
+                            • ました 📖 = Sách đã đọc (hoàn thành)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. ませんでした -->
+                <div class="grammar-card">
+                    <div class="grammar-number">4</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">❌</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">ませんでした</div>
+                            <div class="grammar-reading">/masen deshita/ - Quá khứ phủ định</div>
+                            <div class="grammar-meaning">Đã không làm gì (trong quá khứ)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📖 Giới thiệu:</div>
+                        <p style="font-size:1em;color:var(--text-medium);line-height:1.7;font-weight:600">
+                            <strong>ませんでした</strong> là thể quá khứ phủ định, dùng để nói về hành động đã KHÔNG xảy ra trong quá khứ.
+                        </p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🗣️ Phát âm:</div>
+                        <div class="pronunciation-item" style="margin-top:10px">
+                            <div class="jp">ませんでした</div>
+                            <div class="reading">ませんでした (masen deshita) = "masen deshita"</div>
+                            <div class="note">
+                                <strong>Phát âm đúng:</strong> "masen deshita" (như "ma-xen deshi-ta")<br>
+                                <strong>Chi tiết:</strong> ません "masen" + でした "deshita"
+                            </div>
+                            <button class="pronunciation-audio" onclick="playAudio('ませんでした')">🔊</button>
+                        </div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">Động từ từ điển + ませんでした</div>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">🎯 Cách dùng:</div>
+                        <ul style="font-size:.95em;color:var(--text-medium);font-weight:600;line-height:1.7;padding-left:20px;margin-bottom:15px">
+                            <li><strong>1. Hành động đã không xảy ra:</strong><br>
+                            たべませんでした。(Tôi đã không ăn)</li>
+                            <li><strong>2. Phủ định quá khứ:</strong><br>
+                            いきませんでした。(Tôi đã không đi)</li>
+                            <li><strong>3. Báo cáo phủ định:</strong><br>
+                            べんきょう しませんでした。(Đã không học)</li>
+                        </ul>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たべませんでした')">🔊</button>
+                                    たべませんでした。
+                                </div>
+                                <div class="example-hiragana">Tabemasen deshita.</div>
+                                <div class="example-vn">Tôi đã không ăn.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いきませんでした')"></button>
+                                    いきませんでした。
+                                </div>
+                                <div class="example-hiragana">Ikimasen deshita.</div>
+                                <div class="example-vn">Tôi đã không đi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうしませんでした')">🔊</button>
+                                    べんきょう しませんでした。
+                                </div>
+                                <div class="example-hiragana">Benkyou shimasen deshita.</div>
+                                <div class="example-vn">Tôi đã không học.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mistake-box">
+                        <h5>⚠️ Lỗi sai THƯỜNG GẶP:</h5>
+                        <p>
+                            <strong>Lỗi 1: Nhầm ませんでした với ません</strong><br>
+                            ❌ たべません。(Hiện tại phủ định - Tôi không ăn)<br>
+                            ✅ たべませんでした。(Quá khứ phủ định - Tôi đã không ăn)<br>
+                            <strong>Quy tắc:</strong> ません = hiện tại, ませんでした = quá khứ<br><br>
+                            
+                            <strong>Lỗi 2: Quên でした</strong><br>
+                            ❌ たべません でした。(Sai cấu trúc)<br>
+                            ✅ たべませんでした。(Đúng cấu trúc)
+                        </p>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 Mẹo ghi nhớ:</h5>
+                        <p>
+                            <strong> Mẹo "MASEN DESHITA":</strong><br>
+                            • ませんでした = "masen deshita" → nghĩ đến "masen deshita - DID NOT" (đã không)<br>
+                            • ます (hiện tại) → ませんでした (quá khứ phủ định)<br><br>
+                            
+                            <strong>🎨 Mẹo hình tượng:</strong><br>
+                            • ませんでした ❌ = Đồng hồ + Dấu X (đã không làm)<br>
+                            • ませんでした 📖❌ = Sách chưa đọc (chưa hoàn thành)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERB CONJUGATION TABLE -->
+        <div class="section">
+            <div class="comparison-section">
+                <h3>📊 BẢNG CHIA ĐỘNG TỪ MINH HỌA (NHÓM 1)</h3>
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th>Động từ (từ điển)</th>
+                            <th>Ý nghĩa</th>
+                            <th>ます<br>(hiện tại)</th>
+                            <th>ません<br>(hiện tại phủ định)</th>
+                            <th>ました<br>(quá khứ)</th>
+                            <th>ませんでした<br>(quá khứ phủ định)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">食べる (taberu)</td>
+                            <td> ăn</td>
+                            <td>食べます<br>Tabemasu</td>
+                            <td>食べません<br>Tabemasen</td>
+                            <td>食べました<br>Tabemashita</td>
+                            <td>食べませんでした<br>Tabemasen deshita</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">行く (iku)</td>
+                            <td>👟 đi</td>
+                            <td>行きます<br>Ikimasu</td>
+                            <td>行きません<br>Ikimasen</td>
+                            <td>行きました<br>Ikimashita</td>
+                            <td>行きませんでした<br>Ikimasen deshita</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">見る (miru)</td>
+                            <td> xem</td>
+                            <td>見ます<br>Mimasu</td>
+                            <td>見ません<br>Mimasen</td>
+                            <td>見ました<br>Mimashita</td>
+                            <td>見ませんでした<br>Mimasen deshita</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">する (suru)</td>
+                            <td>✏️ làm</td>
+                            <td>します<br>Shimasu</td>
+                            <td>しません<br>Shimasen</td>
+                            <td>しました<br>Shimashita</td>
+                            <td>しませんでした<br>Shimasen deshita</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SPECIAL VERB CHANGES -->
+        <div class="section">
+            <div class="comparison-section">
+                <h3>🔄 BIẾN ĐỔI ĐỘNG TỪ ĐẶC BIỆT</h3>
+                <div class="tip-box" style="margin-bottom:20px">
+                    <h5> Nhóm 2: る → ます</h5>
+                    <p>
+                        <strong>起きる (okiru) - thức dậy:</strong><br>
+                        • ます: 起きます (Okimasu)<br>
+                        • ません: 起きません (Okimasen)<br>
+                        • ました: 起きました (Okimashita)<br>
+                        • ませんでした: 起きませんでした (Okimasen deshita)
+                    </p>
+                </div>
+                <div class="tip-box" style="margin-bottom:20px">
+                    <h5>📚 Nhóm 3: Không có quy tắc → học thuộc</h5>
+                    <p>
+                        <strong>来る (kuru) - đến:</strong><br>
+                        • ます: 来ます (Kimasu)<br>
+                        • ません: 来ません (Kimasen)<br>
+                        • ました: 来ました (Kimashita)<br>
+                        • ませんでした: 来ませんでした (Kimasen deshita)<br><br>
+                        
+                        <strong>する (suru) - làm:</strong><br>
+                        • ます: します (Shimasu)<br>
+                        • ません: しません (Shimasen)<br>
+                        • ました: しました (Shimashita)<br>
+                        • ませんでした: しませんでした (Shimasen deshita)<br><br>
+                        
+                        <strong>くる (kuru) - đến (từ nơi nói):</strong><br>
+                        • ます: きます (Kimasu)<br>
+                        • ません: きません (Kimasen)<br>
+                        • ました: きました (Kimashita)<br>
+                        • ませんでした: きませんでした (Kimasen deshita)<br><br>
+                        
+                        ⭐ <strong>Lưu ý:</strong> くる (kuru) dùng khi người/vật đến chỗ người nói.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRONUNCIATION -->
+        <div class="section">
+            <div class="pronunciation-section">
+                <h3>🎤 Cách Phát Âm Chi Tiết</h3>
+                <div class="pronunciation-grid">
+                    <div class="pronunciation-item">
+                        <div class="jp">ます</div>
+                        <div class="reading">ます (masu) = "masu"</div>
+                        <div class="note">
+                            <strong>Chi tiết:</strong><br>
+                            • ま đọc như "ma"<br>
+                            • す đọc như "xu" (nhẹ, không chu môi)<br>
+                            <strong>Phát âm đúng:</strong> "ma-xu"
+                        </div>
+                        <button class="pronunciation-audio" onclick="playAudio('ます')">🔊</button>
+                    </div>
+                    <div class="pronunciation-item">
+                        <div class="jp">ません</div>
+                        <div class="reading">ません (masen) = "masen"</div>
+                        <div class="note">
+                            <strong>Chi tiết:</strong><br>
+                            • ま "ma" + せ "se" +  "n"<br>
+                            <strong>Phát âm đúng:</strong> "ma-xen"
+                        </div>
+                        <button class="pronunciation-audio" onclick="playAudio('ません')">🔊</button>
+                    </div>
+                    <div class="pronunciation-item">
+                        <div class="jp">ました</div>
+                        <div class="reading">ました (mashita) = "mashita"</div>
+                        <div class="note">
+                            <strong>Chi tiết:</strong><br>
+                            • ま "ma" + し "shi" + た "ta"<br>
+                            <strong>Phát âm đúng:</strong> "ma-shi-ta"
+                        </div>
+                        <button class="pronunciation-audio" onclick="playAudio('ました')">🔊</button>
+                    </div>
+                    <div class="pronunciation-item">
+                        <div class="jp">ませんでした</div>
+                        <div class="reading">ませんでした (masen deshita) = "masen deshita"</div>
+                        <div class="note">
+                            <strong>Chi tiết:</strong><br>
+                            • ません "masen" + でした "deshita"<br>
+                            <strong>Phát âm đúng:</strong> "ma-xen deshi-ta"
+                        </div>
+                        <button class="pronunciation-audio" onclick="playAudio('ませんでした')">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MINI DIALOGUE -->
+        <div class="section">
+            <div class="dialogue-section">
+                <h3>💬 Mini Hội Thoại</h3>
+                <div class="dialogue-box">
+                    <div class="dialogue-line">
+                        <div class="dialogue-speaker">A:</div>
+                        <div class="dialogue-text">
+                            <div class="dialogue-jp">
+                                まいあさ 6じに おきます。
+                                <button class="dialogue-audio" onclick="playAudio('まいあさろくじにおきます')">🔊</button>
+                            </div>
+                            <div class="dialogue-vn">Mỗi sáng tôi dậy lúc 6 giờ.</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-line">
+                        <div class="dialogue-speaker">B:</div>
+                        <div class="dialogue-text">
+                            <div class="dialogue-jp">
+                                きのう ともだちと えいがを みました。
+                                <button class="dialogue-audio" onclick="playAudio('きのうともだちとえいがをみました')">🔊</button>
+                            </div>
+                            <div class="dialogue-vn">Hôm qua tôi đã xem phim với bạn.</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-line">
+                        <div class="dialogue-speaker">A:</div>
+                        <div class="dialogue-text">
+                            <div class="dialogue-jp">
+                                あした べんきょう しますか。
+                                <button class="dialogue-audio" onclick="playAudio('あしたべんきょうしますか')">🔊</button>
+                            </div>
+                            <div class="dialogue-vn">Ngày mai bạn có học không?</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-line">
+                        <div class="dialogue-speaker">B:</div>
+                        <div class="dialogue-text">
+                            <div class="dialogue-jp">
+                                いいえ、べんきょう しません。
+                                <button class="dialogue-audio" onclick="playAudio('いいえ、べんきょうしません')">🔊</button>
+                            </div>
+                            <div class="dialogue-vn">Không, tôi không học.</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="dialogue-play-all" onclick="playDialogue()">▶️ Nghe cả đoạn hội thoại</button>
+            </div>
+        </div>
+
+        <!-- VOCABULARY -->
+        <div class="section">
+            <div class="vocab-section">
+                <h3>📚 Từ Vựng Động Từ Cơ Bản</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🍚</div>
+                        <div class="vocab-jp">食べる</div>
+                        <div class="vocab-reading">たべる (taberu)</div>
+                        <div class="vocab-meaning">Ăn</div>
+                        <button class="vocab-audio" onclick="playAudio('たべる')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🥤</div>
+                        <div class="vocab-jp">飲む</div>
+                        <div class="vocab-reading">のむ (nomu)</div>
+                        <div class="vocab-meaning">Uống</div>
+                        <button class="vocab-audio" onclick="playAudio('のむ')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚶</div>
+                        <div class="vocab-jp">行く</div>
+                        <div class="vocab-reading">いく (iku)</div>
+                        <div class="vocab-meaning">Đi</div>
+                        <button class="vocab-audio" onclick="playAudio('いく')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-jp">来る</div>
+                        <div class="vocab-reading">くる (kuru)</div>
+                        <div class="vocab-meaning">Đến</div>
+                        <button class="vocab-audio" onclick="playAudio('くる')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">✏️</div>
+                        <div class="vocab-jp">する</div>
+                        <div class="vocab-reading">する (suru)</div>
+                        <div class="vocab-meaning">Làm</div>
+                        <button class="vocab-audio" onclick="playAudio('する')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📺</div>
+                        <div class="vocab-jp">見る</div>
+                        <div class="vocab-reading">みる (miru)</div>
+                        <div class="vocab-meaning">Xem</div>
+                        <button class="vocab-audio" onclick="playAudio('みる')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-jp">勉強する</div>
+                        <div class="vocab-reading">べんきょうする (benkyou suru)</div>
+                        <div class="vocab-meaning">Học</div>
+                        <button class="vocab-audio" onclick="playAudio('べんきょうする')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🛏️</div>
+                        <div class="vocab-jp">起きる</div>
+                        <div class="vocab-reading">おきる (okiru)</div>
+                        <div class="vocab-meaning">Thức dậy</div>
+                        <button class="vocab-audio" onclick="playAudio('おきる')"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISES -->
+        <div class="section">
+            <div class="exercise-section">
+                <h3>✏️ Bài Tập Thực Hành</h3>
+                <p style="margin-bottom:25px;color:var(--text-medium);font-weight:600;font-size:1.05em">Chia động từ trong ngoặc ở dạng đúng:</p>
+                
+                <div class="exercise-item">
+                    <div class="exercise-question">1. 私は毎朝 7時に 起きます。（起きる）</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex1')">起きます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">起きません</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">起きました</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex1"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">2. 彼は コーヒーを 飲みません。（飲む）</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">飲みます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex2')">飲みません</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">飲みました</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex2"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">3. 昨日、友達と映画を 見ました。（見る）</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">見ます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">見ません</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex3')">見ました</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex3"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">4. 今日は外に 行きませんでした。（行く）</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">行きます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">行きません</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex4')">行きませんでした</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex4"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">5. 母は料理を します。（する）</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex5')">します</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">しません</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">しました</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex5"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">6. "Tôi đã ăn cơm" nói thế nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">ごはんを たべます。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">ごはんを たべません。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex6')">ごはんを たべました。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex6"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">7. "Tôi không xem phim" nói thế nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">えいがを みます。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex7')">えいがを みません。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">えいがを みました。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex7"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">8. "Bạn đã làm gì hôm qua?" nói thế nào?</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">きのう なにを しますか。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex8')">きのう なにを しましたか。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">きのう なにを しませんか。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex8"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-3.html" class="btn btn-secondary">📐 Về Tổng Ôn Ngữ Pháp</a>
+            <a href="n5-w24.html" class="btn btn-secondary">🏆 Về HUB Tuần 24</a>
+            <a href="n5-w24-3-03.html" class="btn btn-secondary">⬅️ Level 3: Trợ Từ</a>
+            <a href="n5-w24-3-05.html" class="btn btn-primary">➡️ Level 5: Thể て</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>📐 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:8px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.85em">© 2026 Nihongo Journey • Made with 💖</p>
+    </footer>
+
+    <script>
+        function playAudio(text){
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const voices = window.speechSynthesis.getVoices();
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function playDialogue(){
+            const lines = ['まいあさろくじにおきます','きのうともだちとえいがをみました','あしたべんきょうしますか','いいえ、べんきょうしません'];
+            let i = 0;
+            function playNext(){
+                if(i < lines.length){
+                    playAudio(lines[i]);
+                    setTimeout(() => {
+                        i++;
+                        playNext();
+                    }, 1500);
+                }
+            }
+            playNext();
+        }
+
+        function checkAnswer(el,isCorrect,id){
+            const parent = el.parentElement;
+            const options = parent.querySelectorAll('.exercise-option');
+            const feedback = document.getElementById(id);
+            
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            if(isCorrect){
+                el.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'exercise-feedback show correct';
+            } else {
+                el.classList.add('wrong');
+                options.forEach(opt => {
+                    if(opt.onclick.toString().includes('true')){
+                        opt.classList.add('correct');
+                    }
+                });
+                feedback.textContent = '❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                feedback.className = 'exercise-feedback show wrong';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            window.speechSynthesis.getVoices();
+        });
+    </script>
+</body>
+</html>
