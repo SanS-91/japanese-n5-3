@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔄 Ngữ Pháp N5 - Level 22: Làm Việc Này Rồi Việc Kia | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#5FD4A8;--primary-dark:#2FA878;--primary-light:#C8F5E0;
+            --secondary:#7EC8E3;--secondary-dark:#4FA8C7;--secondary-light:#D4ECFA;
+            --accent:#FFD93D;--accent-dark:#E8B820;--accent-light:#FFF5CC;
+            --rose:#FF9EAA;--rose-dark:#E87890;--rose-light:#FFE0E6;
+            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;
+            --terra:#CC7755;--terra-dark:#A85A3A;--terra-light:#F0D4C4;
+            --purple:#9B7FD4;--purple-dark:#6B4FA8;--purple-light:#E0D4F5;
+            --text-dark:#1F3D2F;--text-medium:#3A5C4A;--text-light:#6B8A7A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#F0FAF5 0%,#F0F8FF 25%,#FFFDF0 50%,#FFE8EC 75%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);border-radius:50%;animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);border-radius:50%;animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);border-radius:50%;animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--rose),transparent);border-radius:50%;animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose)) 1;box-shadow:0 4px 20px rgba(47,168,120,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(95,212,168,.2)}
+        .container{max-width:1400px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1400px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(200,245,224,.6)25%,rgba(212,236,250,.6)50%,rgba(255,245,204,.6)75%,rgba(255,224,230,.6)100%);border-radius:32px;padding:50px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(47,168,120,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(95,212,168,.1),transparent,rgba(126,200,227,.1),transparent,rgba(255,217,61,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(95,212,168,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(47,168,120,.15);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(47,168,120,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        .section{margin-bottom:45px}
+        .section-header{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.4));border-radius:24px;padding:22px 28px;margin-bottom:25px;display:flex;align-items:center;gap:18px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(47,168,120,.1)}
+        .section-icon{font-size:2.5em}
+        .section-title{flex:1}
+        .section-title h2{font-size:1.5em;font-weight:900;color:var(--text-dark);line-height:1.2}
+        .section-title p{font-size:.95em;color:var(--text-medium);font-weight:600;margin-top:5px}
+        
+        .grammar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:20px}
+        .grammar-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);position:relative;overflow:hidden;transition:.3s}
+        .grammar-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(95,212,168,.25)}
+        .grammar-number{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .grammar-header{display:flex;align-items:center;gap:15px;margin-bottom:25px;padding-bottom:20px;border-bottom:3px dashed var(--primary-light)}
+        .grammar-icon{font-size:3em}
+        .grammar-title{flex:1}
+        .grammar-name{font-family:'M PLUS Rounded 1c';font-size:2.2em;font-weight:900;color:var(--primary-dark);line-height:1}
+        .grammar-reading{font-size:1.1em;color:var(--text-medium);font-weight:700;margin-top:5px}
+        .grammar-meaning{font-size:1.15em;color:var(--text-dark);font-weight:800;margin-top:10px}
+        
+        .grammar-section{margin-bottom:22px}
+        .grammar-label{font-weight:900;color:var(--primary-dark);font-size:1.05em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        
+        .structure-box{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:18px 25px;border-radius:18px;text-align:center;font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:900;color:var(--text-dark);margin:15px 0;box-shadow:0 4px 15px rgba(255,217,61,.3);line-height:1.5}
+        .structure-box .highlight-red{color:#DC2626;font-weight:900}
+        .structure-box .highlight-blue{color:#2563EB;font-weight:900}
+        
+        .example-list{list-style:none;padding:0}
+        .example-item{background:rgba(255,255,255,.8);padding:15px 18px;border-radius:15px;margin-bottom:12px;border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        .example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--text-dark);margin-bottom:5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .example-hiragana{font-size:.95em;color:var(--text-medium);font-weight:600;margin-bottom:5px}
+        .example-romaji{font-size:.9em;color:var(--secondary-dark);font-style:italic;margin-bottom:5px;font-weight:600}
+        .example-vn{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .example-audio{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.9em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+        .example-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .grammar-highlight{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:2px 8px;border-radius:6px;color:var(--text-dark);font-weight:900;border:2px solid var(--accent-dark)}
+        
+        .tip-box{background:linear-gradient(135deg,var(--accent-light),rgba(255,217,61,.2));padding:18px;border-radius:15px;border-left:4px solid var(--accent-dark);margin-top:15px}
+        .tip-box h5{color:var(--accent-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .tip-box p,.tip-box ul{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px;margin-top:8px}
+        .tip-box li{margin-bottom:5px}
+        
+        .mistake-box{background:linear-gradient(135deg,var(--rose-light),rgba(255,158,170,.2));padding:18px;border-radius:15px;border-left:4px solid var(--rose-dark);margin-top:15px}
+        .mistake-box h5{color:var(--rose-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .mistake-box p{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        
+        .vocab-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,245,204,.3));border-radius:24px;padding:35px;border:3px solid var(--accent-light);box-shadow:0 6px 20px rgba(255,217,61,.15);margin-top:30px}
+        .vocab-section h3{color:var(--accent-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+        .vocab-item{background:white;padding:18px;border-radius:18px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05);transition:.3s}
+        .vocab-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+        .vocab-icon{font-size:2.5em;margin-bottom:10px}
+        .vocab-main{font-family:'M PLUS Rounded 1c';font-size:1.4em;font-weight:900;color:var(--accent-dark);margin-bottom:4px}
+        .vocab-kanji{font-size:1em;color:var(--navy-dark);font-weight:700;margin-bottom:4px}
+        .vocab-reading{font-size:.85em;color:var(--secondary-dark);font-style:italic;margin-bottom:4px;font-weight:600}
+        .vocab-meaning{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .vocab-audio{background:linear-gradient(135deg,var(--accent),var(--accent-dark));background-size:200% auto;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;margin-top:10px;transition:.3s}
+        .vocab-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .dialogue-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,224,230,.3));border-radius:24px;padding:35px;border:3px solid var(--rose-light);box-shadow:0 6px 20px rgba(255,158,170,.15);margin-top:30px}
+        .dialogue-section h3{color:var(--rose-dark);font-size:1.5em;font-weight:900;margin-bottom:15px;display:flex;align-items:center;gap:10px}
+        .dialogue-section > p{color:var(--text-medium);font-weight:600;margin-bottom:25px}
+        .dialogue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:25px}
+        .dialogue-card{background:white;padding:22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.05);border:2px solid var(--rose-light);transition:.3s}
+        .dialogue-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(255,158,170,.2)}
+        .dialogue-card-header{background:linear-gradient(135deg,var(--rose-light),var(--accent-light));padding:12px 15px;border-radius:12px;margin-bottom:15px;font-weight:900;color:var(--rose-dark);font-size:1.05em;display:flex;align-items:center;gap:10px}
+        .dialogue-line{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;padding:10px;border-radius:10px;transition:.3s}
+        .dialogue-line.reading{background:var(--accent-light);border-left:4px solid var(--accent-dark)}
+        .dialogue-speaker{font-weight:900;color:var(--primary-dark);min-width:35px;font-size:1.1em}
+        .dialogue-text{flex:1}
+        .dialogue-jp{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1.05em;color:var(--text-dark);margin-bottom:4px}
+        .dialogue-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
+        .dialogue-audio{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.8em;display:inline-flex;align-items:center;justify-content:center;transition:.3s;flex-shrink:0}
+        .dialogue-audio:hover{background-position:right center;transform:scale(1.15)}
+        .dialogue-analysis{background:var(--primary-light);padding:10px 12px;border-radius:10px;margin-top:12px;border-left:4px solid var(--primary-dark);font-size:.88em}
+        .dialogue-analysis strong{color:var(--primary-dark)}
+        .dialogue-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+        .dialogue-play-all{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-play-all:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-play-all:disabled{opacity:.6;cursor:not-allowed}
+        .dialogue-stop{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-stop:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-stop:disabled{opacity:.6;cursor:not-allowed}
+        
+        .pronunciation-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(212,236,250,.3));border-radius:24px;padding:35px;border:3px solid var(--secondary-light);box-shadow:0 6px 20px rgba(126,200,227,.15);margin-top:30px;overflow:hidden}
+        .pronunciation-section h3{color:var(--secondary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .verb-table{width:100%;border-collapse:separate;border-spacing:0;background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .verb-table thead{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark))}
+        .verb-table th{color:white;padding:15px;font-weight:900;text-align:left;font-size:.95em}
+        .verb-table td{padding:14px 15px;border-bottom:1px solid rgba(126,200,227,.2);font-size:.95em;font-weight:600;vertical-align:top}
+        .verb-table tr:last-child td{border-bottom:none}
+        .verb-table tbody tr:nth-child(even){background:rgba(212,236,250,.3)}
+        .verb-table tbody tr:hover{background:rgba(212,236,250,.5)}
+        .verb-table .verb-cell{font-family:'M PLUS Rounded 1c';font-weight:900;color:var(--secondary-dark);font-size:1.05em}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);margin-top:30px}
+        .exercise-section h3{color:var(--primary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .exercise-item{background:white;padding:22px;border-radius:18px;margin-bottom:18px;border-left:4px solid var(--primary);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .exercise-question{font-size:1.1em;color:var(--text-dark);font-weight:700;margin-bottom:15px}
+        .exercise-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .exercise-option{background:var(--primary-light);padding:15px;border-radius:15px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1.05em;font-weight:700;color:var(--text-dark);text-align:center;border:2px solid transparent}
+        .exercise-option:hover{background:var(--primary);color:white;transform:translateY(-3px)}
+        .exercise-option.correct{background:var(--primary);color:white;border-color:var(--primary-dark)}
+        .exercise-option.wrong{background:var(--rose);color:white;border-color:var(--rose-dark)}
+        .exercise-feedback{margin-top:12px;padding:12px;border-radius:12px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .exercise-feedback.show{display:block}
+        .exercise-feedback.correct{background:var(--primary-light);color:var(--primary-dark);border:2px solid var(--primary)}
+        .exercise-feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:18px;margin-top:50px;flex-wrap:wrap}
+        .btn{padding:16px 35px;border-radius:50px;border:none;font-family:inherit;font-weight:900;font-size:1.05em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:12px;transition:.3s;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white}
+        .btn-primary:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 30px rgba(95,212,168,.3)}
+        .btn-secondary{background:white;color:var(--text-dark);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:60px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){
+            .grammar-grid,.dialogue-grid{grid-template-columns:1fr}
+            .vocab-grid,.exercise-options{grid-template-columns:1fr}
+            .hero h1{font-size:2.5em}
+        }
+        @media(max-width:600px){
+            .container{padding:15px}
+            .header{padding:12px 15px}
+            .nav-links{display:none}
+            .hero{padding:35px 20px}
+            .hero h1{font-size:2em}
+            .hero-jp{font-size:1.4em}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container">
+        <div class="sparkle" style="top:15%;left:10%">✨</div>
+        <div class="sparkle" style="top:30%;right:15%;animation-delay:.5s">⭐</div>
+        <div class="sparkle" style="bottom:20%;left:20%;animation-delay:1s">✨</div>
+        <div class="sparkle" style="bottom:30%;right:25%;animation-delay:1.5s">⭐</div>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em"></span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-w24.html">🏆 Tuần 24</a></li>
+            <li><a href="n5-w24-3.html" class="active">🔄 Ngữ pháp</a></li>
+            <li><a href="n4.html"> N4</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">🏠</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">🏆 Tuần 24</a> › <a href="n5-w24-3.html">🔄 Ngữ pháp</a> › <span>Level 22: Làm Việc Này Rồi Việc Kia</span></div>
+
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <span class="hero-badge">🔄 Ngữ Pháp N5 - Level 22 • Làm Việc Này Rồi Việc Kia</span>
+            <h1>～て、それから～ます</h1>
+            <div class="hero-jp">te, sorekara ~ masu</div>
+            <p class="hero-desc">Học cách diễn tả 2 hành động xảy ra theo trật tự: làm việc A xong rồi làm việc B - Ngữ pháp QUAN TRỌNG để kể trình tự các bước!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Mẫu câu</span></div>
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Ví dụ</span></div>
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Hội thoại</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                <div class="section-title">
+                    <h2>Mục Tiêu Bài Học</h2>
+                    <p>Sau bài này, bạn sẽ có thể:</p>
+                </div>
+            </div>
+            <div class="tip-box" style="margin-bottom:20px">
+                <h5>✅ Mục tiêu học tập:</h5>
+                <p>
+                    • <strong>Diễn tả trình tự</strong> với ～て、それから～ます (làm A xong rồi làm B)<br>
+                    • <strong>Phân biệt</strong> 5 cấu trúc nối hành động: て、それから / て、それで / て、そして / てから / たあとで<br>
+                    • <strong>Kể trình tự</strong> các việc trong một ngày<br>
+                    • <strong>Kể các bước</strong> làm việc, công việc phải theo thứ tự<br>
+                    • <strong>Kể kế hoạch</strong>, lịch trình<br>
+                    • <strong>Hướng dẫn</strong> cách làm món ăn, làm gì đó<br>
+                    • <strong>Kể chuyện</strong>, trải nghiệm đã xảy ra
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon"></span>
+                <div class="section-title">
+                    <h2>5 Mẫu Câu Cốt Lõi</h2>
+                    <p>Click 🔊 để nghe phát âm chuẩn tiếng Nhật</p>
+                </div>
+            </div>
+
+            <div class="grammar-grid">
+                <div class="grammar-card">
+                    <div class="grammar-number">1</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon"></span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～て、それから～ます</div>
+                            <div class="grammar-reading">te, sorekara ~ masu - Làm A xong rồi sau đó làm B</div>
+                            <div class="grammar-meaning">Nhấn mạnh thứ tự A → B, làm xong việc này rồi mới làm việc kia</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể て)</span> + <span class="highlight-red">、それから V (ます)</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (doushi) te, sorekara V (doushi) masu.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おきて、それから かおを あらいます')">🔊</button>
+                                    <span class="grammar-highlight">起きて、それから 顔を 洗います</span>。
+                                </div>
+                                <div class="example-romaji">Okite, sorekara kao o araimasu.</div>
+                                <div class="example-vn">Tôi thức dậy, rồi sau đó tôi rửa mặt.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('ごはんを たべて、それから がっこうへ いきます')"></button>
+                                    <span class="grammar-highlight">ご飯を 食べて、それから 学校へ 行きます</span>。
+                                </div>
+                                <div class="example-romaji">Gohan o tabete, sorekara gakkou e ikimasu.</div>
+                                <div class="example-vn">Tôi ăn cơm, rồi sau đó tôi đến trường.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('シャワーを あびて、それから ねます')">🔊</button>
+                                    <span class="grammar-highlight">シャワーを 浴びて、それから 寝ます</span>。
+                                </div>
+                                <div class="example-romaji">Shawaa o abite, sorekara nemasu.</div>
+                                <div class="example-vn">Tôi tắm, rồi sau đó tôi đi ngủ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('かいものを して、それから でんしゃに のります')"></button>
+                                    <span class="grammar-highlight">買い物を して、それから 電車に 乗ります</span>。
+                                </div>
+                                <div class="example-romaji">Kaimono o shite, sorekara densha ni norimasu.</div>
+                                <div class="example-vn">Tôi đi mua sắm, rồi sau đó tôi đi tàu điện.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しゅくだいを おえて、それから テレビを みます')">🔊</button>
+                                    <span class="grammar-highlight">宿題を 終えて、それから テレビを 見ます</span>。
+                                </div>
+                                <div class="example-romaji">Shukudai o oete, sorekara terebi o mimasu.</div>
+                                <div class="example-vn">Tôi làm xong bài tập, rồi sau đó tôi xem tivi.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • 「て」: nối 2 động từ.<br>
+                            • 「それから」: sau đó, rồi mới... (nhấn mạnh thứ tự).<br>
+                            • Nhớ thứ tự nhé! A xong → rồi đến B <br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • て、それから = "te, sorekara" → "làm A xong, rồi sau đó làm B"<br>
+                            • Giống "..., and then..." trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">2</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">🌧️</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～て、それで～</div>
+                            <div class="grammar-reading">te, sorede ~ - Làm A, vì thế/nên làm B</div>
+                            <div class="grammar-meaning">Có mối liên hệ nguyên nhân - kết quả nhẹ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể て)</span> + <span class="highlight-red">、それで V</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể て) + , sorede V.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('あめが ふって、それで さむいです')">🔊</button>
+                                    <span class="grammar-highlight">雨が 降って、それで 寒いです</span>。
+                                </div>
+                                <div class="example-romaji">Ame ga futte, sorede samui desu.</div>
+                                <div class="example-vn">Trời mưa, vì thế lạnh.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('びょうきに なって、それで やすみました')">🔊</button>
+                                    <span class="grammar-highlight">病気に なって、それで 休みました</span>。
+                                </div>
+                                <div class="example-romaji">Byouki ni natte, sorede yasumimashita.</div>
+                                <div class="example-vn">Bị ốm, vì thế đã nghỉ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おそく おきて、それで ちこくしました')"></button>
+                                    <span class="grammar-highlight">遅く 起きて、それで 遅刻しました</span>。
+                                </div>
+                                <div class="example-romaji">Osoku okite, sorede chikoku shimashita.</div>
+                                <div class="example-vn">Dậy muộn, vì thế đã đến trễ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうして、それで ごうかくしました')">🔊</button>
+                                    <span class="grammar-highlight">勉強して、それで 合格しました</span>。
+                                </div>
+                                <div class="example-romaji">Benkyou shite, sorede goukaku shimashita.</div>
+                                <div class="example-vn">Đã học, vì thế đã đỗ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おなかを こわして、それで びょういんに いきました')">🔊</button>
+                                    <span class="grammar-highlight">お腹を こわして、それで 病院に 行きました</span>。
+                                </div>
+                                <div class="example-romaji">Onaka o kowashite, sorede byouin ni ikimashita.</div>
+                                <div class="example-vn">Đau bụng, vì thế đã đi bệnh viện.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Có mối liên hệ nguyên nhân - kết quả nhẹ.<br>
+                            • Khác với 「て、それから」 chỉ nhấn mạnh thứ tự.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • て、それで = "te, sorede" → "làm A, vì thế làm B"<br>
+                            • Giống "..., so..." trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">3</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">➕</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～て、そして～</div>
+                            <div class="grammar-reading">te, soshite ~ - Làm A, và (rồi) làm B</div>
+                            <div class="grammar-meaning">Chỉ nói thêm thông tin, không nhấn mạnh thứ tự</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể て)</span> + <span class="highlight-red">、そして V</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể て) + , soshite V.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうして、そして ほんを よみます')">🔊</button>
+                                    <span class="grammar-highlight">勉強して、そして 本を 読みます</span>。
+                                </div>
+                                <div class="example-romaji">Benkyou shite, soshite hon o yomimasu.</div>
+                                <div class="example-vn">Học, và rồi đọc sách.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('あさごはんを たべて、そして しごとへ いきます')"></button>
+                                    <span class="grammar-highlight">朝ごはんを 食べて、そして 仕事へ 行きます</span>。
+                                </div>
+                                <div class="example-romaji">Asagohan o tabete, soshite shigoto e ikimasu.</div>
+                                <div class="example-vn">Ăn sáng, và rồi đi làm.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('えいがを みて、そして ねます')"></button>
+                                    <span class="grammar-highlight">映画を 見て、そして 寝ます</span>。
+                                </div>
+                                <div class="example-romaji">Eiga o mite, soshite nemasu.</div>
+                                <div class="example-vn">Xem phim, và rồi đi ngủ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おんがくを きいて、そして さんぽします')">🔊</button>
+                                    <span class="grammar-highlight">音楽を 聞いて、そして 散歩します</span>。
+                                </div>
+                                <div class="example-romaji">Ongaku o kiite, soshite sanpo shimasu.</div>
+                                <div class="example-vn">Nghe nhạc, và rồi đi dạo.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('りょうりを して、そして たべます')"></button>
+                                    <span class="grammar-highlight">料理を して、そして 食べます</span>。
+                                </div>
+                                <div class="example-romaji">Ryouri o shite, soshite tabemasu.</div>
+                                <div class="example-vn">Nấu ăn, và rồi ăn.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Chỉ nói thêm thông tin, không nhấn mạnh thứ tự.<br>
+                            • Nhẹ nhàng hơn 「て、それから」.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • て、そして = "te, soshite" → "làm A, và rồi làm B"<br>
+                            • Giống "..., and..." trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">4</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">⏱️</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～てから～</div>
+                            <div class="grammar-reading">te kara ~ - Làm A xong rồi mới làm B (sau A)</div>
+                            <div class="grammar-meaning">Nhấn mạnh B bắt đầu sau khi A kết thúc</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể て)</span> + <span class="highlight-red">から V</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể て) + kara V.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しょくじを してから うんどうします')">🔊</button>
+                                    <span class="grammar-highlight">食事をしてから 運動します</span>。
+                                </div>
+                                <div class="example-romaji">Shokuji o shite kara undou shimasu.</div>
+                                <div class="example-vn">Ăn xong rồi mới tập thể dục.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('てを あらってから たべます')"></button>
+                                    <span class="grammar-highlight">手を 洗ってから 食べます</span>。
+                                </div>
+                                <div class="example-romaji">Te o aratte kara tabemasu.</div>
+                                <div class="example-vn">Rửa tay xong rồi mới ăn.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しゅくだいを してから あそびます')"></button>
+                                    <span class="grammar-highlight">宿題を してから 遊びます</span>。
+                                </div>
+                                <div class="example-romaji">Shukudai o shite kara asobimasu.</div>
+                                <div class="example-vn">Làm bài tập xong rồi mới chơi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おふろに はいってから ねます')">🔊</button>
+                                    <span class="grammar-highlight">お風呂に 入ってから 寝ます</span>。
+                                </div>
+                                <div class="example-romaji">Ofuro ni haitte kara nemasu.</div>
+                                <div class="example-vn">Tắm xong rồi mới ngủ.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('かいぎが おわってから でんわします')"></button>
+                                    <span class="grammar-highlight">会議が 終わってから 電話します</span>。
+                                </div>
+                                <div class="example-romaji">Kaigi ga owatte kara denwa shimasu.</div>
+                                <div class="example-vn">Họp xong rồi mới gọi điện.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Nhấn mạnh B bắt đầu sau khi A kết thúc.<br>
+                            • Mạnh hơn 「て、それから」 về mặt thời gian.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • てから = "te kara" → "sau khi làm A thì làm B"<br>
+                            • Giống "after doing A, do B" trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">5</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">📝</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～たあとで～</div>
+                            <div class="grammar-reading">ta ato de ~ - Sau khi đã làm A, rồi làm B</div>
+                            <div class="grammar-meaning">Trang trọng hơn "てから", nhấn mạnh sau khi hoàn thành A</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể た)</span> + <span class="highlight-red">あとで V</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể た) + ato de V.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('かいぎが おわった あとで、ほうこくします')">🔊</button>
+                                    <span class="grammar-highlight">会議が 終わった あとで、報告します</span>。
+                                </div>
+                                <div class="example-romaji">Kaigi ga owatta ato de, houkoku shimasu.</div>
+                                <div class="example-vn">Sau khi họp xong, sẽ báo cáo.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('にほんへ いった あとで、きょうとへ いきます')">🔊</button>
+                                    <span class="grammar-highlight">日本へ 行った あとで、京都へ 行きます</span>。
+                                </div>
+                                <div class="example-romaji">Nihon e itta ato de, Kyouto e ikimasu.</div>
+                                <div class="example-vn">Sau khi đi Nhật, sẽ đi Kyoto.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しゅくだいを した あとで、テレビを みます')">🔊</button>
+                                    <span class="grammar-highlight">宿題を した あとで、テレビを 見ます</span>。
+                                </div>
+                                <div class="example-romaji">Shukudai o shita ato de, terebi o mimasu.</div>
+                                <div class="example-vn">Sau khi làm bài tập, sẽ xem tivi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('りょこうに いった あとで、おみやげを かいます')">🔊</button>
+                                    <span class="grammar-highlight">旅行に 行った あとで、お土産を 買います</span>。
+                                </div>
+                                <div class="example-romaji">Ryokou ni itta ato de, omiyage o kaimasu.</div>
+                                <div class="example-vn">Sau khi đi du lịch, sẽ mua quà.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しごとが おわった あとで、のみものに いきます')">🔊</button>
+                                    <span class="grammar-highlight">仕事が 終わった あとで、飲み物に 行きます</span>。
+                                </div>
+                                <div class="example-romaji">Shigoto ga owatta ato de, nomimono ni ikimasu.</div>
+                                <div class="example-vn">Sau khi làm việc xong, sẽ đi uống nước.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Trang trọng hơn 「てから」.<br>
+                            • Nhấn mạnh sau khi hoàn thành A mới làm B.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • たあとで = "ta ato de" → "sau khi đã làm A thì làm B"<br>
+                            • Giống "after doing A, do B" (trang trọng)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="vocab-section">
+                <h3>📚 Từ Vựng Thường Gặp</h3>
+                <p style="margin-bottom:20px;color:var(--text-medium);font-weight:600">Những từ vựng hay dùng với mẫu trình tự này</p>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">おきる</div>
+                        <div class="vocab-kanji">起きる</div>
+                        <div class="vocab-reading">(okiru)</div>
+                        <div class="vocab-meaning">Thức dậy</div>
+                        <button class="vocab-audio" onclick="playAudio('おきる')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">😊</div>
+                        <div class="vocab-main">かお</div>
+                        <div class="vocab-kanji">顔</div>
+                        <div class="vocab-reading">(kao)</div>
+                        <div class="vocab-meaning">Khuôn mặt</div>
+                        <button class="vocab-audio" onclick="playAudio('かお')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">ごはん</div>
+                        <div class="vocab-kanji">ご飯</div>
+                        <div class="vocab-reading">(gohan)</div>
+                        <div class="vocab-meaning">Cơm</div>
+                        <button class="vocab-audio" onclick="playAudio('ごはん')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏫</div>
+                        <div class="vocab-main">がっこう</div>
+                        <div class="vocab-kanji">学校</div>
+                        <div class="vocab-reading">(gakkou)</div>
+                        <div class="vocab-meaning">Trường học</div>
+                        <button class="vocab-audio" onclick="playAudio('がっこう')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚿</div>
+                        <div class="vocab-main">シャワー</div>
+                        <div class="vocab-reading">(shawaa)</div>
+                        <div class="vocab-meaning">Vòi sen</div>
+                        <button class="vocab-audio" onclick="playAudio('シャワー')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">😴</div>
+                        <div class="vocab-main">ねる</div>
+                        <div class="vocab-kanji">寝る</div>
+                        <div class="vocab-reading">(neru)</div>
+                        <div class="vocab-meaning">Ngủ</div>
+                        <button class="vocab-audio" onclick="playAudio('ねる')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">️</div>
+                        <div class="vocab-main">かいもの</div>
+                        <div class="vocab-kanji">買い物</div>
+                        <div class="vocab-reading">(kaimono)</div>
+                        <div class="vocab-meaning">Mua sắm</div>
+                        <button class="vocab-audio" onclick="playAudio('かいもの')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚃</div>
+                        <div class="vocab-main">でんしゃ</div>
+                        <div class="vocab-kanji">電車</div>
+                        <div class="vocab-reading">(densha)</div>
+                        <div class="vocab-meaning">Tàu điện</div>
+                        <button class="vocab-audio" onclick="playAudio('でんしゃ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📚</div>
+                        <div class="vocab-main">しゅくだい</div>
+                        <div class="vocab-kanji">宿題</div>
+                        <div class="vocab-reading">(shukudai)</div>
+                        <div class="vocab-meaning">Bài tập</div>
+                        <button class="vocab-audio" onclick="playAudio('しゅくだい')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📺</div>
+                        <div class="vocab-main">テレビ</div>
+                        <div class="vocab-reading">(terebi)</div>
+                        <div class="vocab-meaning">Tivi</div>
+                        <button class="vocab-audio" onclick="playAudio('テレビ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🌧️</div>
+                        <div class="vocab-main">あめ</div>
+                        <div class="vocab-kanji">雨</div>
+                        <div class="vocab-reading">(ame)</div>
+                        <div class="vocab-meaning">Mưa</div>
+                        <button class="vocab-audio" onclick="playAudio('あめ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">びょうき</div>
+                        <div class="vocab-kanji">病気</div>
+                        <div class="vocab-reading">(byouki)</div>
+                        <div class="vocab-meaning">Ốm</div>
+                        <button class="vocab-audio" onclick="playAudio('びょうき')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">びょういん</div>
+                        <div class="vocab-kanji">病院</div>
+                        <div class="vocab-reading">(byouin)</div>
+                        <div class="vocab-meaning">Bệnh viện</div>
+                        <button class="vocab-audio" onclick="playAudio('びょういん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📖</div>
+                        <div class="vocab-main">べんきょう</div>
+                        <div class="vocab-kanji">勉強</div>
+                        <div class="vocab-reading">(benkyou)</div>
+                        <div class="vocab-meaning">Học tập</div>
+                        <button class="vocab-audio" onclick="playAudio('べんきょう')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🎬</div>
+                        <div class="vocab-main">えいが</div>
+                        <div class="vocab-kanji">映画</div>
+                        <div class="vocab-reading">(eiga)</div>
+                        <div class="vocab-meaning">Phim</div>
+                        <button class="vocab-audio" onclick="playAudio('えいが')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🎵</div>
+                        <div class="vocab-main">おんがく</div>
+                        <div class="vocab-kanji">音楽</div>
+                        <div class="vocab-reading">(ongaku)</div>
+                        <div class="vocab-meaning">Âm nhạc</div>
+                        <button class="vocab-audio" onclick="playAudio('おんがく')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🍳</div>
+                        <div class="vocab-main">りょうり</div>
+                        <div class="vocab-kanji">料理</div>
+                        <div class="vocab-reading">(ryouri)</div>
+                        <div class="vocab-meaning">Nấu ăn</div>
+                        <button class="vocab-audio" onclick="playAudio('りょうり')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏃</div>
+                        <div class="vocab-main">さんぽ</div>
+                        <div class="vocab-kanji">散歩</div>
+                        <div class="vocab-reading">(sanpo)</div>
+                        <div class="vocab-meaning">Đi dạo</div>
+                        <button class="vocab-audio" onclick="playAudio('さんぽ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🤝</div>
+                        <div class="vocab-main">かいぎ</div>
+                        <div class="vocab-kanji">会議</div>
+                        <div class="vocab-reading">(kaigi)</div>
+                        <div class="vocab-meaning">Cuộc họp</div>
+                        <button class="vocab-audio" onclick="playAudio('かいぎ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">おみやげ</div>
+                        <div class="vocab-kanji">お土産</div>
+                        <div class="vocab-reading">(omiyage)</div>
+                        <div class="vocab-meaning">Quà lưu niệm</div>
+                        <button class="vocab-audio" onclick="playAudio('おみやげ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">️</div>
+                        <div class="vocab-main">りょこう</div>
+                        <div class="vocab-kanji">旅行</div>
+                        <div class="vocab-reading">(ryokou)</div>
+                        <div class="vocab-meaning">Du lịch</div>
+                        <button class="vocab-audio" onclick="playAudio('りょこう')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏢</div>
+                        <div class="vocab-main">しごと</div>
+                        <div class="vocab-kanji">仕事</div>
+                        <div class="vocab-reading">(shigoto)</div>
+                        <div class="vocab-meaning">Công việc</div>
+                        <button class="vocab-audio" onclick="playAudio('しごと')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🥤</div>
+                        <div class="vocab-main">のみもの</div>
+                        <div class="vocab-kanji">飲み物</div>
+                        <div class="vocab-reading">(nomimono)</div>
+                        <div class="vocab-meaning">Đồ uống</div>
+                        <button class="vocab-audio" onclick="playAudio('のみもの')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📄</div>
+                        <div class="vocab-main">ほうこく</div>
+                        <div class="vocab-kanji">報告</div>
+                        <div class="vocab-reading">(houkoku)</div>
+                        <div class="vocab-meaning">Báo cáo</div>
+                        <button class="vocab-audio" onclick="playAudio('ほうこく')">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="pronunciation-section">
+                <h3>📊 Bảng So Sánh Dễ Nhầm</h3>
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:20%">Ý nghĩa</th>
+                            <th style="width:25%">Cách dùng</th>
+                            <th style="width:35%">Ví dụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">Vて、それから V</td>
+                            <td>Làm A xong rồi sau đó làm B</td>
+                            <td>Nhấn mạnh thứ tự A → B</td>
+                            <td>ご飯を食べて、それから学校へ行きます。</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">Vて、それで V</td>
+                            <td>Làm A, vì thế/nên làm B</td>
+                            <td>Có mối liên hệ nguyên nhân - kết quả nhẹ</td>
+                            <td>雨が降って、それで涼しいです。</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">Vて、そして V</td>
+                            <td>Làm A, và (rồi) làm B</td>
+                            <td>Chỉ nói thêm thông tin, không nhấn mạnh thứ tự</td>
+                            <td>勉強して、そして本を読みます。</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">Vてから V</td>
+                            <td>Làm A xong rồi mới làm B (sau A)</td>
+                            <td>Nhấn mạnh B bắt đầu sau khi A kết thúc</td>
+                            <td>食事をしてから運動します。</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">Vたあとで V</td>
+                            <td>Sau khi đã làm A, rồi làm B</td>
+                            <td>Trang trọng hơn "てから"</td>
+                            <td>会議が終わった後で、報告します。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box" style="margin-top:20px">
+                    <h5>💡 CỤM TỪ HỮU ÍCH:</h5>
+                    <p>
+                        • <strong>それから</strong> (sorekara) → rồi, sau đó<br>
+                        • <strong>そのあとで</strong> (sono ato de) → sau đó nữa<br>
+                        • <strong>それに</strong> (sore ni) → thêm vào đó<br>
+                        • <strong>次に</strong> (tsugi ni) → tiếp theo<br>
+                        • <strong>最後に</strong> (saigo ni) → cuối cùng<br><br>
+                        
+                        <strong>🎯 MẸO GHI NHỚ:</strong><br>
+                        • <strong>A て、それから B</strong> = "A xong → rồi đến B"<br>
+                        • Nhớ: "て" nối - "それから" dẫn đường.<br>
+                        • Thứ tự rất quan trọng!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="dialogue-section">
+                <h3>💬 Mẫu Hội Thoại</h3>
+                <p>8 tình huống giao tiếp thường gặp - Click  để nghe từng câu, hoặc nghe cả đoạn</p>
+                
+                <div class="dialogue-grid">
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">📅 Hội thoại 1: Kế hoạch hôm nay</div>
+                        <div class="dialogue-line" id="d1-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">今日の予定は？</div>
+                                <div class="dialogue-vn">Hôm nay bạn có kế hoạch gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('きょうの よていは','d1-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d1-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">午前中に買い物をして、それから友達とランチをします。</div>
+                                <div class="dialogue-vn">Buổi sáng mình đi mua sắm, rồi sau đó mình ăn trưa với bạn.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ごぜんちゅうに かいものを して、それから ともだちと ランチを します','d1-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 買い物をして、<span class="grammar-highlight">それから</span>ランチをします
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header"> Hội thoại 2: Buổi sáng</div>
+                        <div class="dialogue-line" id="d2-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">毎朝、何をしますか。</div>
+                                <div class="dialogue-vn">Mỗi sáng bạn làm gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('まいあさ、なにを しますか','d2-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d2-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">起きて、それから顔を洗います。</div>
+                                <div class="dialogue-vn">Tôi thức dậy, rồi sau đó tôi rửa mặt.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('おきて、それから かおを あらいます','d2-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 起きて、<span class="grammar-highlight">それから</span>顔を洗います
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🍽️ Hội thoại 3: Sau khi ăn</div>
+                        <div class="dialogue-line" id="d3-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">ごはんを食べたあとで、何をしますか。</div>
+                                <div class="dialogue-vn">Sau khi ăn cơm, bạn làm gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ごはんを たべた あとで、なにを しますか','d3-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d3-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">ごはんを食べたあとで、シャワーを浴びます。</div>
+                                <div class="dialogue-vn">Sau khi ăn cơm, tôi tắm vòi sen.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ごはんを たべた あとで、シャワーを あびます','d3-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> ごはんを食べた<span class="grammar-highlight">あとで</span>、シャワーを浴びます
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">📚 Hội thoại 4: Làm bài tập</div>
+                        <div class="dialogue-line" id="d4-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">しゅくだいをしてから、あそんでもいい？</div>
+                                <div class="dialogue-vn">Làm bài tập xong rồi chơi được không?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('しゅくだいを してから、あそんでも いい','d4-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d4-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">もちろん！しゅくだいをしてからあそんでね。</div>
+                                <div class="dialogue-vn">Tất nhiên rồi! Làm bài tập xong rồi hãy chơi nhé.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('もちろん、しゅくだいを してから あそんでね','d4-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> しゅくだいを<span class="grammar-highlight">してから</span>あそんで
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🌧️ Hội thoại 5: Vì trời mưa</div>
+                        <div class="dialogue-line" id="d5-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">あめがふって、それでさむいですね。</div>
+                                <div class="dialogue-vn">Trời mưa, vì thế lạnh nhỉ.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('あめが ふって、それで さむいですね','d5-line1')"></button>
+                        </div>
+                        <div class="dialogue-line" id="d5-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">そうですね。だから、コートをきていきましょう。</div>
+                                <div class="dialogue-vn">Đúng vậy. Vì thế, hãy mặc áo khoác và đi thôi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('そうですね、だから コートを きて いきましょう','d5-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> あめがふって、<span class="grammar-highlight">それで</span>さむい
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header"> Hội thoại 6: Xem phim rồi ngủ</div>
+                        <div class="dialogue-line" id="d6-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">今夜、えいがをみて、そしてねます。</div>
+                                <div class="dialogue-vn">Tối nay, tôi xem phim, và rồi đi ngủ.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('こんや、えいがを みて、そして ねます','d6-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d6-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">いいですね。おやすみなさい。</div>
+                                <div class="dialogue-vn">Hay đấy. Chúc ngủ ngon.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('いいですね、おやすみなさい','d6-line2')"></button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> えいがをみて、<span class="grammar-highlight">そして</span>ねます
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🏢 Hội thoại 7: Sau cuộc họp</div>
+                        <div class="dialogue-line" id="d7-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">かいぎが おわった あとで、なにを しますか。</div>
+                                <div class="dialogue-vn">Sau khi họp xong, bạn làm gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('かいぎが おわった あとで、なにを しますか','d7-line1')"></button>
+                        </div>
+                        <div class="dialogue-line" id="d7-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">かいぎが おわった あとで、ほうこくします。</div>
+                                <div class="dialogue-vn">Sau khi họp xong, tôi sẽ báo cáo.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('かいぎが おわった あとで、ほうこくします','d7-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 会議が終わった<span class="grammar-highlight">あとで</span>、報告します
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🍳 Hội thoại 8: Nấu ăn rồi ăn</div>
+                        <div class="dialogue-line" id="d8-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">りょうりを して、そして たべましょう。</div>
+                                <div class="dialogue-vn">Nấu ăn, và rồi cùng ăn nhé.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('りょうりを して、そして たべましょう','d8-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d8-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">いいですね。いっしょに つくりましょう。</div>
+                                <div class="dialogue-vn">Hay đấy. Cùng làm nhé.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('いいですね、いっしょに つくりましょう','d8-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong> Cấu trúc áp dụng:</strong> りょうりをして、<span class="grammar-highlight">そして</span>たべましょう
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-controls">
+                    <button class="dialogue-play-all" id="playAllBtn" onclick="playAllDialogues()">▶️ Nghe cả 8 hội thoại (từng lượt)</button>
+                    <button class="dialogue-stop" id="stopBtn" onclick="stopAllDialogues()" disabled>⏹️ Dừng</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="exercise-section">
+                <h3>️ Bài Tập Thực Hành</h3>
+                <p style="margin-bottom:25px;color:var(--text-medium);font-weight:600;font-size:1.05em">I. Chọn từ phù hợp điền vào chỗ trống:</p>
+                
+                <div class="exercise-item">
+                    <div class="exercise-question">1. ご飯を食べて、（  ）学校へ行きます。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex1')">A. それから</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">B. それで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">C. そして</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex1"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">2. 雨が降って、（  ）寒いです。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">A. それから</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex2')">B. それで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">C. そして</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex2"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">3. 勉強して、（  ）本を読みます。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">A. それから</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">B. それで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex3')">C. そして</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex3"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">4. 手を洗って（  ）食べます。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex4')">A. から</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">B. あとで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">C. それから</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex4"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">5. 会議が終わった（  ）、報告します。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">A. から</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex5')">B. あとで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">C. それから</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex5"></div>
+                </div>
+
+                <p style="margin:30px 0 20px;color:var(--text-medium);font-weight:600;font-size:1.05em">II. Dịch các câu sau sang tiếng Nhật:</p>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">6. "Tôi thức dậy, rồi sau đó tôi rửa mặt"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex6')">起きて、それから顔を洗います。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">起きて、それで顔を洗います。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">起きて、そして顔を洗います。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex6"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">7. "Ăn xong rồi mới tập thể dục"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">食事をして、それから運動します。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex7')">食事をしてから運動します。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">食事をしたあとで運動します。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex7"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">8. "Sau khi họp xong, sẽ báo cáo"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">会議が終わってから、報告します。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex8')">会議が終わったあとで、報告します。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">会議が終わって、それから報告します。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex8"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">9. "Trời mưa, vì thế lạnh"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">雨が降って、それから寒いです。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex9')">雨が降って、それで寒いです。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">雨が降って、そして寒いです。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex9"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">10. "Học, và rồi đọc sách"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">勉強して、それから本を読みます。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">勉強して、それで本を読みます。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex10')">勉強して、そして本を読みます。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex10"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-3.html" class="btn btn-secondary">🔄 Về Tổng Ôn Ngữ Pháp</a>
+            <a href="n5-w24.html" class="btn btn-secondary">🏆 Về HUB Tuần 24</a>
+            <a href="n5-w24-3-21.html" class="btn btn-secondary">⬅️ Level 21: Không Cần</a>
+            <a href="n5-w24-3-23.html" class="btn btn-primary">➡️ Level 23: Thể て</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🔄 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:8px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.85em">© 2026 Nihongo Journey • Made with 💖</p>
+    </footer>
+
+    <script>
+        let voices = [];
+        let isPlaying = false;
+        let currentUtterance = null;
+        let stopRequested = false;
+        
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+        }
+        loadVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        function playAudio(text){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function playSingle(text, lineId){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            
+            const line = document.getElementById(lineId);
+            if(line){
+                utterance.onstart = () => line.classList.add('reading');
+                utterance.onend = () => line.classList.remove('reading');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        async function playAllDialogues(){
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = true;
+            stopBtn.disabled = false;
+            playBtn.textContent = '⏳ Đang đọc...';
+            stopRequested = false;
+            
+            const allLines = [
+                {text: 'きょうの よていは', id: 'd1-line1'},
+                {text: 'ごぜんちゅうに かいものを して、それから ともだちと ランチを します', id: 'd1-line2'},
+                {text: 'まいあさ、なにを しますか', id: 'd2-line1'},
+                {text: 'おきて、それから かおを あらいます', id: 'd2-line2'},
+                {text: 'ごはんを たべた あとで、なにを しますか', id: 'd3-line1'},
+                {text: 'ごはんを たべた あとで、シャワーを あびます', id: 'd3-line2'},
+                {text: 'しゅくだいを してから、あそんでも いい', id: 'd4-line1'},
+                {text: 'もちろん、しゅくだいを してから あそんでね', id: 'd4-line2'},
+                {text: 'あめが ふって、それで さむいですね', id: 'd5-line1'},
+                {text: 'そうですね、だから コートを きて いきましょう', id: 'd5-line2'},
+                {text: 'こんや、えいがを みて、そして ねます', id: 'd6-line1'},
+                {text: 'いいですね、おやすみなさい', id: 'd6-line2'},
+                {text: 'かいぎが おわった あとで、なにを しますか', id: 'd7-line1'},
+                {text: 'かいぎが おわった あとで、ほうこくします', id: 'd7-line2'},
+                {text: 'りょうりを して、そして たべましょう', id: 'd8-line1'},
+                {text: 'いいですね、いっしょに つくりましょう', id: 'd8-line2'}
+            ];
+            
+            for(let i = 0; i < allLines.length; i++){
+                if(stopRequested) break;
+                
+                await new Promise(resolve => {
+                    document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+                    
+                    const utterance = new SpeechSynthesisUtterance(allLines[i].text);
+                    utterance.lang = 'ja-JP';
+                    utterance.rate = 0.85;
+                    utterance.pitch = 1.1;
+                    const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+                    if(japaneseVoice) utterance.voice = japaneseVoice;
+                    
+                    const line = document.getElementById(allLines[i].id);
+                    if(line){
+                        utterance.onstart = () => line.classList.add('reading');
+                        utterance.onend = () => {
+                            line.classList.remove('reading');
+                            setTimeout(resolve, 1500);
+                        };
+                    } else {
+                        resolve();
+                    }
+                    
+                    window.speechSynthesis.speak(utterance);
+                });
+            }
+            
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+            stopRequested = false;
+        }
+
+        function stopAllDialogues(){
+            stopRequested = true;
+            window.speechSynthesis.cancel();
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+        }
+
+        function checkAnswer(el,isCorrect,id){
+            const parent = el.parentElement;
+            const options = parent.querySelectorAll('.exercise-option');
+            const feedback = document.getElementById(id);
+            
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            if(isCorrect){
+                el.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'exercise-feedback show correct';
+            } else {
+                el.classList.add('wrong');
+                options.forEach(opt => {
+                    if(opt.onclick.toString().includes('true')){
+                        opt.classList.add('correct');
+                    }
+                });
+                feedback.textContent = '❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                feedback.className = 'exercise-feedback show wrong';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            loadVoices();
+        });
+    </script>
+</body>
+</html>
