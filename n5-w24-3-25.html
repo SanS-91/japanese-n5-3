@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Tổng Ôn Ngữ Pháp N5 - 24 Mẫu Quan Trọng | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#5FD4A8;--primary-dark:#2FA878;--primary-light:#C8F5E0;
+            --secondary:#7EC8E3;--secondary-dark:#4FA8C7;--secondary-light:#D4ECFA;
+            --accent:#FFD93D;--accent-dark:#E8B820;--accent-light:#FFF5CC;
+            --rose:#FF9EAA;--rose-dark:#E87890;--rose-light:#FFE0E6;
+            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;
+            --terra:#CC7755;--terra-dark:#A85A3A;--terra-light:#F0D4C4;
+            --purple:#9B7FD4;--purple-dark:#6B4FA8;--purple-light:#E0D4F5;
+            --text-dark:#1F3D2F;--text-medium:#3A5C4A;--text-light:#6B8A7A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#F0FAF5 0%,#F0F8FF 25%,#FFFDF0 50%,#FFE8EC 75%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);border-radius:50%;animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);border-radius:50%;animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);border-radius:50%;animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--rose),transparent);border-radius:50%;animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose)) 1;box-shadow:0 4px 20px rgba(47,168,120,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(95,212,168,.2)}
+        .container{max-width:1400px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1400px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(200,245,224,.6)25%,rgba(212,236,250,.6)50%,rgba(255,245,204,.6)75%,rgba(255,224,230,.6)100%);border-radius:32px;padding:50px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(47,168,120,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(95,212,168,.1),transparent,rgba(126,200,227,.1),transparent,rgba(255,217,61,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(95,212,168,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(47,168,120,.15);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(47,168,120,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        .section{margin-bottom:45px}
+        .section-header{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.4));border-radius:24px;padding:22px 28px;margin-bottom:25px;display:flex;align-items:center;gap:18px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(47,168,120,.1)}
+        .section-icon{font-size:2.5em}
+        .section-title{flex:1}
+        .section-title h2{font-size:1.5em;font-weight:900;color:var(--text-dark);line-height:1.2}
+        .section-title p{font-size:.95em;color:var(--text-medium);font-weight:600;margin-top:5px}
+        
+        .grammar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:20px}
+        .grammar-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);position:relative;overflow:hidden;transition:.3s}
+        .grammar-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(95,212,168,.25)}
+        .grammar-number{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .grammar-header{display:flex;align-items:center;gap:15px;margin-bottom:25px;padding-bottom:20px;border-bottom:3px dashed var(--primary-light)}
+        .grammar-icon{font-size:3em}
+        .grammar-title{flex:1}
+        .grammar-name{font-family:'M PLUS Rounded 1c';font-size:2.2em;font-weight:900;color:var(--primary-dark);line-height:1}
+        .grammar-reading{font-size:1.1em;color:var(--text-medium);font-weight:700;margin-top:5px}
+        .grammar-meaning{font-size:1.15em;color:var(--text-dark);font-weight:800;margin-top:10px}
+        
+        .grammar-section{margin-bottom:22px}
+        .grammar-label{font-weight:900;color:var(--primary-dark);font-size:1.05em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        
+        .structure-box{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:18px 25px;border-radius:18px;text-align:center;font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:900;color:var(--text-dark);margin:15px 0;box-shadow:0 4px 15px rgba(255,217,61,.3);line-height:1.5}
+        .structure-box .highlight-red{color:#DC2626;font-weight:900}
+        .structure-box .highlight-blue{color:#2563EB;font-weight:900}
+        
+        .example-list{list-style:none;padding:0}
+        .example-item{background:rgba(255,255,255,.8);padding:15px 18px;border-radius:15px;margin-bottom:12px;border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        .example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--text-dark);margin-bottom:5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .example-hiragana{font-size:.95em;color:var(--text-medium);font-weight:600;margin-bottom:5px}
+        .example-romaji{font-size:.9em;color:var(--secondary-dark);font-style:italic;margin-bottom:5px;font-weight:600}
+        .example-vn{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .example-audio{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.9em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+        .example-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .grammar-highlight{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:2px 8px;border-radius:6px;color:var(--text-dark);font-weight:900;border:2px solid var(--accent-dark)}
+        
+        .tip-box{background:linear-gradient(135deg,var(--accent-light),rgba(255,217,61,.2));padding:18px;border-radius:15px;border-left:4px solid var(--accent-dark);margin-top:15px}
+        .tip-box h5{color:var(--accent-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .tip-box p,.tip-box ul{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px;margin-top:8px}
+        .tip-box li{margin-bottom:5px}
+        
+        .mistake-box{background:linear-gradient(135deg,var(--rose-light),rgba(255,158,170,.2));padding:18px;border-radius:15px;border-left:4px solid var(--rose-dark);margin-top:15px}
+        .mistake-box h5{color:var(--rose-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .mistake-box p{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        
+        .vocab-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,245,204,.3));border-radius:24px;padding:35px;border:3px solid var(--accent-light);box-shadow:0 6px 20px rgba(255,217,61,.15);margin-top:30px}
+        .vocab-section h3{color:var(--accent-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+        .vocab-item{background:white;padding:18px;border-radius:18px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05);transition:.3s}
+        .vocab-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+        .vocab-icon{font-size:2.5em;margin-bottom:10px}
+        .vocab-main{font-family:'M PLUS Rounded 1c';font-size:1.4em;font-weight:900;color:var(--accent-dark);margin-bottom:4px}
+        .vocab-kanji{font-size:1em;color:var(--navy-dark);font-weight:700;margin-bottom:4px}
+        .vocab-reading{font-size:.85em;color:var(--secondary-dark);font-style:italic;margin-bottom:4px;font-weight:600}
+        .vocab-meaning{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .vocab-audio{background:linear-gradient(135deg,var(--accent),var(--accent-dark));background-size:200% auto;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;margin-top:10px;transition:.3s}
+        .vocab-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .dialogue-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,224,230,.3));border-radius:24px;padding:35px;border:3px solid var(--rose-light);box-shadow:0 6px 20px rgba(255,158,170,.15);margin-top:30px}
+        .dialogue-section h3{color:var(--rose-dark);font-size:1.5em;font-weight:900;margin-bottom:15px;display:flex;align-items:center;gap:10px}
+        .dialogue-section > p{color:var(--text-medium);font-weight:600;margin-bottom:25px}
+        .dialogue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:25px}
+        .dialogue-card{background:white;padding:22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.05);border:2px solid var(--rose-light);transition:.3s}
+        .dialogue-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(255,158,170,.2)}
+        .dialogue-card-header{background:linear-gradient(135deg,var(--rose-light),var(--accent-light));padding:12px 15px;border-radius:12px;margin-bottom:15px;font-weight:900;color:var(--rose-dark);font-size:1.05em;display:flex;align-items:center;gap:10px}
+        .dialogue-line{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;padding:10px;border-radius:10px;transition:.3s}
+        .dialogue-line.reading{background:var(--accent-light);border-left:4px solid var(--accent-dark)}
+        .dialogue-speaker{font-weight:900;color:var(--primary-dark);min-width:35px;font-size:1.1em}
+        .dialogue-text{flex:1}
+        .dialogue-jp{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1.05em;color:var(--text-dark);margin-bottom:4px}
+        .dialogue-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
+        .dialogue-audio{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.8em;display:inline-flex;align-items:center;justify-content:center;transition:.3s;flex-shrink:0}
+        .dialogue-audio:hover{background-position:right center;transform:scale(1.15)}
+        .dialogue-analysis{background:var(--primary-light);padding:10px 12px;border-radius:10px;margin-top:12px;border-left:4px solid var(--primary-dark);font-size:.88em}
+        .dialogue-analysis strong{color:var(--primary-dark)}
+        .dialogue-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+        .dialogue-play-all{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-play-all:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-play-all:disabled{opacity:.6;cursor:not-allowed}
+        .dialogue-stop{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-stop:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-stop:disabled{opacity:.6;cursor:not-allowed}
+        
+        .pronunciation-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(212,236,250,.3));border-radius:24px;padding:35px;border:3px solid var(--secondary-light);box-shadow:0 6px 20px rgba(126,200,227,.15);margin-top:30px;overflow:hidden}
+        .pronunciation-section h3{color:var(--secondary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .verb-table{width:100%;border-collapse:separate;border-spacing:0;background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .verb-table thead{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark))}
+        .verb-table th{color:white;padding:15px;font-weight:900;text-align:left;font-size:.95em}
+        .verb-table td{padding:14px 15px;border-bottom:1px solid rgba(126,200,227,.2);font-size:.95em;font-weight:600;vertical-align:top}
+        .verb-table tr:last-child td{border-bottom:none}
+        .verb-table tbody tr:nth-child(even){background:rgba(212,236,250,.3)}
+        .verb-table tbody tr:hover{background:rgba(212,236,250,.5)}
+        .verb-table .verb-cell{font-family:'M PLUS Rounded 1c';font-weight:900;color:var(--secondary-dark);font-size:1.05em}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);margin-top:30px}
+        .exercise-section h3{color:var(--primary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .exercise-item{background:white;padding:22px;border-radius:18px;margin-bottom:18px;border-left:4px solid var(--primary);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .exercise-question{font-size:1.1em;color:var(--text-dark);font-weight:700;margin-bottom:15px}
+        .exercise-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .exercise-option{background:var(--primary-light);padding:15px;border-radius:15px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1.05em;font-weight:700;color:var(--text-dark);text-align:center;border:2px solid transparent}
+        .exercise-option:hover{background:var(--primary);color:white;transform:translateY(-3px)}
+        .exercise-option.correct{background:var(--primary);color:white;border-color:var(--primary-dark)}
+        .exercise-option.wrong{background:var(--rose);color:white;border-color:var(--rose-dark)}
+        .exercise-feedback{margin-top:12px;padding:12px;border-radius:12px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .exercise-feedback.show{display:block}
+        .exercise-feedback.correct{background:var(--primary-light);color:var(--primary-dark);border:2px solid var(--primary)}
+        .exercise-feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:18px;margin-top:50px;flex-wrap:wrap}
+        .btn{padding:16px 35px;border-radius:50px;border:none;font-family:inherit;font-weight:900;font-size:1.05em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:12px;transition:.3s;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white}
+        .btn-primary:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 30px rgba(95,212,168,.3)}
+        .btn-secondary{background:white;color:var(--text-dark);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:60px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){
+            .grammar-grid,.dialogue-grid{grid-template-columns:1fr}
+            .vocab-grid,.exercise-options{grid-template-columns:1fr}
+            .hero h1{font-size:2.5em}
+        }
+        @media(max-width:600px){
+            .container{padding:15px}
+            .header{padding:12px 15px}
+            .nav-links{display:none}
+            .hero{padding:35px 20px}
+            .hero h1{font-size:2em}
+            .hero-jp{font-size:1.4em}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container">
+        <div class="sparkle" style="top:15%;left:10%">✨</div>
+        <div class="sparkle" style="top:30%;right:15%;animation-delay:.5s">⭐</div>
+        <div class="sparkle" style="bottom:20%;left:20%;animation-delay:1s">✨</div>
+        <div class="sparkle" style="bottom:30%;right:25%;animation-delay:1.5s">⭐</div>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🎓</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html"> N5</a></li>
+            <li><a href="n5-w24.html">🏆 Tuần 24</a></li>
+            <li><a href="n5-w24-3.html" class="active">🎓 Tổng ôn</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">🏠</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">🏆 Tuần 24</a> › <a href="n5-w24-3.html">🎓 Tổng ôn</a> › <span>24 Mẫu Ngữ Pháp</span></div>
+
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <span class="hero-badge"> Tổng Ôn Ngữ Pháp N5 • 24 Mẫu Quan Trọng Nhất</span>
+            <h1>Ôn Lại Ngữ Pháp N5</h1>
+            <div class="hero-jp">N5 bunpou fukushuu</div>
+            <p class="hero-desc">24 mẫu ngữ pháp quan trọng nhất - Dễ nhớ, dễ dùng! Ôn lại là nhớ lâu, dùng đâu là giỏi ngay!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">24</span><span class="stat-label">Mẫu ngữ pháp</span></div>
+                <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">Nhóm chính</span></div>
+                <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Ví dụ</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Hội thoại</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon"></span>
+                <div class="section-title">
+                    <h2>Mục Tiêu Tổng Ôn</h2>
+                    <p>Sau bài tổng ôn này, bạn sẽ nắm vững:</p>
+                </div>
+            </div>
+            <div class="tip-box" style="margin-bottom:20px">
+                <h5>✅ 6 nhóm ngữ pháp quan trọng:</h5>
+                <p>
+                    • <strong>1. Câu cơ bản:</strong> N は N です, N も N です, N の N, N ですか<br>
+                    • <strong>2. Trợ từ:</strong> に, へ, で, を, と, や, から, まで<br>
+                    • <strong>3. Động từ:</strong> V ます, V たいです, V ています, V てください, V ないでください, V なくてもいいです, V たことがあります<br>
+                    • <strong>4. Tính từ:</strong> いいです, なです, 好きです, 上手です, 下手です<br>
+                    • <strong>5. Nâng cao:</strong> より, 一番, ～から, ～たことがあります, ～と思います<br>
+                    • <strong>6. Trình tự - Đồng thời:</strong> V て, V てから, V 前に, V 後で, V つつ<br>
+                    • <strong> Mẹo:</strong> Hiểu ý nghĩa trước, rồi học cấu trúc. Học 5-10 mẫu/ngày. Ôn lại mỗi ngày!
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🏠</span>
+                <div class="section-title">
+                    <h2>1. Câu Cơ Bản (Mẫu 1-5)</h2>
+                    <p>Nhóm câu cơ bản nhất trong tiếng Nhật N5</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:15%">Phiên âm</th>
+                            <th style="width:15%">Ý nghĩa</th>
+                            <th style="width:25%">Ví dụ</th>
+                            <th style="width:20%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">1</td>
+                            <td class="verb-cell">N は N です</td>
+                            <td>N wa N desu</td>
+                            <td>Là...</td>
+                            <td>私は 学生です。<br>(Watashi wa gakusei desu.)</td>
+                            <td>Tôi là sinh viên.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">2</td>
+                            <td class="verb-cell">N は</td>
+                            <td>N wa</td>
+                            <td>Chủ ngữ là...</td>
+                            <td>私は リンです。<br>(Watashi wa Rin desu.)</td>
+                            <td>Tôi là Rin.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">3</td>
+                            <td class="verb-cell">N も N です</td>
+                            <td>N mo N desu</td>
+                            <td>Cũng là...</td>
+                            <td>彼も 学生です。<br>(Kare mo gakusei desu.)</td>
+                            <td>Anh ấy cũng là sinh viên.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">4</td>
+                            <td class="verb-cell">N の N</td>
+                            <td>N no N</td>
+                            <td>Của...</td>
+                            <td>これは 私の 本です。<br>(Kore wa watashi no hon desu.)</td>
+                            <td>Đây là sách của tôi.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">5</td>
+                            <td class="verb-cell">N ですか</td>
+                            <td>N desu ka</td>
+                            <td>Có phải... không?</td>
+                            <td>あなたは 学生ですか。<br>(Anata wa gakusei desu ka.)</td>
+                            <td>Bạn có phải là sinh viên không?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📍</span>
+                <div class="section-title">
+                    <h2>2. Trợ Từ (Mẫu 6-13)</h2>
+                    <p>Các trợ từ quan trọng nhất</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:10%">Cấu trúc</th>
+                            <th style="width:10%">Phiên âm</th>
+                            <th style="width:20%">Ý nghĩa</th>
+                            <th style="width:30%">Ví dụ</th>
+                            <th style="width:25%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">6</td>
+                            <td class="verb-cell">に</td>
+                            <td>ni</td>
+                            <td>Chỉ thời gian, địa điểm, đối tượng</td>
+                            <td>学校に 行きます。<br>(Gakkou ni ikimasu.)</td>
+                            <td>Đi đến trường.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">7</td>
+                            <td class="verb-cell">へ</td>
+                            <td>e</td>
+                            <td>Chỉ hướng đi</td>
+                            <td>駅へ 行きます。<br>(Eki e ikimasu.)</td>
+                            <td>Đi đến ga.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">8</td>
+                            <td class="verb-cell">で</td>
+                            <td>de</td>
+                            <td>Ở, tại... / Bằng phương tiện</td>
+                            <td>バスで 行きます。<br>(Basu de ikimasu.)</td>
+                            <td>Đi bằng xe buýt.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">9</td>
+                            <td class="verb-cell">を</td>
+                            <td>o</td>
+                            <td>Tân ngữ của động từ</td>
+                            <td>りんごを 食べます。<br>(Ringo o tabemasu.)</td>
+                            <td>Ăn táo.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">10</td>
+                            <td class="verb-cell">と</td>
+                            <td>to</td>
+                            <td>Với..., cùng... / Và...</td>
+                            <td>友達と 映画を 見ます。<br>(Tomodachi to eiga o mimasu.)</td>
+                            <td>Xem phim với bạn.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">11</td>
+                            <td class="verb-cell">や</td>
+                            <td>ya</td>
+                            <td>Và, và... / Cùng với...</td>
+                            <td>コーヒーや お茶を 飲みます。<br>(Koohii ya ocha o nomimasu.)</td>
+                            <td>Uống cà phê và trà.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">12</td>
+                            <td class="verb-cell">から</td>
+                            <td>kara</td>
+                            <td>Vì... / Bởi vì... / Từ...</td>
+                            <td>寒いから、コートを きます。<br>(Samui kara, kooto o kimasu.)</td>
+                            <td>Vì lạnh nên mặc áo khoác.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">13</td>
+                            <td class="verb-cell">まで</td>
+                            <td>made</td>
+                            <td>Đến... (thời gian, địa điểm)</td>
+                            <td>8時まで 働きます。<br>(Hachi-ji made hatarakimasu.)</td>
+                            <td>Làm việc đến 8 giờ.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🏃</span>
+                <div class="section-title">
+                    <h2>3. Động Từ (Mẫu 14-20)</h2>
+                    <p>Các mẫu động từ quan trọng</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:15%">Phiên âm</th>
+                            <th style="width:15%">Ý nghĩa</th>
+                            <th style="width:25%">Ví dụ</th>
+                            <th style="width:20%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">14</td>
+                            <td class="verb-cell">V ます</td>
+                            <td>V masu</td>
+                            <td>Thì hiện tại (lịch sự)</td>
+                            <td>日本語を 勉強します。<br>(Nihongo o benkyou shimasu.)</td>
+                            <td>Tôi học tiếng Nhật.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">15</td>
+                            <td class="verb-cell">V たいです</td>
+                            <td>V tai desu</td>
+                            <td>Muốn...</td>
+                            <td>日本へ 行きたいです。<br>(Nihon e ikitai desu.)</td>
+                            <td>Tôi muốn đi Nhật.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">16</td>
+                            <td class="verb-cell">V ています</td>
+                            <td>V te imasu</td>
+                            <td>Đang...</td>
+                            <td>今、テレビを 見ています。<br>(Ima, terebi o mite imasu.)</td>
+                            <td>Bây giờ tôi đang xem tivi.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">17</td>
+                            <td class="verb-cell">V てください</td>
+                            <td>V te kudasai</td>
+                            <td>Xin hãy...</td>
+                            <td>ドアを 閉めてください。<br>(Doa o shimete kudasai.)</td>
+                            <td>Xin hãy đóng cửa lại.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">18</td>
+                            <td class="verb-cell">V ないでください</td>
+                            <td>V nai de kudasai</td>
+                            <td>Xin đừng...</td>
+                            <td>ここに 座らないでください。<br>(Koko ni suwaranaide kudasai.)</td>
+                            <td>Xin đừng ngồi ở đây.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">19</td>
+                            <td class="verb-cell">V なくてもいいです</td>
+                            <td>V nakutemo ii desu</td>
+                            <td>Không cần...</td>
+                            <td>急がなくても いいです。<br>(Isoganakutemo ii desu.)</td>
+                            <td>Không cần vội.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">20</td>
+                            <td class="verb-cell">V たことがあります</td>
+                            <td>V ta koto ga arimasu</td>
+                            <td>Đã từng...</td>
+                            <td>沖縄へ 行ったことが あります。<br>(Okinawa e itta koto ga arimasu.)</td>
+                            <td>Tôi đã từng đi Okinawa.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">💖</span>
+                <div class="section-title">
+                    <h2>4. Tính Từ (Mẫu 21-25)</h2>
+                    <p>Các tính từ thường gặp</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:15%">Phiên âm</th>
+                            <th style="width:15%">Ý nghĩa</th>
+                            <th style="width:25%">Ví dụ</th>
+                            <th style="width:20%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">21</td>
+                            <td class="verb-cell">いいです</td>
+                            <td>ii desu</td>
+                            <td>Tính từ đuôi い: tốt, đẹp...</td>
+                            <td>天気が いいです。<br>(Tenki ga ii desu.)</td>
+                            <td>Thời tiết đẹp.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">22</td>
+                            <td class="verb-cell">なです</td>
+                            <td>na desu</td>
+                            <td>Tính từ đuôi な</td>
+                            <td>静か（しずか）です。<br>(Shizuka desu.)</td>
+                            <td>Yên tĩnh.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">23</td>
+                            <td class="verb-cell">好きです</td>
+                            <td>suki desu</td>
+                            <td>Thích...</td>
+                            <td>私は カフェが 好きです。<br>(Watashi wa kafe ga suki desu.)</td>
+                            <td>Tôi thích quán cà phê.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">24</td>
+                            <td class="verb-cell">上手です</td>
+                            <td>jouzu desu</td>
+                            <td>Giỏi...</td>
+                            <td>彼は ターが 上手です。<br>(Kare wa gitaa ga jouzu desu.)</td>
+                            <td>Anh ấy giỏi guitar.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">25</td>
+                            <td class="verb-cell">下手です</td>
+                            <td>heta desu</td>
+                            <td>Dở, kém...</td>
+                            <td>私は 絵を 描くのが 下手です。<br>(Watashi wa e o kaku no ga heta desu.)</td>
+                            <td>Tôi vẽ kém.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <div class="section-title">
+                    <h2>5. Nâng Cao (Mẫu 26-30)</h2>
+                    <p>Các mẫu ngữ pháp nâng cao</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:15%">Phiên âm</th>
+                            <th style="width:15%">Ý nghĩa</th>
+                            <th style="width:25%">Ví dụ</th>
+                            <th style="width:20%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">26</td>
+                            <td class="verb-cell">より</td>
+                            <td>yori</td>
+                            <td>Hơn...</td>
+                            <td>日本の方が ベトナムより きれいです。<br>(Nihon no hou ga Betonamu yori kirei desu.)</td>
+                            <td>Nhật Bản đẹp hơn Việt Nam.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">27</td>
+                            <td class="verb-cell">一番</td>
+                            <td>ichiban</td>
+                            <td>Nhất...</td>
+                            <td>この ケーキが 一番 おいしいです。<br>(Kono keeki ga ichiban oishii desu.)</td>
+                            <td>Chiếc bánh này ngon nhất.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">28</td>
+                            <td class="verb-cell">～から</td>
+                            <td>kara</td>
+                            <td>Vì... / Do... (lý do)</td>
+                            <td>熱が あるから、学校を 休みます。<br>(Netsu ga aru kara, gakkou o yasumimasu.)</td>
+                            <td>Vì bị sốt nên nghỉ học.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">29</td>
+                            <td class="verb-cell">～たことがあります</td>
+                            <td>ta koto ga arimasu</td>
+                            <td>Đã từng...</td>
+                            <td>富士山に 登ったことが あります。<br>(Fujisan ni nobotta koto ga arimasu.)</td>
+                            <td>Tôi đã từng leo núi Phú Sĩ.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">30</td>
+                            <td class="verb-cell">～と思います</td>
+                            <td>to omoi masu</td>
+                            <td>Tôi nghĩ...</td>
+                            <td>私は そう思います。<br>(Watashi wa sou omoimasu.)</td>
+                            <td>Tôi nghĩ vậy.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">⏰</span>
+                <div class="section-title">
+                    <h2>6. Trình Tự - Đồng Thời (Mẫu 31-35)</h2>
+                    <p>Diễn tả thứ tự và hành động đồng thời</p>
+                </div>
+            </div>
+
+            <div class="pronunciation-section">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:15%">Phiên âm</th>
+                            <th style="width:15%">Ý nghĩa</th>
+                            <th style="width:25%">Ví dụ</th>
+                            <th style="width:20%">Dịch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">31</td>
+                            <td class="verb-cell">V て</td>
+                            <td>V te</td>
+                            <td>Rồi... / Sau khi...</td>
+                            <td>ご飯を 食べて、テレビを 見ます。<br>(Gohan o tabete, terebi o mimasu.)</td>
+                            <td>Ăn cơm rồi xem tivi.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">32</td>
+                            <td class="verb-cell">V て、それから V</td>
+                            <td>V te, sorekara V</td>
+                            <td>Làm việc này rồi việc kia</td>
+                            <td>学校へ 行って、それから 友達と 映画を 見ます。<br>(Gakkou e itte, sorekara tomodachi to eiga o mimasu.)</td>
+                            <td>Đi học rồi sau đó xem phim với bạn.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">33</td>
+                            <td class="verb-cell">V 前に</td>
+                            <td>V mae ni</td>
+                            <td>Trước khi...</td>
+                            <td>出かける 前に、準備を します。<br>(Dekakeru mae ni, junbi o shimasu.)</td>
+                            <td>Trước khi ra ngoài, tôi chuẩn bị.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">34</td>
+                            <td class="verb-cell">V 後で</td>
+                            <td>V ato de</td>
+                            <td>Sau khi...</td>
+                            <td>食べた 後で、デザートを 食べます。<br>(Tabeta ato de, dezaato o tabemasu.)</td>
+                            <td>Sau khi ăn, tôi ăn tráng miệng.</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">35</td>
+                            <td class="verb-cell">V つつ (= V ながら)</td>
+                            <td>V tsutsu (= V nagara)</td>
+                            <td>Vừa... vừa... (đồng thời)</td>
+                            <td>音楽を 聞きつつ、勉強します。<br>(Ongaku o kikitsutsu, benkyou shimasu.)</td>
+                            <td>Vừa nghe nhạc vừa học.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box" style="margin-top:20px">
+                    <h5>💡 MẸO GHI NHỚ NHANH THEO NHÓM:</h5>
+                    <p>
+                        • <strong style="color:var(--primary-dark)">🟢 Xanh dương:</strong> Câu cơ bản (N は N です, N も N です...)<br>
+                        • <strong style="color:var(--primary)">🟢 Xanh lá:</strong> Trợ từ (に, へ, で, を, と, や, から, まで)<br>
+                        • <strong style="color:var(--accent-dark)">🟠 Cam:</strong> Động từ (V ます, V たいです, V ています...)<br>
+                        • <strong style="color:var(--rose-dark)">🩷 Hồng:</strong> Tính từ (いいです, 好きです, 上手です...)<br>
+                        • <strong style="color:var(--purple-dark)">🟣 Tím:</strong> Nâng cao (より, 一番, ～から, ～と思います...)<br>
+                        • <strong style="color:var(--secondary-dark)"> Xanh ngọc:</strong> Trình tự - Đồng thời (V て, V 前に, V 後で, V つつ...)<br><br>
+                        
+                        <strong>🎯 CÁCH DÙNG HIỆU QUẢ:</strong><br>
+                        • Học 5-10 mẫu/ngày<br>
+                        • Làm bài tập - Viết câu - Nói to<br>
+                        • Ôn lại thường xuyên (1-3-7 ngày)<br>
+                        • Áp dụng vào cuộc sống hàng ngày<br>
+                        • Bắt đầu từ Câu cơ bản & Trợ từ → Động từ → Tính từ → Nâng cao → Trình tự
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="dialogue-section">
+                <h3>💬 Mẫu Hội Thoại Tổng Hợp</h3>
+                <p>8 tình huống giao tiếp sử dụng nhiều mẫu ngữ pháp - Click 🔊 để nghe từng câu, hoặc nghe cả đoạn</p>
+                
+                <div class="dialogue-grid">
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🏫 Hội thoại 1: Giới thiệu bản thân</div>
+                        <div class="dialogue-line" id="d1-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">あなたは 学生ですか。</div>
+                                <div class="dialogue-vn">Bạn có phải là sinh viên không?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('あなたは がくせいですか','d1-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d1-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、私は 学生です。日本语を 勉強しています。</div>
+                                <div class="dialogue-vn">Vâng, tôi là sinh viên. Tôi đang học tiếng Nhật.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、わたしは がくせいです。にほんごを べんきょうして います','d1-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> N <span class="grammar-highlight">ですか</span> / N <span class="grammar-highlight">です</span> / V <span class="grammar-highlight">ています</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🍜 Hội thoại 2: Sở thích</div>
+                        <div class="dialogue-line" id="d2-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">何が 好きですか。</div>
+                                <div class="dialogue-vn">Bạn thích gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('なにが すきですか','d2-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d2-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">私は カフェが 好きです。コーヒーを 飲むことが 好きです。</div>
+                                <div class="dialogue-vn">Tôi thích quán cà phê. Tôi thích uống cà phê.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('わたしは カフェが すきです。コーヒーを のむことが すきです','d2-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> <span class="grammar-highlight">好きです</span> / N <span class="grammar-highlight">を</span> V
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🗼 Hội thoại 3: Du lịch</div>
+                        <div class="dialogue-line" id="d3-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">日本へ 行ったことが ありますか。</div>
+                                <div class="dialogue-vn">Bạn đã từng đi Nhật chưa?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('にほんへ いったことが ありますか','d3-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d3-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、あります。富士山に 登ったことが あります。</div>
+                                <div class="dialogue-vn">Có, từng rồi. Tôi đã từng leo núi Phú Sĩ.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、あります。ふじさんに のぼったことが あります','d3-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> N <span class="grammar-highlight">へ</span> V た <span class="grammar-highlight">ことがありますか</span> / V た <span class="grammar-highlight">ことがあります</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header"> Hội thoại 4: Kế hoạch</div>
+                        <div class="dialogue-line" id="d4-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">明日、何を しますか。</div>
+                                <div class="dialogue-vn">Ngày mai bạn làm gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('あした、なにを しますか','d4-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d4-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">学校へ 行って、それから 友達と 映画を 見ます。</div>
+                                <div class="dialogue-vn">Tôi đi học, rồi sau đó xem phim với bạn.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('がっこうへ いって、それから ともだちと えいがを みます','d4-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> N <span class="grammar-highlight">へ</span> V て、<span class="grammar-highlight">それから</span> V ます
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🌧️ Hội thoại 5: Lý do</div>
+                        <div class="dialogue-line" id="d5-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">なぜ 学校を 休みますか。</div>
+                                <div class="dialogue-vn">Tại sao bạn nghỉ học?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('なぜ がっこうを やすみますか','d5-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d5-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">熱が あるから、学校を 休みます。</div>
+                                <div class="dialogue-vn">Vì bị sốt nên tôi nghỉ học.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ねつが あるから、がっこうを やすみます','d5-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> V <span class="grammar-highlight">から</span> (lý do)
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header"> Hội thoại 6: Vừa... vừa...</div>
+                        <div class="dialogue-line" id="d6-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">音楽を 聞きつつ、勉強して いますか。</div>
+                                <div class="dialogue-vn">Bạn vừa nghe nhạc vừa học à?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('おんがくを ききつつ、べんきょうして いますか','d6-line1')"></button>
+                        </div>
+                        <div class="dialogue-line" id="d6-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、音楽を 聞きつつ、勉強して います。</div>
+                                <div class="dialogue-vn">Vâng, tôi vừa nghe nhạc vừa học.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、おんがくを ききつつ、べんきょうして います','d6-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> V <span class="grammar-highlight">つつ</span> (đồng thời)
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🍽️ Hội thoại 7: Trước khi ăn</div>
+                        <div class="dialogue-line" id="d7-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">ご飯を 食べる 前に、何を しますか。</div>
+                                <div class="dialogue-vn">Trước khi ăn cơm, bạn làm gì?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ごはんを たべる まえに、なにを しますか','d7-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d7-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">手を 洗います。そして、いただきますと 言います。</div>
+                                <div class="dialogue-vn">Tôi rửa tay. Và nói "itadakimasu".</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('てを あらいます。そして、いただきますと いいます','d7-line2')"></button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> V <span class="grammar-highlight">前に</span> / <span class="grammar-highlight">そして</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">💭 Hội thoại 8: Tôi nghĩ</div>
+                        <div class="dialogue-line" id="d8-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">この レストランは おいしいと 思いますか。</div>
+                                <div class="dialogue-vn">Bạn nghĩ nhà hàng này có ngon không?</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('この レストランは おいしいと おもいますか','d8-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d8-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、おいしいと 思います。一番 おいしいです！</div>
+                                <div class="dialogue-vn">Có, tôi nghĩ ngon. Ngon nhất!</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、おいしいと おもいます。いちばん おいしいです','d8-line2')"></button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> <span class="grammar-highlight">と思いますか</span> / <span class="grammar-highlight">と思います</span> / <span class="grammar-highlight">一番</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-controls">
+                    <button class="dialogue-play-all" id="playAllBtn" onclick="playAllDialogues()">▶️ Nghe cả 8 hội thoại (từng lượt)</button>
+                    <button class="dialogue-stop" id="stopBtn" onclick="stopAllDialogues()" disabled>⏹️ Dừng</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="exercise-section">
+                <h3>✏️ Bài Tập Tổng Ôn</h3>
+                <p style="margin-bottom:25px;color:var(--text-medium);font-weight:600;font-size:1.05em">Kiểm tra kiến thức tổng hợp từ 24 mẫu ngữ pháp:</p>
+                
+                <div class="exercise-item">
+                    <div class="exercise-question">1. 私は 学生（  ）。(Tôi là sinh viên)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex1')">A. です</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">B. ます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">C. います</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex1"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">2. 学校（  ）行きます。(Đi đến trường)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">A. を</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex2')">B. に</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">C. で</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex2"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">3. 今、テレビを 見て（  ）。(Bây giờ đang xem tivi)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">A. ます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex3')">B. います</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">C. たいです</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex3"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">4. ドアを 閉めて（  ）。(Xin hãy đóng cửa)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex4')">A. ください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">B. ます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">C. たいです</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex4"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">5. 富士山に 登った（  ）があります。(Đã từng leo núi Phú Sĩ)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">A. こと</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex5')">B. ことが</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">C. ことを</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex5"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">6. 日本（  ）ベトナムより きれいです。(Nhật đẹp hơn Việt Nam)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex6')">A. の方が</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">B. より</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">C. 一番</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex6"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">7. 出かける（  ）、準備を します。(Trước khi ra ngoài, tôi chuẩn bị)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex7')">A. 前に</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">B. 後で</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">C. つつ</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex7"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">8. 食べた（  ）、デザートを 食べます。(Sau khi ăn, tôi ăn tráng miệng)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">A. 前に</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex8')">B. 後で</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">C. つつ</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex8"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">9. 音楽を 聞き（  ）、勉強します。(Vừa nghe nhạc vừa học)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">A. 前に</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">B. 後で</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex9')">C. つつ</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex9"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">10. 私は そう（  ）。(Tôi nghĩ vậy)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex10')">A. 思います</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">B. ます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">C. います</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex10"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="tip-box">
+                <h5>🎉 CHÚC MỪNG BẠN ĐÃ HOÀN THÀNH 24 LEVEL NGỮ PHÁP N5!</h5>
+                <p>
+                    • Bạn đã học được <strong>24 mẫu ngữ pháp quan trọng nhất</strong> của N5.<br>
+                    • Hãy ôn lại thường xuyên để ghi nhớ lâu hơn.<br>
+                    • Áp dụng vào cuộc sống hàng ngày để thành thạo.<br>
+                    • Tiếp tục hành trình N4 nhé! 💪<br><br>
+                    
+                    <strong>🌟 LỜI KHUYÊN:</strong><br>
+                    • Hiểu ý nghĩa trước, rồi học cấu trúc.<br>
+                    • Học theo ví dụ thực tế.<br>
+                    • Nói ra mỗi ngày để ghi nhớ lâu.<br>
+                    • Ôn lại thường xuyên!<br><br>
+                    
+                    <strong>がんばってね！ (Ganbatte ne!)</strong> - Cố gắng lên nhé!<br>
+                    <strong>あなたなら できます！ (Anata nara dekimasu!)</strong> - Bạn làm được mà!<br>
+                    <strong>毎日コツコツ、きっと上手になりますよ！</strong> - Mỗi ngày một chút, chắc chắn sẽ giỏi lên!<br>
+                    <strong>応援しています！ (Ouen shite imasu!)</strong> - Tôi luôn cổ vũ bạn!
+                </p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-3.html" class="btn btn-secondary">🎓 Về Tổng Ôn Ngữ Pháp</a>
+            <a href="n5-w24.html" class="btn btn-secondary"> Về HUB Tuần 24</a>
+            <a href="n5-w24-3-24.html" class="btn btn-secondary">️ Level 24: Trước Khi / Sau Khi / Vừa... Vừa</a>
+            <a href="n4.html" class="btn btn-primary">➡️ Bắt Đầu N4</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🎓 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:8px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.85em">© 2026 Nihongo Journey • Made with 💖</p>
+    </footer>
+
+    <script>
+        let voices = [];
+        let stopRequested = false;
+        
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+        }
+        loadVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        function playAudio(text){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function playSingle(text, lineId){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            
+            const line = document.getElementById(lineId);
+            if(line){
+                utterance.onstart = () => line.classList.add('reading');
+                utterance.onend = () => line.classList.remove('reading');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        async function playAllDialogues(){
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = true;
+            stopBtn.disabled = false;
+            playBtn.textContent = ' Đang đọc...';
+            stopRequested = false;
+            
+            const allLines = [
+                {text: 'あなたは がくせいですか', id: 'd1-line1'},
+                {text: 'はい、わたしは がくせいです。にほんごを べんきょうして います', id: 'd1-line2'},
+                {text: 'なにが すきですか', id: 'd2-line1'},
+                {text: 'わたしは カフェが すきです。コーヒーを のむことが すきです', id: 'd2-line2'},
+                {text: 'にほんへ いったことが ありますか', id: 'd3-line1'},
+                {text: 'はい、あります。ふじさんに のぼったことが あります', id: 'd3-line2'},
+                {text: 'あした、なにを しますか', id: 'd4-line1'},
+                {text: 'がっこうへ いって、それから ともだちと えいがを みます', id: 'd4-line2'},
+                {text: 'なぜ がっこうを やすみますか', id: 'd5-line1'},
+                {text: 'ねつが あるから、がっこうを やすみます', id: 'd5-line2'},
+                {text: 'おんがくを ききつつ、べんきょうして いますか', id: 'd6-line1'},
+                {text: 'はい、おんがくを ききつつ、べんきょうして います', id: 'd6-line2'},
+                {text: 'ごはんを たべる まえに、なにを しますか', id: 'd7-line1'},
+                {text: 'てを あらいます。そして、いただきますと いいます', id: 'd7-line2'},
+                {text: 'この レストランは おいしいと おもいますか', id: 'd8-line1'},
+                {text: 'はい、おいしいと おもいます。いちばん おいしいです', id: 'd8-line2'}
+            ];
+            
+            for(let i = 0; i < allLines.length; i++){
+                if(stopRequested) break;
+                
+                await new Promise(resolve => {
+                    document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+                    
+                    const utterance = new SpeechSynthesisUtterance(allLines[i].text);
+                    utterance.lang = 'ja-JP';
+                    utterance.rate = 0.85;
+                    utterance.pitch = 1.1;
+                    const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+                    if(japaneseVoice) utterance.voice = japaneseVoice;
+                    
+                    const line = document.getElementById(allLines[i].id);
+                    if(line){
+                        utterance.onstart = () => line.classList.add('reading');
+                        utterance.onend = () => {
+                            line.classList.remove('reading');
+                            setTimeout(resolve, 1500);
+                        };
+                    } else {
+                        resolve();
+                    }
+                    
+                    window.speechSynthesis.speak(utterance);
+                });
+            }
+            
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+            stopRequested = false;
+        }
+
+        function stopAllDialogues(){
+            stopRequested = true;
+            window.speechSynthesis.cancel();
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+        }
+
+        function checkAnswer(el,isCorrect,id){
+            const parent = el.parentElement;
+            const options = parent.querySelectorAll('.exercise-option');
+            const feedback = document.getElementById(id);
+            
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            if(isCorrect){
+                el.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'exercise-feedback show correct';
+            } else {
+                el.classList.add('wrong');
+                options.forEach(opt => {
+                    if(opt.onclick.toString().includes('true')){
+                        opt.classList.add('correct');
+                    }
+                });
+                feedback.textContent = '❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                feedback.className = 'exercise-feedback show wrong';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            loadVoices();
+        });
+    </script>
+</body>
+</html>
