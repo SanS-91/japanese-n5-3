@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚫 Ngữ Pháp N5 - Level 20: Xin Đừng | Nihongo Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#5FD4A8;--primary-dark:#2FA878;--primary-light:#C8F5E0;
+            --secondary:#7EC8E3;--secondary-dark:#4FA8C7;--secondary-light:#D4ECFA;
+            --accent:#FFD93D;--accent-dark:#E8B820;--accent-light:#FFF5CC;
+            --rose:#FF9EAA;--rose-dark:#E87890;--rose-light:#FFE0E6;
+            --navy:#4A6FA5;--navy-dark:#2C4A75;--navy-light:#B8CDE8;
+            --terra:#CC7755;--terra-dark:#A85A3A;--terra-light:#F0D4C4;
+            --purple:#9B7FD4;--purple-dark:#6B4FA8;--purple-light:#E0D4F5;
+            --text-dark:#1F3D2F;--text-medium:#3A5C4A;--text-light:#6B8A7A;
+        }
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,#F0FAF5 0%,#F0F8FF 25%,#FFFDF0 50%,#FFE8EC 75%,#F0F4FA 100%);background-attachment:fixed;color:var(--text-dark);line-height:1.7;min-height:100vh;overflow-x:hidden}
+        
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);border-radius:50%;animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);border-radius:50%;animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);border-radius:50%;animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--rose),transparent);border-radius:50%;animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(240,250,245,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--rose)) 1;box-shadow:0 4px 20px rgba(47,168,120,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+        .nav-links{display:flex;gap:8px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(95,212,168,.2)}
+        .container{max-width:1400px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1400px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary-dark);text-decoration:none;font-weight:700}
+        
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(200,245,224,.6)25%,rgba(212,236,250,.6)50%,rgba(255,245,204,.6)75%,rgba(255,224,230,.6)100%);border-radius:32px;padding:50px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(47,168,120,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(95,212,168,.1),transparent,rgba(126,200,227,.1),transparent,rgba(255,217,61,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(95,212,168,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3.2em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.9em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(47,168,120,.15);min-width:130px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(47,168,120,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
+        
+        .section{margin-bottom:45px}
+        .section-header{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.4));border-radius:24px;padding:22px 28px;margin-bottom:25px;display:flex;align-items:center;gap:18px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(47,168,120,.1)}
+        .section-icon{font-size:2.5em}
+        .section-title{flex:1}
+        .section-title h2{font-size:1.5em;font-weight:900;color:var(--text-dark);line-height:1.2}
+        .section-title p{font-size:.95em;color:var(--text-medium);font-weight:600;margin-top:5px}
+        
+        .grammar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:20px}
+        .grammar-card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);position:relative;overflow:hidden;transition:.3s}
+        .grammar-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(95,212,168,.25)}
+        .grammar-number{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .grammar-header{display:flex;align-items:center;gap:15px;margin-bottom:25px;padding-bottom:20px;border-bottom:3px dashed var(--primary-light)}
+        .grammar-icon{font-size:3em}
+        .grammar-title{flex:1}
+        .grammar-name{font-family:'M PLUS Rounded 1c';font-size:2.2em;font-weight:900;color:var(--primary-dark);line-height:1}
+        .grammar-reading{font-size:1.1em;color:var(--text-medium);font-weight:700;margin-top:5px}
+        .grammar-meaning{font-size:1.15em;color:var(--text-dark);font-weight:800;margin-top:10px}
+        
+        .grammar-section{margin-bottom:22px}
+        .grammar-label{font-weight:900;color:var(--primary-dark);font-size:1.05em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        
+        .structure-box{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:18px 25px;border-radius:18px;text-align:center;font-family:'M PLUS Rounded 1c';font-size:1.3em;font-weight:900;color:var(--text-dark);margin:15px 0;box-shadow:0 4px 15px rgba(255,217,61,.3);line-height:1.5}
+        .structure-box .highlight-red{color:#DC2626;font-weight:900}
+        .structure-box .highlight-blue{color:#2563EB;font-weight:900}
+        
+        .example-list{list-style:none;padding:0}
+        .example-item{background:rgba(255,255,255,.8);padding:15px 18px;border-radius:15px;margin-bottom:12px;border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        .example-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--text-dark);margin-bottom:5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .example-hiragana{font-size:.95em;color:var(--text-medium);font-weight:600;margin-bottom:5px}
+        .example-romaji{font-size:.9em;color:var(--secondary-dark);font-style:italic;margin-bottom:5px;font-weight:600}
+        .example-vn{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .example-audio{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.9em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+        .example-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .grammar-highlight{background:linear-gradient(135deg,var(--accent-light),var(--accent));padding:2px 8px;border-radius:6px;color:var(--text-dark);font-weight:900;border:2px solid var(--accent-dark)}
+        
+        .tip-box{background:linear-gradient(135deg,var(--accent-light),rgba(255,217,61,.2));padding:18px;border-radius:15px;border-left:4px solid var(--accent-dark);margin-top:15px}
+        .tip-box h5{color:var(--accent-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .tip-box p,.tip-box ul{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        .tip-box ul{padding-left:20px;margin-top:8px}
+        .tip-box li{margin-bottom:5px}
+        
+        .mistake-box{background:linear-gradient(135deg,var(--rose-light),rgba(255,158,170,.2));padding:18px;border-radius:15px;border-left:4px solid var(--rose-dark);margin-top:15px}
+        .mistake-box h5{color:var(--rose-dark);font-size:1.05em;font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+        .mistake-box p{font-size:.95em;color:var(--text-medium);line-height:1.7;font-weight:600}
+        
+        .vocab-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,245,204,.3));border-radius:24px;padding:35px;border:3px solid var(--accent-light);box-shadow:0 6px 20px rgba(255,217,61,.15);margin-top:30px}
+        .vocab-section h3{color:var(--accent-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+        .vocab-item{background:white;padding:18px;border-radius:18px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05);transition:.3s}
+        .vocab-item:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+        .vocab-icon{font-size:2.5em;margin-bottom:10px}
+        .vocab-main{font-family:'M PLUS Rounded 1c';font-size:1.4em;font-weight:900;color:var(--accent-dark);margin-bottom:4px}
+        .vocab-kanji{font-size:1em;color:var(--navy-dark);font-weight:700;margin-bottom:4px}
+        .vocab-reading{font-size:.85em;color:var(--secondary-dark);font-style:italic;margin-bottom:4px;font-weight:600}
+        .vocab-meaning{font-size:.95em;color:var(--text-dark);font-weight:700}
+        .vocab-audio{background:linear-gradient(135deg,var(--accent),var(--accent-dark));background-size:200% auto;color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;margin-top:10px;transition:.3s}
+        .vocab-audio:hover{background-position:right center;transform:scale(1.15)}
+        
+        .dialogue-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,224,230,.3));border-radius:24px;padding:35px;border:3px solid var(--rose-light);box-shadow:0 6px 20px rgba(255,158,170,.15);margin-top:30px}
+        .dialogue-section h3{color:var(--rose-dark);font-size:1.5em;font-weight:900;margin-bottom:15px;display:flex;align-items:center;gap:10px}
+        .dialogue-section > p{color:var(--text-medium);font-weight:600;margin-bottom:25px}
+        .dialogue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:25px}
+        .dialogue-card{background:white;padding:22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.05);border:2px solid var(--rose-light);transition:.3s}
+        .dialogue-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(255,158,170,.2)}
+        .dialogue-card-header{background:linear-gradient(135deg,var(--rose-light),var(--accent-light));padding:12px 15px;border-radius:12px;margin-bottom:15px;font-weight:900;color:var(--rose-dark);font-size:1.05em;display:flex;align-items:center;gap:10px}
+        .dialogue-line{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;padding:10px;border-radius:10px;transition:.3s}
+        .dialogue-line.reading{background:var(--accent-light);border-left:4px solid var(--accent-dark)}
+        .dialogue-speaker{font-weight:900;color:var(--primary-dark);min-width:35px;font-size:1.1em}
+        .dialogue-text{flex:1}
+        .dialogue-jp{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1.05em;color:var(--text-dark);margin-bottom:4px}
+        .dialogue-vn{font-size:.9em;color:var(--text-medium);font-weight:600}
+        .dialogue-audio{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.8em;display:inline-flex;align-items:center;justify-content:center;transition:.3s;flex-shrink:0}
+        .dialogue-audio:hover{background-position:right center;transform:scale(1.15)}
+        .dialogue-analysis{background:var(--primary-light);padding:10px 12px;border-radius:10px;margin-top:12px;border-left:4px solid var(--primary-dark);font-size:.88em}
+        .dialogue-analysis strong{color:var(--primary-dark)}
+        .dialogue-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+        .dialogue-play-all{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-play-all:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-play-all:disabled{opacity:.6;cursor:not-allowed}
+        .dialogue-stop{background:linear-gradient(135deg,var(--rose),var(--rose-dark));background-size:200% auto;color:white;border:none;padding:14px 28px;border-radius:28px;font-weight:800;cursor:pointer;font-size:1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+        .dialogue-stop:hover{background-position:right center;transform:translateY(-2px)}
+        .dialogue-stop:disabled{opacity:.6;cursor:not-allowed}
+        
+        .pronunciation-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(212,236,250,.3));border-radius:24px;padding:35px;border:3px solid var(--secondary-light);box-shadow:0 6px 20px rgba(126,200,227,.15);margin-top:30px;overflow:hidden}
+        .pronunciation-section h3{color:var(--secondary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .verb-table{width:100%;border-collapse:separate;border-spacing:0;background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .verb-table thead{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark))}
+        .verb-table th{color:white;padding:15px;font-weight:900;text-align:left;font-size:.95em}
+        .verb-table td{padding:14px 15px;border-bottom:1px solid rgba(126,200,227,.2);font-size:.95em;font-weight:600;vertical-align:top}
+        .verb-table tr:last-child td{border-bottom:none}
+        .verb-table tbody tr:nth-child(even){background:rgba(212,236,250,.3)}
+        .verb-table tbody tr:hover{background:rgba(212,236,250,.5)}
+        .verb-table .verb-cell{font-family:'M PLUS Rounded 1c';font-weight:900;color:var(--secondary-dark);font-size:1.05em}
+        
+        .exercise-section{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(200,245,224,.3));border-radius:24px;padding:35px;border:3px solid var(--primary-light);box-shadow:0 6px 20px rgba(95,212,168,.15);margin-top:30px}
+        .exercise-section h3{color:var(--primary-dark);font-size:1.5em;font-weight:900;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+        .exercise-item{background:white;padding:22px;border-radius:18px;margin-bottom:18px;border-left:4px solid var(--primary);box-shadow:0 4px 15px rgba(0,0,0,.05)}
+        .exercise-question{font-size:1.1em;color:var(--text-dark);font-weight:700;margin-bottom:15px}
+        .exercise-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .exercise-option{background:var(--primary-light);padding:15px;border-radius:15px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:1.05em;font-weight:700;color:var(--text-dark);text-align:center;border:2px solid transparent}
+        .exercise-option:hover{background:var(--primary);color:white;transform:translateY(-3px)}
+        .exercise-option.correct{background:var(--primary);color:white;border-color:var(--primary-dark)}
+        .exercise-option.wrong{background:var(--rose);color:white;border-color:var(--rose-dark)}
+        .exercise-feedback{margin-top:12px;padding:12px;border-radius:12px;font-weight:800;display:none;text-align:center;font-size:.95em}
+        .exercise-feedback.show{display:block}
+        .exercise-feedback.correct{background:var(--primary-light);color:var(--primary-dark);border:2px solid var(--primary)}
+        .exercise-feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
+        
+        .nav-buttons{display:flex;justify-content:center;gap:18px;margin-top:50px;flex-wrap:wrap}
+        .btn{padding:16px 35px;border-radius:50px;border:none;font-family:inherit;font-weight:900;font-size:1.05em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:12px;transition:.3s;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white}
+        .btn-primary:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 30px rgba(95,212,168,.3)}
+        .btn-secondary{background:white;color:var(--text-dark);border:2px solid var(--primary)}
+        .btn-secondary:hover{background:var(--primary-light);transform:translateY(-3px)}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--rose));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:60px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:900px){
+            .grammar-grid,.dialogue-grid{grid-template-columns:1fr}
+            .vocab-grid,.exercise-options{grid-template-columns:1fr}
+            .hero h1{font-size:2.5em}
+        }
+        @media(max-width:600px){
+            .container{padding:15px}
+            .header{padding:12px 15px}
+            .nav-links{display:none}
+            .hero{padding:35px 20px}
+            .hero h1{font-size:2em}
+            .hero-jp{font-size:1.4em}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container">
+        <div class="sparkle" style="top:15%;left:10%">✨</div>
+        <div class="sparkle" style="top:30%;right:15%;animation-delay:.5s">⭐</div>
+        <div class="sparkle" style="bottom:20%;left:20%;animation-delay:1s">✨</div>
+        <div class="sparkle" style="bottom:30%;right:25%;animation-delay:1.5s">⭐</div>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo"><span style="font-size:1.4em">🚫</span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-w24.html">🏆 Tuần 24</a></li>
+            <li><a href="n5-w24-3.html" class="active"> Ngữ pháp</a></li>
+            <li><a href="n4.html"> N4</a></li>
+        </ul></nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">🏠</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">🏆 Tuần 24</a> › <a href="n5-w24-3.html">🚫 Ngữ pháp</a> › <span>Level 20: Xin Đừng</span></div>
+
+        <div class="hero">
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">⭐</div>
+            <span class="hero-badge"> Ngữ Pháp N5 - Level 20 • Xin Đừng</span>
+            <h1>～ないでください</h1>
+            <div class="hero-jp">naide kudasai</div>
+            <p class="hero-desc">Học cách diễn tả yêu cầu không làm gì đó một cách lịch sự, nhẹ nhàng - Ngữ pháp QUAN TRỌNG để giao tiếp văn minh!</p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Mẫu câu</span></div>
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Ví dụ</span></div>
+                <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Từ vựng</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Hội thoại</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon"></span>
+                <div class="section-title">
+                    <h2>Mục Tiêu Bài Học</h2>
+                    <p>Sau bài này, bạn sẽ có thể:</p>
+                </div>
+            </div>
+            <div class="tip-box" style="margin-bottom:20px">
+                <h5>✅ Mục tiêu học tập:</h5>
+                <p>
+                    • <strong>Yêu cầu lịch sự</strong> không làm gì đó với ～ないでください<br>
+                    • <strong>Phân biệt</strong> ないでください / ないで / やめてください / やめて / しないでください<br>
+                    • <strong>Sử dụng đúng ngữ cảnh</strong>: thư viện, bảo tàng, nơi công cộng<br>
+                    • <strong>Mở rộng</strong> với ～ないでくださいませんか (lịch sự hơn)<br>
+                    • <strong>Mở rộng</strong> với ～ないようにしてください (hãy chú ý để đừng...)<br>
+                    • <strong>Giao tiếp văn minh</strong>, nhẹ nhàng nhưng rõ ràng
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <div class="section-title">
+                    <h2>5 Mẫu Câu Cốt Lõi</h2>
+                    <p>Click 🔊 để nghe phát âm chuẩn tiếng Nhật</p>
+                </div>
+            </div>
+
+            <div class="grammar-grid">
+                <div class="grammar-card">
+                    <div class="grammar-number">1</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon"></span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～ないでください</div>
+                            <div class="grammar-reading">naide kudasai - Xin đừng làm...</div>
+                            <div class="grammar-meaning">Cách nói lịch sự, trang trọng để yêu cầu ai đó không làm gì</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể ない)</span> + <span class="highlight-red">でください</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (jisho-kei) + naide kudasai.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('おおきな こえを ださないで ください')">🔊</button>
+                                    <span class="grammar-highlight">大きな声を 出さないでください</span>。
+                                </div>
+                                <div class="example-romaji">Ookina koe o dasanaide kudasai.</div>
+                                <div class="example-vn">Xin đừng nói to.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('ここで しゃしんを とらないで ください')">🔊</button>
+                                    <span class="grammar-highlight">ここで 写真を 撮らないでください</span>。
+                                </div>
+                                <div class="example-romaji">Koko de shashin o toranaide kudasai.</div>
+                                <div class="example-vn">Xin đừng chụp ảnh ở đây.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('この ドアを あけないで ください')">🔊</button>
+                                    <span class="grammar-highlight">このドアを 開けないでください</span>。
+                                </div>
+                                <div class="example-romaji">Kono doa o akenaide kudasai.</div>
+                                <div class="example-vn">Xin đừng mở cánh cửa này.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たべものを もちこまないで ください')">🔊</button>
+                                    <span class="grammar-highlight">食べ物を 持ち込まないでください</span>。
+                                </div>
+                                <div class="example-romaji">Tabemono o mochikomanai de kudasai.</div>
+                                <div class="example-vn">Xin đừng mang đồ ăn vào.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('その ことを ほかの ひとに いわないで ください')">🔊</button>
+                                    <span class="grammar-highlight">そのことを 他の人に 言わないでください</span>。
+                                </div>
+                                <div class="example-romaji">Sono koto o hoka no hito ni iwanaide kudasai.</div>
+                                <div class="example-vn">Xin đừng nói chuyện đó với người khác.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • ないでください là dạng lịch sự của "ないで" (đừng làm).<br>
+                            • Dùng khi muốn yêu cầu ai đó không làm điều gì đó.<br>
+                            • Nói nhẹ nhàng nhưng rõ ràng là cách giao tiếp văn minh!<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • ないでください = "naide kudasai" → "xin đừng..."<br>
+                            • Giống "Please don't..." trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">2</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">✋</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～ないで</div>
+                            <div class="grammar-reading">naide - Đừng làm... (thân mật)</div>
+                            <div class="grammar-meaning">Dạng ngắn, thân mật, dùng với bạn bè, người thân</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể ない)</span> + <span class="highlight-red">で</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể ない) + de.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いかないで')">🔊</button>
+                                    <span class="grammar-highlight">行かないで</span>。
+                                </div>
+                                <div class="example-romaji">Ikanaide.</div>
+                                <div class="example-vn">Đừng đi.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('なかないで')">🔊</button>
+                                    <span class="grammar-highlight">泣かないで</span>。
+                                </div>
+                                <div class="example-romaji">Nakanaide.</div>
+                                <div class="example-vn">Đừng khóc.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('わすれないで')"></button>
+                                    <span class="grammar-highlight">忘れないで</span>。
+                                </div>
+                                <div class="example-romaji">Wasurenaide.</div>
+                                <div class="example-vn">Đừng quên nhé.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しんぱいしないで')">🔊</button>
+                                    <span class="grammar-highlight">心配しないで</span>。
+                                </div>
+                                <div class="example-romaji">Shinpai shinaide.</div>
+                                <div class="example-vn">Đừng lo lắng.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('あそばないで、べんきょうして')">🔊</button>
+                                    <span class="grammar-highlight">遊ばないで、勉強して</span>。
+                                </div>
+                                <div class="example-romaji">Asobanaide, benkyou shite.</div>
+                                <div class="example-vn">Đừng chơi, hãy học đi.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Dạng ngắn, thân mật, chỉ dùng với bạn bè, người thân.<br>
+                            • Không dùng trong công việc hoặc với người lạ.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • ないで = "naide" → "đừng..." (thân mật)<br>
+                            • Giống "Don't..." trong tiếng Anh (thân mật)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">3</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">🛑</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">やめてください</div>
+                            <div class="grammar-reading">yamete kudasai - Xin hãy dừng lại</div>
+                            <div class="grammar-meaning">Khi hành động đang diễn ra và muốn người đó dừng lại ngay</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">やめて</span> + <span class="highlight-red">ください</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">Yamete kudasai.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('やめて ください')">🔊</button>
+                                    <span class="grammar-highlight">やめてください</span>。
+                                </div>
+                                <div class="example-romaji">Yamete kudasai.</div>
+                                <div class="example-vn">Xin hãy dừng lại.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('ふざけないで やめてください')">🔊</button>
+                                    <span class="grammar-highlight">ふざけないで、やめてください</span>。
+                                </div>
+                                <div class="example-romaji">Fuzakenaide, yamete kudasai.</div>
+                                <div class="example-vn">Đừng đùa nữa, xin dừng lại.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たばこを やめてください')">🔊</button>
+                                    <span class="grammar-highlight">たばこを やめてください</span>。
+                                </div>
+                                <div class="example-romaji">Tabako o yamete kudasai.</div>
+                                <div class="example-vn">Xin hãy bỏ thuốc lá.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('そのしごとを やめてください')"></button>
+                                    <span class="grammar-highlight">その仕事を やめてください</span>。
+                                </div>
+                                <div class="example-romaji">Sono shigoto o yamete kudasai.</div>
+                                <div class="example-vn">Xin hãy dừng công việc đó lại.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いじわるを やめてください')">🔊</button>
+                                    <span class="grammar-highlight">いじわるを やめてください</span>。
+                                </div>
+                                <div class="example-romaji">Ijiwaru o yamete kudasai.</div>
+                                <div class="example-vn">Xin đừng bắt nạt nữa.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Dùng khi hành động đang diễn ra và muốn người đó dừng lại ngay.<br>
+                            • Mạnh hơn ～ないでください.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • やめてください = "yamete kudasai" → "xin dừng lại"<br>
+                            • Giống "Please stop..." trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">4</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">⚡</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">やめて</div>
+                            <div class="grammar-reading">yamete - Dừng lại đi! (thân mật)</div>
+                            <div class="grammar-meaning">Dạng ngắn, thân mật, nói nhanh, cảm xúc mạnh</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">やめて</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">Yamete.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('やめて')">🔊</button>
+                                    <span class="grammar-highlight">やめて</span>！
+                                </div>
+                                <div class="example-romaji">Yamete!</div>
+                                <div class="example-vn">Dừng lại đi!</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('もう やめて')">🔊</button>
+                                    <span class="grammar-highlight">もう やめて</span>！
+                                </div>
+                                <div class="example-romaji">Mou yamete!</div>
+                                <div class="example-vn">Dừng lại ngay!</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('たのしいから やめないで')">🔊</button>
+                                    <span class="grammar-highlight">楽しいから やめないで</span>。
+                                </div>
+                                <div class="example-romaji">Tanoshii kara yamenaide.</div>
+                                <div class="example-vn">Vì vui nên đừng dừng lại.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('いま やめて')">🔊</button>
+                                    <span class="grammar-highlight">今 やめて</span>！
+                                </div>
+                                <div class="example-romaji">Ima yamete!</div>
+                                <div class="example-vn">Dừng lại ngay bây giờ!</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('ほんとうに やめて')">🔊</button>
+                                    <span class="grammar-highlight">本当に やめて</span>！
+                                </div>
+                                <div class="example-romaji">Hontou ni yamete!</div>
+                                <div class="example-vn">Thật sự dừng lại đi!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Dạng ngắn, thân mật, nói nhanh, cảm xúc mạnh.<br>
+                            • Chỉ dùng với bạn bè thân thiết hoặc khi cần gấp.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • やめて = "yamete" → "dừng lại!" (thân mật, mạnh)<br>
+                            • Giống "Stop it!" trong tiếng Anh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grammar-card">
+                    <div class="grammar-number">5</div>
+                    <div class="grammar-header">
+                        <span class="grammar-icon">🎯</span>
+                        <div class="grammar-title">
+                            <div class="grammar-name">～しないでください</div>
+                            <div class="grammar-reading">shinaide kudasai - Xin đừng làm... (lịch sự, công việc)</div>
+                            <div class="grammar-meaning">Lịch sự, dùng nhiều trong công việc, trang trọng</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <div class="grammar-label">📐 Cấu trúc:</div>
+                        <div class="structure-box">
+                            <span class="highlight-blue">V (thể ない)</span> + <span class="highlight-red">でください</span>
+                        </div>
+                        <p style="margin-top:10px;font-size:.95em;color:var(--text-medium);font-weight:600">V (thể ない) + de kudasai.</p>
+                    </div>
+
+                    <div class="grammar-section">
+                        <div class="grammar-label">💬 Ví dụ:</div>
+                        <div class="example-list">
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('しんぱいしないで ください')">🔊</button>
+                                    <span class="grammar-highlight">心配しないでください</span>。
+                                </div>
+                                <div class="example-romaji">Shinpai shinaide kudasai.</div>
+                                <div class="example-vn">Xin đừng lo lắng.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('きょうみしないで ください')"></button>
+                                    <span class="grammar-highlight">興味しないでください</span>。
+                                </div>
+                                <div class="example-romaji">Kyoumi shinaide kudasai.</div>
+                                <div class="example-vn">Xin đừng quan tâm.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('べんきょうしないで ください')">🔊</button>
+                                    <span class="grammar-highlight">勉強しないでください</span>。
+                                </div>
+                                <div class="example-romaji">Benkyou shinaide kudasai.</div>
+                                <div class="example-vn">Xin đừng học (nữa).</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('りょこうしないで ください')"></button>
+                                    <span class="grammar-highlight">旅行しないでください</span>。
+                                </div>
+                                <div class="example-romaji">Ryokou shinaide kudasai.</div>
+                                <div class="example-vn">Xin đừng đi du lịch.</div>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-jp">
+                                    <button class="example-audio" onclick="playAudio('でんわしないで ください')">🔊</button>
+                                    <span class="grammar-highlight">電話しないでください</span>。
+                                </div>
+                                <div class="example-romaji">Denwa shinaide kudasai.</div>
+                                <div class="example-vn">Xin đừng gọi điện.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h5>💡 LƯU Ý:</h5>
+                        <p>
+                            • Lịch sự, dùng nhiều trong công việc.<br>
+                            • Tương tự ～ないでください nhưng trang trọng hơn.<br><br>
+                            
+                            <strong>🎯 Mẹo ghi nhớ:</strong><br>
+                            • しないでください = "shinaide kudasai" → "xin đừng..."<br>
+                            • Dùng với động từ nhóm 3 (する → しないでください)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="vocab-section">
+                <h3>📚 Từ Vựng Thường Gặp</h3>
+                <p style="margin-bottom:20px;color:var(--text-medium);font-weight:600">Những từ vựng hay dùng với mẫu "xin đừng" này</p>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">おおきなこえ</div>
+                        <div class="vocab-kanji">大きな声</div>
+                        <div class="vocab-reading">(ookina koe)</div>
+                        <div class="vocab-meaning">Giọng to</div>
+                        <button class="vocab-audio" onclick="playAudio('おおきなこえ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📷</div>
+                        <div class="vocab-main">しゃしん</div>
+                        <div class="vocab-kanji">写真</div>
+                        <div class="vocab-reading">(shashin)</div>
+                        <div class="vocab-meaning">Bức ảnh</div>
+                        <button class="vocab-audio" onclick="playAudio('しゃしん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚪</div>
+                        <div class="vocab-main">ドア</div>
+                        <div class="vocab-reading">(doa)</div>
+                        <div class="vocab-meaning">Cửa</div>
+                        <button class="vocab-audio" onclick="playAudio('ドア')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🍔</div>
+                        <div class="vocab-main">たべもの</div>
+                        <div class="vocab-kanji">食べ物</div>
+                        <div class="vocab-reading">(tabemono)</div>
+                        <div class="vocab-meaning">Đồ ăn</div>
+                        <button class="vocab-audio" onclick="playAudio('たべもの')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📚</div>
+                        <div class="vocab-main">としょかん</div>
+                        <div class="vocab-kanji">図書館</div>
+                        <div class="vocab-reading">(toshokan)</div>
+                        <div class="vocab-meaning">Thư viện</div>
+                        <button class="vocab-audio" onclick="playAudio('としょかん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🎨</div>
+                        <div class="vocab-main">さくひん</div>
+                        <div class="vocab-kanji">作品</div>
+                        <div class="vocab-reading">(sakuhin)</div>
+                        <div class="vocab-meaning">Tác phẩm</div>
+                        <button class="vocab-audio" onclick="playAudio('さくひん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">⚠️</div>
+                        <div class="vocab-main">きけん</div>
+                        <div class="vocab-kanji">危険</div>
+                        <div class="vocab-reading">(kiken)</div>
+                        <div class="vocab-meaning">Nguy hiểm</div>
+                        <button class="vocab-audio" onclick="playAudio('きけん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏨</div>
+                        <div class="vocab-main">へや</div>
+                        <div class="vocab-kanji">部屋</div>
+                        <div class="vocab-reading">(heya)</div>
+                        <div class="vocab-meaning">Căn phòng</div>
+                        <button class="vocab-audio" onclick="playAudio('へや')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">❤️</div>
+                        <div class="vocab-main">しんぱい</div>
+                        <div class="vocab-kanji">心配</div>
+                        <div class="vocab-reading">(shinpai)</div>
+                        <div class="vocab-meaning">Lo lắng</div>
+                        <button class="vocab-audio" onclick="playAudio('しんぱい')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">せき</div>
+                        <div class="vocab-kanji">席</div>
+                        <div class="vocab-reading">(seki)</div>
+                        <div class="vocab-meaning">Chỗ ngồi</div>
+                        <button class="vocab-audio" onclick="playAudio('せき')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">️</div>
+                        <div class="vocab-main">ゴミ</div>
+                        <div class="vocab-reading">(gomi)</div>
+                        <div class="vocab-meaning">Rác</div>
+                        <button class="vocab-audio" onclick="playAudio('ゴミ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚬</div>
+                        <div class="vocab-main">たばこ</div>
+                        <div class="vocab-kanji">煙草</div>
+                        <div class="vocab-reading">(tabako)</div>
+                        <div class="vocab-meaning">Thuốc lá</div>
+                        <button class="vocab-audio" onclick="playAudio('たばこ')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">📱</div>
+                        <div class="vocab-main">けいたい</div>
+                        <div class="vocab-kanji">携帯</div>
+                        <div class="vocab-reading">(keitai)</div>
+                        <div class="vocab-meaning">Điện thoại</div>
+                        <button class="vocab-audio" onclick="playAudio('けいたい')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🌱</div>
+                        <div class="vocab-main">くさ</div>
+                        <div class="vocab-kanji">草</div>
+                        <div class="vocab-reading">(kusa)</div>
+                        <div class="vocab-meaning">Cỏ</div>
+                        <button class="vocab-audio" onclick="playAudio('くさ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏥</div>
+                        <div class="vocab-main">びょういん</div>
+                        <div class="vocab-kanji">病院</div>
+                        <div class="vocab-reading">(byouin)</div>
+                        <div class="vocab-meaning">Bệnh viện</div>
+                        <button class="vocab-audio" onclick="playAudio('びょういん')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon"></div>
+                        <div class="vocab-main">えいがかん</div>
+                        <div class="vocab-kanji">映画館</div>
+                        <div class="vocab-reading">(eigakan)</div>
+                        <div class="vocab-meaning">Rạp phim</div>
+                        <button class="vocab-audio" onclick="playAudio('えいがかん')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🏫</div>
+                        <div class="vocab-main">きょうしつ</div>
+                        <div class="vocab-kanji">教室</div>
+                        <div class="vocab-reading">(kyoushitsu)</div>
+                        <div class="vocab-meaning">Lớp học</div>
+                        <button class="vocab-audio" onclick="playAudio('きょうしつ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🌳</div>
+                        <div class="vocab-main">こうえん</div>
+                        <div class="vocab-kanji">公園</div>
+                        <div class="vocab-reading">(kouen)</div>
+                        <div class="vocab-meaning">Công viên</div>
+                        <button class="vocab-audio" onclick="playAudio('こうえん')"></button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🚗</div>
+                        <div class="vocab-main">ちゅうしゃ</div>
+                        <div class="vocab-kanji">駐車</div>
+                        <div class="vocab-reading">(chuusha)</div>
+                        <div class="vocab-meaning">Đỗ xe</div>
+                        <button class="vocab-audio" onclick="playAudio('ちゅうしゃ')">🔊</button>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-icon">🎵</div>
+                        <div class="vocab-main">おんがく</div>
+                        <div class="vocab-kanji">音楽</div>
+                        <div class="vocab-reading">(ongaku)</div>
+                        <div class="vocab-meaning">Âm nhạc</div>
+                        <button class="vocab-audio" onclick="playAudio('おんがく')">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="pronunciation-section">
+                <h3>📊 Bảng So Sánh Dễ Nhầm</h3>
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Cấu trúc</th>
+                            <th style="width:20%">Ý nghĩa</th>
+                            <th style="width:15%">Mức độ lịch sự</th>
+                            <th style="width:45%">Khi dùng?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="verb-cell">ないでください</td>
+                            <td>Xin đừng làm...</td>
+                            <td>⭐⭐⭐</td>
+                            <td>Lịch sự, dùng với người lạ, trong công việc, nơi công cộng</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">ないで</td>
+                            <td>Đừng làm...</td>
+                            <td>⭐</td>
+                            <td>Thân mật, dùng với bạn bè, người thân</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">やめてください</td>
+                            <td>Xin hãy dừng lại...</td>
+                            <td>⭐⭐⭐</td>
+                            <td>Khi hành động đang diễn ra và muốn người đó dừng lại ngay</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">やめて</td>
+                            <td>Dừng lại đi!</td>
+                            <td>⭐</td>
+                            <td>Thân mật, nói nhanh, cảm xúc mạnh</td>
+                        </tr>
+                        <tr>
+                            <td class="verb-cell">しないでください</td>
+                            <td>Xin đừng làm...</td>
+                            <td>⭐⭐⭐</td>
+                            <td>Lịch sự, dùng nhiều trong công việc</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box" style="margin-top:20px">
+                    <h5>💡 MẸO GHI NHỚ:</h5>
+                    <p>
+                        • Dùng <strong>"手のひら"</strong> (lòng bàn tay) → giơ tay ra như đang nói "Xin đừng!"<br>
+                        • <strong>"ないでください"</strong> = "Xin đừng" + ください → thêm lịch sự và tôn trọng<br>
+                        • Dùng giọng nhẹ nhàng, mỉm cười → người nghe sẽ dễ chấp nhận hơn<br>
+                        • <strong>V (thể ない) + ないでください</strong> = Xin đừng làm (điều gì đó) nhé!<br><br>
+                        
+                        <strong>🎯 MỞ RỘNG:</strong><br>
+                        • <strong>～ないでくださいませんか</strong> → Xin đừng làm... được không? (lịch sự hơn)<br>
+                        • <strong>～ないようにしてください</strong> → Hãy chú ý để đừng làm...<br>
+                        • Ví dụ: ここでたばこを吸わないでくださいませんか。(Xin đừng hút thuốc ở đây được không?)<br>
+                        • Ví dụ: 忘れないようにしてください。(Hãy chú ý để đừng quên nhé.)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="dialogue-section">
+                <h3>💬 Mẫu Hội Thoại</h3>
+                <p>8 tình huống giao tiếp thường gặp - Click 🔊 để nghe từng câu, hoặc nghe cả đoạn</p>
+                
+                <div class="dialogue-grid">
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">📚 Hội thoại 1: Trong thư viện</div>
+                        <div class="dialogue-line" id="d1-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">図書館で大きな声を出さないでください。</div>
+                                <div class="dialogue-vn">Xin đừng nói to trong thư viện.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('としょかんで おおきなこえを ださないでください','d1-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d1-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">あ、すみません。</div>
+                                <div class="dialogue-vn">À, xin lỗi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('あ、すみません','d1-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 大きな声を <span class="grammar-highlight">出さないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🗑️ Hội thoại 2: Đừng vứt rác</div>
+                        <div class="dialogue-line" id="d2-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">ゴミをここに捨てないでください。</div>
+                                <div class="dialogue-vn">Xin đừng vứt rác ở đây.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ゴミを ここに すてないでください','d2-line1')"></button>
+                        </div>
+                        <div class="dialogue-line" id="d2-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、わかりました。</div>
+                                <div class="dialogue-vn">Vâng, tôi hiểu rồi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、わかりました','d2-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> ゴミを <span class="grammar-highlight">捨てないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🚬 Hội thoại 3: Trong bệnh viện</div>
+                        <div class="dialogue-line" id="d3-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">病院でたばこを吸わないでください。</div>
+                                <div class="dialogue-vn">Xin đừng hút thuốc trong bệnh viện.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('びょういんで たばこを すわないでください','d3-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d3-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">すみません、やめます。</div>
+                                <div class="dialogue-vn">Xin lỗi, tôi sẽ dừng lại.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('すみません、やめます','d3-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> たばこを <span class="grammar-highlight">吸わないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">📱 Hội thoại 4: Trong rạp phim</div>
+                        <div class="dialogue-line" id="d4-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">映画館で携帯を使わないでください。</div>
+                                <div class="dialogue-vn">Xin đừng dùng điện thoại trong rạp phim.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('えいがかんで けいたいを つかわないでください','d4-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d4-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">あ、ごめんなさい。</div>
+                                <div class="dialogue-vn">À, xin lỗi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('あ、ごめんなさい','d4-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 携帯を <span class="grammar-highlight">使わないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🌱 Hội thoại 5: Trong công viên</div>
+                        <div class="dialogue-line" id="d5-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">公園で草を踏まないでください。</div>
+                                <div class="dialogue-vn">Xin đừng giẫm lên cỏ trong công viên.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('こうえんで くさを ふまないでください','d5-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d5-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、すみません。</div>
+                                <div class="dialogue-vn">Vâng, xin lỗi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、すみません','d5-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 草を <span class="grammar-highlight">踏まないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🍔 Hội thoại 6: Trong nhà hàng</div>
+                        <div class="dialogue-line" id="d6-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">部屋に食べ物を持ち込まないでください。</div>
+                                <div class="dialogue-vn">Xin đừng mang đồ ăn vào phòng.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('へやに たべものを もちこまないでください','d6-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d6-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">わかりました。</div>
+                                <div class="dialogue-vn">Tôi hiểu rồi.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('わかりました','d6-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> 食べ物を <span class="grammar-highlight">持ち込まないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🏫 Hội thoại 7: Trong lớp học</div>
+                        <div class="dialogue-line" id="d7-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">教室で遅れないでください。</div>
+                                <div class="dialogue-vn">Xin đừng đến muộn trong lớp học.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('きょうしつで おくれないでください','d7-line1')">🔊</button>
+                        </div>
+                        <div class="dialogue-line" id="d7-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">はい、気をつけます。</div>
+                                <div class="dialogue-vn">Vâng, tôi sẽ chú ý.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('はい、きをつけます','d7-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> <span class="grammar-highlight">遅れないでください</span>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-card">
+                        <div class="dialogue-card-header">🚗 Hội thoại 8: Trên đường phố</div>
+                        <div class="dialogue-line" id="d8-line1">
+                            <div class="dialogue-speaker">A:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">ここに駐車しないでください。</div>
+                                <div class="dialogue-vn">Xin đừng đỗ xe ở đây.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('ここに ちゅうしゃしないでください','d8-line1')"></button>
+                        </div>
+                        <div class="dialogue-line" id="d8-line2">
+                            <div class="dialogue-speaker">B:</div>
+                            <div class="dialogue-text">
+                                <div class="dialogue-jp">すみません、すぐ移動します。</div>
+                                <div class="dialogue-vn">Xin lỗi, tôi sẽ di chuyển ngay.</div>
+                            </div>
+                            <button class="dialogue-audio" onclick="playSingle('すみません、すぐ いどうします','d8-line2')">🔊</button>
+                        </div>
+                        <div class="dialogue-analysis">
+                            <strong>📐 Cấu trúc áp dụng:</strong> <span class="grammar-highlight">駐車しないでください</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-controls">
+                    <button class="dialogue-play-all" id="playAllBtn" onclick="playAllDialogues()">▶️ Nghe cả 8 hội thoại (từng lượt)</button>
+                    <button class="dialogue-stop" id="stopBtn" onclick="stopAllDialogues()" disabled>️ Dừng</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="exercise-section">
+                <h3>✏️ Bài Tập Thực Hành</h3>
+                <p style="margin-bottom:25px;color:var(--text-medium);font-weight:600;font-size:1.05em">I. Chọn câu phù hợp:</p>
+                
+                <div class="exercise-item">
+                    <div class="exercise-question">1. 図書館で大きな声を（  ）。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex1')">A. 出さないでください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">B. 出してください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex1')">C. 出して</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex1"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">2. ここで写真を（  ）。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">A. 撮ってください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex2')">B. 撮らないでください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex2')">C. 撮って</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex2"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">3. 友達に「行（  ）」。 (thân mật)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">A. ないでください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex3')">B. かないで</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex3')">C. きます</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex3"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">4. たばこを（  ）。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex4')">A. やめてください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">B. やってください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex4')">C. やって</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex4"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">5. 心配（  ）。</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">A. してください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex5')">B. しないでください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex5')">C. して</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex5"></div>
+                </div>
+
+                <p style="margin:30px 0 20px;color:var(--text-medium);font-weight:600;font-size:1.05em">II. Dịch các câu sau sang tiếng Nhật:</p>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">6. "Xin đừng nói to"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex6')">大きな声を出さないでください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">大きな声を出してください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex6')">大きな声を出して。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex6"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">7. "Xin đừng chụp ảnh ở đây"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">ここで写真を撮ってください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex7')">ここで写真を撮らないでください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex7')">ここで写真を撮って。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex7"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">8. "Đừng khóc" (thân mật)</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">泣かないでください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex8')">泣かないで。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex8')">泣いてください。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex8"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">9. "Xin hãy dừng lại"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex9')">やめてください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">やってください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex9')">やめて。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex9"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-question">10. "Xin đừng lo lắng"</div>
+                    <div class="exercise-options">
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">心配してください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,true,'ex10')">心配しないでください。</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'ex10')">心配して。</div>
+                    </div>
+                    <div class="exercise-feedback" id="ex10"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="n5-w24-3.html" class="btn btn-secondary">🚫 Về Tổng Ôn Ngữ Pháp</a>
+            <a href="n5-w24.html" class="btn btn-secondary">🏆 Về HUB Tuần 24</a>
+            <a href="n5-w24-3-19.html" class="btn btn-secondary">⬅️ Level 19: Đã Từng</a>
+            <a href="n5-w24-3-21.html" class="btn btn-primary">➡️ Level 21: Thể て</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>🚫 Nihongo Journey</h3>
+        <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+        <p style="margin-top:8px;opacity:.9">日本語を一緒に学びましょう！</p>
+        <p style="margin-top:10px;opacity:.85;font-size:.85em">© 2026 Nihongo Journey • Made with 💖</p>
+    </footer>
+
+    <script>
+        let voices = [];
+        let isPlaying = false;
+        let currentUtterance = null;
+        let stopRequested = false;
+        
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+        }
+        loadVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        function playAudio(text){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function playSingle(text, lineId){
+            window.speechSynthesis.cancel();
+            stopRequested = false;
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.1;
+            const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+            if(japaneseVoice) utterance.voice = japaneseVoice;
+            
+            const line = document.getElementById(lineId);
+            if(line){
+                utterance.onstart = () => line.classList.add('reading');
+                utterance.onend = () => line.classList.remove('reading');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        async function playAllDialogues(){
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = true;
+            stopBtn.disabled = false;
+            playBtn.textContent = '⏳ Đang đọc...';
+            stopRequested = false;
+            
+            const allLines = [
+                {text: 'としょかんで おおきなこえを ださないでください', id: 'd1-line1'},
+                {text: 'あ、すみません', id: 'd1-line2'},
+                {text: 'ゴミを ここに すてないでください', id: 'd2-line1'},
+                {text: 'はい、わかりました', id: 'd2-line2'},
+                {text: 'びょういんで たばこを すわないでください', id: 'd3-line1'},
+                {text: 'すみません、やめます', id: 'd3-line2'},
+                {text: 'えいがかんで けいたいを つかわないでください', id: 'd4-line1'},
+                {text: 'あ、ごめんなさい', id: 'd4-line2'},
+                {text: 'こうえんで くさを ふまないでください', id: 'd5-line1'},
+                {text: 'はい、すみません', id: 'd5-line2'},
+                {text: 'へやに たべものを もちこまないでください', id: 'd6-line1'},
+                {text: 'わかりました', id: 'd6-line2'},
+                {text: 'きょうしつで おくれないでください', id: 'd7-line1'},
+                {text: 'はい、きをつけます', id: 'd7-line2'},
+                {text: 'ここに ちゅうしゃしないでください', id: 'd8-line1'},
+                {text: 'すみません、すぐ いどうします', id: 'd8-line2'}
+            ];
+            
+            for(let i = 0; i < allLines.length; i++){
+                if(stopRequested) break;
+                
+                await new Promise(resolve => {
+                    document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+                    
+                    const utterance = new SpeechSynthesisUtterance(allLines[i].text);
+                    utterance.lang = 'ja-JP';
+                    utterance.rate = 0.85;
+                    utterance.pitch = 1.1;
+                    const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+                    if(japaneseVoice) utterance.voice = japaneseVoice;
+                    
+                    const line = document.getElementById(allLines[i].id);
+                    if(line){
+                        utterance.onstart = () => line.classList.add('reading');
+                        utterance.onend = () => {
+                            line.classList.remove('reading');
+                            setTimeout(resolve, 1500);
+                        };
+                    } else {
+                        resolve();
+                    }
+                    
+                    window.speechSynthesis.speak(utterance);
+                });
+            }
+            
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+            stopRequested = false;
+        }
+
+        function stopAllDialogues(){
+            stopRequested = true;
+            window.speechSynthesis.cancel();
+            document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('reading'));
+            
+            const playBtn = document.getElementById('playAllBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            playBtn.disabled = false;
+            stopBtn.disabled = true;
+            playBtn.textContent = '▶️ Nghe cả 8 hội thoại (từng lượt)';
+        }
+
+        function checkAnswer(el,isCorrect,id){
+            const parent = el.parentElement;
+            const options = parent.querySelectorAll('.exercise-option');
+            const feedback = document.getElementById(id);
+            
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            if(isCorrect){
+                el.classList.add('correct');
+                feedback.textContent = '✅ Chính xác! Giỏi quá!';
+                feedback.className = 'exercise-feedback show correct';
+            } else {
+                el.classList.add('wrong');
+                options.forEach(opt => {
+                    if(opt.onclick.toString().includes('true')){
+                        opt.classList.add('correct');
+                    }
+                });
+                feedback.textContent = '❌ Sai rồi! Đáp án đúng đã được bôi xanh.';
+                feedback.className = 'exercise-feedback show wrong';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            loadVoices();
+        });
+    </script>
+</body>
+</html>
