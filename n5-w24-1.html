@@ -9,170 +9,169 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FEF3C7;--gold-deep:#B45309;
-            --purple:#8B5CF6;--purple-dark:#6D28D9;--purple-light:#EDE9FE;
-            --rose:#EC4899;--rose-dark:#BE185D;--rose-light:#FCE7F3;
-            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#CFFAFE;
-            --success:#10B981;--success-dark:#059669;--success-light:#D1FAE5;
-            --bg:#F9FAFB;
-            --text:#000000;
-            --text-soft:#1F2937;
-            --text-muted:#4B5563;
-            --text-light:#6B7280;
-            --card:#FFFFFF;
-            --border:#E5E7EB;
+            --primary:#8B5CF6;--primary-dark:#6D28D9;--primary-light:#C4B5FD;
+            --secondary:#EC4899;--secondary-dark:#BE185D;--secondary-light:#FBCFE8;
+            --accent:#06B6D4;--accent-dark:#0891B2;--accent-light:#A5F3FC;
+            --gold:#F59E0B;--gold-dark:#D97706;--gold-light:#FDE68A;
+            --success:#10B981;--success-dark:#059669;--success-light:#A7F3D0;
+            --text-dark:#1E1B4B;--text-medium:#4C1D95;--text-light:#7C3AED;
+            --bg-grad:linear-gradient(135deg,#F5F3FF 0%,#FDF4FF 25%,#ECFEFF 50%,#FFF7ED 75%,#F5F3FF 100%);
         }
-        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+        body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:var(--bg-grad);background-attachment:fixed;color:var(--text-dark);line-height:1.6;min-height:100vh;overflow-x:hidden}
         
-        .header{position:sticky;top:0;z-index:100;background:var(--card);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan)) 1;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-        .logo-main{background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark),var(--rose-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+        .bg-animation{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .bg-shape{position:absolute;opacity:.15;animation:floatShape 20s infinite ease-in-out;border-radius:50%}
+        .bg-shape:nth-child(1){top:10%;left:10%;width:300px;height:300px;background:radial-gradient(circle,var(--primary),transparent);animation-delay:0s}
+        .bg-shape:nth-child(2){top:60%;right:10%;width:250px;height:250px;background:radial-gradient(circle,var(--secondary),transparent);animation-delay:5s}
+        .bg-shape:nth-child(3){bottom:10%;left:30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent),transparent);animation-delay:10s}
+        .bg-shape:nth-child(4){top:30%;right:30%;width:180px;height:180px;background:radial-gradient(circle,var(--gold),transparent);animation-delay:15s}
+        @keyframes floatShape{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+        
+        .sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+        .sparkle{position:absolute;font-size:18px;animation:twinkle 3s infinite ease-in-out;opacity:.5}
+        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:.9;transform:scale(1.1) rotate(180deg)}}
+        
+        .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(245,243,255,.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 40px;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--gold)) 1;box-shadow:0 4px 20px rgba(139,92,246,.1)}
+        .logo{font-size:1.35em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo-main{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
         @keyframes shimmer{to{background-position:200% center}}
         .nav-links{display:flex;gap:8px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
-        .nav-links a:hover,.nav-links a.active{background:var(--gold-light);color:var(--gold-deep);border-color:var(--gold)}
+        .nav-links a{text-decoration:none;color:var(--text-medium);font-weight:700;padding:8px 18px;border-radius:20px;transition:.3s;font-size:.9em;border:2px solid transparent}
+        .nav-links a:hover,.nav-links a.active{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));color:var(--primary-dark);border-color:var(--primary);box-shadow:0 4px 12px rgba(139,92,246,.2)}
+        .container{max-width:1240px;margin:0 auto;padding:30px 40px;position:relative;z-index:2}
+        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-medium)}
+        .breadcrumb a{color:var(--primary);text-decoration:none;font-weight:700}
         
-        .container{max-width:1240px;margin:0 auto;padding:30px 40px}
-        .breadcrumb{max-width:1240px;margin:20px auto 0;padding:0 40px;font-size:.9em;color:var(--text-muted)}
-        .breadcrumb a{color:var(--gold-dark);text-decoration:none;font-weight:700}
+        .hero{background:linear-gradient(135deg,rgba(255,255,255,.98)0%,rgba(196,181,253,.4)25%,rgba(251,207,232,.4)50%,rgba(165,243,252,.4)75%,rgba(253,230,138,.4)100%);border-radius:32px;padding:60px 40px;margin-bottom:40px;border:3px solid rgba(255,255,255,.95);box-shadow:0 15px 50px rgba(139,92,246,.15);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(139,92,246,.1),transparent,rgba(236,72,153,.1),transparent,rgba(6,182,212,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+        @keyframes rotate{to{transform:rotate(360deg)}}
+        .sparkle-deco{position:absolute;font-size:2em;animation:twinkle 3s infinite ease-in-out;pointer-events:none}
+        .sparkle-deco:nth-child(1){top:15%;left:8%;animation-delay:0s}
+        .sparkle-deco:nth-child(2){top:20%;right:10%;animation-delay:.5s}
+        .sparkle-deco:nth-child(3){bottom:25%;left:12%;animation-delay:1s}
+        .sparkle-deco:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s}
+        .hero-badge{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));background-size:300% auto;color:white;padding:14px 30px;border-radius:30px;font-weight:800;font-size:1em;display:inline-block;margin-bottom:22px;box-shadow:0 8px 25px rgba(139,92,246,.4);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+        .hero h1{font-size:3em;font-weight:900;margin-bottom:18px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark),var(--accent-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;position:relative;z-index:2}
+        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.8em;color:var(--primary-dark);font-weight:700;margin-bottom:22px;opacity:.95;position:relative;z-index:2}
+        .hero-desc{font-size:1.15em;color:var(--text-medium);margin-bottom:28px;line-height:1.8;max-width:800px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+        .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+        .stat-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(196,181,253,.3));backdrop-filter:blur(10px);padding:18px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(139,92,246,.15);min-width:120px;border:2px solid rgba(255,255,255,.95);transition:.3s;position:relative;overflow:hidden}
+        .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+        .stat-item:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(139,92,246,.25)}
+        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-size:.85em;color:var(--text-medium);font-weight:700}
         
-        /* Day Nav */
-        .day-nav{background:var(--card);border-radius:18px;padding:16px 20px;margin:20px auto 30px;max-width:1240px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;position:relative}
-        .day-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:18px 18px 0 0}
-        .day-nav-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);padding:10px 16px;border-radius:14px;transition:.3s;flex:1;min-width:200px;max-width:45%}
-        .day-nav-link:hover{background:var(--gold-light);transform:translateY(-2px)}
-        .day-nav-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-        .day-nav-prev .day-nav-icon{background:var(--gold-light)}
-        .day-nav-next .day-nav-icon{background:var(--purple-light)}
-        .day-nav-info{flex:1;min-width:0}
-        .day-nav-label{font-size:.72em;color:var(--text-light);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-        .day-nav-title{font-size:.95em;color:var(--text);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .day-nav-arrow{font-size:1.5em;color:var(--gold);flex-shrink:0;font-weight:900}
-        .day-nav-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 16px;flex-shrink:0}
-        .day-nav-current{font-size:1.1em;font-weight:900;color:var(--text)}
-        .day-nav-current-label{font-size:.7em;color:var(--text-light);font-weight:700}
+        .nav-buttons{display:flex;justify-content:center;gap:15px;margin-top:25px;flex-wrap:wrap;position:relative;z-index:2}
+        .btn{padding:14px 28px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s;position:relative;overflow:hidden}
+        .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.3);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+        .btn:hover::before{width:300px;height:300px}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));background-size:200% auto;color:white;box-shadow:0 8px 25px rgba(139,92,246,.35)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(139,92,246,.45);background-position:right center}
+        .btn-secondary{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(196,181,253,.3));color:var(--text-dark);border:2px solid var(--primary);backdrop-filter:blur(10px)}
+        .btn-secondary:hover{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));transform:translateY(-3px)}
         
-        /* Hero */
-        .hero{background:linear-gradient(135deg,#FEF3C7 0%,#EDE9FE 50%,#FCE7F3 100%);border-radius:28px;padding:50px 40px;margin-bottom:30px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05);text-align:center;position:relative;overflow:hidden}
-        .hero-badge{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;padding:12px 28px;border-radius:30px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:20px;box-shadow:0 4px 15px rgba(217,119,6,.3);position:relative;z-index:2}
-        .hero h1{font-size:2.8em;font-weight:900;margin-bottom:15px;color:var(--text);line-height:1.2;position:relative;z-index:2}
-        .hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.6em;color:var(--gold-deep);font-weight:700;margin-bottom:15px;position:relative;z-index:2}
-        .hero-desc{font-size:1.05em;color:var(--text-soft);margin-bottom:20px;line-height:1.7;max-width:750px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
-        .hero-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
-        .stat-item{background:var(--card);padding:18px 28px;border-radius:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:120px;border:1px solid var(--border);transition:.3s}
-        .stat-item:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
-        .stat-number{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,var(--gold-dark),var(--purple-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
-        .stat-label{font-size:.85em;color:var(--text-muted);font-weight:700}
+        .card{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(245,243,255,.5));backdrop-filter:blur(15px);border-radius:28px;padding:35px;box-shadow:0 6px 25px rgba(139,92,246,.1);margin-bottom:30px;border:2px solid rgba(255,255,255,.95);position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--gold));opacity:.9}
+        .section-title{font-size:2em;font-weight:900;text-align:center;margin-bottom:15px;background:linear-gradient(135deg,var(--primary-dark),var(--secondary-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+        .section-subtitle{text-align:center;color:var(--text-medium);margin-bottom:25px;font-size:1.05em;font-weight:600;position:relative;z-index:2}
         
-        /* Progress Bar */
-        .progress-bar-container{background:var(--card);border-radius:16px;padding:16px 22px;margin:20px auto;max-width:800px;box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border)}
-        .progress-label{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:800;color:var(--text);font-size:.9em}
-        .progress-track{width:100%;height:10px;background:var(--border);border-radius:8px;overflow:hidden}
-        .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose));border-radius:8px;transition:width 1s ease}
-        
-        /* Cards */
-        .card{background:var(--card);border-radius:24px;padding:32px;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:25px;border:1px solid var(--border);position:relative;overflow:hidden}
-        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
-        .section-title{font-size:1.8em;font-weight:900;text-align:center;margin-bottom:15px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-        .section-subtitle{text-align:center;color:var(--text-muted);margin-bottom:22px;font-size:1em;font-weight:600}
-        
-        /* Kanji Category */
-        .kanji-category{background:var(--card);border-radius:18px;padding:20px;margin:18px 0;border-left:5px solid var(--category-color,var(--gold));box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid var(--border);border-left-width:5px;transition:.3s}
-        .kanji-category:hover{transform:translateX(3px);box-shadow:0 4px 15px rgba(0,0,0,.08)}
-        .kanji-category h4{color:var(--text);margin-bottom:12px;font-size:1.05em;font-weight:900;display:flex;align-items:center;gap:10px}
-        .kanji-list{display:flex;flex-wrap:wrap;gap:8px}
-        .kanji-chip{background:linear-gradient(135deg,var(--gold-light),var(--purple-light));padding:7px 12px;border-radius:12px;font-family:'M PLUS Rounded 1c';font-weight:800;color:var(--text);font-size:.9em;cursor:pointer;transition:.3s;border:1px solid var(--border);display:flex;align-items:center;gap:6px}
-        .kanji-chip:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.1);background:linear-gradient(135deg,var(--gold),var(--purple));color:white}
-        .kanji-chip .jp{font-size:1.2em}
-        .kanji-chip .romaji{font-size:.78em;opacity:.9}
-        
-        /* Flashcard */
-        .flashcard-section{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
-        .flashcard-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
-        .flashcard-container{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
-        .flashcard{perspective:1000px;height:170px;cursor:pointer}
-        .flashcard-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
-        .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
-        .flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid var(--border)}
-        .flashcard-front{background:var(--card);border-color:var(--gold)}
-        .flashcard-back{background:linear-gradient(135deg,var(--purple-light),var(--rose-light));border-color:var(--purple);transform:rotateY(180deg)}
-        .flashcard-jp{font-family:'M PLUS Rounded 1c';font-size:2.3em;font-weight:800;color:var(--text)}
-        .flashcard-hint{font-size:.72em;color:var(--text-light);margin-top:4px;font-weight:700}
-        .flashcard-romaji{font-size:.95em;font-weight:900;color:var(--purple-dark);margin-top:3px}
-        .flashcard-meaning{font-size:.85em;color:var(--text);margin-top:3px;font-weight:700;text-align:center}
-        
-        /* Exercise */
-        .exercise-section{background:linear-gradient(135deg,#FCE7F3,#EDE9FE);border:1px solid var(--border);border-radius:24px;padding:32px;margin:25px 0;position:relative}
-        .exercise-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose))}
-        .exercise-card{background:var(--card);border-radius:18px;padding:20px;margin:12px 0;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
-        .exercise-q{font-size:1em;font-weight:900;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-        .q-num{background:linear-gradient(135deg,var(--gold),var(--purple));color:white;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.82em;flex-shrink:0;font-weight:900}
-        .exercise-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
-        .exercise-opt{background:var(--gold-light);padding:11px;border-radius:10px;cursor:pointer;transition:.3s;font-family:'M PLUS Rounded 1c';font-size:.95em;font-weight:800;color:var(--text);text-align:center;border:2px solid transparent;word-break:break-word}
-        .exercise-opt:hover{background:var(--gold);color:white;transform:translateY(-2px)}
-        .exercise-opt.correct{background:var(--success);color:white;border-color:var(--success-dark)}
-        .exercise-opt.wrong{background:#EF4444;color:white;border-color:#DC2626}
-        .feedback{margin-top:10px;padding:10px;border-radius:10px;font-weight:800;display:none;text-align:center;font-size:.9em}
-        .feedback.show{display:block}
-        .feedback.correct{background:var(--success-light);color:var(--success-dark);border:2px solid var(--success)}
-        .feedback.wrong{background:var(--rose-light);color:var(--rose-dark);border:2px solid var(--rose)}
-        
-        /* Tip Box */
-        .tip-box{background:linear-gradient(135deg,#FEF3C7,#EDE9FE);border:1px solid var(--border);border-radius:20px;padding:22px;margin:20px 0;position:relative}
-        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--purple),var(--rose),var(--cyan))}
-        .tip-box h4{color:var(--gold-deep);margin-bottom:10px;font-size:1.1em;font-weight:900;display:flex;align-items:center;gap:10px}
-        .tip-box p,.tip-box ul{color:var(--text);font-size:.95em;line-height:1.7;font-weight:600}
+        .tip-box{background:linear-gradient(135deg,rgba(196,181,253,.3),rgba(251,207,232,.3),rgba(165,243,252,.3));border:2px solid rgba(255,255,255,.95);border-radius:20px;padding:25px;margin:25px 0;position:relative;overflow:hidden}
+        .tip-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--gold));opacity:.9}
+        .tip-box h4{color:var(--primary-dark);margin-bottom:12px;font-size:1.2em;font-weight:900;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+        .tip-box p,.tip-box ul{color:var(--text-dark);font-size:.95em;line-height:1.8;font-weight:600;position:relative;z-index:2}
         .tip-box ul{padding-left:20px}
-        .tip-box li{margin-bottom:5px}
+        .tip-box li{margin-bottom:6px}
         
-        /* Buttons */
-        .btn{padding:13px 28px;border-radius:50px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s}
-        .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white;box-shadow:0 4px 12px rgba(217,119,6,.3)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,.4)}
-        .btn-secondary{background:var(--card);color:var(--text);border:2px solid var(--gold)}
-        .btn-secondary:hover{background:var(--gold-light);transform:translateY(-2px)}
-        .btn-purple{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:white;box-shadow:0 4px 12px rgba(109,40,217,.3)}
-        .btn-purple:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(109,40,217,.4)}
+        .progress-bar{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light));border-radius:15px;padding:18px;margin:25px 0;box-shadow:0 4px 15px rgba(139,92,246,.1)}
+        .progress-title{font-weight:800;color:var(--text-dark);margin-bottom:10px;font-size:1em}
+        .progress-track{background:rgba(255,255,255,.6);border-radius:10px;height:12px;overflow:hidden}
+        .progress-fill{background:linear-gradient(90deg,var(--primary),var(--secondary));height:100%;border-radius:10px;transition:width .5s ease}
+        .progress-text{display:flex;justify-content:space-between;margin-top:8px;font-size:.85em;color:var(--text-medium);font-weight:700}
         
-        .nav-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+        .kanji-group{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(245,243,255,.4));border-radius:22px;padding:28px;margin-bottom:28px;border:2px solid rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(139,92,246,.1);position:relative;overflow:hidden}
+        .kanji-group::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--group-color,var(--primary));opacity:.9}
+        .group-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+        .group-icon{font-size:2.2em}
+        .group-title{font-size:1.4em;font-weight:900;color:var(--group-color,var(--primary-dark))}
+        .group-count{background:var(--group-color,var(--primary));color:white;padding:4px 14px;border-radius:15px;font-size:.8em;font-weight:800}
         
-        /* Footer */
-        .footer{background:linear-gradient(135deg,var(--gold),var(--purple),var(--rose),var(--cyan));background-size:300% auto;color:white;padding:35px;text-align:center;margin-top:40px;border-radius:24px 24px 0 0;animation:shimmer 8s linear infinite}
-        .footer h3{font-size:1.5em;margin-bottom:8px;font-weight:900}
-        .footer p{opacity:.95;margin-bottom:6px;font-weight:600}
+        .kanji-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px}
+        .kanji-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,255,255,.8));border:2px solid rgba(139,92,246,.2);border-radius:16px;padding:16px;transition:.3s;cursor:pointer;position:relative;overflow:hidden}
+        .kanji-item:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(139,92,246,.2);border-color:var(--group-color,var(--primary))}
+        .kanji-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--group-color,var(--primary)),var(--group-color-dark,var(--primary-dark)));opacity:0;transition:opacity .3s}
+        .kanji-item:hover::before{opacity:1}
+        .kanji-char{font-family:'M PLUS Rounded 1c';font-size:2.5em;font-weight:900;color:var(--kanji-color,var(--primary-dark));margin-bottom:8px;text-align:center;line-height:1}
+        .kanji-onyomi{font-size:.9em;color:var(--secondary-dark);font-weight:700;margin-bottom:4px;text-align:center}
+        .kanji-kunyomi{font-size:.85em;color:var(--text-medium);font-weight:600;margin-bottom:6px;text-align:center}
+        .kanji-meaning{font-size:.9em;color:var(--text-dark);font-weight:800;text-align:center;padding:6px;background:rgba(139,92,246,.1);border-radius:8px}
+        .kanji-example{font-size:.8em;color:var(--text-medium);font-weight:600;margin-top:6px;text-align:center;font-style:italic;padding:4px;background:rgba(6,182,212,.05);border-radius:6px}
+        .kanji-audio{position:absolute;top:8px;right:8px;background:linear-gradient(135deg,var(--group-color,var(--primary)),var(--group-color-dark,var(--primary-dark)));color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9em;box-shadow:0 3px 10px rgba(139,92,246,.3);transition:.3s}
+        .kanji-audio:hover{transform:scale(1.15);box-shadow:0 5px 15px rgba(139,92,246,.4)}
+        .kanji-info{font-size:.75em;color:var(--text-light);text-align:center;margin-top:8px;padding:6px;background:rgba(139,92,246,.05);border-radius:8px;border:1px dashed var(--primary-light)}
         
-        @media(max-width:900px){.flashcard-container{grid-template-columns:repeat(3,1fr)}.exercise-options{grid-template-columns:1fr}}
-        @media(max-width:600px){.flashcard-container{grid-template-columns:repeat(2,1fr)}.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:30px 20px}.hero h1{font-size:1.8em}.hero-jp{font-size:1.2em}.card,.exercise-section,.flashcard-section{padding:20px}.day-nav{flex-direction:column}.day-nav-link{max-width:100%}}
+        .usage-box{background:linear-gradient(135deg,var(--group-color,var(--primary)),rgba(255,255,255,.95));border-radius:16px;padding:18px;margin-top:20px;border-left:4px solid var(--group-color,var(--primary-dark))}
+        .usage-box h5{color:var(--group-color,var(--primary-dark));font-size:1.1em;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+        .usage-box p{color:var(--text-dark);font-size:.95em;line-height:1.7;font-weight:600}
+        
+        .flashcard-section{text-align:center;margin:35px 0}
+        .flashcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;margin-top:20px}
+        .flashcard{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(245,243,255,.6));border:2px solid rgba(139,92,246,.25);border-radius:16px;padding:20px;cursor:pointer;transition:.4s;position:relative;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;perspective:1000px}
+        .flashcard:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(139,92,246,.25)}
+        .flashcard.flipped{background:linear-gradient(135deg,var(--primary-light),var(--secondary-light))}
+        .flashcard-front,.flashcard-back{transition:.4s;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden}
+        .flashcard-back{position:absolute;top:0;left:0;right:0;bottom:0;padding:20px;display:none;transform:rotateY(180deg)}
+        .flashcard.flipped .flashcard-front{display:none}
+        .flashcard.flipped .flashcard-back{display:flex}
+        .flashcard-kanji{font-family:'M PLUS Rounded 1c';font-size:2.8em;font-weight:900;color:var(--primary-dark);margin-bottom:8px}
+        .flashcard-reading{font-size:.95em;color:var(--secondary-dark);font-weight:700;margin-bottom:4px}
+        .flashcard-meaning{font-size:.9em;color:var(--text-dark);font-weight:800}
+        .flip-hint{font-size:.75em;color:var(--text-medium);margin-top:8px;font-weight:600;display:flex;align-items:center;gap:4px}
+        
+        .footer{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent),var(--gold));background-size:300% auto;color:white;padding:45px;text-align:center;margin-top:50px;border-radius:30px 30px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+        .footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);animation:rotate 20s linear infinite}
+        .footer h3{font-size:1.7em;margin-bottom:12px;font-weight:900;position:relative;z-index:2}
+        .footer p{opacity:.95;margin-bottom:10px;font-weight:600;position:relative;z-index:2}
+        
+        @media(max-width:768px){.hero h1{font-size:2.2em}.hero-jp{font-size:1.4em}.kanji-grid{grid-template-columns:repeat(2,1fr)}.flashcard-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.container{padding:15px}.header{padding:12px 15px}.nav-links{display:none}.hero{padding:35px 20px}.hero h1{font-size:1.8em}.hero-jp{font-size:1.2em}.card{padding:22px}.kanji-grid{grid-template-columns:1fr}.flashcard-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
+    <div class="bg-animation">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
     <header class="header">
-        <a href="index.html" class="logo"><span style="font-size:1.4em">📚</span><span class="logo-main">Nihongo Journey</span></a>
-        <nav><ul class="nav-links"><li><a href="index.html">🏠 Trang chủ</a></li><li><a href="n5.html" class="active">🌱 N5</a></li><li><a href="n5-w24.html">🏆 Tuần 24</a></li><li><a href="n5-reference.html">📚 Tham Khảo</a></li><li><a href="n4.html">🌿 N4</a></li></ul></nav>
+        <a href="index.html" class="logo"><span style="font-size:1.4em"></span><span class="logo-main">Nihongo Journey</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">🏠 Trang chủ</a></li>
+            <li><a href="n5.html">🌱 N5</a></li>
+            <li><a href="n5-w24.html" class="active">🏆 Tuần 24</a></li>
+            <li><a href="n5-reference.html">📚 Tham Khảo</a></li>
+            <li><a href="n4.html">🌿 N4</a></li>
+            <li><a href="n3.html">🌳 N3</a></li>
+        </ul></nav>
     </header>
 
-    <div class="breadcrumb"><a href="index.html">🏠 Trang chủ</a> › <a href="n5.html">🌱 N5</a> › <a href="n5-w24.html">Tuần 24</a> › <span>Ngày 1: Tổng ôn Kanji</span></div>
-
     <div class="container">
-        <!-- DAY NAV -->
-        <div class="day-nav">
-            <a href="n5-w24.html" class="day-nav-link day-nav-prev">
-                <div class="day-nav-icon">🏆</div>
-                <div class="day-nav-info"><div class="day-nav-label">← HUB Tuần 24</div><div class="day-nav-title">Tổng quan 7 ngày</div></div>
-                <div class="day-nav-arrow">‹</div>
-            </a>
-            <div class="day-nav-center"><div class="day-nav-current">📚 Ngày 1/7</div><div class="day-nav-current-label">Tổng ôn Kanji</div></div>
-            <a href="n5-w24-2.html" class="day-nav-link day-nav-next">
-                <div class="day-nav-arrow">›</div>
-                <div class="day-nav-info"><div class="day-nav-label">Ngày tiếp →</div><div class="day-nav-title">Ngày 2: Tổng ôn Từ vựng</div></div>
-                <div class="day-nav-icon">📖</div>
-            </a>
+        <div class="breadcrumb">
+            <a href="index.html">🏠 Trang chủ</a> › 
+            <a href="n5.html">🌱 N5</a> › 
+            <a href="n5-w24.html">🏆 Tuần 24</a> › 
+            <span>📚 Ngày 1: Tổng ôn Kanji</span>
         </div>
 
-        <!-- HERO -->
         <div class="hero">
-            <span class="hero-badge">📚 Ngày 1 • Tổng ôn 100 Kanji • かんじ そうおん</span>
-            <h1>Tổng ôn 100 Kanji N5<br>Theo 8 Nhóm Chủ Đề</h1>
+            <div class="sparkle-deco"></div>
+            <div class="sparkle-deco">✨</div>
+            <div class="sparkle-deco">🎌</div>
+            <div class="sparkle-deco">🏆</div>
+            <span class="hero-badge">🏆 Tuần 24 • Tổng ôn • 7 ngày chinh phục N5</span>
+            <h1>📚 Ngày 1 • Tổng ôn 100 Kanji</h1>
             <div class="hero-jp">１００の漢字を復習しよう！</div>
             <p class="hero-desc">Ôn lại toàn bộ 100 Kanji đã học trong 24 tuần qua, được chia thành 8 nhóm chủ đề để dễ nhớ. Click vào từng chữ để nghe phát âm!</p>
             <div class="hero-stats">
@@ -181,262 +180,1038 @@
                 <div class="stat-item"><span class="stat-number">20</span><span class="stat-label">Flashcard</span></div>
                 <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Câu Quiz</span></div>
             </div>
+            <div class="progress-bar">
+                <div class="progress-title">📊 Tiến độ Tuần 24</div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width:14%"></div>
+                </div>
+                <div class="progress-text">
+                    <span>Ngày 1/7</span>
+                    <span>14%</span>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <a href="n5-w24.html" class="btn btn-secondary"><span>🏆</span> ← HUB Tuần 24</a>
+                <a href="n5-w24-2.html" class="btn btn-primary"><span>📖</span> Ngày 2: Từ vựng →</a>
+            </div>
         </div>
 
-        <!-- PROGRESS BAR -->
-        <div class="progress-bar-container">
-            <div class="progress-label">
-                <span>📊 Tiến độ Tuần 24</span>
-                <span>Ngày 1/7 • 14%</span>
-            </div>
-            <div class="progress-track">
-                <div class="progress-fill" style="width:14%"></div>
-            </div>
-        </div>
-
-        <!-- INTRO TIP -->
         <div class="card">
             <div class="tip-box">
                 <h4>💡 Cách học Kanji hiệu quả</h4>
                 <ul>
                     <li>🎯 <strong>Học theo nhóm chủ đề</strong> - Giúp não bộ liên kết các chữ có liên quan</li>
-                    <li>🔊 <strong>Click vào từng chữ</strong> để nghe phát âm chuẩn</li>
-                    <li>✍️ <strong>Viết ra giấy</strong> mỗi chữ 3-5 lần để nhớ nét</li>
+                    <li>🔊 <strong>Click vào từng chữ để nghe phát âm chuẩn</strong> - Audio đọc có ngắt nghỉ giữa các phần</li>
+                    <li>✍️ <strong>Viết ra giấy mỗi chữ 3-5 lần</strong> để nhớ nét</li>
                     <li>🔄 <strong>Lật Flashcard</strong> ở phần dưới để tự kiểm tra</li>
-                    <li>📝 <strong>Làm Quiz</strong> cuối trang để đánh giá mức độ nhớ</li>
+                    <li>📝 <strong>Làm Quiz cuối trang</strong> để đánh giá mức độ nhớ</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 8 KANJI GROUPS -->
         <div class="card">
-            <h2 class="section-title"><span>📚</span> 100 Kanji Theo 8 Nhóm Chủ Đề <span>🎯</span></h2>
+            <h2 class="section-title"><span>📚</span> 100 Kanji Theo 8 Nhóm Chủ Đề </h2>
             <p class="section-subtitle">Click vào từng chữ để nghe phát âm</p>
 
-            <!-- Group 1: Numbers -->
-            <div class="kanji-category" style="--category-color:#F59E0B">
-                <h4>🔢 Nhóm 1: Số đếm (13 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('いち')"><span class="jp">一</span><span class="romaji">いち (1)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('に')"><span class="jp">二</span><span class="romaji">に (2)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('さん')"><span class="jp">三</span><span class="romaji">さん (3)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('し、よん')"><span class="jp">四</span><span class="romaji">し/よん (4)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ご')"><span class="jp">五</span><span class="romaji">ご (5)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ろく')"><span class="jp">六</span><span class="romaji">ろく (6)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しち、なな')"><span class="jp">七</span><span class="romaji">しち/なな (7)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('はち')"><span class="jp">八</span><span class="romaji">はち (8)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('きゅう、く')"><span class="jp">九</span><span class="romaji">きゅう/く (9)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('じゅう')"><span class="jp">十</span><span class="romaji">じゅう (10)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ひゃく')"><span class="jp">百</span><span class="romaji">ひゃく (100)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('せん')"><span class="jp">千</span><span class="romaji">せん (1000)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('まん')"><span class="jp">万</span><span class="romaji">まん (10000)</span></div>
+            <!-- Nhóm 1: Số đếm -->
+            <div class="kanji-group" style="--group-color:#8B5CF6;--group-color-dark:#6D28D9;--kanji-color:#6D28D9">
+                <div class="group-header">
+                    <span class="group-icon">🔢</span>
+                    <h3 class="group-title">Nhóm 1: Số đếm</h3>
+                    <span class="group-count">13 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['いち','ひと・つ','Số 1','一人 (ひとり)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['いち','ひと・つ','Số 1','一人 (ひとり)'])">🔊</button>
+                        <div class="kanji-char">一</div>
+                        <div class="kanji-onyomi">いち (ichi)</div>
+                        <div class="kanji-kunyomi">ひと・つ (hitotsu)</div>
+                        <div class="kanji-meaning">Số 1</div>
+                        <div class="kanji-example">Ví dụ: 一人 (ひとり) - một người</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['に','ふた・つ','Số 2','二人 (ふたり)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['に','ふた・つ','Số 2','二人 (ふたり)'])">🔊</button>
+                        <div class="kanji-char">二</div>
+                        <div class="kanji-onyomi">に (ni)</div>
+                        <div class="kanji-kunyomi">ふた・つ (futatsu)</div>
+                        <div class="kanji-meaning">Số 2</div>
+                        <div class="kanji-example">Ví dụ: 二人 (ふたり) - hai người</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['さん','みっ・つ','Số 3','三月 (さんがつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['さん','みっ・つ','Số 3','三月 (さんがつ)'])"></button>
+                        <div class="kanji-char">三</div>
+                        <div class="kanji-onyomi">さん (san)</div>
+                        <div class="kanji-kunyomi">みっ・つ (mittsu)</div>
+                        <div class="kanji-meaning">Số 3</div>
+                        <div class="kanji-example">Ví dụ: 三月 (さんがつ) - tháng 3</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['し','よん','よっ・つ','Số 4','四人 (よにん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['し','よん','よっ・つ','Số 4','四人 (よにん)'])">🔊</button>
+                        <div class="kanji-char">四</div>
+                        <div class="kanji-onyomi">し/よん (shi/yon)</div>
+                        <div class="kanji-kunyomi">よっ・つ (yottsu)</div>
+                        <div class="kanji-meaning">Số 4</div>
+                        <div class="kanji-example">Ví dụ: 四人 (よにん) - 4 người</div>
+                        <div class="kanji-info"> Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ご','いつ・つ','Số 5','五日 (いつか)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ご','いつ・つ','Số 5','五日 (いつか)'])">🔊</button>
+                        <div class="kanji-char">五</div>
+                        <div class="kanji-onyomi">ご (go)</div>
+                        <div class="kanji-kunyomi">いつ・つ (itsutsu)</div>
+                        <div class="kanji-meaning">Số 5</div>
+                        <div class="kanji-example">Ví dụ: 五日 (いつか) - ngày 5</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ろく','むっ・つ','Số 6','六月 (ろくがつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ろく','むっ・つ','Số 6','六月 (ろくがつ)'])">🔊</button>
+                        <div class="kanji-char">六</div>
+                        <div class="kanji-onyomi">ろく (roku)</div>
+                        <div class="kanji-kunyomi">むっ・つ (muttsu)</div>
+                        <div class="kanji-meaning">Số 6</div>
+                        <div class="kanji-example">Ví dụ: 六月 (ろくがつ) - tháng 6</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しち','なな','なな・つ','Số 7','七日 (なのか)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しち','なな','なな・つ','Số 7','七日 (なのか)'])">🔊</button>
+                        <div class="kanji-char">七</div>
+                        <div class="kanji-onyomi">しち/なな (shichi/nana)</div>
+                        <div class="kanji-kunyomi">なな・つ (nanatsu)</div>
+                        <div class="kanji-meaning">Số 7</div>
+                        <div class="kanji-example">Ví dụ: 七日 (なのか) - ngày 7</div>
+                        <div class="kanji-info"> Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['はち','やっ・つ','Số 8','八月 (はちがつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['はち','やっ・つ','Số 8','八月 (はちがつ)'])"></button>
+                        <div class="kanji-char">八</div>
+                        <div class="kanji-onyomi">はち (hachi)</div>
+                        <div class="kanji-kunyomi">やっ・つ (yattsu)</div>
+                        <div class="kanji-meaning">Số 8</div>
+                        <div class="kanji-example">Ví dụ: 八月 (はちがつ) - tháng 8</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['きゅう','く','ここの・つ','Số 9','九月 (くがつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['きゅう','く','ここの・つ','Số 9','九月 (くがつ)'])">🔊</button>
+                        <div class="kanji-char">九</div>
+                        <div class="kanji-onyomi">きゅう/く (kyuu/ku)</div>
+                        <div class="kanji-kunyomi">ここの・つ (kokonotsu)</div>
+                        <div class="kanji-meaning">Số 9</div>
+                        <div class="kanji-example">Ví dụ: 九月 (くがつ) - tháng 9</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['じゅう','とお','Số 10','十日 (とおか)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['じゅう','とお','Số 10','十日 (とおか)'])">🔊</button>
+                        <div class="kanji-char">十</div>
+                        <div class="kanji-onyomi">じゅう (juu)</div>
+                        <div class="kanji-kunyomi">とお (too)</div>
+                        <div class="kanji-meaning">Số 10</div>
+                        <div class="kanji-example">Ví dụ: 十日 (とおか) - ngày 10</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ひゃく','もも','100','三百 (さんびゃく)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ひゃく','もも','100','三百 (さんびゃく)'])">🔊</button>
+                        <div class="kanji-char">百</div>
+                        <div class="kanji-onyomi">ひゃく (hyaku)</div>
+                        <div class="kanji-kunyomi">もも (momo)</div>
+                        <div class="kanji-meaning">100</div>
+                        <div class="kanji-example">Ví dụ: 三百 (さんびゃく) - 300</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['せん','ち','1000','三千 (さんぜん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['せん','ち','1000','三千 (さんぜん)'])">🔊</button>
+                        <div class="kanji-char">千</div>
+                        <div class="kanji-onyomi">せん (sen)</div>
+                        <div class="kanji-kunyomi">ち (chi)</div>
+                        <div class="kanji-meaning">1000</div>
+                        <div class="kanji-example">Ví dụ: 三千 (さんぜん) - 3000</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['まん','よろず','10,000','一万円 (いちまんえん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['まん','よろず','10,000','一万円 (いちまんえん)'])">🔊</button>
+                        <div class="kanji-char">万</div>
+                        <div class="kanji-onyomi">まん (man)</div>
+                        <div class="kanji-kunyomi">よろず (yorozu)</div>
+                        <div class="kanji-meaning">10,000</div>
+                        <div class="kanji-example">Ví dụ: 一万円 (いちまんえん) - 10,000 yên</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#8B5CF6;--group-color-dark:#6D28D9">
+                    <h5> Khi nào dùng?</h5>
+                    <p><strong>Số đếm:</strong> Dùng để đếm số lượng, tuổi tác, thời gian, tiền bạc. <strong>Onyomi</strong> (đọc âm Hán) dùng khi kết hợp với kanji khác (ví dụ: 一人, 二人). <strong>Kunyomi</strong> (đọc âm Nhật) dùng khi đếm độc lập (ví dụ: 一つ, 二つ).</p>
                 </div>
             </div>
 
-            <!-- Group 2: Days -->
-            <div class="kanji-category" style="--category-color:#EC4899">
-                <h4>📅 Nhóm 2: Ngày tháng (9 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('にち、ひ')"><span class="jp">日</span><span class="romaji">にち/ひ (ngày)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('げつ、つき')"><span class="jp">月</span><span class="romaji">げつ/つき (tháng)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('か')"><span class="jp">火</span><span class="romaji">か (lửa/thứ 3)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('すい')"><span class="jp">水</span><span class="romaji">すい (nước/thứ 4)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('もく')"><span class="jp">木</span><span class="romaji">もく (cây/thứ 5)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('きん')"><span class="jp">金</span><span class="romaji">きん (vàng/thứ 6)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ど、つち')"><span class="jp">土</span><span class="romaji">ど/つち (đất/thứ 7)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ねん、とし')"><span class="jp">年</span><span class="romaji">ねん/とし (năm)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しゅう')"><span class="jp">週</span><span class="romaji">しゅう (tuần)</span></div>
+            <!-- Nhóm 2: Ngày tháng -->
+            <div class="kanji-group" style="--group-color:#EC4899;--group-color-dark:#BE185D;--kanji-color:#BE185D">
+                <div class="group-header">
+                    <span class="group-icon">📅</span>
+                    <h3 class="group-title">Nhóm 2: Ngày tháng</h3>
+                    <span class="group-count">9 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['にち','ひ','Ngày/Mặt trời','毎日 (まいにち)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['にち','ひ','Ngày/Mặt trời','毎日 (まいにち)'])"></button>
+                        <div class="kanji-char">日</div>
+                        <div class="kanji-onyomi">にち/じつ (nichi/jitsu)</div>
+                        <div class="kanji-kunyomi">ひ/か (hi/ka)</div>
+                        <div class="kanji-meaning">Ngày, mặt trời</div>
+                        <div class="kanji-example">Ví dụ: 毎日 (まいにち) - mỗi ngày</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + 2 Onyomi + 2 Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['げつ','つき','Tháng/Mặt trăng','一月 (いちがつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['げつ','つき','Tháng/Mặt trăng','一月 (いちがつ)'])">🔊</button>
+                        <div class="kanji-char">月</div>
+                        <div class="kanji-onyomi">げつ/がつ (getsu/gatsu)</div>
+                        <div class="kanji-kunyomi">つき (tsuki)</div>
+                        <div class="kanji-meaning">Tháng, mặt trăng</div>
+                        <div class="kanji-example">Ví dụ: 一月 (いちがつ) - tháng 1</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['か','ひ','Lửa/Thứ 3','火曜日 (かようび)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['か','ひ','Lửa/Thứ 3','火曜日 (かようび)'])">🔊</button>
+                        <div class="kanji-char">火</div>
+                        <div class="kanji-onyomi">か (ka)</div>
+                        <div class="kanji-kunyomi">ひ (hi)</div>
+                        <div class="kanji-meaning">Lửa, thứ 3</div>
+                        <div class="kanji-example">Ví dụ: 火曜日 (かようび) - thứ 3</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['すい','みず','Nước/Thứ 4','水曜日 (すいようび)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['すい','みず','Nước/Thứ 4','水曜日 (すいようび)'])"></button>
+                        <div class="kanji-char">水</div>
+                        <div class="kanji-onyomi">すい (sui)</div>
+                        <div class="kanji-kunyomi">みず (mizu)</div>
+                        <div class="kanji-meaning">Nước, thứ 4</div>
+                        <div class="kanji-example">Ví dụ: 水曜日 (すいようび) - thứ 4</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['もく','き','Cây/Thứ 5','木曜日 (もくようび)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['もく','き','Cây/Thứ 5','木曜日 (もくようび)'])">🔊</button>
+                        <div class="kanji-char">木</div>
+                        <div class="kanji-onyomi">もく (moku)</div>
+                        <div class="kanji-kunyomi">き/こ (ki/ko)</div>
+                        <div class="kanji-meaning">Cây, thứ 5</div>
+                        <div class="kanji-example">Ví dụ: 木曜日 (もくようび) - thứ 5</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + 2 Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['きん','かね','Vàng/Thứ 6','金曜日 (きんようび)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['きん','かね','Vàng/Thứ 6','金曜日 (きんようび)'])">🔊</button>
+                        <div class="kanji-char">金</div>
+                        <div class="kanji-onyomi">きん (kin)</div>
+                        <div class="kanji-kunyomi">かね (kane)</div>
+                        <div class="kanji-meaning">Vàng, tiền, thứ 6</div>
+                        <div class="kanji-example">Ví dụ: 金曜日 (きんようび) - thứ 6</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ど','つち','Đất/Thứ 7','土曜日 (どようび)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ど','つち','Đất/Thứ 7','土曜日 (どようび)'])">🔊</button>
+                        <div class="kanji-char">土</div>
+                        <div class="kanji-onyomi">ど (do)</div>
+                        <div class="kanji-kunyomi">つち (tsuchi)</div>
+                        <div class="kanji-meaning">Đất, thứ 7</div>
+                        <div class="kanji-example">Ví dụ: 土曜日 (どようび) - thứ 7</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ねん','とし','Năm/Tuổi','今年 (ことし)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ねん','とし','Năm/Tuổi','今年 (ことし)'])">🔊</button>
+                        <div class="kanji-char">年</div>
+                        <div class="kanji-onyomi">ねん (nen)</div>
+                        <div class="kanji-kunyomi">とし (toshi)</div>
+                        <div class="kanji-meaning">Năm, tuổi</div>
+                        <div class="kanji-example">Ví dụ: 今年 (ことし) - năm nay</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しゅう','Tuần','今週 (こんしゅう)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しゅう','Tuần','今週 (こんしゅう)'])">🔊</button>
+                        <div class="kanji-char">週</div>
+                        <div class="kanji-onyomi">しゅう (shuu)</div>
+                        <div class="kanji-meaning">Tuần</div>
+                        <div class="kanji-example">Ví dụ: 今週 (こんしゅう) - tuần này</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#EC4899;--group-color-dark:#BE185D">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Thời gian:</strong> Dùng để diễn tả ngày, tháng, năm, thứ trong tuần. Kanji 日 (ngày) có nhiều cách đọc: にち (khi đứng một mình), がつ (tháng), か (ngày trong tháng). Các thứ trong tuần đều kết thúc bằng 曜日 (ようび).</p>
                 </div>
             </div>
 
-            <!-- Group 3: Family -->
-            <div class="kanji-category" style="--category-color:#8B5CF6">
-                <h4>👨‍👩‍ Nhóm 3: Gia đình (11 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('ふ、ちち')"><span class="jp">父</span><span class="romaji">ふ/ちち (bố)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ぼ、はは')"><span class="jp">母</span><span class="romaji">ぼ/はは (mẹ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('けい、あに')"><span class="jp">兄</span><span class="romaji">けい/あに (anh)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('し、あね')"><span class="jp">姉</span><span class="romaji">し/あね (chị)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('てい、おとうと')"><span class="jp">弟</span><span class="romaji">てい/おとうと (em trai)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('まい、いもうと')"><span class="jp">妹</span><span class="romaji">まい/いもうと (em gái)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('じん、ひと')"><span class="jp">人</span><span class="romaji">じん/ひと (người)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('だん、おとこ')"><span class="jp">男</span><span class="romaji">だん/おとこ (nam)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('じょ、おんな')"><span class="jp">女</span><span class="romaji">じょ/おんな (nữ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('し、こ')"><span class="jp">子</span><span class="romaji">し/こ (con)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('か、いえ')"><span class="jp">家</span><span class="romaji">か/いえ (nhà)</span></div>
+            <!-- Nhóm 3: Gia đình -->
+            <div class="kanji-group" style="--group-color:#06B6D4;--group-color-dark:#0891B2;--kanji-color:#0891B2">
+                <div class="group-header">
+                    <span class="group-icon">👨‍👩‍👧</span>
+                    <h3 class="group-title">Nhóm 3: Gia đình</h3>
+                    <span class="group-count">11 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['ふ','ちち','Bố/Cha','父 (ちち)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ふ','ちち','Bố/Cha','父 (ちち)'])">🔊</button>
+                        <div class="kanji-char">父</div>
+                        <div class="kanji-onyomi">ふ (fu)</div>
+                        <div class="kanji-kunyomi">ちち (chichi)</div>
+                        <div class="kanji-meaning">Bố, cha</div>
+                        <div class="kanji-example">Ví dụ: 父 (ちち) - bố tôi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ぼ','はは','Mẹ','母 (はは)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ぼ','はは','Mẹ','母 (はは)'])"></button>
+                        <div class="kanji-char">母</div>
+                        <div class="kanji-onyomi">ぼ (bo)</div>
+                        <div class="kanji-kunyomi">はは (haha)</div>
+                        <div class="kanji-meaning">Mẹ</div>
+                        <div class="kanji-example">Ví dụ: 母 (はは) - mẹ tôi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['けい','あに','Anh trai','兄 (あに)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['けい','あに','Anh trai','兄 (あに)'])">🔊</button>
+                        <div class="kanji-char">兄</div>
+                        <div class="kanji-onyomi">けい (kei)</div>
+                        <div class="kanji-kunyomi">あに (ani)</div>
+                        <div class="kanji-meaning">Anh trai</div>
+                        <div class="kanji-example">Ví dụ: 兄 (あに) - anh trai tôi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['し','あね','Chị gái','姉 (あね)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['し','あね','Chị gái','姉 (あね)'])">🔊</button>
+                        <div class="kanji-char">姉</div>
+                        <div class="kanji-onyomi">し (shi)</div>
+                        <div class="kanji-kunyomi">あね (ane)</div>
+                        <div class="kanji-meaning">Chị gái</div>
+                        <div class="kanji-example">Ví dụ: 姉 (あね) - chị gái tôi</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['てい','おとうと','Em trai','弟 (おとうと)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['てい','おとうと','Em trai','弟 (おとうと)'])">🔊</button>
+                        <div class="kanji-char">弟</div>
+                        <div class="kanji-onyomi">てい (tei)</div>
+                        <div class="kanji-kunyomi">おとうと (otouto)</div>
+                        <div class="kanji-meaning">Em trai</div>
+                        <div class="kanji-example">Ví dụ: 弟 (おとうと) - em trai</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['まい','いもうと','Em gái','妹 (いもうと)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['まい','いもうと','Em gái','妹 (いもうと)'])">🔊</button>
+                        <div class="kanji-char">妹</div>
+                        <div class="kanji-onyomi">まい (mai)</div>
+                        <div class="kanji-kunyomi">いもうと (imouto)</div>
+                        <div class="kanji-meaning">Em gái</div>
+                        <div class="kanji-example">Ví dụ: 妹 (いもうと) - em gái</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['じん','にん','ひと','Người','三人 (さんにん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['じん','にん','ひと','Người','三人 (さんにん)'])">🔊</button>
+                        <div class="kanji-char">人</div>
+                        <div class="kanji-onyomi">じん/にん (jin/nin)</div>
+                        <div class="kanji-kunyomi">ひと (hito)</div>
+                        <div class="kanji-meaning">Người</div>
+                        <div class="kanji-example">Ví dụ: 三人 (さんにん) - 3 người</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['だん','おとこ','Nam/Đàn ông','男の人 (おとこのひと)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['だん','おとこ','Nam/Đàn ông','男の人 (おとこのひと)'])"></button>
+                        <div class="kanji-char">男</div>
+                        <div class="kanji-onyomi">だん (dan)</div>
+                        <div class="kanji-kunyomi">おとこ (otoko)</div>
+                        <div class="kanji-meaning">Nam, đàn ông</div>
+                        <div class="kanji-example">Ví dụ: 男の人 (おとこのひと) - đàn ông</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['じょ','にょ','おんな','Nữ/Phụ nữ','女の人 (おんなのひと)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['じょ','にょ','おんな','Nữ/Phụ nữ','女の人 (おんなのひと)'])">🔊</button>
+                        <div class="kanji-char">女</div>
+                        <div class="kanji-onyomi">じょ/にょ (jo/nyo)</div>
+                        <div class="kanji-kunyomi">おんな (onna)</div>
+                        <div class="kanji-meaning">Nữ, phụ nữ</div>
+                        <div class="kanji-example">Ví dụ: 女の人 (おんなのひと) - phụ nữ</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + 2 Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['し','こ','Con/Đứa trẻ','子供 (こども)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['し','こ','Con/Đứa trẻ','子供 (こども)'])">🔊</button>
+                        <div class="kanji-char">子</div>
+                        <div class="kanji-onyomi">し (shi)</div>
+                        <div class="kanji-kunyomi">こ (ko)</div>
+                        <div class="kanji-meaning">Con, đứa trẻ</div>
+                        <div class="kanji-example">Ví dụ: 子供 (こども) - trẻ em</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['か','いえ','うち','Nhà/Gia đình','家族 (かぞく)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['か','いえ','うち','Nhà/Gia đình','家族 (かぞく)'])">🔊</button>
+                        <div class="kanji-char">家</div>
+                        <div class="kanji-onyomi">か (ka)</div>
+                        <div class="kanji-kunyomi">いえ/うち (ie/uchi)</div>
+                        <div class="kanji-meaning">Nhà, gia đình</div>
+                        <div class="kanji-example">Ví dụ: 家族 (かぞく) - gia đình</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + 2 Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#06B6D4;--group-color-dark:#0891B2">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Giới thiệu gia đình:</strong> Dùng khi nói về các thành viên trong gia đình. Lưu ý: 父/母/兄/姉 dùng cho gia đình mình, còn お父さん/お母さん dùng cho gia đình người khác. 人 (người) dùng để đếm người (一人, 二人...).</p>
                 </div>
             </div>
 
-            <!-- Group 4: Weather -->
-            <div class="kanji-category" style="--category-color:#06B6D4">
-                <h4>🌤️ Nhóm 4: Thời tiết (8 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('てん')"><span class="jp">天</span><span class="romaji">てん (trời)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('き')"><span class="jp">気</span><span class="romaji">き (khí)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('う、あめ')"><span class="jp">雨</span><span class="romaji">う/あめ (mưa)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('せつ、ゆき')"><span class="jp">雪</span><span class="romaji">せつ/ゆき (tuyết)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しゅん、はる')"><span class="jp">春</span><span class="romaji">しゅん/はる (xuân)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('か、なつ')"><span class="jp">夏</span><span class="romaji">か/なつ (hạ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しゅう、あき')"><span class="jp">秋</span><span class="romaji">しゅう/あき (thu)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('とう、ふゆ')"><span class="jp">冬</span><span class="romaji">とう/ふゆ (đông)</span></div>
+            <!-- Nhóm 4: Thời tiết -->
+            <div class="kanji-group" style="--group-color:#F59E0B;--group-color-dark:#D97706;--kanji-color:#D97706">
+                <div class="group-header">
+                    <span class="group-icon">🌤️</span>
+                    <h3 class="group-title">Nhóm 4: Thời tiết</h3>
+                    <span class="group-count">8 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['てん','あめ','Trời/Bầu trời','天気 (てんき)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['てん','あめ','Trời/Bầu trời','天気 (てんき)'])"></button>
+                        <div class="kanji-char">天</div>
+                        <div class="kanji-onyomi">てん (ten)</div>
+                        <div class="kanji-kunyomi">あめ (ame)</div>
+                        <div class="kanji-meaning">Trời, bầu trời</div>
+                        <div class="kanji-example">Ví dụ: 天気 (てんき) - thời tiết</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['き','いき','Khí/Tinh thần','元気 (げんき)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['き','いき','Khí/Tinh thần','元気 (げんき)'])"></button>
+                        <div class="kanji-char">気</div>
+                        <div class="kanji-onyomi">き (ki)</div>
+                        <div class="kanji-kunyomi">いき (iki)</div>
+                        <div class="kanji-meaning">Khí, tinh thần</div>
+                        <div class="kanji-example">Ví dụ: 元気 (げんき) - khỏe mạnh</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['う','あめ','Mưa','雨 (あめ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['う','あめ','Mưa','雨 (あめ)'])"></button>
+                        <div class="kanji-char">雨</div>
+                        <div class="kanji-onyomi">う (u)</div>
+                        <div class="kanji-kunyomi">あめ (ame)</div>
+                        <div class="kanji-meaning">Mưa</div>
+                        <div class="kanji-example">Ví dụ: 雨 (あめ) - mưa</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['せつ','ゆき','Tuyết','雪 (ゆき)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['せつ','ゆき','Tuyết','雪 (ゆき)'])">🔊</button>
+                        <div class="kanji-char">雪</div>
+                        <div class="kanji-onyomi">せつ (setsu)</div>
+                        <div class="kanji-kunyomi">ゆき (yuki)</div>
+                        <div class="kanji-meaning">Tuyết</div>
+                        <div class="kanji-example">Ví dụ: 雪 (ゆき) - tuyết</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しゅん','はる','Mùa xuân','春 (はる)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しゅん','はる','Mùa xuân','春 (はる)'])">🔊</button>
+                        <div class="kanji-char">春</div>
+                        <div class="kanji-onyomi">しゅん (shun)</div>
+                        <div class="kanji-kunyomi">はる (haru)</div>
+                        <div class="kanji-meaning">Mùa xuân</div>
+                        <div class="kanji-example">Ví dụ: 春 (はる) - mùa xuân</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['か','なつ','Mùa hạ','夏 (なつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['か','なつ','Mùa hạ','夏 (なつ)'])">🔊</button>
+                        <div class="kanji-char">夏</div>
+                        <div class="kanji-onyomi">か (ka)</div>
+                        <div class="kanji-kunyomi">なつ (natsu)</div>
+                        <div class="kanji-meaning">Mùa hạ</div>
+                        <div class="kanji-example">Ví dụ: 夏 (なつ) - mùa hè</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しゅう','あき','Mùa thu','秋 (あき)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しゅう','あき','Mùa thu','秋 (あき)'])">🔊</button>
+                        <div class="kanji-char">秋</div>
+                        <div class="kanji-onyomi">しゅう (shuu)</div>
+                        <div class="kanji-kunyomi">あき (aki)</div>
+                        <div class="kanji-meaning">Mùa thu</div>
+                        <div class="kanji-example">Ví dụ: 秋 (あき) - mùa thu</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['とう','ふゆ','Mùa đông','冬 (ふゆ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['とう','ふゆ','Mùa đông','冬 (ふゆ)'])">🔊</button>
+                        <div class="kanji-char">冬</div>
+                        <div class="kanji-onyomi">とう (tou)</div>
+                        <div class="kanji-kunyomi">ふゆ (fuyu)</div>
+                        <div class="kanji-meaning">Mùa đông</div>
+                        <div class="kanji-example">Ví dụ: 冬 (ふゆ) - mùa đông</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#F59E0B;--group-color-dark:#D97706">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Mô tả thời tiết:</strong> Dùng để nói về thời tiết, các mùa trong năm. 天気 (thời tiết) là từ cơ bản nhất. Các mùa: 春 (xuân), 夏 (hạ), 秋 (thu), 冬 (đông). 雨 (mưa) và 雪 (tuyết) dùng để mô tả loại thời tiết.</p>
                 </div>
             </div>
 
-            <!-- Group 5: School -->
-            <div class="kanji-category" style="--category-color:#10B981">
-                <h4>🏫 Nhóm 5: Trường học (8 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('がく、まなぶ')"><span class="jp">学</span><span class="romaji">がく/まなぶ (học)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('こう')"><span class="jp">校</span><span class="romaji">こう (trường)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しつ')"><span class="jp">室</span><span class="romaji">しつ (phòng)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ず')"><span class="jp">図</span><span class="romaji">ず (hình)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しょ、かく')"><span class="jp">書</span><span class="romaji">しょ/かく (viết)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('かん')"><span class="jp">館</span><span class="romaji">かん (quán)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しょ、ところ')"><span class="jp">所</span><span class="romaji">しょ/ところ (nơi)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ば')"><span class="jp">場</span><span class="romaji">ば (chỗ)</span></div>
+            <!-- Nhóm 5: Trường học -->
+            <div class="kanji-group" style="--group-color:#10B981;--group-color-dark:#059669;--kanji-color:#059669">
+                <div class="group-header">
+                    <span class="group-icon">🏫</span>
+                    <h3 class="group-title">Nhóm 5: Trường học</h3>
+                    <span class="group-count">8 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['がく','まなぶ','Học/Học tập','学生 (がくせい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['がく','まなぶ','Học/Học tập','学生 (がくせい)'])">🔊</button>
+                        <div class="kanji-char">学</div>
+                        <div class="kanji-onyomi">がく (gaku)</div>
+                        <div class="kanji-kunyomi">まな・ぶ (manabu)</div>
+                        <div class="kanji-meaning">Học, học tập</div>
+                        <div class="kanji-example">Ví dụ: 学生 (がくせい) - học sinh</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['こう','Trường học','学校 (がっこう)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['こう','Trường học','学校 (がっこう)'])">🔊</button>
+                        <div class="kanji-char">校</div>
+                        <div class="kanji-onyomi">こう (kou)</div>
+                        <div class="kanji-meaning">Trường học</div>
+                        <div class="kanji-example">Ví dụ: 学校 (がっこう) - trường học</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しつ','Phòng/Căn phòng','教室 (きょうしつ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しつ','Phòng/Căn phòng','教室 (きょうしつ)'])"></button>
+                        <div class="kanji-char">室</div>
+                        <div class="kanji-onyomi">しつ (shitsu)</div>
+                        <div class="kanji-meaning">Phòng, căn phòng</div>
+                        <div class="kanji-example">Ví dụ: 教室 (きょうしつ) - lớp học</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ず','Hình/Bản đồ','図書館 (としょかん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ず','Hình/Bản đồ','図書館 (としょかん)'])">🔊</button>
+                        <div class="kanji-char">図</div>
+                        <div class="kanji-onyomi">ず (zu)</div>
+                        <div class="kanji-meaning">Hình, bản đồ</div>
+                        <div class="kanji-example">Ví dụ: 図書館 (としょかん) - thư viện</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しょ','かく','Viết/Sách','図書館 (としょかん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しょ','かく','Viết/Sách','図書館 (としょかん)'])"></button>
+                        <div class="kanji-char">書</div>
+                        <div class="kanji-onyomi">しょ (sho)</div>
+                        <div class="kanji-kunyomi">か・く (kaku)</div>
+                        <div class="kanji-meaning">Viết, sách</div>
+                        <div class="kanji-example">Ví dụ: 図書館 (としょかん) - thư viện</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['かん','Quán/Tòa nhà','図書館 (としょかん)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['かん','Quán/Tòa nhà','図書館 (としょかん)'])">🔊</button>
+                        <div class="kanji-char">館</div>
+                        <div class="kanji-onyomi">かん (kan)</div>
+                        <div class="kanji-meaning">Quán, tòa nhà</div>
+                        <div class="kanji-example">Ví dụ: 図書館 (としょかん) - thư viện</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しょ','ところ','Nơi/Chỗ','場所 (ばしょ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しょ','ところ','Nơi/Chỗ','場所 (ばしょ)'])">🔊</button>
+                        <div class="kanji-char">所</div>
+                        <div class="kanji-onyomi">しょ (sho)</div>
+                        <div class="kanji-kunyomi">ところ (tokoro)</div>
+                        <div class="kanji-meaning">Nơi, chỗ</div>
+                        <div class="kanji-example">Ví dụ: 場所 (ばしょ) - địa điểm</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['じょう','ば','Chỗ/Địa điểm','場所 (ばしょ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['じょう','ば','Chỗ/Địa điểm','場所 (ばしょ)'])">🔊</button>
+                        <div class="kanji-char">場</div>
+                        <div class="kanji-onyomi">じょう (jou)</div>
+                        <div class="kanji-kunyomi">ば (ba)</div>
+                        <div class="kanji-meaning">Chỗ, địa điểm</div>
+                        <div class="kanji-example">Ví dụ: 場所 (ばしょ) - địa điểm</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#10B981;--group-color-dark:#059669">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Giáo dục & Địa điểm:</strong> Dùng khi nói về trường học, học tập, và các địa điểm. 学校 (trường học), 学生 (học sinh), 先生 (giáo viên) là những từ cơ bản. 場所 (địa điểm) dùng để hỏi/vị trí nơi chốn.</p>
                 </div>
             </div>
 
-            <!-- Group 6: Verbs -->
-            <div class="kanji-category" style="--category-color:#F59E0B">
-                <h4>🏃 Nhóm 6: Động từ (10 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('こう、いく')"><span class="jp">行</span><span class="romaji">こう/いく (đi)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('らい、くる')"><span class="jp">来</span><span class="romaji">らい/くる (đến)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('き、かえる')"><span class="jp">帰</span><span class="romaji">き/かえる (về)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('けん、みる')"><span class="jp">見</span><span class="romaji">けん/みる (xem)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しょく、たべる')"><span class="jp">食</span><span class="romaji">しょく/たべる (ăn)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('いん、のむ')"><span class="jp">飲</span><span class="romaji">いん/のむ (uống)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ばい、かう')"><span class="jp">買</span><span class="romaji">ばい/かう (mua)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('どく、よむ')"><span class="jp">読</span><span class="romaji">どく/よむ (đọc)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ぶん、きく')"><span class="jp">聞</span><span class="romaji">ぶん/きく (nghe)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ゆう、あそぶ')"><span class="jp">遊</span><span class="romaji">ゆう/あそぶ (chơi)</span></div>
+            <!-- Nhóm 6: Động từ -->
+            <div class="kanji-group" style="--group-color:#8B5CF6;--group-color-dark:#6D28D9;--kanji-color:#6D28D9">
+                <div class="group-header">
+                    <span class="group-icon">🏃</span>
+                    <h3 class="group-title">Nhóm 6: Động từ</h3>
+                    <span class="group-count">10 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['こう','いく','Đi','行きます (いきます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['こう','いく','Đi','行きます (いきます)'])">🔊</button>
+                        <div class="kanji-char">行</div>
+                        <div class="kanji-onyomi">こう (kou)</div>
+                        <div class="kanji-kunyomi">い・く (iku)</div>
+                        <div class="kanji-meaning">Đi</div>
+                        <div class="kanji-example">Ví dụ: 行きます (いきます) - đi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['らい','くる','Đến','来ます (きます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['らい','くる','Đến','来ます (きます)'])">🔊</button>
+                        <div class="kanji-char">来</div>
+                        <div class="kanji-onyomi">らい (rai)</div>
+                        <div class="kanji-kunyomi">く・る (kuru)</div>
+                        <div class="kanji-meaning">Đến</div>
+                        <div class="kanji-example">Ví dụ: 来ます (きます) - đến</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['き','かえる','Về/Trở về','帰ります (かえります)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['き','かえる','Về/Trở về','帰ります (かえります)'])">🔊</button>
+                        <div class="kanji-char">帰</div>
+                        <div class="kanji-onyomi">き (ki)</div>
+                        <div class="kanji-kunyomi">かえ・る (kaeru)</div>
+                        <div class="kanji-meaning">Về, trở về</div>
+                        <div class="kanji-example">Ví dụ: 帰ります (かえります) - về</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['けん','みる','Xem/Nhìn','見ます (みます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['けん','みる','Xem/Nhìn','見ます (みます)'])">🔊</button>
+                        <div class="kanji-char">見</div>
+                        <div class="kanji-onyomi">けん (ken)</div>
+                        <div class="kanji-kunyomi">み・る (miru)</div>
+                        <div class="kanji-meaning">Xem, nhìn</div>
+                        <div class="kanji-example">Ví dụ: 見ます (みます) - xem</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しょく','たべる','Ăn','食べます (たべます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しょく','たべる','Ăn','食べます (たべます)'])">🔊</button>
+                        <div class="kanji-char">食</div>
+                        <div class="kanji-onyomi">しょく (shoku)</div>
+                        <div class="kanji-kunyomi">た・べる (taberu)</div>
+                        <div class="kanji-meaning">Ăn</div>
+                        <div class="kanji-example">Ví dụ: 食べます (たべます) - ăn</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['いん','のむ','Uống','飲みます (のみます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['いん','のむ','Uống','飲みます (のみます)'])"></button>
+                        <div class="kanji-char">飲</div>
+                        <div class="kanji-onyomi">いん (in)</div>
+                        <div class="kanji-kunyomi">の・む (nomu)</div>
+                        <div class="kanji-meaning">Uống</div>
+                        <div class="kanji-example">Ví dụ: 飲みます (のみます) - uống</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ばい','かう','Mua','買います (かいます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ばい','かう','Mua','買います (かいます)'])">🔊</button>
+                        <div class="kanji-char">買</div>
+                        <div class="kanji-onyomi">ばい (bai)</div>
+                        <div class="kanji-kunyomi">か・う (kau)</div>
+                        <div class="kanji-meaning">Mua</div>
+                        <div class="kanji-example">Ví dụ: 買います (かいます) - mua</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['どく','よむ','Đọc','読みます (よみます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['どく','よむ','Đọc','読みます (よみます)'])">🔊</button>
+                        <div class="kanji-char">読</div>
+                        <div class="kanji-onyomi">どく (doku)</div>
+                        <div class="kanji-kunyomi">よ・む (yomu)</div>
+                        <div class="kanji-meaning">Đọc</div>
+                        <div class="kanji-example">Ví dụ: 読みます (よみます) - đọc</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ぶん','きく','Nghe/Hỏi','聞きます (ききます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ぶん','きく','Nghe/Hỏi','聞きます (ききます)'])">🔊</button>
+                        <div class="kanji-char">聞</div>
+                        <div class="kanji-onyomi">ぶん (bun)</div>
+                        <div class="kanji-kunyomi">き・く (kiku)</div>
+                        <div class="kanji-meaning">Nghe, hỏi</div>
+                        <div class="kanji-example">Ví dụ: 聞きます (ききます) - nghe/hỏi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ゆう','あそぶ','Chơi','遊びます (あそびます)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ゆう','あそぶ','Chơi','遊びます (あそびます)'])">🔊</button>
+                        <div class="kanji-char">遊</div>
+                        <div class="kanji-onyomi">ゆう (yuu)</div>
+                        <div class="kanji-kunyomi">あそ・ぶ (asobu)</div>
+                        <div class="kanji-meaning">Chơi</div>
+                        <div class="kanji-example">Ví dụ: 遊びます (あそびます) - chơi</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#8B5CF6;--group-color-dark:#6D28D9">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Hành động hàng ngày:</strong> Đây là các động từ cơ bản nhất dùng trong giao tiếp hàng ngày. Tất cả đều ở thể ます (dạng lịch sự). Dùng để diễn tả hành động: đi, đến, về, xem, ăn, uống, mua, đọc, nghe, chơi.</p>
                 </div>
             </div>
 
-            <!-- Group 7: Adjectives -->
-            <div class="kanji-category" style="--category-color:#EC4899">
-                <h4>📏 Nhóm 7: Tính từ (10 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('だい、おおきい')"><span class="jp">大</span><span class="romaji">だい/おおきい (lớn)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しょう、ちいさい')"><span class="jp">小</span><span class="romaji">しょう/ちいさい (nhỏ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('こう、たかい')"><span class="jp">高</span><span class="romaji">こう/たかい (cao/đắt)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('あん、やすい')"><span class="jp">安</span><span class="romaji">あん/やすい (rẻ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('た、おおい')"><span class="jp">多</span><span class="romaji">た/おおい (nhiều)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しょう、すくない')"><span class="jp">少</span><span class="romaji">しょう/すくない (ít)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しん、あたらしい')"><span class="jp">新</span><span class="romaji">しん/あたらしい (mới)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('こ、ふるい')"><span class="jp">古</span><span class="romaji">こ/ふるい (cũ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('ちょう、ながい')"><span class="jp">長</span><span class="romaji">ちょう/ながい (dài)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('たん、みじかい')"><span class="jp">短</span><span class="romaji">たん/みじかい (ngắn)</span></div>
+            <!-- Nhóm 7: Tính từ -->
+            <div class="kanji-group" style="--group-color:#EC4899;--group-color-dark:#BE185D;--kanji-color:#BE185D">
+                <div class="group-header">
+                    <span class="group-icon">📏</span>
+                    <h3 class="group-title">Nhóm 7: Tính từ</h3>
+                    <span class="group-count">10 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['だい','おおきい','Lớn/To','大きい (おおきい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['だい','おおきい','Lớn/To','大きい (おおきい)'])">🔊</button>
+                        <div class="kanji-char">大</div>
+                        <div class="kanji-onyomi">だい (dai)</div>
+                        <div class="kanji-kunyomi">おお・きい (ookii)</div>
+                        <div class="kanji-meaning">Lớn, to</div>
+                        <div class="kanji-example">Ví dụ: 大きい (おおきい) - to lớn</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しょう','ちいさい','Nhỏ/Bé','小さい (ちいさい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しょう','ちいさい','Nhỏ/Bé','小さい (ちいさい)'])">🔊</button>
+                        <div class="kanji-char">小</div>
+                        <div class="kanji-onyomi">しょう (shou)</div>
+                        <div class="kanji-kunyomi">ちい・さい (chiisai)</div>
+                        <div class="kanji-meaning">Nhỏ, bé</div>
+                        <div class="kanji-example">Ví dụ: 小さい (ちいさい) - nhỏ bé</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['こう','たかい','Cao/Đắt','高い (たかい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['こう','たかい','Cao/Đắt','高い (たかい)'])">🔊</button>
+                        <div class="kanji-char">高</div>
+                        <div class="kanji-onyomi">こう (kou)</div>
+                        <div class="kanji-kunyomi">たか・い (takai)</div>
+                        <div class="kanji-meaning">Cao, đắt</div>
+                        <div class="kanji-example">Ví dụ: 高い (たかい) - cao/đắt</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['あん','やすい','Rẻ/An toàn','安い (やすい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['あん','やすい','Rẻ/An toàn','安い (やすい)'])">🔊</button>
+                        <div class="kanji-char">安</div>
+                        <div class="kanji-onyomi">あん (an)</div>
+                        <div class="kanji-kunyomi">やす・い (yasui)</div>
+                        <div class="kanji-meaning">Rẻ, an toàn</div>
+                        <div class="kanji-example">Ví dụ: 安い (やすい) - rẻ</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['た','おおい','Nhiều','多い (おおい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['た','おおい','Nhiều','多い (おおい)'])">🔊</button>
+                        <div class="kanji-char">多</div>
+                        <div class="kanji-onyomi">た (ta)</div>
+                        <div class="kanji-kunyomi">おお・い (ooi)</div>
+                        <div class="kanji-meaning">Nhiều</div>
+                        <div class="kanji-example">Ví dụ: 多い (おおい) - nhiều</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しょう','すくない','Ít','少ない (すくない)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しょう','すくない','Ít','少ない (すくない)'])">🔊</button>
+                        <div class="kanji-char">少</div>
+                        <div class="kanji-onyomi">しょう (shou)</div>
+                        <div class="kanji-kunyomi">すく・ない (sukunai)</div>
+                        <div class="kanji-meaning">Ít</div>
+                        <div class="kanji-example">Ví dụ: 少ない (すくない) - ít</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しん','あたらしい','Mới','新しい (あたらしい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しん','あたらしい','Mới','新しい (あたらしい)'])">🔊</button>
+                        <div class="kanji-char">新</div>
+                        <div class="kanji-onyomi">しん (shin)</div>
+                        <div class="kanji-kunyomi">あたら・しい (atarashii)</div>
+                        <div class="kanji-meaning">Mới</div>
+                        <div class="kanji-example">Ví dụ: 新しい (あたらしい) - mới</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['こ','ふるい','Cũ','古い (ふるい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['こ','ふるい','Cũ','古い (ふるい)'])">🔊</button>
+                        <div class="kanji-char">古</div>
+                        <div class="kanji-onyomi">こ (ko)</div>
+                        <div class="kanji-kunyomi">ふる・い (furui)</div>
+                        <div class="kanji-meaning">Cũ</div>
+                        <div class="kanji-example">Ví dụ: 古い (ふるい) - cũ</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['ちょう','ながい','Dài/Lâu','長い (ながい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['ちょう','ながい','Dài/Lâu','長い (ながい)'])">🔊</button>
+                        <div class="kanji-char">長</div>
+                        <div class="kanji-onyomi">ちょう (chou)</div>
+                        <div class="kanji-kunyomi">なが・い (nagai)</div>
+                        <div class="kanji-meaning">Dài, lâu</div>
+                        <div class="kanji-example">Ví dụ: 長い (ながい) - dài</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['たん','みじかい','Ngắn','短い (みじかい)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['たん','みじかい','Ngắn','短い (みじかい)'])">🔊</button>
+                        <div class="kanji-char">短</div>
+                        <div class="kanji-onyomi">たん (tan)</div>
+                        <div class="kanji-kunyomi">みじか・い (mijikai)</div>
+                        <div class="kanji-meaning">Ngắn</div>
+                        <div class="kanji-example">Ví dụ: 短い (みじかい) - ngắn</div>
+                        <div class="kanji-info"> Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#EC4899;--group-color-dark:#BE185D">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Miêu tả đặc điểm:</strong> Dùng để miêu tả kích thước, giá cả, số lượng, thời gian. Tất cả đều là tính từ い (kết thúc bằng い). Dùng trước danh từ (大きい家 - nhà to) hoặc đứng một mình (この本は新しい - quyển sách này mới).</p>
                 </div>
             </div>
 
-            <!-- Group 8: Places -->
-            <div class="kanji-category" style="--category-color:#8B5CF6">
-                <h4>🏺 Nhóm 8: Nơi chốn (6 chữ)</h4>
-                <div class="kanji-list">
-                    <div class="kanji-chip" onclick="playAudio('にゅう、はいる')"><span class="jp">入</span><span class="romaji">にゅう/はいる (vào)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('しゅつ、でる')"><span class="jp">出</span><span class="romaji">しゅつ/でる (ra)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('きゅう、やすむ')"><span class="jp">休</span><span class="romaji">きゅう/やすむ (nghỉ)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('きん')"><span class="jp">禁</span><span class="romaji">きん (cấm)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('えき')"><span class="jp">駅</span><span class="romaji">えき (ga)</span></div>
-                    <div class="kanji-chip" onclick="playAudio('てん、みせ')"><span class="jp">店</span><span class="romaji">てん/みせ (cửa hàng)</span></div>
+            <!-- Nhóm 8: Nơi chốn -->
+            <div class="kanji-group" style="--group-color:#06B6D4;--group-color-dark:#0891B2;--kanji-color:#0891B2">
+                <div class="group-header">
+                    <span class="group-icon"></span>
+                    <h3 class="group-title">Nhóm 8: Nơi chốn</h3>
+                    <span class="group-count">6 chữ</span>
+                </div>
+                <div class="kanji-grid">
+                    <div class="kanji-item" onclick="playAudioWithPause(['にゅう','はいる','Vào/Nhập','入口 (いりぐち)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['にゅう','はいる','Vào/Nhập','入口 (いりぐち)'])">🔊</button>
+                        <div class="kanji-char">入</div>
+                        <div class="kanji-onyomi">にゅう (nyuu)</div>
+                        <div class="kanji-kunyomi">はい・る (hairu)</div>
+                        <div class="kanji-meaning">Vào, nhập</div>
+                        <div class="kanji-example">Ví dụ: 入口 (いりぐち) - lối vào</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['しゅつ','でる','Ra/Ra ngoài','出口 (でぐち)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['しゅつ','でる','Ra/Ra ngoài','出口 (でぐち)'])">🔊</button>
+                        <div class="kanji-char">出</div>
+                        <div class="kanji-onyomi">しゅつ (shutsu)</div>
+                        <div class="kanji-kunyomi">で・る (deru)</div>
+                        <div class="kanji-meaning">Ra, ra ngoài</div>
+                        <div class="kanji-example">Ví dụ: 出口 (でぐち) - lối ra</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['きゅう','やすむ','Nghỉ','休み (やすみ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['きゅう','やすむ','Nghỉ','休み (やすみ)'])">🔊</button>
+                        <div class="kanji-char">休</div>
+                        <div class="kanji-onyomi">きゅう (kyuu)</div>
+                        <div class="kanji-kunyomi">やす・む (yasumu)</div>
+                        <div class="kanji-meaning">Nghỉ</div>
+                        <div class="kanji-example">Ví dụ: 休み (やすみ) - ngày nghỉ</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['きん','Cấm','禁止 (きんし)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['きん','Cấm','禁止 (きんし)'])">🔊</button>
+                        <div class="kanji-char">禁</div>
+                        <div class="kanji-onyomi">きん (kin)</div>
+                        <div class="kanji-meaning">Cấm</div>
+                        <div class="kanji-example">Ví dụ: 禁止 (きんし) - cấm</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['えき','Nhà ga','駅 (えき)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['えき','Nhà ga','駅 (えき)'])"></button>
+                        <div class="kanji-char">駅</div>
+                        <div class="kanji-onyomi">えき (eki)</div>
+                        <div class="kanji-meaning">Nhà ga</div>
+                        <div class="kanji-example">Ví dụ: 駅 (えき) - nhà ga</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                    <div class="kanji-item" onclick="playAudioWithPause(['てん','みせ','Cửa hàng','店 (みせ)'])">
+                        <button class="kanji-audio" onclick="event.stopPropagation();playAudioWithPause(['てん','みせ','Cửa hàng','店 (みせ)'])"></button>
+                        <div class="kanji-char">店</div>
+                        <div class="kanji-onyomi">てん (ten)</div>
+                        <div class="kanji-kunyomi">みせ (mise)</div>
+                        <div class="kanji-meaning">Cửa hàng</div>
+                        <div class="kanji-example">Ví dụ: 店 (みせ) - cửa hàng</div>
+                        <div class="kanji-info">📦 Box gồm: Kanji + Onyomi + Kunyomi + Nghĩa + Ví dụ</div>
+                    </div>
+                </div>
+                <div class="usage-box" style="--group-color:#06B6D4;--group-color-dark:#0891B2">
+                    <h5>📌 Khi nào dùng?</h5>
+                    <p><strong>Địa điểm & Quy tắc:</strong> Dùng để chỉ nơi chốn, lối vào/ra, và các quy tắc. 入口 (lối vào), 出口 (lối ra) thường thấy ở các tòa nhà. 休み (ngày nghỉ) dùng cho cuối tuần, ngày lễ. 駅 (ga), 店 (cửa hàng) là địa điểm phổ biến.</p>
                 </div>
             </div>
         </div>
 
-        <!-- FLASHCARD SECTION -->
-        <div class="flashcard-section">
-            <h2 class="section-title"><span>🎴</span> Flashcard Kanji (20 thẻ) <span>🎯</span></h2>
+        <!-- Flashcard Section -->
+        <div class="card flashcard-section">
+            <h2 class="section-title"><span></span> Flashcard Kanji (20 thẻ) 🎯</h2>
             <p class="section-subtitle">Click vào thẻ để lật và ôn tập</p>
-            <div class="flashcard-container">
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">学</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">がく・まなぶ</div><div class="flashcard-meaning">Học</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">校</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こう</div><div class="flashcard-meaning">Trường</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">読</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">どく・よむ</div><div class="flashcard-meaning">Đọc</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">書</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょ・かく</div><div class="flashcard-meaning">Viết</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">食</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょく・たべる</div><div class="flashcard-meaning">Ăn</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">飲</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">いん・のむ</div><div class="flashcard-meaning">Uống</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">見</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">けん・みる</div><div class="flashcard-meaning">Xem</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">聞</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">ぶん・きく</div><div class="flashcard-meaning">Nghe</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">大</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">だい・おおきい</div><div class="flashcard-meaning">Lớn</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">小</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しょう・ちいさい</div><div class="flashcard-meaning">Nhỏ</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">高</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こう・たかい</div><div class="flashcard-meaning">Cao/Đắt</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">安</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">あん・やすい</div><div class="flashcard-meaning">Rẻ</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">新</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しん・あたらしい</div><div class="flashcard-meaning">Mới</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">古</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">こ・ふるい</div><div class="flashcard-meaning">Cũ</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">長</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">ちょう・ながい</div><div class="flashcard-meaning">Dài</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">短</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">たん・みじかい</div><div class="flashcard-meaning">Ngắn</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">入</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">にゅう・はいる</div><div class="flashcard-meaning">Vào</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">出</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">しゅつ・でる</div><div class="flashcard-meaning">Ra</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">休</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">きゅう・やすむ</div><div class="flashcard-meaning">Nghỉ</div></div></div></div>
-                <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><span class="flashcard-jp">駅</span><div class="flashcard-hint">⚓ Lật</div></div><div class="flashcard-back"><div class="flashcard-romaji">えき</div><div class="flashcard-meaning">Nhà ga</div></div></div></div>
+            <div class="flashcard-grid">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">学</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">がく・まなぶ</div>
+                        <div class="flashcard-meaning">Học</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">校</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">こう</div>
+                        <div class="flashcard-meaning">Trường</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">読</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">どく・よむ</div>
+                        <div class="flashcard-meaning">Đọc</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">書</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">しょ・かく</div>
+                        <div class="flashcard-meaning">Viết</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">食</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">しょく・たべる</div>
+                        <div class="flashcard-meaning">Ăn</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">飲</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">いん・のむ</div>
+                        <div class="flashcard-meaning">Uống</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">見</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">けん・みる</div>
+                        <div class="flashcard-meaning">Xem</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">聞</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">ぶん・きく</div>
+                        <div class="flashcard-meaning">Nghe</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">大</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">だい・おおきい</div>
+                        <div class="flashcard-meaning">Lớn</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">小</div>
+                        <div class="flip-hint"> Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">しょう・ちいさい</div>
+                        <div class="flashcard-meaning">Nhỏ</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">高</div>
+                        <div class="flip-hint"> Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">こう・たかい</div>
+                        <div class="flashcard-meaning">Cao/Đắt</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">安</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">あん・やすい</div>
+                        <div class="flashcard-meaning">Rẻ</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">新</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">しん・あたらしい</div>
+                        <div class="flashcard-meaning">Mới</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">古</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">こ・ふるい</div>
+                        <div class="flashcard-meaning">Cũ</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">長</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">ちょう・ながい</div>
+                        <div class="flashcard-meaning">Dài</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">短</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">たん・みじかい</div>
+                        <div class="flashcard-meaning">Ngắn</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">入</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">にゅう・はいる</div>
+                        <div class="flashcard-meaning">Vào</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">出</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">しゅつ・でる</div>
+                        <div class="flashcard-meaning">Ra</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">休</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">きゅう・やすむ</div>
+                        <div class="flashcard-meaning">Nghỉ</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-front">
+                        <div class="flashcard-kanji">駅</div>
+                        <div class="flip-hint">🔄 Click để lật</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-reading">えき</div>
+                        <div class="flashcard-meaning">Nhà ga</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- QUIZ SECTION -->
-        <div class="exercise-section">
-            <h2 class="section-title"><span>🎮</span> Quiz Kanji (5 câu) <span>🏆</span></h2>
-            <p class="section-subtitle">Kiểm tra mức độ nhớ Kanji của bạn</p>
-
-            <div class="exercise-card">
-                <div class="exercise-q"><span class="q-num">1</span> Kanji 学 có nghĩa là gì?</div>
-                <div class="exercise-options">
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1a')">Trường</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q1b')">Học</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1c')">Đọc</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q1d')">Viết</div>
-                </div>
-                <div class="feedback" id="q1b"></div>
-            </div>
-
-            <div class="exercise-card">
-                <div class="exercise-q"><span class="q-num">2</span> Kanji nào có nghĩa là "Ăn"?</div>
-                <div class="exercise-options">
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2a')">飲</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q2b')">食</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2c')">見</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q2d')">聞</div>
-                </div>
-                <div class="feedback" id="q2b"></div>
-            </div>
-
-            <div class="exercise-card">
-                <div class="exercise-q"><span class="q-num">3</span> "ちいさい" nghĩa là gì?</div>
-                <div class="exercise-options">
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3a')">Lớn</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q3b')">Nhỏ</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3c')">Cao</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q3d')">Thấp</div>
-                </div>
-                <div class="feedback" id="q3b"></div>
-            </div>
-
-            <div class="exercise-card">
-                <div class="exercise-q"><span class="q-num">4</span> Kanji 駅 đọc là gì?</div>
-                <div class="exercise-options">
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4a')">てん</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q4b')">えき</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4c')">みせ</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q4d')">がっこう</div>
-                </div>
-                <div class="feedback" id="q4b"></div>
-            </div>
-
-            <div class="exercise-card">
-                <div class="exercise-q"><span class="q-num">5</span> Kanji nào có nghĩa là "Mới"?</div>
-                <div class="exercise-options">
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5a')">古</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,true,'q5b')">新</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5c')">長</div>
-                    <div class="exercise-opt" onclick="checkAnswer(this,false,'q5d')">短</div>
-                </div>
-                <div class="feedback" id="q5b"></div>
-            </div>
-        </div>
-
-        <!-- NAV BUTTONS -->
         <div class="nav-buttons">
-            <a href="n5-w24.html" class="btn btn-secondary"><span>🏆</span> Về HUB Tuần 24</a>
+            <a href="n5-w24.html" class="btn btn-secondary"><span></span> Về HUB Tuần 24</a>
             <a href="n5-w24-2.html" class="btn btn-primary"><span>📖</span> Ngày 2: Từ vựng →</a>
         </div>
     </div>
@@ -451,9 +1226,64 @@
     </footer>
 
     <script>
-        function playAudio(t){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=.85;u.pitch=1.1;const v=window.speechSynthesis.getVoices(),j=v.find(v=>v.lang.includes('ja'));if(j)u.voice=j;window.speechSynthesis.speak(u)}
-        function checkAnswer(el,ok,id){const p=el.parentElement,opts=p.querySelectorAll('.exercise-opt'),fb=document.getElementById(id);opts.forEach(o=>o.style.pointerEvents='none');if(ok){el.classList.add('correct');fb.textContent='✅ Chính xác! Giỏi quá!';fb.className='feedback show correct';}else{el.classList.add('wrong');opts.forEach(o=>{if(o.onclick.toString().includes('true'))o.classList.add('correct')});fb.textContent='❌ Sai rồi! Đáp án đúng đã được bôi xanh.';fb.className='feedback show wrong';}}
-        window.addEventListener('load',()=>{window.speechSynthesis.getVoices()});
+        let voices = [];
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+        }
+        loadVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        // Hàm đọc audio với khoảng nghỉ giữa các phần
+        function playAudioWithPause(texts){
+            window.speechSynthesis.cancel();
+            
+            let currentIndex = 0;
+            
+            function speakNext(){
+                if(currentIndex >= texts.length) return;
+                
+                const utterance = new SpeechSynthesisUtterance(texts[currentIndex]);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.85;
+                utterance.pitch = 1.1;
+                const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+                if(japaneseVoice) utterance.voice = japaneseVoice;
+                
+                utterance.onend = function(){
+                    currentIndex++;
+                    // Thêm khoảng nghỉ 0.5 giây giữa các phần
+                    setTimeout(speakNext, 500);
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            }
+            
+            speakNext();
+        }
+
+        // Hàm lật flashcard
+        function flipCard(card){
+            card.classList.toggle('flipped');
+        }
+
+        function createSparkles(){
+            const c = document.getElementById('sparkleContainer');
+            const particles = ['✨','✨','✨','✨','✨'];
+            for(let i=0;i<20;i++){
+                const s = document.createElement('div');
+                s.className = 'sparkle';
+                s.textContent = particles[Math.floor(Math.random()*particles.length)];
+                s.style.left = Math.random()*100+'%';
+                s.style.top = Math.random()*100+'%';
+                s.style.animationDuration = (Math.random()*3+2)+'s';
+                s.style.animationDelay = Math.random()*3+'s';
+                s.style.fontSize = (Math.random()*10+12)+'px';
+                c.appendChild(s);
+            }
+        }
+        window.addEventListener('load',createSparkles);
     </script>
 </body>
 </html>
