@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📖 Topic 8: Sức Khỏe V2.0 | Reading Master N5 | Nihongo Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+    --hira-bg:#FFF5F7;--hira-primary:#F9A8D4;--hira-dark:#DB2777;--hira-light:#FDF2F8;--hira-accent:#FBCFE8;
+    --kata-bg:#F0FDF4;--kata-primary:#86EFAC;--kata-dark:#059669;--kata-light:#ECFDF5;--kata-accent:#BBF7D0;
+    --pastel-pink:#FFD1DC;--pastel-lavender:#E0BBE4;--pastel-mint:#B5EAD7;--pastel-peach:#FFDAB9;--pastel-yellow:#FFFACD;--pastel-blue:#C7CEEA;
+    --text:#2D3748;--text-soft:#4A5568;--text-muted:#718096;--text-light:#A0AEC0;
+    --border:#E2E8F0;--white:#FFFFFF;
+    --warning:#FBBF24;--warning-dark:#D97706;--warning-light:#FEF3C7;
+    --danger:#FB7185;--danger-dark:#E11D48;--danger-light:#FFE4E6;
+    --info:#60A5FA;--info-dark:#2563EB;--info-light:#DBEAFE;
+}
+body{font-family:'Nunito','M PLUS Rounded 1c',sans-serif;background:linear-gradient(135deg,var(--pastel-pink) 0%,var(--pastel-lavender) 25%,var(--pastel-mint) 50%,var(--pastel-peach) 75%,var(--pastel-yellow) 100%);background-attachment:fixed;color:var(--text);line-height:1.6;min-height:100vh}
+
+.bg-bubble{position:fixed;border-radius:50%;opacity:.15;z-index:0;animation:floatBubble 30s infinite ease-in-out}
+.bg-bubble:nth-child(1){width:280px;height:280px;background:var(--pastel-pink);top:10%;left:8%}
+.bg-bubble:nth-child(2){width:220px;height:220px;background:var(--pastel-lavender);top:40%;right:10%;animation-delay:10s}
+.bg-bubble:nth-child(3){width:180px;height:180px;background:var(--pastel-mint);top:70%;left:15%;animation-delay:20s}
+.bg-bubble:nth-child(4){width:150px;height:150px;background:var(--pastel-peach);top:20%;right:20%;animation-delay:15s}
+@keyframes floatBubble{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-25px) scale(1.08)}}
+
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 30px;border-bottom:2px solid rgba(249,168,212,.3);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.logo{font-size:1.3em;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-main{background:linear-gradient(135deg,var(--hira-dark),#7C3AED,var(--kata-dark));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-muted);font-weight:700;padding:7px 15px;border-radius:18px;transition:.3s;font-size:.88em;border:2px solid transparent}
+.nav-links a:hover,.nav-links a.active{background:var(--pastel-pink);color:var(--hira-dark);border-color:var(--hira-primary)}
+.container{max-width:1240px;margin:0 auto;padding:25px 30px;position:relative;z-index:2}
+.breadcrumb{max-width:1240px;margin:15px auto 0;padding:0 30px;font-size:.88em;color:var(--text-muted)}
+.breadcrumb a{color:var(--hira-dark);text-decoration:none;font-weight:700}
+
+.hero{background:linear-gradient(135deg,rgba(255,255,255,.9)0%,rgba(253,242,248,.6)50%,rgba(236,253,245,.6)100%);border-radius:28px;padding:45px 35px;margin-bottom:30px;border:2px solid rgba(255,255,255,.8);box-shadow:0 8px 30px rgba(219,39,119,.08);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(249,168,212,.1),transparent,rgba(134,239,172,.1),transparent);animation:rotate 20s linear infinite;pointer-events:none}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-badge{background:linear-gradient(135deg,var(--hira-primary),var(--kata-primary));background-size:300% auto;color:white;padding:10px 24px;border-radius:25px;font-weight:800;font-size:.95em;display:inline-block;margin-bottom:18px;box-shadow:0 6px 18px rgba(249,168,212,.3);animation:shimmer 5s linear infinite;position:relative;z-index:2}
+.hero h1{font-size:2.5em;font-weight:900;margin-bottom:14px;background:linear-gradient(135deg,var(--hira-dark),#7C3AED,var(--kata-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.15;position:relative;z-index:2}
+.hero-jp{font-family:'M PLUS Rounded 1c';font-size:1.5em;color:var(--hira-dark);font-weight:700;margin-bottom:16px;opacity:.95;position:relative;z-index:2}
+.hero-desc{font-size:1.05em;color:var(--text-soft);margin-bottom:22px;line-height:1.6;max-width:750px;margin-left:auto;margin-right:auto;font-weight:600;position:relative;z-index:2}
+.hero-stats{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+.stat-item{background:rgba(255,255,255,.9);padding:14px 22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.05);min-width:110px;border:2px solid rgba(255,255,255,.8);transition:.3s}
+.stat-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(219,39,119,.15)}
+.stat-number{font-size:2em;font-weight:900;background:linear-gradient(135deg,var(--hira-dark),var(--kata-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+.stat-label{font-size:.8em;color:var(--text-muted);font-weight:700}
+
+.topic-section{margin-bottom:35px}
+.topic-header{background:rgba(255,255,255,.7);backdrop-filter:blur(10px);border-radius:18px;padding:16px 22px;margin-bottom:20px;display:flex;align-items:center;gap:15px;border:2px solid rgba(255,255,255,.8);box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.topic-icon{font-size:2.2em;flex-shrink:0}
+.topic-title{flex:1}
+.topic-title h3{font-size:1.3em;font-weight:900;margin-bottom:2px;line-height:1.2}
+.topic-title p{font-size:.88em;color:var(--text-muted);line-height:1.4}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card-grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+
+.info-card{background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-radius:18px;padding:22px;border:2px solid rgba(255,255,255,.8);transition:.3s;position:relative;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.info-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.info-card.hira-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--hira-primary),#C084FC);opacity:.8}
+.info-card.hira-card:hover{border-color:var(--hira-primary)}
+
+.card-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--pastel-lavender)}
+.card-icon{font-size:2.2em;flex-shrink:0}
+.card-title{flex:1}
+.card-name{font-family:'M PLUS Rounded 1c';font-size:1.5em;font-weight:900;line-height:1;color:var(--hira-dark)}
+.card-reading{font-size:.85em;color:var(--text-muted);font-weight:700;margin-top:2px}
+.card-function{font-size:.78em;font-weight:800;margin-top:4px;padding:3px 10px;border-radius:10px;display:inline-block;background:var(--hira-light);color:var(--hira-dark)}
+
+.card-content{margin-top:10px}
+.formula-box{padding:12px 16px;border-radius:12px;margin-bottom:12px;font-family:'M PLUS Rounded 1c';font-size:1.05em;font-weight:700;color:var(--text);line-height:1.4;background:var(--hira-light);border-left:4px solid var(--hira-primary)}
+
+.example-list{margin-top:10px}
+.example-item{background:rgba(255,255,255,.7);padding:11px 13px;border-radius:12px;margin-bottom:8px;border:1px solid rgba(255,255,255,.8);transition:.3s}
+.example-item:hover{background:var(--hira-light);border-color:var(--hira-accent)}
+.example-jp{font-family:'M PLUS Rounded 1c';font-size:1.05em;color:var(--text);font-weight:700;margin-bottom:2px;line-height:1.4}
+.example-jp .highlight{color:var(--hira-dark);font-weight:900;font-size:1.1em}
+.example-romaji{font-size:.8em;color:var(--text-muted);font-style:italic;margin-bottom:2px;line-height:1.3}
+.example-vn{font-size:.88em;color:var(--text-soft);font-weight:600;margin-bottom:6px;line-height:1.4}
+.example-audio-row{display:flex;justify-content:flex-end;gap:6px}
+
+.audio-btn{color:white;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;transition:.3s;font-size:.9em;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.1);background:linear-gradient(135deg,var(--hira-primary),#C084FC)}
+.audio-btn:hover{transform:scale(1.15);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.audio-btn.slow{background:linear-gradient(135deg,var(--warning),var(--warning-dark))}
+
+.note-box{padding:11px 13px;border-radius:10px;margin-top:12px;border-left:4px solid var(--warning);background:var(--warning-light)}
+.note-box h5{color:var(--warning-dark);margin-bottom:6px;font-size:.9em;font-weight:800;display:flex;align-items:center;gap:6px;line-height:1.3}
+.note-box p,.note-box ul{color:var(--text-soft);font-size:.88em;line-height:1.5}
+.note-box ul{padding-left:16px;margin-top:4px}
+.note-box li{margin-bottom:3px}
+
+.warning-box{padding:11px 13px;border-radius:10px;margin-top:12px;border-left:4px solid var(--danger);background:var(--danger-light)}
+.warning-box h5{color:var(--danger-dark);margin-bottom:6px;font-size:.9em;font-weight:800;display:flex;align-items:center;gap:6px;line-height:1.3}
+.warning-box p,.warning-box ul{color:var(--text-soft);font-size:.88em;line-height:1.5}
+.warning-box ul{padding-left:16px;margin-top:4px}
+.warning-box li{margin-bottom:3px}
+.warning-box .vs{color:var(--danger-dark);font-weight:900;margin:0 8px}
+
+.tip-box{background:linear-gradient(135deg,var(--pastel-lavender),var(--pastel-pink));padding:14px;border-radius:12px;margin-top:12px;border:2px solid rgba(255,255,255,.6)}
+.tip-box h5{color:var(--text);margin-bottom:6px;font-size:.92em;font-weight:900;display:flex;align-items:center;gap:6px}
+.tip-box ul{padding-left:16px;margin-top:4px}
+.tip-box li{margin-bottom:3px;font-size:.88em;color:var(--text-soft)}
+
+.vocab-group-title{font-size:1.1em;font-weight:900;color:var(--hira-dark);margin:18px 0 12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:2px dashed var(--hira-accent)}
+.vocab-group-title:first-child{margin-top:0}
+
+.sentence-card{background:rgba(255,255,255,.9);border-radius:16px;padding:18px;margin-bottom:15px;border:2px solid rgba(255,255,255,.8);box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.sentence-jp{font-family:'M PLUS Rounded 1c';font-size:1.2em;font-weight:800;color:var(--hira-dark);margin-bottom:8px;line-height:1.5}
+.sentence-vn{font-size:.95em;color:var(--text-soft);font-weight:600;margin-bottom:10px;padding:8px;background:var(--hira-light);border-radius:8px;display:none}
+.sentence-vn.show{display:block}
+.sentence-details{display:grid;gap:8px}
+.sentence-detail{padding:8px 12px;border-radius:8px;font-size:.88em}
+.sentence-detail.vocab{background:var(--info-light);border-left:3px solid var(--info)}
+.sentence-detail.grammar{background:var(--kata-light);border-left:3px solid var(--kata-primary)}
+.sentence-detail strong{color:var(--text);font-weight:800}
+.toggle-vn{background:linear-gradient(135deg,var(--hira-primary),#C084FC);color:white;border:none;padding:6px 14px;border-radius:15px;font-size:.82em;font-weight:700;cursor:pointer;margin-bottom:10px}
+.toggle-vn:hover{transform:scale(1.05)}
+
+.kanji-char-big{font-family:'M PLUS Rounded 1c';font-size:3em;font-weight:900;color:var(--hira-dark);text-align:center;line-height:1;margin-bottom:8px}
+.kanji-info-list{font-size:.85em;color:var(--text-soft);line-height:1.5}
+.kanji-info-list strong{color:var(--hira-dark)}
+
+.quiz-item{margin-bottom:20px}
+.quiz-question{font-weight:800;color:var(--text);margin-bottom:12px;font-size:1.05em;display:flex;gap:10px;align-items:center}
+.quiz-num{background:linear-gradient(135deg,var(--hira-primary),#C084FC);color:white;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:.9em;flex-shrink:0}
+.quiz-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:12px}
+.quiz-option{background:rgba(255,255,255,.7);border:2px solid var(--border);padding:12px 16px;border-radius:12px;cursor:pointer;transition:.3s;font-weight:700;font-size:.95em;text-align:center;font-family:'M PLUS Rounded 1c',sans-serif;color:var(--text)}
+.quiz-option:hover{background:var(--hira-light);border-color:var(--hira-primary);transform:translateY(-2px)}
+.quiz-option.correct{background:var(--kata-light);border-color:var(--kata-primary);color:var(--kata-dark)}
+.quiz-option.wrong{background:var(--danger-light);border-color:var(--danger);color:var(--danger-dark)}
+.quiz-feedback{margin-top:10px;padding:10px;border-radius:10px;font-weight:700;display:none;font-size:.95em}
+.quiz-feedback.show{display:block}
+.quiz-feedback.correct{background:var(--kata-light);color:var(--kata-dark);border:2px solid var(--kata-primary)}
+.quiz-feedback.wrong{background:var(--danger-light);color:var(--danger-dark);border:2px solid var(--danger)}
+
+.output-form{background:linear-gradient(135deg,var(--hira-light),var(--kata-light));border-radius:16px;padding:25px;border:2px dashed var(--hira-primary)}
+.output-line{font-family:'M PLUS Rounded 1c';font-size:1.15em;margin-bottom:12px;line-height:1.6}
+.output-line input{font-family:'M PLUS Rounded 1c';border:none;border-bottom:2px solid var(--hira-primary);background:rgba(255,255,255,.7);padding:4px 8px;font-size:1em;width:180px;color:var(--hira-dark);font-weight:700}
+.output-line input:focus{outline:none;border-bottom-color:var(--kata-primary);background:white}
+
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-top:20px}
+.summary-item{background:rgba(255,255,255,.9);border-radius:16px;padding:20px;text-align:center;border:2px solid rgba(255,255,255,.8);box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.summary-icon{font-size:2em;margin-bottom:8px}
+.summary-value{font-size:1.8em;font-weight:900;background:linear-gradient(135deg,var(--hira-dark),var(--kata-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.summary-label{font-size:.9em;color:var(--text-muted);font-weight:700}
+
+.dialogue-section{margin-top:20px}
+.dialogue-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.dialogue-btn{padding:12px 24px;border-radius:45px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px}
+.dialogue-btn.play{background:linear-gradient(135deg,var(--hira-primary),#C084FC);color:white;box-shadow:0 6px 18px rgba(249,168,212,.3)}
+.dialogue-btn.play:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(249,168,212,.4)}
+.dialogue-btn.play:disabled{opacity:.6;cursor:not-allowed}
+.dialogue-btn.stop{background:linear-gradient(135deg,var(--danger),var(--danger-dark));color:white;box-shadow:0 6px 18px rgba(251,113,133,.3)}
+.dialogue-btn.stop:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(251,113,133,.4)}
+.dialogue-btn.stop:disabled{opacity:.6;cursor:not-allowed}
+
+.dialogue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
+.dialogue-card{background:rgba(255,255,255,.95);border-radius:16px;padding:18px;border:2px solid rgba(255,255,255,.8);box-shadow:0 4px 15px rgba(0,0,0,.04);transition:.3s;position:relative}
+.dialogue-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+.dialogue-card.speaker-a{border-left:5px solid var(--hira-primary)}
+.dialogue-card.speaker-b{border-left:5px solid var(--kata-primary)}
+.dialogue-speaker{font-size:.78em;font-weight:900;padding:3px 10px;border-radius:10px;display:inline-block;margin-bottom:8px}
+.dialogue-card.speaker-a .dialogue-speaker{background:var(--hira-light);color:var(--hira-dark)}
+.dialogue-card.speaker-b .dialogue-speaker{background:var(--kata-light);color:var(--kata-dark)}
+.dialogue-jp{font-family:'M PLUS Rounded 1c';font-size:1.1em;font-weight:800;color:var(--text);margin-bottom:6px;line-height:1.5}
+.dialogue-vn{font-size:.88em;color:var(--text-soft);font-weight:600;margin-bottom:8px}
+.dialogue-audio-btn{background:linear-gradient(135deg,var(--hira-primary),#C084FC);color:white;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.8em;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
+.dialogue-audio-btn:hover{transform:scale(1.15)}
+.dialogue-card.playing{background:linear-gradient(135deg,var(--hira-light),var(--kata-light));border-color:var(--hira-primary);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 15px rgba(249,168,212,.2)}50%{box-shadow:0 4px 25px rgba(249,168,212,.5)}}
+
+.nav-buttons{display:flex;justify-content:center;gap:12px;margin-top:35px;flex-wrap:wrap}
+.btn{padding:12px 28px;border-radius:45px;border:none;font-family:inherit;font-weight:800;font-size:.95em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.3s}
+.btn-primary{background:linear-gradient(135deg,var(--hira-primary),var(--kata-primary));color:white;box-shadow:0 6px 18px rgba(249,168,212,.3)}
+.btn-primary:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 30px rgba(95,212,168,.3)}
+.btn-secondary{background:rgba(255,255,255,.9);color:var(--text);border:2px solid var(--hira-primary)}
+.btn-secondary:hover{background:var(--hira-light);transform:translateY(-3px)}
+
+.footer{background:linear-gradient(135deg,var(--hira-primary),var(--pastel-lavender),var(--kata-primary));background-size:300% auto;color:white;padding:35px;text-align:center;margin-top:40px;border-radius:25px 25px 0 0;animation:shimmer 8s linear infinite;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.2),transparent 70%);animation:rotate 20s linear infinite}
+.footer h3{font-size:1.5em;margin-bottom:10px;font-weight:900;position:relative;z-index:2}
+.footer p{opacity:.95;margin-bottom:6px;font-weight:600;position:relative;z-index:2}
+
+@media(max-width:900px){.card-grid,.card-grid-2,.dialogue-grid{grid-template-columns:1fr}.container{padding:15px}.hero{padding:30px 20px}.hero h1{font-size:1.8em}.hero-jp{font-size:1.2em}}
+@media(max-width:600px){.header{padding:10px 15px}.nav-links{display:none}.card-header{flex-direction:column;align-items:flex-start}.topic-header{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="bg-bubble"></div>
+<div class="bg-bubble"></div>
+<div class="bg-bubble"></div>
+<div class="bg-bubble"></div>
+
+<header class="header">
+    <a href="index.html" class="logo"><span style="font-size:1.4em">📖</span><span class="logo-main">Nihongo Journey</span></a>
+    <nav><ul class="nav-links">
+        <li><a href="index.html">🏠 Trang chủ</a></li>
+        <li><a href="n5.html">🌱 N5</a></li>
+        <li><a href="n5-w24.html" class="active">🏆 Tuần 24</a></li>
+        <li><a href="n5-w24-4.html">📖 Reading Master</a></li>
+        <li><a href="n4.html">🌿 N4</a></li>
+        <li><a href="n3.html">🌳 N3</a></li>
+    </ul></nav>
+</header>
+
+<div class="container">
+    <div class="breadcrumb">
+        <a href="index.html">🏠 Trang chủ</a> › 
+        <a href="n5.html">🌱 N5</a> › 
+        <a href="n5-w24.html">🏆 Tuần 24</a> › 
+        <a href="n5-w24-4.html">📖 Reading Master</a> › 
+        <span>Topic 8: Sức Khỏe V2.0</span>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-badge">📖 Reading Master N5 • Topic 8/12 • ⭐ Trung bình • V2.0</span>
+        <h1>🏥 Topic 8: Sức Khỏe</h1>
+        <div class="hero-jp">けんこう • 健康</div>
+        <p class="hero-desc">Chủ đề thiết yếu nhất khi sống ở Nhật! Học cách mô tả triệu chứng, đi khám bệnh, uống thuốc và xin nghỉ phép. Tự tin xử lý mọi tình huống sức khỏe!</p>
+        <div class="hero-stats">
+            <div class="stat-item"><span class="stat-number">22</span><span class="stat-label">Từ vựng</span></div>
+            <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Ngữ pháp sâu</span></div>
+            <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Kanji</span></div>
+            <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Bài đọc</span></div>
+            <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Câu hỏi</span></div>
+        </div>
+        <div class="nav-buttons">
+            <a href="n5-w24-4-07.html" class="btn btn-secondary">🚃 ← Topic 7: Đi lại</a>
+            <a href="n5-w24-4-09.html" class="btn btn-primary">📢 Topic 9: Thông báo →</a>
+        </div>
+    </div>
+
+    <!-- 1. MỤC TIÊU -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🎯</span>
+            <div class="topic-title">
+                <h3>1. Mục Tiêu Bài Học</h3>
+                <p>Sau bài này, bạn sẽ làm được gì?</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="tip-box" style="margin-top:0">
+                    <h5>✅ Sau khi hoàn thành Topic 8, bạn sẽ:</h5>
+                    <ul>
+                        <li>Nhận diện được 4 loại thông tin trong bài đọc sức khỏe: bộ phận cơ thể, triệu chứng, hành động y tế, cảm giác</li>
+                        <li>Nắm vững 22 từ vựng cốt lõi chia theo 4 nhóm logic</li>
+                        <li>Hiểu sâu 5 mẫu ngữ pháp nền tảng về sức khỏe + phân biệt trợ từ dễ nhầm</li>
+                        <li>Đọc hiểu 2 đoạn văn về tình huống ốm đau và đi khám bệnh (150-180 chữ)</li>
+                        <li>Trả lời 8 câu hỏi (50% tìm thông tin + 50% suy luận)</li>
+                        <li>Tự viết được đoạn mô tả tình trạng sức khỏe của chính mình 🌸</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. ĐẶC ĐIỂM TOPIC -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">📌</span>
+            <div class="topic-title">
+                <h3>2. Đặc Điểm Của Topic</h3>
+                <p>Bài đọc "Sức khỏe" thường có những thông tin gì?</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="note-box" style="margin-top:0">
+                    <h5>📌 5 thông tin LUÔN xuất hiện:</h5>
+                    <ul>
+                        <li>🤕 <strong>Bộ phận cơ thể</strong> (からだの ぶぶん): あたま (đầu), おなか (bụng), のど (cổ họng).</li>
+                        <li>🤒 <strong>Triệu chứng</strong> (しょうじょう): ねつがあります (sốt), せきが でます (ho), はなみずが でます (sổ mũi).</li>
+                        <li>🏥 <strong>Hành động y tế</strong> (いりょう こうどう): びょういんへ いきます (đi bệnh viện), くすりを のみます (uống thuốc).</li>
+                        <li>😴 <strong>Cảm giác</strong> (かんかく): ねむいです (buồn ngủ), だるいです (mệt mỏi/uể oải), いたいです (đau).</li>
+                        <li>📅 <strong>Thời gian</strong> (じかん): きょう (hôm nay), きのう (hôm qua), あした (ngày mai).</li>
+                    </ul>
+                    <p style="margin-top:10px;font-weight:700">💡 <strong>Đặc điểm nhận dạng:</strong> Bài đọc thường có cấu trúc: Cảm thấy triệu chứng → Đi bệnh viện → Bác sĩ khám → Uống thuốc/Nghỉ ngơi → Khỏe lại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. MẸO ĐỌC -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">💡</span>
+            <div class="topic-title">
+                <h3>3. Mẹo Đọc Riêng Cho Topic</h3>
+                <p>Hiểu bản chất - Không học vẹt!</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="tip-box" style="margin-top:0">
+                    <h5>💡 6 mẹo "đọc là biết ngay":</h5>
+                    <ul>
+                        <li>🤕 Thấy <strong>「〜が いたいです」</strong> → Đó là <strong>đau ở bộ phận đó</strong>. (VD: あたまがいたいです = "Đau đầu")</li>
+                        <li>🤒 Thấy <strong>「〜が あります」</strong> → Đó là <strong>có triệu chứng</strong>. (VD: ねつがあります = "Có sốt")</li>
+                        <li>🏥 Thấy <strong>「びょういんへ いきます」</strong> → Đó là <strong>đi đến bệnh viện</strong>. Trợ từ 「へ」chỉ hướng đi.</li>
+                        <li>💊 Thấy <strong>「くすりを のみます」</strong> → Đó là <strong>uống thuốc</strong>. Lưu ý: thuốc dùng động từ のみます (uống), không dùng たべます (ăn).</li>
+                        <li>🛑 Thấy <strong>「〜ては いけません」</strong> → Đó là <strong>cấm kỵ / không được làm</strong>. (VD: ここでは たばこを すっては いけません = "Không được hút thuốc ở đây").</li>
+                        <li>⚠️ <strong>Lưu ý quan trọng:</strong> Phân biệt 「ねつが あります」(có sốt) và 「ねつが さがります」(hạ sốt). Đây là cặp từ trái nghĩa rất hay gặp!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. TỪ VỰNG THEO NHÓM -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">📚</span>
+            <div class="topic-title">
+                <h3>4. Từ Vựng Trọng Tâm (22 từ) - Chia 4 Nhóm</h3>
+                <p>Click 🔊 để nghe phát âm chuẩn</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                
+                <div class="vocab-group-title">🤕 Nhóm 1: Bộ phận cơ thể (6 từ)</div>
+                <div class="card-grid">
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🤕</div>
+                            <div class="card-title">
+                                <div class="card-name">あたま</div>
+                                <div class="card-reading">(atama) • 頭</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Đầu</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('あたま')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🤰</div>
+                            <div class="card-title">
+                                <div class="card-name">おなか</div>
+                                <div class="card-reading">(onaka) • お腹</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Bụng</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('おなか')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🗣️</div>
+                            <div class="card-title">
+                                <div class="card-name">のど</div>
+                                <div class="card-reading">(nodo) • 喉</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Cổ họng</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('のど')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">👃</div>
+                            <div class="card-title">
+                                <div class="card-name">はな</div>
+                                <div class="card-reading">(hana) • 鼻</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Mũi</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('はな')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">👂</div>
+                            <div class="card-title">
+                                <div class="card-name">みみ</div>
+                                <div class="card-reading">(mimi) • 耳</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Tai</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('みみ')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🦷</div>
+                            <div class="card-title">
+                                <div class="card-name">は</div>
+                                <div class="card-reading">(ha) • 歯</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Răng</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('は')">🔊</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-group-title">🤒 Nhóm 2: Triệu chứng (6 từ)</div>
+                <div class="card-grid">
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🌡️</div>
+                            <div class="card-title">
+                                <div class="card-name">ねつ</div>
+                                <div class="card-reading">(netsu) • 熱</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Sốt</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ねつ')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🤧</div>
+                            <div class="card-title">
+                                <div class="card-name">せき</div>
+                                <div class="card-reading">(seki) • 咳</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Ho</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('せき')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">💧</div>
+                            <div class="card-title">
+                                <div class="card-name">はなみず</div>
+                                <div class="card-reading">(hanamizu) • 鼻水</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Sổ mũi</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('はなみず')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">😫</div>
+                            <div class="card-title">
+                                <div class="card-name">だるい</div>
+                                <div class="card-reading">(darui) • だるい</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Mệt mỏi, uể oải</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('だるい')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">😴</div>
+                            <div class="card-title">
+                                <div class="card-name">ねむい</div>
+                                <div class="card-reading">(nemui) • 眠い</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Buồn ngủ</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ねむい')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🤢</div>
+                            <div class="card-title">
+                                <div class="card-name">びょうき</div>
+                                <div class="card-reading">(byouki) • 病気</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Ốm, bệnh</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('びょうき')">🔊</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-group-title">🏥 Nhóm 3: Hành động Y tế (5 từ)</div>
+                <div class="card-grid">
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🏥</div>
+                            <div class="card-title">
+                                <div class="card-name">びょういん</div>
+                                <div class="card-reading">(byouin) • 病院</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Bệnh viện</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('びょういん')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">💊</div>
+                            <div class="card-title">
+                                <div class="card-name">くすり</div>
+                                <div class="card-reading">(kusuri) • 薬</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Thuốc</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('くすり')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🥛</div>
+                            <div class="card-title">
+                                <div class="card-name">のみます</div>
+                                <div class="card-reading">(nomimasu) • 飲みます</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Uống</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('のみます')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🛏️</div>
+                            <div class="card-title">
+                                <div class="card-name">ねます</div>
+                                <div class="card-reading">(nemasu) • 寝ます</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Ngủ</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ねます')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">🏖️</div>
+                            <div class="card-title">
+                                <div class="card-name">やすみます</div>
+                                <div class="card-reading">(yasumimasu) • 休みます</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Nghỉ (học/làm)</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('やすみます')">🔊</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-group-title">⏰ Nhóm 4: Cảm giác & Thời gian (5 từ)</div>
+                <div class="card-grid">
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">💪</div>
+                            <div class="card-title">
+                                <div class="card-name">げんき</div>
+                                <div class="card-reading">(genki) • 元気</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Khỏe mạnh</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('げんき')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">📉</div>
+                            <div class="card-title">
+                                <div class="card-name">さがります</div>
+                                <div class="card-reading">(sagarimasu) • 下がります</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Hạ (sốt)</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('さがります')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">📅</div>
+                            <div class="card-title">
+                                <div class="card-name">きょう</div>
+                                <div class="card-reading">(kyou) • 今日</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Hôm nay</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('きょう')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">⏪</div>
+                            <div class="card-title">
+                                <div class="card-name">きのう</div>
+                                <div class="card-reading">(kinou) • 昨日</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Hôm qua</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('きのう')">🔊</button></div>
+                        </div>
+                    </div>
+                    <div class="info-card hira-card" style="margin:0">
+                        <div class="card-header">
+                            <div class="card-icon">⏩</div>
+                            <div class="card-title">
+                                <div class="card-name">あした</div>
+                                <div class="card-reading">(ashita) • 明日</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="formula-box">Ngày mai</div>
+                            <div class="example-audio-row"><button class="audio-btn" onclick="playAudio('あした')">🔊</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. NGỮ PHÁP CHUYÊN SÂU -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">📝</span>
+            <div class="topic-title">
+                <h3>5. Ngữ Pháp Chuyên Sâu (5 mẫu)</h3>
+                <p>Mỗi mẫu: Ý nghĩa + Cách dùng + Ví dụ + Lưu ý + Phân biệt</p>
+            </div>
+        </div>
+        <div class="card-grid-2">
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="formula-box" style="font-size:1.3em">〜が いたいです</div>
+                    <div class="example-vn" style="font-size:1em"><strong>Ý nghĩa:</strong> Đau 〜</div>
+                    <div class="note-box"><h5>🎯 Dùng khi nào</h5><p>Diễn tả cảm giác đau ở một bộ phận cụ thể trên cơ thể. Trợ từ bắt buộc là 「が」.</p></div>
+                    <div class="example-item"><div class="example-jp">あたま<span class="highlight">が いたいです</span>。</div><div class="example-romaji">Atama ga itai desu.</div><div class="example-vn">Tôi bị đau đầu.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('あたまが いたいです')">🔊</button></div></div>
+                    <div class="warning-box"><h5>⚠️ Lưu ý</h5><p>Khác với tiếng Việt nói "đau đầu" (động từ + danh từ), tiếng Nhật dùng "đầu + đau" (danh từ + が + tính từ).</p></div>
+                </div>
+            </div>
+
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="formula-box" style="font-size:1.3em">〜が あります</div>
+                    <div class="example-vn" style="font-size:1em"><strong>Ý nghĩa:</strong> Có (triệu chứng)</div>
+                    <div class="note-box"><h5>🎯 Dùng khi nào</h5><p>Dùng để nói về việc xuất hiện triệu chứng như sốt, ho, sổ mũi. Trợ từ là 「が」.</p></div>
+                    <div class="example-item"><div class="example-jp">ねつ<span class="highlight">が あります</span>。</div><div class="example-romaji">Netsu ga arimasu.</div><div class="example-vn">Tôi bị sốt.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ねつが あります')">🔊</button></div></div>
+                    <div class="warning-box"><h5>⚠️ Phân biệt: あります vs います</h5><p><strong>あります</strong> = có (triệu chứng, đồ vật).<br><strong>います</strong> = có (người, động vật sống).</p></div>
+                </div>
+            </div>
+
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="formula-box" style="font-size:1.3em">びょういんへ いきます</div>
+                    <div class="example-vn" style="font-size:1em"><strong>Ý nghĩa:</strong> Đi đến bệnh viện</div>
+                    <div class="note-box"><h5>🎯 Dùng khi nào</h5><p>Diễn tả hành động di chuyển đến bệnh viện để khám bệnh. Trợ từ 「へ」(đọc là "e") chỉ hướng đi.</p></div>
+                    <div class="example-item"><div class="example-jp">きのう <span class="highlight">びょういんへ いきました</span>。</div><div class="example-romaji">Kinou byouin e ikimashita.</div><div class="example-vn">Hôm qua tôi đã đi bệnh viện.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('きのう びょういんへ いきました')">🔊</button></div></div>
+                    <div class="warning-box"><h5>⚠️ Lưu ý</h5><p>Có thể dùng 「に」thay cho 「へ」(びょういんに いきます), nhưng 「へ」nhấn mạnh hướng di chuyển hơn.</p></div>
+                </div>
+            </div>
+
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="formula-box" style="font-size:1.3em">くすりを のみます</div>
+                    <div class="example-vn" style="font-size:1em"><strong>Ý nghĩa:</strong> Uống thuốc</div>
+                    <div class="note-box"><h5>🎯 Dùng khi nào</h5><p>Diễn tả hành động uống thuốc. Lưu ý: trong tiếng Nhật, thuốc (くすり) dùng động từ 「のむ」(uống), không dùng 「たべる」(ăn).</p></div>
+                    <div class="example-item"><div class="example-jp">まいにち <span class="highlight">くすりを のみます</span>。</div><div class="example-romaji">Mainichi kusuri o nomimasu.</div><div class="example-vn">Mỗi ngày tôi uống thuốc.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('まいにち くすりを のみます')">🔊</button></div></div>
+                    <div class="warning-box"><h5>⚠️ Lưu ý đặc biệt</h5><p>「のむ」dùng cho chất lỏng (nước, thuốc). 「たべる」dùng cho thức ăn rắn. Đây là lỗi sai phổ biến của người mới học.</p></div>
+                </div>
+            </div>
+
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="formula-box" style="font-size:1.3em">〜ては いけません</div>
+                    <div class="example-vn" style="font-size:1em"><strong>Ý nghĩa:</strong> Không được làm 〜</div>
+                    <div class="note-box"><h5>🎯 Dùng khi nào</h5><p>Diễn tả sự cấm đoán, quy tắc không được phép làm gì đó. Rất hay gặp trong bệnh viện hoặc nơi công cộng.</p></div>
+                    <div class="example-item"><div class="example-jp">ここで たばこを <span class="highlight">すっては いけません</span>。</div><div class="example-romaji">Koko de tabako o sutte wa ikemasen.</div><div class="example-vn">Không được hút thuốc ở đây.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ここで たばこを すっては いけません')">🔊</button></div></div>
+                    <div class="warning-box"><h5>⚠️ Lưu ý</h5><p>Cấu trúc: Động từ thể て + は + いけません. Đây là mẫu câu cấm đoán chuẩn mực, lịch sự.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. KANJI NÂNG CAO -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🈶</span>
+            <div class="topic-title">
+                <h3>6. Kanji Xuất Hiện Trong Bài (8 chữ)</h3>
+                <p>Chữ Hán + Âm đọc + Xuất hiện trong + Ví dụ + Audio</p>
+            </div>
+        </div>
+        <div class="card-grid">
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">病</div>
+                <div class="card-reading" style="text-align:center">びょう / やむ (byou / yamu)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Bệnh, ốm<br>
+                    <strong>Xuất hiện trong:</strong> 病気 (びょうき - ốm), 病院 (びょういん - bệnh viện)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">病</span>気です。<button class="audio-btn" onclick="playAudio('びょうきです')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">院</div>
+                <div class="card-reading" style="text-align:center">いん (in)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Viện, cơ sở<br>
+                    <strong>Xuất hiện trong:</strong> 病院 (びょういん - bệnh viện), 大学院 (だいがくいん - cao học)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">病院</span>へ いきます。<button class="audio-btn" onclick="playAudio('びょういんへ いきます')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">薬</div>
+                <div class="card-reading" style="text-align:center">やく / くすり (yaku / kusuri)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Thuốc<br>
+                    <strong>Xuất hiện trong:</strong> 薬 (くすり - thuốc), 薬局 (やっきょく - hiệu thuốc)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">薬</span>を のみます。<button class="audio-btn" onclick="playAudio('くすりを のみます')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">頭</div>
+                <div class="card-reading" style="text-align:center">とう / あたま (tou / atama)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Đầu<br>
+                    <strong>Xuất hiện trong:</strong> 頭 (あたま - đầu), 頭痛 (ずつう - đau đầu)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">頭</span>が いたいです。<button class="audio-btn" onclick="playAudio('あたまが いたいです')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">腹</div>
+                <div class="card-reading" style="text-align:center">ふく / はら (fuku / hara)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Bụng<br>
+                    <strong>Xuất hiện trong:</strong> お腹 (おなか - bụng), 腹痛 (ふくつう - đau bụng)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">腹</span>が へりました。<button class="audio-btn" onclick="playAudio('おなかが すきました')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">熱</div>
+                <div class="card-reading" style="text-align:center">ねつ / あつい (netsu / atsui)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Nhiệt, sốt<br>
+                    <strong>Xuất hiện trong:</strong> 熱 (ねつ - sốt), 発熱 (はつねつ - phát sốt)<br>
+                    <strong>Ví dụ:</strong> <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">熱</span>が あります。<button class="audio-btn" onclick="playAudio('ねつが あります')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">寝</div>
+                <div class="card-reading" style="text-align:center">しん / ねる (shin / neru)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Ngủ<br>
+                    <strong>Xuất hiện trong:</strong> 寝ます (ねます - ngủ), 寝室 (しんしつ - phòng ngủ)<br>
+                    <strong>Ví dụ:</strong> 早く <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">寝</span>ます。<button class="audio-btn" onclick="playAudio('はやく ねます')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="kanji-char-big">休</div>
+                <div class="card-reading" style="text-align:center">きゅう / やすむ (kyuu / yasumu)</div>
+                <div class="kanji-info-list">
+                    <strong>Nghĩa:</strong> Nghỉ<br>
+                    <strong>Xuất hiện trong:</strong> 休みます (やすみます - nghỉ), 休日 (きゅうじつ - ngày nghỉ)<br>
+                    <strong>Ví dụ:</strong> 学校を <span style="font-family:'M PLUS Rounded 1c';color:var(--hira-dark);font-weight:700">休</span>みます。<button class="audio-btn" onclick="playAudio('がっこうを やすみます')" style="width:24px;height:24px;font-size:.75em;vertical-align:middle">🔊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7-8. BÀI ĐỌC + AUDIO -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">📖</span>
+            <div class="topic-title">
+                <h3>7-8. Bài Đọc & Audio</h3>
+                <p>2 đoạn văn (150-180 chữ) • Audio tốc độ thường + chậm 🐢</p>
+            </div>
+        </div>
+        
+        <div class="info-card hira-card">
+            <div class="card-header">
+                <div class="card-icon">📖</div>
+                <div class="card-title">
+                    <div class="card-name">Đoạn 1: Hôm nay tôi bị ốm</div>
+                    <div class="card-reading">Cấp độ: ⭐⭐ Trung bình • ~150 chữ</div>
+                </div>
+                <div class="example-audio-row">
+                    <button class="audio-btn" onclick="playAudio('きょうは びょうきです。あたまが いたいです。そして、のども いたいです。ねつが あります。38ど あります。あしたは がっこうを やすみます。いま、びょういんへ いきます。いしゃに みて もらいます。そして、くすりを のみます。そして、たくさん ねます。')">🔊 Thường</button>
+                    <button class="audio-btn slow" onclick="playAudioSlow('きょうは びょうきです。あたまが いたいです。そして、のども いたいです。ねつが あります。38ど あります。あしたは がっこうを やすみます。いま、びょういんへ いきます。いしゃに みて もらいます。そして、くすりを のみます。そして、たくさん ねます。')">🐢 Chậm</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="example-jp" style="font-size:1.15em; line-height:1.8; color: var(--text);">
+                    きょうは びょうきです。あたまが いたいです。そして、のども いたいです。ねつが あります。38ど あります。あしたは がっこうを やすみます。いま、びょういんへ いきます。いしゃに みて もらいます。そして、くすりを のみます。そして、たくさん ねます。
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card hira-card" style="margin-top:20px">
+            <div class="card-header">
+                <div class="card-icon">📖</div>
+                <div class="card-title">
+                    <div class="card-name">Đoạn 2: Bạn tôi bị cảm</div>
+                    <div class="card-reading">Cấp độ: ⭐⭐⭐ Khó hơn • ~170 chữ</div>
+                </div>
+                <div class="example-audio-row">
+                    <button class="audio-btn" onclick="playAudio('きのう、ともだちの たなかさんが びょうきでした。たなかさんは せきが でます。そして、はなみずも でます。とても だるそうです。たなかさんは きょう、かいしゃを やすみました。いしゃは「あつく ないで ください。そして、くすりを のんで、よく ねて ください」と いいました。あしたは げんきに なると おもいます。')">🔊 Thường</button>
+                    <button class="audio-btn slow" onclick="playAudioSlow('きのう、ともだちの たなかさんが びょうきでした。たなかさんは せきが でます。そして、はなみずも でます。とても だるそうです。たなかさんは きょう、かいしゃを やすみました。いしゃは「あつく ないで ください。そして、くすりを のんで、よく ねて ください」と いいました。あしたは げんきに なると おもいます。')">🐢 Chậm</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="example-jp" style="font-size:1.15em; line-height:1.8; color: var(--text);">
+                    きのう、ともだちの たなかさんが びょうきでした。たなかさんは せきが でます。そして、はなみずも でます。とても だるそうです。たなかさんは きょう、かいしゃを やすみました。いしゃは「あつく ないで ください。そして、くすりを のんで、よく ねて ください」と いいました。あしたは げんきに なると おもいます。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. PHÂN TÍCH TỪNG CÂU -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🔍</span>
+            <div class="topic-title">
+                <h3>9. Phân Tích Từng Câu (Đoạn 1)</h3>
+                <p>Click 👁️ để hiện/ẩn dịch • Học từ mới + ngữ pháp ngay trong câu</p>
+            </div>
+        </div>
+        
+        <div class="sentence-card">
+            <div class="sentence-jp">きょうは びょうきです。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Hôm nay tôi bị ốm.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> きょう = hôm nay. びょうき = ốm, bệnh.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「は」đánh dấu chủ đề. Câu khẳng định đơn giản với です.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">あたまが いたいです。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Tôi bị đau đầu.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> あたま = đầu. いたいです = đau (tính từ い).</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「が」chỉ chủ ngữ của cảm giác đau. Cấu trúc: [Bộ phận] + が + いたいです.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">ねつが あります。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Tôi bị sốt.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> ねつ = sốt. あります = có.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「が」chỉ đối tượng tồn tại (triệu chứng). Dùng あります cho triệu chứng, không dùng います.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">あしたは がっこうを やすみます。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Ngày mai tôi sẽ nghỉ học.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> あした = ngày mai. やすみます = nghỉ.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「を」chỉ đối tượng bị nghỉ (trường học). Động từ 休む đi với trợ từ を.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">いま、びょういんへ いきます。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Bây giờ, tôi đi đến bệnh viện.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> いま = bây giờ. びょういん = bệnh viện.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「へ」(đọc là "e") chỉ hướng di chuyển đến bệnh viện.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">いしゃに みて もらいます。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Tôi được bác sĩ khám cho.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> いしゃ = bác sĩ. みて もらいます = được khám cho.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「に」chỉ người thực hiện hành động giúp mình. 「〜て もらいます」= nhận được hành động tốt từ ai đó.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">そして、くすりを のみます。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Và tôi sẽ uống thuốc.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> そして = và, sau đó. くすり = thuốc. のみます = uống.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「を」chỉ tân ngữ trực tiếp (uống cái gì). Lưu ý: thuốc dùng のむ, không dùng たべる.</div>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <div class="sentence-jp">そして、たくさん ねます。</div>
+            <button class="toggle-vn" onclick="toggleVn(this)">👁️ Hiện dịch</button>
+            <div class="sentence-vn">Và tôi sẽ ngủ nhiều.</div>
+            <div class="sentence-details">
+                <div class="sentence-detail vocab"><strong>🔍 Từ mới:</strong> たくさん = nhiều. ねます = ngủ.</div>
+                <div class="sentence-detail grammar"><strong>💡 Ngữ pháp:</strong> 「たくさん」là trạng từ chỉ số lượng, đứng trước động từ để bổ nghĩa.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. VOCABULARY IN CONTEXT -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🎯</span>
+            <div class="topic-title">
+                <h3>10. Vocabulary in Context - Từ trong ngữ cảnh</h3>
+                <p>Học từ qua nhiều ví dụ khác nhau để nhớ sâu</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="vocab-group-title">🤒 Từ khóa: ねつ - Sốt</div>
+                <div class="example-list">
+                    <div class="example-item"><div class="example-jp">わたしは <span class="highlight">ねつ</span>が あります。</div><div class="example-romaji">Watashi wa netsu ga arimasu.</div><div class="example-vn">Tôi bị sốt.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('わたしは ねつが あります')">🔊</button></div></div>
+                    <div class="example-item"><div class="example-jp"><span class="highlight">ねつ</span>が 39ど あります。</div><div class="example-romaji">Netsu ga sanjuu-kyuu do arimasu.</div><div class="example-vn">Sốt 39 độ.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('ねつが さんじゅうきゅうど あります')">🔊</button></div></div>
+                    <div class="example-item"><div class="example-jp">あした、<span class="highlight">ねつ</span>が さがると おもいます。</div><div class="example-romaji">Ashita, netsu ga sagaru to omoimasu.</div><div class="example-vn">Ngày mai, tôi nghĩ sẽ hạ sốt.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('あした、ねつが さがると おもいます')">🔊</button></div></div>
+                </div>
+
+                <div class="vocab-group-title">💊 Từ khóa: くすり - Thuốc</div>
+                <div class="example-list">
+                    <div class="example-item"><div class="example-jp">まいにち <span class="highlight">くすり</span>を のみます。</div><div class="example-romaji">Mainichi kusuri o nomimasu.</div><div class="example-vn">Mỗi ngày uống thuốc.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('まいにち くすりを のみます')">🔊</button></div></div>
+                    <div class="example-item"><div class="example-jp">いしゃから <span class="highlight">くすり</span>を もらいました。</div><div class="example-romaji">Isha kara kusuri o moraimashita.</div><div class="example-vn">Tôi đã nhận thuốc từ bác sĩ.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('いしゃから くすりを もらいました')">🔊</button></div></div>
+                    <div class="example-item"><div class="example-jp">この <span class="highlight">くすり</span>は あまくて、のみやすいです。</div><div class="example-romaji">Kono kusuri wa amakute, nomiyasui desu.</div><div class="example-vn">Thuốc này ngọt, dễ uống.</div><div class="example-audio-row"><button class="audio-btn" onclick="playAudio('この くすりは あまくて、のみやすいです')">🔊</button></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. HỘI THOẠI ỨNG DỤNG -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">💬</span>
+            <div class="topic-title">
+                <h3>11. Hội Thoại Ứng Dụng</h3>
+                <p>Khám bệnh tại phòng khám • Nghe từng lượt hoặc cả hội thoại</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="dialogue-controls">
+                    <button class="dialogue-btn play" id="playAllBtn" onclick="playAllDialogue()">▶️ Nghe cả hội thoại</button>
+                    <button class="dialogue-btn stop" id="stopBtn" onclick="stopDialogue()" disabled>⏹️ Dừng</button>
+                </div>
+                <div class="dialogue-grid" id="dialogueGrid">
+                    <div class="dialogue-card speaker-a" id="dl-0">
+                        <span class="dialogue-speaker">👤 Bệnh nhân</span>
+                        <div class="dialogue-jp">すみません、ぐあいが わるいです。</div>
+                        <div class="dialogue-vn">Xin lỗi, tôi thấy không khỏe.</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(0)">🔊</button>
+                    </div>
+                    <div class="dialogue-card speaker-b" id="dl-1">
+                        <span class="dialogue-speaker">👨‍⚕️ Bác sĩ</span>
+                        <div class="dialogue-jp">どこが いたいですか。</div>
+                        <div class="dialogue-vn">Đau ở đâu ạ?</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(1)">🔊</button>
+                    </div>
+                    <div class="dialogue-card speaker-a" id="dl-2">
+                        <span class="dialogue-speaker">👤 Bệnh nhân</span>
+                        <div class="dialogue-jp">のどが いたいです。そして、せきも でます。</div>
+                        <div class="dialogue-vn">Tôi đau họng. Và cũng bị ho.</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(2)">🔊</button>
+                    </div>
+                    <div class="dialogue-card speaker-b" id="dl-3">
+                        <span class="dialogue-speaker">👨‍⚕️ Bác sĩ</span>
+                        <div class="dialogue-jp">ねつが ありますね。この くすりを のんで ください。</div>
+                        <div class="dialogue-vn">Bạn bị sốt rồi. Hãy uống thuốc này nhé.</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(3)">🔊</button>
+                    </div>
+                    <div class="dialogue-card speaker-a" id="dl-4">
+                        <span class="dialogue-speaker">👤 Bệnh nhân</span>
+                        <div class="dialogue-jp">わかりました。きょうは しごとを やすんでも いいですか。</div>
+                        <div class="dialogue-vn">Tôi hiểu rồi. Hôm nay tôi nghỉ làm có được không ạ?</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(4)">🔊</button>
+                    </div>
+                    <div class="dialogue-card speaker-b" id="dl-5">
+                        <span class="dialogue-speaker">👨‍⚕️ Bác sĩ</span>
+                        <div class="dialogue-jp">はい、きょうは よく ねて ください。</div>
+                        <div class="dialogue-vn">Vâng, hôm nay hãy nghỉ ngơi thật tốt nhé.</div>
+                        <button class="dialogue-audio-btn" onclick="playSingleDialogue(5)">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. THỰC HÀNH BIẾN ĐỔI -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🔄</span>
+            <div class="topic-title">
+                <h3>12. Thực Hành Biến Đổi Mẫu Câu</h3>
+                <p>Thay thế từ trong đoạn văn - Đọc lại để thực hành</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="tip-box" style="margin-top:0">
+                    <h5>🔄 Hãy thử thay thế các từ sau vào đoạn văn gốc:</h5>
+                    <ul>
+                        <li>🤕 Thay <strong>あたま</strong> → <strong>おなか</strong> (bụng) / <strong>のど</strong> (cổ họng)</li>
+                        <li>🌡️ Thay <strong>ねつが あります</strong> → <strong>せきが でます</strong> (ho) / <strong>はなみずが でます</strong> (sổ mũi)</li>
+                        <li>🏥 Thay <strong>がっこうを やすみます</strong> → <strong>かいしゃを やすみます</strong> (nghỉ làm)</li>
+                        <li>💊 Thay <strong>くすりを のみます</strong> → <strong>びょういんへ いきます</strong> (đi bệnh viện)</li>
+                    </ul>
+                </div>
+                <div class="note-box">
+                    <h5>💡 Đoạn văn sau khi thay (ví dụ):</h5>
+                    <p style="font-family:'M PLUS Rounded 1c';font-size:1.1em;line-height:1.8;margin-top:8px">
+                        きょうは びょうきです。<strong>おなか</strong>が いたいです。<strong>はなみずが でます</strong>。あしたは <strong>かいしゃを やすみます</strong>。いま、<strong>びょういんへ いきます</strong>。
+                    </p>
+                    <div class="example-audio-row" style="margin-top:10px"><button class="audio-btn" onclick="playAudio('きょうは びょうきです。おなかが いたいです。はなみずが でます。あしたは かいしゃを やすみます。いま、びょういんへ いきます。')">🔊 Nghe đoạn đã biến đổi</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13. LƯU Ý -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">⚠️</span>
+            <div class="topic-title">
+                <h3>13. Lưu Ý & Lỗi Dễ Nhầm</h3>
+                <p>Những điểm cần chú ý riêng của topic này</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="warning-box" style="margin-top:0">
+                    <h5>⚠️ Các lỗi thường gặp:</h5>
+                    <ul>
+                        <li><strong>くすりを たべます</strong> (ăn thuốc) <span class="vs">≠</span> <strong>くすりを のみます</strong> (uống thuốc)<br>👉 Trong tiếng Nhật, thuốc luôn dùng động từ 「のむ」(uống), tuyệt đối không dùng 「たべる」(ăn).</li>
+                        <li><strong>あたまが いたいです</strong> (đau đầu) <span class="vs">≠</span> <strong>いたいが あたまです</strong><br>👉 Cấu trúc chuẩn là: [Bộ phận] + が + いたいです.</li>
+                        <li><strong>ねつが あります</strong> (có sốt) <span class="vs">≠</span> <strong>ねつが います</strong><br>👉 Triệu chứng là "vật vô tri", dùng あります, không dùng います (dùng cho người/động vật).</li>
+                        <li><strong>やすみます</strong> (nghỉ) đi với trợ từ <strong>を</strong> khi nói về nghỉ học/làm (がっこうを やすみます).</li>
+                        <li><strong>びょういんへ いきます</strong>: 「へ」ở đây đọc là <strong>"e"</strong>, không đọc là "he".</li>
+                        <li>Phân biệt <strong>ねつが あります</strong> (đang sốt) và <strong>ねつが さがります</strong> (đã hạ sốt).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 14. CÂU HỎI -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">❓</span>
+            <div class="topic-title">
+                <h3>14. Câu Hỏi Đọc Hiểu (8 câu)</h3>
+                <p>50% tìm thông tin + 50% suy luận</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">1</span> [Tìm thông tin] Tác giả bị đau ở đâu? (Đoạn 1)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q1')">おなか</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q1')">あたま と のど</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q1')">せなか</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q1')">みみ</div>
+                    </div>
+                    <div class="quiz-feedback" id="q1"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">2</span> [Tìm thông tin] Tác giả bị sốt bao nhiêu độ? (Đoạn 1)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q2')">37ど</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q2')">38ど</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q2')">39ど</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q2')">40ど</div>
+                    </div>
+                    <div class="quiz-feedback" id="q2"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">3</span> [Suy luận] Tại sao tác giả nói "あしたは がっこうを やすみます"? (Đoạn 1)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q3')">Vì không có bài tập</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q3')">Vì bị ốm và cần đi bệnh viện</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q3')">Vì muốn đi chơi</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q3')">Vì trường học đóng cửa</div>
+                    </div>
+                    <div class="quiz-feedback" id="q3"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">4</span> [Suy luận] Tác giả sẽ làm gì sau khi đi bệnh viện? (Đoạn 1)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q4')">がっこうへ いきます</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q4')">くすりを のんで、ねます</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q4')">ともだちと あそびます</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q4')">しごとを します</div>
+                    </div>
+                    <div class="quiz-feedback" id="q4"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">5</span> [Tìm thông tin] Tanaka-san bị triệu chứng gì? (Đoạn 2)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q5')">ねつ と せき</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q5')">せき と はなみず</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q5')">あたまが いたい</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q5')">おなかが いたい</div>
+                    </div>
+                    <div class="quiz-feedback" id="q5"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">6</span> [Tìm thông tin] Hôm nay Tanaka-san làm gì? (Đoạn 2)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q6')">かいしゃに いきます</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q6')">かいしゃを やすみます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q6')">がっこうに いきます</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q6')">びょういんへ いきます</div>
+                    </div>
+                    <div class="quiz-feedback" id="q6"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">7</span> [Suy luận] Bác sĩ khuyên Tanaka-san điều gì? (Đoạn 2)</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q7')">たくさん 歩いて ください</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q7')">くすりを のんで、よく ねて ください</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q7')">あつく ないで ください (chỉ là lời nói, không phải khuyên chính)</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q7')">たくさん たべて ください</div>
+                    </div>
+                    <div class="quiz-feedback" id="q7"></div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">8</span> [So sánh] Điểm giống nhau giữa Đoạn 1 và Đoạn 2 là gì?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this,false,'q8')">ふたりとも あたまが いたいです (Cả hai đều đau đầu)</div>
+                        <div class="quiz-option" onclick="checkAnswer(this,true,'q8')">ふたりとも びょうきで、やすみます (Cả hai đều ốm và nghỉ ngơi)</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q8')">ふたりとも ねつが 38どです (Cả hai đều sốt 38 độ)</div>
+                        <div class="exercise-option" onclick="checkAnswer(this,false,'q8')">ふたりとも せきが でます (Cả hai đều bị ho)</div>
+                    </div>
+                    <div class="quiz-feedback" id="q8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 15. GIẢI THÍCH ĐÁP ÁN -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">✅</span>
+            <div class="topic-title">
+                <h3>15. Giải Thích Chi Tiết Đáp Án</h3>
+                <p>Không chỉ đúng/sai - mà còn biết TẠI SAO!</p>
+            </div>
+        </div>
+        <div class="card-grid-2">
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 1: あたま と のど</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 1: 「あたまが いたいです。そして、のども いたいです」→ Đau đầu và đau họng.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 2: 38ど</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 1: 「ねつが あります。38ど あります」→ Sốt 38 độ.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 3: Vì bị ốm và cần đi bệnh viện</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 1 nêu rõ: 「きょうは びょうきです」và 「いま、びょういんへ いきます」→ Vì ốm nên nghỉ và đi bệnh viện.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 4: くすりを のんで、ねます</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 1: 「くすりを のみます。そして、たくさん ねます」→ Uống thuốc và ngủ nhiều.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 5: せき と はなみず</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 2: 「たなかさんは せきが でます。そして、はなみずも でます」→ Ho và sổ mũi.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 6: かいしゃを やすみます</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 2: 「たなかさんは きょう、かいしゃを やすみました」→ Hôm nay nghỉ làm.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 7: くすりを のんで、よく ねて ください</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 2: Bác sĩ nói「くすりを のんで、よく ねて ください」→ Hãy uống thuốc và nghỉ ngơi thật tốt.</p></div>
+                </div>
+            </div>
+            <div class="info-card hira-card">
+                <div class="card-content">
+                    <div class="example-jp" style="font-size:1.1em">Câu 8: ふたりとも びょうきで、やすみます</div>
+                    <div class="note-box"><h5>📍 Căn cứ</h5><p>Đoạn 1: tác giả bị ốm và nghỉ học. Đoạn 2: Tanaka bị ốm và nghỉ làm. Điểm chung là đều bị ốm và phải nghỉ ngơi.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 16. OUTPUT: TỰ GIỚI THIỆU -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">🌸</span>
+            <div class="topic-title">
+                <h3>16. 🌸 Output: Tự Mô Tả Tình Trạng Sức Khỏe</h3>
+                <p>Điền thông tin của bạn - Viết về chính tình trạng của mình!</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="output-form">
+                    <div class="output-line">きょうは <input type="text" placeholder="tình trạng (ví dụ: びょうき)"> です。</div>
+                    <div class="output-line"><input type="text" placeholder="bộ phận (ví dụ: あたま)"> が いたいです。</div>
+                    <div class="output-line">ねつが <input type="text" placeholder="nhiệt độ (ví dụ: 38ど)"> あります。</div>
+                    <div class="output-line">あしたは <input type="text" placeholder="nơi nghỉ (ví dụ: がっこう)"> を やすみます。</div>
+                    <div class="output-line">いま、くすりを のんで、たくさん ねます。</div>
+                </div>
+                <div class="note-box" style="margin-top:20px">
+                    <h5>💡 Đáp án mẫu gợi ý:</h5>
+                    <p style="font-family:'M PLUS Rounded 1c';font-size:1.1em;line-height:1.8;margin-top:8px">
+                        きょうは <strong>びょうき</strong> です。<strong>のど</strong> が いたいです。ねつが <strong>37ど</strong> あります。あしたは <strong>かいしゃ</strong> を やすみます。いま、くすりを のんで、たくさん ねます。
+                    </p>
+                    <div class="example-audio-row" style="margin-top:10px"><button class="audio-btn" onclick="playAudio('きょうは びょうきです。のどが いたいです。ねつが 37ど あります。あしたは かいしゃを やすみます。いま、くすりを のんで、たくさん ねます。')">🔊 Nghe đáp án mẫu</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 17. TỔNG KẾT -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <span class="topic-icon">📋</span>
+            <div class="topic-title">
+                <h3>17. Tổng Kết Topic 8</h3>
+                <p>Bạn vừa học được gì?</p>
+            </div>
+        </div>
+        <div class="info-card hira-card">
+            <div class="card-content">
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-icon">📚</div>
+                        <div class="summary-value">22</div>
+                        <div class="summary-label">Từ vựng (4 nhóm)</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">📝</div>
+                        <div class="summary-value">5</div>
+                        <div class="summary-label">Ngữ pháp chuyên sâu</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🈶</div>
+                        <div class="summary-value">8</div>
+                        <div class="summary-label">Chữ Kanji</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">📖</div>
+                        <div class="summary-value">2</div>
+                        <div class="summary-label">Bài đọc dài</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">💬</div>
+                        <div class="summary-value">1</div>
+                        <div class="summary-label">Hội thoại</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">❓</div>
+                        <div class="summary-value">8</div>
+                        <div class="summary-label">Câu hỏi (50% suy luận)</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🔄</div>
+                        <div class="summary-value">1</div>
+                        <div class="summary-label">Bài biến đổi mẫu câu</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🌸</div>
+                        <div class="summary-value">1</div>
+                        <div class="summary-label">Output cá nhân</div>
+                    </div>
+                </div>
+                <div class="tip-box" style="margin-top:25px">
+                    <h5>🎯 Bạn cần nhớ kỹ:</h5>
+                    <ul>
+                        <li>✅ <strong>5 cấu trúc cốt lõi:</strong> 〜がいたいです, 〜があります, びょういんへいきます, くすりをのみます, 〜てはいけません</li>
+                        <li>✅ <strong>Phân biệt trợ từ:</strong> が (chủ ngữ đau/triệu chứng) vs を (tân ngữ uống thuốc/nghỉ học)</li>
+                        <li>✅ <strong>Phân biệt động từ:</strong> のみます (uống thuốc) vs たべます (ăn cơm), あります (có sốt) vs います (có người)</li>
+                        <li>✅ <strong>Output:</strong> Tự viết được đoạn mô tả tình trạng sức khỏe của chính mình 🌸</li>
+                    </ul>
+                </div>
+                <div class="nav-buttons">
+                    <a href="n5-w24-4-07.html" class="btn btn-secondary">🚃 ← Topic 7: Đi lại</a>
+                    <a href="n5-w24-4-09.html" class="btn btn-primary">📢 Topic 9: Thông báo →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <h3>📖 Nihongo Journey</h3>
+    <p>Hành trình học tiếng Nhật dễ thương của bạn 💕</p>
+    <p style="margin-top:15px;font-size:1.5em">💖 ✨ 📖 🎯</p>
+    <p style="margin-top:10px;opacity:.9">日本語を一緒に学びましょう！</p>
+    <p style="margin-top:15px;opacity:.85;font-size:.9em">© 2026 Nihongo Journey • Made with 💖 for Japanese learners</p>
+    <p style="margin-top:10px;opacity:.85;font-size:.9em">🎯 JLPT N5 → N4 → N3 • 30 phút/ngày • 24 tuần</p>
+</footer>
+
+<script>
+let voices = [];
+function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+loadVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+let isPlayingAll = false;
+let currentDialogueIndex = -1;
+let dialogueTimeout = null;
+
+const dialogueTexts = [
+    'すみません、ぐあいが わるいです。',
+    'どこが いたいですか。',
+    'のどが いたいです。そして、せきも でます。',
+    'ねつが ありますね。この くすりを のんで ください。',
+    'わかりました。きょうは しごとを やすんでも いいですか。',
+    'はい、きょうは よく ねて ください。'
+];
+
+function speak(text, onEnd){
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.9;
+    utterance.pitch = 1.1;
+    const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+    if(japaneseVoice) utterance.voice = japaneseVoice;
+    utterance.onend = () => { if(onEnd) onEnd(); };
+    utterance.onerror = () => { if(onEnd) onEnd(); };
+    window.speechSynthesis.speak(utterance);
+}
+
+function highlightCard(index){
+    document.querySelectorAll('.dialogue-card').forEach(c => c.classList.remove('playing'));
+    if(index >= 0 && index < dialogueTexts.length){
+        const card = document.getElementById('dl-' + index);
+        if(card) card.classList.add('playing');
+    }
+}
+
+function clearHighlight(){
+    document.querySelectorAll('.dialogue-card').forEach(c => c.classList.remove('playing'));
+}
+
+function playSingleDialogue(index){
+    if(isPlayingAll){ stopDialogue(); }
+    highlightCard(index);
+    speak(dialogueTexts[index], () => {
+        setTimeout(() => { clearHighlight(); }, 300);
+    });
+}
+
+function playAllDialogue(){
+    if(isPlayingAll) return;
+    isPlayingAll = true;
+    currentDialogueIndex = 0;
+    document.getElementById('playAllBtn').disabled = true;
+    document.getElementById('stopBtn').disabled = false;
+    
+    function playNext(){
+        if(!isPlayingAll || currentDialogueIndex >= dialogueTexts.length){
+            stopDialogue();
+            return;
+        }
+        highlightCard(currentDialogueIndex);
+        speak(dialogueTexts[currentDialogueIndex], () => {
+            currentDialogueIndex++;
+            dialogueTimeout = setTimeout(playNext, 800);
+        });
+    }
+    playNext();
+}
+
+function stopDialogue(){
+    isPlayingAll = false;
+    currentDialogueIndex = -1;
+    window.speechSynthesis.cancel();
+    if(dialogueTimeout) clearTimeout(dialogueTimeout);
+    clearHighlight();
+    document.getElementById('playAllBtn').disabled = false;
+    document.getElementById('stopBtn').disabled = true;
+}
+
+function playAudio(text){
+    if(isPlayingAll) stopDialogue();
+    speak(text);
+}
+
+function playAudioSlow(text){
+    if(isPlayingAll) stopDialogue();
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.6;
+    utterance.pitch = 1.1;
+    const japaneseVoice = voices.find(voice => voice.lang.includes('ja'));
+    if(japaneseVoice) utterance.voice = japaneseVoice;
+    window.speechSynthesis.speak(utterance);
+}
+
+function toggleVn(btn){
+    const vn = btn.nextElementSibling;
+    vn.classList.toggle('show');
+    btn.textContent = vn.classList.contains('show') ? '🙈 Ẩn dịch' : '👁️ Hiện dịch';
+}
+
+function checkAnswer(el,isCorrect,id){
+    const parent = el.parentElement;
+    const options = parent.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById(id);
+    options.forEach(opt => opt.style.pointerEvents = 'none');
+    if(isCorrect){
+        el.classList.add('correct');
+        feedback.textContent = '✅ Chính xác! Giỏi quá!';
+        feedback.className = 'quiz-feedback show correct';
+    } else {
+        el.classList.add('wrong');
+        options.forEach(opt => { if(opt.onclick.toString().includes('true')){ opt.classList.add('correct'); }});
+        feedback.textContent = '❌ Sai rồi! Đáp án đúng đã được đánh dấu.';
+        feedback.className = 'quiz-feedback show wrong';
+    }
+}
+</script>
+</body>
+</html>
